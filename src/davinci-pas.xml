@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
+  <id value="davinci-pas"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-pas"/>
+  <name value="PriorAuthorizationSupport"/>
+  <title value="Da Vinci - PriorA uthorization Support"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International - Financial Management Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.fhir.us.davinci-pas"/>
+  <fhirVersion value="4.0.0"/>
+  <dependsOn>
+    <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+      <valueCode value="STU3"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/us/core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="2.0.0"/>
+  </dependsOn>
+  <dependsOn>
+    <uri value="http://hl7.org/fhir/us/core"/>
+    <packageId value="hl7.fhir.us.core.r4"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <!-- Note: Order of these spreadsheets matters -->
+<!--    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="appointment-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="appointment-stu3-profile-spreadsheet.xml">
+        <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+          <valueCode value="STU3"/>
+        </extension>
+      </valueUri>
+    </extension>-->
+    <grouping id="operations">
+      <name value="Operations"/>
+      <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
+    </grouping>
+    <!-- Uncomment when we have some
+    <grouping id="profiles">
+      <name value="Profiles"/>
+      <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
+    </grouping>
+    <grouping id="extensions">
+      <name value="Extensions"/>
+      <description value="Extensions defined as part of this implementation guide"/>
+    </grouping>
+    <grouping id="terminology">
+      <name value="Terminology"/>
+      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
+    </grouping>-->
+    <grouping id="examples">
+      <name value="Example(s)"/>
+      <description value="Example(s) showing the use of the CG profiles"/>
+    </grouping>
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/Claim-submit"/>
+      </reference>
+      <name value="Submit Claim"/>
+      <description value="PAS constraints on the generic Claim/$submit operation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
+    </resource>
+<!--    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-appointment-r4"/>
+      </reference>
+      <name value="PAS Appointment"/>
+      <description value="PAS constraints on R4 Appointment resource mandating support for elements relevant to prior authorization support"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>-->
+    <resource>
+      <reference>
+        <reference value="Bundle/pa-request-example"/>
+      </reference>
+      <name value="PA Request example"/>
+      <description value="Example of a Prior Authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="examples"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="PAS IG Home Page"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="usecases.html"/>
+        <title value="Use Cases and Overview"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="background.html"/>
+        <title value="Technical Background"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="spec.html"/>
+        <title value="Formal Specification"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="allartifacts.html"/>
+        <title value="FHIR Artifacts"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="artifacts.html"/>
+          <title value="Artifact List for FHIR R4"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="STU3/artifacts.html"/>
+          <title value="Artifact List for FHIR STU3"/>
+          <generation value="html"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="credits.html"/>
+        <title value="Credits"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+  </definition>
+</ImplementationGuide>

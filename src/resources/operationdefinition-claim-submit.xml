@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Claim-submit"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/OperationDefinition/Claim-submit"/>
+  <name value="ClaimSubmit"/>
+  <title value="Submit a Claim resource for adjudication"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <description value="Da Vinci Prior Authorization Support This operation is used to submit a Claim, Pre-Authorization or Pre-Determination (all instances of Claim resources) for adjudication either as a single Claim resource instance or as a Bundle containing the Claim and other referenced resources, or Bundle containing a batch of Claim resources, either as single Claims resources or Bundle resources, for processing. The only input parameter is the single Claim or Bundle resource and the only output is a single ClaimResponse, Bundle of ClaimResponses or an OperationOutcome resource."/>
+  <code value="submit"/>
+  <base value="http://hl7.org/fhir/OperationDefinition/Claim-submit"/>
+  <resource value="Claim"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="resource"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="A Claim resource or Bundle of claims, either as individual Claim resources or as Bundles each containing a single Claim plus referenced resources."/>
+    <type value="Bundle"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="A ClaimResponse resource or Bundle of claim responses, either as individual ClaimResponse resources or as Bundles each containing a single ClaimResponse plus referenced resources."/>
+    <type value="Bundle"/>
+  </parameter>
+</OperationDefinition>
