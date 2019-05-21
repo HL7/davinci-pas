@@ -29,6 +29,27 @@
   </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="claim-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="claimresponse-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="practitionerrole-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="organization-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="practitioner-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="coverage-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="patient-profile-spreadsheet.xml"/>
+    </extension>
     <grouping id="operations">
       <name value="Operations"/>
       <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
@@ -41,11 +62,11 @@
     <grouping id="extensions">
       <name value="Extensions"/>
       <description value="Extensions defined as part of this implementation guide"/>
-    </grouping>
+    </grouping>-->
     <grouping id="terminology">
       <name value="Terminology"/>
       <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
-    </grouping>-->
+    </grouping>
     <grouping id="examples">
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
@@ -59,18 +80,132 @@
       <exampleBoolean value="false"/>
       <groupingId value="operations"/>
     </resource>
-<!--    <resource>
+    <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-appointment"/>
+        <reference value="StructureDefinition/profile-claim"/>
       </reference>
-      <name value="PAS Appointment"/>
-      <description value="PAS constraints on Appointment resource mandating support for elements relevant to prior authorization support"/>
+      <name value="PAS Claim"/>
+      <description value="PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
-    </resource>-->
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-claimresponse"/>
+      </reference>
+      <name value="PAS Claim Response"/>
+      <description value="PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-organization-requestor"/>
+      </reference>
+      <name value="PAS Requestor Organization"/>
+      <description value="PAS constraints on Organization resource mandating support for elements relevant to the requestor of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-organization-umo"/>
+      </reference>
+      <name value="PAS UMO Organization"/>
+      <description value="PAS constraints on Organization resource mandating support for elements relevant to the Utilization Management Organization of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-practitioner-requestor"/>
+      </reference>
+      <name value="PAS Requestor Practitioner"/>
+      <description value="PAS constraints on Practitioner resource mandating support for elements relevant to the requestor of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-practrole-requestor"/>
+      </reference>
+      <name value="PAS Requestor PractitionerRole"/>
+      <description value="PAS constraints on PractitionerRole resource mandating support for elements relevant to the requestor of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-coverage"/>
+      </reference>
+      <name value="PAS Coverage"/>
+      <description value="PAS constraints on Coverage resource mandating support for elements relevant to the insurance of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-patient-subscriber"/>
+      </reference>
+      <name value="PAS Subscriber Patient"/>
+      <description value="PAS constraints on Patient resource mandating support for elements relevant to the subscriber of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-patient-beneficiary"/>
+      </reference>
+      <name value="PAS Beneficiary Patient"/>
+      <description value="PAS constraints on Patient resource mandating support for elements relevant to the beneficiary of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/MilitaryStatus"/>
+      </reference>
+      <name value="PAS Coverage Military Status Code System"/>
+      <description value="Coverage Military Status Code System"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MilitaryStatus"/>
+      </reference>
+      <name value="PAS Coverage Military Status Value Set"/>
+      <description value="Coverage Military Status Value Set"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/pa-request-example"/>

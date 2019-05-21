@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="MilitaryStatus"/>
+<url value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/MilitaryStatus"/>
+<version value="0.0.0"/>
+<name value="Military Status"/>
+<status value="draft"/>
+<experimental value="false"/>
+<date value="2018-03-13T08:16:34-07:00"/>
+<contact>
+  <telecom>
+    <system value="url"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+  </telecom>
+</contact>
+<description value="The status of a coverage subscriber in the military."/>
+<jurisdiction>
+  <coding>
+    <system value="urn:iso:std:iso:3166"/>
+    <code value="US"/>
+  </coding>
+</jurisdiction>
+<caseSensitive value="true"/>
+<valueSet value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/MilitaryStatus"/>
+<content value="complete"/>
+<concept>
+  <code value="AO"/>
+  <display value="Active Military - Overseas"/>
+  <definition value="Active Military - Overseas"/>
+</concept>
+<concept>
+  <code value="AU"/>
+  <display value="Active Military - USA"/>
+  <definition value="Active Military - USA"/>
+</concept>
+<concept>
+  <code value="DI"/>
+  <display value="Deceased"/>
+  <definition value="Deceased"/>
+</concept>
+<concept>
+  <code value="PV"/>
+  <display value="Previous"/>
+  <definition value="Previous"/>
+</concept>
+<concept>
+  <code value="RU"/>
+  <display value="Retired Military - USA"/>
+  <definition value="Retired Military - USA"/>
+</concept>
+</CodeSystem>
