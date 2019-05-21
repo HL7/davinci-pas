@@ -5,6 +5,6 @@
   "excludejson":"No",
   "excludettl":"Yes",
   "assets":"",
-  "child":"STU3/",
+  "child":"${additionalVersion}/",
   "headingOffset":""
 }

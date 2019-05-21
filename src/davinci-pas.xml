@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
   <id value="davinci-pas"/>
-  <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-pas"/>
+  <url value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/davinci-pas"/>
   <name value="PriorAuthorizationSupport"/>
   <title value="Da Vinci - PriorA uthorization Support"/>
   <status value="draft"/>
@@ -23,30 +23,12 @@
   <packageId value="hl7.fhir.us.davinci-pas"/>
   <fhirVersion value="4.0.0"/>
   <dependsOn>
-    <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
-      <valueCode value="STU3"/>
-    </extension>
-    <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core"/>
-    <version value="2.0.0"/>
-  </dependsOn>
-  <dependsOn>
     <uri value="http://hl7.org/fhir/us/core"/>
     <packageId value="hl7.fhir.us.core.r4"/>
     <version value="current"/>
   </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
-<!--    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="appointment-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="appointment-stu3-profile-spreadsheet.xml">
-        <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
-          <valueCode value="STU3"/>
-        </extension>
-      </valueUri>
-    </extension>-->
     <grouping id="operations">
       <name value="Operations"/>
       <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
@@ -82,10 +64,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-appointment-r4"/>
+        <reference value="StructureDefinition/profile-appointment"/>
       </reference>
       <name value="PAS Appointment"/>
-      <description value="PAS constraints on R4 Appointment resource mandating support for elements relevant to prior authorization support"/>
+      <description value="PAS constraints on Appointment resource mandating support for elements relevant to prior authorization support"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>-->
@@ -128,12 +110,7 @@
         <generation value="markdown"/>
         <page>
           <nameUrl value="artifacts.html"/>
-          <title value="Artifact List for FHIR R4"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="STU3/artifacts.html"/>
-          <title value="Artifact List for FHIR STU3"/>
+          <title value="Artifact List"/>
           <generation value="html"/>
         </page>
       </page>

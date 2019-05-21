@@ -3,12 +3,12 @@
     <a href="{{site.data.info.assets}}toc.html">Table of Contents</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">CRD Specification<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PAS Specification<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="{{site.data.info.assets}}index.html">CRD Home Page</a>
+        <a href="{{site.data.info.assets}}index.html">PAS Home Page</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}usecases.html">Use Cases and Overview</a>
@@ -38,13 +38,7 @@
         <a href="{{site.data.info.assets}}allartifacts.html">Artifacts Overview</a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}artifacts.html">FHIR R4 CRD-specific Artifacts</a>
-      </li>
-      <li>
-        <a href="{{site.data.info.child}}artifacts.html">FHIR STU3 CRD-specific Artifacts</a>
-      </li>
-      <li>
-        <a href="http://hl7.org/fhir/us/core/STU2">US Core (2.0.0 - STU3 based)</a>
+        <a href="{{site.data.info.assets}}artifacts.html">PAS-specific Artifacts</a>
       </li>
       <li>
         <a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a>
@@ -60,23 +54,11 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir">FHIR STU3 Spec <img src="external.png" style="text-align: baseline"/></a>
-      </li>
-      <li>
-        <a target="_blank" href="http://hl7.org/fhir/us/core">US Core STU2 <img src="external.png" style="text-align: baseline"/></a>
-      </li>
-      <li>
         <a target="_blank" href="http://hl7.org/fhir/us/core/2019Jan">US Core STU3 - draft <img src="external.png" style="text-align: baseline"/></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://cds-hooks.org/specification/1.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
-      </li>
-      <li>
-        <a target="_blank" href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
       </li>
     </ul>
   </li>
   <li>
-    <a href="http://hl7.org/fhir/us/davinci-crd/history.html">History</a>
+    <a href="http://hl7.org/fhir/us/davinci-pas/history.html">History</a>
   </li>
 </ul>

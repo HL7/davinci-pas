@@ -2,9 +2,6 @@
   "DO_NOT_EDIT_THIS_FILE": "This file is generated.  Any edits made will be overwritten",
   "tool": "jekyll",
   "logging": ["html"],
-  "nestedIgConfig":"davinci-pasSTU3.json",
-  "nestedIgOutput":"STU3",
-  "igArtifactsPage":"artifacts.html",
   "version": "4.0.0",
   "fixed-business-version": "0.0.0",
   "html-template": "template-page.html",
@@ -17,7 +14,7 @@
     "temp": "../temp/pages",
     "output": "../output",
     "txCache": "txcache",
-    "history" : "http://hl7.org/fhir/us/davinci-crd/history.cfml",
+    "history" : "http://hl7.org/fhir/us/davinci-pas/history.cfml",
     "qa": "../temp/qa",
     "specification": "http://hl7.org/fhir/R4/"
   },
@@ -93,7 +90,7 @@
   },
   "sct-edition" : "http://snomed.info/sct/731000124108",
   "no-inactive-codes" : "true",
-  "canonicalBase": "http://hl7.org/fhir/us/davinci-crd",
+  "canonicalBase": "http://hl7.org/fhir/us/davinci-pas",
   "dependencyList": [
     {
       "name" : "core",

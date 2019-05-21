@@ -2,7 +2,7 @@
 Da Vinci is an HL7-sponsored project that brings together the U.S. EHR vendor and Payer communities to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies.  The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities.  Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci).  Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
 
 ### Systems
-The CRD implementation guide defines the responsibilities of the two types of systems involved in a CRD solution:
+The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 
 **Client systems** are typically Electronic Medical Record (EMR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. pharmacy systems, dental systems, etc.)
 

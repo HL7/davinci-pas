@@ -1,26 +1,16 @@
 Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
 
-The FHIR artifacts used by PAS are organized according to two axes: 
+The FHIR artifacts used by PAS are organized according to whether the content developed as part of the US Core implementation guides or is Da Vinci-specific.
 
-* is the content intended for use in FHIR STU3 implementations or R4 implementations?
-
-* is the content developed as part of the US Core implementation guides or is it Da Vinci-specific?
-
-As a result, there are 4 different lists of artifacts - one for each of the STU3 and R4 representations of the US Core and Da Vinci implementation guides.
+As a result, there are 2 different lists of artifacts - one for each of the US Core and Da Vinci implementation guides.
 
 ### Artifact Lists
 <table>
   <tr>
-    <td><a href="artifacts.html">FHIR R4 PAS-specific Artifacts</a></td>
+    <td><a href="artifacts.html">FHIR PAS-specific Artifacts</a></td>
   </tr>
   <tr>
     <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a></td>
-  </tr>
-  <tr>
-    <td><a href="STU3/artifacts.html">FHIR STU3 PAS-specific Artifacts</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://hl7.org/fhir/us/core/STU2">US Core (2.0.0 - STU3 based)</a></td>
   </tr>
 </table>
 
