@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="PASSupportingInfoType"/>
+<url value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType"/>
+<version value="0.0.0"/>
+<name value="Supporting Information Types"/>
+<status value="draft"/>
+<experimental value="false"/>
+<date value="2018-03-13T08:16:34-07:00"/>
+<contact>
+  <telecom>
+    <system value="url"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+  </telecom>
+</contact>
+<description value="The type of supporting information."/>
+<jurisdiction>
+  <coding>
+    <system value="urn:iso:std:iso:3166"/>
+    <code value="US"/>
+  </coding>
+</jurisdiction>
+<caseSensitive value="true"/>
+<valueSet value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType"/>
+<content value="complete"/>
+<concept>
+  <code value="relatedCauses"/>
+  <display value="Related Causes"/>
+</concept>
+<concept>
+  <code value="currentHealthCondition"/>
+  <display value="Current Health Condition"/>
+</concept>
+<concept>
+  <code value="patientPrognosis"/>
+  <display value="Patient Prognosis"/>
+</concept>
+<concept>
+  <code value="releaseOfInformation"/>
+  <display value="Release Of Information"/>
+</concept>
+<concept>
+  <code value="delayReason"/>
+  <display value="Delay Reason"/>
+</concept>
+<concept>
+  <code value="lastMenstrualPeriod"/>
+  <display value="Last Menstrual Period"/>
+</concept>
+<concept>
+  <code value="estimatedBirthDate"/>
+  <display value="Estimated Birth Date"/>
+</concept>
+<concept>
+  <code value="onsetOfSymptoms"/>
+  <display value="Onset of Symptoms"/>
+</concept>
+<concept>
+  <code value="patientEvent"/>
+  <display value="Patient Event"/>
+</concept>
+<concept>
+  <code value="admissionReview"/>
+  <display value="Admission Review"/>
+</concept>
+<concept>
+  <code value="additionalInformation"/>
+  <display value="Additional Information"/>
+</concept>
+<concept>
+  <code value="freeFormMessage"/>
+  <display value="Free Form Message"/>
+</concept>
+</CodeSystem>

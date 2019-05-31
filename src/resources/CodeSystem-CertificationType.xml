@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="CertificationType"/>
+<url value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/CertificationType"/>
+<version value="0.0.0"/>
+<name value="Certification Type"/>
+<status value="draft"/>
+<experimental value="false"/>
+<date value="2018-03-13T08:16:34-07:00"/>
+<contact>
+  <telecom>
+    <system value="url"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+  </telecom>
+</contact>
+<description value="The type of the pre-authorization that is being requested."/>
+<jurisdiction>
+  <coding>
+    <system value="urn:iso:std:iso:3166"/>
+    <code value="US"/>
+  </coding>
+</jurisdiction>
+<caseSensitive value="true"/>
+<valueSet value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/CertificationType"/>
+<content value="complete"/>
+<concept>
+  <code value="1"/>
+  <display value="Appeal - Immediate"/>
+  <definition value="Appeal - Immediate"/>
+</concept>
+<concept>
+  <code value="2"/>
+  <display value="Appeal - Standard"/>
+  <definition value="Appeal - Standard"/>
+</concept>
+<concept>
+  <code value="3"/>
+  <display value="Cancel"/>
+  <definition value="Cancel"/>
+</concept>
+<concept>
+  <code value="4"/>
+  <display value="Extension"/>
+  <definition value="Extension"/>
+</concept>
+<concept>
+  <code value="I"/>
+  <display value="Initial"/>
+  <definition value="Initial"/>
+</concept>
+<concept>
+  <code value="N"/>
+  <display value="Reconsideration"/>
+  <definition value="Reconsideration"/>
+</concept>
+<concept>
+  <code value="R"/>
+  <display value="Renewal"/>
+  <definition value="Renewal"/>
+</concept>
+<concept>
+  <code value="S"/>
+  <display value="Revised"/>
+  <definition value="Revised"/>
+</concept>
+</CodeSystem>

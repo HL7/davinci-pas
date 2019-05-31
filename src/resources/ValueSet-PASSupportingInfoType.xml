@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="PASSupportingInfoType"/>
+<url value="http://hl7.org/fhir/us/davinci-pas/ValueSet/PASSupportingInfoType"/>
+<version value="0.0.0"/>
+<name value="PAS Supporting Information Type"/>
+<status value="draft"/>
+<date value="2018-03-13T08:16:34-07:00"/>
+<contact>
+  <telecom>
+    <system value="url"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+  </telecom>
+</contact>
+<description value="The type of supporting information."/>
+<jurisdiction>
+  <coding>
+    <system value="urn:iso:std:iso:3166"/>
+    <code value="US"/>
+  </coding>
+</jurisdiction>
+<immutable value="true"/>
+<compose>
+  <include>
+    <system value="http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType"/>
+  </include>
+</compose>
+</ValueSet>

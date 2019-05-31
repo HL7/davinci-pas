@@ -42,7 +42,8 @@ v: {
 {"code" : {
   "coding" : [{
     "system" : "urn:iso:std:iso:3166",
-    "code" : "US"
+    "code" : "US",
+    "display" : "United Status"
   }]
 }, "valueSet" :{
   "resourceType" : "ValueSet",
@@ -51,21 +52,74 @@ v: {
       "system" : "urn:iso:std:iso:3166"
     },
     {
+      "system" : "urn:iso:std:iso:3166:-2"
+    },
+    {
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
       "filter" : [{
         "property" : "class",
         "op" : "=",
         "value" : "region"
       }]
-    },
-    {
-      "valueSet" : ["http://hl7.org/fhir/ValueSet/usps-state"]
     }]
   }
 }}####
 v: {
   "display" : "United States of America",
-  "severity" : null,
-  "error" : ""
+  "severity" : "warning",
+  "error" : "The display \"United Status\" is not a valid display for the code {urn:iso:std:iso:3166}US - should be one of [\"United States of America\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:3166",
+  "code" : "US",
+  "display" : "United Status"
+}, "valueSet" :null}####
+v: {
+  "display" : "United States of America",
+  "severity" : "warning",
+  "error" : "The display \"United Status\" is not a valid display for the code {urn:iso:std:iso:3166}US - should be one of [\"United States of America\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "US",
+    "display" : "United States"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:iso:std:iso:3166"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166:-2"
+    },
+    {
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "filter" : [{
+        "property" : "class",
+        "op" : "=",
+        "value" : "region"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "United States of America",
+  "severity" : "warning",
+  "error" : "The display \"United States\" is not a valid display for the code {urn:iso:std:iso:3166}US - should be one of [\"United States of America\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:3166",
+  "code" : "US",
+  "display" : "United States"
+}, "valueSet" :null}####
+v: {
+  "display" : "United States of America",
+  "severity" : "warning",
+  "error" : "The display \"United States\" is not a valid display for the code {urn:iso:std:iso:3166}US - should be one of [\"United States of America\"]"
 }
 -------------------------------------------------------------------------------------

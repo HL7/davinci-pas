@@ -50,6 +50,24 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="patient-profile-spreadsheet.xml"/>
     </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="condition-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="location-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="encounter-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="documentreference-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="communicationrequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="timing-profile-spreadsheet.xml"/>
+    </extension>
     <grouping id="operations">
       <name value="Operations"/>
       <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
@@ -133,10 +151,34 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/profile-organization-careteam"/>
+      </reference>
+      <name value="PAS Care Team Organization"/>
+      <description value="PAS constraints on Organization resource mandating support for elements relevant to an Organization forming part of a Care Team for a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/profile-practitioner-requestor"/>
       </reference>
       <name value="PAS Requestor Practitioner"/>
       <description value="PAS constraints on Practitioner resource mandating support for elements relevant to the requestor of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-practitioner-careteam"/>
+      </reference>
+      <name value="PAS Care Team Practitioner"/>
+      <description value="PAS constraints on Practitioner resource mandating support for elements relevant to an Practitioner forming part of a Care Team for a prior authorization request"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
@@ -189,6 +231,78 @@
       <groupingId value="profiles"/>
     </resource>
     <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-condition"/>
+      </reference>
+      <name value="PAS Condition"/>
+      <description value="PAS constraints on Condition resource mandating support for elements relevant to the diagnosis of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-location"/>
+      </reference>
+      <name value="PAS Location"/>
+      <description value="PAS constraints on Location resource mandating support for elements relevant to the  of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-timing"/>
+      </reference>
+      <name value="PAS Timing"/>
+      <description value="PAS constraints on Timing datatype for elements relevant to a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-encounter"/>
+      </reference>
+      <name value="PAS Encounter"/>
+      <description value="PAS constraints on Encounter resource for elements relevant to a institutional claim for a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-documentreference"/>
+      </reference>
+      <name value="PAS DocumentReference"/>
+      <description value="PAS constraints on DocumentReference resource for additional information sent with a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-communicationrequest"/>
+      </reference>
+      <name value="PAS CommunicationRequest"/>
+      <description value="PAS constraints on CommunicationRequest resource for requesting additional information to be sent for a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
       <reference>
         <reference value="CodeSystem/MilitaryStatus"/>
       </reference>
@@ -203,6 +317,42 @@
       </reference>
       <name value="PAS Coverage Military Status Value Set"/>
       <description value="Coverage Military Status Value Set"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/CertificationType"/>
+      </reference>
+      <name value="PAS Claim Certification Type Code System"/>
+      <description value="Claim Certification Type Code System"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/CertificationType"/>
+      </reference>
+      <name value="PAS Claim Certification Type Value Set"/>
+      <description value="Claim Certification Type Value Set"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/PASSupportingInfoType"/>
+      </reference>
+      <name value="PAS Claim Supporting Information Type"/>
+      <description value="Claim Supporting Information Type Code System"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/PASSupportingInfoType"/>
+      </reference>
+      <name value="PAS Claim Supporting Information Type Value Set"/>
+      <description value="Claim Supporting Information Type Value Set"/>
       <exampleBoolean value="false"/>
       <groupingId value="terminology"/>
     </resource>

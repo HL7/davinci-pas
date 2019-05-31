@@ -101,9 +101,68 @@
   ],
   "source": "davinci-pas.xml",
   "spreadsheets": [
+    "claim-profile-spreadsheet.xml",
+    "claimresponse-profile-spreadsheet.xml",
+    "practitionerrole-profile-spreadsheet.xml",
+    "organization-profile-spreadsheet.xml",
+    "practitioner-profile-spreadsheet.xml",
+    "coverage-profile-spreadsheet.xml",
+    "patient-profile-spreadsheet.xml",
+    "condition-profile-spreadsheet.xml",
+    "location-profile-spreadsheet.xml",
+    "encounter-profile-spreadsheet.xml",
+    "documentreference-profile-spreadsheet.xml",
+    "communicationrequest-profile-spreadsheet.xml",
+    "timing-profile-spreadsheet.xml"
   ],
   "resources": {
     "OperationDefinition/Claim-submit":{
+    },
+    "StructureDefinition/profile-claim":{
+    },
+    "StructureDefinition/profile-claimresponse":{
+    },
+    "StructureDefinition/profile-organization-requestor":{
+    },
+    "StructureDefinition/profile-organization-umo":{
+    },
+    "StructureDefinition/profile-organization-careteam":{
+    },
+    "StructureDefinition/profile-practitioner-requestor":{
+    },
+    "StructureDefinition/profile-practitioner-careteam":{
+    },
+    "StructureDefinition/profile-practrole-requestor":{
+    },
+    "StructureDefinition/profile-coverage":{
+    },
+    "StructureDefinition/profile-patient-subscriber":{
+    },
+    "StructureDefinition/profile-patient-beneficiary":{
+    },
+    "StructureDefinition/profile-condition":{
+    },
+    "StructureDefinition/profile-location":{
+    },
+    "StructureDefinition/profile-timing":{
+    },
+    "StructureDefinition/profile-encounter":{
+    },
+    "StructureDefinition/profile-documentreference":{
+    },
+    "StructureDefinition/profile-communicationrequest":{
+    },
+    "CodeSystem/MilitaryStatus":{
+    },
+    "ValueSet/MilitaryStatus":{
+    },
+    "CodeSystem/CertificationType":{
+    },
+    "ValueSet/CertificationType":{
+    },
+    "CodeSystem/PASSupportingInfoType":{
+    },
+    "ValueSet/PASSupportingInfoType":{
     },
     "Bundle/pa-request-example":{
     }
