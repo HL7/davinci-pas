@@ -20,6 +20,149 @@
         </table>
     </p>
     <a name="2"> </a>
+    <h3>Profiles </h3>
+    <p>Profiles to be supported by EMRs and payor systems conforming to this implementation guide</p>
+    <p>
+        <table>
+            <tbody>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-claim.html">
+                        •  PAS Claim</a>
+                    </td>
+                    <td>PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-claimresponse.html">
+                        •  PAS Claim Response</a>
+                    </td>
+                    <td>PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-organization-requestor.html">
+                        •  PAS Requestor Organization</a>
+                    </td>
+                    <td>PAS constraints on Organization resource mandating support for elements relevant to the requestor of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-organization-umo.html">
+                        •  PAS UMO Organization</a>
+                    </td>
+                    <td>PAS constraints on Organization resource mandating support for elements relevant to the Utilization Management Organization of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-organization-careteam.html">
+                        •  PAS Care Team Organization</a>
+                    </td>
+                    <td>PAS constraints on Organization resource mandating support for elements relevant to an Organization forming part of a Care Team for a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-practitioner-requestor.html">
+                        •  PAS Requestor Practitioner</a>
+                    </td>
+                    <td>PAS constraints on Practitioner resource mandating support for elements relevant to the requestor of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-practitioner-careteam.html">
+                        •  PAS Care Team Practitioner</a>
+                    </td>
+                    <td>PAS constraints on Practitioner resource mandating support for elements relevant to an Practitioner forming part of a Care Team for a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-practrole-requestor.html">
+                        •  PAS Requestor PractitionerRole</a>
+                    </td>
+                    <td>PAS constraints on PractitionerRole resource mandating support for elements relevant to the requestor of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-coverage.html">
+                        •  PAS Coverage</a>
+                    </td>
+                    <td>PAS constraints on Coverage resource mandating support for elements relevant to the insurance of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-patient-subscriber.html">
+                        •  PAS Subscriber Patient</a>
+                    </td>
+                    <td>PAS constraints on Patient resource mandating support for elements relevant to the subscriber of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-patient-beneficiary.html">
+                        •  PAS Beneficiary Patient</a>
+                    </td>
+                    <td>PAS constraints on Patient resource mandating support for elements relevant to the beneficiary of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-condition.html">
+                        •  PAS Condition</a>
+                    </td>
+                    <td>PAS constraints on Condition resource mandating support for elements relevant to the diagnosis of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-location.html">
+                        •  PAS Location</a>
+                    </td>
+                    <td>PAS constraints on Location resource mandating support for elements relevant to the  of a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-timing.html">
+                        •  PAS Timing</a>
+                    </td>
+                    <td>PAS constraints on Timing datatype for elements relevant to a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-encounter.html">
+                        •  PAS Encounter</a>
+                    </td>
+                    <td>PAS constraints on Encounter resource for elements relevant to a institutional claim for a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-documentreference.html">
+                        •  PAS DocumentReference</a>
+                    </td>
+                    <td>PAS constraints on DocumentReference resource for additional information sent with a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-servicerequest.html">
+                        •  PAS ServiceRequest</a>
+                    </td>
+                    <td>PAS constraints on ServiceRequest resource for service level event information sent with a prior authorization request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="profile-communicationrequest.html">
+                        •  PAS CommunicationRequest</a>
+                    </td>
+                    <td>PAS constraints on CommunicationRequest resource for requesting additional information to be sent for a prior authorization request</td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+    <a name="3"> </a>
+    <h3>Extensions </h3>
+    <p>Extensions defined as part of this implementation guide</p>
+    <p>
+        <table>
+            <tbody/>
+        </table>
+    </p>
+    <a name="4"> </a>
     <h3>Terminology </h3>
     <p>Value Sets and/or code systems defined as part of this implementation guide</p>
     <p>
@@ -70,7 +213,7 @@
             </tbody>
         </table>
     </p>
-    <a name="3"> </a>
+    <a name="5"> </a>
     <h3>Example(s) </h3>
     <p>Example(s) showing the use of the CG profiles</p>
     <p>

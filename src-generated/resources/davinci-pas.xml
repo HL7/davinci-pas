@@ -80,15 +80,21 @@
                 
         </grouping>
             
-        <!-- Uncomment when we have some
-    <grouping id="profiles">
-      <name value="Profiles"/>
-      <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
-    </grouping>
-    <grouping id="extensions">
-      <name value="Extensions"/>
-      <description value="Extensions defined as part of this implementation guide"/>
-    </grouping>-->
+        <grouping id="profiles">
+                  
+            <name value="Profiles"/>
+                  
+            <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
+                
+        </grouping>
+            
+        <grouping id="extensions">
+                  
+            <name value="Extensions"/>
+                  
+            <description value="Extensions defined as part of this implementation guide"/>
+                
+        </grouping>
             
         <grouping id="terminology">
                   

@@ -73,9 +73,8 @@
     </extension>
     <grouping id="operations">
       <name value="Operations"/>
-      <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
+      <description value="Operations to be supported by EMRs and payor systems conforming to this implementation guide"/>
     </grouping>
-    <!-- Uncomment when we have some
     <grouping id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
@@ -83,7 +82,7 @@
     <grouping id="extensions">
       <name value="Extensions"/>
       <description value="Extensions defined as part of this implementation guide"/>
-    </grouping>-->
+    </grouping>
     <grouping id="terminology">
       <name value="Terminology"/>
       <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
