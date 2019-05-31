@@ -18,9 +18,9 @@
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>17440</WindowHeight>
   <WindowWidth>28040</WindowWidth>
-  <WindowTopX>11580</WindowTopX>
-  <WindowTopY>5460</WindowTopY>
-  <ActiveSheet>2</ActiveSheet>
+  <WindowTopX>16360</WindowTopX>
+  <WindowTopY>5340</WindowTopY>
+  <ActiveSheet>8</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1049,7 +1049,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="profile-claimresponse">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="17" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="28" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1233,7 +1233,49 @@
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">itemOutcome</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item.extension</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{#itemOutcome}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">itemDisposition</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item.extension</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{#itemDisposition}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">itemPreAuthPeriod</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item.extension</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{#itemPreAuthPeriod}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">itemPreAuthSurgicalOpinion</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item.extension</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{#preAuthSurgicalOpinion}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">itemPreAuthIssueDate</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item.extension</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{#preAuthIssueDate}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.item.noteNumber</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.processNote</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.processNote.number</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1254,6 +1296,18 @@
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Coverage){http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.error</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.error.itemSequence</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ClaimResponse.error.code</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
    <PageSetup>
@@ -1266,7 +1320,6 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -1286,7 +1339,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>14</ActiveRow>
+     <ActiveRow>16</ActiveRow>
      <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
@@ -4702,7 +4755,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><Data ss:Type="String">Resource</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse</Data><NamedCell
+    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse;ClaimResponse.item</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4732,7 +4785,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><Data ss:Type="String">Resource</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse</Data><NamedCell
+    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse;ClaimResponse.item</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4758,14 +4811,50 @@
     <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s129"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s129"><Data ss:Type="String">itemOutcome</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">Resource</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse.item</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">0..1</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">code</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">itemOutcome</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s111"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s111"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s129"><Data ss:Type="String">itemDisposition</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">Resource</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse.item</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">0..1</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">string</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4783,39 +4872,19 @@
     <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s129"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s129"><Data ss:Type="String">itemPreAuthPeriod</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">Resource</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">ClaimResponse.item</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">0..1</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s111"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s111"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s129"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">Period</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -5690,8 +5759,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>3</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -6694,12 +6763,12 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">itemOutcome</Data></Cell>
     <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s137"><Data ss:Type="String">value set</Data></Cell>
+    <Cell ss:StyleID="s137"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s137"/>
-    <Cell ss:StyleID="s137"/>
-    <Cell ss:StyleID="s137"/>
-    <Cell ss:StyleID="s137"/>
+    <Cell ss:StyleID="s137"><Data ss:Type="String">http://hl7.org/fhir/ValueSet/remittance-outcome</Data></Cell>
     <Cell ss:StyleID="s137"/>
     <Cell ss:StyleID="s137"/>
     <Cell ss:StyleID="s137"/>
@@ -7139,6 +7208,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -7158,8 +7228,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
-     <RangeSelection>R2</RangeSelection>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

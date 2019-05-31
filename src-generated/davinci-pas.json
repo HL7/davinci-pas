@@ -112,6 +112,7 @@
     "location-profile-spreadsheet.xml",
     "encounter-profile-spreadsheet.xml",
     "documentreference-profile-spreadsheet.xml",
+    "servicerequest-profile-spreadsheet.xml",
     "communicationrequest-profile-spreadsheet.xml",
     "timing-profile-spreadsheet.xml"
   ],
@@ -149,6 +150,8 @@
     "StructureDefinition/profile-encounter":{
     },
     "StructureDefinition/profile-documentreference":{
+    },
+    "StructureDefinition/profile-servicerequest":{
     },
     "StructureDefinition/profile-communicationrequest":{
     },

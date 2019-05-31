@@ -63,6 +63,9 @@
       <valueUri value="documentreference-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="servicerequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="communicationrequest-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -287,6 +290,18 @@
       </reference>
       <name value="PAS DocumentReference"/>
       <description value="PAS constraints on DocumentReference resource for additional information sent with a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-servicerequest"/>
+      </reference>
+      <name value="PAS ServiceRequest"/>
+      <description value="PAS constraints on ServiceRequest resource for service level event information sent with a prior authorization request"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
