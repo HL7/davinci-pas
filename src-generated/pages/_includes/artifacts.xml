@@ -5,7 +5,7 @@
     <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
     <a name="1"> </a>
     <h3>Operations </h3>
-    <p>Profiles to be supported by EMRs and payor systems conforming to this implementation guide</p>
+    <p>Operations to be supported by EMRs and payor systems conforming to this implementation guide</p>
     <p>
         <table>
             <tbody>
@@ -159,7 +159,22 @@
     <p>Extensions defined as part of this implementation guide</p>
     <p>
         <table>
-            <tbody/>
+            <tbody>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-procedureTiming.html">
+                        •  Procedure Timing</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify when requested events will occur.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-instutitionalEncounter.html">
+                        •  Institutional Encounter</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify information about a hospital admission.</td>
+                </tr>
+            </tbody>
         </table>
     </p>
     <a name="4"> </a>

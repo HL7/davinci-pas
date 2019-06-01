@@ -76,7 +76,7 @@
                   
             <name value="Operations"/>
                   
-            <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
+            <description value="Operations to be supported by EMRs and payor systems conforming to this implementation guide"/>
                 
         </grouping>
             
@@ -130,6 +130,8 @@
                 
         </resource>
             
+    
+    
     
     
     
@@ -434,38 +436,48 @@
                         <generation value="generated"/>
                     </page>
                     <page>
+                        <nameUrl value="extension-extension-procedureTiming.html"/>
+                        <ns19:title xmlns:ns19="http://hl7.org/fhir" value="Procedure Timing"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-instutitionalEncounter.html"/>
+                        <ns20:title xmlns:ns20="http://hl7.org/fhir" value="Institutional Encounter"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
                         <nameUrl value="MilitaryStatus.html"/>
-                        <ns19:title xmlns:ns19="http://hl7.org/fhir" value="PAS Coverage Military Status Code System"/>
+                        <ns21:title xmlns:ns21="http://hl7.org/fhir" value="PAS Coverage Military Status Code System"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-MilitaryStatus.html"/>
-                        <ns20:title xmlns:ns20="http://hl7.org/fhir" value="PAS Coverage Military Status Value Set"/>
+                        <ns22:title xmlns:ns22="http://hl7.org/fhir" value="PAS Coverage Military Status Value Set"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="CertificationType.html"/>
-                        <ns21:title xmlns:ns21="http://hl7.org/fhir" value="PAS Claim Certification Type Code System"/>
+                        <ns23:title xmlns:ns23="http://hl7.org/fhir" value="PAS Claim Certification Type Code System"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-CertificationType.html"/>
-                        <ns22:title xmlns:ns22="http://hl7.org/fhir" value="PAS Claim Certification Type Value Set"/>
+                        <ns24:title xmlns:ns24="http://hl7.org/fhir" value="PAS Claim Certification Type Value Set"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="PASSupportingInfoType.html"/>
-                        <ns23:title xmlns:ns23="http://hl7.org/fhir" value="PAS Claim Supporting Information Type"/>
+                        <ns25:title xmlns:ns25="http://hl7.org/fhir" value="PAS Claim Supporting Information Type"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-PASSupportingInfoType.html"/>
-                        <ns24:title xmlns:ns24="http://hl7.org/fhir" value="PAS Claim Supporting Information Type Value Set"/>
+                        <ns26:title xmlns:ns26="http://hl7.org/fhir" value="PAS Claim Supporting Information Type Value Set"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="pa-request-example.html"/>
-                        <ns25:title xmlns:ns25="http://hl7.org/fhir" value="PA Request example"/>
+                        <ns27:title xmlns:ns27="http://hl7.org/fhir" value="PA Request example"/>
                         <generation value="generated"/>
                     </page>
                 </page>

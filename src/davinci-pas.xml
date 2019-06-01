@@ -317,6 +317,30 @@
       <groupingId value="profiles"/>
     </resource>
     <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-procedureTiming"/>
+      </reference>
+      <name value="Procedure Timing"/>
+      <description value="Extension used on a Claim resource to identify when requested events will occur."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-instutitionalEncounter"/>
+      </reference>
+      <name value="Institutional Encounter"/>
+      <description value="Extension used on a Claim resource to identify information about a hospital admission."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
       <reference>
         <reference value="CodeSystem/MilitaryStatus"/>
       </reference>
