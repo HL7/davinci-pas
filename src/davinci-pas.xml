@@ -3,7 +3,7 @@
   <id value="davinci-pas"/>
   <url value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/davinci-pas"/>
   <name value="PriorAuthorizationSupport"/>
-  <title value="Da Vinci - PriorA uthorization Support"/>
+  <title value="Da Vinci - Prior Authorization Support"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Financial Management Work Group"/>
