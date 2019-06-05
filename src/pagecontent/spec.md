@@ -30,10 +30,6 @@ This implementation guide sets expectations for two types of systems:
 
 
 #### Profiles
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of prior authorization requests and responses.  The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}) and profiles for both are listed for each type of hook.  This version of the specification does not (yet) provide guidance for DSTU2 resources.
+This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of prior authorization requests and responses.
 
 The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](allartifacts.html) page.
-
-
-
-TODO

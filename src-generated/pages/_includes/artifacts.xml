@@ -169,7 +169,7 @@
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-instutitionalEncounter.html">
+                        <a href="extension-extension-institutionalEncounter.html">
                         •  Institutional Encounter</a>
                     </td>
                     <td>Extension used on a Claim resource to identify information about a hospital admission.</td>
@@ -183,34 +183,6 @@
     <p>
         <table>
             <tbody>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="MilitaryStatus.html">
-                        •  PAS Coverage Military Status Code System</a>
-                    </td>
-                    <td>Coverage Military Status Code System</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="valueset-MilitaryStatus.html">
-                        •  PAS Coverage Military Status Value Set</a>
-                    </td>
-                    <td>Coverage Military Status Value Set</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="CertificationType.html">
-                        •  PAS Claim Certification Type Code System</a>
-                    </td>
-                    <td>Claim Certification Type Code System</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="valueset-CertificationType.html">
-                        •  PAS Claim Certification Type Value Set</a>
-                    </td>
-                    <td>Claim Certification Type Value Set</td>
-                </tr>
                 <tr>
                     <td style="column-width:30%">
                         <a href="PASSupportingInfoType.html">

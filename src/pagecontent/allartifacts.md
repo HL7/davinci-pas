@@ -2,8 +2,6 @@ Complying with this implementation guide means complying with a number of profil
 
 The FHIR artifacts used by PAS are organized according to whether the content developed as part of the US Core implementation guides or is Da Vinci-specific.
 
-As a result, there are 2 different lists of artifacts - one for each of the US Core and Da Vinci implementation guides.
-
 ### Artifact Lists
 <table>
   <tr>
@@ -14,7 +12,7 @@ As a result, there are 2 different lists of artifacts - one for each of the US C
   </tr>
 </table>
 
-Additional information about the use of these artifacts, PAS for multiple FHIR versions and the use of US Core can be found in the [main specification](spec.html#profiles).
+Additional information about the use of these artifacts can be found in the [main specification](spec.html#profiles).
 
 
 These FHIR artifacts define the clinical data that can be submitted as part of a prior authorization submission and/or included as part of a prior authorization response using the [Claim submit](Claim-submit.html) operation.

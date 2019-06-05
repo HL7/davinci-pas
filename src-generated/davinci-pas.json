@@ -170,7 +170,7 @@
       "profile-xml": "extension-{{[id]}}.profile.xml.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
     },
-    "StructureDefinition/extension-instutitionalEncounter":{
+    "StructureDefinition/extension-institutionalEncounter":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",
@@ -184,14 +184,6 @@
       "examples": "extension-{{[id]}}-examples.html",
       "profile-xml": "extension-{{[id]}}.profile.xml.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
-    },
-    "CodeSystem/MilitaryStatus":{
-    },
-    "ValueSet/MilitaryStatus":{
-    },
-    "CodeSystem/CertificationType":{
-    },
-    "ValueSet/CertificationType":{
     },
     "CodeSystem/PASSupportingInfoType":{
     },

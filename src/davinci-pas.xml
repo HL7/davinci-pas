@@ -333,48 +333,12 @@
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-instutitionalEncounter"/>
+        <reference value="StructureDefinition/extension-institutionalEncounter"/>
       </reference>
       <name value="Institutional Encounter"/>
       <description value="Extension used on a Claim resource to identify information about a hospital admission."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/MilitaryStatus"/>
-      </reference>
-      <name value="PAS Coverage Military Status Code System"/>
-      <description value="Coverage Military Status Code System"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MilitaryStatus"/>
-      </reference>
-      <name value="PAS Coverage Military Status Value Set"/>
-      <description value="Coverage Military Status Value Set"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/CertificationType"/>
-      </reference>
-      <name value="PAS Claim Certification Type Code System"/>
-      <description value="Claim Certification Type Code System"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/CertificationType"/>
-      </reference>
-      <name value="PAS Claim Certification Type Value Set"/>
-      <description value="Claim Certification Type Value Set"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
     </resource>
     <resource>
       <reference>
