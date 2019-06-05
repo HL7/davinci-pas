@@ -18,9 +18,10 @@
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>17440</WindowHeight>
   <WindowWidth>28040</WindowWidth>
-  <WindowTopX>11580</WindowTopX>
-  <WindowTopY>5460</WindowTopY>
-  <ActiveSheet>5</ActiveSheet>
+  <WindowTopX>19720</WindowTopX>
+  <WindowTopY>900</WindowTopY>
+  <ActiveSheet>2</ActiveSheet>
+  <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1382,7 +1383,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">currentHealthCondition</Data></Cell>
@@ -1398,7 +1400,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">patientPrognosis</Data></Cell>
@@ -1414,7 +1417,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">releaseOfInformation</Data></Cell>
@@ -1430,7 +1434,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">delayReason</Data></Cell>
@@ -1446,7 +1451,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">lastMenstrualPeriod</Data></Cell>
@@ -1462,7 +1468,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timingDate</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">date</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">estimatedBirthDate</Data></Cell>
@@ -1478,7 +1485,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timingDate</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">date</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">onsetOfSymptoms</Data></Cell>
@@ -1528,7 +1536,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timingPeriod</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Period</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">additionalInformation</Data></Cell>
@@ -1567,7 +1576,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.diagnosis</Data></Cell>
@@ -1674,10 +1684,11 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>52</TopRowBottomPane>
+   <TopRowBottomPane>26</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -1694,8 +1705,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>82</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>64</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -6109,7 +6120,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
