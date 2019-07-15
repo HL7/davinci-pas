@@ -241,7 +241,7 @@
         <xsl:value-of select="concat('    {&#xa;      &quot;name&quot; : &quot;', translate($code, '-', '_'), '&quot;,&#xa;      &quot;version&quot; : &quot;', f:version/@value, 
         '&quot;,&#xa;      &quot;location&quot; : &quot;', f:uri/@value, '&quot;,&#xa;')"/>
         <xsl:for-each select="f:packageId">
-          <xsl:value-of select="concat('      &quot;package&quot; : &quot;', f:packageId/@value)"/>
+          <xsl:value-of select="concat('      &quot;package&quot; : &quot;', f:packageId/@value, '&quot;')"/>
         </xsl:for-each>
         <xsl:value-of select="'&#xa;    }'"/>
         <xsl:if test="position()!=last()">

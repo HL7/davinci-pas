@@ -28,12 +28,12 @@ prior to reading the rest of this implementation guide.
 * [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
 * [Base resource]({{site.data.fhir.path}}resource.html)
 
-This implementation guide supports the [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}index.html) versions of the FHIR standard. FHIR services based on STU3 are being moved into production by EMR vendors. R4 is just recently published and the goal is to ensure the implementation guide is aligned with the current direction of the FHIR standard. Initial implementations will focus on STU3.
+This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard. R4 is just recently published and the goal is to ensure the implementation guide is aligned with the current direction of the FHIR standard.
 
 This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in those Implementation Guides:
 <table>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (3.0.0 - R4 based)</a></td>
   </tr>
   <tr>
     <td><a href="http://hl7.org/fhir/us/core/STU2">US Core (2.0.0 - STU3 based)</a></td>
@@ -97,3 +97,5 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 </table>
 
 #### X12
+=======
+This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in that Implementation Guide: <a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a>
