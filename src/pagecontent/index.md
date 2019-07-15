@@ -24,6 +24,10 @@ This implementation guide is dependent on other specifications.  Please submit a
 <p>
 Individuals interested in participating in the Prior Authorization Support or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 </p>
+
+<p>
+Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.
+</p>
 </blockquote>
 
 

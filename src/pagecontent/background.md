@@ -95,3 +95,5 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     </td>
   </tr>
 </table>
+
+#### X12
