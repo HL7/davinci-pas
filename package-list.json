@@ -12,9 +12,9 @@
 			"current": true
 		}, {
 			"version": "0.1.0",
-			"date": "2019-06-21",
-			"descmd": "First public ballot - see [R4 Index](http://hl7.org/fhir/us/davinci-pas/2019Jul/index.html) and [R3 Index](http://hl7.org/fhir/us/davinci-pas/2019Jul/STU3/index.html)",
-			"path": "http://hl7.org/fhir/us/davinci-pas/2019Jul",
+			"date": "2019-08-09",
+			"descmd": "First public ballot",
+			"path": "http://hl7.org/fhir/us/davinci-pas/2019Sep",
 			"status": "ballot",
 			"sequence": "STU 1"
 		}
