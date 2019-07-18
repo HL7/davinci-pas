@@ -23,8 +23,8 @@
   <fhirVersion value="4.0.0"/>
   <dependsOn>
     <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core.r4"/>
-    <version value="current"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="3.0.0"/>
   </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
@@ -60,7 +60,7 @@
     </grouping>
     <grouping id="examples">
       <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the CG profiles"/>
+      <description value="Example(s) showing the use of the PCDE profiles"/>
     </grouping>
     <resource>
       <reference>

@@ -41,7 +41,7 @@
         <a href="{{site.data.info.assets}}artifacts.html">PAS-specific Artifacts</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a>
+        <a href="http://hl7.org/fhir/us/core/STU3">US Core (STU3 - R4 based)</a>
       </li>
     </ul>
   </li>  
@@ -52,9 +52,6 @@
     <ul class="dropdown-menu">
       <li>
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
-      </li>
-      <li>
-        <a target="_blank" href="http://hl7.org/fhir/us/core/2019Jan">US Core STU3 - draft <img src="external.png" style="text-align: baseline"/></a>
       </li>
     </ul>
   </li>

@@ -94,7 +94,7 @@
   "dependencyList": [
     {
       "name" : "core",
-      "version" : "current",
+      "version" : "3.0.0",
       "location" : "http://hl7.org/fhir/us/core",
       "package" : ""
     }

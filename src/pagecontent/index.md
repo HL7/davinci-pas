@@ -32,7 +32,15 @@ Note that this implementation guide is intended to support mapping between FHIR 
 
 
 ### Overview
-TODO - why this IG exists
+Prior authorization is an essential process in the management of healthcare costs by payer organizations.  However, the process of requesting and receiving prior authorizations can be slow and inefficient.  U.S. regulations mandate that X12 be used for communicating prior authorization requests and responses.  However, few electronic health record (EHR) systems have implemented this interface.  As a result, prior authorizations are often solicited by fax or by using payer-specific portals where clinicians re-key relevant information.  Fax submission requires manual transcription on the payer side - and may result in significant back-and-forth requesting additional information prior to a decision being made.  Re-keying information is inefficient and can result in data entry errors.
+
+This implementation guide strives to enable direct submission of prior authorization requests from EHR systems using a standard already widely supported by most EHRs - FHIR.  To meet regulatory requirements, these FHIR interfaces will communicate with an intermediary who, when necessary, can convert the FHIR requests to the corresponding X12 instances prior to passing the requests to the payer.  Responses are handled by a reverse mechanism (payer to intermediary as X12, then converted to FHIR and passed to the EHR).  Direct submission of prior authorization requests from the EHR will reduce costs for both providers and payers and result in faster prior authorization decisions - resulting in improved patient care and experience.
+
+When combined with the Da Vinci [Coverage requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides, direct submission of prior authorization requests will further increase efficiency by ensuring that authorizations are always sent when (and only when) necessary and that such requests will almost always contain all relevant information needed to make the authorization decision on initial submission.
+
+The implementation guide also defines capabilities around the management of prior authorization requests, including checking the status of a previously submitted request, revising a previously submitted request and cancelling a request.
+
+Note that all mappings between FHIR and X12 transactions developed as part of this project will be published by X12, not HL7, in order to respect X12 intellectual property.  X12 membership and/or payment may be required in order to access those mappings.
 
 
 ### Content and organization

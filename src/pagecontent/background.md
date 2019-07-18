@@ -1,12 +1,21 @@
 ### Da Vinci
-Da Vinci is an HL7-sponsored project that brings together the U.S. EHR vendor and Payer communities to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies.  The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities.  Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci).  Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
+Da Vinci is an HL7-sponsored project that brings together the U.S. payer ,providers, and technology suppliers (including EHR vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
+
+The process that Da Vinci has adopted includes: 
+1. identify business, clinical, technical and testing requirements, 
+2. develop and ballot a FHIR based implementation guide (IG),
+3. develop a reference implementation (RI) that is used to demonstrate that the concepts in the IG are possible to implement,
+4. pilot the standard
+5. support the production use of the IG to enable exchange of data to support interoperability for value-based care.
+
+Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
 
 ### Systems
 The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 
 **Client systems** are typically Electronic Medical Record (EMR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. pharmacy systems, dental systems, etc.)
 
-**Payer systems** (or servers) are systems that act on behalf of payer organizations and which process requests for prior authorizations or which relay those requests to downstream systems (and return back the resulting responses).
+**Server systems** (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
 
 ### Underlying technologies
 
@@ -44,58 +53,32 @@ This implementation guide also builds on the US Core Implementation Guide and im
 Implementers should also familiarize themselves with the FHIR resources used within the guide:
 <!-- TODO: update this table -->
 <table>
-  <thead>
+  <tbody>
     <tr>
-      <th>STU3</th>
-      <th>R4</th>
+      <td>
+        <a href="{{site.data.fhir.path}}appointment.html">Appointment</a><br/>
+        <a href="{{site.data.fhir.path}}coverage.html">Coverage</a><br/>
+        <a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a><br/>
+        <a href="{{site.data.fhir.path}}device.html">Device</a><br/>
+        <a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a><br/>
+        <a href="{{site.data.fhir.path}}encounter.html">Encounter</a><br/>
+        <a href="{{site.data.fhir.path}}location.html">Location</a><br/>
+        <a href="{{site.data.fhir.path}}organization.html">Organization</a><br/>
+        <a href="{{site.data.fhir.path}}medication.html">Medication</a><br/>
+        <a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a><br/>
+        <a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a><br/>
+        <a href="{{site.data.fhir.path}}patient.html">Patient</a><br/>
+        <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a><br/>
+        <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a><br/>
+        <a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a><br/>
+        <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a><br/>
+        <a href="{{site.data.fhir.path}}supplyrequest.html">SupplyRequest</a><br/>
+        <a href="{{site.data.fhir.path}}task.html">Task</a><br/>
+      </td>
     </tr>
-  </thead>
-  <tr>
-    <td>
-      <a href="http://hl7.org/fhir/STU3/appointment.html">Appointment</a><br/>
-      <a href="http://hl7.org/fhir/STU3/coverage.html">Coverage</a><br/>
-      <a href="http://hl7.org/fhir/STU3/communicationrequest.html">CommunicationRequest</a><br/>
-      <a href="http://hl7.org/fhir/STU3/device.html">Device</a><br/>
-      <a href="http://hl7.org/fhir/STU3/devicerequest.html">DeviceRequest</a><br/>
-      <a href="http://hl7.org/fhir/STU3/encounter.html">Encounter</a><br/>
-      <a href="http://hl7.org/fhir/STU3/location.html">Location</a><br/>
-      <a href="http://hl7.org/fhir/STU3/organization.html">Organization</a><br/>
-      <a href="http://hl7.org/fhir/STU3/medication.html">Medication</a><br/>
-      <a href="http://hl7.org/fhir/STU3/medicationrequest.html">MedicationRequest</a><br/>
-      <a href="http://hl7.org/fhir/STU3/nutritionorder.html">NutritionOrder</a><br/>
-      <a href="http://hl7.org/fhir/STU3/patient.html">Patient</a><br/>
-      <a href="http://hl7.org/fhir/STU3/practitioner.html">Practitioner</a><br/>
-      <a href="http://hl7.org/fhir/STU3/practitionerrole.html">PractitionerRole</a><br/>
-      <a href="http://hl7.org/fhir/STU3/procedurerequest.html">ProcedureRequest</a><br/>
-      <a href="http://hl7.org/fhir/STU3/questionnaire.html">Questionnaire</a><br/>
-      <a href="http://hl7.org/fhir/STU3/referralrequest.html">ReferralRequest</a><br/>
-      <a href="http://hl7.org/fhir/STU3/supplyrequest.html">SupplyRequest</a><br/>
-      <a href="http://hl7.org/fhir/STU3/task.html">Task</a><br/>
-      <a href="http://hl7.org/fhir/STU3/visionprescription.html">VisionPrescription</a>
-    </td>
-    <td>
-      <a href="{{site.data.fhir.path}}appointment.html">Appointment</a><br/>
-      <a href="{{site.data.fhir.path}}coverage.html">Coverage</a><br/>
-      <a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a><br/>
-      <a href="{{site.data.fhir.path}}device.html">Device</a><br/>
-      <a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a><br/>
-      <a href="{{site.data.fhir.path}}encounter.html">Encounter</a><br/>
-      <a href="{{site.data.fhir.path}}location.html">Location</a><br/>
-      <a href="{{site.data.fhir.path}}organization.html">Organization</a><br/>
-      <a href="{{site.data.fhir.path}}medication.html">Medication</a><br/>
-      <a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a><br/>
-      <a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a><br/>
-      <a href="{{site.data.fhir.path}}patient.html">Patient</a><br/>
-      <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a><br/>
-      <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a><br/>
-      <a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a><br/>
-      <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a><br/>
-      <a href="{{site.data.fhir.path}}supplyrequest.html">SupplyRequest</a><br/>
-      <a href="{{site.data.fhir.path}}task.html">Task</a><br/>
-    </td>
-  </tr>
+  </tbody>
+  <!-- TODO: Jean - is this complete?  Everything here appropriate?  And why stick it in a table if we're just using a single cell and line breaks? -->
 </table>
 
 #### X12
-=======
 This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in that Implementation Guide: <a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a>
