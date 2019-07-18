@@ -49,36 +49,5 @@ This implementation guide also builds on the US Core Implementation Guide and im
   </tr>
 </table>
 
-
-Implementers should also familiarize themselves with the FHIR resources used within the guide:
-<!-- TODO: update this table -->
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <a href="{{site.data.fhir.path}}appointment.html">Appointment</a><br/>
-        <a href="{{site.data.fhir.path}}coverage.html">Coverage</a><br/>
-        <a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a><br/>
-        <a href="{{site.data.fhir.path}}device.html">Device</a><br/>
-        <a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a><br/>
-        <a href="{{site.data.fhir.path}}encounter.html">Encounter</a><br/>
-        <a href="{{site.data.fhir.path}}location.html">Location</a><br/>
-        <a href="{{site.data.fhir.path}}organization.html">Organization</a><br/>
-        <a href="{{site.data.fhir.path}}medication.html">Medication</a><br/>
-        <a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a><br/>
-        <a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a><br/>
-        <a href="{{site.data.fhir.path}}patient.html">Patient</a><br/>
-        <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a><br/>
-        <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a><br/>
-        <a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a><br/>
-        <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a><br/>
-        <a href="{{site.data.fhir.path}}supplyrequest.html">SupplyRequest</a><br/>
-        <a href="{{site.data.fhir.path}}task.html">Task</a><br/>
-      </td>
-    </tr>
-  </tbody>
-  <!-- TODO: Jean - is this complete?  Everything here appropriate?  And why stick it in a table if we're just using a single cell and line breaks? -->
-</table>
-
 #### X12
-This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in that Implementation Guide: <a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a>
+TODO: Add some words about knowledge of X12
