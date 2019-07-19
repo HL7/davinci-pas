@@ -121,6 +121,8 @@
     },
     "StructureDefinition/profile-claim":{
     },
+    "StructureDefinition/profile-claim-update":{
+    },
     "StructureDefinition/profile-claimresponse":{
     },
     "StructureDefinition/profile-organization-requestor":{

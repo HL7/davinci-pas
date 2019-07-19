@@ -117,6 +117,18 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/profile-claim-update"/>
+      </reference>
+      <name value="PAS Claim Update"/>
+      <description value="PAS constraints on Claim resource when submitting an update to a previous PAS prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/profile-claimresponse"/>
       </reference>
       <name value="PAS Claim Response"/>
