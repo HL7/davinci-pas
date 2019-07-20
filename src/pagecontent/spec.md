@@ -48,6 +48,8 @@ This Bundle will then be sent as the sole payload of a [Claim/$submit](Claim-sub
 
 In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorizations are 'pended' will be returned.  The client (or other interested systems - e.g. patient, caregiver or performing provider systems) can then query the server endpoint for the final results using either a polling or subscription-based mechanism.  During this period of time, the same $submit operation can be used to request cancellation or modification of the prior authorization.
 
+***NOTE*** FHIR uses a pair of resources called Claim and ClaimResponse for multiple purposes - they are used for actual claim submission, but they are *also* used for managing prior authorizations and pre-determinations.  These are distinguished by the Claim.use code.  All references to Claim and ClaimResponse in this implementation guide are using it for the prior authorization purpose.
+
 #### Prior authorization submission
 The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  The Bundle can be encoded in either JSON or XML.  (Servers SHALL support both syntaxes.)  The first entry in the Bundle SHALL be a Claim resource complying with the [profile](profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries SHALL be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once.  Bundle.entry.fullUrl values SHALL be the URL at which the resource is available from the EHR if exposed via the client's REST interface and SHALL be of the form "urn:uuid:[some guid]" otherwise.  All GUIDs used SHALL be unique, including across independent prior authorization submissions - with the exception that the same resource instance being referenced in distinct prior authorization request Bundles can have the same GUID.
 
@@ -98,23 +100,42 @@ Note: There are use-cases for multiple systems potentially needing to check on t
 As a result, queries seeking the status of the prior authorization response may come from multiple systems.  Servers SHALL permit access to the prior authorization response to systems other than the original submitter.  They SHALL require a match on both patient coverage id (identifier on the Claim.patient) and prior authorization id (Claim.identifier) to ensure access is only granted to individuals who know both - and thus have demonstrated a need to know.
 
 ##### Polling
-In this approach, the Client regularly queries the Server to see if the status of the prior authorization has changed.  This is done by performing a query on the server's "Claim" endpoint, searching based on prior authorization identifier and patient coverage information.  The query should look like this:
+In this approach, the Client regularly queries the Server to see if the status of the prior authorization has changed.  This is done by performing a query on the server's "ClaimResponse" endpoint, searching based on prior authorization identifier and patient coverage information.  The query should look like this:
 
-<code>[base]/Claim?identifier=[claimid]&patient.identifier=[patientid]</code>
+<code>[base]/ClaimResponse?identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active</code>
 
-The search *can* also specify the identifier systems, but it is likely that downstream systems won't have access to these.  Systems wishing to reduce bandwidth impact can also filter using <code>_lastudated</code> to only retrieve the record if it has changed since the previous query.  Servers SHALL support this parameter.
+The authorizationresponseid is the ClaimResponse.identifier returned in the original synchronous response to the authorization request and represents the payer's identifier for that transaction.  The patient.identifier is the member identifier that was submitted as the patient.identifier in the original claim.
 
-Clients SHALL perform this query no more frequently than once every hour and SHOULD perform this query at least once every 12 hours.
+As per FHIR's [token]({{site.data.fhir.path}}search.html#token) search parameter, the identifiers can contain either only the Identifier.value or the Identifier.system.  Clients SHOULD send the Identifier.system if it is known, but MAY search by the Identifier.value strings only.  Systems wishing to reduce bandwidth impact can also filter using <code>_lastudated</code> to only retrieve the record if it has changed since the previous query.  Servers SHALL support this parameter.
 
-The intermediary SHOULD execute a 278i to return the status.  However, if the payer does not support that function, the intermediary SHALL return the most recent copy of the prior authorization response as received from the payer.
+Clients SHALL perform this query no more than 4 times within the first hour and no more frequently than once every hour after that.  They SHOULD perform this query at least once every 12 hours.
+
+<blockquote class="stu-note">
+<p>
+The project is seeking feedback on whether these maximum frequency requirements are acceptable.
+</p>
+</blockquote>
+
+The intermediary SHOULD execute a 278i to return the status.  However, if the payer does not support that function, the intermediary SHALL return the most recent copy of the prior authorization response as received from the payer.  (Note that in this latter case, the intermediary would need to persist prior authorization information and would therefore be a 'covered entity' for HIPPA purposes.)
+
+Notes:
+* the returned ClaimResponse SHALL include the current results for all submitted items, including any items changed or cancelled since the original authoriation request.  (See [Changing authorization requests](#changing_authorization_requests) below.)
+* if the authorizationresponseid submitted is not the 'current' authorization response identifier (because subsequent additions/changes/cancellations have been made to the prior authorization request), the returned record SHALL be the 'current' authorization response - even though it no longer has the same identifier.  I.e. If a search is for a 'replaced' prior authorization, the search result SHALL include the 'current' prior authorization response for the most recent replacing prior authorization request.
+
 
 ##### Subscription
-Subscriptions require more sophistication than polling, but reduce communication overhead by ensuring that queries only occur when data has changed.  When using the subscription retrieval mechanism, the client will POST a new Subscription instance to the server's [base]/Subscription endpoint.  The Subscription.criteria SHALL be of the form: "identifier=[claimid]&patient.identifier=[patientid]".  (Order of parameters with the search does not matter.)
+Subscriptions require more sophistication than polling, but reduce communication overhead by ensuring that queries only occur when data has changed.  When using the subscription retrieval mechanism, the client will POST a new Subscription instance to the server's [base]/Subscription endpoint.  The Subscription.criteria SHALL be of the form: "identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active".  (Order of parameters with the search does not matter.)
 
 * Servers supporting subscriptions SHALL expose this as part of the server's CapabilityStatement
 * Servers SHALL support both rest-hook and websocket channels
 * For security reasons, the channel.payload SHALL be left empty
 * Additional information about creating subscriptions can be found [here]({{site.data.fhir.path}}subscription.html)
+
+<blockquote class="stu-note">
+<p>
+The project is seeking feedback on whether the implementation guide should mandate one of the subscription channel approaches (either rest-hook or websocket).  Feedback for or against standardization as well as an expression of preference is welcome.
+</p>
+</blockquote>
 
 Once the subscription has been created, the server SHALL send a notification over the requested channel indicating that the prior authorization response has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
 
@@ -125,19 +146,41 @@ If the retrieved ClaimResponse has an outcome of 'complete' or 'error', the clie
 #### Checking status
 Systems other than the requesting system may choose not to poll or subscribe to the prior authorization response but instead to check the status at the request of a user.  This query is performed in the same manner as the polling query.
 
-#### Revising an open prior authorization
+#### Changing authorization requests
 In some cases, the needs associated with a prior authorization may change after the prior authorization request was submitted.  This might be a change to one of the services needed, the timeframe over which the service is provided, the quantity of the service or product, or even the elimination of the need for a given service.
 
-If a final prior authorization response has already been received, the only means to change an authorization is to submit a new prior authorization request - pointing to the original request using Coverage.related with a relationship code of 'prior'.
+There are four types of changes possible:
+* Cancelling the entire prior authorization (including all contained items)
+* Items within the request can be cancelled.  Cancelling an item means that the service is no longer required and no authorization is required.  Systems SHALL communicate a cancelation of an item if the corresponding order is cancelled and a final authorization determination has not yet been received for that item.  The objective is to avoid expending resources reviewing requests that are no longer needed.  Items may also need to be cancelled if a new item is being added that replaces them. (E.g. to avoid issues with a payer having concerns about duplicated therapy.)
+* Certain elements can be revised within a previously submitted item.  Specifically, the Claim.billablePeriod, Claim.item.serviced[x], Claim.item.quantity and Claim.item.net.  This may occur for claims that are pended or claims for which a final authorization decision has been made.  Typically this will be done if there's a need to extend the time-period and/or increase the quantity.  Other types of changes are accomplished by cancelling an existing item and adding a new item.
+* Additional items and/or supporting documentation can be added to the prior authorization request.  This is appropriate if the added items share the same context and should be evaluated in conjuction with the other items in the previously submitted authorization request.  It is also appropriate if the new supporting documentation helps provide justification for the request.
 
-However, if a final response has not yet been received, it may be necessary to 'update' the previously submitted prior authorization request.  This is handled by posting a new Bundle containing the original content as well as any revisions using the same $submit operation as when submitting an original prior authorization request.  The Claim.identifier SHALL be the same as in the original prior authorization request.
+In the first case, the Bundle is resubmitted using the $submit operation with the status code changed to 'cancelled'.  In all other cases, the change is requested by creating a *new* Bundle containing a *new* Claim resource with its own unique Claim.identifier and posting it using the $submit operation.  That resource will point to the previous Claim using the Claim.related element.  The relationship type will be 'replaces'.  The new Claim instance will comply with the [Revised Prior Authorization](todo) profile.
 
-The intermediary system will then compare the revised submission with the original submission and will submit a new 278 with cancelation items and new items as necessary to achieve the desired revisions.  It may also create additional unsolicited 275s.
+From an X12 perspective, only those items/attachments that are being added/cancelled/revised need to be present.  From an HL7 perspective, resources are generally represented as a cohesive whole, not a set of deltas from a previous resource.  This standard therefore provides two different mechanisms for representing the revised prior authorization request:
 
-#### Cancelling an prior authorization
-For efficiency reasons, if a provider determines that a prior authorization is no longer necessary, they SHOULD submit a cancellation (so that the payer is no longer investing administrative effort in reviewing a request that is unnecessary).  To cancel a claim, the client invokes the $submit operation, again using the same Claim.identifier, but in this situation asserting a Claim.status of cancelled.  The server SHALL return a ClaimResponse Bundle where the ClaimResponse.status is 'cancelled'
+##### Full Request
+In this case, the prior authorization request is handled in a typical FHIR manner and *all* items and supporting information is included in the Bundle - including items that have not changed at all.  Changed information is flagged as follows:
+* Any items within the Claim that have been cancelled (where the cancellation is at the item level, not at the whole prior authorization level) will be flagged with the [cancelled](todo) modifierExtension.  This indicates that the item is no longer actually part of the prior authorization request and is included only to distinguish it as 'cancelled'.  Note that if an item was cancelled previously, it will still have a 'cancelled' modifier extension, even though the cancellation is not new.
+* All items and supportingInfo elements that have been added or changed (including flagging them as cancelled) must be marked with a [changed](todo) extension that indicates that the element was changed and what type of change has happened.  (Newly marking an item as cancelled is considered a 'change'.)  Only the items that have changed in this submission will be marked with the 'changed' extension.  Elements that were previously added, modified or cancelled will not be marked as changes unless they have been further changed in this version of the prior authorization.
 
-Todo: what does this map to in X12?
+The intermediary will create 278 and/or 275 submissions that instantiate the changes (by looking for those items and supportingInfo elements) and will ignore the unchanged items.
+
+The benefit of this approach is that it is consistent with the way the prior authorization would need to be passed around if ever shared in a RESTful manner.  However, it can be bandwidth intensive if the prior authorization contains a large number of items, but only a small number of those have changed.  Unfortunately, the typical FHIR [patch]({{site.data.fhir.path}}http.html#patch) mechanism cannot be used in this implementation guide because the intermediaries do not have (and cannot have for regulatory reasons) a locally stored copy of the original prior authorization, nor any mechanism to retrieve one.
+
+##### Differential Request
+In this case, only the Claim, related resources needed to support the Claim (e.g. submitting organization) and those items and supportingInfo elements that have actually been changed/added are included.  I.e. The Claim instance doesn't represent the full prior authorization request, but only the overall prior authorization metadata and the subset of elements that are different.  The submitted Bundle will be identical to that [above](#Full_Request), however it will omit all items that do not have a [changed](todo) extension.  It will also exclude any resources in the Bundle that are now no longer needed because the references to them have been removed with the of the removal of the non-changed Claim.item and/or Claim.supportingInfo elements.
+
+Note that if the change is to cancel the entire request, in the differential approach, there is no need to send *any* items or supporting Info.
+
+Because this Claim instance doesn't represent the 'full' authorization request, but only a subset, the Claim instance SHALL also declare a [security tag]({{site.data.fhir.path}}resource-definitions.html#Meta.security) with a value of [SUBSETTED]({{site.data.fhir.path}}v3/ObservationValue/cs.html#v3-ObservationValue-SUBSETTED) to make clear that the resource is incomplete.
+
+##### Responses to changed prior authorization requests
+Just as the submission of a changed prior authorization request can be submitted in two different modes, a payer can choose to respond in two different modes.  Some payers may include responses for all items in the authorization.  Others might only include responses for those items that were specifically changed.  (In theory, some payers could also return the items that were changed as well as those that are still pended and thus considered 'open'.)  As for the request, if a ClaimResponse does not contain items corresponding to *all* that are part of the revised prior authorization (including those cancelled or unmodified), it SHALL declare a [security tag]({{site.data.fhir.path}}resource-definitions.html#Meta.security) with a value of [SUBSETTED]({{site.data.fhir.path}}v3/ObservationValue/cs.html#v3-ObservationValue-SUBSETTED) to make clear that the resource is incomplete.
+
+The intermediary would populate the ClaimResponse Bundle based on the approach the payer had chosen in their 278 response.
+
+NOTE: When querying for the current status of a prior authorization, the prior authorization response SHALL include all items, even if the identifier queried against corresponds to a prior authorization response whose synchronous response was a differential.  For example, if a prior authorization revision was submitted changing one item out of four, the synchronous prior authorization response might only contain one item (and a subsetted flag).  However, a subsequent query for the status of that prior authorization would always return a prior authorization resource that contained all four items.
 
 #### Additional notes
 1. PAS servers SHALL ensure that prior authorizations that were initially pended remain available for query for at least 6 months after the anticipated completion of the services whose authorization was requested.
