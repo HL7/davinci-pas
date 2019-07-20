@@ -5,7 +5,9 @@ The PA process involves determining if a proposed treatment for a specific condi
 
 If authorization is required and documentation is necessary to substantiate the need for the service, the specific documentation is requested.  The documentation may take the form of attestations by the provider, diagnoses, results of specific diagnostic tests, prior treatment that has been tried and failed, specific studies that need to be performed and other specific documentation such as progress notes or discharge summaries.
 
-Currently, under HIPAA, providers and payers are required to use the 5010 version of the ASC X12 278 request transaction to request prior authorization and the 278 response to respond to that request.  While the X12 275,  for additional documentation, is not currently required it is considered reasonable and appropriate to use this X12 transaction to support the exchange of the additional information that is required for prior authorization.
+Clinicians and their office staff spend hours each week trying to verify coverage requirements for specific treatments, , submitting prior authorization requests, following up on prior authorization requests, transmitting supporting documentation to support follow-up requests for information and then communicating the prior authorization final decision within the care team and the patient. Automating even a few steps of the prior authorization process could make the work of healthcare team members across the country much easier.
+
+Currently, under HIPAA, providers and payers are required to use the 5010 version of the ASC X12 278 request transaction to request prior authorization and the 278 response to respond to that request.  (See further details on relevant HIPAA requirements [here](hipaa.html).)  While the X12 275,  for additional documentation, is not currently required it is considered reasonable and appropriate to use this X12 transaction to support the exchange of the additional information that is required for prior authorization.
 
 However, adoption of X12 by EHR implementers has been low.  Discussion with such implementers has suggested that a FHIR-based process for submitting prior authorization requests would have significantly higher uptake.  This implementation guide attempts to do that while still retaining compliance with HIPPA requirements.
 
@@ -20,7 +22,9 @@ TODO:
 ### Business Requirements
 The objective of implementation guide is to provide a vehicle for automation of a prior authorization request and response within the clinical workflow of the provider.  The IG uses the FHIR standard as the basis for assembling the information necessary to substantiate the need for a particular treatment and submitting that information and the request for prior authorization to an intermediary end point.  That endpoint is responsible for ensuring that any HIPAA requirements are met (see above). The response from the payer is intended to come back to that intermediary endpoint and be available to the providers EHR solution using the FHIR  standard.  The goal is to provide real time prior authorization, where possible, in the provider's clinical workflow.
 
-Current industry payer leaders in automating prior authorization indicate that it is possible to achieve a real-time response to the PA request in up to 80% of prior authorizations.  In cases where real time prior authorization is not possible, the payer can provide an indication (PEND) in real-time that the response has been delayed for further review and the results can be delivered later.
+Current industry payer leaders in automating prior authorization indicate that it is possible to achieve a real-time response to the PA request in up to 80% of prior authorizations.  In cases where real time prior authorization is not possible, the payer can provide an indication (PEND) in real-time that the response has been delayed for further review and the results will be delivered later.
+
+Currently, the overwhelming majority of real-time responses to the PA request are PEND. This is, in a large part, due to the need for additional documentation.  By using the combination of the DTR IG and this IG to provide the documentation with the PA request, we expect payers to enable real-time response to significantly more PA requests.
 
 This implementation guide also supports business requirements around the management of prior authorizations, including checking on the status of 'pended' authorization requests (by the ordering and/or performing providres), cancelling previously submitted prior authorization requests and updating prior authorization requests to reflect changes in clinical need (e.g. changes to the requested quantity or time-period).
 
@@ -46,7 +50,7 @@ As a result, with DTR, it is possible to minimize or eliminate the need for mult
 
 Information gathered to support prior authorization is expected to be stored in the EHR in addition to being used as part of the prior authorization request process.
 
-Also see the section below on [supporting information](#supporting_information)
+Also see the section below on [supporting information](#supporting-information)
 
 #### Submit prior authorization
 The EHR may choose to allow the ordering provider to review the information submitted as part of the prior authorization request and/or determine whether or not such a request should be submitted.  However, this is not mandated by this implementation guide.

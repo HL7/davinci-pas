@@ -17,6 +17,9 @@
         <a href="{{site.data.info.assets}}background.html">Technical Background</a>
       </li>
       <li>
+        <a href="{{site.data.info.assets}}hipaa.html">HIPAA Regulations</a>
+      </li>
+      <li>
         <a href="{{site.data.info.assets}}spec.html">
           <b>Formal Specification</b>
         </a>
