@@ -72,6 +72,7 @@
     
     
     
+    
         <grouping id="operations">
                   
             <name value="Operations"/>
@@ -129,7 +130,11 @@
             <groupingId value="operations"/>
                 
         </resource>
+        	
+	
+        <!-- Profiles -->
             
+    
     
     
     
@@ -339,228 +344,233 @@
                         <generation value="generated"/>
                     </page>
                     <page>
+                        <nameUrl value="profile-pas-bundle.html"/>
+                        <ns1:title xmlns:ns1="http://hl7.org/fhir" value="PAS Bundle"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
                         <nameUrl value="profile-claim.html"/>
-                        <ns1:title xmlns:ns1="http://hl7.org/fhir" value="PAS Claim"/>
+                        <ns2:title xmlns:ns2="http://hl7.org/fhir" value="PAS Claim"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-claim-update.html"/>
-                        <ns2:title xmlns:ns2="http://hl7.org/fhir" value="PAS Claim Update"/>
+                        <ns3:title xmlns:ns3="http://hl7.org/fhir" value="PAS Claim Update"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-claimresponse.html"/>
-                        <ns3:title xmlns:ns3="http://hl7.org/fhir" value="PAS Claim Response"/>
+                        <ns4:title xmlns:ns4="http://hl7.org/fhir" value="PAS Claim Response"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-organization-requestor.html"/>
-                        <ns4:title xmlns:ns4="http://hl7.org/fhir" value="PAS Requestor Organization"/>
+                        <ns5:title xmlns:ns5="http://hl7.org/fhir" value="PAS Requestor Organization"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-organization-umo.html"/>
-                        <ns5:title xmlns:ns5="http://hl7.org/fhir" value="PAS UMO Organization"/>
+                        <ns6:title xmlns:ns6="http://hl7.org/fhir" value="PAS UMO Organization"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-organization-careteam.html"/>
-                        <ns6:title xmlns:ns6="http://hl7.org/fhir" value="PAS Care Team Organization"/>
+                        <ns7:title xmlns:ns7="http://hl7.org/fhir" value="PAS Care Team Organization"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-practitioner-requestor.html"/>
-                        <ns7:title xmlns:ns7="http://hl7.org/fhir" value="PAS Requestor Practitioner"/>
+                        <ns8:title xmlns:ns8="http://hl7.org/fhir" value="PAS Requestor Practitioner"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-practitioner-careteam.html"/>
-                        <ns8:title xmlns:ns8="http://hl7.org/fhir" value="PAS Care Team Practitioner"/>
+                        <ns9:title xmlns:ns9="http://hl7.org/fhir" value="PAS Care Team Practitioner"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-practrole-requestor.html"/>
-                        <ns9:title xmlns:ns9="http://hl7.org/fhir" value="PAS Requestor PractitionerRole"/>
+                        <ns10:title xmlns:ns10="http://hl7.org/fhir" value="PAS Requestor PractitionerRole"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-coverage.html"/>
-                        <ns10:title xmlns:ns10="http://hl7.org/fhir" value="PAS Coverage"/>
+                        <ns11:title xmlns:ns11="http://hl7.org/fhir" value="PAS Coverage"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-patient-subscriber.html"/>
-                        <ns11:title xmlns:ns11="http://hl7.org/fhir" value="PAS Subscriber Patient"/>
+                        <ns12:title xmlns:ns12="http://hl7.org/fhir" value="PAS Subscriber Patient"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-patient-beneficiary.html"/>
-                        <ns12:title xmlns:ns12="http://hl7.org/fhir" value="PAS Beneficiary Patient"/>
+                        <ns13:title xmlns:ns13="http://hl7.org/fhir" value="PAS Beneficiary Patient"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-condition.html"/>
-                        <ns13:title xmlns:ns13="http://hl7.org/fhir" value="PAS Condition"/>
+                        <ns14:title xmlns:ns14="http://hl7.org/fhir" value="PAS Condition"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-location.html"/>
-                        <ns14:title xmlns:ns14="http://hl7.org/fhir" value="PAS Location"/>
+                        <ns15:title xmlns:ns15="http://hl7.org/fhir" value="PAS Location"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-timing.html"/>
-                        <ns15:title xmlns:ns15="http://hl7.org/fhir" value="PAS Timing"/>
+                        <ns16:title xmlns:ns16="http://hl7.org/fhir" value="PAS Timing"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-encounter.html"/>
-                        <ns16:title xmlns:ns16="http://hl7.org/fhir" value="PAS Encounter"/>
+                        <ns17:title xmlns:ns17="http://hl7.org/fhir" value="PAS Encounter"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-documentreference.html"/>
-                        <ns17:title xmlns:ns17="http://hl7.org/fhir" value="PAS DocumentReference"/>
+                        <ns18:title xmlns:ns18="http://hl7.org/fhir" value="PAS DocumentReference"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-servicerequest.html"/>
-                        <ns18:title xmlns:ns18="http://hl7.org/fhir" value="PAS ServiceRequest"/>
+                        <ns19:title xmlns:ns19="http://hl7.org/fhir" value="PAS ServiceRequest"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="profile-communicationrequest.html"/>
-                        <ns19:title xmlns:ns19="http://hl7.org/fhir" value="PAS CommunicationRequest"/>
+                        <ns20:title xmlns:ns20="http://hl7.org/fhir" value="PAS CommunicationRequest"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-serviceTiming.html"/>
-                        <ns20:title xmlns:ns20="http://hl7.org/fhir" value="Service Event Timing"/>
+                        <ns21:title xmlns:ns21="http://hl7.org/fhir" value="Service Event Timing"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-institutionalEncounter.html"/>
-                        <ns21:title xmlns:ns21="http://hl7.org/fhir" value="Institutional Encounter"/>
+                        <ns22:title xmlns:ns22="http://hl7.org/fhir" value="Institutional Encounter"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-certificationType.html"/>
-                        <ns22:title xmlns:ns22="http://hl7.org/fhir" value="Certification Type"/>
+                        <ns23:title xmlns:ns23="http://hl7.org/fhir" value="Certification Type"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-requestedService.html"/>
-                        <ns23:title xmlns:ns23="http://hl7.org/fhir" value="Requested Service Detail"/>
+                        <ns24:title xmlns:ns24="http://hl7.org/fhir" value="Requested Service Detail"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-accomodationRate.html"/>
-                        <ns24:title xmlns:ns24="http://hl7.org/fhir" value="Accomodation Rate"/>
+                        <ns25:title xmlns:ns25="http://hl7.org/fhir" value="Accomodation Rate"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-servicePriority.html"/>
-                        <ns25:title xmlns:ns25="http://hl7.org/fhir" value="Service Priority"/>
+                        <ns26:title xmlns:ns26="http://hl7.org/fhir" value="Service Priority"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-infoChanged.html"/>
-                        <ns26:title xmlns:ns26="http://hl7.org/fhir" value="Information Changed Indicator"/>
+                        <ns27:title xmlns:ns27="http://hl7.org/fhir" value="Information Changed Indicator"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-itemCancelled.html"/>
-                        <ns27:title xmlns:ns27="http://hl7.org/fhir" value="Item Cancelled Indicator"/>
+                        <ns28:title xmlns:ns28="http://hl7.org/fhir" value="Item Cancelled Indicator"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-preAuthSurgicalOpinion.html"/>
-                        <ns28:title xmlns:ns28="http://hl7.org/fhir" value="Pre-Authorization Surgical Opinion Required"/>
+                        <ns29:title xmlns:ns29="http://hl7.org/fhir" value="Pre-Authorization Surgical Opinion Required"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-preAuthIssueDate.html"/>
-                        <ns29:title xmlns:ns29="http://hl7.org/fhir" value="Authorization Issue Date"/>
+                        <ns30:title xmlns:ns30="http://hl7.org/fhir" value="Authorization Issue Date"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-itemReference.html"/>
-                        <ns30:title xmlns:ns30="http://hl7.org/fhir" value="Item Reference Identifier"/>
+                        <ns31:title xmlns:ns31="http://hl7.org/fhir" value="Item Reference Identifier"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-itemOutcome.html"/>
-                        <ns31:title xmlns:ns31="http://hl7.org/fhir" value="Item Outcome Code"/>
+                        <ns32:title xmlns:ns32="http://hl7.org/fhir" value="Item Outcome Code"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-itemDisposition.html"/>
-                        <ns32:title xmlns:ns32="http://hl7.org/fhir" value="Item Disposition"/>
+                        <ns33:title xmlns:ns33="http://hl7.org/fhir" value="Item Disposition"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-itemPreAuthPeriod.html"/>
-                        <ns33:title xmlns:ns33="http://hl7.org/fhir" value="Item Pre-Authorization Period"/>
+                        <ns34:title xmlns:ns34="http://hl7.org/fhir" value="Item Pre-Authorization Period"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-reportTransmission.html"/>
-                        <ns34:title xmlns:ns34="http://hl7.org/fhir" value="Report Transmission Mode"/>
+                        <ns35:title xmlns:ns35="http://hl7.org/fhir" value="Report Transmission Mode"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-patientStatus.html"/>
-                        <ns35:title xmlns:ns35="http://hl7.org/fhir" value="Patient Hospitalization Status"/>
+                        <ns36:title xmlns:ns36="http://hl7.org/fhir" value="Patient Hospitalization Status"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-nursingHomeResidentialStatus.html"/>
-                        <ns36:title xmlns:ns36="http://hl7.org/fhir" value="Patient Nursing Home Residential Status"/>
+                        <ns37:title xmlns:ns37="http://hl7.org/fhir" value="Patient Nursing Home Residential Status"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-epsdtIndicator.html"/>
-                        <ns37:title xmlns:ns37="http://hl7.org/fhir" value="EPSDT Involvement Indicator"/>
+                        <ns38:title xmlns:ns38="http://hl7.org/fhir" value="EPSDT Involvement Indicator"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-nursingHomeLevelOfCare.html"/>
-                        <ns38:title xmlns:ns38="http://hl7.org/fhir" value="Nursing Home Level of Care"/>
+                        <ns39:title xmlns:ns39="http://hl7.org/fhir" value="Nursing Home Level of Care"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-calendarPattern.html"/>
-                        <ns39:title xmlns:ns39="http://hl7.org/fhir" value="Calendar Pattern Code"/>
+                        <ns40:title xmlns:ns40="http://hl7.org/fhir" value="Calendar Pattern Code"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="extension-extension-deliveryPattern.html"/>
-                        <ns40:title xmlns:ns40="http://hl7.org/fhir" value="Delivery Pattern Code"/>
+                        <ns41:title xmlns:ns41="http://hl7.org/fhir" value="Delivery Pattern Code"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="PASSupportingInfoType.html"/>
-                        <ns41:title xmlns:ns41="http://hl7.org/fhir" value="PAS Claim Supporting Information Type"/>
+                        <ns42:title xmlns:ns42="http://hl7.org/fhir" value="PAS Claim Supporting Information Type"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-PASSupportingInfoType.html"/>
-                        <ns42:title xmlns:ns42="http://hl7.org/fhir" value="PAS Claim Supporting Information Type Value Set"/>
+                        <ns43:title xmlns:ns43="http://hl7.org/fhir" value="PAS Claim Supporting Information Type Value Set"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="PASInformationChangeMode.html"/>
-                        <ns43:title xmlns:ns43="http://hl7.org/fhir" value="PAS Information Change Mode"/>
+                        <ns44:title xmlns:ns44="http://hl7.org/fhir" value="PAS Information Change Mode"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-PASInformationChangeMode.html"/>
-                        <ns44:title xmlns:ns44="http://hl7.org/fhir" value="PAS Information Change Mode Value Set"/>
+                        <ns45:title xmlns:ns45="http://hl7.org/fhir" value="PAS Information Change Mode Value Set"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="pa-request-example.html"/>
-                        <ns45:title xmlns:ns45="http://hl7.org/fhir" value="PA Request example"/>
+                        <ns46:title xmlns:ns46="http://hl7.org/fhir" value="PA Request example"/>
                         <generation value="generated"/>
                     </page>
                 </page>

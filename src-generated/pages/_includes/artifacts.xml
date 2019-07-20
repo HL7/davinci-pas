@@ -27,6 +27,13 @@
             <tbody>
                 <tr>
                     <td style="column-width:30%">
+                        <a href="profile-pas-bundle.html">
+                        •  PAS Bundle</a>
+                    </td>
+                    <td>PAS constraints on Bundle resource ensuring that a claim/claim update/claim response resource is present and that non-supported elements are not.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
                         <a href="profile-claim.html">
                         •  PAS Claim</a>
                     </td>

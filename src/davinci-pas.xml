@@ -30,6 +30,9 @@
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="bundle-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="claim-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -99,6 +102,20 @@
       <description value="PAS constraints on the generic Claim/$submit operation"/>
       <exampleBoolean value="false"/>
       <groupingId value="operations"/>
+    </resource>
+	
+	<!-- Profiles -->
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-pas-bundle"/>
+      </reference>
+      <name value="PAS Bundle"/>
+      <description value="PAS constraints on Bundle resource ensuring that a claim/claim update/claim response resource is present and that non-supported elements are not."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">

@@ -101,6 +101,7 @@
   ],
   "source": "davinci-pas.xml",
   "spreadsheets": [
+    "bundle-profile-spreadsheet.xml",
     "claim-profile-spreadsheet.xml",
     "claimresponse-profile-spreadsheet.xml",
     "practitionerrole-profile-spreadsheet.xml",
@@ -118,6 +119,8 @@
   ],
   "resources": {
     "OperationDefinition/Claim-submit":{
+    },
+    "StructureDefinition/profile-pas-bundle":{
     },
     "StructureDefinition/profile-claim":{
     },
