@@ -148,9 +148,35 @@
     
     
     
+	
+	
+        <!-- Extensions -->
+            
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+	
+	
+        <!-- Terminology -->
+            
         <resource>
                   
             <reference>
@@ -187,6 +213,44 @@
                 
         </resource>
             
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="CodeSystem/PASInformationChangeMode"/>
+                      
+            </reference>
+                  
+            <name value="PAS Information Change Mode"/>
+                  
+            <description value="Information Change Mode Code System"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="terminology"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="ValueSet/PASInformationChangeMode"/>
+                      
+            </reference>
+                  
+            <name value="PAS Information Change Mode Value Set"/>
+                  
+            <description value="Information Change Mode Value Set"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="terminology"/>
+                
+        </resource>
+        	
+	
+    
         <resource>
                   
             <reference>
@@ -370,8 +434,8 @@
                         <generation value="generated"/>
                     </page>
                     <page>
-                        <nameUrl value="extension-extension-procedureTiming.html"/>
-                        <ns20:title xmlns:ns20="http://hl7.org/fhir" value="Procedure Timing"/>
+                        <nameUrl value="extension-extension-serviceTiming.html"/>
+                        <ns20:title xmlns:ns20="http://hl7.org/fhir" value="Service Event Timing"/>
                         <generation value="generated"/>
                     </page>
                     <page>
@@ -380,18 +444,123 @@
                         <generation value="generated"/>
                     </page>
                     <page>
+                        <nameUrl value="extension-extension-certificationType.html"/>
+                        <ns22:title xmlns:ns22="http://hl7.org/fhir" value="Certification Type"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-requestedService.html"/>
+                        <ns23:title xmlns:ns23="http://hl7.org/fhir" value="Requested Service Detail"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-accomodationRate.html"/>
+                        <ns24:title xmlns:ns24="http://hl7.org/fhir" value="Accomodation Rate"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-servicePriority.html"/>
+                        <ns25:title xmlns:ns25="http://hl7.org/fhir" value="Service Priority"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-infoChanged.html"/>
+                        <ns26:title xmlns:ns26="http://hl7.org/fhir" value="Information Changed Indicator"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-itemCancelled.html"/>
+                        <ns27:title xmlns:ns27="http://hl7.org/fhir" value="Item Cancelled Indicator"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-preAuthSurgicalOpinion.html"/>
+                        <ns28:title xmlns:ns28="http://hl7.org/fhir" value="Pre-Authorization Surgical Opinion Required"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-preAuthIssueDate.html"/>
+                        <ns29:title xmlns:ns29="http://hl7.org/fhir" value="Authorization Issue Date"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-itemReference.html"/>
+                        <ns30:title xmlns:ns30="http://hl7.org/fhir" value="Item Reference Identifier"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-itemOutcome.html"/>
+                        <ns31:title xmlns:ns31="http://hl7.org/fhir" value="Item Outcome Code"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-itemDisposition.html"/>
+                        <ns32:title xmlns:ns32="http://hl7.org/fhir" value="Item Disposition"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-itemPreAuthPeriod.html"/>
+                        <ns33:title xmlns:ns33="http://hl7.org/fhir" value="Item Pre-Authorization Period"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-reportTransmission.html"/>
+                        <ns34:title xmlns:ns34="http://hl7.org/fhir" value="Report Transmission Mode"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-patientStatus.html"/>
+                        <ns35:title xmlns:ns35="http://hl7.org/fhir" value="Patient Hospitalization Status"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-nursingHomeResidentialStatus.html"/>
+                        <ns36:title xmlns:ns36="http://hl7.org/fhir" value="Patient Nursing Home Residential Status"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-epsdtIndicator.html"/>
+                        <ns37:title xmlns:ns37="http://hl7.org/fhir" value="EPSDT Involvement Indicator"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-nursingHomeLevelOfCare.html"/>
+                        <ns38:title xmlns:ns38="http://hl7.org/fhir" value="Nursing Home Level of Care"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-calendarPattern.html"/>
+                        <ns39:title xmlns:ns39="http://hl7.org/fhir" value="Calendar Pattern Code"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="extension-extension-deliveryPattern.html"/>
+                        <ns40:title xmlns:ns40="http://hl7.org/fhir" value="Delivery Pattern Code"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
                         <nameUrl value="PASSupportingInfoType.html"/>
-                        <ns22:title xmlns:ns22="http://hl7.org/fhir" value="PAS Claim Supporting Information Type"/>
+                        <ns41:title xmlns:ns41="http://hl7.org/fhir" value="PAS Claim Supporting Information Type"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-PASSupportingInfoType.html"/>
-                        <ns23:title xmlns:ns23="http://hl7.org/fhir" value="PAS Claim Supporting Information Type Value Set"/>
+                        <ns42:title xmlns:ns42="http://hl7.org/fhir" value="PAS Claim Supporting Information Type Value Set"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="PASInformationChangeMode.html"/>
+                        <ns43:title xmlns:ns43="http://hl7.org/fhir" value="PAS Information Change Mode"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="valueset-PASInformationChangeMode.html"/>
+                        <ns44:title xmlns:ns44="http://hl7.org/fhir" value="PAS Information Change Mode Value Set"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="pa-request-example.html"/>
-                        <ns24:title xmlns:ns24="http://hl7.org/fhir" value="PA Request example"/>
+                        <ns45:title xmlns:ns45="http://hl7.org/fhir" value="PA Request example"/>
                         <generation value="generated"/>
                     </page>
                 </page>

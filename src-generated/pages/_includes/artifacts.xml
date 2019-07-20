@@ -169,8 +169,8 @@
             <tbody>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-procedureTiming.html">
-                        •  Procedure Timing</a>
+                        <a href="extension-extension-serviceTiming.html">
+                        •  Service Event Timing</a>
                     </td>
                     <td>Extension used on a Claim resource to identify when requested events will occur.</td>
                 </tr>
@@ -180,6 +180,139 @@
                         •  Institutional Encounter</a>
                     </td>
                     <td>Extension used on a Claim resource to identify information about a hospital admission.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-certificationType.html">
+                        •  Certification Type</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify the type of the pre-authorization that is being requested.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-requestedService.html">
+                        •  Requested Service Detail</a>
+                    </td>
+                    <td>Extension used on a Claim resource to more specific information about a service being requested.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-accomodationRate.html">
+                        •  Accomodation Rate</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify the rate for accomodation that is being requested.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-servicePriority.html">
+                        •  Service Priority</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify the priority of the services that are being requested.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-infoChanged.html">
+                        •  Information Changed Indicator</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify if information about a service item has changed.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-itemCancelled.html">
+                        •  Item Cancelled Indicator</a>
+                    </td>
+                    <td>Extension used on a Claim resource to identify if a claim item has been cancelled.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-preAuthSurgicalOpinion.html">
+                        •  Pre-Authorization Surgical Opinion Required</a>
+                    </td>
+                    <td>Extension used on a ClaimResponse resource to indicate that a second surgical opinion is required.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-preAuthIssueDate.html">
+                        •  Authorization Issue Date</a>
+                    </td>
+                    <td>Extension used on a ClaimResponse resource to identify when the authorization was issued.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-itemReference.html">
+                        •  Item Reference Identifier</a>
+                    </td>
+                    <td>Extension used on a ClaimResponse resource to provide identifiers for this specific item.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-itemOutcome.html">
+                        •  Item Outcome Code</a>
+                    </td>
+                    <td>Extension used on a ClaimResponse resource to identify the outcome of the authorization request.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-itemDisposition.html">
+                        •  Item Disposition</a>
+                    </td>
+                    <td>Extension used on a ClaimResponse resource to identify the authorization (or not) of a specific item.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-itemPreAuthPeriod.html">
+                        •  Item Pre-Authorization Period</a>
+                    </td>
+                    <td>Extension used on a ClaimResponse resource to identify the period over which the specific item has been authorized.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-reportTransmission.html">
+                        •  Report Transmission Mode</a>
+                    </td>
+                    <td>Extension used on a DocumentReference resource to identify the mode by which the document is transferred.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-patientStatus.html">
+                        •  Patient Hospitalization Status</a>
+                    </td>
+                    <td>Extension used on an Encounter resource to identify the status of the patient while the patient was hospitalized for the encounter.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-nursingHomeResidentialStatus.html">
+                        •  Patient Nursing Home Residential Status</a>
+                    </td>
+                    <td>Extension used on an Encounter resource to identify whether a patient was a nursing home resident.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-epsdtIndicator.html">
+                        •  EPSDT Involvement Indicator</a>
+                    </td>
+                    <td>Extension used on a ServiceRequest resource to identify the the requested service is based on Early and Periodic Screening for the Diagnosis and Treatment of Children (EPSDT).</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-nursingHomeLevelOfCare.html">
+                        •  Nursing Home Level of Care</a>
+                    </td>
+                    <td>Extension used on a ServiceRequest resource to identify the level of care provided by a nursing home to the patient.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-calendarPattern.html">
+                        •  Calendar Pattern Code</a>
+                    </td>
+                    <td>Extension used on a Timing datatype to identify a specific calendar delivery pattern.</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-extension-deliveryPattern.html">
+                        •  Delivery Pattern Code</a>
+                    </td>
+                    <td>Extension used on a Timing datatype to identify the time delivery pattern for services.</td>
                 </tr>
             </tbody>
         </table>
@@ -203,6 +336,20 @@
                         •  PAS Claim Supporting Information Type Value Set</a>
                     </td>
                     <td>Claim Supporting Information Type Value Set</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="PASInformationChangeMode.html">
+                        •  PAS Information Change Mode</a>
+                    </td>
+                    <td>Information Change Mode Code System</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="valueset-PASInformationChangeMode.html">
+                        •  PAS Information Change Mode Value Set</a>
+                    </td>
+                    <td>Information Change Mode Value Set</td>
                 </tr>
             </tbody>
         </table>

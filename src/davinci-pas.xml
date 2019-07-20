@@ -328,14 +328,16 @@
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
+	
+	<!-- Extensions -->
     <resource>
         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-procedureTiming"/>
+        <reference value="StructureDefinition/extension-serviceTiming"/>
       </reference>
-      <name value="Procedure Timing"/>
+      <name value="Service Event Timing"/>
       <description value="Extension used on a Claim resource to identify when requested events will occur."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
@@ -352,6 +354,237 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-certificationType"/>
+      </reference>
+      <name value="Certification Type"/>
+      <description value="Extension used on a Claim resource to identify the type of the pre-authorization that is being requested."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-requestedService"/>
+      </reference>
+      <name value="Requested Service Detail"/>
+      <description value="Extension used on a Claim resource to more specific information about a service being requested."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-accomodationRate"/>
+      </reference>
+      <name value="Accomodation Rate"/>
+      <description value="Extension used on a Claim resource to identify the rate for accomodation that is being requested."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-servicePriority"/>
+      </reference>
+      <name value="Service Priority"/>
+      <description value="Extension used on a Claim resource to identify the priority of the services that are being requested."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-infoChanged"/>
+      </reference>
+      <name value="Information Changed Indicator"/>
+      <description value="Extension used on a Claim resource to identify if information about a service item has changed."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-itemCancelled"/>
+      </reference>
+      <name value="Item Cancelled Indicator"/>
+      <description value="Extension used on a Claim resource to identify if a claim item has been cancelled."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-preAuthSurgicalOpinion"/>
+      </reference>
+      <name value="Pre-Authorization Surgical Opinion Required"/>
+      <description value="Extension used on a ClaimResponse resource to indicate that a second surgical opinion is required."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-preAuthIssueDate"/>
+      </reference>
+      <name value="Authorization Issue Date"/>
+      <description value="Extension used on a ClaimResponse resource to identify when the authorization was issued."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-itemReference"/>
+      </reference>
+      <name value="Item Reference Identifier"/>
+      <description value="Extension used on a ClaimResponse resource to provide identifiers for this specific item."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-itemOutcome"/>
+      </reference>
+      <name value="Item Outcome Code"/>
+      <description value="Extension used on a ClaimResponse resource to identify the outcome of the authorization request."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-itemDisposition"/>
+      </reference>
+      <name value="Item Disposition"/>
+      <description value="Extension used on a ClaimResponse resource to identify the authorization (or not) of a specific item."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-itemPreAuthPeriod"/>
+      </reference>
+      <name value="Item Pre-Authorization Period"/>
+      <description value="Extension used on a ClaimResponse resource to identify the period over which the specific item has been authorized."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-reportTransmission"/>
+      </reference>
+      <name value="Report Transmission Mode"/>
+      <description value="Extension used on a DocumentReference resource to identify the mode by which the document is transferred."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-patientStatus"/>
+      </reference>
+      <name value="Patient Hospitalization Status"/>
+      <description value="Extension used on an Encounter resource to identify the status of the patient while the patient was hospitalized for the encounter."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-nursingHomeResidentialStatus"/>
+      </reference>
+      <name value="Patient Nursing Home Residential Status"/>
+      <description value="Extension used on an Encounter resource to identify whether a patient was a nursing home resident."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-epsdtIndicator"/>
+      </reference>
+      <name value="EPSDT Involvement Indicator"/>
+      <description value="Extension used on a ServiceRequest resource to identify the the requested service is based on Early and Periodic Screening for the Diagnosis and Treatment of Children (EPSDT)."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-nursingHomeLevelOfCare"/>
+      </reference>
+      <name value="Nursing Home Level of Care"/>
+      <description value="Extension used on a ServiceRequest resource to identify the level of care provided by a nursing home to the patient."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-calendarPattern"/>
+      </reference>
+      <name value="Calendar Pattern Code"/>
+      <description value="Extension used on a Timing datatype to identify a specific calendar delivery pattern."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-deliveryPattern"/>
+      </reference>
+      <name value="Delivery Pattern Code"/>
+      <description value="Extension used on a Timing datatype to identify the time delivery pattern for services."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+	
+	
+	<!-- Terminology -->
     <resource>
       <reference>
         <reference value="CodeSystem/PASSupportingInfoType"/>
@@ -370,6 +603,26 @@
       <exampleBoolean value="false"/>
       <groupingId value="terminology"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/PASInformationChangeMode"/>
+      </reference>
+      <name value="PAS Information Change Mode"/>
+      <description value="Information Change Mode Code System"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/PASInformationChangeMode"/>
+      </reference>
+      <name value="PAS Information Change Mode Value Set"/>
+      <description value="Information Change Mode Value Set"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+	
+	
     <resource>
       <reference>
         <reference value="Bundle/pa-request-example"/>
