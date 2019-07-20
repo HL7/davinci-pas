@@ -53,29 +53,7 @@ In the event that the prior authorization cannot be evaluated and a final respon
 #### Prior authorization submission
 The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  The Bundle can be encoded in either JSON or XML.  (Servers SHALL support both syntaxes.)  The first entry in the Bundle SHALL be a Claim resource complying with the [profile](profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries SHALL be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once.  Bundle.entry.fullUrl values SHALL be the URL at which the resource is available from the EHR if exposed via the client's REST interface and SHALL be of the form "urn:uuid:[some guid]" otherwise.  All GUIDs used SHALL be unique, including across independent prior authorization submissions - with the exception that the same resource instance being referenced in distinct prior authorization request Bundles can have the same GUID.
 
-The complete list of relevant profiles is as follows:
-
-<table>
-  <thead>
-    <tr>
-      <td>Profile</td>
-      <td>Usage</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <a href=""></a>
-      </td>
-      <td>Jean to do</td>
-    </tr>
-  </tbody>
-</table>
-
-
 In addition to these core elements needed to populate the 278 message, any "supporting information" resources needed to process the prior authorization request (whether determined by DTR processes or by other means) must also be included in the Bundle.  Relevant resources referenced by those "supporting information" resources SHALL also be included (e.g. prescriber Practitioner and Medication for a MedicationRequest).  All such resources SHALL comply with relevant US Core profiles.  All "supporting information" resources included in the Bundle SHALL be pointed to by the Claim resource using the Claim.supportingInfo.valueReference element.  The Claim.supportingInfo.category should be populated appropriately if possible, using 'other' if no appropriate category is known.  The Claim.supportingInfo.sequence for each entry SHALL be unique within the Claim.
-
-A list of the candidate profiles from US Core for use in conveying "supporting information" can be found [here](todo).
 
 All resources SHALL comply with their respective profiles.  FHIR elements not marked as 'must support' MAY be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made.  Servers that do not process such elements SHALL ignore unsupported elements unless they are 'modifier' elements, in which case the server MAY treat the presence of the element as an error.
 
