@@ -1391,7 +1391,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:relatedCauses</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;relatedCauses&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.code</Data></Cell>
@@ -1412,7 +1412,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:currentHealthCondition</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;currentHealthCondition&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
@@ -1429,7 +1429,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:patientPrognosis</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;patientPrognosis&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
@@ -1446,7 +1446,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:releaseOfInformation</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;releaseOfInformation&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
@@ -1463,7 +1463,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:delayReason</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;delayReason&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
@@ -1480,7 +1480,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:lastMenstrualPeriod</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;lastMenstrualPeriod&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timingDate</Data></Cell>
@@ -1497,7 +1497,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:estimatedBirthDate</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;estimatedBirthDate&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timingDate</Data></Cell>
@@ -1514,7 +1514,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:onsetOfSymptoms</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;onsetOfSymptoms&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timing[x]</Data></Cell>
@@ -1531,7 +1531,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:patientEvent</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;patientEvent&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timing[x]</Data></Cell>
@@ -1548,7 +1548,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:admissionReview</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;admissionReview&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.timingPeriod</Data></Cell>
@@ -1565,7 +1565,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:additionalInformation</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;additionalInformation&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.code</Data></Cell>
@@ -1588,7 +1588,7 @@
     <Cell ss:Index="8"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="11" ss:StyleID="Default"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">us/davinci-pas/CodeSystem/PASSupportingInfoType:freeFormMessage</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/us/davinci-pas/CodeSystem/PASSupportingInfoType&quot;,&quot;code&quot;:&quot;freeFormMessage&quot;}]}</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo.valueString</Data></Cell>
@@ -1704,9 +1704,9 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>1</TopRowBottomPane>
+   <TopRowBottomPane>19</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>4</LeftColumnRightPane>
+   <LeftColumnRightPane>10</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -1714,14 +1714,16 @@
     </Pane>
     <Pane>
      <Number>1</Number>
+     <ActiveCol>4</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
+     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>30</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
