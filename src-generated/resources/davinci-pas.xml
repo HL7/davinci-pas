@@ -109,7 +109,7 @@
                   
             <name value="Example(s)"/>
                   
-            <description value="Example(s) showing the use of the PCDE profiles"/>
+            <description value="Example(s) showing the use of the PAS profiles"/>
                 
         </grouping>
         	
@@ -262,24 +262,6 @@
                   
             <reference>
                         
-                <reference value="Bundle/pa-request-example"/>
-                      
-            </reference>
-                  
-            <name value="PA Request example"/>
-                  
-            <description value="Example of a Prior Authorization request"/>
-                  
-            <exampleBoolean value="false"/>
-                  
-            <groupingId value="examples"/>
-                
-        </resource>
-            
-        <resource>
-                  
-            <reference>
-                        
                 <reference value="Bundle/pa-request-example-referral"/>
                       
             </reference>
@@ -312,7 +294,62 @@
                 
         </resource>
         	
-	
+    
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="Bundle/pa-request-example-homehealthcare"/>
+                      
+            </reference>
+                  
+            <name value="PA Home Health Care Request example"/>
+                  
+            <description value="Example of a Prior Authorization request for home health care"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="examples"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="Bundle/pa-request-example-homehealthcare-update"/>
+                      
+            </reference>
+                  
+            <name value="PA Home Health Care Updated Request example"/>
+                  
+            <description value="Example of a Prior Authorization for an update to a home health care request"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="examples"/>
+                
+        </resource>
+        	
+    
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="Bundle/pa-request-example-homehealthcare-differential"/>
+                      
+            </reference>
+                  
+            <name value="PA Home Health Care Differential Request example"/>
+                  
+            <description value="Example of a Prior Authorization for a differential request"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="examples"/>
+                
+        </resource>
+        	
     
         <page>
                   
@@ -609,18 +646,28 @@
                         <generation value="generated"/>
                     </page>
                     <page>
-                        <nameUrl value="pa-request-example.html"/>
-                        <ns44:title xmlns:ns44="http://hl7.org/fhir" value="PA Request example"/>
-                        <generation value="generated"/>
-                    </page>
-                    <page>
                         <nameUrl value="pa-request-example-referral.html"/>
-                        <ns45:title xmlns:ns45="http://hl7.org/fhir" value="PA Referral Request example"/>
+                        <ns44:title xmlns:ns44="http://hl7.org/fhir" value="PA Referral Request example"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="pa-response-example-referral.html"/>
-                        <ns46:title xmlns:ns46="http://hl7.org/fhir" value="PA Referral Response example"/>
+                        <ns45:title xmlns:ns45="http://hl7.org/fhir" value="PA Referral Response example"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="pa-request-example-homehealthcare.html"/>
+                        <ns46:title xmlns:ns46="http://hl7.org/fhir" value="PA Home Health Care Request example"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="pa-request-example-homehealthcare-update.html"/>
+                        <ns47:title xmlns:ns47="http://hl7.org/fhir" value="PA Home Health Care Updated Request example"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="pa-request-example-homehealthcare-differential.html"/>
+                        <ns48:title xmlns:ns48="http://hl7.org/fhir" value="PA Home Health Care Differential Request example"/>
                         <generation value="generated"/>
                     </page>
                 </page>

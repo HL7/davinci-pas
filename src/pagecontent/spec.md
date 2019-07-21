@@ -155,12 +155,18 @@ The intermediary will create 278 and/or 275 submissions that instantiate the cha
 
 The benefit of this approach is that it is consistent with the way the prior authorization would need to be passed around if ever shared in a RESTful manner.  However, it can be bandwidth intensive if the prior authorization contains a large number of items, but only a small number of those have changed.  Unfortunately, the typical FHIR [patch]({{site.data.fhir.path}}http.html#patch) mechanism cannot be used in this implementation guide because the intermediaries do not have (and cannot have for regulatory reasons) a locally stored copy of the original prior authorization, nor any mechanism to retrieve one.
 
+###### Full Request Example
+An example of a changed full request can be found at [Updated Homecare Request](pa-request-example-homehealthcare-update.html) along with the [original Homecare Request](pa-request-example-homehealthcare.html).
+
 ##### Differential Request
 In this case, only the Claim, related resources needed to support the Claim (e.g. submitting organization) and those items and supportingInfo elements that have actually been changed/added are included.  I.e. The Claim instance doesn't represent the full prior authorization request, but only the overall prior authorization metadata and the subset of elements that are different.  The submitted Bundle will be identical to that [above](#full-request), however it will omit all items that do not have a [changed](extension-extension-infoChanged.html) extension.  It will also exclude any resources in the Bundle that are now no longer needed because the references to them have been removed with the of the removal of the non-changed Claim.item and/or Claim.supportingInfo elements.
 
 Note that if the change is to cancel the entire request, in the differential approach, there is no need to send *any* items or supporting Info.
 
 Because this Claim instance doesn't represent the 'full' authorization request, but only a subset, the Claim instance SHALL also declare a [security tag]({{site.data.fhir.path}}resource-definitions.html#Meta.security) with a value of [SUBSETTED]({{site.data.fhir.path}}v3/ObservationValue/cs.html#v3-ObservationValue-SUBSETTED) to make clear that the resource is incomplete.
+
+###### Differential Request Example
+An example of a differential request for the same Homecare Request scenario can be found at [Differential Homecare Request](pa-request-example-homehealthcare-differential.html).
 
 ##### Responses to changed prior authorization requests
 Just as the submission of a changed prior authorization request can be submitted in two different modes, a payer can choose to respond in two different modes.  Some payers may include responses for all items in the authorization.  Others might only include responses for those items that were specifically changed.  (In theory, some payers could also return the items that were changed as well as those that are still pended and thus considered 'open'.)  As for the request, if a ClaimResponse does not contain items corresponding to *all* that are part of the revised prior authorization (including those cancelled or unmodified), it SHALL declare a [security tag]({{site.data.fhir.path}}resource-definitions.html#Meta.security) with a value of [SUBSETTED]({{site.data.fhir.path}}v3/ObservationValue/cs.html#v3-ObservationValue-SUBSETTED) to make clear that the resource is incomplete.

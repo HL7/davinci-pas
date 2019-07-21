@@ -349,17 +349,10 @@
     </p>
     <a name="5"> </a>
     <h3>Example(s) </h3>
-    <p>Example(s) showing the use of the PCDE profiles</p>
+    <p>Example(s) showing the use of the PAS profiles</p>
     <p>
         <table>
             <tbody>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="pa-request-example.html">
-                        •  PA Request example</a>
-                    </td>
-                    <td>Example of a Prior Authorization request</td>
-                </tr>
                 <tr>
                     <td style="column-width:30%">
                         <a href="pa-request-example-referral.html">
@@ -373,6 +366,27 @@
                         •  PA Referral Response example</a>
                     </td>
                     <td>Example of a Prior Authorization response for a referral</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="pa-request-example-homehealthcare.html">
+                        •  PA Home Health Care Request example</a>
+                    </td>
+                    <td>Example of a Prior Authorization request for home health care</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="pa-request-example-homehealthcare-update.html">
+                        •  PA Home Health Care Updated Request example</a>
+                    </td>
+                    <td>Example of a Prior Authorization for an update to a home health care request</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="pa-request-example-homehealthcare-differential.html">
+                        •  PA Home Health Care Differential Request example</a>
+                    </td>
+                    <td>Example of a Prior Authorization for a differential request</td>
                 </tr>
             </tbody>
         </table>

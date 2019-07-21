@@ -27,10 +27,12 @@
 <content value="complete"/>
 <concept>
   <code value="changed"/>
-  <display value="A pre-existing piece of information has been modified."/>
+  <display value="Changed"/>
+  <definition value="A pre-existing piece of information has been modified."/>
 </concept>
 <concept>
   <code value="added"/>
-  <display value="A new piece of information has been added to the item."/>
+  <display value="Added"/>
+  <definition value="A new piece of information has been added to the item."/>
 </concept>
 </CodeSystem>
