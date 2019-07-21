@@ -36,15 +36,7 @@ prior to reading the rest of this implementation guide.
 
 This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard. R4 is just recently published and the goal is to ensure the implementation guide is aligned with the current direction of the FHIR standard.
 
-This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in those Implementation Guides:
-<table>
-  <tr>
-    <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (3.0.0 - R4 based)</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://hl7.org/fhir/us/core/STU2">US Core (2.0.0 - STU3 based)</a></td>
-  </tr>
-</table>
+This implementation guide also builds on the [US Core 3.0 (R4-based)](http://hl7.org/fhir/us/core/STU3) Implementation Guide and implementers need to familiarize themselves with the profiles in that IG.
 
 #### ASC X12N
 The intention of this implementation guide is that knowledge of X12 should be isolated from client/EHR implementers.  However, intermediary systems will require an intimate understanding of the X12 specification, particulary the 278, 275 and 278i transactions.
