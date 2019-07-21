@@ -3,7 +3,7 @@
   <property name="updatePublisher" value="Y"/>
   <property name="noTx" value="N"/>
   <!-- Where the main FHIR build publish folder is -->
-  <property name="jar.publisher" value="http://build.fhir.org/org.hl7.fhir.igpublisher.jar"/>
+  <property name="jar.publisher" value="https://fhir.github.io/latest-ig-publisher/org.hl7.fhir.publisher.jar"/>
   <!-- Project-specific inputs -->
   <property name="dir.src" value="src"/>
   <!-- Working area -->
@@ -54,8 +54,7 @@
     </condition>
   </target>
   <target name="local-downloads" depends="local-setup" if="downloads" description="--Download current IG generator files">
-<!--    <get src="https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&amp;g=org.hl7.fhir.publisher&amp;a=org.hl7.fhir.publisher.cli&amp;v=LATEST&amp;e=jar" dest="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" usetimestamp="true"/>-->
-    <get src="https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&amp;g=org.hl7.fhir.publisher&amp;a=org.hl7.fhir.publisher.cli&amp;v=LATEST&amp;e=jar" dest="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar"/>
+    <get src="${jar.publisher}" dest="${dir.srcgenned}" usetimestamp="true"/>
     <get src="${fhirspec}fhir-single.xsd" dest="${dir.schemas}" usetimestamp="true"/>
     <get src="${fhirspec}fhir-xhtml.xsd" dest="${dir.schemas}" usetimestamp="true"/>
     <get src="${fhirspec}xml.xsd" dest="${dir.schemas}" usetimestamp="true"/>
@@ -152,13 +151,13 @@
     <get src="${otherfhirspec}xmldsig-core-schema.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
   </target>
   <target name="publish-ig-continuous" unless="additionalVersion" depends="extra-downloads" if="continuous" description="--> Run the IG build">
-    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
+    <java jar="${dir.srcgenned}/org.hl7.fhir.publisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm} -watch"/>
     </java>
   </target>
   <target name="publish-ig-once" depends="extra-downloads" unless="continuous" description="--> Run the IG build">
-    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
+    <java jar="${dir.srcgenned}/org.hl7.fhir.publisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm}"/>
     </java>

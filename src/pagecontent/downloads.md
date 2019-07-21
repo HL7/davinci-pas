@@ -6,6 +6,6 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 * The [resource definitions](definitions.json.zip)  from this IG for use with the FHIR validator (see below)
 * The full FHIR [R4]({{site.data.fhir.path}}fhir-spec-r4.zip) specifications
 * The US-Core [STU3]({{site.data.fhir.path}}fhir-spec-r4.zip) specifications
-* A [validator](https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=ca.uhn.hapi.fhir&a=org.hl7.fhir.validation.cli&v=LATEST&e=jar) that can be used to check FHIR resource instance validity
+* A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity
 
 <!-- Todo: reference implementations -->

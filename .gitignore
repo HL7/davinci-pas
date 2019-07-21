@@ -8,3 +8,4 @@ ig-validation-parameters.json
 output
 temp
 /src-generated/org.hl7.fhir.igpublisher.jar
+/src-generated/org.hl7.fhir.publisher.jar
