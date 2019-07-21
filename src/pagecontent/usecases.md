@@ -5,22 +5,26 @@ The PA process involves determining if a proposed treatment for a specific condi
 
 If authorization is required and documentation is necessary to substantiate the need for the service, the specific documentation is requested.  The documentation may take the form of attestations by the provider, diagnoses, results of specific diagnostic tests, prior treatment that has been tried and failed, specific studies that need to be performed and other specific documentation such as progress notes or discharge summaries.
 
-Clinicians and their office staff spend hours each week trying to verify coverage requirements for specific treatments, , submitting prior authorization requests, following up on prior authorization requests, transmitting supporting documentation to support follow-up requests for information and then communicating the prior authorization final decision within the care team and the patient. Automating even a few steps of the prior authorization process could make the work of healthcare team members across the country much easier.
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="current.png" alt="Current HIPAA approach diagram"/>
+</figure>
+{::options parse_block_html="true" /}
 
 Currently, under HIPAA, providers and payers are required to use the 5010 version of the ASC X12 278 request transaction to request prior authorization and the 278 response to respond to that request.  (See further details on relevant HIPAA requirements [here](hipaa.html).)  While the X12 275,  for additional documentation, is not currently required it is considered reasonable and appropriate to use this X12 transaction to support the exchange of the additional information that is required for prior authorization.
 
-However, adoption of X12 by EHR implementers has been low.  Discussion with such implementers has suggested that a FHIR-based process for submitting prior authorization requests would have significantly higher uptake.  This implementation guide attempts to do that while still retaining compliance with HIPPA requirements.
+However, adoption of X12 by EHR implementers has been low.  Clinicians and their office staff spend hours each week trying to verify coverage requirements for specific treatments, submitting prior authorization requests, following up on prior authorization requests, transmitting supporting documentation to support follow-up requests for information and then communicating the prior authorization final decision within the care team and the patient.  Mechanisms include phone, fax, custom portals, but rarely automated data feeds. Automating even a few steps of the prior authorization process could make the work of healthcare team members across the country much easier.
 
-TODO:
-
-1.	insert here the appropriate references to HIPPA legislation and the requirement for the ASC X12 278
-2.	insert here the diagram showing the exchange requirement for the ASC X12 278 between a provider and a payer  and the different ways in which that requirement can be accommodated 
-3.	one provider exchanging the 278 directly with the payer
-4.	using business associate(s)  to meet the requirements
-5.	conducing the transaction via one or more clearing houses
+Discussion with EHR implementers has suggested that a FHIR-based process for submitting prior authorization requests would have significantly higher uptake.  This implementation guide attempts to do that while still retaining compliance with HIPPA requirements.
 
 ### Business Requirements
-The objective of implementation guide is to provide a vehicle for automation of a prior authorization request and response within the clinical workflow of the provider.  The IG uses the FHIR standard as the basis for assembling the information necessary to substantiate the need for a particular treatment and submitting that information and the request for prior authorization to an intermediary end point.  That endpoint is responsible for ensuring that any HIPAA requirements are met (see above). The response from the payer is intended to come back to that intermediary endpoint and be available to the providers EHR solution using the FHIR  standard.  The goal is to provide real time prior authorization, where possible, in the provider's clinical workflow.
+The objective of implementation guide is to provide a vehicle for automation of a prior authorization request and response within the clinical workflow of the provider.  The IG uses the FHIR standard as the basis for assembling the information necessary to substantiate the need for a particular treatment and submitting that information and the request for prior authorization to an intermediary end point.  That endpoint is responsible for ensuring that any HIPAA requirements are met (see above). The response from the payer is intended to come back to that intermediary endpoint and be available to the providers EHR solution using the FHIR  standard.  The goal is to provide real time prior authorization, where possible, in the provider's clinical workflow.  The X12 portion of the exchange happens in a 'black box' that the submitting system needs no visibility into.
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-architecture.png" alt="Diagram showing PAS participants and flows"/>
+</figure>
+{::options parse_block_html="true" /}
 
 Current industry payer leaders in automating prior authorization indicate that it is possible to achieve a real-time response to the PA request in up to 80% of prior authorizations.  In cases where real time prior authorization is not possible, the payer can provide an indication (PEND) in real-time that the response has been delayed for further review and the results will be delivered later.
 
@@ -31,12 +35,20 @@ This implementation guide also supports business requirements around the managem
 ### Work Flow
 Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made a decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  (Note: In the U.S., prior authorizations for medications are typically dealt with through NCPDP and are currently out of scope for this implementation guide.)
 
-The prior authorization process consists of five steps:
+The prior authorization process from the EHR side consists of five steps:
 1. Determine whether prior authorization is required
 2. Gather information necessary to support the prior authorization request
 3. Submit the request for prior authorization
 4. Monitor the prior authorization request for resolution
 5. If need be, supplement the prior authorization request with additional required information (and resume at step #4)
+
+From the intermediary's perspective
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-flow.png" alt="High-level PAS workflow"/>
+</figure>
+{::options parse_block_html="true" /}
 
 #### Is prior authorization necessary?
 In some cases, the provider may know <i>a priori</i> whether PA is necessary for a given service (either because of intimate familiarity with a given payer's requirements or because of broad consistency across payers.  However, in most cases, the need for prior authorization will be uncertain.  Ideally, initiation of prior authorization will occur as part of a workflow that includes verification of payer coverage and determination that prior authorization is required using the [Coverage requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) implementation guide.  In the absence of CRD support by EHR or payer, other mechanisms such as consulting the payer's website and/or emailing or faxing the payer must be used.
@@ -77,7 +89,7 @@ To evaluate whether a given service will be covered, a payer may need to underst
 3.	Information that is traditionally not structured, or where the review process is more involved and will not be performed in real time. In this use case, additional information may be in the form of progress notes, therapy notes, diagnostic reports, etc.  This information will be exchanged as text or images using the document reference.  Where such information, the initial request will typically be 'pended', with a final decision returned later once manual review is complete
 
 
-### Use cases
+<!--### Use cases
 This IG will use specific PA use cases to illustrate the information and workflow requirements.  The use cares defined below show how prior authorization would be managed for: 
 
 1. home oxygen therapy,
@@ -85,3 +97,4 @@ This IG will use specific PA use cases to illustrate the information and workflo
 3. diabetic testing supplies
 4. advanced imaging, and  
 5. home health services
+-->

@@ -1,12 +1,4 @@
 {% raw %}
-{% endraw %}
-<!--ReleaseHeader-->
-<p style="background-color: yellow; border: 1px solid maroon; padding: 5px;">
-  This is the {{site.data.info.ballotstatus}} version of the {{site.data.fhir.igTitle}} Implementation Guide,  based on <a href="{{site.data.fhir.path}}">FHIR Version {{site.data.fhir.version}}</a>.  
-  See the <a href="{{site.data.fhir.canonical}}/history.html">Directory of published versions</a> for other versions and for a change history.<br/>
-  This specification was developed by <a href="{{site.data.fhir.ig.contact[0].telecom[0]}}">{{site.data.fhir.ig.publisher}}</a>
-</p>
-<!--EndReleaseHeader-->
 <blockquote class="stu-note">
 <p>
 This specification is currently undergoing ballot and connectathon testing.  It is expected to evolve, possibly significantly, as part of that process.
@@ -28,7 +20,12 @@ Individuals interested in participating in the Prior Authorization Support or ot
 <p>
 Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.
 </p>
+
+<p>
+Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
+</p>
 </blockquote>
+{% endraw %}
 
 
 ### Overview
@@ -40,8 +37,13 @@ When combined with the Da Vinci [Coverage requirements Discovery (CRD)](http://w
 
 The implementation guide also defines capabilities around the management of prior authorization requests, including checking the status of a previously submitted request, revising a previously submitted request and cancelling a request.
 
-Note that all mappings between FHIR and X12 transactions developed as part of this project will be published by X12, not HL7, in order to respect X12 intellectual property.  X12 membership and/or payment may be required in order to access those mappings.
+A high-level summary of how all of these IGs will work together can be seen below:
 
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:0px" width="1000px" src="pa-stack.png" alt="Diagram showing interaction of CRD, DTR and PAS"/>
+</figure>
+{::options parse_block_html="true" /}
 
 ### Content and organization
 The implementation guide is organized into the following sections:

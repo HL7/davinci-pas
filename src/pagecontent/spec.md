@@ -174,7 +174,7 @@ It is the intent of this implementation guide to provide specifications for the 
 2. artifacts use from referenced IGs such as DTR and CRD, and
 3. testing of conformance to the underlying FHIR standards for the associated release (e.g. FHIR R4). 
 
-### todo
+<!--### todo
 We need workflow diagrams to show:
 
 1.	 the traditional approach of submitting a 278 getting back into 78 response requesting information submitting matters at 275 and ultimately getting back at 278 reply 
@@ -183,3 +183,4 @@ We need workflow diagrams to show:
 4.	the contents of the requesting FHIR bundle including the questionnaireResponse, clinical resources using the US Core profiles, the claim resource (PA profile) and coverage resource (HRex profile)
 5.	the contents of the received FHIR bundle including the PA profile on the claim response
 6).	processing of the result and possible error codes (e.g. from the AAA segments)
+-->

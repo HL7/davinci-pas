@@ -18,12 +18,9 @@ The PAS implementation guide defines the responsibilities of the two types of sy
 **Server systems** (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
 
 ### Underlying technologies
-
 This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard.  Implementers of this specification therefore need to understand some basic information about these specifications.
 
-
 #### FHIR
-
 This implementation guide uses terminology, notations and design principles that are
 specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well
 as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following
@@ -49,5 +46,5 @@ This implementation guide also builds on the US Core Implementation Guide and im
   </tr>
 </table>
 
-#### X12
-TODO: Add some words about knowledge of X12
+#### ASC X12N
+The intention of this implementation guide is that knowledge of X12 should be isolated from client/EHR implementers.  However, intermediary systems will require an intimate understanding of the X12 specification, particulary the 278, 275 and 278i transactions.
