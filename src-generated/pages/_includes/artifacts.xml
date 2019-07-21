@@ -27,13 +27,6 @@
             <tbody>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-serviceTiming.html">
-                        •  Service Event Timing</a>
-                    </td>
-                    <td>Extension used on a Claim resource to identify when requested events will occur.</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
                         <a href="extension-extension-institutionalEncounter.html">
                         •  Institutional Encounter</a>
                     </td>
@@ -55,20 +48,6 @@
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-accomodationRate.html">
-                        •  Accomodation Rate</a>
-                    </td>
-                    <td>Extension used on a Claim resource to identify the rate for accomodation that is being requested.</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="extension-extension-servicePriority.html">
-                        •  Service Priority</a>
-                    </td>
-                    <td>Extension used on a Claim resource to identify the priority of the services that are being requested.</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
                         <a href="extension-extension-infoChanged.html">
                         •  Information Changed Indicator</a>
                     </td>
@@ -83,14 +62,7 @@
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-preAuthSurgicalOpinion.html">
-                        •  Pre-Authorization Surgical Opinion Required</a>
-                    </td>
-                    <td>Extension used on a ClaimResponse resource to indicate that a second surgical opinion is required.</td>
-                </tr>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="extension-extension-preAuthIssueDate.html">
+                        <a href="extension-extension-itemPreAuthIssueDate.html">
                         •  Authorization Issue Date</a>
                     </td>
                     <td>Extension used on a ClaimResponse resource to identify when the authorization was issued.</td>
@@ -104,17 +76,17 @@
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-itemOutcome.html">
+                        <a href="extension-extension-reviewAction.html">
                         •  Item Outcome Code</a>
                     </td>
                     <td>Extension used on a ClaimResponse resource to identify the outcome of the authorization request.</td>
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="extension-extension-itemDisposition.html">
+                        <a href="extension-extension-reviewActionReason.html">
                         •  Item Disposition</a>
                     </td>
-                    <td>Extension used on a ClaimResponse resource to identify the authorization (or not) of a specific item.</td>
+                    <td>Extension used on a ClaimResponse resource to identify the reason for the authorization (or not).</td>
                 </tr>
                 <tr>
                     <td style="column-width:30%">

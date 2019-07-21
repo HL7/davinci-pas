@@ -120,21 +120,6 @@
   "resources": {
     "OperationDefinition/Claim-submit":{
     },
-    "StructureDefinition/extension-serviceTiming":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html"
-    },
     "StructureDefinition/extension-institutionalEncounter":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
@@ -180,36 +165,6 @@
       "profile-xml": "extension-{{[id]}}.profile.xml.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
     },
-    "StructureDefinition/extension-accomodationRate":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html"
-    },
-    "StructureDefinition/extension-servicePriority":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html"
-    },
     "StructureDefinition/extension-infoChanged":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
@@ -240,22 +195,7 @@
       "profile-xml": "extension-{{[id]}}.profile.xml.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
     },
-    "StructureDefinition/extension-preAuthSurgicalOpinion":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html"
-    },
-    "StructureDefinition/extension-preAuthIssueDate":{
+    "StructureDefinition/extension-itemPreAuthIssueDate":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",
@@ -285,7 +225,7 @@
       "profile-xml": "extension-{{[id]}}.profile.xml.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
     },
-    "StructureDefinition/extension-itemOutcome":{
+    "StructureDefinition/extension-reviewAction":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",
@@ -300,7 +240,7 @@
       "profile-xml": "extension-{{[id]}}.profile.xml.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
     },
-    "StructureDefinition/extension-itemDisposition":{
+    "StructureDefinition/extension-reviewActionReason":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",

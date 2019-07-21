@@ -110,18 +110,6 @@
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-serviceTiming"/>
-      </reference>
-      <name value="Service Event Timing"/>
-      <description value="Extension used on a Claim resource to identify when requested events will occur."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-          <valueBoolean value="true"/>
-        </extension>
-      <reference>
         <reference value="StructureDefinition/extension-institutionalEncounter"/>
       </reference>
       <name value="Institutional Encounter"/>
@@ -158,30 +146,6 @@
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-accomodationRate"/>
-      </reference>
-      <name value="Accomodation Rate"/>
-      <description value="Extension used on a Claim resource to identify the rate for accomodation that is being requested."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-          <valueBoolean value="true"/>
-        </extension>
-      <reference>
-        <reference value="StructureDefinition/extension-servicePriority"/>
-      </reference>
-      <name value="Service Priority"/>
-      <description value="Extension used on a Claim resource to identify the priority of the services that are being requested."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-          <valueBoolean value="true"/>
-        </extension>
-      <reference>
         <reference value="StructureDefinition/extension-infoChanged"/>
       </reference>
       <name value="Information Changed Indicator"/>
@@ -206,19 +170,7 @@
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-preAuthSurgicalOpinion"/>
-      </reference>
-      <name value="Pre-Authorization Surgical Opinion Required"/>
-      <description value="Extension used on a ClaimResponse resource to indicate that a second surgical opinion is required."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-          <valueBoolean value="true"/>
-        </extension>
-      <reference>
-        <reference value="StructureDefinition/extension-preAuthIssueDate"/>
+        <reference value="StructureDefinition/extension-itemPreAuthIssueDate"/>
       </reference>
       <name value="Authorization Issue Date"/>
       <description value="Extension used on a ClaimResponse resource to identify when the authorization was issued."/>
@@ -242,7 +194,7 @@
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-itemOutcome"/>
+        <reference value="StructureDefinition/extension-reviewAction"/>
       </reference>
       <name value="Item Outcome Code"/>
       <description value="Extension used on a ClaimResponse resource to identify the outcome of the authorization request."/>
@@ -254,10 +206,10 @@
           <valueBoolean value="true"/>
         </extension>
       <reference>
-        <reference value="StructureDefinition/extension-itemDisposition"/>
+        <reference value="StructureDefinition/extension-reviewActionReason"/>
       </reference>
       <name value="Item Disposition"/>
-      <description value="Extension used on a ClaimResponse resource to identify the authorization (or not) of a specific item."/>
+      <description value="Extension used on a ClaimResponse resource to identify the reason for the authorization (or not)."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
