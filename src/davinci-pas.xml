@@ -94,6 +94,8 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the PCDE profiles"/>
     </grouping>
+	
+	<!-- Operations -->
     <resource>
       <reference>
         <reference value="OperationDefinition/Claim-submit"/>
@@ -196,7 +198,7 @@
       <reference>
         <reference value="StructureDefinition/extension-reviewAction"/>
       </reference>
-      <name value="Item Outcome Code"/>
+      <name value="Review Action Code"/>
       <description value="Extension used on a ClaimResponse resource to identify the outcome of the authorization request."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
@@ -208,8 +210,20 @@
       <reference>
         <reference value="StructureDefinition/extension-reviewActionReason"/>
       </reference>
-      <name value="Item Disposition"/>
+      <name value="Review Action Reason Code"/>
       <description value="Extension used on a ClaimResponse resource to identify the reason for the authorization (or not)."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+        <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+          <valueBoolean value="true"/>
+        </extension>
+      <reference>
+        <reference value="StructureDefinition/extension-authorizedEventDate"/>
+      </reference>
+      <name value="Event Authorized Date/Period"/>
+      <description value="Extension used on a ClaimResponse resource to identify a specific date or period when the event has been authorized for."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
@@ -437,6 +451,18 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/profile-practrole-careteam"/>
+      </reference>
+      <name value="PAS CareTeam PractitionerRole"/>
+      <description value="PAS constraints on PractitionerRole resource mandating support for elements relevant to the care team and performers of a prior authorization request"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/profile-coverage"/>
       </reference>
       <name value="PAS Coverage"/>
@@ -591,7 +617,7 @@
       <groupingId value="terminology"/>
     </resource>
 	
-	
+	<!-- Examples -->
     <resource>
       <reference>
         <reference value="Bundle/pa-request-example"/>
@@ -601,6 +627,28 @@
       <exampleBoolean value="false"/>
       <groupingId value="examples"/>
     </resource>
+
+    <resource>
+      <reference>
+        <reference value="Bundle/pa-request-example-referral"/>
+      </reference>
+      <name value="PA Referral Request example"/>
+      <description value="Example of a Prior Authorization request for a referral"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Bundle/pa-response-example-referral"/>
+      </reference>
+      <name value="PA Referral Response example"/>
+      <description value="Example of a Prior Authorization response for a referral"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="examples"/>
+    </resource>
+	
+	
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>

@@ -16,10 +16,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17440</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>11520</WindowTopX>
-  <WindowTopY>29460</WindowTopY>
+  <WindowHeight>16940</WindowHeight>
+  <WindowWidth>27640</WindowWidth>
+  <WindowTopX>11980</WindowTopX>
+  <WindowTopY>5960</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1067,7 +1067,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="profile-claim">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="81" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="74" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1313,27 +1313,6 @@
     <Cell ss:Index="4"><Data ss:Type="String">Claim.facility</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Location){http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-location}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.careTeam</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.careTeam.sequence</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.careTeam.provider</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner){http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitioner-careteam}|Reference(Organization){http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-organization-careteam}</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.careTeam.role</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.careTeam.qualification</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="2"><Data ss:Type="String">category</Data></Cell>
@@ -1605,15 +1584,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.item.careTeamSequence</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Claim.item.diagnosisSequence</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Claim.item.procedureSequence</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1669,7 +1640,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>1</TopRowBottomPane>
+   <TopRowBottomPane>5</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -1682,11 +1653,13 @@
     </Pane>
     <Pane>
      <Number>2</Number>
+     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>77</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>14</ActiveRow>
+     <ActiveCol>0</ActiveCol>
+     <RangeSelection>R15:R19</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

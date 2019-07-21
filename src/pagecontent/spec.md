@@ -66,6 +66,15 @@ The response to the prior authorization is processed in the reverse order as the
 
 The resulting Bundle is returned as the HTTP body of the POST response.
 
+##### Prior authorization request and response example
+This is an example of a standard Referral Request / Response sequence between a Primary Care Provider and a Utilization Management Organization. The [request example](pa-request-example-referral.html) will show how a PCP can request a referral to a specialist for a patient from a UMO. The [response example](pa-response-example-referral.html) will also show the response.
+
+Joe Smith is a subscriber to Maryland Capital Insurance Company. During a regular physical, Dr. James Gardener, Joe’s primary care physician, diagnoses a potential heart problem. Dr. Gardener determines that it would be best to refer Joe to Dr. Susan Watson, a cardiologist, for a consultation.
+
+Dr. Gardener is required by Maryland Capital Insurance to submit a request for review seeking approval to refer Joe to Dr. Watson.
+
+After review, Maryland Capital approves the referral and responds.
+
 #### Pended authorization responses
 When the ClaimResponse.outcome is 'queued' or 'partial', it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made.  There are two possible options - polling and subscription.  Implementers SHOULD support subscription.  Servers SHALL support polling in situations where either party is unable to use the subscription approach.
 
