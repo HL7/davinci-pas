@@ -3,7 +3,7 @@
   <id value="PASInformationChangeMode"/>
 <url value="http://hl7.org/fhir/us/davinci-pas/ValueSet/PASInformationChangeMode"/>
 <version value="0.0.0"/>
-<name value="PAS Information Change Mode"/>
+<name value="PASInformationChangeMode"/>
 <status value="draft"/>
 <date value="2018-03-13T08:16:34-07:00"/>
 <contact>

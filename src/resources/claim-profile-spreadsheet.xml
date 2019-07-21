@@ -20,7 +20,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>11580</WindowTopX>
   <WindowTopY>5460</WindowTopY>
-  <ActiveSheet>3</ActiveSheet>
+  <ActiveSheet>6</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1173,7 +1173,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Not published</Font>       </ss:Data></Comment></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="75">
-    <Cell ss:StyleID="s93"><Data ss:Type="String">PAS Claim</Data></Cell>
+    <Cell ss:StyleID="s93"><Data ss:Type="String">PASClaim</Data></Cell>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s95"><Data ss:Type="String">Claim</Data></Cell>
@@ -1383,7 +1383,7 @@
     <Cell><Data ss:Type="String">PASSupportingInfoType</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">relatedCauses</Data></Cell>
+    <Cell><Data ss:Type="String">RelatedCauses</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1404,7 +1404,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">currentHealthCondition</Data></Cell>
+    <Cell><Data ss:Type="String">CurrentHealthCondition</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1421,7 +1421,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">patientPrognosis</Data></Cell>
+    <Cell><Data ss:Type="String">PatientPrognosis</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1438,7 +1438,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">releaseOfInformation</Data></Cell>
+    <Cell><Data ss:Type="String">ReleaseOfInformation</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1455,7 +1455,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">delayReason</Data></Cell>
+    <Cell><Data ss:Type="String">DelayReason</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1472,7 +1472,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">lastMenstrualPeriod</Data></Cell>
+    <Cell><Data ss:Type="String">LastMenstrualPeriod</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1489,7 +1489,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">estimatedBirthDate</Data></Cell>
+    <Cell><Data ss:Type="String">EstimatedBirthDate</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1506,7 +1506,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">onsetOfSymptoms</Data></Cell>
+    <Cell><Data ss:Type="String">OnsetOfSymptoms</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1523,7 +1523,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">patientEvent</Data></Cell>
+    <Cell><Data ss:Type="String">PatientEvent</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1540,7 +1540,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">admissionReview</Data></Cell>
+    <Cell><Data ss:Type="String">AdmissionReview</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1557,7 +1557,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">additionalInformation</Data></Cell>
+    <Cell><Data ss:Type="String">AdditionalInformation</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1580,7 +1580,7 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">freeFormMessage</Data></Cell>
+    <Cell><Data ss:Type="String">FreeFormMessage</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Claim.supportingInfo</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1706,7 +1706,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>10</LeftColumnRightPane>
+   <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -1714,14 +1714,13 @@
     </Pane>
     <Pane>
      <Number>1</Number>
-     <ActiveCol>4</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
+     <ActiveRow>36</ActiveRow>
      <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
@@ -1839,7 +1838,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Not published</Font>       </ss:Data></Comment></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="75">
-    <Cell ss:StyleID="s93"><Data ss:Type="String">PAS Claim Update</Data></Cell>
+    <Cell ss:StyleID="s93"><Data ss:Type="String">PASClaimUpdate</Data></Cell>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s95"><Data ss:Type="String">Claim</Data></Cell>
@@ -2002,7 +2001,6 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -5342,8 +5340,9 @@
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="119"/>
    <Row ss:AutoFitHeight="0" ss:Height="45" ss:StyleID="s87">
     <Cell ss:StyleID="s90"><Data ss:Type="String">Code</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font>       </ss:Data></Comment><NamedCell
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Context Type</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -5447,7 +5446,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><Data ss:Type="String">Claim.use</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">CerificationType</Data><NamedCell
+    <Cell ss:StyleID="s109"><Data ss:Type="String">CertificationType</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><Data ss:Type="String">Certification Type</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6555,6 +6554,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -6574,7 +6574,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>9</ActiveRow>
+     <ActiveRow>2</ActiveRow>
      <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
