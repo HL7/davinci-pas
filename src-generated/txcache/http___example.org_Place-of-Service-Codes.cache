@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/Place-of-Service-Codes",
+  "code" : "11"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/Place-of-Service-Codes\" is not known for the code \"11\"; The code provided (http://example.org/Place-of-Service-Codes#11) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/ENTITY_IDENTIFIER_CODE",
+  "code" : "X3"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/ENTITY_IDENTIFIER_CODE\" is not known for the code \"X3\"; The code provided (http://example.org/ENTITY_IDENTIFIER_CODE#X3) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/ENTITY_IDENTIFIER_CODE",
+  "code" : "1P"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/ENTITY_IDENTIFIER_CODE\" is not known for the code \"1P\"; The code provided (http://example.org/ENTITY_IDENTIFIER_CODE#1P) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/ENTITY_IDENTIFIER_CODE",
+  "code" : "SJ"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/ENTITY_IDENTIFIER_CODE\" is not known for the code \"SJ\"; The code provided (http://example.org/ENTITY_IDENTIFIER_CODE#SJ) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

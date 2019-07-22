@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/PROGNOSIS_CODE",
+  "code" : "1"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/PROGNOSIS_CODE\" is not known for the code \"1\"; The code provided (http://example.org/PROGNOSIS_CODE#1) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

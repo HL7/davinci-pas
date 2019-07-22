@@ -277,7 +277,7 @@
                 <id value="1"/>
                 <code>
                     <coding>
-                        <system value="http://hl7.org/fhir/sid/icd-9"/>
+                        <system value="http://hl7.org/fhir/sid/icd-9-cm"/>
                         <code value="183.0"/>
                     </coding>
                 </code>
@@ -299,7 +299,7 @@
                 <id value="2"/>
                 <code>
                     <coding>
-                        <system value="http://hl7.org/fhir/sid/icd-9"/>
+                        <system value="http://hl7.org/fhir/sid/icd-9-cm"/>
                         <code value="263.0"/>
                     </coding>
                 </code>

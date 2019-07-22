@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "G0154"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known for the code \"G0154\"; The code provided (http://www.ama-assn.org/go/cpt#G0154) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "B4184"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known for the code \"B4184\"; The code provided (http://www.ama-assn.org/go/cpt#B4184) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "B4224"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known for the code \"B4224\"; The code provided (http://www.ama-assn.org/go/cpt#B4224) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "B4185"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known for the code \"B4185\"; The code provided (http://www.ama-assn.org/go/cpt#B4185) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

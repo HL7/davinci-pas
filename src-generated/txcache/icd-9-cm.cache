@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+  "code" : "410.90"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://hl7.org/fhir/sid/icd-9-cm\" is not known for the code \"410.90\"; The code provided (http://hl7.org/fhir/sid/icd-9-cm#410.90) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+  "code" : "183.0"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://hl7.org/fhir/sid/icd-9-cm\" is not known for the code \"183.0\"; The code provided (http://hl7.org/fhir/sid/icd-9-cm#183.0) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+  "code" : "263.0"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://hl7.org/fhir/sid/icd-9-cm\" is not known for the code \"263.0\"; The code provided (http://hl7.org/fhir/sid/icd-9-cm#263.0) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+  "code" : "183.1"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://hl7.org/fhir/sid/icd-9-cm\" is not known for the code \"183.1\"; The code provided (http://hl7.org/fhir/sid/icd-9-cm#183.1) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

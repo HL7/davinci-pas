@@ -246,7 +246,7 @@
                 <id value="1"/>
                 <code>
                     <coding>
-                        <system value="http://hl7.org/fhir/sid/icd-9"/>
+                        <system value="http://hl7.org/fhir/sid/icd-9-cm"/>
                         <code value="410.90"/>
                     </coding>
                 </code>

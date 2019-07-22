@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/SERVICE_TYPE_CODE",
+  "code" : "3"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/SERVICE_TYPE_CODE\" is not known for the code \"3\"; The code provided (http://example.org/SERVICE_TYPE_CODE#3) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://example.org/SERVICE_TYPE_CODE",
+  "code" : "1"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://example.org/SERVICE_TYPE_CODE\" is not known for the code \"1\"; The code provided (http://example.org/SERVICE_TYPE_CODE#1) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
