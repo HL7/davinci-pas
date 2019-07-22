@@ -278,7 +278,7 @@
                 <code>
                     <coding>
                         <system value="http://hl7.org/fhir/sid/icd-9"/>
-                        <code value="183.1"/>
+                        <code value="183.0"/>
                     </coding>
                 </code>
                 <subject>
