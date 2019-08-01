@@ -43,17 +43,23 @@
     h3,h4,h5,h6{--heading-prefix:"{{site.data.info.headingOffset}}{{site.data.pages[page.path].label}}"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
-        <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="{{site.data.info.assets}}assets/images/da-vinci_logo.jpg"/> </a>
-        <div id="hl7-status">
-          <b>{{site.data.fhir.ig.title}}</b> {{site.data.fhir.ig.version}} - {{status}} 
-        </div>
         <div id="hl7-nav">
-          <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir">
-            <img alt="visit the fhir website" src="{{site.data.info.assets}}assets/images/fhir-logo-www.png"/>
+          <a id="hl7-logo" no-external="true" href="{{site.data.fhir.path}}">
+            <img height="50" alt="Visit the HL7 website" src="{{site.data.info.assets}}assets/images/hl7-logo-header.png"/>
           </a>
-          <a id="hl7-logo" no-external="true" href="http://www.hl7.org"><img height="50" alt="visit the hl7 website" width="42" src="{{site.data.info.assets}}assets/images/hl7-logo.png"/></a>
         </div>
-        <div id="hl7-search"><a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="{{site.data.info.assets}}assets/images/search.png"/></a></div>
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img alt="Visit the Da Vinci website" src="{{site.data.info.assets}}assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+        <div id="fhir-nav">
+          <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="{{site.data.info.assets}}assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="{{site.data.info.assets}}assets/images/search.png"/></a>
+        </div>
+        <div id="hl7-status">
+          <p><span style="font-size:12pt;font-weight:bold">{{site.data.fhir.ig.title}}</span><br/>{{site.data.fhir.ig.version}} - {{status}}</p>
+        </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
     

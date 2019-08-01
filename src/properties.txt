@@ -6,8 +6,8 @@
 guidename=davinci-pas
 copyrightyear=2019+
 license=CC0-1.0
-version=0.0.0
-ballotstatus=Continuous build
+version=0.1.0
+ballotstatus=STU Ballot
 fhirspec=http://hl7.org/fhir/R4/
 #additionalVersion=STU3
 #childHeadingOffset=5.2
