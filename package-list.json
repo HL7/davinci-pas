@@ -2,7 +2,7 @@
 	"package-id": "hl7.fhir.us.davinci-pas",
 	"title": "Da Vinci Prior Authorization Support (PAS) FHIR IG",
 	"canonical": "http://hl7.org/fhir/us/davinci-pas",
-	"introduction": "This implementation guide defines a mechanism for submitting prior authorization requests in a manner that is mappable to the corresponding X12 transactions.\r\n\r\nThe DaVinci PAS IG includes profiles for both FHIR STU3 and R4",
+	"introduction": "This implementation guide defines a mechanism for submitting prior authorization requests in a manner that is mappable to the corresponding X12 transactions.\r\n\r\nThe DaVinci PAS IG is targeted to FHIR R4",
 	"list": [
 		{
 			"version": "current",
