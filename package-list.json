@@ -16,7 +16,8 @@
 			"descmd": "First public ballot",
 			"path": "http://hl7.org/fhir/us/davinci-pas/2019Sep",
 			"status": "ballot",
-			"sequence": "STU 1"
+			"sequence": "STU 1",
+      "fhirversion" : "4.0.0"
 		}
 	]
 }
