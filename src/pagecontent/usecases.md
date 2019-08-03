@@ -1,5 +1,5 @@
 ### Current State
-Prior authorization (PA) is performed in the United States by payers and providers to ensure that patience/members receive care and coverage of treatments, testing, referrals, devices appropriate for their specific conditions and the general coverage provided by the specific health plan in which the member is enrolled. 
+Prior authorization (PA) is performed in the United States by payers and providers to ensure that patients/members receive care and coverage of treatments, testing, referrals, devices appropriate for their specific conditions and the general coverage provided by the specific health plan in which the member is enrolled. 
 
 The PA process involves determining if a proposed treatment for a specific condition is covered by the current payer guidelines/standards. To do this, the provider may submit a request to the payer to determine if prior authorization is required before providing a specific treatment for condition where that treatment is expected to be expected to be covered/paid for by the payer.  The payer then responds to the provider with an indication that prior authorization is or is not required.
 
