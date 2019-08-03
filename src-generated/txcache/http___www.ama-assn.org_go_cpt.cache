@@ -16,7 +16,7 @@ v: {
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known for the code \"B4184\"; The code provided (http://www.ama-assn.org/go/cpt#B4184) is not  valid in the value set All codes known to the system"
+  "error" : "Error sending HTTP Post/Put Payload"
 }
 -------------------------------------------------------------------------------------
 {"code" : {

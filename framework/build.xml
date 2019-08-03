@@ -65,6 +65,7 @@
       <file file="${basedir}/${dir.framework.assets}/js/jquery.js"/>
     </copy>
     <fail unless="guidename" message="'guidename' must be defined in properties.txt. e.g. 'sdc'"/>
+    <fail unless="guidename" message="'guideid' must be defined in properties.txt. e.g. 'hl7.fhir.uv.sdc'"/>
     <fail unless="version" message="'version' must be defined in properties.txt.  e.g. '2.0'"/>
     <fail unless="fhirspec" message="'fhirspec' must be defined in properties.txt. e.g. 'http://build.fhir.org/'"/>
     <fail unless="copyrightyear" message="'copyrightyear' must be defined in properties.txt. e.g. '2015+'"/>
@@ -79,7 +80,7 @@
   "headingOffset":""
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt"/>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guideid}.xml" style="${dir.xslt}/fixIg.xslt">
       <param name="alternate" expression="${additionalVersion}"/>
     </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}.json" style="${dir.xslt}/igToConfig.xslt">
@@ -128,7 +129,7 @@
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.altincludes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt">
       <param name="version" expression="${additionalVersion}"/>
     </xslt>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}${additionalVersion}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}${additionalVersion}/${guideid}.xml" style="${dir.xslt}/fixIg.xslt">
       <param name="version" expression="${additionalVersion}"/>
       <param name="altVNumber" expression="${additionalVNumber}"/>
     </xslt>

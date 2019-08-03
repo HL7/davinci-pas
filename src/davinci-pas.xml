@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
-  <id value="davinci-pas"/>
-  <url value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/davinci-pas"/>
+  <id value="hl7.fhir.us.davinci-pas"/>
+  <url value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"/>
   <name value="PriorAuthorizationSupport"/>
   <title value="Da Vinci - Prior Authorization Support"/>
   <status value="draft"/>

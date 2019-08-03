@@ -99,7 +99,7 @@
       "package" : ""
     }
   ],
-  "source": "davinci-pas.xml",
+  "source": "hl7.fhir.us.davinci-pas.xml",
   "spreadsheets": [
     "bundle-profile-spreadsheet.xml",
     "claim-profile-spreadsheet.xml",

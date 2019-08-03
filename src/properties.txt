@@ -4,6 +4,7 @@
 # guidename must match the id of the implementation guide
 ################################################################################################
 guidename=davinci-pas
+guideid=hl7.fhir.us.davinci-pas
 copyrightyear=2019+
 license=CC0-1.0
 version=0.1.0
