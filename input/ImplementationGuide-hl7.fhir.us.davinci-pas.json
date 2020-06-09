@@ -1,0 +1,340 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.us.davinci-pas",
+  "url": "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas",
+  "version": "0.1.0",
+  "name": "DaVinciPriorAuthorizationSupportPASFHIRIG",
+  "title": "Da Vinci Prior Authorization Support (PAS) FHIR IG",
+  "status": "active",
+  "publisher": "HL7 International - Financial Management Work Group",
+  "contact": [
+    {
+      "name": "Jean Duteau",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        },
+        {
+          "system": "email",
+          "value": "mailto:jean@duteaudesign.com"
+        }
+      ]
+    }
+  ],
+  "description": "Guidelines for conveying coverage requirements to clinicians when planning treatment.",
+  "packageId": "hl7.fhir.us.davinci-pas",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
+      "packageId": "hl7.fhir.us.core",
+      "id": "hl7_fhir_us_core",
+      "version": "3.1.0"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-beneficiary"
+        },
+        "name": "PAS Beneficiary Patient",
+        "description": "A patient who is the beneficiary of an insurance plan.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-pas-bundle"
+        },
+        "name": "PAS Bundle",
+        "description": "PAS constraints on Bundle resource ensuring that a claim/claim update/claim response resource is present and that non-supported elements are not.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-claim"
+        },
+        "name": "PAS Claim",
+        "description": "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-claimresponse"
+        },
+        "name": "PAS Claim Response",
+        "description": "PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-claim-update"
+        },
+        "name": "PAS Claim Update",
+        "description": "PAS constraints on Claim resource when submitting an update to a previous PAS prior authorization request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-insurer"
+        },
+        "name": "PAS Insurer Organization",
+        "description": "An organization who provides insurance and is the receiver of a prior authorization request.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-requestor"
+        },
+        "name": "PAS Requestor Organization",
+        "description": "The organization who is making a prior authorization request.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-subscriber"
+        },
+        "name": "PAS Subscriber Patient",
+        "description": "A patient who is the subscriber of an insurance plan.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-administrationReferenceNumber"
+        },
+        "name": "AdministrationReferenceNumber",
+        "description": "A string assigned by the UMO to the original disallowed review outcome associated with this service item.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-authorizationNumber"
+        },
+        "name": "AuthorizationNumber",
+        "description": "A string assigned by the UMO to an authorized review outcome associated with this service item.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-certificationType"
+        },
+        "name": "CertificationType",
+        "description": "A code representing the type of certification being requested (UM02)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-diagnosisRecordedDate"
+        },
+        "name": "DiagnosisRecordedDate",
+        "description": "The date that a diagnosis was recorded. (HIxx-4)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-epsdtIndicator"
+        },
+        "name": "EPSDTIndicator",
+        "description": "An indicator of whether early and periodic screen for diagnosis and treatment of children is involved.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-infoCancelled"
+        },
+        "name": "InfoCancelledFlag",
+        "description": "A flag indicating whether the piece of information was cancelled.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-infoChanged"
+        },
+        "name": "InfoChanged",
+        "description": "A code indicating how the piece of information has changed.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-itemTraceNumber"
+        },
+        "name": "ItemTraceNumber",
+        "description": "Uniquely identifies this claim item. (2000F-TRN)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-levelOfServiceCode"
+        },
+        "name": "LevelOfServiceCode",
+        "description": "A code specifying the level of service being requested (UM06)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-militaryStatus"
+        },
+        "name": "MilitaryStatus",
+        "description": "A patient's military status.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-nursingHomeLevelOfCare"
+        },
+        "name": "NursingHomeLevelOfCare",
+        "description": "A code specifying the level of care provided by a nursing home facility. (SV120, SV210)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-nursingHomeResidentialStatus"
+        },
+        "name": "NursingHomeResidentialStatus",
+        "description": "A code specifying the status of a nursing home resident at the time of service. (SV209)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-productOrServiceCodeEnd"
+        },
+        "name": "ProductOrServiceCodeEnd",
+        "description": "Used to provide the last code in a series of codes for the service being requested.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-requestedService"
+        },
+        "name": "RequestedService",
+        "description": "The details of the service being requested.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-revenueUnitRateLimit"
+        },
+        "name": "RevenueUnitRateLimit",
+        "description": "The limit on the rate per unit of revenue for hospital accomodation. (SV206)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-serviceItemReqestType"
+        },
+        "name": "ServiceItemRequestType",
+        "description": "A code that identifies the type of service being requested.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PASInformationChangeMode"
+        },
+        "name": "PASInformationChangeMode",
+        "description": "The mode by which a piece of information has changed.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PASSupportingInfoType"
+        },
+        "name": "PASSupportingInfoType",
+        "description": "Types of supporting information for a Prior Authorization Claim.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PASInformationChangeMode"
+        },
+        "name": "PASInformationChangeMode",
+        "description": "The mode by which a piece of information has changed.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PASSupportingInfoType"
+        },
+        "name": "PASSupportingInfoType",
+        "description": "Types of supporting information for a Prior Authorization Claim.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/Claim-submit"
+        },
+        "name": "ClaimSubmitOperation",
+        "description": "Da Vinci Prior Authorization Support This operation is used to submit a Claim, Pre-Authorization or Pre-Determination (all instances of Claim resources) for adjudication either as a single Claim resource instance or as a Bundle containing the Claim and other referenced resources, or Bundle containing a batch of Claim resources, either as single Claims resources or Bundle resources, for processing. The only input parameter is the single Claim or Bundle resource and the only output is a single ClaimResponse, Bundle of ClaimResponses or an OperationOutcome resource.",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Use_Cases_and_Overview.html",
+          "title": "Use Cases and Overview",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Technical_Background.html",
+          "title": "Technical Background",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "HIPAA_Regulations.html",
+          "title": "HIPAA Regulations",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Formal_Specification.html",
+          "title": "Formal Specification",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "FHIR_Artifacts.html",
+          "title": "FHIR Artifacts",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "credits.html",
+          "title": "Credits",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2020+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "CI Build"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      },
+      {
+        "code": "path-history",
+        "value": "http://hl7.org/fhir/us/davinci-pas/history.html"
+      }
+    ]
+  }
+}

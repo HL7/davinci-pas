@@ -1,0 +1,31 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PASInformationChangeMode",
+  "id": "PASInformationChangeMode",
+  "title": "PASInformationChangeMode",
+  "description": "The mode by which a piece of information has changed.",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASInformationChangeMode",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "concept": [
+    {
+      "code": "changed",
+      "display": "Changed"
+    },
+    {
+      "code": "added",
+      "display": "Added"
+    }
+  ]
+}

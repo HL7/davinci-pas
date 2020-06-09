@@ -1,0 +1,51 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "profile-insurer",
+  "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer",
+  "version": "0.1.0",
+  "name": "PASInsurer",
+  "title": "PAS Insurer Organization",
+  "status": "active",
+  "description": "An organization who provides insurance and is the receiver of a prior authorization request.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization"
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "mustSupport": true
+      }
+    ]
+  }
+}

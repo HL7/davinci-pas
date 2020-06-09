@@ -1,0 +1,43 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PASSupportingInfoType",
+  "id": "PASSupportingInfoType",
+  "title": "PASSupportingInfoType",
+  "description": "Types of supporting information for a Prior Authorization Claim.",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "concept": [
+    {
+      "code": "patientEvent",
+      "display": "Patient Event"
+    },
+    {
+      "code": "admissionReview",
+      "display": "Admission Review"
+    },
+    {
+      "code": "additionalInformation",
+      "display": "Additional Information"
+    },
+    {
+      "code": "freeFormMessage",
+      "display": "Free Form Message"
+    },
+    {
+      "code": "institutionalEncounter",
+      "display": "Institutional Encounter"
+    }
+  ]
+}

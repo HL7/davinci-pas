@@ -1,11 +1,8 @@
-*.dropbox
 .DS_Store
-desktop.ini
-ig-expansion-parameters.json
-ig-new.json
-ig-new.xml
-ig-validation-parameters.json
+input-cache
 output
 temp
-/src-generated/org.hl7.fhir.igpublisher.jar
-/src-generated/org.hl7.fhir.publisher.jar
+template
+desktop.ini
+*.dropbox
+
