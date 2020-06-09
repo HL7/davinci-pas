@@ -18,7 +18,7 @@ The FHIR artifacts used by PAS are organized according to whether the content de
     <td><a href="artifacts.html">FHIR PAS-specific Artifacts</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/STU3">US Core (STU3 - R4 based)</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/STU3.1">US Core (STU3.1 - R4 based)</a></td>
   </tr>
 </table>
 
