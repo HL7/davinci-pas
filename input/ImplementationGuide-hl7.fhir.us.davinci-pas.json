@@ -264,6 +264,22 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/X12FollowUpActionCode"
+        },
+        "name": "X12 Followup Action Code",
+        "description": "TThese codes are used to convey the followup action to a transaction that was rejected or an action not completed. They are listed within an X12 implementation guide and maintained by X12.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/X12RejectReasonCode"
+        },
+        "name": "X12 Reject Reason Code",
+        "description": "These codes are used to convey the reason a transaction was rejected or an action not completed. They are listed within an X12 implementation guide and maintained by X12.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "OperationDefinition/Claim-submit"
         },
         "name": "ClaimSubmitOperation",

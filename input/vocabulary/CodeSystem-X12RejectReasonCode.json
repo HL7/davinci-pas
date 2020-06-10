@@ -1,0 +1,13 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "not-present",
+  "name": "X12RejectReasonCode",
+  "id": "X12RejectReasonCode",
+  "title": "X12 Reject Reason Code",
+  "description": "These codes are used to convey the reason a transaction was rejected or an action not completed. They are listed within an X12 implementation guide and maintained by X12.",
+  "version": "0.1.0",
+  "url": "https://standard.x12.org/Home/Default/005010?SimpleElement=901",
+  "publisher": "X12 Inc.",
+  "copyright": "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.  See https://nex12.org/index.php/ip-use."
+}
