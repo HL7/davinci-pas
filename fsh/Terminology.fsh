@@ -49,3 +49,18 @@ Description: "TThese codes are used to convey the followup action to a transacti
 * ^url = "https://standard.x12.org/Home/Default/005010?SimpleElement=889"
 * ^copyright = "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.  See https://nex12.org/index.php/ip-use."
 * ^content = #not-present
+
+ValueSet: X12ServiceRequestRejectReasonCode
+Title: "X12 217 Service Request Reject Reason Code"
+Description: "This value set, maintained by X12.org, includes those Reject Reason Codes used at the Service Request Level within the 278 Response."
+* ^publisher = "X12 Inc."
+* ^url = "https://x12.org/005010/RejectReasonCode-278x217-ServiceRequest"
+* ^copyright = "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.  See https://nex12.org/index.php/ip-use."
+* codes from system X12RejectReasonCode
+
+ValueSet: X12ServiceProviderNameRejectReasonCode
+Title: "X12 217 Service Provider Name Reject Reason Code"
+Description: "This value set, maintained by X12.org, includes those Reject Reason Codes used at the Service Request Level within the 278 Response."
+* ^publisher = "X12 Inc."
+* ^url = "https://x12.org/005010/RejectReasonCode-278x217-ServiceProviderNameLevel"
+* ^copyright = "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.  See https://nex12.org/index.php/ip-use."

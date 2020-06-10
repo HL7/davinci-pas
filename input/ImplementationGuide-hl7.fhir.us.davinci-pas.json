@@ -248,6 +248,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/X12ServiceProviderNameRejectReasonCode"
+        },
+        "name": "X12 217 Service Provider Name Reject Reason Code",
+        "description": "This value set, maintained by X12.org, includes those Reject Reason Codes used at the Service Request Level within the 278 Response.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/X12ServiceRequestRejectReasonCode"
+        },
+        "name": "X12 217 Service Request Reject Reason Code",
+        "description": "This value set, maintained by X12.org, includes those Reject Reason Codes used at the Service Request Level within the 278 Response.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/PASInformationChangeMode"
         },
         "name": "PASInformationChangeMode",
