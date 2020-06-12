@@ -5,4 +5,9 @@ temp
 template
 desktop.ini
 *.dropbox
+input/extensions
+input/examples
+input/profiles
+input/operations
+input/vocabulary
 

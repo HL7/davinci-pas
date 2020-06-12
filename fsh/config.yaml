@@ -1,0 +1,92 @@
+# ╭────────────────────────ImplementationGuide-hl7.fhir.us.davinci-pas.json────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: hl7.fhir.us.davinci-pas
+canonical: http://hl7.org/fhir/us/davinci-pas
+version: 0.1.0
+name: DaVinciPriorAuthorizationSupport
+title: Da Vinci Prior Authorization Support (PAS) FHIR IG
+status: active
+publisher: 
+  name: HL7 International - Financial Management Work Group
+  url: http://hl7.org/Special/committees/fm
+  email: fmlists@lists.hl7.org
+contact:
+  - name: Jean Duteau
+    telecom:
+      - system: email
+        value: mailto:jean@duteaudesign.com
+description: Guidelines for conveying coverage requirements to clinicians when planning
+  treatment.
+license: CC0-1.0
+fhirVersion: 4.0.1
+dependencies:
+  hl7.fhir.us.core: 3.1.0
+parameters:
+  show-inherited-invariants: false
+copyrightYear: 2020+
+releaseLabel: CI Build
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+pages:
+  index.md:
+    title: PAS Home Page
+  usecases.md:
+    title: Use Cases and Overview
+  background.md:
+    title: Technical Background
+  regulations.md:
+    title: HIPAA Regulations
+  specification.md:
+    title: Formal Specification
+  downloads.md:
+    title: Downloads
+  credits.md:
+    title: Credits
+  fhirArtifacts.md:
+    title: Artifacts Overview
+  artifacts.md:
+    title: PAS-specific Artifacts
+
+# ╭─────────────────────────────────────────────ig.ini─────────────────────────────────────────────╮
+# │  To control the ig.ini using this config, uncomment and set the "template" property.           │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+template: hl7.davinci.template
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To control the menu.xml using this config, uncomment and set the "menu" property.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Table of Contents: toc.html
+  PAS Specification:
+    PAS Home Page: index.html
+    Use Cases and Overview: usecases.html
+    Technical Background: background.html
+    HIPAA Regulations: regulations.html
+    Formal Specification: specification.html
+    Downloads: downloads.html
+    Credits: credits.html
+  FHIR Artifacts:
+    Artifacts Overview: fhirArtifacts.html
+    PAS-specific Artifacts: artifacts.html
+    US Core (STU3 - R4 based): http://hl7.org/fhir/us/core/STU3.1
+  Base Specs:
+    "FHIR R4 Spec ": new-tab external {{site.data.fhir.path}}index.html
+  History: http://hl7.org/fhir/us/davinci-pas/history.html
+
+# ╭───────────────────────────────────────package-list.json────────────────────────────────────────╮
+# │  To control the package-list.json using this config, uncomment and set the "history" property. │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+history:
+  introduction: "This implementation guide defines a mechanism for submitting
+    prior authorization requests in a manner that is mappable to the
+    corresponding X12 transactions.  The DaVinci PAS IG is targeted to FHIR R4"
+  current: https://build.fhir.org/ig/HL7/davinci-pas
+  0.1.0:
+    date: 2019-08-09
+    desc: First public ballot
+    path: "http://hl7.org/fhir/us/davinci-pas/2019Sep"
+    status: ballot
+    sequence: STU 1
+    fhirversion: 4.0.1
