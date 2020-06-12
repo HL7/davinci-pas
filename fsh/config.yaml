@@ -46,8 +46,6 @@ pages:
     title: Credits
   fhirArtifacts.md:
     title: Artifacts Overview
-  artifacts.md:
-    title: PAS-specific Artifacts
 
 # ╭─────────────────────────────────────────────ig.ini─────────────────────────────────────────────╮
 # │  To control the ig.ini using this config, uncomment and set the "template" property.           │
@@ -86,7 +84,7 @@ history:
   0.1.0:
     date: 2019-08-09
     desc: First public ballot
-    path: "http://hl7.org/fhir/us/davinci-pas/2019Sep"
+    path: http://hl7.org/fhir/us/davinci-pas/2019Sep
     status: ballot
     sequence: STU 1
     fhirversion: 4.0.1
