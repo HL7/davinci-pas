@@ -59,6 +59,7 @@ Description: "This value set, maintained by X12.org, includes those Reject Reaso
 * ^publisher = "X12 Inc."
 * ^url = "https://x12.org/005010/RejectReasonCode-278x217-ServiceRequest"
 * ^copyright = "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.  See https://nex12.org/index.php/ip-use."
+* codes from system X12RejectReasonCode where useCode = "serviceRequest"
 
 ValueSet: X12ServiceProviderNameRejectReasonCode
 Title: "X12 217 Service Provider Name Reject Reason Code"
