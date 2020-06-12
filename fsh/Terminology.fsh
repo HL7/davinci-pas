@@ -76,8 +76,6 @@ Description: "This value set, maintained by X12.org, includes the Nursing Home L
 
 ValueSet: X12NursingHomeResidentialStatus
 Title: "X12 217 Nursing Home Residential Status"
-Description: "This value set, maintained by X12.org, includes the Nursing Home Residential Status codes used within the 278 Request."
-* ^publisher = "X12 Inc."
-* ^url = "https://x12.org/005010/NursingHomeResidentialStatus-278x217-ServiceLevel"
+Description: "This value set includes the Nursing Home Residential Status codes used within the 278 Request."
 * ^copyright = "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.  See https://nex12.org/index.php/ip-use."
 * codes from system X12NursingHomeResidentialStatus
