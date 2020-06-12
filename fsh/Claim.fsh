@@ -125,6 +125,8 @@ Extension: ServiceItemRequestType
 Id: extension-serviceItemReqestType
 Description: "A code that identifies the type of service being requested."
 * value[x] only CodeableConcept
+* valueCodeableConcept from https://x12.org/005010/RequestCategoryCode-278x217-ServiceLevelRequestCategoryCode (required)
+* valueCodeableConcept ^binding.description = "This value set, maintained by X12.org, includes codes that describe the request category code for the Service Level Health Care Services Review Information (2000F-UM01)."
 
 Extension: ProductOrServiceCodeEnd
 Id: extension-productOrServiceCodeEnd
@@ -140,11 +142,13 @@ Extension: NursingHomeResidentialStatus
 Id: extension-nursingHomeResidentialStatus
 Description: "A code specifying the status of a nursing home resident at the time of service. (SV209)"
 * value[x] only CodeableConcept
+* valueCodeableConcept from X12NursingHomeResidentialStatus
 
 Extension: NursingHomeLevelOfCare
 Id: extension-nursingHomeLevelOfCare
 Description: "A code specifying the level of care provided by a nursing home facility. (SV120, SV210)"
 * value[x] only CodeableConcept
+* valueCodeableConcept from X12NursingHomeLevelOfCare
 
 Extension: RevenueUnitRateLimit
 Id: extension-revenueUnitRateLimit
