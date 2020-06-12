@@ -5,13 +5,6 @@ temp
 template
 desktop.ini
 *.dropbox
-input/extensions
-input/examples
-input/profiles
-input/operations
-input/vocabulary
+input
 ig.ini
 package-list.json
-input/ImplementationGuide-hl7.fhir.us.davinci-pas.json
-input/includes/menu.xml
-
