@@ -16,9 +16,9 @@ This section of the implementation guide defines the specific conformance requir
 #### Pre-reading
 Before reading this formal specification, implementers should first familiarize themselves with two other key portions of the specification:
 
-* The [Use Cases & Overview](Use_Cases_and_Overview.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
+* The [Use Cases & Overview](usecases.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
 
-* The [Technical Background](Technical_Background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have necessary foundation to understand the constraints and usage guidance described here.
+* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have necessary foundation to understand the constraints and usage guidance described here.
 
 
 #### Conventions
@@ -42,7 +42,7 @@ This implementation guide sets expectations for two types of systems:
 #### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of prior authorization requests and responses.
 
-The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](FHIR_Artifacts.html) page.
+The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](fhirArtifacts.html) page.
 
 #### Integration with other Implementation Guides
 * Implementations of the PAS implementation guide SHALL support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They SHOULD support any other profiles relevant to claims of the types relevant to the types of prior authorizations they process

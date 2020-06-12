@@ -22,7 +22,7 @@ The FHIR artifacts used by PAS are organized according to whether the content de
   </tr>
 </table>
 
-Additional information about the use of these artifacts can be found in the [main specification](Formal_Specification.html#profiles).
+Additional information about the use of these artifacts can be found in the [main specification](specification.html#profiles).
 
 
 These FHIR artifacts define the clinical data that can be submitted as part of a prior authorization submission and/or included as part of a prior authorization response using the [Claim submit](OperationDefinition-Claim-submit.html) operation.
