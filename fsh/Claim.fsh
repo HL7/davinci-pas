@@ -3,6 +3,8 @@ Parent: Claim
 Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
+* extension contains CertificationType named certificationType 0..1
+* extension contains LevelOfServiceCode named levelOfServiceType 0..1
 * identifier 1..1 MS
 * status = #active (exactly)
 * use = #preauthorization (exactly)
@@ -21,8 +23,10 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo.category MS
 * supportingInfo.category from PASSupportingInfoType (extensible)
 * diagnosis MS
+* diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1
 * diagnosis.sequence MS
 * diagnosis.diagnosis[x] MS
+* diagnosis.diagnosis[x] only CodeableConcept
 * diagnosis.type MS
 * insurance MS
 * insurance.sequence MS
@@ -33,6 +37,17 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * accident.type MS
 * accident.location[x] only Address
 * item 1..* MS
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..1
+* item.extension contains AuthorizationNumber named authorizationNumber 0..1
+* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
+* item.extension contains ServiceItemRequestType named requestType 0..1
+* item.extension contains CertificationType named certificationType 0..1
+* item.extension contains ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
+* item.extension contains EPSDTIndicator named epsdtIndicator 0..1
+* item.extension contains NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1
+* item.extension contains NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1
+* item.extension contains RevenueUnitRateLimit named revenueUnitRateLimit 0..1
+* item.extension contains RequestedService named requestedService 0..1
 * item.sequence MS
 * item.careTeamSequence MS
 * item.diagnosisSequence MS
@@ -46,21 +61,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.location[x] only CodeableConcept
 * item.quantity MS
 * item.unitPrice MS
-
-* extension contains CertificationType named certificationType 0..1
-* extension contains LevelOfServiceCode named levelOfServiceType 0..1
-* diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1
-* item.extension contains AuthorizationNumber named authorizationNumber 0..1
-* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
-* item.extension contains ServiceItemRequestType named requestType 0..1
-* item.extension contains CertificationType named certificationType 0..1
-* item.extension contains ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
-* item.extension contains EPSDTIndicator named epsdtIndicator 0..1
-* item.extension contains NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1
-* item.extension contains NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1
-* item.extension contains RevenueUnitRateLimit named revenueUnitRateLimit 0..1
-* item.extension contains RequestedService named requestedService 0..1
 
 * supportingInfo ^slicing.discriminator.type = #value
 * supportingInfo ^slicing.discriminator.path = "category"
@@ -89,7 +89,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[InstitutionalEncounter].category = PASSupportingInfoType#institutionalEncounter
 * supportingInfo[InstitutionalEncounter].timing[x] 0..0
 * supportingInfo[InstitutionalEncounter].value[x] 1..1 MS
-* supportingInfo[InstitutionalEncounter].value[x] only Reference(Encounter)
+* supportingInfo[InstitutionalEncounter].value[x] only Reference(PASEncounter)
 
 Extension: CertificationType
 Id: extension-certificationType
@@ -125,8 +125,6 @@ Extension: ServiceItemRequestType
 Id: extension-serviceItemReqestType
 Description: "A code that identifies the type of service being requested."
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://x12.org/005010/RequestCategoryCode-278x217-ServiceLevelRequestCategoryCode (required)
-* valueCodeableConcept ^binding.description = "This value set, maintained by X12.org, includes codes that describe the request category code for the Service Level Health Care Services Review Information (2000F-UM01)."
 
 Extension: ProductOrServiceCodeEnd
 Id: extension-productOrServiceCodeEnd
@@ -142,13 +140,11 @@ Extension: NursingHomeResidentialStatus
 Id: extension-nursingHomeResidentialStatus
 Description: "A code specifying the status of a nursing home resident at the time of service. (SV209)"
 * value[x] only CodeableConcept
-* valueCodeableConcept from X12NursingHomeResidentialStatus
 
 Extension: NursingHomeLevelOfCare
 Id: extension-nursingHomeLevelOfCare
 Description: "A code specifying the level of care provided by a nursing home facility. (SV120, SV210)"
 * value[x] only CodeableConcept
-* valueCodeableConcept from X12NursingHomeLevelOfCare
 
 Extension: RevenueUnitRateLimit
 Id: extension-revenueUnitRateLimit
@@ -158,7 +154,7 @@ Description: "The limit on the rate per unit of revenue for hospital accomodatio
 Extension: RequestedService
 Id: extension-requestedService
 Description: "The details of the service being requested."
-* value[x] only Reference(MedicationRequest | ServiceRequest | DeviceRequest)
+* value[x] only Reference(PASMedicationRequest or PASServiceRequest or PASDeviceRequest)
 
 Profile: PASClaimUpdate
 Parent: PASClaim

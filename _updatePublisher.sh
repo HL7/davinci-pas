@@ -1,5 +1,5 @@
 #!/bin/bash
-dlurl=https://storage.googleapis.com/ig-build/org.hl7.fhir.publisher.jar
+dlurl=https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
 publisher_jar=org.hl7.fhir.publisher.jar
 input_cache_path=./input-cache/
 
@@ -42,7 +42,7 @@ read -r -p "$message" response
 if [[ "$response" =~ ^([yY])$ ]]; then
 	echo "Downloading most recent publisher to $jarlocationname - it's ~100 MB, so this may take a bit"
 #	wget "https://fhir.github.io/latest-ig-publisher/org.hl7.fhir.publisher.jar" -O "$jarlocation" 
-	curl $dlurl -o "$jarlocation" --create-dirs
+	curl -L $dlurl -o "$jarlocation" --create-dirs
 else
 	echo cancel...
 fi
