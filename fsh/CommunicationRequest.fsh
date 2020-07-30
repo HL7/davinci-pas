@@ -12,6 +12,12 @@ Description: "PAS constraints on CommunicationRequest resource mandating support
 * payload MS
 * payload.content[x] MS
 * payload.content[x] only string
+* requester MS
+* requester only Reference(PASInsurer)
+* recipient MS
+* recipient only Reference(PASPractitioner or $USCoreOrganization)
+* sender MS
+* sender only Reference(PASRequestor)
 
 Extension: CommunicatedDiagnosis
 Id: extension-communicatedDiagnosis

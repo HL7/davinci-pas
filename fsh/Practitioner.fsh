@@ -1,4 +1,4 @@
-Profile: PASCPractitioner
+Profile: PASPractitioner
 Parent: $USCorePractitioner
 Id: profile-practitioner
 Title: "PAS Practitioner"

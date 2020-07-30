@@ -16,6 +16,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * careTeam MS
 * careTeam.sequence MS
 * careTeam.provider MS
+* careTeam.provider only Reference(PASPractitioner or $USCoreOrganization)
 * careTeam.role MS
 * careTeam.qualification MS
 * supportingInfo MS
@@ -175,3 +176,80 @@ Extension: InfoCancelledFlag
 Id: extension-infoCancelled
 Description: "A flag indicating whether the piece of information was cancelled."
 * value[x] only boolean
+
+
+Profile: PASClaimInquiry
+Parent: Claim
+Id: profile-claim-inquiry
+Title: "PAS Claim Inquiry"
+Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
+* extension contains CertificationType named certificationType 0..1
+* extension contains LevelOfServiceCode named levelOfServiceType 0..1
+* identifier 1..1 MS
+* status = #active (exactly)
+* use = #preauthorization (exactly)
+* patient only Reference(PASBeneficiary)
+* billablePeriod MS
+* insurer MS
+* insurer only Reference(PASInsurer)
+* provider MS
+* provider only Reference(PASRequestor)
+* careTeam MS
+* careTeam.sequence MS
+* careTeam.provider MS
+* careTeam.provider only Reference(PASPractitioner or $USCoreOrganization)
+* careTeam.role MS
+* careTeam.qualification MS
+* supportingInfo MS
+* supportingInfo.sequence MS
+* supportingInfo.category MS
+* supportingInfo.category from PASSupportingInfoType (extensible)
+* diagnosis MS
+* diagnosis.sequence MS
+* diagnosis.diagnosis[x] MS
+* diagnosis.diagnosis[x] only CodeableConcept
+* diagnosis.type MS
+* insurance MS
+* insurance.sequence MS
+* insurance.focal = true (exactly)
+* insurance.coverage MS
+* accident MS
+* accident.date MS
+* accident.type MS
+* accident.location[x] only Address
+* item 1..* MS
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..1
+* item.extension contains AuthorizationNumber named authorizationNumber 0..1
+* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
+* item.extension contains PreAuthIssueDate named preAuthIssueDate 0..1
+* item.extension contains PreAuthPeriod named preAuthPeriod 0..1
+* item.extension contains ServiceItemRequestType named requestType 0..1
+* item.extension contains CertificationType named certificationType 0..1
+* item.extension contains ReviewActionCode named reviewActionCode 0..1
+* item.extension contains ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
+* item.sequence MS
+* item.careTeamSequence MS
+* item.diagnosisSequence MS
+* item.informationSequence MS
+* item.revenue MS
+* item.category MS
+* item.productOrService MS
+* item.modifier MS
+* item.serviced[x] MS
+* item.location[x] MS
+* item.location[x] only CodeableConcept
+* item.quantity MS
+
+* supportingInfo ^slicing.discriminator.type = #value
+* supportingInfo ^slicing.discriminator.path = "category"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
+* supportingInfo contains PatientEvent 0..1 and AdmissionReview 0..1
+
+* supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
+* supportingInfo[PatientEvent].timing[x] 1..1 MS
+* supportingInfo[PatientEvent].value[x] 0..0
+
+* supportingInfo[AdmissionReview].category = PASSupportingInfoType#admissionReview
+* supportingInfo[AdmissionReview].timing[x] 1..1 MS
+* supportingInfo[AdmissionReview].value[x] 0..0
