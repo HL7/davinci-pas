@@ -40,7 +40,7 @@ Usage: #definition
 * status = #draft
 * kind = #operation
 * code = #submit
-* base = "http://hl7.org/fhir/OperationDefinition/Claim-inquiry"
+* base = "http://hl7.org/fhir/OperationDefinition/Claim-submit"
 * resource = #Claim
 * system = false
 * type = true
