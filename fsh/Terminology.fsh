@@ -30,7 +30,7 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 /*
 X12 Codesystems and ValueSets
 */
-CodeSystem: AHANUBCFL42RevenueCodes
+CodeSystem: AHANUBCRevenueCodes
 Title: "AHA NUBC Revenue Codes"
 Description: "These codes are used to convey specific accomodation, ancillary service or unique billing calculations or arrangements. They are listed within the UB-04 Data Specifications Manual and maintained by the National Uniform Billing Committee (NUBC)."
 * ^publisher = "American Hospital Association, National Uniform Billing Committee"
@@ -38,6 +38,6 @@ Description: "These codes are used to convey specific accomodation, ancillary se
 * ^copyright = "The Official UB-04 Data Specifications Manual, copyrighted by the American Hospital Association, is the only official source of UB-04 billing information adopted by the National Uniform Billing Committee. No other publication—governmental or private/commercial—can be considered authoritative.  See their website for licensing terms and conditions."
 * ^content = #not-present
 
-ValueSet: AHANUBCFL42RevenueCodes
+ValueSet: AHANUBCRevenueCodes
 Title: "AHA NUBC Revenue Codes"
 * codes from system https://www.nubc.org/revenue-code
