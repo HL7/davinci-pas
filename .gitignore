@@ -5,6 +5,6 @@ temp
 template
 desktop.ini
 *.dropbox
-input
+/input
 ig.ini
 package-list.json

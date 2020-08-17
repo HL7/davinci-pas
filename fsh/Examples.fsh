@@ -6,17 +6,17 @@ Description: "An example of a claim bundle requesting prior authorization of a r
 * identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:01:00+05:00
-* entry[Claim].fullUrl = "http://example.org/fhir/Claim/1"
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/ClaimSubmitExample"
 * entry[Claim].resource = ClaimSubmitExample
-* entry[1].fullUrl = "http://example.org/fhir/Organization/umo-1"
+* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
-* entry[2].fullUrl = "http://example.org/fhir/Organization/insurer-1"
+* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
 * entry[2].resource = InsurerExample
-* entry[3].fullUrl = "http://example.org/fhir/Coverage/insurance-1"
+* entry[3].fullUrl = "http://example.org/fhir/Coverage/InsuranceExample"
 * entry[3].resource = InsuranceExample
-* entry[4].fullUrl = "http://example.org/fhir/Patient/subscriber-1"
+* entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
-* entry[5].fullUrl = "http://example.org/fhir/ServiceRequest/referral-1"
+* entry[5].fullUrl = "http://example.org/fhir/ServiceRequest/ReferralRequestExample"
 * entry[5].resource = ReferralRequestExample
 
 Instance: ClaimSubmitExample
