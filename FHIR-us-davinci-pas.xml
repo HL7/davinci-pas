@@ -1,194 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               url="http://hl7.org/fhir/us/davinci-pas"
-               ciUrl="https://build.fhir.org/ig/HL7/davinci-pas"
-               defaultWorkgroup="fm"
-               defaultVersion="current"
-               xsi:noNamespaceSchemaLocation="../schemas/specification.xsd"
-               ballotUrl="http://hl7.org/fhir/us/davinci-pas/2019Sep">
-   <version code="current" url="https://build.fhir.org/ig/HL7/davinci-pas"/>
-   <version code="0.1.0" url="http://hl7.org/fhir/us/davinci-pas/2019Sep"/>
-   <artifactPageExtension value="-definitions"/>
-   <artifactPageExtension value="-examples"/>
-   <artifactPageExtension value="-mappings"/>
-   <artifact name="PAS Beneficiary Patient"
-             key="StructureDefinition-profile-beneficiary"
-             id="StructureDefinition/profile-beneficiary"/>
-   <artifact name="PAS Bundle"
-             key="StructureDefinition-profile-pas-bundle"
-             id="StructureDefinition/profile-pas-bundle"/>
-   <artifact name="PAS Claim"
-             key="StructureDefinition-profile-claim"
-             id="StructureDefinition/profile-claim"/>
-   <artifact name="PAS Claim Inquiry"
-             key="StructureDefinition-profile-claim-inquiry"
-             id="StructureDefinition/profile-claim-inquiry"/>
-   <artifact name="PAS Claim Inquiry Response"
-             key="StructureDefinition-profile-claiminquiryresponse"
-             id="StructureDefinition/profile-claiminquiryresponse"/>
-   <artifact name="PAS Claim Response"
-             key="StructureDefinition-profile-claimresponse"
-             id="StructureDefinition/profile-claimresponse"/>
-   <artifact name="PAS Claim Update"
-             key="StructureDefinition-profile-claim-update"
-             id="StructureDefinition/profile-claim-update"/>
-   <artifact name="PAS CommunicationRequest"
-             key="StructureDefinition-profile-communicationrequest"
-             id="StructureDefinition/profile-communicationrequest"/>
-   <artifact name="PAS Coverage"
-             key="StructureDefinition-profile-coverage"
-             id="StructureDefinition/profile-coverage"/>
-   <artifact name="PAS Device Request"
-             key="StructureDefinition-profile-devicerequest"
-             id="StructureDefinition/profile-devicerequest"/>
-   <artifact name="PAS Encounter"
-             key="StructureDefinition-profile-encounter"
-             id="StructureDefinition/profile-encounter"/>
-   <artifact name="PAS Insurer Organization"
-             key="StructureDefinition-profile-insurer"
-             id="StructureDefinition/profile-insurer"/>
-   <artifact name="PAS Medication Request"
-             key="StructureDefinition-profile-medicationrequest"
-             id="StructureDefinition/profile-medicationrequest"/>
-   <artifact name="PAS Practitioner"
-             key="StructureDefinition-profile-practitioner"
-             id="StructureDefinition/profile-practitioner"/>
-   <artifact name="PAS Requestor Organization"
-             key="StructureDefinition-profile-requestor"
-             id="StructureDefinition/profile-requestor"/>
-   <artifact name="PAS Service Request"
-             key="StructureDefinition-profile-servicerequest"
-             id="StructureDefinition/profile-servicerequest"/>
-   <artifact name="PAS Subscriber Patient"
-             key="StructureDefinition-profile-subscriber"
-             id="StructureDefinition/profile-subscriber"/>
-   <artifact name="PAS Timing"
-             key="StructureDefinition-profile-datatype-timing"
-             id="StructureDefinition/profile-datatype-timing"/>
-   <artifact name="AdministrationReferenceNumber"
-             key="StructureDefinition-extension-administrationReferenceNumber"
-             id="StructureDefinition/extension-administrationReferenceNumber"/>
-   <artifact name="AuthorizationNumber"
-             key="StructureDefinition-extension-authorizationNumber"
-             id="StructureDefinition/extension-authorizationNumber"/>
-   <artifact name="AuthorizedDate"
-             key="StructureDefinition-extension-itemAuthorizedDate"
-             id="StructureDefinition/extension-itemAuthorizedDate"/>
-   <artifact name="AuthorizedItemDetail"
-             key="StructureDefinition-extension-itemAuthorizedDetail"
-             id="StructureDefinition/extension-itemAuthorizedDetail"/>
-   <artifact name="AuthorizedProvider"
-             key="StructureDefinition-extension-itemAuthorizedProvider"
-             id="StructureDefinition/extension-itemAuthorizedProvider"/>
-   <artifact name="CalendarPattern"
-             key="StructureDefinition-extension-timingcalendarpattern"
-             id="StructureDefinition/extension-timingcalendarpattern"/>
-   <artifact name="CertificationType"
-             key="StructureDefinition-extension-certificationType"
-             id="StructureDefinition/extension-certificationType"/>
-   <artifact name="CommunicatedDiagnosis"
-             key="StructureDefinition-extension-communicatedDiagnosis"
-             id="StructureDefinition/extension-communicatedDiagnosis"/>
-   <artifact name="ContentModifier"
-             key="StructureDefinition-extension-contentModifier"
-             id="StructureDefinition/extension-contentModifier"/>
-   <artifact name="DeliveryPattern"
-             key="StructureDefinition-extension-timingdeliverypattern"
-             id="StructureDefinition/extension-timingdeliverypattern"/>
-   <artifact name="DiagnosisRecordedDate"
-             key="StructureDefinition-extension-diagnosisRecordedDate"
-             id="StructureDefinition/extension-diagnosisRecordedDate"/>
-   <artifact name="EPSDTIndicator"
-             key="StructureDefinition-extension-epsdtIndicator"
-             id="StructureDefinition/extension-epsdtIndicator"/>
-   <artifact name="FollowupAction"
-             key="StructureDefinition-extension-errorFollowupAction"
-             id="StructureDefinition/extension-errorFollowupAction"/>
-   <artifact name="InfoCancelledFlag"
-             key="StructureDefinition-extension-infoCancelled"
-             id="StructureDefinition/extension-infoCancelled"/>
-   <artifact name="InfoChanged"
-             key="StructureDefinition-extension-infoChanged"
-             id="StructureDefinition/extension-infoChanged"/>
-   <artifact name="ItemTraceNumber"
-             key="StructureDefinition-extension-itemTraceNumber"
-             id="StructureDefinition/extension-itemTraceNumber"/>
-   <artifact name="LevelOfServiceCode"
-             key="StructureDefinition-extension-levelOfServiceCode"
-             id="StructureDefinition/extension-levelOfServiceCode"/>
-   <artifact name="MilitaryStatus"
-             key="StructureDefinition-extension-militaryStatus"
-             id="StructureDefinition/extension-militaryStatus"/>
-   <artifact name="NursingHomeLevelOfCare"
-             key="StructureDefinition-extension-nursingHomeLevelOfCare"
-             id="StructureDefinition/extension-nursingHomeLevelOfCare"/>
-   <artifact name="NursingHomeResidentialStatus"
-             key="StructureDefinition-extension-nursingHomeResidentialStatus"
-             id="StructureDefinition/extension-nursingHomeResidentialStatus"/>
-   <artifact name="PatientStatus"
-             key="StructureDefinition-extension-patientstatus"
-             id="StructureDefinition/extension-patientstatus"/>
-   <artifact name="PreAuthIssueDate"
-             key="StructureDefinition-extension-itemPreAuthIssueDate"
-             id="StructureDefinition/extension-itemPreAuthIssueDate"/>
-   <artifact name="PreAuthPeriod"
-             key="StructureDefinition-extension-itemPreAuthPeriod"
-             id="StructureDefinition/extension-itemPreAuthPeriod"/>
-   <artifact name="ProductOrServiceCodeEnd"
-             key="StructureDefinition-extension-productOrServiceCodeEnd"
-             id="StructureDefinition/extension-productOrServiceCodeEnd"/>
-   <artifact name="RequestedService"
-             key="StructureDefinition-extension-requestedService"
-             id="StructureDefinition/extension-requestedService"/>
-   <artifact name="RevenueUnitRateLimit"
-             key="StructureDefinition-extension-revenueUnitRateLimit"
-             id="StructureDefinition/extension-revenueUnitRateLimit"/>
-   <artifact name="ReviewAction"
-             key="StructureDefinition-extension-reviewAction"
-             id="StructureDefinition/extension-reviewAction"/>
-   <artifact name="ReviewActionCode"
-             key="StructureDefinition-extension-reviewActionCode"
-             id="StructureDefinition/extension-reviewActionCode"/>
-   <artifact name="ServiceItemRequestType"
-             key="StructureDefinition-extension-serviceItemReqestType"
-             id="StructureDefinition/extension-serviceItemReqestType"/>
-   <artifact name="AHA NUBC Revenue Codes"
-             key="ValueSet-AHANUBCFL42RevenueCodes"
-             id="ValueSet/AHANUBCFL42RevenueCodes"/>
-   <artifact name="PASInformationChangeMode"
-             key="ValueSet-PASInformationChangeMode"
-             id="ValueSet/PASInformationChangeMode"/>
-   <artifact name="PASSupportingInfoType"
-             key="ValueSet-PASSupportingInfoType"
-             id="ValueSet/PASSupportingInfoType"/>
-   <artifact name="AHA NUBC Revenue Codes"
-             key="CodeSystem-AHANUBCFL42RevenueCodes"
-             id="CodeSystem/AHANUBCFL42RevenueCodes"/>
-   <artifact name="PASInformationChangeMode"
-             key="CodeSystem-PASInformationChangeMode"
-             id="CodeSystem/PASInformationChangeMode"/>
-   <artifact name="PASSupportingInfoType"
-             key="CodeSystem-PASSupportingInfoType"
-             id="CodeSystem/PASSupportingInfoType"/>
-   <artifact name="ClaimInquiryOperation"
-             key="OperationDefinition-Claim-inquiry"
-             id="OperationDefinition/Claim-inquiry"/>
-   <artifact name="ClaimSubmitOperation"
-             key="OperationDefinition-Claim-submit"
-             id="OperationDefinition/Claim-submit"/>
-   <artifact name="ClaimResponse" key="ClaimResponse" deprecated="true"/>
-   <page name="(NA)" key="NA"/>
-   <page name="(many)" key="many"/>
-   <page name="Table of Contents" key="toc"/>
-   <page name="PAS Home Page" key="index"/>
-   <page name="Use Cases and Overview" key="usecases"/>
-   <page name="Technical Background" key="background"/>
-   <page name="HIPAA Regulations" key="regulations"/>
-   <page name="Formal Specification" key="specification"/>
-   <page name="Downloads" key="downloads"/>
-   <page name="Credits" key="credits"/>
-   <page name="Artifacts Overview" key="fhirArtifacts"/>
-   <page name="Artifacts Summary" key="artifacts"/>
-   <page name="(profiles)" key="profiles" deprecated="true"/>
-   <page name="methodology" key="methodology" deprecated="true"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2019Sep" ciUrl="https://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="current" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/us/davinci-pas"><version code="current" url="https://build.fhir.org/ig/HL7/davinci-pas"/>
+<version code="0.1.0" url="http://hl7.org/fhir/us/davinci-pas/2019Sep"/>
+<version code="0.1" deprecated="true"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/AHANUBCRevenueCodes" key="ValueSet-AHANUBCRevenueCodes" name="AHA NUBC Revenue Codes"/>
+<artifact id="CodeSystem/AHANUBCRevenueCodes" key="CodeSystem-AHANUBCRevenueCodes" name="AHA NUBC Revenue Codes"/>
+<artifact id="StructureDefinition/extension-administrationReferenceNumber" key="StructureDefinition-extension-administrationReferenceNumber" name="AdministrationReferenceNumber"/>
+<artifact id="StructureDefinition/extension-authorizationNumber" key="StructureDefinition-extension-authorizationNumber" name="AuthorizationNumber"/>
+<artifact id="StructureDefinition/extension-itemAuthorizedDate" key="StructureDefinition-extension-itemAuthorizedDate" name="AuthorizedDate"/>
+<artifact id="StructureDefinition/extension-itemAuthorizedDetail" key="StructureDefinition-extension-itemAuthorizedDetail" name="AuthorizedItemDetail"/>
+<artifact id="StructureDefinition/extension-itemAuthorizedProvider" key="StructureDefinition-extension-itemAuthorizedProvider" name="AuthorizedProvider"/>
+<artifact id="StructureDefinition/extension-timingcalendarpattern" key="StructureDefinition-extension-timingcalendarpattern" name="CalendarPattern"/>
+<artifact id="StructureDefinition/extension-certificationType" key="StructureDefinition-extension-certificationType" name="CertificationType"/>
+<artifact id="OperationDefinition/Claim-inquiry" key="OperationDefinition-Claim-inquiry" name="ClaimInquiryOperation"/>
+<artifact deprecated="true" key="ClaimResponse" name="ClaimResponse"/>
+<artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="ClaimSubmitOperation"/>
+<artifact id="StructureDefinition/extension-communicatedDiagnosis" key="StructureDefinition-extension-communicatedDiagnosis" name="CommunicatedDiagnosis"/>
+<artifact id="StructureDefinition/extension-contentModifier" key="StructureDefinition-extension-contentModifier" name="ContentModifier"/>
+<artifact id="StructureDefinition/extension-timingdeliverypattern" key="StructureDefinition-extension-timingdeliverypattern" name="DeliveryPattern"/>
+<artifact id="StructureDefinition/extension-diagnosisRecordedDate" key="StructureDefinition-extension-diagnosisRecordedDate" name="DiagnosisRecordedDate"/>
+<artifact id="StructureDefinition/extension-epsdtIndicator" key="StructureDefinition-extension-epsdtIndicator" name="EPSDTIndicator"/>
+<artifact id="StructureDefinition/extension-errorFollowupAction" key="StructureDefinition-extension-errorFollowupAction" name="FollowupAction"/>
+<artifact id="StructureDefinition/extension-infoCancelled" key="StructureDefinition-extension-infoCancelled" name="InfoCancelledFlag"/>
+<artifact id="StructureDefinition/extension-infoChanged" key="StructureDefinition-extension-infoChanged" name="InfoChanged"/>
+<artifact id="StructureDefinition/extension-itemTraceNumber" key="StructureDefinition-extension-itemTraceNumber" name="ItemTraceNumber"/>
+<artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
+<artifact id="StructureDefinition/extension-militaryStatus" key="StructureDefinition-extension-militaryStatus" name="MilitaryStatus"/>
+<artifact id="StructureDefinition/extension-nursingHomeLevelOfCare" key="StructureDefinition-extension-nursingHomeLevelOfCare" name="NursingHomeLevelOfCare"/>
+<artifact id="StructureDefinition/extension-nursingHomeResidentialStatus" key="StructureDefinition-extension-nursingHomeResidentialStatus" name="NursingHomeResidentialStatus"/>
+<artifact id="StructureDefinition/profile-beneficiary" key="StructureDefinition-profile-beneficiary" name="PAS Beneficiary Patient"/>
+<artifact id="StructureDefinition/profile-claim" key="StructureDefinition-profile-claim" name="PAS Claim"/>
+<artifact id="StructureDefinition/profile-claim-inquiry" key="StructureDefinition-profile-claim-inquiry" name="PAS Claim Inquiry"/>
+<artifact id="StructureDefinition/profile-claiminquiryresponse" key="StructureDefinition-profile-claiminquiryresponse" name="PAS Claim Inquiry Response"/>
+<artifact id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="PAS Claim Response"/>
+<artifact id="StructureDefinition/profile-claim-update" key="StructureDefinition-profile-claim-update" name="PAS Claim Update"/>
+<artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="PAS CommunicationRequest"/>
+<artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="PAS Coverage"/>
+<artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="PAS Device Request"/>
+<artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="PAS Encounter"/>
+<artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
+<artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
+<artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="PAS Practitioner"/>
+<artifact id="StructureDefinition/profile-pas-request-bundle" key="StructureDefinition-profile-pas-request-bundle" name="PAS Request Bundle"/>
+<artifact id="StructureDefinition/profile-requestor" key="StructureDefinition-profile-requestor" name="PAS Requestor Organization"/>
+<artifact id="StructureDefinition/profile-pas-response-bundle" key="StructureDefinition-profile-pas-response-bundle" name="PAS Response Bundle"/>
+<artifact id="StructureDefinition/profile-servicerequest" key="StructureDefinition-profile-servicerequest" name="PAS Service Request"/>
+<artifact id="StructureDefinition/profile-subscriber" key="StructureDefinition-profile-subscriber" name="PAS Subscriber Patient"/>
+<artifact id="StructureDefinition/profile-datatype-timing" key="StructureDefinition-profile-datatype-timing" name="PAS Timing"/>
+<artifact id="ValueSet/PASInformationChangeMode" key="ValueSet-PASInformationChangeMode" name="PASInformationChangeMode"/>
+<artifact id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PASInformationChangeMode"/>
+<artifact id="ValueSet/PASSupportingInfoType" key="ValueSet-PASSupportingInfoType" name="PASSupportingInfoType"/>
+<artifact id="CodeSystem/PASSupportingInfoType" key="CodeSystem-PASSupportingInfoType" name="PASSupportingInfoType"/>
+<artifact id="StructureDefinition/extension-patientstatus" key="StructureDefinition-extension-patientstatus" name="PatientStatus"/>
+<artifact id="StructureDefinition/extension-itemPreAuthIssueDate" key="StructureDefinition-extension-itemPreAuthIssueDate" name="PreAuthIssueDate"/>
+<artifact id="StructureDefinition/extension-itemPreAuthPeriod" key="StructureDefinition-extension-itemPreAuthPeriod" name="PreAuthPeriod"/>
+<artifact id="StructureDefinition/extension-productOrServiceCodeEnd" key="StructureDefinition-extension-productOrServiceCodeEnd" name="ProductOrServiceCodeEnd"/>
+<artifact id="StructureDefinition/extension-requestedService" key="StructureDefinition-extension-requestedService" name="RequestedService"/>
+<artifact id="StructureDefinition/extension-revenueUnitRateLimit" key="StructureDefinition-extension-revenueUnitRateLimit" name="RevenueUnitRateLimit"/>
+<artifact id="StructureDefinition/extension-reviewAction" key="StructureDefinition-extension-reviewAction" name="ReviewAction"/>
+<artifact id="StructureDefinition/extension-reviewActionCode" key="StructureDefinition-extension-reviewActionCode" name="ReviewActionCode"/>
+<artifact id="StructureDefinition/extension-serviceItemReqestType" key="StructureDefinition-extension-serviceItemReqestType" name="ServiceItemRequestType"/>
+<artifact id="Bundle/ClaimSubmitBundleExample" key="Bundle-ClaimSubmitBundleExample" name="Submit Claim Bundle Example"/>
+<artifact id="Claim/ClaimSubmitExample" key="Claim-ClaimSubmitExample" name="Submit Claim Example"/>
+<artifact id="Coverage/InsuranceExample" key="Coverage-InsuranceExample" name="Submit Claim Insurance Example"/>
+<artifact id="Organization/InsurerExample" key="Organization-InsurerExample" name="Submit Claim Insurer Example"/>
+<artifact id="ServiceRequest/ReferralRequestExample" key="ServiceRequest-ReferralRequestExample" name="Submit Claim Referral Request Example"/>
+<artifact id="Organization/UMOExample" key="Organization-UMOExample" name="Submit Claim Requestor Example"/>
+<artifact id="Patient/SubscriberExample" key="Patient-SubscriberExample" name="Submit Claim Subscriber Example"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page deprecated="true" key="profiles" name="(profiles)"/>
+<page key="fhirArtifacts" name="Artifacts Overview"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="credits" name="Credits"/>
+<page key="downloads" name="Downloads"/>
+<page key="specification" name="Formal Specification"/>
+<page key="regulations" name="HIPAA Regulations"/>
+<page key="index" name="PAS Home Page"/>
+<page key="toc" name="Table of Contents"/>
+<page key="background" name="Technical Background"/>
+<page key="usecases" name="Use Cases and Overview"/>
+<page deprecated="true" key="methodology" name="methodology"/>
 </specification>
