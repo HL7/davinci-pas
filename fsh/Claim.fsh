@@ -3,7 +3,6 @@ Parent: Claim
 Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
-* extension contains CertificationType named certificationType 0..1
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1
 * identifier 1..1 MS
 * status = #active (exactly)
@@ -162,9 +161,11 @@ Parent: PASClaim
 Id: profile-claim-update
 Title: "PAS Claim Update"
 Description: "PAS constraints on Claim resource when submitting an update to a previous PAS prior authorization request"
-* extension contains InfoChanged named infoChanged 0..1
-* modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
 * supportingInfo.extension contains InfoChanged named infoChanged 0..1
+* supportingInfo.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
+* item.extension contains InfoChanged named infoChanged 0..1
+* item.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
+
 
 Extension: InfoChanged
 Id: extension-infoChanged
@@ -173,8 +174,10 @@ Description: "A code indicating how the piece of information has changed."
 * valueCode from PASInformationChangeMode (required)
 
 Extension: InfoCancelledFlag
-Id: extension-infoCancelled
+Id: modifierextension-infoCancelled
 Description: "A flag indicating whether the piece of information was cancelled."
+* . ^isModifier = true
+* . ^isModifierReason = "Indicates that this piece of information is not to be used."
 * value[x] only boolean
 
 

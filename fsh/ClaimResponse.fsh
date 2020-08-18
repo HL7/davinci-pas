@@ -39,7 +39,7 @@ Extension: ReviewAction
 Id: extension-reviewAction
 Description: "The details of the review action that is necessary for the authorization."
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..1 and secondSurgicalOpinionFlag 0..1
-* extension[number].value[x] only integer
+* extension[number].value[x] only string
 * extension[reasonCode].value[x] only CodeableConcept
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 

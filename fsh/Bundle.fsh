@@ -24,7 +24,6 @@ Parent: Bundle
 Id: profile-pas-response-bundle
 Title: "PAS Response Bundle"
 Description: "PAS constraints on Bundle resource ensuring that a claim response resource is present and that non-supported elements are not."
-* identifier 1..1 MS
 * type = #collection (exactly)
 * timestamp 1..1 MS
 * entry 1..* MS

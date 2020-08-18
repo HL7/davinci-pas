@@ -23,7 +23,7 @@
 <artifact id="StructureDefinition/extension-diagnosisRecordedDate" key="StructureDefinition-extension-diagnosisRecordedDate" name="DiagnosisRecordedDate"/>
 <artifact id="StructureDefinition/extension-epsdtIndicator" key="StructureDefinition-extension-epsdtIndicator" name="EPSDTIndicator"/>
 <artifact id="StructureDefinition/extension-errorFollowupAction" key="StructureDefinition-extension-errorFollowupAction" name="FollowupAction"/>
-<artifact id="StructureDefinition/extension-infoCancelled" key="StructureDefinition-extension-infoCancelled" name="InfoCancelledFlag"/>
+<artifact id="StructureDefinition/modifierextension-infoCancelled" key="StructureDefinition-modifierextension-infoCancelled" name="InfoCancelledFlag"/>
 <artifact id="StructureDefinition/extension-infoChanged" key="StructureDefinition-extension-infoChanged" name="InfoChanged"/>
 <artifact id="StructureDefinition/extension-itemTraceNumber" key="StructureDefinition-extension-itemTraceNumber" name="ItemTraceNumber"/>
 <artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
@@ -53,7 +53,7 @@
 <artifact id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PASInformationChangeMode"/>
 <artifact id="ValueSet/PASSupportingInfoType" key="ValueSet-PASSupportingInfoType" name="PASSupportingInfoType"/>
 <artifact id="CodeSystem/PASSupportingInfoType" key="CodeSystem-PASSupportingInfoType" name="PASSupportingInfoType"/>
-<artifact id="StructureDefinition/extension-patientstatus" key="StructureDefinition-extension-patientstatus" name="PatientStatus"/>
+<artifact id="StructureDefinition/extension-patientStatus" key="StructureDefinition-extension-patientStatus" name="PatientStatus"/>
 <artifact id="StructureDefinition/extension-itemPreAuthIssueDate" key="StructureDefinition-extension-itemPreAuthIssueDate" name="PreAuthIssueDate"/>
 <artifact id="StructureDefinition/extension-itemPreAuthPeriod" key="StructureDefinition-extension-itemPreAuthPeriod" name="PreAuthPeriod"/>
 <artifact id="StructureDefinition/extension-productOrServiceCodeEnd" key="StructureDefinition-extension-productOrServiceCodeEnd" name="ProductOrServiceCodeEnd"/>
@@ -62,13 +62,22 @@
 <artifact id="StructureDefinition/extension-reviewAction" key="StructureDefinition-extension-reviewAction" name="ReviewAction"/>
 <artifact id="StructureDefinition/extension-reviewActionCode" key="StructureDefinition-extension-reviewActionCode" name="ReviewActionCode"/>
 <artifact id="StructureDefinition/extension-serviceItemReqestType" key="StructureDefinition-extension-serviceItemReqestType" name="ServiceItemRequestType"/>
-<artifact id="Bundle/ClaimSubmitBundleExample" key="Bundle-ClaimSubmitBundleExample" name="Submit Claim Bundle Example"/>
+<artifact id="Bundle/ClaimSubmitHomecareBundleExample" key="Bundle-ClaimSubmitHomecareBundleExample" name="Submit Claim Bundle Example"/>
+<artifact id="Bundle/ClaimSubmitHomecareDifferentialBundleExample" key="Bundle-ClaimSubmitHomecareDifferentialBundleExample" name="Submit Claim Bundle Example"/>
+<artifact id="Bundle/ClaimSubmitHomecareUpdateBundleExample" key="Bundle-ClaimSubmitHomecareUpdateBundleExample" name="Submit Claim Bundle Example"/>
+<artifact id="Bundle/ClaimSubmitRequestBundleExample" key="Bundle-ClaimSubmitRequestBundleExample" name="Submit Claim Bundle Example"/>
 <artifact id="Claim/ClaimSubmitExample" key="Claim-ClaimSubmitExample" name="Submit Claim Example"/>
+<artifact id="Claim/ClaimSubmitHomecareExample" key="Claim-ClaimSubmitHomecareExample" name="Submit Claim Example"/>
 <artifact id="Coverage/InsuranceExample" key="Coverage-InsuranceExample" name="Submit Claim Insurance Example"/>
 <artifact id="Organization/InsurerExample" key="Organization-InsurerExample" name="Submit Claim Insurer Example"/>
+<artifact id="Practitioner/ReferralPractitionerExample" key="Practitioner-ReferralPractitionerExample" name="Submit Claim Referral Practitioner Example"/>
 <artifact id="ServiceRequest/ReferralRequestExample" key="ServiceRequest-ReferralRequestExample" name="Submit Claim Referral Request Example"/>
 <artifact id="Organization/UMOExample" key="Organization-UMOExample" name="Submit Claim Requestor Example"/>
+<artifact id="Bundle/ClaimSubmitResponseBundleExample" key="Bundle-ClaimSubmitResponseBundleExample" name="Submit Claim Response Bundle Example"/>
+<artifact id="ClaimResponse/ClaimSubmitResponseExample" key="ClaimResponse-ClaimSubmitResponseExample" name="Submit Claim Response Example"/>
 <artifact id="Patient/SubscriberExample" key="Patient-SubscriberExample" name="Submit Claim Subscriber Example"/>
+<artifact id="Claim/ClaimSubmitHomecareDifferentialExample" key="Claim-ClaimSubmitHomecareDifferentialExample" name="Submit Claim Update Differential Example"/>
+<artifact id="Claim/ClaimSubmitHomecareUpdateExample" key="Claim-ClaimSubmitHomecareUpdateExample" name="Submit Claim Update Example"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>
