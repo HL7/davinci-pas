@@ -79,14 +79,6 @@ Note: requires the use of the standard within the same covered entity (e.g. with
 
 ---
 
-The following is an excerpt from the CFR providing an exception for "direct data entry transactions" (relevant sections bolded).
-> § 162.923   Requirements for covered entities. 
->> (b) **Exception for direct data entry transactions. A health care provider electing to use direct data entry offered by a health plan to conduct a transaction for which a standard has been adopted under this part must use the applicable data content and data condition requirements of the standard when conducting the transaction. The health care provider is not required to use the format requirements of the standard.**
-
-Note: allows the use of an alternative transaction as long as it uses the "applicable" data content and data condition requirements of the standard  -- intended to support organization that cannot perform the standard transaction
-
----
-
 The following is an excerpt from the CFR providing the use a business associate(relevant sections bolded).
 
 > § 162.923   Requirements for covered entities. 
