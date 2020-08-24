@@ -20,7 +20,7 @@ Technical support and guidance:
 
 Reference implementation:
 
-* Jason Walonski (Mitre)
+* Gary Gryan (MITRE), Pat LaRocque (MITRE), Ben Langley (MITRE) and Jason Walonoski (MITRE)
 
 This implementation guide was created under the supervision and review of the HL7 [Financial Management](http://www.hl7.org/Special/committees/fm) (sponsor) and [Attachments](http://www.hl7.org/Special/Committees/claims) (co-sponsor) work groups.
 

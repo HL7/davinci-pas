@@ -31,7 +31,7 @@ releaseLabel: CI Build
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:
   index.md:
-    title: PAS Home Page
+    title: Prior Authorization Implementation Guide Home Page
   usecases.md:
     title: Use Cases and Overview
   background.md:
@@ -65,12 +65,10 @@ menu:
     Formal Specification: specification.html
     Downloads: downloads.html
     Credits: credits.html
-  FHIR Artifacts:
-    Artifacts Overview: fhirArtifacts.html
-    PAS-specific Artifacts: artifacts.html
-    US Core (STU3 - R4 based): http://hl7.org/fhir/us/core/STU3.1
+  FHIR Artifacts: fhirArtifacts.html
   Base Specs:
-    "FHIR R4 Spec ": new-tab external {{site.data.fhir.path}}index.html
+    FHIR R4 Spec: new-tab {{site.data.fhir.path}}
+    US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
   History: http://hl7.org/fhir/us/davinci-pas/history.html
 
 # ╭───────────────────────────────────────package-list.json────────────────────────────────────────╮

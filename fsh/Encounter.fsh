@@ -10,6 +10,6 @@ Description: "PAS constraints on Encounter resource mandating support for elemen
 * hospitalization.admitSource MS
 
 Extension: PatientStatus
-Id: extension-patientstatus
+Id: extension-patientStatus
 Description: "A code representing the status of the patient when being admitted"
 * value[x] only CodeableConcept

@@ -1,5 +1,5 @@
 ### Da Vinci
-Da Vinci is an HL7-sponsored project that brings together the U.S. payer ,providers, and technology suppliers (including EHR vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
+Da Vinci is an industry sponsored project which is contributing to the development of HL7 standards.  It brings together the U.S. payer, providers, and technology suppliers (including EHR vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
 
 The process that Da Vinci has adopted includes: 
 1. identify business, clinical, technical and testing requirements, 
@@ -13,7 +13,7 @@ Additional information about Da Vinci, its members, the use cases and the implem
 ### Systems
 The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 
-**Client systems** are typically Electronic Medical Record (EMR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. pharmacy systems, dental systems, etc.)
+**Client systems** are typically Electronic Medical Record (EMR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.)
 
 **Server systems** (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
 
@@ -39,4 +39,4 @@ This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) v
 This implementation guide also builds on the [US Core (STU3 - R4 based)]({{site.data.fhir.hl7_fhir_us_core}}) Implementation Guide and implementers need to familiarize themselves with the profiles in that IG.
 
 #### ASC X12N
-The intention of this implementation guide is that knowledge of X12 should be isolated from client/EHR implementers.  However, intermediary systems will require an intimate understanding of the X12 specification, particulary the 278, 275 and 278i transactions.
+The intention of this implementation guide is that detailed knowledge of X12N is not required by client/EHR implementers, though knowledge of some value sets and business processes will be needed. Intermediary systems will require an intimate understanding of the X12N specification, particularly the 278 and 275 transactions.

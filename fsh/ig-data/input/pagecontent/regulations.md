@@ -3,7 +3,7 @@ The Health Insurance Portability and Accountability Act (HIPAA) of 1996 contains
 * Medicaid Integrity Program/Fraud and Abuse
 * Administrative Simplification
 
-This page summarizes the administrative simplification provision that implemented standard transaction and code sets, identifiers, security, and privacy rules across the healthcare industry.
+This page summarizes the administrative simplification provision that implemented standard transaction and code sets, identifiers, security, and privacy rules across the healthcare industry.  This page is informative and implementers should always consult the full regulations if they have questions/concerns.
 
 ### Administrative Simplification Requirements of HIPAA
 The major requirements of administrative simplification affect:
@@ -16,7 +16,7 @@ The complete suite of [HIPAA Administrative Simplification Regulations](https://
 
 The following entities are affected by the HIPAA administration simplification requirements:
 * All health plans, including Medicaid, Medicare, and commercial plans
-* Providers that transmit or store health information electronically
+* Healthcare Providers who choose to transmit any information in an electronic form in connection with a transaction for which HHS has adopted a standard
 * Healthcare clearinghouses
 
 ### General Summary of Requirements
@@ -26,11 +26,22 @@ Health Plans (including CMS)
 * May not refuse to conduct a standard transaction
 * May not delay, adversely impact, or attempt to adversely affect a standard transaction or a person using standard transaction
 * Can require standard data elements within a standard transaction
-* May use a BA or clearinghouse as an intermediary to achieve compliance
+* May use a business associate or clearinghouse as an intermediary to achieve compliance
 
 Providers
 * Compliance required by any "health care provider who transmits any health information in electronic form in connection with a transaction referred to" in the Act
-* May use a BA or  clearinghouse as an intermediary to achieve compliance
+* May use a business associate or clearinghouse as an intermediary to achieve compliance
+
+### HIPAA Privacy & Security Considerations
+The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process a prior authorization is context and business-rule-specific. Implementers submitting prior authorization requests using PAS must be aware of (and adhere to) their responsibilities with respect to data sharing imposed by regulations such as HIPAA's "minimum necessary" rule, patient consent rules, etc. This may involve allowing providers to review information prior to data transmission to the payer. Implementations SHALL permit provider review of data prior to transmission, but SHALL NOT require such review.
+
+The sharing of information from provider to payer for determining prior authorization is subject to HIPAA's "minimum necessary" regulations (specifically 45 CFR 164.514(d)(3) and (d)(4)). Payers are responsible for ensuring that only information necessary to make the prior authorization decision is solicited and providers are responsible for ensuring that only data that is reasonably relevant to the prior authorization decision is transmitted.
+
+Some of the data shared as part of the prior authorization process may have associated constraints on the use of that information for other purposes, including subsequent disclosure to other payers, practitioners, policy-holders, etc. While HL7 FHIR supports conveying this information via security labels on transmitted resources, this information is not currently mappable (and thus findable) in the X12 275 and 278 transactions. Payers who do not view the FHIR version of the transmitted information should be aware of the possibility of these limitations and ensure they have policies that enforce appropriate sharing constraints on data.
+
+In order to access information about a prior authorization, the provider system will need to access the payor system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication are covered is handled within HRex.
+
+Once the system authentication has occurred, there will be presumed authorization for the provider to see the current state of the prior authorization. The space will rely on audit and regulatory/payer consequences to ensure that prior authorizations are not accessed without a legitimate business requirement. This approach is used because there is no reasonable way for a payer to know 'a priori' whether a given provider has a legitimate need to know tha prior authorization status or for the patient to be involved in verifying their need to know.
 
 ### HIPAA Regulations
 Title II, Subtitle F -- Administrative Simplification of the Health Insurance Portability and Accountability Act of 1996 (HIPAA) (Public Law 104-191, H. R. 3103, Kennedy-Kassebaum Bill) which amends Part C of Title XI of the Social Security Act, and is codified starting at 42 U.S.C. §1320d
