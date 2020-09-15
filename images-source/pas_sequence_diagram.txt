@@ -1,0 +1,14 @@
+@startuml
+database Client
+database Server
+database X12
+Client -> Server : PAS Request
+Server -> X12 : X12N 278 Request
+X12 -> Server : X12N 278 Response
+Server -> Client : PAS Complete Response
+Server -[#0000FF]-> Client : PAS Pended Response
+Client -[#0000FF]-> Server : PAS Inquiry Request
+Server -[#0000FF]-> X12 : X12N 278i Request
+X12 -[#0000FF]-> Server : X12N 278i Response
+Server -[#0000FF]-> Client : PAS Inquiry Response
+@enduml

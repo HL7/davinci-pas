@@ -8,6 +8,7 @@ If authorization is required and documentation is necessary to substantiate the 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="current.png" alt="Current HIPAA approach diagram"/>
+  <figcaption>Figure 2.1 - Current HIPAA Approach</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -18,11 +19,12 @@ However, adoption of X12 Authorization and Attachment transactions by EHR implem
 Discussion with EHR implementers has suggested that a FHIR-based process for submitting prior authorization requests would have significantly higher uptake.  As well, there is a desire by some payers to consume content in FHIR format.  This implementation guide attempts to do that while still retaining compliance with HIPAA requirements.
 
 ### Business Requirements
-The objective of this implementation guide is to provide a vehicle for automation of a prior authorization request and response within the clinical workflow of the provider.  The IG uses the FHIR standard as the basis for assembling the information necessary to substantiate the need for a particular treatment, and to submit that information and the request for prior authorization to an intermediary end point.  That endpoint is responsible for ensuring that any HIPAA Transaction and Code Set requirements are met (see above). The response from the payer is intended to come back to that intermediary endpoint and be available to the provider's EHR solution using the FHIR  standard.  The goal is to provide real time prior authorization, where possible, in the provider's clinical workflow.  The X12 portion of the exchange happens in a 'black box' that the submitting system needs no visibility into.
+The objective of this implementation guide is to provide a vehicle for automation of a prior authorization request and response within the clinical workflow of the provider.  The IG uses the FHIR standard as the basis for assembling the information necessary to substantiate the need for a particular treatment, and to submit that information and the request for prior authorization to an intermediary end point.  That endpoint is responsible for ensuring that any HIPAA Transaction and Code Set requirements are met (see above). The response from the payer is intended to come back to that intermediary endpoint and be available to the provider's EHR solution using the FHIR  standard.  The goal is to provide real time prior authorization, where possible, in the provider's clinical workflow.  The X12 portion of the exchange happens in a 'black box' that the submitting system needs no visibility into.  This 'black box' is a service responsible for communication with a payer or their agent and handles any HIPAA requirements that may exist.  This service can be the provider's software or an external agent or clearinghouse.
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-architecture.png" alt="Diagram showing PAS participants and flows"/>
+  <figcaption>Figure 2.2 - PAS Participants and Flows</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -47,6 +49,7 @@ From the intermediary's perspective
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-flow.png" alt="High-level PAS workflow"/>
+  <figcaption>Figure 2.3 - High-level PAS Workflow</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 

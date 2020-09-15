@@ -42,6 +42,7 @@ A high-level summary of how all of these IGs will work together can be seen belo
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:0px" width="1000px" src="pa-stack.png" alt="Diagram showing interaction of CRD, DTR and PAS"/>
+  <figcaption>Figure 1.1 - Interaction of CRD, DTR, and PAS</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 

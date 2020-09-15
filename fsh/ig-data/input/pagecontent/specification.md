@@ -37,32 +37,59 @@ The full set of profiles defined in this implementation guide can be found by fo
 #### Integration with other Implementation Guides
 * Implementations of the PAS implementation guide SHALL support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They SHOULD support any other profiles relevant to claims of the types relevant to the types of prior authorizations they process
 * While not strictly required, Clients and Servers supporting this implementation guide SHOULD also comply with the Da Vinci [Coverage requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
-
+* Clients and Servers supporting this implementation guide SHOULD comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
 
 ### Detailed Requirements
 
 #### Summary
-The primary interaction supported by this implementation guide is submitting a prior authorization request and receiving back a response.  To perform this, a FHIR [Bundle](StructureDefinition-profile-pas-request-bundle.html) resource is constructed by the client (EHR) system.  That Bundle will contain a [Claim](StructureDefinition-profile-claim.html) resource (which FHIR uses to submit prior authorization requests), together with various referenced resources needed to support the population of the 5010 version of the ASC X12N 278 prior authorization request and the 6020 version of the ASC X12N 275 additional documentation transactions.
+The primary interaction supported by this implementation guide is submitting a prior authorization request and receiving back a response.  To perform this, a [PASBundle](StructureDefinition-profile-pas-request-bundle.html) resource is constructed by the client (EHR) system.  That Bundle will contain a [Claim](StructureDefinition-profile-claim.html) resource (which FHIR uses to submit prior authorization requests), together with various referenced resources needed to support the population of the 5010 version of the ASC X12N 278 prior authorization request and the 6020 version of the ASC X12N 275 additional documentation transactions.
 
-This Bundle will then be sent as the sole payload of a [Claim/$submit](OperationDefinition-Claim-submit.html) operation.  The server on which the operation is invoked will convert the Bundle into an ASC X12N 278 and 0..* additional unsolicited 275 transactions and execute them all against the target payer system.  It will then take the resulting 278 response and convert it into a response FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html) containing a [ClaimResponse](StructureDefinition-profile-claimresponse.html) and associated resources.  All of this SHOULD happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e. including network transmission time for request and response. (Less time is better.)
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-content.png" alt="PAS Bundle Content"/>
+  <figcaption>Figure 5.1 - PAS Bundle Content</figcaption>
+</figure>
+{::options parse_block_html="true" /}
 
-In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorization items are 'pended' will be returned.  The client (or other interested systems - e.g. patient, caregiver or performing provider systems) can then query the server endpoint for the final results using either a polling or subscription-based mechanism.  During this period of time, the same $submit operation can be used to request cancellation or modification of the prior authorization.
+
+This Bundle will then be sent as the sole payload of a [Claim/$submit](OperationDefinition-Claim-submit.html) operation.  The system on which the operation is invoked will convert the Bundle into an ASC X12N 278 and 0..* additional unsolicited 275 transactions and execute them all against the target payer system.  It will then take the resulting 278 response and convert it into a response FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html) containing a [ClaimResponse](StructureDefinition-profile-claimresponse.html) and associated resources.  All of this SHOULD happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e. including network transmission time for request and response. (Less time is better.)
+
+In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorization items are 'pended' will be returned.  The client (or other interested systems - e.g. patient, caregiver or performing provider systems) can then query the endpoint for the final results using either a polling or subscription-based mechanism.  During this period of time, the same $submit operation can be used to request cancellation or modification of the prior authorization.
 
 ***NOTE*** FHIR uses a pair of resources called Claim and ClaimResponse for multiple purposes - they are used for actual claim submission, but they are *also* used for managing prior authorizations and pre-determinations.  These are distinguished by the Claim.use code.  All references to Claim and ClaimResponse in this implementation guide are using it for the prior authorization purpose.
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas_sequence_diagram.png" alt="PAS Submission Sequence Diagram"/>
+  <figcaption>Figure 5.2 - PAS Submission Sequence</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
+
 
 #### Prior authorization submission
 The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  The Bundle can be encoded in either JSON or XML.  (Servers SHALL support both syntaxes.)  The first entry in the Bundle SHALL be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries SHALL be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once.  Bundle.entry.fullUrl values SHALL be the URL at which the resource is available from the EHR if exposed via the client's REST interface and SHALL be of the form "urn:uuid:[some guid]" otherwise.  All GUIDs used SHALL be unique, including across independent prior authorization submissions - with the exception that the same resource instance being referenced in distinct prior authorization request Bundles can have the same GUID.
 
 In addition to these core elements needed to populate the 278 message, any "supporting information" resources needed to process the prior authorization request (whether determined by DTR processes or by other means) must also be included in the Bundle.  Relevant resources referenced by those "supporting information" resources SHALL also be included (e.g. prescriber Practitioner and Medication for a MedicationRequest).  Any such resource that has a US Core profile SHALL comply with the relevant US Core profiles.  All "supporting information" resources included in the Bundle SHALL be pointed to by the Claim resource using the Claim.supportingInfo.valueReference element.  The Claim.supportingInfo.category should be populated appropriately if possible, using 'other' if no appropriate category is known.  The Claim.supportingInfo.sequence for each entry SHALL be unique within the Claim.
 
-All resources SHALL comply with their respective profiles.  FHIR elements not marked as 'must support' MAY be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made.  Servers that do not process such elements SHALL ignore unsupported elements unless they are 'modifier' elements, in which case the server MAY treat the presence of the element as an error.
+All resources SHALL comply with their respective profiles.  FHIR elements not marked as 'must support' MAY be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made.  Systems that do not process such elements SHALL ignore unsupported elements unless they are 'modifier' elements, in which case the system MAY treat the presence of the element as an error.
 
-Details on how to map the FHIR Bundle to the relevant X12N 278 and 275 messages are expected to be published by ASC X12N.  The server is responsible for performing full conversion of all mapped elements, including execution of terminology translations when necessary.  In addition, the server SHALL produce an additional 275 message whose binary segment contains a base64-encoded copy of the entire FHIR Bundle resource.  This serves two purposes - it provides full audit traceability for the payer and it also allows the payer to directly process the FHIR content, potentially extracting elements not present in the X12 messages if needed.  (Note: there is no requirement that payers take any such action.).  The 275 BDS01 Filter ID Code element SHALL be set to "B64".  Since the 275 binary segment doesn't contain a field for the binary data MIME type, any system reading that field will have to parse out the first few characters to determine whether the FHIR resources are encoded using XML or JSON syntax.  Translation/mapping systems should be aware that if the size of the attachments as part of a claims submission would exceed the size limitations of a particular recipient, the intermediary should split the attachments into separate 275s to remain within the overall limit.  All the data required for an X12N 278 is included in the FHIR Bundle request and response, to stay in compliance with HIPAA transaction requirements.
-  
+Details on how to map the FHIR Bundle to the relevant X12N 278 and 275 messages are expected to be published by ASC X12N.  The system is responsible for performing full conversion of all mapped elements, including execution of terminology translations when necessary.  In addition, the system SHALL produce an additional 275 message whose binary segment contains a base64-encoded copy of the entire FHIR Bundle resource.  This serves two purposes - it provides full audit traceability for the payer and it also allows the payer to directly process the FHIR content, potentially extracting elements not present in the X12 messages if needed.  (Note: there is no requirement that payers take any such action.).  The 275 BDS01 Filter ID Code element SHALL be set to "B64".  Since the 275 binary segment doesn't contain a field for the binary data MIME type, any system reading that field will have to parse out the first few characters to determine whether the FHIR resources are encoded using XML or JSON syntax.  Translation/mapping systems should be aware that if the size of the attachments as part of a claims submission would exceed the size limitations of a particular recipient, the intermediary should split the attachments into separate 275s to remain within the overall limit.  All the data required for an X12N 278 is included in the FHIR Bundle request and response, to stay in compliance with HIPAA transaction requirements.
+
+{% raw %}
+<blockquote class="stu-note">
+<p>
+The mapping of Claim.item is driven by the X12 workflow with the use of identifiers on claim items.  Although X12 allows this, the Financial Management workgroup has not seen this in other standards and other jurisdictions.  This Implementation Guide uses extensions for the various item identifiers, but should this pattern be found to predominate then this may be promoted to an element in the base resource.
+</p>
+</blockquote>
+{% endraw %}
+
 This IG treats everything that happens beyond the defined operations endpoint receiving the FHIR bundle as a black box.  This black box includes any business associate(s), clearinghouse(s), payers, contracted review entities,  and other intermediaries that may be involved in the PA request and response. It is up to that black box to ensure that any regulatory requirements are met and to perform all processing within the allowed timeframe.
 
 #### Prior authorization response
-The response to the prior authorization is processed in the reverse order as the request.  The server is responsible for converting the ASC X12N 278 response into a FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html).  The Bundle SHALL start with a [ClaimResponse](StructureDefinition-profile-claimresponse.html) entry that contains information mapped from the 278 response.  As well, just like for the prior authorization request, additional Bundle entries must be present for all resources referenced by the ClaimResponse or descendent references.  When converting additional Bundle entries, the conversion process SHOULD ensure that only one resource is created for a given combination of content.  E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  When echoing back resources that are the same as were present in the prior authorization request, the server SHALL ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
+The response to the prior authorization is processed in the reverse order as the request.  The system is responsible for converting the ASC X12N 278 response into a FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html).  The Bundle SHALL start with a [ClaimResponse](StructureDefinition-profile-claimresponse.html) entry that contains information mapped from the 278 response.  As well, just like for the prior authorization request, additional Bundle entries must be present for all resources referenced by the ClaimResponse or descendent references.  When converting additional Bundle entries, the conversion process SHOULD ensure that only one resource is created for a given combination of content.  E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  When echoing back resources that are the same as were present in the prior authorization request, the system SHALL ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
+
+It is possible that the incoming prior authorization Bundle can not be processed due to validation errors or other non-business-errors.  In these instances, the receiving system SHALL return OperationOutcome intances that detail why the Bundle could not be processed and no ClaimResponse will be returned.  These errors are NOT the errors that are detected by the system processing the request and that can be conveyed in a ClaimResponse via the error capability.
 
 The resulting Bundle is returned as the HTTP body of the POST response.
 
@@ -86,16 +113,19 @@ Note: There are use-cases for multiple systems potentially needing to check on t
 
 As a result, queries seeking the status of the prior authorization response may come from multiple systems.  Servers SHALL permit access to the prior authorization response to systems other than the original submitter.  They SHALL require a match on both patient coverage id (identifier on the Claim.patient) and prior authorization id (Claim.identifier) to ensure access is only granted to individuals who know both - and thus have demonstrated a need to know.
 
+{% raw %}
+<blockquote class="stu-note">
+<p>
+We recognize that knowledge of the original Prior Authorization identifier and the Patient Coverage identifier may not be sufficient access-control for subsquent queries.  We are looking for implementer feedback on this, in particular, on how to pass information through the X12 inquiry mechanism to the payer that help attest to the 'right to know'.
+</p>
+</blockquote>
+{% endraw %}
+
+
 ##### Polling
-In this approach, the Client regularly queries the Server to see if the status of the prior authorization has changed.  This is done by performing a query on the server's "ClaimResponse" endpoint, searching based on prior authorization identifier and patient coverage information.  The query should look like this:
+In this approach, the Client regularly queries the Server to see if the status of the prior authorization has changed.  This is done by performing a [prior authorization inquiry operation](OperationDefinition-Claim-inquiry.html).
 
-<code>[base]/ClaimResponse?identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active</code>
-
-The authorizationresponseid is the Claim.identifier returned in the original synchronous response to the authorization request and represents the payer's identifier for that transaction.  The patient.identifier is the member identifier that was submitted as the Coverage member identifier in the original claim.
-
-As per FHIR's [token]({{site.data.fhir.path}}search.html#token) search parameter, the identifiers can contain either only the Identifier.value or the Identifier.system.  Clients SHOULD send the Identifier.system if it is known, but MAY search by the Identifier.value strings only.  Systems wishing to reduce bandwidth impact can also filter using <code>_lastupdated</code> to only retrieve the record if it has changed since the previous query.  Servers SHALL support this parameter.
-
-Clients SHALL perform this query in an automated/background manner no more than every 5 minutes for the first 30 minutes and and no more frequently than once every hour after that. They SHOULD perform this query at least once every 12 hours.  Clients SHALL support manual invocation of the query by users.  There are no constraints on frequency of manual queries.
+Clients SHALL perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and and no more frequently than once every hour after that. They SHOULD perform this query at least once every 12 hours.  Clients SHALL support manual invocation of the query by users.  There are no constraints on frequency of manual queries.
 
 <blockquote class="stu-note">
 <p>
@@ -109,21 +139,30 @@ Notes:
 * the returned ClaimResponse SHALL include the current results for all submitted items, including any items changed or cancelled since the original authoriation request.  (See [Changing authorization requests](#changing-authorization-requests) below.)
 * the returned ClaimResponse will be a subset if the request was for a subset of information
 * if the authorizationresponseid submitted is not the 'current' authorization response identifier (because subsequent additions/changes/cancellations have been made to the prior authorization request), the returned record SHALL be the 'current' authorization response - even though it no longer has the same identifier.  I.e. If a search is for a 'replaced' prior authorization, the search result SHALL include the 'current' prior authorization response for the most recent replacing prior authorization request.
-
+* systems MAY withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider who is checking for the prior authorization status if not searching by a specific Claim.identifier.  In such situations the response SHOULD include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone) to provide further information if needed.
 
 ##### Subscription
-Subscriptions require more sophistication than polling, but reduce communication overhead by ensuring that queries only occur when data has changed.  When using the subscription retrieval mechanism, the client will POST a new Subscription instance to the server's [base]/Subscription endpoint.  The Subscription.criteria SHALL be of the form: "identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active".  (Order of parameters with the search does not matter.)
 
-* Servers supporting subscriptions SHALL expose this as part of the server's CapabilityStatement
+{% raw %}
+<blockquote class="stu-note">
+<p>
+There is ongoing work on the Subscription resource and it is currently undergoing change such that implementers who are considering using Subscriptions should consult the latest FHIR build material and ask on Zulip for guidance on how to correctly implement Subscriptions.
+</p>
+</blockquote>
+{% endraw %}
+
+Subscriptions require more sophistication than polling, but reduce communication overhead by ensuring that queries only occur when data has changed.  When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The Subscription.criteria SHALL be of the form: "identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active".  (Order of parameters with the search does not matter.)
+
+* Servers supporting subscriptions SHALL expose this as part of the Server's CapabilityStatement
 * Servers SHOULD support rest-hook and MAY support websocket channels
 * For security reasons, the channel.payload SHALL be left empty
 * Additional information about creating subscriptions can be found [here]({{site.data.fhir.path}}subscription.html)
 
-Once the subscription has been created, the server SHALL send a notification over the requested channel indicating that the prior authorization response has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
+Once the subscription has been created, the Server SHALL send a notification over the requested channel indicating that the prior authorization response has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
 
-Upon receiving a notification, the client SHALL - when convenient - execute the same query as shown above in the [polling](#polling) section.
+Upon receiving a notification, the Client SHALL - when convenient - execute the same query as shown above in the [polling](#polling) section.
 
-If the retrieved ClaimResponse has an outcome of 'complete' or 'error', the client SHALL perform a DELETE on the Subscription.
+If the retrieved ClaimResponse has an outcome of 'complete' or 'error', the Client SHALL perform a DELETE on the Subscription.
 
 #### Checking status
 Systems other than the requesting system may choose not to poll or subscribe to the prior authorization response but instead to check the status at the request of a user.  This query is performed in the same manner as the polling query.  There are no retry limits for user-initiated status checks.
@@ -171,11 +210,22 @@ The intermediary would populate the ClaimResponse Bundle based on the approach t
 NOTE: When querying for the current status of a prior authorization, the prior authorization response SHALL include all items, even if the identifier queried against corresponds to a prior authorization response whose synchronous response was a differential.  For example, if a prior authorization revision was submitted changing one item out of four, the synchronous prior authorization response might only contain one item (and a subsetted flag).  However, a subsequent query for the status of that prior authorization would always return a prior authorization resource that contained all four items.
 
 #### Additional notes
-1. PAS servers SHALL ensure that prior authorizations that were initially pended remain available for query for at least 6 months after the anticipated completion of the services whose authorization was requested.
+1. PAS systems SHALL ensure that prior authorizations that were initially pended remain available for query for at least 6 months after the anticipated completion of the services whose authorization was requested.
 
 2. If the prior authorization response is a refusal, it is not permitted to send an 'update' to the request in the hopes of receiving a different answer.  Instead, a new request must be initiated.
 
 3. Note that data submitted by client systems will comply with US Core profiles, meaning that codes for medications, conditions, etc. will be those used for clinical purposes, not billing.  The intermediary will be responsible for performing any necessary mappings (e.g. SNOMED diagnosis codes to ICD10)
+
+### Privacy & Security Considerations
+The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process a prior authorization is context and business-rule-specific. Implementers submitting prior authorization requests using PAS must be aware of (and adhere to) their responsibilities with respect to data sharing imposed by regulations such as HIPAA's "minimum necessary" rule, patient consent rules, etc. This may involve allowing providers to review information prior to data transmission to the payer. Implementations SHALL permit provider review of data prior to transmission, but SHALL NOT require such review.
+
+The sharing of information from provider to payer for determining prior authorization is subject to HIPAA's "minimum necessary" regulations (specifically 45 CFR 164.514(d)(3) and (d)(4)). Payers are responsible for ensuring that only information necessary to make the prior authorization decision is solicited and providers are responsible for ensuring that only data that is reasonably relevant to the prior authorization decision is transmitted.
+
+Some of the data shared as part of the prior authorization process may have associated constraints on the use of that information for other purposes, including subsequent disclosure to other payers, practitioners, policy-holders, etc. While HL7 FHIR supports conveying this information via security labels on transmitted resources, this information is not currently mappable (and thus findable) in the X12 275 and 278 transactions. Payers who do not view the FHIR version of the transmitted information should be aware of the possibility of these limitations and ensure they have policies that enforce appropriate sharing constraints on data.
+
+In order to access information about a prior authorization, the provider system will need to access the payor system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication are covered is handled within the Da Vinci HRex Implementation guide.  Every system implementing the Prior Authorization guide will need to be aware of and follow the guidance in the FHIR Core Specification on [Clinical Safety](http://hl7.org/fhir/safety.html) and the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
+
+Once the system authentication has occurred, there will be presumed authorization for the provider to see the current state of the prior authorization. The system will rely on audit and regulatory/payer consequences to ensure that prior authorizations are not accessed without a legitimate business requirement. This approach is used because there is no reasonable way for a payer to know 'a priori' whether a given provider has a legitimate need to know tha prior authorization status or for the patient to be involved in verifying their need to know.
 
 ### Testing Requirements
 It is the intent of this implementation guide to provide specifications for the exchange of prior authorization in a way that is conducive to developing test scripts and a reference implementation (RI) that can be used to validate/exercise the IG at connectathons and during piloting and production deployment. It is also the intent of this guide that any test scripts will include testing of: 

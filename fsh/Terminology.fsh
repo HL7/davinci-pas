@@ -4,17 +4,17 @@ IG-specific terminology
 CodeSystem: PASInformationChangeMode
 Title: "PASInformationChangeMode"
 Description: "The mode by which a piece of information has changed."
-* #changed "Changed"
-* #added "Added"
+* #changed "Changed" "Previously sent information has been changed."
+* #added "Added" "New information that was not sent previously."
 
 CodeSystem: PASSupportingInfoType
 Title: "PASSupportingInfoType"
 Description: "Types of supporting information for a Prior Authorization Claim."
-* #patientEvent "Patient Event"
-* #admissionReview "Admission Review"
-* #additionalInformation "Additional Information"
-* #freeFormMessage "Free Form Message"
-* #institutionalEncounter "Institutional Encounter"
+* #patientEvent "Patient Event" "Information about the dates of the event that are being requested."
+* #admissionReview "Admission Review" "Information about dates of a hospital admission being requested."
+* #additionalInformation "Additional Information" "Send additional paperwork or supporting information for the request."
+* #freeFormMessage "Free Form Message" "Send text messages to the UMO."
+* #institutionalEncounter "Institutional Encounter" "Information about a hospital claim being requested."
 
 ValueSet: PASInformationChangeMode
 Title: "PASInformationChangeMode"
