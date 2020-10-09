@@ -33,7 +33,10 @@ Providers
 * May use a business associate or clearinghouse as an intermediary to achieve compliance
 
 ### HIPAA Regulations
-Title II, Subtitle F -- Administrative Simplification of the Health Insurance Portability and Accountability Act of 1996 (HIPAA) (Public Law 104-191, H. R. 3103, Kennedy-Kassebaum Bill) which amends Part C of Title XI of the Social Security Act, and is codified starting at 42 U.S.C. §1320d
+As of the publication of this implementation guide, the following are references to the applicable federal regulations regarding the use of specific transactions for prior authorization:
+
+* Title II, Subtitle F -- Administrative Simplification of the Health Insurance Portability and Accountability Act of 1996 (HIPAA) (Public Law 104-191, H. R. 3103, Kennedy-Kassebaum Bill) which amends Part C of Title XI of the Social Security Act, and is codified starting at 42 U.S.C. §1320d
+* 45 CFR Part 162 Subpart M - Referral Certification and Authorization
 
 The following is an excerpt from the CFR for referral certification and authorization (relevant sections bolded).
 > § 162.1302   Standards for referral certification and authorization transaction. 
@@ -68,6 +71,16 @@ Note: requires the use of the standard within the same covered entity (e.g. with
 
 ---
 
+The following is an excerpt from the CFR providing an exception for "direct data entry transactions". (relevant sections bolded).
+> § 162.923   Requirements for covered entities. 
+>> (b) **Exception for direct data entry transactions.  A health care provider electing to use direct data entry offered by a health plan to conduct a transaction for which a standard has been adopted under this part must use the applicable data content and data condition requirements of the standard when conducting the transaction. The health care provider is not required to use the format requirements of the standard.**
+
+> § 162.103 Definitions  Defines Direct data entry as “means the direct entry of data (for example, using dumb terminals or web browsers) that is immediately transmitted into a health plan's computer.”
+
+Note: allows the use of an alternative transaction as long as it uses the “applicable” data content and data condition requirements of the standard – intended to support organization that cannot perform the standard transaction
+
+---
+
 The following is an excerpt from the CFR providing the use a business associate(relevant sections bolded).
 
 > § 162.923   Requirements for covered entities. 
@@ -86,3 +99,16 @@ The following is an excerpt from the CFR defining additional rules for clearingh
 >> (b) **Receive a nonstandard transaction** (for example, nonstandard format and/or nonstandard data content) from the covered entity **and translate it into a standard transaction** for transmission on behalf of the covered entity. 
 
 Note: clearinghouses can convert non-standard transactions to and from standard transactions
+
+The following is an excerpt from the CFR defining additional rules for health plans.
+> § 162.925 **Additional requirements for health plans**
+>> a) General rules. (1) If an entity requests a health plan to conduct a transaction as a standard transaction, the health plan must do so.
+>>> (2) A health plan may not delay or reject a transaction, or attempt to adversely affect the other entity or the transaction, because the transaction is a standard transaction.
+>>> (3) A health plan may not reject a standard transaction on the basis that it contains data elements not needed or used by the health plan (for example, coordination of benefits information).
+>>> (4) A health plan may not offer an incentive for a health care provider to conduct a transaction covered by this part as a transaction described under the exception provided for in § 162.923(b).
+>>> (5) A health plan that operates as a health care clearinghouse, or requires an entity to use a health care clearinghouse to receive, process, or transmit a standard transaction may not charge fees or costs in excess of the fees or costs for normal telecommunications that the entity incurs when it directly transmits, or receives, a standard transaction to, or from, a health plan.
+>>> (6) During the period from March 17, 2009 through December 31, 2011, a health plan may not delay or reject a standard transaction, or attempt to adversely affect the other entity or the transaction, on the basis that it does not comply with another adopted standard for the same period.
+>> (b) Coordination of benefits. If a health plan receives a standard transaction and coordinates benefits with another health plan (or another payer), it must store the coordination of benefits data it needs to forward the standard transaction to the other health plan (or other payer).
+>> (c) Code sets. A health plan must meet each of the following requirements:
+>>> (1) Accept and promptly process any standard transaction that contains codes that are valid, as provided in subpart J of this part.
+>>> (2) Keep code sets for the current billing period and appeals periods still open to processing under the terms of the health plan's coverage.
