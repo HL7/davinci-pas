@@ -15,7 +15,6 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/ImplementationGuide-hl7.fhir.us.davinci-pas.json | generated | fsh/config.yaml, {all input resources and pages}  |
 | input/ignoreWarnings.txt                               | generated |                                                   |
 | input/includes/menu.xml                                | generated | fsh/config.yaml                                   |
-| package-list.json                                      | generated | fsh/config.yaml                                   |
 | input/images/current.png                               | copied    | fsh/ig-data/input/images/current.png              |
 | input/images/pa-stack.png                              | copied    | fsh/ig-data/input/images/pa-stack.png             |
 | input/images/pas-architecture.png                      | copied    | fsh/ig-data/input/images/pas-architecture.png     |

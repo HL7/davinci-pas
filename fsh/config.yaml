@@ -70,19 +70,3 @@ menu:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
     US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
   History: http://hl7.org/fhir/us/davinci-pas/history.html
-
-# ╭───────────────────────────────────────package-list.json────────────────────────────────────────╮
-# │  To control the package-list.json using this config, uncomment and set the "history" property. │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-history:
-  introduction: "This implementation guide defines a mechanism for submitting
-    prior authorization requests in a manner that is mappable to the
-    corresponding X12 transactions.  The DaVinci PAS IG is targeted to FHIR R4"
-  current: https://build.fhir.org/ig/HL7/davinci-pas
-  0.1.0:
-    date: 2019-08-09
-    desc: First public ballot
-    path: http://hl7.org/fhir/us/davinci-pas/2019Sep
-    status: ballot
-    sequence: STU 1
-    fhirversion: 4.0.1
