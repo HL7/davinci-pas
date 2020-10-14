@@ -36,7 +36,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * provider = Reference(UMOExample)
 * priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
 * diagnosis.sequence = 1
-* diagnosis.diagnosisCodeableConcept = http://hl7.org/fhir/sid/icd-10#I21.3
+* diagnosis.diagnosisCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
