@@ -5,6 +5,7 @@ Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1
 * identifier 1..1 MS
+* identifier.extension contains IdentifierSubDepartment named subDepartment 0..1 MS
 * status = #active (exactly)
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
@@ -79,7 +80,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[AdditionalInformation].category = PASSupportingInfoType#additionalInformation
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
-* supportingInfo[AdditionalInformation].value[x] only Reference(DocumentReference)
+* supportingInfo[AdditionalInformation].value[x] only Reference
 
 * supportingInfo[MessageText].category = PASSupportingInfoType#freeFormMessage
 * supportingInfo[MessageText].timing[x] 0..0
@@ -90,6 +91,11 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[InstitutionalEncounter].timing[x] 0..0
 * supportingInfo[InstitutionalEncounter].value[x] 1..1 MS
 * supportingInfo[InstitutionalEncounter].value[x] only Reference(PASEncounter)
+
+Extension: IdentifierSubDepartment
+Id: extension-identifierSubDepartment
+Description: "An additional element that provides the subdepartment that created the authorization request."
+* value[x] only string
 
 Extension: CertificationType
 Id: extension-certificationType
@@ -189,7 +195,6 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * extension contains CertificationType named certificationType 0..1
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1
 * identifier 1..1 MS
-* status = #active (exactly)
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
 * billablePeriod MS

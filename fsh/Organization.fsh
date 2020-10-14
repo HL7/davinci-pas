@@ -11,6 +11,7 @@ Id: profile-requestor
 Title: "PAS Requestor Organization"
 Description: "The organization who is making a prior authorization request."
 * type MS
+* address 1..* MS
 * contact MS
 * contact.name MS
 * contact.telecom MS

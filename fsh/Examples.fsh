@@ -247,6 +247,11 @@ Description: "A sample organization that is requesting a prior authorization."
 * name = "DR. JOE SMITH CORPORATION"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "8189991234"
+* address.line = "111 1ST STREET"
+* address.city = "SAN DIEGO"
+* address.state = "CA"
+* address.country = "US"
+* address.postalCode = "92101"
 
 Instance: InsurerExample
 InstanceOf: PASInsurer

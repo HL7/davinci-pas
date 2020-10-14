@@ -23,6 +23,7 @@
 <artifact id="StructureDefinition/extension-diagnosisRecordedDate" key="StructureDefinition-extension-diagnosisRecordedDate" name="DiagnosisRecordedDate"/>
 <artifact id="StructureDefinition/extension-epsdtIndicator" key="StructureDefinition-extension-epsdtIndicator" name="EPSDTIndicator"/>
 <artifact id="StructureDefinition/extension-errorFollowupAction" key="StructureDefinition-extension-errorFollowupAction" name="FollowupAction"/>
+<artifact id="StructureDefinition/extension-identifierSubDepartment" key="StructureDefinition-extension-identifierSubDepartment" name="IdentifierSubDepartment"/>
 <artifact id="StructureDefinition/modifierextension-infoCancelled" key="StructureDefinition-modifierextension-infoCancelled" name="InfoCancelledFlag"/>
 <artifact id="StructureDefinition/extension-infoChanged" key="StructureDefinition-extension-infoChanged" name="InfoChanged"/>
 <artifact id="StructureDefinition/extension-itemTraceNumber" key="StructureDefinition-extension-itemTraceNumber" name="ItemTraceNumber"/>
