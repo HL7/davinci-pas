@@ -128,7 +128,7 @@ Description: "A string assigned by the UMO to the original disallowed review out
 * value[x] only string
 
 Extension: ServiceItemRequestType
-Id: extension-serviceItemReqestType
+Id: extension-serviceItemRequestType
 Description: "A code that identifies the type of service being requested."
 * value[x] only CodeableConcept
 

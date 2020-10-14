@@ -13,8 +13,8 @@ lists those files generated from project configs or the contents in the ig-data 
 | ------------------------------------------------------ | --------- | ------------------------------------------------- |
 | ig.ini                                                 | generated | fsh/config.yaml                                   |
 | input/ImplementationGuide-hl7.fhir.us.davinci-pas.json | generated | fsh/config.yaml, {all input resources and pages}  |
-| input/ignoreWarnings.txt                               | generated |                                                   |
 | input/includes/menu.xml                                | generated | fsh/config.yaml                                   |
+| input/ignoreWarnings.txt                               | copied    | fsh/ig-data/input/ignoreWarnings.txt              |
 | input/images/current.png                               | copied    | fsh/ig-data/input/images/current.png              |
 | input/images/pa-stack.png                              | copied    | fsh/ig-data/input/images/pa-stack.png             |
 | input/images/pas-architecture.png                      | copied    | fsh/ig-data/input/images/pas-architecture.png     |

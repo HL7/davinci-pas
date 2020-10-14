@@ -51,6 +51,36 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * careTeam.sequence = 1
 * careTeam.provider = Reference(ReferralPractitionerExample)
 
+Instance: ClaimSubmitMedicalServicesExample
+InstanceOf: PASClaim
+Title: "Submit Claim Medical Services Example"
+Description: "An example of a Claim resource requesting prior authorization of Medical Services Reservation."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2005-05-02T11:01:00+05:00
+* insurer = Reference(InsurerExample)
+* provider = Reference(UMOExample)
+* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(InsuranceExample)
+* item.extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#IN "Initial Medical Services Reservation"
+* item.extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item.extension[requestedService].valueReference = Reference(ReferralRequestExample)
+* item.sequence = 1
+* item.careTeamSequence = 1
+* item.diagnosisSequence = 1
+* item.productOrService = http://example.org/UM_SERVICE_TYPE_CODE#3 "Consultation"
+* item.locationCodeableConcept = http://example.org/UM_PLACE_OF_SERVICE_CODE#11
+* careTeam.sequence = 1
+* careTeam.provider = Reference(ReferralPractitionerExample)
+
 Instance: ClaimSubmitResponseBundleExample
 InstanceOf: PASResponseBundle
 Title: "Submit Claim Response Bundle Example"
@@ -138,7 +168,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 
 Instance: ClaimSubmitHomecareUpdateBundleExample
 InstanceOf: PASRequestBundle
-Title: "Submit Claim Bundle Example"
+Title: "Submit Claim Update Bundle Example"
 Description: "An example of a claim bundle updating a previously sent prior authorization request."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
@@ -244,6 +274,7 @@ InstanceOf: PASRequestor
 Title: "Submit Claim Requestor Example"
 Description: "A sample organization that is requesting a prior authorization."
 * active = true
+* type = https://codesystem.x12.org/005010/98#X3
 * name = "DR. JOE SMITH CORPORATION"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "8189991234"
@@ -258,6 +289,7 @@ InstanceOf: PASInsurer
 Title: "Submit Claim Insurer Example"
 Description: "A sample payor organization."
 * active = true
+* type = https://codesystem.x12.org/005010/98#PR
 * name = "MARYLAND CAPITAL INSURANCE COMPANY"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "789312"
@@ -290,6 +322,7 @@ Description: "Sample patient who is a subscriber of an insurance plan."
 * name.family = "SMITH"
 * name.given = "JOE"
 * gender = #male
+* extension[militaryStatus].valueCodeableConcept = https://codesystem.x12.org/005010/584#RU
 
 Instance: ReferralRequestExample
 InstanceOf: PASServiceRequest

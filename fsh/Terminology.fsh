@@ -41,3 +41,20 @@ Description: "These codes are used to convey specific accomodation, ancillary se
 ValueSet: AHANUBCRevenueCodes
 Title: "AHA NUBC Revenue Codes"
 * codes from system https://www.nubc.org/revenue-code
+
+ValueSet: X12EntityIdentifierCode
+Title: "X12 Entity Identifier Codes"
+Description: "Code identifying an organizational entity, a physical location, property or an individual. They are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^publisher = "X12 Inc."
+* ^url = "https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98"
+* ^copyright = "The codes referred to within this code system are copyright X12 Inc. and require a license to use."
+* codes from valueset https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98
+
+ValueSet: X12EmploymentStatusCode
+Title: "X12 Employment Status Codes"
+Description: "Code showing the general employment status of an employee/claimant. They are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^publisher = "X12 Inc."
+* ^url = "https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584"
+* ^copyright = "The codes referred to within this code system are copyright X12 Inc. and require a license to use."
+* codes from valueset https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584
+
