@@ -82,10 +82,6 @@
 <artifact id="Bundle/ClaimSubmitHomecareUpdateBundleExample" key="Bundle-ClaimSubmitHomecareUpdateBundleExample" name="Submit Claim Update Bundle Example"/>
 <artifact id="Claim/ClaimSubmitHomecareDifferentialExample" key="Claim-ClaimSubmitHomecareDifferentialExample" name="Submit Claim Update Differential Example"/>
 <artifact id="Claim/ClaimSubmitHomecareUpdateExample" key="Claim-ClaimSubmitHomecareUpdateExample" name="Submit Claim Update Example"/>
-<artifact id="ValueSet/X12EmploymentStatusCode" key="ValueSet-X12EmploymentStatusCode" name="X12 Employment Status Codes"/>
-<artifact id="CodeSystem/X12EmploymentStatusCode" key="CodeSystem-X12EmploymentStatusCode" name="X12 Employment Status Codes"/>
-<artifact id="ValueSet/X12EntityIdentifierCode" key="ValueSet-X12EntityIdentifierCode" name="X12 Entity Identifier Codes"/>
-<artifact id="CodeSystem/X12EntityIdentifierCode" key="CodeSystem-X12EntityIdentifierCode" name="X12 Entity Identifier Codes"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

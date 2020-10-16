@@ -26,4 +26,5 @@ Extension: MilitaryStatus
 Id: extension-militaryStatus
 Description: "A patient's military status."
 * value[x] only CodeableConcept
-* value[x] from X12EmploymentStatusCode (required)
+* value[x] from $X12EmploymentStatusCode (required)
+* value[x] ^binding.description = "Code showing the general employment status of an employee/claimant. They are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."

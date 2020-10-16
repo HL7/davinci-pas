@@ -1,10 +1,10 @@
 == Suppressed Messages ==
 
 # X12 Code Systems and Value Sets that are referenced in the guide but not freely available
-Code System URI 'https://standard.x12.org/Home/Default/005010?SimpleElement=98' is unknown so the code cannot be validated
-Code System URI 'https://standard.x12.org/Home/Default/005010?SimpleElement=584' is unknown so the code cannot be validated
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12EntityIdentifierCode because the value set or code system is not known to the validator]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12EmploymentStatusCode because the value set or code system is not known to the validator]
+Code System URI 'https://codesystem.x12.org/005010/98' is unknown so the code cannot be validated
+ValueSet https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 not found by validator
+Code System URI 'https://codesystem.x12.org/005010/584' is unknown so the code cannot be validated
+ValueSet https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 not found by validator
 
 # CPT Code system that is external and not supported by the terminology server
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
@@ -12,3 +12,4 @@ Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot b
 # The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle
+
