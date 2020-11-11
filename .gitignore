@@ -8,3 +8,7 @@ desktop.ini
 /input
 ig.ini
 package-list.json
+/src-generated/resources/ig-expansion-parameters.json
+/src-generated/resources/ig-new.json
+/src-generated/resources/ig-new.xml
+/src-generated/resources/ig-validation-parameters.json
