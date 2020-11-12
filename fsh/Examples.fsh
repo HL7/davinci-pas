@@ -1,13 +1,13 @@
-Instance: ClaimSubmitRequestBundleExample
+Instance: ReferralAuthorizationBundleExample
 InstanceOf: PASRequestBundle
-Title: "Submit Claim Bundle Example"
+Title: "Referral Authorization Bundle Example"
 Description: "An example of a claim bundle requesting prior authorization of a referral."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:01:00+05:00
-* entry[Claim].fullUrl = "http://example.org/fhir/Claim/ClaimSubmitExample"
-* entry[Claim].resource = ClaimSubmitExample
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/ReferralAuthorizationExample"
+* entry[Claim].resource = ReferralAuthorizationExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
@@ -19,9 +19,9 @@ Description: "An example of a claim bundle requesting prior authorization of a r
 * entry[5].fullUrl = "http://example.org/fhir/ServiceRequest/ReferralRequestExample"
 * entry[5].resource = ReferralRequestExample
 
-Instance: ClaimSubmitExample
+Instance: ReferralAuthorizationExample
 InstanceOf: PASClaim
-Title: "Submit Claim Example"
+Title: "Referral Authorization Example"
 Description: "An example of a Claim resource requesting prior authorization of a referral."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
@@ -40,55 +40,25 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#SC "Specialty Care Review"
-* item.extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#SC "Specialty Care Review"
+* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 * item.extension[requestedService].valueReference = Reference(ReferralRequestExample)
 * item.sequence = 1
 * item.careTeamSequence = 1
 * item.diagnosisSequence = 1
-* item.productOrService = http://example.org/UM_SERVICE_TYPE_CODE#3 "Consultation"
-* item.locationCodeableConcept = http://example.org/UM_PLACE_OF_SERVICE_CODE#11
+* item.productOrService = http://codesystem.x12.org/005010/1365#3 "Consultation"
+* item.locationCodeableConcept = http://codesystem.x12.org/005010/237#11
 * careTeam.sequence = 1
 * careTeam.provider = Reference(ReferralPractitionerExample)
 
-Instance: ClaimSubmitMedicalServicesExample
-InstanceOf: PASClaim
-Title: "Submit Claim Medical Services Example"
-Description: "An example of a Claim resource requesting prior authorization of Medical Services Reservation."
-* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
-* identifier.value = "111099"
-* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
-* identifier.assigner.identifier.value = "9012345678"
-* status = #active
-* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
-* use = #preauthorization
-* patient = Reference(SubscriberExample)
-* created = 2005-05-02T11:01:00+05:00
-* insurer = Reference(InsurerExample)
-* provider = Reference(UMOExample)
-* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
-* insurance.sequence = 1
-* insurance.focal = true
-* insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#IN "Initial Medical Services Reservation"
-* item.extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
-* item.extension[requestedService].valueReference = Reference(ReferralRequestExample)
-* item.sequence = 1
-* item.careTeamSequence = 1
-* item.diagnosisSequence = 1
-* item.productOrService = http://example.org/UM_SERVICE_TYPE_CODE#3 "Consultation"
-* item.locationCodeableConcept = http://example.org/UM_PLACE_OF_SERVICE_CODE#11
-* careTeam.sequence = 1
-* careTeam.provider = Reference(ReferralPractitionerExample)
-
-Instance: ClaimSubmitResponseBundleExample
+Instance: ReferralAuthorizationResponseBundleExample
 InstanceOf: PASResponseBundle
-Title: "Submit Claim Response Bundle Example"
+Title: "Referral Authorization Response Bundle Example"
 Description: "An example of a claim response bundle approving the authorization of a referral."
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
-* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ClaimSubmitResponseExample"
-* entry[ClaimResponse].resource = ClaimSubmitResponseExample
+* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ReferralAuthorizationResponseExample"
+* entry[ClaimResponse].resource = ReferralAuthorizationResponseExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
@@ -96,9 +66,9 @@ Description: "An example of a claim response bundle approving the authorization 
 * entry[3].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[3].resource = SubscriberExample
 
-Instance: ClaimSubmitResponseExample
+Instance: ReferralAuthorizationResponseExample
 InstanceOf: PASClaimResponse
-Title: "Submit Claim Response Example"
+Title: "Referral Authorization Response Example"
 Description: "An example of a ClaimResponse giving approval for a referral."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
@@ -114,21 +84,21 @@ Description: "An example of a ClaimResponse giving approval for a referral."
 * outcome = #complete
 * item.itemSequence = 1
 * item.extension[reviewAction].extension[number].valueString = "AUTH0001"
-* item.extension[reviewAction].extension[code].valueCodeableConcept = http://example.org/HCR_ACTION_CODE#A1 "Certified in total"
+* item.extension[reviewAction].extension[code].valueCodeableConcept = http://codesystem.x12.org/005010/306#A1 "Certified in total"
 * item.extension[authorizedDate].valuePeriod.start = 2005-05-02
 * item.extension[authorizedDate].valuePeriod.end = 2005-06-02
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 
-Instance: ClaimSubmitHomecareBundleExample
+Instance: HomecareAuthorizationBundleExample
 InstanceOf: PASRequestBundle
-Title: "Submit Claim Bundle Example"
+Title: "Homecare Authorization Bundle Example"
 Description: "An example of a claim bundle requesting prior authorization of a home healthcare service."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "B56789"
 * type = #collection
 * timestamp = 2005-05-02T14:30:00+05:00
-* entry[Claim].fullUrl = "http://example.org/fhir/Claim/ClaimSubmitHomecareExample"
-* entry[Claim].resource = ClaimSubmitHomecareExample
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationExample"
+* entry[Claim].resource = HomecareAuthorizationExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
@@ -138,9 +108,9 @@ Description: "An example of a claim bundle requesting prior authorization of a h
 * entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
 
-Instance: ClaimSubmitHomecareExample
+Instance: HomecareAuthorizationExample
 InstanceOf: PASClaim
-Title: "Submit Claim Example"
+Title: "Homecare Authorization Example"
 Description: "An example of a Claim resource requesting prior authorization of a home healthcare service."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
@@ -157,25 +127,25 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item.extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
 * item.productOrService = http://www.ama-assn.org/go/cpt#G0154
 * item[1].sequence = 2
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[1].extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 
-Instance: ClaimSubmitHomecareUpdateBundleExample
+Instance: HomecareAuthorizationUpdateBundleExample
 InstanceOf: PASRequestBundle
-Title: "Submit Claim Update Bundle Example"
+Title: "Homecare Authorization Update Bundle Example"
 Description: "An example of a claim bundle updating a previously sent prior authorization request."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:01:00+05:00
-* entry[Claim].fullUrl = "http://example.org/fhir/Claim/ClaimSubmitHomecareUpdateExample"
-* entry[Claim].resource = ClaimSubmitHomecareUpdateExample
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationUpdateExample"
+* entry[Claim].resource = HomecareAuthorizationUpdateExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
@@ -185,9 +155,9 @@ Description: "An example of a claim bundle updating a previously sent prior auth
 * entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
 
-Instance: ClaimSubmitHomecareUpdateExample
+Instance: HomecareAuthorizationUpdateExample
 InstanceOf: PASClaimUpdate
-Title: "Submit Claim Update Example"
+Title: "Homecare Authorizaion Update Example"
 Description: "An example of a Claim resource updating a prior authorization."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
@@ -204,31 +174,31 @@ Description: "An example of a Claim resource updating a prior authorization."
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item.extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
 * item.productOrService = http://www.ama-assn.org/go/cpt#G0154
 * item[1].sequence = 2
 * item[1].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[1].extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 * item[2].sequence = 3
 * item[2].extension[infoChanged].valueCode = #added
 * item[2].productOrService = http://www.ama-assn.org/go/cpt#B4185
-* item[2].extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item[2].extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item[2].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[2].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 
-Instance: ClaimSubmitHomecareDifferentialBundleExample
+Instance: HomecareAuthorizationDifferentialBundleExample
 InstanceOf: PASRequestBundle
-Title: "Submit Claim Bundle Example"
+Title: "Homecare Authorization Differential Update Bundle Example"
 Description: "An example of a claim bundle changing elements of a previously sent prior authorization request."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:01:00+05:00
-* entry[Claim].fullUrl = "http://example.org/fhir/Claim/ClaimSubmitHomecareDifferentialExample"
-* entry[Claim].resource = ClaimSubmitHomecareDifferentialExample
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationDifferentialExample"
+* entry[Claim].resource = HomecareAuthorizationDifferentialExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
@@ -238,9 +208,9 @@ Description: "An example of a claim bundle changing elements of a previously sen
 * entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
 
-Instance: ClaimSubmitHomecareDifferentialExample
+Instance: HomecareAuthorizationDifferentialExample
 InstanceOf: PASClaimUpdate
-Title: "Submit Claim Update Differential Example"
+Title: "Homecare Authorization Differential Update Example"
 Description: "An example of a Claim resource updating a prior authorization."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ObservationValue#SUBSETTED
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
@@ -261,13 +231,60 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item[0].sequence = 2
 * item[0].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[0].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[0].extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item[0].extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item[0].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[0].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 * item[1].sequence = 3
 * item[1].extension[infoChanged].valueCode = #added
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4185
-* item[1].extension[requestType].valueCodeableConcept = http://example.org/UM_REQUEST_CATEGORY_CODE#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://example.org/UM_CERTIFICATION_TYPE_CODE#I "Initial"
+* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+
+Instance: MedicalServicesAuthorizationBundleExample
+InstanceOf: PASRequestBundle
+Title: "Medical Services Authorization Bundle Example"
+Description: "An example of a claim bundle requesting Medical Services Reservation."
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "5269367"
+* type = #collection
+* timestamp = 2005-05-02T11:01:00+05:00
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/MedicalServicesAuthorizationExample"
+* entry[Claim].resource = MedicalServicesAuthorizationExample
+* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
+* entry[1].resource = UMOExample
+* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
+* entry[2].resource = InsurerExample
+* entry[3].fullUrl = "http://example.org/fhir/Coverage/InsuranceExample"
+* entry[3].resource = InsuranceExample
+* entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
+* entry[4].resource = SubscriberExample
+
+Instance: MedicalServicesAuthorizationExample
+InstanceOf: PASClaim
+Title: "Medical Services Authorization Example"
+Description: "An example of a Claim resource requesting prior authorization of Medical Services Reservation."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2005-05-02T11:01:00+05:00
+* insurer = Reference(InsurerExample)
+* provider = Reference(UMOExample)
+* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(InsuranceExample)
+* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#IN "Initial Medical Services Reservation"
+* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.sequence = 1
+* item.careTeamSequence = 1
+* item.diagnosisSequence = 1
+* item.productOrService = http://www.ama-assn.org/go/cpt#99212 "Established Office Visit"
+* item.servicedDate = "2005-05-10"
+* item.locationCodeableConcept = http://codesystem.x12.org/005010/237#11
 
 Instance: UMOExample
 InstanceOf: PASRequestor
@@ -331,5 +348,5 @@ Description: "A sample referral request that is the subject of a prior authoriza
 * status = #active
 * intent = #order
 * subject = Reference(SubscriberExample)
-* code = http://example.org/UM_SERVICE_TYPE_CODE#3 "Consultation"
+* code = http://codesystem.x12.org/005010/1365#3 "Consultation"
 * quantityQuantity = 1 '{visit}'

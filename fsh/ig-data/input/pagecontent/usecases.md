@@ -14,7 +14,7 @@ If authorization is required and documentation is necessary to substantiate the 
 
 Currently, under HIPAA, providers and payers are required to use the 5010 version of the ASC X12 278 Health Care Services Review - Request and Response.  See further details on relevant HIPAA requirements [here](regulations.html).  While the X12 275, which is used to transmit additional documentation, is not currently mandated under HIPAA, it is considered reasonable and appropriate to use this X12 transaction to support the exchange of the additional information that is required for prior authorization.
 
-However, adoption of X12 Authorization and Attachment transactions by EHR implementers has been low.  Surveys from CAQH & WEDI indicate that, for 2018, less than 12% of prior authorizations are processed using the 278 request & response.  A [WEDI survey from January 2020](https://growthzonesitesprod.azureedge.net/wp-content/uploads/sites/1238/2020/01/WEDI-PriorAuthSurveyResults-FINAL.pdf) indicated that only 10% of transactions use the X12 278 and 36% of vendors support X12 for prior authorization.  The [2019 CAQH Index survey](https://www.caqh.org/sites/default/files/explorations/index/report/2019-caqh-index.pdf?token=SP6YxT4u) indicated that <13% of Prior Authorization transactions are X12 278 end-to-end.  Clinicians and their office staff spend hours each week trying to verify coverage requirements for specific treatments, submitting prior authorization requests, following up on prior authorization requests, transmitting supporting documentation to support follow-up requests for information and then communicating the prior authorization final decision within the care team and the patient.  Mechanisms include phone, fax, custom portals, but rarely automated data feeds. Automating even a few steps of the prior authorization process could make the work of healthcare team members across the country much easier.
+However, adoption of X12 Authorization and Attachment transactions by EHR implementers has been low.  Surveys from CAQH & WEDI indicate that, for 2018, less than 12% of prior authorizations are processed using the 278 request & response.  For details, see the [WEDI survey from January 2020](https://growthzonesitesprod.azureedge.net/wp-content/uploads/sites/1238/2020/01/WEDI-PriorAuthSurveyResults-FINAL.pdf).  The [2019 CAQH Index survey](https://www.caqh.org/sites/default/files/explorations/index/report/2019-caqh-index.pdf?token=SP6YxT4u) indicated that <13% of Prior Authorization transactions are fully automated X12 278.  Clinicians and their office staff spend hours each week trying to verify coverage requirements for specific treatments, submitting prior authorization requests, following up on prior authorization requests, transmitting supporting documentation to support follow-up requests for information and then communicating the prior authorization final decision within the care team and the patient.  Mechanisms include phone, fax, custom portals, but rarely automated data feeds. Automating even a few steps of the prior authorization process could make the work of healthcare team members across the country much easier.
 
 Discussion with EHR implementers has suggested that a FHIR-based process for submitting prior authorization requests would have significantly higher uptake.  As well, there is a desire by some payers to consume content in FHIR format.  This implementation guide attempts to do that while still retaining compliance with HIPAA requirements.
 
@@ -39,11 +39,15 @@ Within an EHR Client, the prior authorization request process should be capable 
 
 #### Scope of Work Flow
 In Scope
-1) Prior Auth for services/devices performed/supplied by the ordering provider
-2) Prior Auth for services/devices performed/supplied by a different provider where the ordering provider is required or permitted to request authorization for another entity to provide the services
-3) Prior Auth for medications that are covered under a medical benefit.
+
+1. Prior Auth for services/devices performed/supplied by the ordering provider
+2. Prior Auth for services/devices performed/supplied by a different provider where the ordering provider is required or permitted to request authorization for another entity to provide the services
+3. Prior Auth for medications that are covered under a medical benefit
+4. When Prior Auth is required by the rendering provider
+
 Out Of Scope
-1) SHOULD not be used for any Medication that is covered under a prescription drug program benefit and where PA is provided by another electronic exchange process (e.g. NCPCP Script)
+
+1. SHOULD not be used for any Medication that is covered under a prescription drug program benefit where PA is provided by another electronic exchange process (e.g. NCPCP Script)
 
 #### Prior Authorization Process
 The prior authorization process from the EHR side consists of five steps:

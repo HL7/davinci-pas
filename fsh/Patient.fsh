@@ -6,6 +6,8 @@ Description: "A patient who is the beneficiary of an insurance plan."
 * name.suffix MS
 * name.prefix MS
 * identifier.type MS
+* identifier.type from https://valueset.x12.org/x217/005010/request/2010C/NM1/1/08/00/66 (required)
+* identifier.type ^binding.description = "Codes designating the system/method of code structure used for Identification Code. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * address.district MS
 * address.country MS
 * multipleBirthInteger MS
@@ -19,6 +21,8 @@ Description: "A patient who is the subscriber of an insurance plan."
 * name.suffix MS
 * name.prefix MS
 * identifier.type MS
+* identifier.type from https://valueset.x12.org/x217/005010/request/2010D/REF/1/01/00/128 (required)
+* identifier.type ^binding.description = "Codes qualifying the Reference Identification. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * address.district MS
 * address.country MS
 
@@ -26,5 +30,5 @@ Extension: MilitaryStatus
 Id: extension-militaryStatus
 Description: "A patient's military status."
 * value[x] only CodeableConcept
-* value[x] from $X12EmploymentStatusCode (required)
-* value[x] ^binding.description = "Code showing the general employment status of an employee/claimant. They are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* value[x] from https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 (required)
+* value[x] ^binding.description = "Codes showing the general employment status of an employee/claimant. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."

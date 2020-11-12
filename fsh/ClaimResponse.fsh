@@ -32,8 +32,9 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
 * error MS
-* error.extension contains FollowupAction named followupAction 0..1
+* error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.code MS
+* error.code from X12278RejectReasonCodes (required)
 
 Extension: ReviewAction
 Id: extension-reviewAction
@@ -47,6 +48,8 @@ Extension: ReviewActionCode
 Id: extension-reviewActionCode
 Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
+* valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Extension: PreAuthIssueDate
 Id: extension-itemPreAuthIssueDate
@@ -63,10 +66,16 @@ Id: extension-itemPreAuthPeriod
 Description: "The date/period when this item's preauthorization is valid."
 * value[x] only Period
 
+Extension: ErrorElement
+Id: extension-errorElement
+Description: "The specific loop, segment, or element that this error information is about."
+* value[x] only string
+
 Extension: FollowupAction
 Id: extension-errorFollowupAction
 Description: "A code representing what action must occur to resolve this error."
 * value[x] only CodeableConcept
+* valueCodeableConcept from X12278FollowUpActionCodes (required)
 
 Extension: AuthorizedItemDetail
 Id: extension-itemAuthorizedDetail
@@ -114,5 +123,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.extension contains AuthorizedItemDetail named authorizedItemDetail 0..1
 * item.extension contains AuthorizedProvider named authorizedProvider 0..1
 * error MS
-* error.extension contains FollowupAction named followupAction 0..1
+* error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.code MS
+* error.code from X12278RejectReasonCodes (required)

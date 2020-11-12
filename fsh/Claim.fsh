@@ -18,7 +18,11 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * careTeam.provider MS
 * careTeam.provider only Reference(PASPractitioner or $USCoreOrganization)
 * careTeam.role MS
+* careTeam.role from https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 (required)
+* careTeam.role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * careTeam.qualification MS
+* careTeam.qualification from https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127 (required)
+* careTeam.role  ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * supportingInfo MS
 * supportingInfo.sequence MS
 * supportingInfo.category MS
@@ -36,6 +40,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * accident MS
 * accident.date MS
 * accident.type MS
+* accident.type from https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 (required)
+* accident.type ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..1
@@ -46,6 +52,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.extension contains ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
 * item.extension contains EPSDTIndicator named epsdtIndicator 0..1
 * item.extension contains NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1
+* item.extension[nursingHomeResidentialStatus].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 (required)
+* item.extension[nursingHomeResidentialStatus].valueCodeableConcept  ^binding.description = "Codes specifying the status of a nursing home resident at the time of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * item.extension contains NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1
 * item.extension contains RevenueUnitRateLimit named revenueUnitRateLimit 0..1
 * item.extension contains RequestedService named requestedService 0..1
@@ -54,7 +62,10 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.diagnosisSequence MS
 * item.informationSequence MS
 * item.revenue MS
+* item.revenue from AHANUBCRevenueCodes (required)
 * item.category MS
+* item.category from https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 (required)
+* item.category ^binding.description = "Codes identifying the classification of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * item.productOrService MS
 * item.modifier MS
 * item.serviced[x] MS
@@ -101,11 +112,15 @@ Extension: CertificationType
 Id: extension-certificationType
 Description: "A code representing the type of certification being requested (UM02)"
 * value[x] only CodeableConcept
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 (required)
+* valueCodeableConcept ^binding.description = "Codes indicating the type of certification. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Extension: LevelOfServiceCode
 Id: extension-levelOfServiceCode
 Description: "A code specifying the level of service being requested (UM06)"
 * value[x] only CodeableConcept
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 (required)
+* valueCodeableConcept ^binding.description = "Codes specifying the level of service rendered. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Extension: DiagnosisRecordedDate
 Id: extension-diagnosisRecordedDate
@@ -151,6 +166,8 @@ Extension: NursingHomeLevelOfCare
 Id: extension-nursingHomeLevelOfCare
 Description: "A code specifying the level of care provided by a nursing home facility. (SV120, SV210)"
 * value[x] only CodeableConcept
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 (required)
+* valueCodeableConcept ^binding.description = "Codes specifying the level of care provided by a nursing home facility. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Extension: RevenueUnitRateLimit
 Id: extension-revenueUnitRateLimit
@@ -207,7 +224,11 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * careTeam.provider MS
 * careTeam.provider only Reference(PASPractitioner or $USCoreOrganization)
 * careTeam.role MS
+* careTeam.role from https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 (required)
+* careTeam.role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * careTeam.qualification MS
+* careTeam.qualification from https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127 (required)
+* careTeam.role  ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * supportingInfo MS
 * supportingInfo.sequence MS
 * supportingInfo.category MS

@@ -8,7 +8,11 @@ Description: "PAS constraints on CommunicationRequest resource mandating support
 * identifier MS
 * status = #active (exactly)
 * category MS
+* category from https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 (required)
+* category  ^binding.description = "Codes indicating the title or contents of a document, report or supporting item. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * medium MS
+* medium from https://valueset.x12.org/x217/005010/response/2000D/PWK/1/02/00/756 (required)
+* medium  ^binding.description = "Codes defining timing, transmission method or format by which reports are to be sent. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * payload MS
 * payload.content[x] MS
 * payload.content[x] only string

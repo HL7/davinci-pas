@@ -2,13 +2,13 @@
 IG-specific terminology
 */
 CodeSystem: PASInformationChangeMode
-Title: "PASInformationChangeMode"
+Title: "PAS Information Change Mode Code System"
 Description: "The mode by which a piece of information has changed."
 * #changed "Changed" "Previously sent information has been changed."
 * #added "Added" "New information that was not sent previously."
 
 CodeSystem: PASSupportingInfoType
-Title: "PASSupportingInfoType"
+Title: "PAS Supporting Info Type Code System"
 Description: "Types of supporting information for a Prior Authorization Claim."
 * #patientEvent "Patient Event" "Information about the dates of the event that are being requested."
 * #admissionReview "Admission Review" "Information about dates of a hospital admission being requested."
@@ -17,12 +17,12 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 * #institutionalEncounter "Institutional Encounter" "Information about a hospital claim being requested."
 
 ValueSet: PASInformationChangeMode
-Title: "PASInformationChangeMode"
+Title: "PAS Information Change Mode Value Set"
 Description: "The mode by which a piece of information has changed."
 * codes from system PASInformationChangeMode
 
 ValueSet: PASSupportingInfoType
-Title: "PASSupportingInfoType"
+Title: "PAS Supporting Info Type Value Set"
 Description: "Types of supporting information for a Prior Authorization Claim."
 * codes from system PASSupportingInfoType
 
@@ -31,7 +31,7 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 X12 Codesystems and ValueSets
 */
 CodeSystem: AHANUBCRevenueCodes
-Title: "AHA NUBC Revenue Codes"
+Title: "AHA NUBC Revenue Code System"
 Description: "These codes are used to convey specific accomodation, ancillary service or unique billing calculations or arrangements. They are listed within the UB-04 Data Specifications Manual and maintained by the National Uniform Billing Committee (NUBC)."
 * ^publisher = "American Hospital Association, National Uniform Billing Committee"
 * ^url = "https://www.nubc.org/revenue-code"
@@ -39,8 +39,32 @@ Description: "These codes are used to convey specific accomodation, ancillary se
 * ^content = #not-present
 
 ValueSet: AHANUBCRevenueCodes
-Title: "AHA NUBC Revenue Codes"
-* codes from system https://www.nubc.org/revenue-code
+Title: "AHA NUBC Revenue Value Set"
+Description: "These codes are used to convey specific accomodation, ancillary service or unique billing calculations or arrangements. They are listed within the UB-04 Data Specifications Manual and maintained by the National Uniform Billing Committee (NUBC)."
+* codes from system AHANUBCRevenueCodes
 
-Alias: $X12EntityIdentifierCode = https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98
-Alias: $X12EmploymentStatusCode = https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584
+CodeSystem: X12278RejectReasonCodes
+Title: "X12 278 Reject Reason Code System"
+Description: "The complete set of codes that are used to indicate the reason why something was rejected."
+* ^publisher = "X12 Inc."
+* ^url = "https://codesystem.x12.org/005010/901"
+* ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^content = #not-present
+
+ValueSet: X12278RejectReasonCodes
+Title: "X12 278 Reject Reason Value Set"
+Description: "The complete set of codes that are used to indicate the reason why something was rejected."
+* codes from system X12278RejectReasonCodes
+
+CodeSystem: X12278FollowUpActionCodes
+Title: "X12 278 Follow Up Action Code System"
+Description: "The complete set of codes that are used to indicate any follow-up actions that are allowed for a reject reason."
+* ^publisher = "X12 Inc."
+* ^url = "https://codesystem.x12.org/005010/889"
+* ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^content = #not-present
+
+ValueSet: X12278FollowUpActionCodes
+Title: "X12 278 Follow Up Action Value Set"
+Description: "The complete set of codes that are used to indicate any follow-up actions that are allowed for a reject reason."
+* codes from system X12278FollowUpActionCodes
