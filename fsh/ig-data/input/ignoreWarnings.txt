@@ -27,3 +27,7 @@ The Implementation Guide contains no examples for this profile
 The Implementation Guide contains no examples for this extension
 The Implementation Guide contains no explicitly linked examples for this profile
 The Implementation Guide contains no examples for this data type profile
+
+# There is an error in the base specification
+The link 'valueset-diagnostic-requests.html' for "here" cannot be resolved
+
