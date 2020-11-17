@@ -31,6 +31,9 @@ The Implementation Guide contains no examples for this data type profile
 # There is an error in the base specification
 The link 'valueset-diagnostic-requests.html' for "here" cannot be resolved
 
+# Slices that are unable to be validated due to unknown terminology
+Unable to find matching profile for ServiceRequest/ReferralRequestExample among choices: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-medicationrequest, http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-servicerequest, http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-devicerequest
+
 # Code systems that are not available in the terminology server
 Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
 
@@ -50,3 +53,5 @@ Unknown System specified, so Concepts and Filters can''t be checked
 
 None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#HS)
 None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#IN)
+None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#SC)
+None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1365#3)
