@@ -72,18 +72,23 @@ Description: "The complete set of codes that are used to indicate any follow-up 
 ValueSet: X12278DiagnosisCodes
 Title: "X12 278 Diagnosis Code Value Set"
 Description: "The complete set of codes that can be used to convey a patient diagnosis.  This includes codes from ICD-10-CM, ICD-9-CM and Diagnosis Related Group codes."
-* codes from system http://hl7.org/fhir/sid/icd-9-cm
+* codes from system http://terminology.hl7.org/CodeSystem/icd9cm
 * codes from system http://hl7.org/fhir/sid/icd-10-cm
 * codes from system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 * codes from system http://uri.hddaccess.com/cs/apdrg
 * codes from system http://uri.hddaccess.com/cs/aprdrg
 
+CodeSystem: PASDiagnosisType
+Title: "PAS Diagnosis Type"
+Description: "The type of diagnosis being conveyed in a prior authorization.  This code is combined with the Diagnosis Code to produce the proper X12 code."
+* #admitting "Admitting" "The diagnosis given as the reason why the patient was admitted to the hospital."
+* #principal "Principal" "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+* #patientreasonforvisit "Patient Reason For Visit" "The diagnosis given as why the patient came to the hospital."
+
 ValueSet: X12278DiagnosisType
 Title: "X12 278 Diagnosis Type Value Set"
 Description: "This set of codes is used to identify the type of diagnosis that is being conveyed in the prior authorization."
-* http://terminology.hl7.org/CodeSystem/ex-diagnosistype#admitting
-* http://terminology.hl7.org/CodeSystem/ex-diagnosistype#principal
-* http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType#patientreasonforvisit
+* codes from system PASDiagnosisType
 
 ValueSet: X12278LocationType
 Title: "X12 278 Health Care Service Location Type Value Set"
@@ -98,8 +103,8 @@ Description: "This set of codes identifies what service is being requested.  It 
 * codes from system http://codesystem.x12.org/005010/1365
 * codes from system http://www.ama-assn.org/go/cpt
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
-* codes from system http://hl7.org/fhir/sid/icd-9-cm
-* codes from system http://hl7.org/fhir/sid/icd-10-pcs
+* codes from system http://terminology.hl7.org/CodeSystem/icd9cm
+* codes from system http://www.cms.gov/Medicare/Coding/ICD10
 
 ValueSet: X12278DiagnosisInformationType
 Title: "X12 278 Diagnosis Information Type"
