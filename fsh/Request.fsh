@@ -18,6 +18,7 @@ Description: "PAS constraints on ServiceRequest resource mandating support for e
 * extension contains ProductOrServiceCodeEnd named serviceCodeEnd 0..1
 * intent = #order (exactly)
 * code MS
+* code from X12278RequestedServiceType (required)
 * quantity[x] MS
 * quantity[x] only Quantity
 * subject MS
@@ -33,6 +34,7 @@ Description: "PAS constraints on DeviceRequest resource mandating support for el
 * intent = #order (exactly)
 * code[x] MS
 * code[x] only CodeableConcept
+* codeCodeableConcept from X12278RequestedServiceType (required)
 * subject MS
 * subject only Reference(PASBeneficiary)
 * occurrence[x] MS

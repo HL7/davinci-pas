@@ -32,7 +32,9 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * diagnosis.sequence MS
 * diagnosis.diagnosis[x] MS
 * diagnosis.diagnosis[x] only CodeableConcept
-* diagnosis.type MS
+* diagnosis.diagnosisCodeableConcept from X12278DiagnosisCodes (required)
+* diagnosis.type 0..1 MS
+* diagnosis.type from X12278DiagnosisType (required)
 * insurance MS
 * insurance.sequence MS
 * insurance.focal = true (exactly)
@@ -41,7 +43,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * accident.date MS
 * accident.type MS
 * accident.type from https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 (required)
-* accident.type ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..1
@@ -67,10 +69,13 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.category from https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 (required)
 * item.category ^binding.description = "Codes identifying the classification of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * item.productOrService MS
+* item.productOrService from X12278RequestedServiceType (required)
 * item.modifier MS
+* item.modifier from X12278RequestedServiceType (required)
 * item.serviced[x] MS
 * item.location[x] MS
 * item.location[x] only CodeableConcept
+* item.locationCodeableConcept from X12278LocationType (required)
 * item.quantity MS
 * item.unitPrice MS
 
@@ -146,11 +151,13 @@ Extension: ServiceItemRequestType
 Id: extension-serviceItemRequestType
 Description: "A code that identifies the type of service being requested."
 * value[x] only CodeableConcept
+* valueCodeableConcept from X12278RequestedServiceType (required)
 
 Extension: ProductOrServiceCodeEnd
 Id: extension-productOrServiceCodeEnd
 Description: "Used to provide the last code in a series of codes for the service being requested."
 * value[x] only CodeableConcept
+* valueCodeableConcept from X12278RequestedServiceType (required)
 
 Extension: EPSDTIndicator
 Id: extension-epsdtIndicator
@@ -237,7 +244,9 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * diagnosis.sequence MS
 * diagnosis.diagnosis[x] MS
 * diagnosis.diagnosis[x] only CodeableConcept
-* diagnosis.type MS
+* diagnosis.diagnosisCodeableConcept from X12278DiagnosisCodes (required)
+* diagnosis.type 0..1 MS
+* diagnosis.type from X12278DiagnosisType (required)
 * insurance MS
 * insurance.sequence MS
 * insurance.focal = true (exactly)
@@ -245,6 +254,8 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * accident MS
 * accident.date MS
 * accident.type MS
+* accident.type from https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 (required)
+* accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..1
@@ -261,12 +272,17 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * item.diagnosisSequence MS
 * item.informationSequence MS
 * item.revenue MS
-* item.category MS
+* item.revenue from AHANUBCRevenueCodes (required)
+* item.category from https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 (required)
+* item.category ^binding.description = "Codes identifying the classification of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * item.productOrService MS
+* item.productOrService from X12278RequestedServiceType (required)
 * item.modifier MS
+* item.modifier from X12278RequestedServiceType (required)
 * item.serviced[x] MS
 * item.location[x] MS
 * item.location[x] only CodeableConcept
+* item.locationCodeableConcept from X12278LocationType (required)
 * item.quantity MS
 
 * supportingInfo ^slicing.discriminator.type = #value

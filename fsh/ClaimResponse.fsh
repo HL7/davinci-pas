@@ -6,7 +6,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * identifier MS
 * status MS
 * status = #active (exactly)
-* type MS
 * use = #preauthorization (exactly)
 * patient MS
 * patient only Reference(PASBeneficiary)
@@ -42,6 +41,7 @@ Description: "The details of the review action that is necessary for the authori
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..1 and secondSurgicalOpinionFlag 0..1
 * extension[number].value[x] only string
 * extension[reasonCode].value[x] only CodeableConcept
+// * extension[reasonCode].valueCodeableConcept from xxx (required)
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 
 Extension: ReviewActionCode
@@ -82,10 +82,13 @@ Id: extension-itemAuthorizedDetail
 Description: "The details for this item of what has been authorized if different from what was requested."
 * extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..1 and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
 * extension[productOrServiceCode].value[x] only CodeableConcept
+* extension[productOrServiceCode].valueCodeableConcept from X12278RequestedServiceType (required)
 * extension[modifier].value[x] only CodeableConcept
+* extension[modifier].valueCodeableConcept from X12278RequestedServiceType (required)
 * extension[unitPrice].value[x] only Money
 * extension[quantity].value[x] only SimpleQuantity
 * extension[revenue].value[x] only CodeableConcept
+* extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
 
 Extension: AuthorizedProvider
 Id: extension-itemAuthorizedProvider
@@ -100,7 +103,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * identifier MS
 * status MS
 * status = #active (exactly)
-* type MS
 * use = #preauthorization (exactly)
 * patient MS
 * patient only Reference(PASBeneficiary)

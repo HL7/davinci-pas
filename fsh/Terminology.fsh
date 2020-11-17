@@ -68,3 +68,39 @@ ValueSet: X12278FollowUpActionCodes
 Title: "X12 278 Follow Up Action Value Set"
 Description: "The complete set of codes that are used to indicate any follow-up actions that are allowed for a reject reason."
 * codes from system X12278FollowUpActionCodes
+
+ValueSet: X12278DiagnosisCodes
+Title: "X12 278 Diagnosis Code Value Set"
+Description: "The complete set of codes that can be used to convey a patient diagnosis.  This includes codes from ICD-10-CM, ICD-9-CM and Diagnosis Related Group codes."
+* codes from system http://hl7.org/fhir/sid/icd-9-cm
+* codes from system http://hl7.org/fhir/sid/icd-10-cm
+* codes from system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
+* codes from system http://uri.hddaccess.com/cs/apdrg
+* codes from system http://uri.hddaccess.com/cs/aprdrg
+
+ValueSet: X12278DiagnosisType
+Title: "X12 278 Diagnosis Type Value Set"
+Description: "This set of codes is used to identify the type of diagnosis that is being conveyed in the prior authorization."
+* http://terminology.hl7.org/CodeSystem/ex-diagnosistype#admitting
+* http://terminology.hl7.org/CodeSystem/ex-diagnosistype#principal
+* http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType#patientreasonforvisit
+
+ValueSet: X12278LocationType
+Title: "X12 278 Health Care Service Location Type Value Set"
+Description: "This set of codes identifies where services were, or may be, performed.  The codes are taken from NUBC Bill Type and from CMS Place of Service codes."
+* codes from system https://www.nubc.org/CodeSystem/TypeOfBill
+* codes from system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
+
+ValueSet: X12278RequestedServiceType
+Title: "X12 278 Requested Service Type"
+Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, and ICD-10 Procedure codes."
+* codes from system http://codesystem.x12.org/005010/1365
+* codes from system http://www.ama-assn.org/go/cpt
+* codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+* codes from system http://hl7.org/fhir/sid/icd-9-cm
+* codes from system http://hl7.org/fhir/sid/icd-10-pcs
+
+ValueSet: X12278DiagnosisInformationType
+Title: "X12 278 Diagnosis Information Type"
+Description: "LOINC codes that convey the type of information that is being requested about the diagnosis.  NOTE: The X12 278 implementation guide currently does not place any restrictions on specific LOINC codes that can be used.  This value set is all of LOINC but it is expected that senders will use a specific set of LOINC codes."
+* codes from system http://loinc.org

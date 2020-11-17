@@ -31,3 +31,22 @@ The Implementation Guide contains no examples for this data type profile
 # There is an error in the base specification
 The link 'valueset-diagnostic-requests.html' for "here" cannot be resolved
 
+# Code systems that are not available in the terminology server
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
+
+Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
+Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+Error from server: Unable to provide support for code system http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType
+Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
+Error from server: Unable to provide support for code system http://codesystem.x12.org/005010/1365
+
+URL value 'http://hl7.org/fhir/sid/icd-10-pcs' does not resolve
+URL value 'http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType' does not resolve
+
+Unknown System specified, so Concepts and Filters can''t be checked
+
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType because the value set or code system is not known to the validator]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType because the value set or code system is not known to the validator]
+
+None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#HS)
+None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#IN)
