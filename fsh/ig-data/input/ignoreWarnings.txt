@@ -15,6 +15,8 @@ Code System URI 'http://codesystem.x12.org/005010/237' is unknown so the code ca
 Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/306' is unknown so the code cannot be validated
 
+Error from server: Unable to provide support for code system https://codesystem.x12.org/external/886
+
 # CPT Code System used in example is not available in the terminology server
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 

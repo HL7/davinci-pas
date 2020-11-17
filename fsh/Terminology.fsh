@@ -99,7 +99,8 @@ Description: "This set of codes identifies where services were, or may be, perfo
 ValueSet: X12278RequestedServiceType
 Title: "X12 278 Requested Service Type"
 Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, and ICD-10 Procedure codes."
-* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved"
+* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved.
+X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * codes from system http://codesystem.x12.org/005010/1365
 * codes from system http://www.ama-assn.org/go/cpt
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
@@ -111,3 +112,9 @@ Title: "X12 278 Diagnosis Information Type"
 Description: "LOINC codes that convey the type of information that is being requested about the diagnosis.  NOTE: The X12 278 implementation guide currently does not place any restrictions on specific LOINC codes that can be used.  This value set is all of LOINC but it is expected that senders will use a specific set of LOINC codes."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * codes from system http://loinc.org
+
+ValueSet: X12278ReviewDecisionReasonCode
+Title: "X12 278 Review Descision Reason Codes"
+Description: "Codes used to identify the reason for the health care service review outcome."
+* ^copyright = "This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* codes from system https://codesystem.x12.org/external/886
