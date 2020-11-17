@@ -54,3 +54,36 @@ None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-p
 None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#IN)
 None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1525#SC)
 None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType), and a code from this value set is required) (codes = http://codesystem.x12.org/005010/1365#3)
+
+# Validation against profile information messages
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Claim
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-requestor - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Coverage
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-subscriber - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ServiceRequest
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-servicerequest - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claimresponse
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ClaimResponse
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claimresponse - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-practitioner
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-requestor
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-insurer
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-subscriber
+Validate resource against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-servicerequest
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/OperationDefinition
