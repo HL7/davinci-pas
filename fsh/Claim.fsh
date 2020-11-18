@@ -151,7 +151,8 @@ Extension: ServiceItemRequestType
 Id: extension-serviceItemRequestType
 Description: "A code that identifies the type of service being requested."
 * value[x] only CodeableConcept
-* valueCodeableConcept from X12278RequestedServiceType (required)
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 (required)
+* valueCodeableConcept ^binding.description = "Codes indicating a type of request. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Extension: ProductOrServiceCodeEnd
 Id: extension-productOrServiceCodeEnd
