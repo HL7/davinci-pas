@@ -19,14 +19,14 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * outcome MS
 * preAuthPeriod MS
 * item MS
-* item.extension contains ReviewAction named reviewAction 0..1
-* item.extension contains PreAuthIssueDate named preAuthIssueDate 0..1
-* item.extension contains PreAuthPeriod named preAuthPeriod 0..1
-* item.extension contains AuthorizationNumber named previousAuthorizationNumber 0..1
-* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
-* item.extension contains AuthorizedDate named authorizedDate 0..1
-* item.extension contains AuthorizedItemDetail named authorizedItemDetail 0..1
-* item.extension contains AuthorizedProvider named authorizedProvider 0..1
+* item.extension contains ReviewAction named reviewAction 0..1 MS and
+	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
+	PreAuthPeriod named preAuthPeriod 0..1 MS and
+	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
+	AuthorizedDate named authorizedDate 0..1 MS and
+	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
+	AuthorizedProvider named authorizedProvider 0..1 MS
 * item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
@@ -41,7 +41,7 @@ Description: "The details of the review action that is necessary for the authori
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..1 and secondSurgicalOpinionFlag 0..1
 * extension[number].value[x] only string
 * extension[reasonCode].value[x] only CodeableConcept
-// * extension[reasonCode].valueCodeableConcept from xxx (required)
+* extension[reasonCode].valueCodeableConcept from X12278ReviewDecisionReasonCode (required)
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 
 Extension: ReviewActionCode
@@ -116,14 +116,14 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * outcome MS
 * preAuthPeriod MS
 * item MS
-* item.extension contains ReviewAction named reviewAction 0..1
-* item.extension contains PreAuthIssueDate named preAuthIssueDate 0..1
-* item.extension contains PreAuthPeriod named preAuthPeriod 0..1
-* item.extension contains AuthorizationNumber named previousAuthorizationNumber 0..1
-* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
-* item.extension contains AuthorizedDate named authorizedDate 0..1
-* item.extension contains AuthorizedItemDetail named authorizedItemDetail 0..1
-* item.extension contains AuthorizedProvider named authorizedProvider 0..1
+* item.extension contains ReviewAction named reviewAction 0..1 MS and
+	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
+	PreAuthPeriod named preAuthPeriod 0..1 MS and
+	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
+	AuthorizedDate named authorizedDate 0..1 MS and
+	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
+	AuthorizedProvider named authorizedProvider 0..1 MS
 * error MS
 * error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.code MS

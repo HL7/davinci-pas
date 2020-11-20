@@ -28,7 +28,7 @@ This implementation guide was initiated created with the support of the twenty-t
 
 Organizational participants (those organizations having attendees on at least 4 calls) included:
 
-* AMA (Heather, Terry Cunningham)
+* AMA (Heather McComas, Terry Cunningham)
 * Anthem (Barbara Antuna, Alberto Llanes, Christol Green, Karen Zapata, Mary Bushman, Sudhir Nair)
 * Azuba (Bart Carlson)
 * Blue Cross Blue Shield of Alabama (Kelly Anderson, Kevin Lambert, Tony Benson)

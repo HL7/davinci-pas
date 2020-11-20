@@ -15,7 +15,7 @@ Parent: ServiceRequest
 Id: profile-servicerequest
 Title: "PAS Service Request"
 Description: "PAS constraints on ServiceRequest resource mandating support for elements relevant to the generic services being requested on a prior authorization request"
-* extension contains ProductOrServiceCodeEnd named serviceCodeEnd 0..1
+* extension contains ProductOrServiceCodeEnd named serviceCodeEnd 0..1 MS
 * intent = #order (exactly)
 * code MS
 * code from X12278RequestedServiceType (required)
@@ -45,8 +45,8 @@ Parent: Timing
 Id: profile-datatype-timing
 Title: "PAS Timing"
 Description: "PAS constraints on the Timing datatype used in the various service requests."
-* extension contains CalendarPattern named calendarPattern 0..1
-* extension contains DeliveryPattern named deliveryPattern 0..1
+* extension contains CalendarPattern named calendarPattern 0..1 MS and
+	DeliveryPattern named deliveryPattern 0..1 MS
 * repeat.bounds[x] MS
 * repeat.bounds[x] only Duration
 * repeat.period MS

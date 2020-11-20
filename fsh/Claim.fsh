@@ -3,7 +3,7 @@ Parent: Claim
 Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
-* extension contains LevelOfServiceCode named levelOfServiceType 0..1
+* extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * identifier 1..1 MS
 * identifier.extension contains IdentifierSubDepartment named subDepartment 0..1 MS
 * status = #active (exactly)
@@ -28,7 +28,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo.category MS
 * supportingInfo.category from PASSupportingInfoType (extensible)
 * diagnosis MS
-* diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1
+* diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1 MS
 * diagnosis.sequence MS
 * diagnosis.diagnosis[x] MS
 * diagnosis.diagnosis[x] only CodeableConcept
@@ -46,19 +46,19 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1
-* item.extension contains AuthorizationNumber named authorizationNumber 0..1
-* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
-* item.extension contains ServiceItemRequestType named requestType 0..1
-* item.extension contains CertificationType named certificationType 0..1
-* item.extension contains ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
-* item.extension contains EPSDTIndicator named epsdtIndicator 0..1
-* item.extension contains NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+	AuthorizationNumber named authorizationNumber 0..1 MS and
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
+	ServiceItemRequestType named requestType 0..1 MS and
+	CertificationType named certificationType 0..1 MS and
+	ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 MS and
+	EPSDTIndicator named epsdtIndicator 0..1 MS and
+	NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1 MS and
+	NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 MS and
+	RevenueUnitRateLimit named revenueUnitRateLimit 0..1 MS and
+	RequestedService named requestedService 0..1 MS
 * item.extension[nursingHomeResidentialStatus].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 (required)
 * item.extension[nursingHomeResidentialStatus].valueCodeableConcept  ^binding.description = "Codes specifying the status of a nursing home resident at the time of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* item.extension contains NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1
-* item.extension contains RevenueUnitRateLimit named revenueUnitRateLimit 0..1
-* item.extension contains RequestedService named requestedService 0..1
 * item.sequence MS
 * item.careTeamSequence MS
 * item.diagnosisSequence MS
@@ -217,8 +217,8 @@ Parent: Claim
 Id: profile-claim-inquiry
 Title: "PAS Claim Inquiry"
 Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
-* extension contains CertificationType named certificationType 0..1
-* extension contains LevelOfServiceCode named levelOfServiceType 0..1
+* extension contains CertificationType named certificationType 0..1 MS and
+	LevelOfServiceCode named levelOfServiceType 0..1 MS
 * identifier 1..1 MS
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
@@ -259,15 +259,15 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1
-* item.extension contains AuthorizationNumber named authorizationNumber 0..1
-* item.extension contains AdministrationReferenceNumber named administrationReferenceNumber 0..1
-* item.extension contains PreAuthIssueDate named preAuthIssueDate 0..1
-* item.extension contains PreAuthPeriod named preAuthPeriod 0..1
-* item.extension contains ServiceItemRequestType named requestType 0..1
-* item.extension contains CertificationType named certificationType 0..1
-* item.extension contains ReviewActionCode named reviewActionCode 0..1
-* item.extension contains ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+	AuthorizationNumber named authorizationNumber 0..1 MS and
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
+	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
+	PreAuthPeriod named preAuthPeriod 0..1 MS and
+	ServiceItemRequestType named requestType 0..1 MS and
+	CertificationType named certificationType 0..1 MS and
+	ReviewActionCode named reviewActionCode 0..1 MS and
+	ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
 * item.sequence MS
 * item.careTeamSequence MS
 * item.diagnosisSequence MS

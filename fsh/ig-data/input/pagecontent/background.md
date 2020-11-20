@@ -47,3 +47,5 @@ The intention of this implementation guide is that detailed knowledge of X12N is
 * ASC X12N/005010X217 - Health Care Services Review - Request for Review and Response (278) - provide standardized data requirements and content for all users who request authorizations or certifications or who respond to such requests 
 * ASC X12N/005010X215 - Health Care Services Review - Inqury and Response (278) - provide standardized data requirements and content for all users who inquire on authorizations or certifications or who respond to such inquiries
 * ASC X12N/006020X316 - Additional Information to Support a Health Care Services Review (275) - provide standardized data requirements and content to send additional information about a healthcare service review.
+
+NOTE: At the time of publication, only the use of ASC X12N/005010X217 is mandated by HIPAA.

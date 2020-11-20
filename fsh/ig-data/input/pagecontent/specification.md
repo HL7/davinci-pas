@@ -35,13 +35,15 @@ This specification makes significant use of [FHIR profiles]({{site.data.fhir.pat
 The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](fhirArtifacts.html) page.
 
 #### Integration with other Implementation Guides
-* Implementations of the PAS implementation guide SHALL support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They SHOULD support any other profiles relevant to claims of the types relevant to the types of prior authorizations they process
-* While not strictly required, Clients and Servers supporting this implementation guide SHOULD also comply with the Da Vinci [Coverage requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
+* Implementations of the PAS implementation guide SHALL support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They SHOULD support any other profiles relevant to the types of prior authorizations they process
+* Clients and Servers supporting this implementation guide SHALL also comply with the Da Vinci [Coverage requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
 * Clients and Servers supporting this implementation guide SHOULD comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
 
 ### Detailed Requirements
 
 #### Summary
+***NOTE*** FHIR uses a pair of resources called Claim and ClaimResponse for multiple purposes - they are used for actual claim submission, but they are *also* used for managing prior authorizations and pre-determinations.  These are distinguished by the Claim.use code.  **All references to Claim and ClaimResponse in this implementation guide are using it for the prior authorization purpose.**
+
 The primary interaction supported by this implementation guide is submitting a prior authorization request and receiving back a response.  To perform this, a [PASBundle](StructureDefinition-profile-pas-request-bundle.html) resource is constructed by the client (EHR) system.  That Bundle will contain a [Claim](StructureDefinition-profile-claim.html) resource (which FHIR uses to submit prior authorization requests), together with various referenced resources needed to support the population of the 5010 version of the ASC X12N 278 prior authorization request and the 6020 version of the ASC X12N 275 additional documentation transactions.
 
 {::options parse_block_html="false" /}
@@ -56,8 +58,6 @@ This Bundle will then be sent as the sole payload of a [Claim/$submit](Operation
 
 In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorization items are 'pended' will be returned.  The client (or other interested systems - e.g. patient, caregiver or performing provider systems) can then query the endpoint for the final results using either a polling or subscription-based mechanism.  During this period of time, the same $submit operation can be used to request cancellation or modification of the prior authorization.
 
-***NOTE*** FHIR uses a pair of resources called Claim and ClaimResponse for multiple purposes - they are used for actual claim submission, but they are *also* used for managing prior authorizations and pre-determinations.  These are distinguished by the Claim.use code.  All references to Claim and ClaimResponse in this implementation guide are using it for the prior authorization purpose.
-
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas_sequence_diagram.png" alt="PAS Submission Sequence Diagram"/>
@@ -68,7 +68,12 @@ In the event that the prior authorization cannot be evaluated and a final respon
 
 
 #### Prior authorization submission
-The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  The Bundle can be encoded in either JSON or XML.  (Servers SHALL support both syntaxes.)  The first entry in the Bundle SHALL be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries SHALL be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once.  Bundle.entry.fullUrl values SHALL be the URL at which the resource is available from the EHR if exposed via the client's REST interface and SHALL be of the form "urn:uuid:[some guid]" otherwise.  All GUIDs used SHALL be unique, including across independent prior authorization submissions - with the exception that the same resource instance being referenced in distinct prior authorization request Bundles can have the same GUID.
+The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  The Bundle can be encoded in either JSON or XML.  (Servers SHALL support both syntaxes.)  The first entry in the Bundle SHALL be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries SHALL be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once.  E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  Bundle.entry.fullUrl values SHALL be:
+
+* the URL at which the resource is available from the EHR if exposed via the client's REST interface; or
+* the form "urn:uuid:[some guid]"  
+ 
+All GUIDs used SHALL be unique, including across independent prior authorization submissions - with the exception that the same resource instance being referenced in distinct prior authorization request Bundles can have the same GUID.
 
 In addition to these core elements needed to populate the 278 message, any "supporting information" resources needed to process the prior authorization request (whether determined by DTR processes or by other means) must also be included in the Bundle.  Relevant resources referenced by those "supporting information" resources SHALL also be included (e.g. prescriber Practitioner and Medication for a MedicationRequest).  Any such resource that has a US Core profile SHALL comply with the relevant US Core profiles.  All "supporting information" resources included in the Bundle SHALL be pointed to by the Claim resource using the Claim.supportingInfo.valueReference element.  To attach PDFs, CDAs, JPGs, a DocumentReference instance should be used.  The Claim.supportingInfo.sequence for each entry SHALL be unique within the Claim.
 
@@ -87,7 +92,7 @@ The mapping of Claim.item is driven by the X12 workflow with the use of identifi
 This IG treats everything that happens beyond the defined operations endpoint receiving the FHIR bundle as a black box.  This black box includes any business associate(s), clearinghouse(s), payers, contracted review entities,  and other intermediaries that may be involved in the PA request and response. It is up to that black box to ensure that any regulatory requirements are met and to perform all processing within the allowed timeframe.
 
 #### Prior authorization response
-The response to the prior authorization is processed in the reverse order as the request.  The system is responsible for converting the ASC X12N 278 response into a FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html).  The Bundle SHALL start with a [ClaimResponse](StructureDefinition-profile-claimresponse.html) entry that contains information mapped from the 278 response.  As well, just like for the prior authorization request, additional Bundle entries must be present for all resources referenced by the ClaimResponse or descendent references.  When converting additional Bundle entries, the conversion process SHOULD ensure that only one resource is created for a given combination of content.  E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  When echoing back resources that are the same as were present in the prior authorization request, the system SHALL ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
+The response to the prior authorization is processed in the reverse order as the request.  The system is responsible for converting the ASC X12N 278 response into a FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html).  The Bundle SHALL start with a [ClaimResponse](StructureDefinition-profile-claimresponse.html) entry that contains information mapped from the 278 response.  As well, just like for the prior authorization request, additional Bundle entries must be present for all resources referenced by the ClaimResponse or descendent references.  When converting additional Bundle entries, the conversion process SHALL ensure that only one resource is created for a given combination of content.  E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  When echoing back resources that are the same as were present in the prior authorization request, the system SHALL ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
 
 It is possible that the incoming prior authorization Bundle can not be processed due to validation errors or other non-business-errors.  In these instances, the receiving system SHALL return OperationOutcome intances that detail why the Bundle could not be processed and no ClaimResponse will be returned.  These errors are NOT the errors that are detected by the system processing the request and that can be conveyed in a ClaimResponse via the error capability.
 
@@ -106,17 +111,18 @@ After review, Maryland Capital approves the referral and responds.
 When the ClaimResponse.reviewaction.code is the X12 code for pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made.  There are two possible options - polling and subscription.  Implementers SHOULD support subscription.  Servers SHALL support polling in situations where either party is unable to use the subscription approach.
 
 Note: There are use-cases for multiple systems potentially needing to check on the status of a pended prior authorization.  In addition to the provider who submitted the prior authorization request, the status might also be of interest to:
-* the provider(s) who will be involved in delivering the service for which authorization was sought,
+
+* the provider(s) who will be involved in delivering the service for which authorization was sought
 * the patient
 * the patient's caregivers
 * other members of the patient's care team
 
-As a result, queries seeking the status of the prior authorization response may come from multiple systems.  Servers SHALL permit access to the prior authorization response to systems other than the original submitter.  They SHALL require a match on both patient coverage id (identifier on the Claim.patient) and prior authorization id (Claim.identifier) to ensure access is only granted to individuals who know both - and thus have demonstrated a need to know.
+As a result, queries seeking the status of the prior authorization response may come from multiple systems.  Servers SHALL permit access to the prior authorization response to systems other than the original submitter.  They SHALL require a match on the patient member or subscriber id (identifier on the Claim.patient).
 
 {% raw %}
 <blockquote class="stu-note">
 <p>
-We recognize that knowledge of the original Prior Authorization identifier and the Patient Coverage identifier may not be sufficient access-control for subsquent queries.  We are looking for implementer feedback on this, in particular, on how to pass information through the X12 inquiry mechanism to the payer that help attest to the 'right to know'.
+We recognize that knowledge of the Patient member or subscriber identifier may not be sufficient access-control for subsquent queries.  We are looking for implementer feedback on this, in particular, on how to pass information through the X12 inquiry mechanism to the payer that help attest to the 'right to know'.
 </p>
 </blockquote>
 {% endraw %}
@@ -133,7 +139,7 @@ The project is seeking feedback on whether these maximum frequency requirements 
 </p>
 </blockquote>
 
-The intermediary SHOULD execute a 278i to return the status.  However, if the payer does not support that function, the intermediary SHALL return the most recent copy of the prior authorization response as received from the payer.  (Note that in this latter case, the intermediary would need to persist prior authorization information and would therefore be a 'covered entity' for HIPAA purposes.)
+The intermediary SHOULD execute a 278i to return the status.  However, if the payer does not support that function, the intermediary SHALL return the most recent copy of the prior authorization response as received from the payer.
 
 Notes:
 * the returned ClaimResponse SHALL include the current results for all submitted items, including any items changed or cancelled since the original authoriation request.  (See [Changing authorization requests](#changing-authorization-requests) below.)
@@ -187,7 +193,7 @@ In this case, the prior authorization request is handled in a typical FHIR manne
 
 The intermediary will create 278 and/or 275 submissions that instantiate the changes (by looking for those items and supportingInfo elements) and will ignore the unchanged items.
 
-The benefit of this approach is that it is consistent with the way the prior authorization would need to be passed around if ever shared in a RESTful manner.  However, it can be bandwidth intensive if the prior authorization contains a large number of items, but only a small number of those have changed.  Unfortunately, the typical FHIR [patch]({{site.data.fhir.path}}http.html#patch) mechanism cannot be used in this implementation guide because the intermediaries do not have (and cannot have for regulatory reasons) a locally stored copy of the original prior authorization, nor any mechanism to retrieve one.
+The benefit of this approach is that it is consistent with the way the prior authorization would need to be passed around if ever shared in a RESTful manner.  However, it can be bandwidth intensive if the prior authorization contains a large number of items, but only a small number of those have changed.
 
 ###### Full Request Example
 An example of a changed full request can be found at [Updated Homecare Request](Bundle-HomecareAuthorizationUpdateBundleExample.html) along with the [original Homecare Request](Bundle-HomecareAuthorizationBundleExample.html).
@@ -225,7 +231,7 @@ Some of the data shared as part of the prior authorization process may have asso
 
 In order to access information about a prior authorization, the provider system will need to access the payor system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication are covered is handled within the Da Vinci HRex Implementation guide.  PAS Servers SHOULD support server-server OAuth and MAY support mutually authenticated TLS.  In a future release of this guide, direction will limit the option to server-server OAuth.  Every system implementing the Prior Authorization guide will need to be aware of and follow the guidance in the FHIR Core Specification on [Clinical Safety](http://hl7.org/fhir/safety.html) and the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
 
-Once the system authentication has occurred, there will be presumed authorization for the provider to see the current state of the prior authorization. The system will rely on audit and regulatory/payer consequences to ensure that prior authorizations are not accessed without a legitimate business requirement. This approach is used because there is no reasonable way for a payer to know 'a priori' whether a given provider has a legitimate need to know tha prior authorization status or for the patient to be involved in verifying their need to know.
+Once the system authentication has occurred, the payer will perform any authorization required for the provider to see the current state of the prior authorization.
 
 ### Testing Requirements
 It is the intent of this implementation guide to provide specifications for the exchange of prior authorization in a way that is conducive to developing test scripts and a reference implementation (RI) that can be used to validate/exercise the IG at connectathons and during piloting and production deployment. It is also the intent of this guide that any test scripts will include testing of: 
