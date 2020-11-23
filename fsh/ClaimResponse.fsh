@@ -58,7 +58,7 @@ Description: "The date when this item's preauthorization was issued."
 
 Extension: AuthorizedDate
 Id: extension-itemAuthorizedDate
-Description: "The date/period when the item that is pre-authorizated must be completed."
+Description: "The date/period by which the item that is pre-authorized must be completed."
 * value[x] only dateTime or Period
 
 Extension: PreAuthPeriod
@@ -79,7 +79,7 @@ Description: "A code representing what action must occur to resolve this error."
 
 Extension: AuthorizedItemDetail
 Id: extension-itemAuthorizedDetail
-Description: "The details for this item of what has been authorized if different from what was requested."
+Description: "The details of what has been authorized for this item if different from what was requested."
 * extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..1 and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
 * extension[productOrServiceCode].value[x] only CodeableConcept
 * extension[productOrServiceCode].valueCodeableConcept from X12278RequestedServiceType (required)

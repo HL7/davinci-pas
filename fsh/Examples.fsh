@@ -1,7 +1,7 @@
 Instance: ReferralAuthorizationBundleExample
 InstanceOf: PASRequestBundle
 Title: "Referral Authorization Bundle Example"
-Description: "An example of a claim bundle requesting prior authorization of a referral."
+Description: "An example of a Claim bundle requesting prior authorization of a referral."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
 * type = #collection
@@ -54,7 +54,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 Instance: ReferralAuthorizationResponseBundleExample
 InstanceOf: PASResponseBundle
 Title: "Referral Authorization Response Bundle Example"
-Description: "An example of a claim response bundle approving the authorization of a referral."
+Description: "An example of a ClaimResponse bundle approving the authorization of a referral."
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
 * entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ReferralAuthorizationResponseExample"
@@ -92,7 +92,7 @@ Description: "An example of a ClaimResponse giving approval for a referral."
 Instance: HomecareAuthorizationBundleExample
 InstanceOf: PASRequestBundle
 Title: "Homecare Authorization Bundle Example"
-Description: "An example of a claim bundle requesting prior authorization of a home healthcare service."
+Description: "An example of a Claim bundle requesting prior authorization of a home healthcare service."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "B56789"
 * type = #collection
@@ -139,7 +139,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 Instance: HomecareAuthorizationUpdateBundleExample
 InstanceOf: PASRequestBundle
 Title: "Homecare Authorization Update Bundle Example"
-Description: "An example of a claim bundle updating a previously sent prior authorization request."
+Description: "An example of a Claim bundle updating a previously sent prior authorization request."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
 * type = #collection
@@ -192,7 +192,7 @@ Description: "An example of a Claim resource updating a prior authorization."
 Instance: HomecareAuthorizationDifferentialBundleExample
 InstanceOf: PASRequestBundle
 Title: "Homecare Authorization Differential Update Bundle Example"
-Description: "An example of a claim bundle changing elements of a previously sent prior authorization request."
+Description: "An example of a Claim bundle changing elements of a previously sent prior authorization request."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "A12345"
 * type = #collection
@@ -242,7 +242,7 @@ Description: "An example of a Claim resource updating a prior authorization."
 Instance: MedicalServicesAuthorizationBundleExample
 InstanceOf: PASRequestBundle
 Title: "Medical Services Authorization Bundle Example"
-Description: "An example of a claim bundle requesting Medical Services Reservation."
+Description: "An example of a Claim bundle requesting Medical Services Reservation."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "5269367"
 * type = #collection

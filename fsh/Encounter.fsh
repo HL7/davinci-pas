@@ -2,7 +2,7 @@ Profile: PASEncounter
 Parent: $USCoreEncounter
 Id: profile-encounter
 Title: "PAS Encounter"
-Description: "PAS constraints on Encounter resource mandating support for elements relevant to details of a requested instutitional stay on the prior authorization request"
+Description: "PAS constraints on the Encounter resource mandating support for elements relevant to details of a requested institutional stay on the prior authorization request"
 * extension contains PatientStatus named patientStatus 0..1 MS and
 	NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1 MS
 * extension[nursingHomeResidentialStatus].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/CL1/1/04/00/1345 (required)

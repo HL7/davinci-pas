@@ -36,7 +36,7 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 #### Integration with other Implementation Guides
 * Implementations of the PAS implementation guide SHALL support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They SHOULD support any other profiles relevant to the types of prior authorizations they process
-* Clients and Servers supporting this implementation guide SHALL also comply with the Da Vinci [Coverage requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
+* Clients and Servers supporting this implementation guide SHALL also comply with the Da Vinci [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
 * Clients and Servers supporting this implementation guide SHOULD comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
 
 ### Detailed Requirements
@@ -199,7 +199,7 @@ The benefit of this approach is that it is consistent with the way the prior aut
 An example of a changed full request can be found at [Updated Homecare Request](Bundle-HomecareAuthorizationUpdateBundleExample.html) along with the [original Homecare Request](Bundle-HomecareAuthorizationBundleExample.html).
 
 ##### Differential Request
-In this case, only the Claim, related resources needed to support the Claim (e.g. submitting organization) and those items and supportingInfo elements that have actually been changed/added are included.  I.e. The Claim resource instance doesn't represent the full prior authorization request, but only the overall prior authorization metadata and the subset of elements that are different.  The submitted Bundle will be identical to that [above](#full-request), however it will omit all items that do not have a [changed](StructureDefinition-extension-infoChanged.html) extension.  It will also exclude any resources in the Bundle that are now no longer needed because the references to them have been removed with the of the removal of the non-changed Claim.item and/or Claim.supportingInfo elements.
+In this case, only the Claim, related resources needed to support the Claim (e.g. submitting organization) and those items and supportingInfo elements that have actually been changed/added are included.  I.e. The Claim resource instance doesn't represent the full prior authorization request, but only the overall prior authorization metadata and the subset of elements that are different.  The submitted Bundle will be identical to that [above](#full-request), however it will omit all items that do not have a [changed](StructureDefinition-extension-infoChanged.html) extension.  It will also exclude any resources in the Bundle that are no longer needed because the references to them have been removed with the removal of the non-changed Claim.item and/or Claim.supportingInfo elements.
 
 Note that if the change is to cancel the entire request, in the differential approach, there is no need to send *any* items or supporting Info.
 
