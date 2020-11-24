@@ -12,6 +12,15 @@
       "current": true
     },
     {
+      "version": "1.0.0",
+      "date": "2020-12-01",
+      "desc": "First STU Release",
+      "path": "http://hl7.org/fhir/us/davinci-pas/STU1",
+      "status": "trial-use",
+      "sequence": "STU 1",
+      "fhirversion": "4.0.1"
+    },
+    {
       "version": "0.1.0",
       "date": "2019-08-09",
       "desc": "First public ballot",
