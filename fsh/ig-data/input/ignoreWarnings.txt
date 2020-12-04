@@ -17,6 +17,9 @@ Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code c
 Code System URI 'http://codesystem.x12.org/005010/306' is unknown so the code cannot be validated
 
 Error from server: Unable to provide support for code system https://codesystem.x12.org/external/886
+Error from server: Unable to provide support for code system https://www.nubc.org/revenue-code
+Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/901
+Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/icd9cm
 
 # CPT Code System used in example is not available in the terminology server
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
