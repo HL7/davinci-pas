@@ -21,6 +21,42 @@ Error from server: Unable to provide support for code system https://www.nubc.or
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/901
 Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/icd9cm
 
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 on element Extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010C/NM1/1/08/00/66 on element Patient.identifier.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 on element Claim.careTeam.role could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127 on element Claim.careTeam.qualification could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 on element Claim.accident.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 on element Claim.item.extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 on element Claim.item.extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 on element Claim.item.category could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 on element CommunicationRequest.category could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/response/2000D/PWK/1/02/00/756 on element CommunicationRequest.medium could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069 on element Coverage.relationship could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/04/00/1345 on element Encounter.extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/04/00/1345 on element Encounter.extension.value[x] could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 on element Encounter.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 on element Encounter.hospitalization.admitSource could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 on element Organization.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010D/REF/1/01/00/128 on element Patient.identifier.type could not be resolved
+
+
 # CPT Code System used in example is not available in the terminology server
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
