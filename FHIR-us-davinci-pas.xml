@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2019Sep" ciUrl="https://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="1.0.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/us/davinci-pas"><version code="current" url="https://build.fhir.org/ig/HL7/davinci-pas"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2019Sep" ciUrl="https://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="1.0.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
+<version code="current" url="https://build.fhir.org/ig/HL7/davinci-pas"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pas/STU1"/>
 <version code="0.1.0" url="http://hl7.org/fhir/us/davinci-pas/2019Sep"/>
 <version code="0.1" deprecated="true"/>
@@ -94,6 +95,7 @@
 <artifact id="ValueSet/X12278LocationType" key="ValueSet-X12278LocationType" name="X12 278 Health Care Service Location Type Value Set"/>
 <artifact id="CodeSystem/X12278RejectReasonCodes" key="CodeSystem-X12278RejectReasonCodes" name="X12 278 Reject Reason Code System"/>
 <artifact id="ValueSet/X12278RejectReasonCodes" key="ValueSet-X12278RejectReasonCodes" name="X12 278 Reject Reason Value Set"/>
+<artifact id="ValueSet/X12278RequestedServiceModifierType" key="ValueSet-X12278RequestedServiceModifierType" name="X12 278 Requested Service Modifier Type"/>
 <artifact id="ValueSet/X12278RequestedServiceType" key="ValueSet-X12278RequestedServiceType" name="X12 278 Requested Service Type"/>
 <artifact id="ValueSet/X12278ReviewDecisionReasonCode" key="ValueSet-X12278ReviewDecisionReasonCode" name="X12 278 Review Descision Reason Codes"/>
 <page key="NA" name="(NA)"/>

@@ -98,14 +98,23 @@ Description: "This set of codes identifies where services were, or may be, perfo
 
 ValueSet: X12278RequestedServiceType
 Title: "X12 278 Requested Service Type"
-Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, and ICD-10 Procedure codes."
+Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, ICD-10 Procedure codes, and NDC Drug codes."
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved.
 X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable
 * codes from system http://codesystem.x12.org/005010/1365
 * codes from system http://www.ama-assn.org/go/cpt
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 * codes from system http://terminology.hl7.org/CodeSystem/icd9cm
 * codes from system http://www.cms.gov/Medicare/Coding/ICD10
+* codes from system http://hl7.org/fhir/sid/ndc
+
+ValueSet: X12278RequestedServiceModifierType
+Title: "X12 278 Requested Service Modifier Type"
+Description: "This set of codes identifies modifiers to the type of service being requested.  It is a combination of CPT (HCPCS I) and HCPCS II procedure code modifiers."
+* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
+* codes from system http://www.ama-assn.org/go/cpt
+* codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 
 ValueSet: X12278DiagnosisInformationType
 Title: "X12 278 Diagnosis Information Type"

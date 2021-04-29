@@ -1,9 +1,8 @@
 .DS_Store
-input-cache
-output
-temp
-template
+/input-cache
+/output
+/temp
+/template
 desktop.ini
 *.dropbox
-/input
-ig.ini
+/fsh-generated

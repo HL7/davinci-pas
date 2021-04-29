@@ -39,6 +39,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * insurance.sequence MS
 * insurance.focal = true (exactly)
 * insurance.coverage MS
+* insurance.coverage only Reference(PASCoverage)
 * accident MS
 * accident.date MS
 * accident.type MS
@@ -71,7 +72,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.productOrService MS
 * item.productOrService from X12278RequestedServiceType (required)
 * item.modifier MS
-* item.modifier from X12278RequestedServiceType (required)
+* item.modifier from X12278RequestedServiceModifierType (required)
 * item.serviced[x] MS
 * item.location[x] MS
 * item.location[x] only CodeableConcept
@@ -252,6 +253,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * insurance.sequence MS
 * insurance.focal = true (exactly)
 * insurance.coverage MS
+* insurance.coverage only Reference(PASCoverage)
 * accident MS
 * accident.date MS
 * accident.type MS
@@ -279,7 +281,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * item.productOrService MS
 * item.productOrService from X12278RequestedServiceType (required)
 * item.modifier MS
-* item.modifier from X12278RequestedServiceType (required)
+* item.modifier from X12278RequestedServiceModifierType (required)
 * item.serviced[x] MS
 * item.location[x] MS
 * item.location[x] only CodeableConcept

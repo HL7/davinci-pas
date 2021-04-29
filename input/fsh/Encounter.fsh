@@ -15,6 +15,7 @@ Description: "PAS constraints on the Encounter resource mandating support for el
 * hospitalization.admitSource MS
 * hospitalization.admitSource from https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 (required)
 * hospitalization.admitSource ^binding.description = "Codes indicating the source of this admission. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* location.location only Reference($USCoreLocation)
 
 Extension: PatientStatus
 Id: extension-patientStatus

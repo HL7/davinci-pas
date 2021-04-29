@@ -26,7 +26,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	AuthorizedDate named authorizedDate 0..1 MS and
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
-	AuthorizedProvider named authorizedProvider 0..1 MS
+	AuthorizedProvider named authorizedProvider 0..* MS
 * item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
@@ -80,11 +80,11 @@ Description: "A code representing what action must occur to resolve this error."
 Extension: AuthorizedItemDetail
 Id: extension-itemAuthorizedDetail
 Description: "The details of what has been authorized for this item if different from what was requested."
-* extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..1 and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
+* extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..* and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
 * extension[productOrServiceCode].value[x] only CodeableConcept
 * extension[productOrServiceCode].valueCodeableConcept from X12278RequestedServiceType (required)
 * extension[modifier].value[x] only CodeableConcept
-* extension[modifier].valueCodeableConcept from X12278RequestedServiceType (required)
+* extension[modifier].valueCodeableConcept from X12278RequestedServiceModifierType (required)
 * extension[unitPrice].value[x] only Money
 * extension[quantity].value[x] only SimpleQuantity
 * extension[revenue].value[x] only CodeableConcept
@@ -93,7 +93,11 @@ Description: "The details of what has been authorized for this item if different
 Extension: AuthorizedProvider
 Id: extension-itemAuthorizedProvider
 Description: "The specific provider who has been authorized to provide this item."
-* value[x] only Reference(PASPractitioner or $USCoreOrganization)
+* extension contains provider 0..1 and providerType 0..1
+* extension[provider].value[x] only Reference(PASPractitioner or $USCoreOrganization)
+* extension[providerType].value[x] only CodeableConcept
+* extension[providerType].valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
+* extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Profile: PASClaimInquiryResponse
 Parent: ClaimResponse
@@ -123,8 +127,10 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	AuthorizedDate named authorizedDate 0..1 MS and
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
-	AuthorizedProvider named authorizedProvider 0..1 MS
+	AuthorizedProvider named authorizedProvider 0..* MS
 * error MS
 * error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
+* error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
+* error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
 * error.code MS
 * error.code from X12278RejectReasonCodes (required)
