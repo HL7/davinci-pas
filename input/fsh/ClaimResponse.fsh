@@ -28,12 +28,23 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AuthorizedDate named authorizedDate 0..1 MS and
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
 	AuthorizedProvider named authorizedProvider 0..* MS and
-	CommunicatedDiagnosis named communicatedDiagnosis 0..* MS	
+	CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
+* item.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
+* item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
+* item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
+* item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[authorizedDate] ^short = "The date/period by which the item that is pre-authorized must be completed."
+* item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
+* item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+* item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
 * error MS
 * error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
+* error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
+* error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
 * error.code MS
 * error.code from X12278RejectReasonCodes (required)
 
@@ -132,6 +143,15 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
 	AuthorizedProvider named authorizedProvider 0..* MS and
 	CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
+* item.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
+* item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
+* item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
+* item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[authorizedDate] ^short = "The date/period by which the item that is pre-authorized must be completed."
+* item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
+* item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+* item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * error MS
 * error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."

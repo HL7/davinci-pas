@@ -4,6 +4,7 @@ Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
+* extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * identifier 1..1 MS
 * identifier only PASIdentifier
 * status = #active (exactly)
@@ -29,6 +30,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo.category from PASSupportingInfoType (extensible)
 * diagnosis MS
 * diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1 MS
+* diagnosis.extension[recordedDate] ^short = "The date that a diagnosis was recorded. (HIxx-4)"
 * diagnosis.sequence MS
 * diagnosis.diagnosis[x] MS
 * diagnosis.diagnosis[x] only CodeableConcept
@@ -60,6 +62,18 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	RequestedService named requestedService 0..1 MS
 * item.extension[nursingHomeResidentialStatus].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 (required)
 * item.extension[nursingHomeResidentialStatus].valueCodeableConcept  ^binding.description = "Codes specifying the status of a nursing home resident at the time of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
+* item.extension[authorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[requestType] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
+* item.extension[productOrServiceCodeEnd] ^short = "Used to provide the last code in a series of codes for the service being requested."
+* item.extension[epsdtIndicator] ^short = "An indicator of whether early and periodic screen for diagnosis and treatment of children is involved."
+* item.extension[nursingHomeResidentialStatus] ^short = "A code specifying the status of a nursing home resident at the time of service. (SV209)"
+* item.extension[nursingHomeLevelOfCare] ^short = "A code specifying the level of care provided by a nursing home facility. (SV120, SV210)"
+* item.extension[revenueUnitRateLimit] ^short = "The limit on the rate per unit of revenue for hospital accomodation. (SV206)"
+* item.extension[requestedService] ^short = "The details of the service being requested."
+
 * item.sequence MS
 * item.careTeamSequence MS
 * item.diagnosisSequence MS
@@ -86,29 +100,35 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
 * supportingInfo contains PatientEvent 0..1 and AdmissionReviewStart 0..1 and AdmissionReviewEnd 0..1 and AdditionalInformation 0..1 and MessageText 0..1 and InstitutionalEncounter 0..1
 
+* supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
 * supportingInfo[PatientEvent].value[x] 0..0
 
+* supportingInfo[AdmissionReviewStart] ^short = "Information about the admission dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
 * supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
 * supportingInfo[AdmissionReviewStart].value[x] 0..0
 
+* supportingInfo[AdmissionReviewEnd] ^short = "Information about the discharge dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
 * supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
 * supportingInfo[AdmissionReviewEnd].value[x] 0..0
 
+* supportingInfo[AdditionalInformation] ^short = "Send additional paperwork or supporting information for the request.  This can be most commonly a PASDocumentReference profile although any type of information is allowed."
 * supportingInfo[AdditionalInformation].category = PASSupportingInfoType#additionalInformation
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
 * supportingInfo[AdditionalInformation].value[x] only Reference
-* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of infomration to be sent, when sending reference to documents, the PASDocumentReference profile should be used."
+* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the PASDocumentReference profile should be used."
 
+* supportingInfo[MessageText] ^short = "Send text messages to the UMO."
 * supportingInfo[MessageText].category = PASSupportingInfoType#freeFormMessage
 * supportingInfo[MessageText].timing[x] 0..0
 * supportingInfo[MessageText].value[x] 1..1 MS
 * supportingInfo[MessageText].value[x] only string
 
+* supportingInfo[InstitutionalEncounter] ^short = "Information about a hospital claim being requested."
 * supportingInfo[InstitutionalEncounter].category = PASSupportingInfoType#institutionalEncounter
 * supportingInfo[InstitutionalEncounter].timing[x] 0..0
 * supportingInfo[InstitutionalEncounter].value[x] 1..1 MS
@@ -194,10 +214,13 @@ Id: profile-claim-update
 Title: "PAS Claim Update"
 Description: "PAS constraints on Claim resource when submitting an update to a previous PAS prior authorization request"
 * supportingInfo.extension contains InfoChanged named infoChanged 0..1
+* supportingInfo.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."
 * supportingInfo.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
+* supportingInfo.modifierExtension[infoCancelledFlag] ^short = "Indicates that this piece of information is not to be used."
 * item.extension contains InfoChanged named infoChanged 0..1
+* item.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."
 * item.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
-
+* item.modifierExtension[infoCancelledFlag] ^short = "Indicates that this piece of information is not to be used."
 
 Extension: InfoChanged
 Id: extension-infoChanged
@@ -220,6 +243,8 @@ Title: "PAS Claim Inquiry"
 Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
 * extension contains CertificationType named certificationType 0..1 MS and
 	LevelOfServiceCode named levelOfServiceType 0..1 MS
+* extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
+* extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * identifier 0..1 MS
 * identifier only PASIdentifier
 * use = #preauthorization (exactly)
@@ -272,6 +297,17 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 	CertificationType named certificationType 0..1 MS and
 	ReviewActionCode named reviewActionCode 0..1 MS and
 	ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
+* item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
+* item.extension[authorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[certIssueDate] ^short = "The date/period when this item's preauthorization was issued."
+* item.extension[certExpirationDate] ^short = "The date/period by which the item that is pre-authorized must be completed.)"
+* item.extension[certEffectiveDate] ^short = "The date/period when this item's preauthorization is valid."
+* item.extension[requestType] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[reviewActionCode] ^short = "The code describing the result of the review."
+* item.extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
+* item.extension[productOrServiceCodeEnd] ^short = "Used to provide the last code in a series of codes for the service being requested."
+
 * item.sequence MS
 * item.careTeamSequence MS
 * item.diagnosisSequence MS
@@ -296,21 +332,24 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
 * supportingInfo contains PatientEvent 0..1 and AdmissionReviewStart 0..1 and AdmissionReviewEnd 0..1
 
+* supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
 * supportingInfo[PatientEvent].value[x] 0..0
 
+* supportingInfo[AdmissionReviewStart] ^short = "Information about the admission dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
 * supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
 * supportingInfo[AdmissionReviewStart].value[x] 0..0
 
+* supportingInfo[AdmissionReviewEnd] ^short = "Information about the discharge dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
 * supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
 * supportingInfo[AdmissionReviewEnd].value[x] 0..0
 
 Extension: CertificationIssueDate
 Id: extension-itemCertificationIssueDate
-Description: "The date when this item's preauthorization was issued."
+Description: "The date/period when this item's preauthorization was issued."
 * value[x] only date or Period
 
 Extension: CertificationExpirationDate

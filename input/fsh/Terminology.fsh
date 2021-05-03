@@ -11,7 +11,7 @@ CodeSystem: PASSupportingInfoType
 Title: "PAS Supporting Info Type Code System"
 Description: "Types of supporting information for a Prior Authorization Claim."
 * #patientEvent "Patient Event" "Information about the dates of the event that are being requested."
-* #admissionReviewStart "Admission Review Start" "Information about admission dates of a hospital admission being requested."
+* #admissionReviewStart "Admission Review Start" "Information about the admission dates of a hospital admission being requested."
 * #admissionReviewEnd "Admission Review End" "Information about discharge dates of a hospital admission being requested."
 * #additionalInformation "Additional Information" "Send additional paperwork or supporting information for the request."
 * #freeFormMessage "Free Form Message" "Send text messages to the UMO."
