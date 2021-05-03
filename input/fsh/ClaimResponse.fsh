@@ -4,6 +4,7 @@ Id: profile-claimresponse
 Title: "PAS Claim Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request"
 * identifier MS
+* identifier only PASIdentifier
 * status MS
 * status = #active (exactly)
 * use = #preauthorization (exactly)
@@ -26,7 +27,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	AuthorizedDate named authorizedDate 0..1 MS and
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
-	AuthorizedProvider named authorizedProvider 0..* MS
+	AuthorizedProvider named authorizedProvider 0..* MS and
+	CommunicatedDiagnosis named communicatedDiagnosis 0..* MS	
 * item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
@@ -105,6 +107,7 @@ Id: profile-claiminquiryresponse
 Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
 * identifier MS
+* identifier only PASIdentifier
 * status MS
 * status = #active (exactly)
 * use = #preauthorization (exactly)
@@ -127,7 +130,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	AuthorizedDate named authorizedDate 0..1 MS and
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
-	AuthorizedProvider named authorizedProvider 0..* MS
+	AuthorizedProvider named authorizedProvider 0..* MS and
+	CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * error MS
 * error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."

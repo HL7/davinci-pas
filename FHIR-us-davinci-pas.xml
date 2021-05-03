@@ -15,6 +15,9 @@
 <artifact id="StructureDefinition/extension-itemAuthorizedDetail" key="StructureDefinition-extension-itemAuthorizedDetail" name="AuthorizedItemDetail"/>
 <artifact id="StructureDefinition/extension-itemAuthorizedProvider" key="StructureDefinition-extension-itemAuthorizedProvider" name="AuthorizedProvider"/>
 <artifact id="StructureDefinition/extension-timingcalendarpattern" key="StructureDefinition-extension-timingcalendarpattern" name="CalendarPattern"/>
+<artifact id="StructureDefinition/extension-itemCertificationEffectiveDate" key="StructureDefinition-extension-itemCertificationEffectiveDate" name="CertificationEffectiveDate"/>
+<artifact id="StructureDefinition/extension-itemCertificationExpirationDate" key="StructureDefinition-extension-itemCertificationExpirationDate" name="CertificationExpirationDate"/>
+<artifact id="StructureDefinition/extension-itemCertificationIssueDate" key="StructureDefinition-extension-itemCertificationIssueDate" name="CertificationIssueDate"/>
 <artifact id="StructureDefinition/extension-certificationType" key="StructureDefinition-extension-certificationType" name="CertificationType"/>
 <artifact id="OperationDefinition/Claim-inquiry" key="OperationDefinition-Claim-inquiry" name="ClaimInquiryOperation"/>
 <artifact deprecated="true" key="ClaimResponse" name="ClaimResponse"/>
@@ -32,6 +35,7 @@
 <artifact id="Claim/HomecareAuthorizationDifferentialExample" key="Claim-HomecareAuthorizationDifferentialExample" name="Homecare Authorization Differential Update Example"/>
 <artifact id="Claim/HomecareAuthorizationExample" key="Claim-HomecareAuthorizationExample" name="Homecare Authorization Example"/>
 <artifact id="Bundle/HomecareAuthorizationUpdateBundleExample" key="Bundle-HomecareAuthorizationUpdateBundleExample" name="Homecare Authorization Update Bundle Example"/>
+<artifact id="StructureDefinition/extension-identifierJurisdiction" key="StructureDefinition-extension-identifierJurisdiction" name="IdentifierJurisdiction"/>
 <artifact id="StructureDefinition/extension-identifierSubDepartment" key="StructureDefinition-extension-identifierSubDepartment" name="IdentifierSubDepartment"/>
 <artifact id="StructureDefinition/modifierextension-infoCancelled" key="StructureDefinition-modifierextension-infoCancelled" name="InfoCancelledFlag"/>
 <artifact id="StructureDefinition/extension-infoChanged" key="StructureDefinition-extension-infoChanged" name="InfoChanged"/>
@@ -53,6 +57,7 @@
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="PAS Device Request"/>
 <artifact id="CodeSystem/PASDiagnosisType" key="CodeSystem-PASDiagnosisType" name="PAS Diagnosis Type"/>
 <artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="PAS Encounter"/>
+<artifact id="StructureDefinition/profile-identifier" key="StructureDefinition-profile-identifier" name="PAS Identifier"/>
 <artifact id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PAS Information Change Mode Code System"/>
 <artifact id="ValueSet/PASInformationChangeMode" key="ValueSet-PASInformationChangeMode" name="PAS Information Change Mode Value Set"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-request-bundle" key="StructureDefinition-profile-pas-inquiry-request-bundle" name="PAS Inquiry Request Bundle"/>

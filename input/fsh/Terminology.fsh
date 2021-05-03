@@ -11,7 +11,8 @@ CodeSystem: PASSupportingInfoType
 Title: "PAS Supporting Info Type Code System"
 Description: "Types of supporting information for a Prior Authorization Claim."
 * #patientEvent "Patient Event" "Information about the dates of the event that are being requested."
-* #admissionReview "Admission Review" "Information about dates of a hospital admission being requested."
+* #admissionReviewStart "Admission Review Start" "Information about admission dates of a hospital admission being requested."
+* #admissionReviewEnd "Admission Review End" "Information about discharge dates of a hospital admission being requested."
 * #additionalInformation "Additional Information" "Send additional paperwork or supporting information for the request."
 * #freeFormMessage "Free Form Message" "Send text messages to the UMO."
 * #institutionalEncounter "Institutional Encounter" "Information about a hospital claim being requested."
@@ -98,7 +99,7 @@ Description: "This set of codes identifies where services were, or may be, perfo
 
 ValueSet: X12278RequestedServiceType
 Title: "X12 278 Requested Service Type"
-Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, ICD-10 Procedure codes, and NDC Drug codes."
+Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, ICD-10 Procedure codes, and NDC Drug codes.  NOTE: HCPCS Level 1 Codes are the CPT codes so either code system could be used to send the codes.  When receiving the codes from an X12 system, the system returned will be HCPCS even if it was initially sent as a CPT code."
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved.
 X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable
@@ -111,7 +112,7 @@ X12 codes are listed within an X12 implementation guide (TR3) and maintained by 
 
 ValueSet: X12278RequestedServiceModifierType
 Title: "X12 278 Requested Service Modifier Type"
-Description: "This set of codes identifies modifiers to the type of service being requested.  It is a combination of CPT (HCPCS I) and HCPCS II procedure code modifiers."
+Description: "This set of codes identifies modifiers to the type of service being requested.  It is a combination of CPT (HCPCS I) and HCPCS II procedure code modifiers.  NOTE: HCPCS Level 1 Codes are the CPT codes so either code system could be used to send the codes.  When receiving the codes from an X12 system, the system returned will be HCPCS even if it was initially sent as a CPT code."
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 * codes from system http://www.ama-assn.org/go/cpt
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets

@@ -5,7 +5,7 @@ Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * identifier 1..1 MS
-* identifier.extension contains IdentifierSubDepartment named subDepartment 0..1 MS
+* identifier only PASIdentifier
 * status = #active (exactly)
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
@@ -84,20 +84,25 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo ^slicing.discriminator.path = "category"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
-* supportingInfo contains PatientEvent 0..1 and AdmissionReview 0..1 and AdditionalInformation 0..1 and MessageText 0..1 and InstitutionalEncounter 0..1
+* supportingInfo contains PatientEvent 0..1 and AdmissionReviewStart 0..1 and AdmissionReviewEnd 0..1 and AdditionalInformation 0..1 and MessageText 0..1 and InstitutionalEncounter 0..1
 
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
 * supportingInfo[PatientEvent].value[x] 0..0
 
-* supportingInfo[AdmissionReview].category = PASSupportingInfoType#admissionReview
-* supportingInfo[AdmissionReview].timing[x] 1..1 MS
-* supportingInfo[AdmissionReview].value[x] 0..0
+* supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
+* supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewStart].value[x] 0..0
+
+* supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
+* supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewEnd].value[x] 0..0
 
 * supportingInfo[AdditionalInformation].category = PASSupportingInfoType#additionalInformation
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
 * supportingInfo[AdditionalInformation].value[x] only Reference
+* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of infomration to be sent, when sending reference to documents, the PASDocumentReference profile should be used."
 
 * supportingInfo[MessageText].category = PASSupportingInfoType#freeFormMessage
 * supportingInfo[MessageText].timing[x] 0..0
@@ -108,11 +113,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[InstitutionalEncounter].timing[x] 0..0
 * supportingInfo[InstitutionalEncounter].value[x] 1..1 MS
 * supportingInfo[InstitutionalEncounter].value[x] only Reference(PASEncounter)
-
-Extension: IdentifierSubDepartment
-Id: extension-identifierSubDepartment
-Description: "An additional element that provides the subdepartment that created the authorization request."
-* value[x] only string
 
 Extension: CertificationType
 Id: extension-certificationType
@@ -136,7 +136,7 @@ Description: "The date that a diagnosis was recorded. (HIxx-4)"
 Extension: ItemTraceNumber
 Id: extension-itemTraceNumber
 Description: "Uniquely identifies this claim item. (2000F-TRN)"
-* value[x] only Identifier
+* value[x] only PASIdentifier
 
 Extension: AuthorizationNumber
 Id: extension-authorizationNumber
@@ -220,7 +220,8 @@ Title: "PAS Claim Inquiry"
 Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
 * extension contains CertificationType named certificationType 0..1 MS and
 	LevelOfServiceCode named levelOfServiceType 0..1 MS
-* identifier 1..1 MS
+* identifier 0..1 MS
+* identifier only PASIdentifier
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
 * billablePeriod MS
@@ -264,8 +265,9 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
 	AuthorizationNumber named authorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
-	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
-	PreAuthPeriod named preAuthPeriod 0..1 MS and
+	CertificationIssueDate named certIssueDate 0..1 MS and
+	CertificationExpirationDate named certExpirationDate 0..1 MS and
+	CertificationEffectiveDate named certEffectiveDate 0..1 MS and
 	ServiceItemRequestType named requestType 0..1 MS and
 	CertificationType named certificationType 0..1 MS and
 	ReviewActionCode named reviewActionCode 0..1 MS and
@@ -292,12 +294,32 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * supportingInfo ^slicing.discriminator.path = "category"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
-* supportingInfo contains PatientEvent 0..1 and AdmissionReview 0..1
+* supportingInfo contains PatientEvent 0..1 and AdmissionReviewStart 0..1 and AdmissionReviewEnd 0..1
 
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
 * supportingInfo[PatientEvent].value[x] 0..0
 
-* supportingInfo[AdmissionReview].category = PASSupportingInfoType#admissionReview
-* supportingInfo[AdmissionReview].timing[x] 1..1 MS
-* supportingInfo[AdmissionReview].value[x] 0..0
+* supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
+* supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewStart].value[x] 0..0
+
+* supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
+* supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewEnd].value[x] 0..0
+
+Extension: CertificationIssueDate
+Id: extension-itemCertificationIssueDate
+Description: "The date when this item's preauthorization was issued."
+* value[x] only date or Period
+
+Extension: CertificationExpirationDate
+Id: extension-itemCertificationExpirationDate
+Description: "The date/period by which the item that is pre-authorized must be completed."
+* value[x] only date or Period
+
+Extension: CertificationEffectiveDate
+Id: extension-itemCertificationEffectiveDate
+Description: "The date/period when this item's preauthorization is valid."
+* value[x] only date or Period
+
