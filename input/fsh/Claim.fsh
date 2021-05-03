@@ -103,16 +103,25 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
+* supportingInfo[PatientEvent].timingDate obeys FullDateRule
+* supportingInfo[PatientEvent].timingPeriod.start obeys FullDateRule
+* supportingInfo[PatientEvent].timingPeriod.end obeys FullDateRule
 * supportingInfo[PatientEvent].value[x] 0..0
 
 * supportingInfo[AdmissionReviewStart] ^short = "Information about the admission dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
 * supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewStart].timingDate obeys FullDateRule
+* supportingInfo[AdmissionReviewStart].timingPeriod.start obeys FullDateRule
+* supportingInfo[AdmissionReviewStart].timingPeriod.end obeys FullDateRule
 * supportingInfo[AdmissionReviewStart].value[x] 0..0
 
 * supportingInfo[AdmissionReviewEnd] ^short = "Information about the discharge dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
 * supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewEnd].timingDate obeys FullDateRule
+* supportingInfo[AdmissionReviewEnd].timingPeriod.start obeys FullDateRule
+* supportingInfo[AdmissionReviewEnd].timingPeriod.end obeys FullDateRule
 * supportingInfo[AdmissionReviewEnd].value[x] 0..0
 
 * supportingInfo[AdditionalInformation] ^short = "Send additional paperwork or supporting information for the request.  This can be most commonly a PASDocumentReference profile although any type of information is allowed."
@@ -152,6 +161,7 @@ Extension: DiagnosisRecordedDate
 Id: extension-diagnosisRecordedDate
 Description: "The date that a diagnosis was recorded. (HIxx-4)"
 * value[x] only date
+* valueDate obeys FullDateRule
 
 Extension: ItemTraceNumber
 Id: extension-itemTraceNumber
@@ -335,30 +345,52 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
+* supportingInfo[PatientEvent].timingDate obeys FullDateRule
+* supportingInfo[PatientEvent].timingPeriod.start obeys FullDateRule
+* supportingInfo[PatientEvent].timingPeriod.end obeys FullDateRule
 * supportingInfo[PatientEvent].value[x] 0..0
 
 * supportingInfo[AdmissionReviewStart] ^short = "Information about the admission dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
 * supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewStart].timingDate obeys FullDateRule
+* supportingInfo[AdmissionReviewStart].timingPeriod.start obeys FullDateRule
+* supportingInfo[AdmissionReviewStart].timingPeriod.end obeys FullDateRule
 * supportingInfo[AdmissionReviewStart].value[x] 0..0
 
 * supportingInfo[AdmissionReviewEnd] ^short = "Information about the discharge dates of a hospital admission being requested."
 * supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
 * supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
+* supportingInfo[AdmissionReviewEnd].timingDate obeys FullDateRule
+* supportingInfo[AdmissionReviewEnd].timingPeriod.start obeys FullDateRule
+* supportingInfo[AdmissionReviewEnd].timingPeriod.end obeys FullDateRule
 * supportingInfo[AdmissionReviewEnd].value[x] 0..0
 
 Extension: CertificationIssueDate
 Id: extension-itemCertificationIssueDate
 Description: "The date/period when this item's preauthorization was issued."
 * value[x] only date or Period
+* valueDate obeys FullDateRule
+* valuePeriod.start obeys FullDateRule
+* valuePeriod.end obeys FullDateRule
 
 Extension: CertificationExpirationDate
 Id: extension-itemCertificationExpirationDate
 Description: "The date/period by which the item that is pre-authorized must be completed."
 * value[x] only date or Period
+* valueDate obeys FullDateRule
+* valuePeriod.start obeys FullDateRule
+* valuePeriod.end obeys FullDateRule
 
 Extension: CertificationEffectiveDate
 Id: extension-itemCertificationEffectiveDate
 Description: "The date/period when this item's preauthorization is valid."
 * value[x] only date or Period
+* valueDate obeys FullDateRule
+* valuePeriod.start obeys FullDateRule
+* valuePeriod.end obeys FullDateRule
 
+Invariant: FullDateRule
+Description: "Dates need to be a full date - YYYY-MM-DD"
+Expression: "not(this.exists()) or this.length() == 10"
+Severity: #error
