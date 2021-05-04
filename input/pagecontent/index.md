@@ -59,3 +59,34 @@ This implementation guide relies on the following other specifications:
 * **[US Core]({{site.data.fhir.hl7_fhir_us_core}})** - The published version of US Core based on FHIR R4.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+{% raw %}
+<blockquote class="stu-note">
+<p>
+For Version 1.1, there were a number of changes made due to issues raised during the current STU period:
+</p>
+<ul>
+	<li>Organization profiles were changed: (FHIR-30880)
+			<ul>
+				<li>Address changed from 1..1 to 0..1</li>
+				<li>Value set changed from https://valueset.x12.org/x217/005010/request/2010B/NM1/1/01/00/98 to https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98</li>
+			</ul>
+	</li>
+	<li>The AuthorizedProvider profile has a new providerType CodeableConcept added to it. (FHIR-30881)</li>
+	<li>Added NDC codes and a "not applicable" code to the X12278RequestedServiceType value set. (FHIR-30882)</li>
+	<li>Created a new value set for the service modifier types that only has CPT and HCPCS codes. (FHIR-30883)</li>
+	<li>Changed the modifier value in the AuthorizedDetail extension to be 0..* instead of 0..1. (FHIR-30884)</li>
+	<li>Added an extension for state to the new PASIdentifier datatype. (FHIR-30885).</li>
+	<li>Added a constraint to all dates that are used to ensure that a full date is being sent. (FHIR-30886)</li>
+	<li>The Admission date period was change to two separate periods to handle a range of admission dates and a separate range of discharge dates. (FHIR-30887)</li>
+	<li>Fix the extensions on CommunicationRequest to be on the CommunicationRequest.payload where they were intended. (FHIR-30888)</li>
+	<li>All references on elements that are marked as Must Support now reference either PAS or US-Core profiles. (FHIR-30890)</li>
+	<li>The Additional Information supporting info section has had a note added to indicate that the PASDocumentReference profile is the preferred profile for sending extra documentation. (FHIR-31024)</li>
+	<li>New Identifier profile created (PASIdentifier) with the required extensions and uses of Identifier in Claim and ClaimResponse profiles changed to PASIdentifier. (FHIR-31025, FHIR-31372)</li>
+	<li>Added CommunicatedDiagnosis to ClaimResponse and ClaimInquiryResponse. (FHIR-31086, FHIR-31370)</li>
+	<li>Changed Certification Issue Date, Certification Effective Date, and Certifacation Expiration Date to be a date or a period to handle searching by a range. (FHIR-31373)</li>
+	<li>Added short descriptions to every use of an extension and every Claim.supportingInfo slice. (FHIR-31414)</li>
+	<li>Added a note to any value set that includes CPT and HCPCS codes that X12 will identify those codes as being HCPCS no matter what was originally sent in. (FHIR-31630)</li>
+</ul>
+</blockquote>
+{% endraw %}
