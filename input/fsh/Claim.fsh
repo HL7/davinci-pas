@@ -98,7 +98,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo ^slicing.discriminator.path = "category"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
-* supportingInfo contains PatientEvent 0..1 and AdmissionReviewStart 0..1 and AdmissionReviewEnd 0..1 and AdditionalInformation 0..1 and MessageText 0..1 and InstitutionalEncounter 0..1
+* supportingInfo contains PatientEvent 0..1 and AdmissionDates 0..1 and DischargeDates 0..1 and AdditionalInformation 0..1 and MessageText 0..1 and InstitutionalEncounter 0..1
 
 * supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
@@ -108,21 +108,21 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[PatientEvent].timingPeriod.end obeys FullDateRule
 * supportingInfo[PatientEvent].value[x] 0..0
 
-* supportingInfo[AdmissionReviewStart] ^short = "Information about the admission dates of a hospital admission being requested."
-* supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
-* supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
-* supportingInfo[AdmissionReviewStart].timingDate obeys FullDateRule
-* supportingInfo[AdmissionReviewStart].timingPeriod.start obeys FullDateRule
-* supportingInfo[AdmissionReviewStart].timingPeriod.end obeys FullDateRule
-* supportingInfo[AdmissionReviewStart].value[x] 0..0
+* supportingInfo[AdmissionDates] ^short = "Information about the admission dates of a hospital admission being requested."
+* supportingInfo[AdmissionDates].category = PASSupportingInfoType#admissionDates
+* supportingInfo[AdmissionDates].timing[x] 1..1 MS
+* supportingInfo[AdmissionDates].timingDate obeys FullDateRule
+* supportingInfo[AdmissionDates].timingPeriod.start obeys FullDateRule
+* supportingInfo[AdmissionDates].timingPeriod.end obeys FullDateRule
+* supportingInfo[AdmissionDates].value[x] 0..0
 
-* supportingInfo[AdmissionReviewEnd] ^short = "Information about the discharge dates of a hospital admission being requested."
-* supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
-* supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
-* supportingInfo[AdmissionReviewEnd].timingDate obeys FullDateRule
-* supportingInfo[AdmissionReviewEnd].timingPeriod.start obeys FullDateRule
-* supportingInfo[AdmissionReviewEnd].timingPeriod.end obeys FullDateRule
-* supportingInfo[AdmissionReviewEnd].value[x] 0..0
+* supportingInfo[DischargeDates] ^short = "Information about the discharge dates of a hospital admission being requested."
+* supportingInfo[DischargeDates].category = PASSupportingInfoType#dischargeDates
+* supportingInfo[DischargeDates].timing[x] 1..1 MS
+* supportingInfo[DischargeDates].timingDate obeys FullDateRule
+* supportingInfo[DischargeDates].timingPeriod.start obeys FullDateRule
+* supportingInfo[DischargeDates].timingPeriod.end obeys FullDateRule
+* supportingInfo[DischargeDates].value[x] 0..0
 
 * supportingInfo[AdditionalInformation] ^short = "Send additional paperwork or supporting information for the request.  This can be most commonly a PASDocumentReference profile although any type of information is allowed."
 * supportingInfo[AdditionalInformation].category = PASSupportingInfoType#additionalInformation
@@ -340,7 +340,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * supportingInfo ^slicing.discriminator.path = "category"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice based on the different types of supporting information that can be included in a authorization request."
-* supportingInfo contains PatientEvent 0..1 and AdmissionReviewStart 0..1 and AdmissionReviewEnd 0..1
+* supportingInfo contains PatientEvent 0..1 and AdmissionDates 0..1 and DischargeDates 0..1
 
 * supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
 * supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
@@ -350,21 +350,21 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * supportingInfo[PatientEvent].timingPeriod.end obeys FullDateRule
 * supportingInfo[PatientEvent].value[x] 0..0
 
-* supportingInfo[AdmissionReviewStart] ^short = "Information about the admission dates of a hospital admission being requested."
-* supportingInfo[AdmissionReviewStart].category = PASSupportingInfoType#admissionReviewStart
-* supportingInfo[AdmissionReviewStart].timing[x] 1..1 MS
-* supportingInfo[AdmissionReviewStart].timingDate obeys FullDateRule
-* supportingInfo[AdmissionReviewStart].timingPeriod.start obeys FullDateRule
-* supportingInfo[AdmissionReviewStart].timingPeriod.end obeys FullDateRule
-* supportingInfo[AdmissionReviewStart].value[x] 0..0
+* supportingInfo[AdmissionDates] ^short = "Information about the admission dates of a hospital admission being requested."
+* supportingInfo[AdmissionDates].category = PASSupportingInfoType#admissionDates
+* supportingInfo[AdmissionDates].timing[x] 1..1 MS
+* supportingInfo[AdmissionDates].timingDate obeys FullDateRule
+* supportingInfo[AdmissionDates].timingPeriod.start obeys FullDateRule
+* supportingInfo[AdmissionDates].timingPeriod.end obeys FullDateRule
+* supportingInfo[AdmissionDates].value[x] 0..0
 
-* supportingInfo[AdmissionReviewEnd] ^short = "Information about the discharge dates of a hospital admission being requested."
-* supportingInfo[AdmissionReviewEnd].category = PASSupportingInfoType#admissionReviewEnd
-* supportingInfo[AdmissionReviewEnd].timing[x] 1..1 MS
-* supportingInfo[AdmissionReviewEnd].timingDate obeys FullDateRule
-* supportingInfo[AdmissionReviewEnd].timingPeriod.start obeys FullDateRule
-* supportingInfo[AdmissionReviewEnd].timingPeriod.end obeys FullDateRule
-* supportingInfo[AdmissionReviewEnd].value[x] 0..0
+* supportingInfo[DischargeDates] ^short = "Information about the discharge dates of a hospital admission being requested."
+* supportingInfo[DischargeDates].category = PASSupportingInfoType#dischargeDates
+* supportingInfo[DischargeDates].timing[x] 1..1 MS
+* supportingInfo[DischargeDates].timingDate obeys FullDateRule
+* supportingInfo[DischargeDates].timingPeriod.start obeys FullDateRule
+* supportingInfo[DischargeDates].timingPeriod.end obeys FullDateRule
+* supportingInfo[DischargeDates].value[x] 0..0
 
 Extension: CertificationIssueDate
 Id: extension-itemCertificationIssueDate
