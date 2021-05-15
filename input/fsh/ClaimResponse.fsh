@@ -51,11 +51,15 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 Extension: ReviewAction
 Id: extension-reviewAction
 Description: "The details of the review action that is necessary for the authorization."
-* extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..1 and secondSurgicalOpinionFlag 0..1
+* extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..* and secondSurgicalOpinionFlag 0..1
+* extension[code] ^short = "Healthcare Services Outcome"
 * extension[number].value[x] only string
+* extension[number] ^short = "Item Level Review Number"
 * extension[reasonCode].value[x] only CodeableConcept
 * extension[reasonCode].valueCodeableConcept from X12278ReviewDecisionReasonCode (required)
+* extension[reasonCode] ^short = "Explanation of the review denial or partial approval"
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
+* extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
 
 Extension: ReviewActionCode
 Id: extension-reviewActionCode
