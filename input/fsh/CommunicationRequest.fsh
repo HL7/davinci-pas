@@ -18,7 +18,7 @@ Description: "PAS constraints on CommunicationRequest resource mandating support
 * requester MS
 * requester only Reference(PASInsurer)
 * recipient MS
-* recipient only Reference(PASPractitioner or $USCoreOrganization)
+* recipient only Reference(PASPractitioner or PASOrganization)
 * sender MS
 * sender only Reference(PASRequestor)
 

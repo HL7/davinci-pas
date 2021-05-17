@@ -111,7 +111,7 @@ Extension: AuthorizedProvider
 Id: extension-itemAuthorizedProvider
 Description: "The specific provider who has been authorized to provide this item."
 * extension contains provider 0..1 and providerType 0..1
-* extension[provider].value[x] only Reference(PASPractitioner or $USCoreOrganization)
+* extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
 * extension[providerType].value[x] only CodeableConcept
 * extension[providerType].valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
 * extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."

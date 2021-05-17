@@ -17,7 +17,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * careTeam MS
 * careTeam.sequence MS
 * careTeam.provider MS
-* careTeam.provider only Reference(PASPractitioner or $USCoreOrganization)
+* careTeam.provider only Reference(PASPractitioner or PASOrganization)
 * careTeam.role MS
 * careTeam.role from https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 (required)
 * careTeam.role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
@@ -267,7 +267,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * careTeam MS
 * careTeam.sequence MS
 * careTeam.provider MS
-* careTeam.provider only Reference(PASPractitioner or $USCoreOrganization)
+* careTeam.provider only Reference(PASPractitioner or PASOrganization)
 * careTeam.role MS
 * careTeam.role from https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 (required)
 * careTeam.role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."

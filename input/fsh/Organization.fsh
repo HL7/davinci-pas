@@ -1,5 +1,5 @@
 Profile: PASInsurer
-Parent: $USCoreOrganization
+Parent: PASOrganization
 Id: profile-insurer
 Title: "PAS Insurer Organization"
 Description: "An organization who provides insurance and is the receiver of a prior authorization request."
@@ -8,7 +8,7 @@ Description: "An organization who provides insurance and is the receiver of a pr
 * type ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Profile: PASRequestor
-Parent: $USCoreOrganization
+Parent: PASOrganization
 Id: profile-requestor
 Title: "PAS Requestor Organization"
 Description: "The organization who is making a prior authorization request."
@@ -19,3 +19,10 @@ Description: "The organization who is making a prior authorization request."
 * contact MS
 * contact.name MS
 * contact.telecom MS
+
+Profile: PASOrganization
+Parent: $USCoreOrganization
+Id: profile-organization
+Title: "PAS Organization Base Profile"
+Description: "A base profile for organizations in PAS"
+* identifier only PASIdentifier

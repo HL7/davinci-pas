@@ -64,6 +64,7 @@
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
+<artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="PAS Organization Base Profile"/>
 <artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="PAS Practitioner"/>
 <artifact id="StructureDefinition/profile-pas-request-bundle" key="StructureDefinition-profile-pas-request-bundle" name="PAS Request Bundle"/>
 <artifact id="StructureDefinition/profile-requestor" key="StructureDefinition-profile-requestor" name="PAS Requestor Organization"/>
