@@ -20,7 +20,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * outcome MS
 * preAuthPeriod MS
 * item MS
-* item.extension contains ReviewAction named reviewAction 0..1 MS and
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+	ReviewAction named reviewAction 0..1 MS and
 	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
 	PreAuthPeriod named preAuthPeriod 0..1 MS and
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
@@ -29,6 +30,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
 	AuthorizedProvider named authorizedProvider 0..* MS and
 	CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
+* item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
@@ -138,7 +140,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * outcome MS
 * preAuthPeriod MS
 * item MS
-* item.extension contains ReviewAction named reviewAction 0..1 MS and
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+	ReviewAction named reviewAction 0..1 MS and
 	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
 	PreAuthPeriod named preAuthPeriod 0..1 MS and
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
@@ -147,6 +150,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
 	AuthorizedProvider named authorizedProvider 0..* MS and
 	CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
+* item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
