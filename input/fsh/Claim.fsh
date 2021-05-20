@@ -119,9 +119,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[DischargeDates] ^short = "Information about the discharge dates of a hospital admission being requested."
 * supportingInfo[DischargeDates].category = PASSupportingInfoType#dischargeDates
 * supportingInfo[DischargeDates].timing[x] 1..1 MS
+* supportingInfo[DischargeDates].timing[x] only date
 * supportingInfo[DischargeDates].timingDate obeys FullDateRule
-* supportingInfo[DischargeDates].timingPeriod.start obeys FullDateRule
-* supportingInfo[DischargeDates].timingPeriod.end obeys FullDateRule
 * supportingInfo[DischargeDates].value[x] 0..0
 
 * supportingInfo[AdditionalInformation] ^short = "Send additional paperwork or supporting information for the request.  This can be most commonly a PASDocumentReference profile although any type of information is allowed."
