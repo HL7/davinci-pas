@@ -20,7 +20,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * outcome MS
 * preAuthPeriod MS
 * item MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	ReviewAction named reviewAction 0..1 MS and
 	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
 	PreAuthPeriod named preAuthPeriod 0..1 MS and
@@ -140,7 +140,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * outcome MS
 * preAuthPeriod MS
 * item MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	ReviewAction named reviewAction 0..1 MS and
 	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
 	PreAuthPeriod named preAuthPeriod 0..1 MS and
