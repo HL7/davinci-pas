@@ -39,7 +39,7 @@ Usage: #definition
 * title = "Submit a Claim resource for inquiry"
 * status = #draft
 * kind = #operation
-* code = #submit
+* code = #inquiry
 * base = "http://hl7.org/fhir/OperationDefinition/Claim-submit"
 * resource = #Claim
 * system = false
