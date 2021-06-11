@@ -182,7 +182,7 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item[1].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
 * item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#3 "Cancel"
 * item[2].sequence = 3
 * item[2].extension[infoChanged].valueCode = #added
 * item[2].productOrService = http://www.ama-assn.org/go/cpt#B4185

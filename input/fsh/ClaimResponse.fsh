@@ -141,7 +141,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * preAuthPeriod MS
 * item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
-	ReviewAction named reviewAction 0..1 MS and
 	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
 	PreAuthPeriod named preAuthPeriod 0..1 MS and
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
@@ -151,7 +150,6 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	AuthorizedProvider named authorizedProvider 0..* MS and
 	CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
-* item.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
 * item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
@@ -160,6 +158,11 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
+* item.adjudication MS
+* item.adjudication.extension contains 	ReviewAction named reviewAction 0..1 MS
+* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
+* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted (exactly)
+* item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
 * error MS
 * error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."

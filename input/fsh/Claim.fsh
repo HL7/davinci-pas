@@ -49,7 +49,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	AuthorizationNumber named authorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	ServiceItemRequestType named requestType 0..1 MS and
@@ -296,7 +296,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
 * item 1..* MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..1 MS and
+* item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	AuthorizationNumber named authorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	CertificationIssueDate named certIssueDate 0..1 MS and
