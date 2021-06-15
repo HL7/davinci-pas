@@ -21,13 +21,13 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * preAuthPeriod MS
 * item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
-	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
-	PreAuthPeriod named preAuthPeriod 0..1 MS and
+	ItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
+	ItemPreAuthPeriod named preAuthPeriod 0..1 MS and
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
-	AuthorizedDate named authorizedDate 0..1 MS and
-	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
-	AuthorizedProvider named authorizedProvider 0..* MS and
+	ItemAuthorizedDate named authorizedDate 0..1 MS and
+	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
+	ItemAuthorizedProvider named authorizedProvider 0..* MS and
 	CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
@@ -39,7 +39,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * item.adjudication MS
-* item.adjudication.extension contains 	ReviewAction named reviewAction 0..1 MS
+* item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted (exactly)
 * item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
@@ -47,7 +47,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
 * error MS
-* error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
+* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
 * error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
 * error.code MS
@@ -73,17 +73,17 @@ Description: "The code describing the result of the review."
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
-Extension: PreAuthIssueDate
+Extension: ItemPreAuthIssueDate
 Id: extension-itemPreAuthIssueDate
 Description: "The date when this item's preauthorization was issued."
 * value[x] only date
 
-Extension: AuthorizedDate
+Extension: ItemAuthorizedDate
 Id: extension-itemAuthorizedDate
 Description: "The date/period by which the item that is pre-authorized must be completed."
 * value[x] only dateTime or Period
 
-Extension: PreAuthPeriod
+Extension: ItemPreAuthPeriod
 Id: extension-itemPreAuthPeriod
 Description: "The date/period when this item's preauthorization is valid."
 * value[x] only Period
@@ -93,13 +93,13 @@ Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about."
 * value[x] only string
 
-Extension: FollowupAction
+Extension: ErrorFollowupAction
 Id: extension-errorFollowupAction
 Description: "A code representing what action must occur to resolve this error."
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278FollowUpActionCodes (required)
 
-Extension: AuthorizedItemDetail
+Extension: ItemAuthorizedDetail
 Id: extension-itemAuthorizedDetail
 Description: "The details of what has been authorized for this item if different from what was requested."
 * extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..* and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
@@ -112,7 +112,7 @@ Description: "The details of what has been authorized for this item if different
 * extension[revenue].value[x] only CodeableConcept
 * extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
 
-Extension: AuthorizedProvider
+Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
 Description: "The specific provider who has been authorized to provide this item."
 * extension contains provider 0..1 and providerType 0..1
@@ -144,13 +144,13 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * preAuthPeriod MS
 * item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
-	PreAuthIssueDate named preAuthIssueDate 0..1 MS and
-	PreAuthPeriod named preAuthPeriod 0..1 MS and
+	ItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
+	ItemPreAuthPeriod named preAuthPeriod 0..1 MS and
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
-	AuthorizedDate named authorizedDate 0..1 MS and
-	AuthorizedItemDetail named authorizedItemDetail 0..1 MS and
-	AuthorizedProvider named authorizedProvider 0..* MS and
+	ItemAuthorizedDate named authorizedDate 0..1 MS and
+	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
+	ItemAuthorizedProvider named authorizedProvider 0..* MS and
 	CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
@@ -162,12 +162,12 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * item.adjudication MS
-* item.adjudication.extension contains 	ReviewAction named reviewAction 0..1 MS
+* item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted (exactly)
 * item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
 * error MS
-* error.extension contains FollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
+* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
 * error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
 * error.code MS

@@ -41,6 +41,9 @@ A high-level summary of how all of these IGs will work together can be seen belo
 </figure>
 {::options parse_block_html="true" /}
 
+### CMS Exception
+When using PAS under the CMS granted exception (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) SHALL disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles SHALL be transmitted intact between the provider and payer.  The PAS FHIR response bundles SHALL be transmitted intact between the payer and the provider.
+
 ### Content and organization
 The implementation guide is organized into the following sections:
 
@@ -87,6 +90,16 @@ For Version 1.1, there were a number of changes made due to issues raised during
 	<li>Changed Certification Issue Date, Certification Effective Date, and Certifacation Expiration Date to be a date or a period to handle searching by a range. (FHIR-31373)</li>
 	<li>Added short descriptions to every use of an extension and every Claim.supportingInfo slice. (FHIR-31414)</li>
 	<li>Added a note to any value set that includes CPT and HCPCS codes that X12 will identify those codes as being HCPCS no matter what was originally sent in. (FHIR-31630)</li>
+	<li>Created a PASOrganization profile on Organization and used the PASIdentifier datatype on Practitioner and Organization. (FHIR-32427)</li>
+	<li>Change the cardinality of the ReviewAction reasonCode to be 0..*. (FHIR-32426)</li>
+	<li>Add the ItemTraceNumber extension to ClaimInquiryResponse profile and make it 0..*. (FHIR-32425, FHIR-32891)</li>
+	<li>Fix the Claim inquiry operation endpoint to be $inquiry instead of $submit. (FHIR-31948)</li>
+	<li>Add language to the Home Page about ability to not convert into and out of an X12 278. (FHIR-32867)</li>
+	<li>Add language to the Specification to allow other methods of exchanging the FHIR Bundle besides the X12 275. (FHIR-32866)</li>
+	<li>Change extension names to more closely match their IDs. (FHIR-32877)</li>
+	<li>Add a line number extension to the CommunicationRequest payload. (FHIR-32878)</li>
+	<li>Revise the language about how Prior Authorizations are cancelled. (FHIR-32112)</li>
+	<li>Move the ReviewAction extension from the ClaimResponse.item to the ClaimResponse.item.adjudication. (FHIR-32900)</li>
 </ul>
 </blockquote>
 {% endraw %}

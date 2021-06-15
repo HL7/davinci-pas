@@ -12,7 +12,7 @@ Description: "PAS constraints on CommunicationRequest resource mandating support
 * medium from https://valueset.x12.org/x217/005010/response/2000D/PWK/1/02/00/756 (required)
 * medium  ^binding.description = "Codes defining timing, transmission method or format by which reports are to be sent. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * payload MS
-* payload.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS and ContentModifier named contentModifier 0..* MS
+* payload.extension contains ServiceLineNumber named serviceLineNumber 0..1 MS and CommunicatedDiagnosis named communicatedDiagnosis 0..* MS and ContentModifier named contentModifier 0..* MS
 * payload.content[x] MS
 * payload.content[x] only string
 * requester MS
@@ -33,3 +33,8 @@ Id: extension-contentModifier
 Description: "A code representing a modifier of the content being requested"
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278DiagnosisInformationType (required)
+
+Extension: ServiceLineNumber
+Id: extension-serviceLineNumber
+Description: "A number that links the content being requested with the claim item number."
+* value[x] only positiveInt

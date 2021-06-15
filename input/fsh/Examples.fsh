@@ -83,11 +83,11 @@ Description: "An example of a ClaimResponse giving approval for a referral."
 * requestor = Reference(UMOExample)
 * outcome = #complete
 * item.itemSequence = 1
-* item.extension[reviewAction].extension[number].valueString = "AUTH0001"
-* item.extension[reviewAction].extension[code].valueCodeableConcept = http://codesystem.x12.org/005010/306#A1 "Certified in total"
 * item.extension[authorizedDate].valuePeriod.start = 2005-05-02
 * item.extension[authorizedDate].valuePeriod.end = 2005-06-02
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = http://codesystem.x12.org/005010/306#A1 "Certified in total"
 
 Instance: HomecareAuthorizationBundleExample
 InstanceOf: PASRequestBundle
