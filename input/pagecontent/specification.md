@@ -107,6 +107,15 @@ Dr. Gardener is required by Maryland Capital Insurance to submit a request for r
 
 After review, Maryland Capital approves the referral and responds.
 
+#### Prior Authorization Inquiries
+The [prior authorization inquiry operation](OperationDefinition-Claim-inquiry.html) allows for inquiries about prior authorization submissions.  This inquiry can be used for pollling for pended authorization responses (see below), for other systems checking the status of a request (see below), and for generic inquiries.
+
+The parameter to the inquiry operation is a [PAS Inquiry Request Bundle](StructureDefinition-profile-pas-inquiry-request-bundle.html) which has a [Claim Inquiry profile instance](StructureDefinition-profile-claim-inquiry.html) as well as any referenced resources if needed.  The operation is basically a query-by-example where the incoming Claim resource provides elements that will match existing prior authorizations.  Any authorizations that match the incoming resource elements will be returned by the operation.
+
+NOTE: There must contain a requestion provider organization, a payer organization, and a patient for the inquiry, therefore, no Global Inquiries are allowed.  There will be also be no inquiries based on the Healthcare Services Review Request Date.
+
+The information in the Bundle is mapped to a 278 Health Care Services Review Information - Inquiry transaction.  The 278 Health Care Services Review Information - Response is then mapped to a [PAS Inquiry Response Bundle](StructureDefinition-profile-pas-inquiry-response-bundle) with the results of the inquiry contained in the Bundle.
+
 #### Pended authorization responses
 When the ClaimResponse.reviewaction.code is the X12 code for pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made.  There are two possible options - polling and subscription.  Implementers SHOULD support subscription.  Servers SHALL support polling in situations where either party is unable to use the subscription approach.
 
