@@ -49,6 +49,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * item.productOrService = http://codesystem.x12.org/005010/1365#3 "Consultation"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * careTeam.sequence = 1
+* careTeam.extension[careTeamClaimScope].valueBoolean = true
 * careTeam.provider = Reference(ReferralPractitionerExample)
 
 Instance: ReferralAuthorizationResponseBundleExample
@@ -280,8 +281,6 @@ Description: "An example of a Claim resource requesting prior authorization of M
 * item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#IN "Initial Medical Services Reservation"
 * item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
-* item.careTeamSequence = 1
-* item.diagnosisSequence = 1
 * item.productOrService = http://www.ama-assn.org/go/cpt#99212 "Established Office Visit"
 * item.servicedDate = "2005-05-10"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11

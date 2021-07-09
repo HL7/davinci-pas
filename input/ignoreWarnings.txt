@@ -45,6 +45,8 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 on element Extension.valueCodeableConcept could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 on element Extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010C/NM1/1/08/00/66 on element Patient.identifier.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010EA/NM1/1/01/00/98 on element Claim.careTeam.role could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2010EA/PRV/1/03/00/127 on element Claim.careTeam.qualification could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 on element Claim.careTeam.role could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127 on element Claim.careTeam.qualification could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 on element Claim.accident.type could not be resolved

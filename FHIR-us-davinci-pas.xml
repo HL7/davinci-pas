@@ -12,6 +12,7 @@
 <artifact id="StructureDefinition/extension-administrationReferenceNumber" key="StructureDefinition-extension-administrationReferenceNumber" name="AdministrationReferenceNumber"/>
 <artifact id="StructureDefinition/extension-authorizationNumber" key="StructureDefinition-extension-authorizationNumber" name="AuthorizationNumber"/>
 <artifact id="StructureDefinition/extension-timingcalendarpattern" key="StructureDefinition-extension-timingcalendarpattern" name="CalendarPattern"/>
+<artifact id="StructureDefinition/extension-careTeamClaimScope" key="StructureDefinition-extension-careTeamClaimScope" name="CareTeamClaimScope"/>
 <artifact id="StructureDefinition/extension-itemCertificationEffectiveDate" key="StructureDefinition-extension-itemCertificationEffectiveDate" name="CertificationEffectiveDate"/>
 <artifact id="StructureDefinition/extension-itemCertificationExpirationDate" key="StructureDefinition-extension-itemCertificationExpirationDate" name="CertificationExpirationDate"/>
 <artifact id="StructureDefinition/extension-itemCertificationIssueDate" key="StructureDefinition-extension-itemCertificationIssueDate" name="CertificationIssueDate"/>
