@@ -10242,7 +10242,7 @@
         "path": "Claim.careTeam",
         "sliceName": "OverallClaimMember",
         "min": 0,
-        "max": "14"
+        "max": "*"
       },
       {
         "id": "Claim.careTeam:OverallClaimMember.extension:careTeamClaimScope",
@@ -10280,7 +10280,7 @@
         "path": "Claim.careTeam",
         "sliceName": "ItemClaimMember",
         "min": 0,
-        "max": "10"
+        "max": "*"
       },
       {
         "id": "Claim.careTeam:ItemClaimMember.extension:careTeamClaimScope",
