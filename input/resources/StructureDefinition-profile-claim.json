@@ -2299,7 +2299,7 @@
         "definition": "Required when the Prior Authorization request is for an Admission Review and/or the providers in this slice apply to all services requested.",
         "requirements": "Common to identify the responsible and supporting practitioners.",
         "min": 0,
-        "max": "14",
+        "max": "*",
         "base": {
           "path": "Claim.careTeam",
           "min": 0,
@@ -2933,7 +2933,7 @@
         "definition": "Required when requesting a service specific to a provider, specialist, or specialty entity for an item ProductOrService different from those listed in the OverallClaimMember slices.",
         "requirements": "Common to identify the responsible and supporting practitioners.",
         "min": 0,
-        "max": "10",
+        "max": "*",
         "base": {
           "path": "Claim.careTeam",
           "min": 0,
