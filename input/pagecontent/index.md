@@ -100,6 +100,8 @@ For Version 1.1, there were a number of changes made due to issues raised during
 	<li>Add a line number extension to the CommunicationRequest payload. (FHIR-32878)</li>
 	<li>Revise the language about how Prior Authorizations are cancelled. (FHIR-32112)</li>
 	<li>Move the ReviewAction extension from the ClaimResponse.item to the ClaimResponse.item.adjudication. (FHIR-32900)</li>
+	<li>Fix the bindings for the CareTeam roles. (FHIR-32954)</li>
+	<li>Remove mandatory XML support and make only JSON the allowed exchange format. (FHIR-33059)</li>
 </ul>
 </blockquote>
 {% endraw %}
