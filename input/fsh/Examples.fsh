@@ -285,6 +285,53 @@ Description: "An example of a Claim resource requesting prior authorization of M
 * item.servicedDate = "2005-05-10"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 
+Instance: PASClaimInquiryBundleExample
+InstanceOf: PASInquiryRequestBundle
+Title: "PAS Inquiry Request Bundle Example"
+Description: "An example of a Claim bundle inquiring about prior authorizations."
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "5269367"
+* type = #collection
+* timestamp = 2005-05-02T11:01:00+05:00
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/PASClaimInquiryExample"
+* entry[Claim].resource = PASClaimInquiryExample
+* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
+* entry[1].resource = UMOExample
+* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
+* entry[2].resource = InsurerExample
+* entry[3].fullUrl = "http://example.org/fhir/Coverage/InsuranceExample"
+* entry[3].resource = InsuranceExample
+* entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
+* entry[4].resource = SubscriberExample
+
+Instance: PASClaimInquiryExample
+InstanceOf: PASClaimInquiry
+Title: "PAS Claim Inquiry Example"
+Description: "An example of a Claim resource used to inquire for prior authorizations that match the example."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2019-07-20T11:01:00+05:00
+* insurer = Reference(InsurerExample)
+* provider = Reference(UMOExample)
+* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(InsuranceExample)
+* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.sequence = 1
+* item.productOrService = http://www.ama-assn.org/go/cpt#G0154
+* item[1].sequence = 2
+* item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
+* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+
 Instance: UMOExample
 InstanceOf: PASRequestor
 Title: "Submit Claim Requestor Example"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2019Sep" ciUrl="https://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="1.0.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2019Sep" ciUrl="https://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="1.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
 <version code="current" url="https://build.fhir.org/ig/HL7/davinci-pas"/>
+<version code="1.1.0" url="http://hl7.org/fhir/us/davinci-pas/STU1.1"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pas/STU1"/>
 <version code="0.1.0" url="http://hl7.org/fhir/us/davinci-pas/2019Sep"/>
 <version code="0.1" deprecated="true"/>
@@ -52,6 +53,7 @@
 <artifact id="StructureDefinition/profile-beneficiary" key="StructureDefinition-profile-beneficiary" name="PAS Beneficiary Patient"/>
 <artifact id="StructureDefinition/profile-claim" key="StructureDefinition-profile-claim" name="PAS Claim"/>
 <artifact id="StructureDefinition/profile-claim-inquiry" key="StructureDefinition-profile-claim-inquiry" name="PAS Claim Inquiry"/>
+<artifact id="Claim/PASClaimInquiryExample" key="Claim-PASClaimInquiryExample" name="PAS Claim Inquiry Example"/>
 <artifact id="StructureDefinition/profile-claiminquiryresponse" key="StructureDefinition-profile-claiminquiryresponse" name="PAS Claim Inquiry Response"/>
 <artifact id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="PAS Claim Response"/>
 <artifact id="StructureDefinition/profile-claim-update" key="StructureDefinition-profile-claim-update" name="PAS Claim Update"/>
@@ -64,6 +66,7 @@
 <artifact id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PAS Information Change Mode Code System"/>
 <artifact id="ValueSet/PASInformationChangeMode" key="ValueSet-PASInformationChangeMode" name="PAS Information Change Mode Value Set"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-request-bundle" key="StructureDefinition-profile-pas-inquiry-request-bundle" name="PAS Inquiry Request Bundle"/>
+<artifact id="Bundle/PASClaimInquiryBundleExample" key="Bundle-PASClaimInquiryBundleExample" name="PAS Inquiry Request Bundle Example"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>

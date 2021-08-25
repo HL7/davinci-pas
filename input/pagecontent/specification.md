@@ -114,7 +114,7 @@ The parameter to the inquiry operation is a [PAS Inquiry Request Bundle](Structu
 
 NOTE: The inquiry operation must contain a requesting provider organization, a payer organization, and a patient for the inquiry.  The operation does not allow inquiries that do not identify a specific patient such as an inquiry for all prior authorization requests submitted on a specific date.
 
-The information in the Bundle is mapped to a 278 Health Care Services Review Information - Inquiry transaction.  The 278 Health Care Services Review Information - Response is then mapped to a [PAS Inquiry Response Bundle](StructureDefinition-profile-pas-inquiry-response-bundle) with the results of the inquiry contained in the Bundle.
+The information in the Bundle is mapped to a 278 Health Care Services Review Information - Inquiry transaction.  The 278 Health Care Services Review Information - Response is then mapped to a [PAS Inquiry Response Bundle](StructureDefinition-profile-pas-inquiry-response-bundle.html) with the results of the inquiry contained in the Bundle.
 
 #### Pended authorization responses
 When the ClaimResponse.reviewaction.code is the X12 code for pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made.  There are two possible options - polling and subscription.  Implementers SHOULD support subscription.  Servers SHALL support polling in situations where either party is unable to use the subscription approach.

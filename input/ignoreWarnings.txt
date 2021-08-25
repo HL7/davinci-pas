@@ -72,12 +72,6 @@ Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot b
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle
 
-# We do not provide examples for every extension or profile we define
-The Implementation Guide contains no examples for this profile
-The Implementation Guide contains no examples for this extension
-The Implementation Guide contains no explicitly linked examples for this profile
-The Implementation Guide contains no examples for this data type profile
-
 # There is an error in the base specification
 The link 'valueset-diagnostic-requests.html' for "here" cannot be resolved
 
@@ -123,3 +117,7 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/Struct
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/OperationDefinition
+
+# Broken links on publisher-generated narrative
+The link 'extensibility.html#modifierExtension' for "definition of modifier extensions" cannot be resolved
+The link 'extensibility.html' for "Extensibility" cannot be resolved
