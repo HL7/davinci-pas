@@ -15,20 +15,19 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * provider MS
 * provider only Reference(PASRequestor)
 * careTeam MS
-* careTeam.extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * careTeam.sequence MS
 * careTeam.provider MS
 * careTeam.provider only Reference(PASPractitioner or PASOrganization)
 * careTeam.role MS
 * careTeam.qualification MS
 * careTeam ^slicing.discriminator.type = #value
-* careTeam ^slicing.discriminator.path = "extension('http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').value as Boolean"
+* careTeam ^slicing.discriminator.path = "extension('http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').value as boolean"
 * careTeam ^slicing.rules = #open
 * careTeam ^slicing.description = "Slice based on whether the care team member belongs to the overall claim or to an individual claim item."
 * careTeam contains OverallClaimMember 0..14 and ItemClaimMember 0..10
-* careTeam[OverallClaimMember].extension contains CareTeamClaimScope named careTeamScope 1..1 MS
+* careTeam[OverallClaimMember].extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * careTeam[OverallClaimMember].extension[careTeamClaimScope].valueBoolean = true (exactly)
-* careTeam[ItemClaimMember].extension contains CareTeamClaimScope named careTeamScope 1..1 MS
+* careTeam[ItemClaimMember].extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * careTeam[ItemClaimMember].extension[careTeamClaimScope].valueBoolean = false (exactly)
 * careTeam[OverallClaimMember].role from https://valueset.x12.org/x217/005010/request/2010EA/NM1/1/01/00/98 (required)
 * careTeam[OverallClaimMember].role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
@@ -38,6 +37,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * careTeam[ItemClaimMember].role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * careTeam[ItemClaimMember].qualification from https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127 (required)
 * careTeam[ItemClaimMember].role  ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* careTeam.extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * supportingInfo MS
 * supportingInfo.sequence MS
 * supportingInfo.category MS
@@ -175,20 +175,19 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * provider MS
 * provider only Reference(PASRequestor)
 * careTeam MS
-* careTeam.extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * careTeam.sequence MS
 * careTeam.provider MS
 * careTeam.provider only Reference(PASPractitioner or PASOrganization)
 * careTeam.role MS
 * careTeam.qualification MS
 * careTeam ^slicing.discriminator.type = #value
-* careTeam ^slicing.discriminator.path = "extension('http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').value as Boolean"
+* careTeam ^slicing.discriminator.path = "extension('http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').value as boolean"
 * careTeam ^slicing.rules = #open
 * careTeam ^slicing.description = "Slice based on whether the care team member belongs to the overall claim or to an individual claim item."
 * careTeam contains OverallClaimMember 0..14 and ItemClaimMember 0..10
-* careTeam[OverallClaimMember].extension contains CareTeamClaimScope named careTeamScope 1..1 MS
+* careTeam[OverallClaimMember].extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * careTeam[OverallClaimMember].extension[careTeamClaimScope].valueBoolean = true (exactly)
-* careTeam[ItemClaimMember].extension contains CareTeamClaimScope named careTeamScope 1..1 MS
+* careTeam[ItemClaimMember].extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * careTeam[ItemClaimMember].extension[careTeamClaimScope].valueBoolean = false (exactly)
 * careTeam[OverallClaimMember].role from https://valueset.x12.org/x217/005010/request/2010EA/NM1/1/01/00/98 (required)
 * careTeam[OverallClaimMember].role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
@@ -198,6 +197,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * careTeam[ItemClaimMember].role  ^binding.description = "Codes identifying an organizational entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * careTeam[ItemClaimMember].qualification from https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127 (required)
 * careTeam[ItemClaimMember].role  ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* careTeam.extension contains CareTeamClaimScope named careTeamClaimScope 1..1 MS
 * supportingInfo MS
 * supportingInfo.sequence MS
 * supportingInfo.category MS
