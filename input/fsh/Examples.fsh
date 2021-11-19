@@ -397,7 +397,7 @@ Description: "An example of a Claim resource used to inquire for prior authoriza
 
 Instance: PASClaimInquiryResponseBundleExample
 InstanceOf: PASInquiryResponseBundle
-Title: "PAS Inquiry Request Bundle Example"
+Title: "PAS Inquiry Response Bundle Example"
 Description: "An example of a ClaimResponse bundle returning a response to a claims inquiry."
 * identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
 * identifier.value = "5269367"

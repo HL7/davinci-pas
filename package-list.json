@@ -12,7 +12,7 @@
     },
     {
       "version": "1.1.0",
-      "date": "2021-09-01",
+      "date": "2021-11-18",
       "desc": "STU Update Release",
       "path": "http://hl7.org/fhir/us/davinci-pas/STU1.1",
       "status": "trial-use",

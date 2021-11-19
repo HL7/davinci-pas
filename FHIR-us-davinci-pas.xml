@@ -74,8 +74,8 @@
 <artifact id="ValueSet/PASInformationChangeMode" key="ValueSet-PASInformationChangeMode" name="PAS Information Change Mode Value Set"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-request-bundle" key="StructureDefinition-profile-pas-inquiry-request-bundle" name="PAS Inquiry Request Bundle"/>
 <artifact id="Bundle/PASClaimInquiryBundleExample" key="Bundle-PASClaimInquiryBundleExample" name="PAS Inquiry Request Bundle Example"/>
-<artifact id="Bundle/PASClaimInquiryResponseBundleExample" key="Bundle-PASClaimInquiryResponseBundleExample" name="PAS Inquiry Request Bundle Example"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>
+<artifact id="Bundle/PASClaimInquiryResponseBundleExample" key="Bundle-PASClaimInquiryResponseBundleExample" name="PAS Inquiry Response Bundle Example"/>
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="PAS Organization Base Profile"/>
