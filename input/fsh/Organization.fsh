@@ -25,4 +25,5 @@ Parent: $USCoreOrganization
 Id: profile-organization
 Title: "PAS Organization Base Profile"
 Description: "A base profile for organizations in PAS"
+* ^abstract = true
 * identifier only PASIdentifier

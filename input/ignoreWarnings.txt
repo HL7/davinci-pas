@@ -7,10 +7,15 @@ ValueSet https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 not 
 ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 not found by validator
 ValueSet https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 not found by validator
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 not found by validator
-
-The valueSet reference https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 on element Extension.extension.valueCodeableConcept could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 on element Extension.extension.value[x] could not be resolved
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 not found by validator
 
 Code System URI 'http://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
@@ -19,6 +24,14 @@ Code System URI 'https://codesystem.x12.org/005010/584' is unknown so the code c
 Code System URI 'http://codesystem.x12.org/005010/237' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/306' is unknown so the code cannot be validated
+Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated
+Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/1338' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/1337' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/1345' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/755' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/678' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/679' is unknown so the code cannot be validated
 
 Error from server: Unable to provide support for code system https://codesystem.x12.org/external/886
 Error from server: Unable to provide support for code system https://www.nubc.org/revenue-code
@@ -27,6 +40,9 @@ Error from server: Unable to provide support for code system http://terminology.
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/889
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 
+The valueSet reference https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 on element Extension.extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 on element Extension.extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 on element Extension.valueCodeableConcept could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 on element Extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.valueCodeableConcept could not be resolved
@@ -72,12 +88,16 @@ Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot b
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-request-bundle
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle
 
 # There is an error in the base specification
 The link 'valueset-diagnostic-requests.html' for "here" cannot be resolved
 
 # Code systems that are not available in the terminology server
 Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
+Code System URI 'https://www.nubc.org/CodeSystem/PatDischargeStatus' is unknown so the code cannot be validated
+Code System URI 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' is unknown so the code cannot be validated
+Code System URI 'https://www.nubc.org/CodeSystem/PointOfOrigin' is unknown so the code cannot be validated
 
 Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
@@ -86,6 +106,9 @@ Error from server: Unable to provide support for code system http://codesystem.x
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType because the value set or a code system it depends on is not known to the validator, Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated]
+
 
 # Broken links on publisher-generated narrative
 The link 'extensibility.html#modifierExtension' for "definition of modifier extensions" cannot be resolved

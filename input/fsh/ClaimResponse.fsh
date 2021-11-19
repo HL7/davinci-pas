@@ -47,7 +47,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
 * error MS
-* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
+* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
 * error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
 * error.code MS
@@ -167,7 +167,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted (exactly)
 * item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
 * error MS
-* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 1..1 MS
+* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
 * error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
 * error.code MS

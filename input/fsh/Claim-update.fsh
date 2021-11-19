@@ -131,5 +131,5 @@ Description: "The date/period when this item's preauthorization is valid."
 
 Invariant: FullDateRule
 Description: "Dates need to be a full date - YYYY-MM-DD"
-Expression: "not(this.exists()) or this.length() == 10"
+Expression: "this.empty() or this.length() = 10"
 Severity: #error

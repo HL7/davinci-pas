@@ -4,12 +4,14 @@ IG-specific terminology
 CodeSystem: PASInformationChangeMode
 Title: "PAS Information Change Mode Code System"
 Description: "The mode by which a piece of information has changed."
+* ^caseSensitive = true
 * #changed "Changed" "Previously sent information has been changed."
 * #added "Added" "New information that was not sent previously."
 
 CodeSystem: PASSupportingInfoType
 Title: "PAS Supporting Info Type Code System"
 Description: "Types of supporting information for a Prior Authorization Claim."
+* ^caseSensitive = true
 * #patientEvent "Patient Event" "Information about the dates of the event that are being requested."
 * #admissionDates "Admission Dates" "Information about the admission dates of a hospital admission being requested."
 * #dischargeDates "Discharge Dates" "Information about discharge dates of a hospital admission being requested."
@@ -38,6 +40,7 @@ Description: "These codes are used to convey specific accomodation, ancillary se
 * ^url = "https://www.nubc.org/revenue-code"
 * ^copyright = "The Official UB-04 Data Specifications Manual, copyrighted by the American Hospital Association, is the only official source of UB-04 billing information adopted by the National Uniform Billing Committee. No other publication—governmental or private/commercial—can be considered authoritative.  See their website for licensing terms and conditions."
 * ^content = #not-present
+* ^caseSensitive = true
 
 ValueSet: AHANUBCRevenueCodes
 Title: "AHA NUBC Revenue Value Set"
@@ -51,6 +54,7 @@ Description: "The complete set of codes that are used to indicate the reason why
 * ^url = "https://codesystem.x12.org/005010/901"
 * ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^content = #not-present
+* ^caseSensitive = true
 
 ValueSet: X12278RejectReasonCodes
 Title: "X12 278 Reject Reason Value Set"
@@ -64,6 +68,7 @@ Description: "The complete set of codes that are used to indicate any follow-up 
 * ^url = "https://codesystem.x12.org/005010/889"
 * ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^content = #not-present
+* ^caseSensitive = true
 
 ValueSet: X12278FollowUpActionCodes
 Title: "X12 278 Follow Up Action Value Set"
@@ -82,6 +87,7 @@ Description: "The complete set of codes that can be used to convey a patient dia
 CodeSystem: PASDiagnosisType
 Title: "PAS Diagnosis Type"
 Description: "The type of diagnosis being conveyed in a prior authorization.  This code is combined with the Diagnosis Code to produce the proper X12 code."
+* ^caseSensitive = true
 * #admitting "Admitting" "The diagnosis given as the reason why the patient was admitted to the hospital."
 * #principal "Principal" "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
 * #patientreasonforvisit "Patient Reason For Visit" "The diagnosis given as why the patient came to the hospital."
