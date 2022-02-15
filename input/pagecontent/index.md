@@ -22,6 +22,17 @@ Several of the profiles will require use of terminologies that are part of X12 w
 </blockquote>
 {% endraw %}
 
+{% raw %}
+<blockquote class="stu-note">
+<H2>2022 Out of Cycle Balloting</H2>
+<p>
+For the 2022 Out of Cycle Balloting, the following new or revised sections are open for balloting (there is a note at each section):
+</p>
+<ul>
+<li></li>
+</ul>
+</blockquote>
+{% endraw %}
 
 ### Overview
 Prior authorization is a process commonly used by payer organizations to manage healthcare costs.  However, the process of requesting and receiving prior authorizations can be slow and inefficient.  The Administrative Simplification provisions of HIPAA mandate that the X12 278 Health Care Services Review Request for Review and Response be used for communicating prior authorization requests and responses.  While few electronic health record (EHR) systems have implemented this interface, this functionality is often implemented as a portal solution and/or as a part of Practice Management and Revenue Cycle Management solutions.  As a result, prior authorizations are often solicited by fax or by using payer-specific portals where clinicians re-key relevant information.  Fax submission requires manual transcription on the payer side - and may result in significant back-and-forth requesting additional information prior to a decision being made.  Re-keying information is inefficient and can result in data entry errors.

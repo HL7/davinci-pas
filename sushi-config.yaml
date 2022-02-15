@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pas
 canonical: http://hl7.org/fhir/us/davinci-pas
-version: 1.1.0
+version: 1.2.0-ballot
 name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
@@ -23,11 +23,12 @@ description: Guidelines for conveying coverage requirements to clinicians when p
 license: CC0-1.0
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core: 3.1.0
+  hl7.fhir.us.core: 3.1.1
 parameters:
   show-inherited-invariants: false
+  path-expansion-params: '../../exp-params.json'
 copyrightYear: 2020+
-releaseLabel: STU 1
+releaseLabel: STU 1.2
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:
   index.md:

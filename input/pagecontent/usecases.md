@@ -66,6 +66,8 @@ From the intermediary's perspective
 </figure>
 {::options parse_block_html="true" /}
 
+
+
 #### Is prior authorization required?
 In some cases, the provider may know beforehand whether PA is required for a given service (either because of intimate familiarity with a given payer's requirements or because of broad consistency across payers).  However, in most cases, the need for prior authorization will be uncertain.  Ideally, initiation of prior authorization will occur as part of a workflow that includes verification of payer coverage and determination that prior authorization is required using the [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) implementation guide.  As shown in the above diagram, this can be accomplished using [CDS Hooks](https://cds-hooks.hl7.org). In the absence of CRD support by EHR or payer, other mechanisms such as consulting the payer's website and/or emailing or faxing the payer must be used.
 
@@ -94,6 +96,30 @@ Also, in situations where a request is 'pended', there may occasionally be needs
 
 #### Submit additional information
 With the use of DTR, this scenario should be extremely uncommon.  However, in some cases an authorization will have a status of denied or pended due to insufficient information, which will normally be indicated either by error messages indicating which mandatory elements were missing or with a request for specific additional information to be provided.  In this case, a new or revised authorization request can be submitted with additional information supplied to support the decision-making process.  Alternately, the payor may keep the request pended and simply request additional information.  This specification does not cover the process of appeals. Providers should consult the payer in question to determine the appropriate appeals mechanism.
+
+{% raw %}
+<blockquote class="stu-note">
+<p>
+The following section was added in the May 2022 ballot of PAS and we are seeking balloter feedback on it.
+</p>
+</blockquote>
+{% endraw %}
+
+If additional information is needed, the payer can request the information in a number of means:
+
+1.	Respond with an FAX or upload to a portal
+2.	An X12 275 response (by provider) to a X12 278 response (as represented in the response FHIR bundle)
+3.	A CDex "Push" transition based on an X12 278 response 
+4.	Resubmission of the PA request with additional information
+5.	A FHIR based request for additional information using DTR.  The note that would be returned would be "please launch DTR with a context of this authorization request."
+
+Here is a diagram that shows the workflow associated with a request for additional information:
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionaldoc-workflow.png" alt="PAS Additional Documentation Request Workflow"/>
+  <figcaption>Figure 2.4 - Additional Documentation Request Workflow</figcaption>
+</figure>
+{::options parse_block_html="true" /}
 
 ### Supporting information
 To evaluate whether a given service will be covered, a payer may need to understand additional information about the patient.  There are three main categories of such information:

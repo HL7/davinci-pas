@@ -7,6 +7,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * identifier 1..1 MS
 * identifier only PASIdentifier
+* identifier ^short = "Business identifier for claim"
 * status = #active (exactly)
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
@@ -167,6 +168,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * identifier 0..1 MS
 * identifier only PASIdentifier
+* identifier ^short = "Business identifier for claim"
 * use = #preauthorization (exactly)
 * patient only Reference(PASBeneficiary)
 * billablePeriod MS

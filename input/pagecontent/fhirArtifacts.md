@@ -8,7 +8,7 @@ The FHIR artifacts used by PAS are organized according to whether the content de
     <td><a href="artifacts.html">FHIR PAS-specific Artifacts</a></td>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.hl7_fhir_us_core}}">US Core</a></td>
+    <td><a href="{{site.data.fhir.ver.hl7_fhir_us_core}}">US Core</a></td>
   </tr>
 </table>
 

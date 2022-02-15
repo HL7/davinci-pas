@@ -21,7 +21,6 @@ Code System URI 'http://codesystem.x12.org/005010/1525' is unknown so the code c
 Code System URI 'http://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
 Code System URI 'https://codesystem.x12.org/005010/98' is unknown so the code cannot be validated
 Code System URI 'https://codesystem.x12.org/005010/584' is unknown so the code cannot be validated
-Code System URI 'http://codesystem.x12.org/005010/237' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/306' is unknown so the code cannot be validated
 Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated
@@ -60,7 +59,6 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 on element Extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 on element Extension.valueCodeableConcept could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 on element Extension.value[x] could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/request/2010C/NM1/1/08/00/66 on element Patient.identifier.type could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010EA/NM1/1/01/00/98 on element Claim.careTeam.role could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010EA/PRV/1/03/00/127 on element Claim.careTeam.qualification could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98 on element Claim.careTeam.role could not be resolved
@@ -77,8 +75,6 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 on element Encounter.type could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 on element Encounter.hospitalization.admitSource could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 on element Organization.type could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/request/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/request/2010D/REF/1/01/00/128 on element Patient.identifier.type could not be resolved
 
 
 # CPT Code System used in example is not available in the terminology server
@@ -89,9 +85,6 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-request-bundle
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle
-
-# There is an error in the base specification
-The link 'valueset-diagnostic-requests.html' for "here" cannot be resolved
 
 # Code systems that are not available in the terminology server
 Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
@@ -109,7 +102,5 @@ Error from server: Unable to provide support for code system http://codesystem.x
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated]
 
-
-# Broken links on publisher-generated narrative
-The link 'extensibility.html#modifierExtension' for "definition of modifier extensions" cannot be resolved
-The link 'extensibility.html' for "Extensibility" cannot be resolved
+# No service request profile in the dependent US Core
+US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile

@@ -18,7 +18,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.
 
-* **MAY** describes optional behaviors that are free to consider but where the is no recommendation for or against adoption.
+* **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
 
 
 #### Systems
@@ -65,8 +65,6 @@ In the event that the prior authorization cannot be evaluated and a final respon
 </figure>
 {::options parse_block_html="true" /}
 
-
-
 #### Prior authorization submission
 The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  The Bundle SHALL be encoded in JSON.  The first entry in the Bundle SHALL be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries SHALL be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once.  E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  Bundle.entry.fullUrl values SHALL be:
 
@@ -91,6 +89,18 @@ The mapping of Claim.item is driven by the X12 workflow with the use of identifi
 
 This IG treats everything that happens beyond the defined operations endpoint receiving the FHIR bundle as a black box.  This black box includes any business associate(s), clearinghouse(s), payers, contracted review entities,  and other intermediaries that may be involved in the PA request and response. It is up to that black box to ensure that any regulatory requirements are met and to perform all processing within the allowed timeframe.
 
+#### Processing Prior Authorization submissions under the CMS Exception
+{% raw %}
+<blockquote class="stu-note">
+<p>
+The following section was added in the May 2022 ballot of PAS and we are seeking balloter feedback on it.
+</p>
+</blockquote>
+{% endraw %}
+
+There is an [HL7 Confluence Page](https://confluence.hl7.org/display/DVP/PAS+Exception+Guidance) that is intended to provide guidance for how to process Prior Authorization submissions under the CMS Exception.  It lists elements currently listed in the Profiles that are not required for use under the CMS Exception as well as best practices to follow.
+
+
 #### Prior authorization response
 The response to the prior authorization is processed in the reverse order as the request.  The system is responsible for converting the ASC X12N 278 response into a FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html).  The Bundle SHALL start with a [ClaimResponse](StructureDefinition-profile-claimresponse.html) entry that contains information mapped from the 278 response.  As well, just like for the prior authorization request, additional Bundle entries must be present for all resources referenced by the ClaimResponse or descendent references.  When converting additional Bundle entries, the conversion process SHALL ensure that only one resource is created for a given combination of content.  E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  When echoing back resources that are the same as were present in the prior authorization request, the system SHALL ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
 
@@ -106,6 +116,63 @@ Joe Smith is a subscriber to Maryland Capital Insurance Company. During a regula
 Dr. Gardener is required by Maryland Capital Insurance to submit a request for review seeking approval to refer Joe to Dr. Watson.
 
 After review, Maryland Capital approves the referral and responds.
+
+#### Prior Authorization Error Handling
+{% raw %}
+<blockquote class="stu-note">
+<p>
+This section was added in the May 2022 ballot of PAS and we are seeking balloter feedback on it.
+</p>
+</blockquote>
+{% endraw %}
+The need for predictable exchanges of error conditions with PAS to exchange of information between providers, intermediaries and payers cannot be overstated.  This section describes the various error conditions the PAS exchange may encounter and the appropriate method of reporting them to the initiating provider. Recipients of the transactions should respond as indicated below and senders of the transaction should look for the following responses and take appropriate actions.
+
+Business errors that are a part of the processing of the 278 payload, eg. in the AAA segments, are represented in the mapping to the response bundle.
+
+All transactions in PAS are synchronous and SHALL require one of the following HTTP responses:
+
+#####HTTP responses
+
+* 2XX – transaction succeeded
+*	4XX – transaction failed – bad request - Failures are not recoverable by resubmission of the transaction – review the OperationOutcome to determine the actual failure 
+*	5XX – transaction failed – service unavailable or timeout - Failures that may be temporary and resubmission may result in successful processing – OperationOutcome if received will provide more clarity on the nature of the failure
+
+If an OperationOutcome is received, it may have information regarding errors that should be addresses in the future, but did not cause the transaction to fail.
+
+OperationOutcome is exchanged to clarify the exact nature of the failures:
+| Element | Cardinality | Datatype | Information |
+| ------- | ----------- | -------- | ----------- |
+| Severity | 1..1 | code | fatal/error/warning/information |
+| Code: | 1..1 | code | IssueType |
+| Details | 0..1 | CodeableConcept | (see below) |
+| Diagnostics | 0..1 | string | addl information (response from validation, TA1, 999) |
+| Expression | 0..* | string | FHIRPath of element(s) |
+ 
+OperationOutcome Details Codes
+
+| Code | Display | Definition |
+| ---- | ------- | ---------- |
+| Unavailable | Service Unavailable | Service is unavailable. Resubmit |
+| Timeout | Service Timeout | Service Timeout. Resubmit. |
+| Badrequest | Bad Request | Bad Request review diagnostics and expression to determine where failure occurred – may resubmit after error is corrected |
+| Nonfatal | Non-Fatal Error | Non-Fatal error --  review diagnostics and expression to determine where error occurred – suggest correcting for future submission |
+
+##### Prior Authorization Workflow Diagrams
+Here are two workflow diagrams that show the sending of a request, the receiving of a response, and optional error handing.  The diagrams show an optional second intermediary.
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-error-twointermediaries.jpg" alt="PAS Two Intermediaries Workflow"/>
+  <figcaption>Figure 5.3 - PAS Workflow with Two Intermediaries</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-error-after-pend.jpg" alt="PAS Pended Transactions Workflow"/>
+  <figcaption>Figure 5.4 - PAS Workflow for pended transactions</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
 
 #### Prior Authorization Inquiries
 The [prior authorization inquiry operation](OperationDefinition-Claim-inquiry.html) allows for inquiries about prior authorization submissions.  This inquiry can be used for polling for pended authorization responses (see below), for other systems checking the status of a request (see below), and for generic inquiries.
