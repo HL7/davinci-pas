@@ -148,7 +148,7 @@ If an OperationOutcome is received, it may have information regarding errors tha
 | Details | 0..1 | CodeableConcept | (see below) |
 | Diagnostics | 0..1 | string | addl information (response from validation, TA1, 999) |
 | Expression | 0..* | string | FHIRPath of element(s) |
- 
+
 ###### OperationOutcome Details Codes
 
 | Code | Display | Definition |
