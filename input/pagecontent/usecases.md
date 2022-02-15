@@ -114,6 +114,7 @@ If additional information is needed, the payer can request the information in a 
 5.	A FHIR based request for additional information using DTR.  The note that would be returned would be "please launch DTR with a context of this authorization request."
 
 Here is a diagram that shows the workflow associated with a request for additional information:
+
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionaldoc-workflow.png" alt="PAS Additional Documentation Request Workflow"/>

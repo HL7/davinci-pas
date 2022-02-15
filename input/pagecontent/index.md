@@ -22,18 +22,6 @@ Several of the profiles will require use of terminologies that are part of X12 w
 </blockquote>
 {% endraw %}
 
-{% raw %}
-<blockquote class="stu-note">
-<H2>2022 Out of Cycle Balloting</H2>
-<p>
-For the 2022 Out of Cycle Balloting, the following new or revised sections are open for balloting (there is a note at each section):
-</p>
-<ul>
-<li></li>
-</ul>
-</blockquote>
-{% endraw %}
-
 ### Overview
 Prior authorization is a process commonly used by payer organizations to manage healthcare costs.  However, the process of requesting and receiving prior authorizations can be slow and inefficient.  The Administrative Simplification provisions of HIPAA mandate that the X12 278 Health Care Services Review Request for Review and Response be used for communicating prior authorization requests and responses.  While few electronic health record (EHR) systems have implemented this interface, this functionality is often implemented as a portal solution and/or as a part of Practice Management and Revenue Cycle Management solutions.  As a result, prior authorizations are often solicited by fax or by using payer-specific portals where clinicians re-key relevant information.  Fax submission requires manual transcription on the payer side - and may result in significant back-and-forth requesting additional information prior to a decision being made.  Re-keying information is inefficient and can result in data entry errors.
 
@@ -76,43 +64,15 @@ This implementation guide defines additional constraints and usage expectations 
 
 {% raw %}
 <blockquote class="stu-note">
+<H2>2022 Out of Cycle Balloting</H2>
 <p>
-For Version 1.1, there were a number of changes made due to issues raised during the current STU period:
+For the 2022 Out of Cycle Balloting, the following new or revised sections are open for balloting (there is a note at each section):
 </p>
 <ul>
-	<li>Organization profiles were changed: (FHIR-30880)
-			<ul>
-				<li>Address changed from 1..1 to 0..1</li>
-				<li>Value set changed from https://valueset.x12.org/x217/005010/request/2010B/NM1/1/01/00/98 to https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98</li>
-			</ul>
-	</li>
-	<li>The AuthorizedProvider profile has a new providerType CodeableConcept added to it. (FHIR-30881)</li>
-	<li>Added NDC codes and a "not applicable" code to the X12278RequestedServiceType value set. (FHIR-30882)</li>
-	<li>Created a new value set for the service modifier types that only has CPT and HCPCS codes. (FHIR-30883)</li>
-	<li>Changed the modifier value in the AuthorizedDetail extension to be 0..* instead of 0..1. (FHIR-30884)</li>
-	<li>Added an extension for state to the new PASIdentifier datatype. (FHIR-30885).</li>
-	<li>Added a constraint to all dates that are used to ensure that a full date is being sent. (FHIR-30886)</li>
-	<li>The Admission date period was change to two separate periods to handle a range of admission dates and a separate range of discharge dates. (FHIR-30887)</li>
-	<li>Fix the extensions on CommunicationRequest to be on the CommunicationRequest.payload where they were intended. (FHIR-30888)</li>
-	<li>All references on elements that are marked as Must Support now reference either PAS or US-Core profiles. (FHIR-30890)</li>
-	<li>The Additional Information supporting info section has had a note added to indicate that the PASDocumentReference profile is the preferred profile for sending extra documentation. (FHIR-31024)</li>
-	<li>New Identifier profile created (PASIdentifier) with the required extensions and uses of Identifier in Claim and ClaimResponse profiles changed to PASIdentifier. (FHIR-31025, FHIR-31372)</li>
-	<li>Added CommunicatedDiagnosis to ClaimResponse and ClaimInquiryResponse. (FHIR-31086, FHIR-31370)</li>
-	<li>Changed Certification Issue Date, Certification Effective Date, and Certifacation Expiration Date to be a date or a period to handle searching by a range. (FHIR-31373)</li>
-	<li>Added short descriptions to every use of an extension and every Claim.supportingInfo slice. (FHIR-31414)</li>
-	<li>Added a note to any value set that includes CPT and HCPCS codes that X12 will identify those codes as being HCPCS no matter what was originally sent in. (FHIR-31630)</li>
-	<li>Created a PASOrganization profile on Organization and used the PASIdentifier datatype on Practitioner and Organization. (FHIR-32427)</li>
-	<li>Change the cardinality of the ReviewAction reasonCode to be 0..*. (FHIR-32426)</li>
-	<li>Add the ItemTraceNumber extension to ClaimInquiryResponse profile and make it 0..*. (FHIR-32425, FHIR-32891)</li>
-	<li>Fix the Claim inquiry operation endpoint to be $inquiry instead of $submit. (FHIR-31948)</li>
-	<li>Add language to the Home Page about ability to not convert into and out of an X12 278. (FHIR-32867)</li>
-	<li>Add language to the Specification to allow other methods of exchanging the FHIR Bundle besides the X12 275. (FHIR-32866)</li>
-	<li>Change extension names to more closely match their IDs. (FHIR-32877)</li>
-	<li>Add a line number extension to the CommunicationRequest payload. (FHIR-32878)</li>
-	<li>Revise the language about how Prior Authorizations are cancelled. (FHIR-32112)</li>
-	<li>Move the ReviewAction extension from the ClaimResponse.item to the ClaimResponse.item.adjudication. (FHIR-32900)</li>
-	<li>Fix the bindings for the CareTeam roles. (FHIR-32954)</li>
-	<li>Remove mandatory XML support and make only JSON the allowed exchange format. (FHIR-33059)</li>
+<li>Section 2.3.7 Submit Additional Information</li>
+<li>Section 5.2.3 Processing Prior Authorization Submissions under the CMS Exception</li>
+<li>Section 5.2.5 Prior Authorization Error Handling</li>
 </ul>
+<p>There were also changes made to the underlying profiles and those are open for ballot comments as well.</p>
 </blockquote>
 {% endraw %}

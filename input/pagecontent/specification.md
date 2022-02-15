@@ -131,7 +131,7 @@ Business errors that are a part of the processing of the 278 payload, eg. in the
 
 All transactions in PAS are synchronous and SHALL require one of the following HTTP responses:
 
-#####HTTP responses
+##### HTTP responses
 
 * 2XX – transaction succeeded
 *	4XX – transaction failed – bad request - Failures are not recoverable by resubmission of the transaction – review the OperationOutcome to determine the actual failure 
@@ -139,16 +139,17 @@ All transactions in PAS are synchronous and SHALL require one of the following H
 
 If an OperationOutcome is received, it may have information regarding errors that should be addresses in the future, but did not cause the transaction to fail.
 
-OperationOutcome is exchanged to clarify the exact nature of the failures:
+###### OperationOutcome Data Elements
+
 | Element | Cardinality | Datatype | Information |
 | ------- | ----------- | -------- | ----------- |
-| Severity | 1..1 | code | fatal/error/warning/information |
-| Code: | 1..1 | code | IssueType |
+| Severity | 1..1 | code | fatal, error, warning, information |
+| Code | 1..1 | code | IssueType |
 | Details | 0..1 | CodeableConcept | (see below) |
 | Diagnostics | 0..1 | string | addl information (response from validation, TA1, 999) |
 | Expression | 0..* | string | FHIRPath of element(s) |
  
-OperationOutcome Details Codes
+###### OperationOutcome Details Codes
 
 | Code | Display | Definition |
 | ---- | ------- | ---------- |
@@ -159,6 +160,7 @@ OperationOutcome Details Codes
 
 ##### Prior Authorization Workflow Diagrams
 Here are two workflow diagrams that show the sending of a request, the receiving of a response, and optional error handing.  The diagrams show an optional second intermediary.
+
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-error-twointermediaries.jpg" alt="PAS Two Intermediaries Workflow"/>
