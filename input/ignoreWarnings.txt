@@ -92,7 +92,6 @@ Code System URI 'https://www.nubc.org/CodeSystem/PatDischargeStatus' is unknown 
 Code System URI 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' is unknown so the code cannot be validated
 Code System URI 'https://www.nubc.org/CodeSystem/PointOfOrigin' is unknown so the code cannot be validated
 
-Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 Error from server: Unable to provide support for code system http://codesystem.x12.org/005010/1365
 
