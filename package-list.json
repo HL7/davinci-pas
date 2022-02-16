@@ -17,7 +17,7 @@
       "path": "http://hl7.org/fhir/us/davinci-pas/2022May",
       "status": "ballot",
       "sequence": "STU 1.2",
-      "fhirversion": "4.0.1",
+      "fhirversion": "4.0.1"
     },
     {
       "version": "1.1.0",
@@ -27,7 +27,7 @@
       "status": "trial-use",
       "sequence": "STU 1.1",
       "fhirversion": "4.0.1",
-      "current": true,
+      "current": true
     },
     {
       "version": "1.0.0",
