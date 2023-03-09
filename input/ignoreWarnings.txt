@@ -81,10 +81,10 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2010A/NM1/1/
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 # The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-request-bundle
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle%
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-request-bundle%
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle%
 
 # Code systems that are not available in the terminology server
 Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
@@ -100,6 +100,3 @@ Error from server: Unable to provide support for code system http://codesystem.x
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated]
-
-# No service request profile in the dependent US Core
-US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile

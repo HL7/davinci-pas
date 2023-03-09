@@ -1,8 +1,12 @@
 ### Credits
-Primary authors:
+Primary author:
 
-* Jean Duteau (Duteau Design)
-* Lloyd McKenzie (Gevity Consulting)
+* Jean Duteau (Dogwood Health Consulting)
+* Mary Kay McDaniel ()
+
+Guide Author Support: 
+
+* Lloyd McKenzie (Dogwood Health Consulting)
 
 Project leads:
 
@@ -14,10 +18,6 @@ Project management and coordination:
 * Jocelyn Keegan (Point of Care Partners)
 * Sachin Bhatt (Point of Care Partners)
 
-Technical support and guidance:
-
-* Grahame Grieve (Health Intersections)
-
 Reference implementation:
 
 * Gary Gryan (MITRE), Pat LaRocque (MITRE), Ben Langley (MITRE) and Jason Walonoski (MITRE)
@@ -26,7 +26,7 @@ This implementation guide was created under the supervision and review of the HL
 
 This implementation guide was initiated created with the support of the twenty-two founding [Da Vinci Project] (http://www.hl7.org/about/davinci/index.cfm?ref=common) member organizations.
 
-Organizational participants (those organizations having attendees on at least 4 calls) included:
+Organizational participants included:
 
 * AMA (Heather McComas, Terry Cunningham)
 * Anthem (Barbara Antuna, Alberto Llanes, Christol Green, Karen Zapata, Mary Bushman, Sudhir Nair)
@@ -45,6 +45,7 @@ Organizational participants (those organizations having attendees on at least 4 
 * eClinicalWorks (Phranil Mehta, Rohit Shinde)
 * Edifecs (John Kelly, Lindee Chin)
 * EMDI/Scope Info Tech (Briana Barnes, Nandini Ganguly, Pallavi Talekar, Ray Wilkerson)
+* Epic (Spencer Utley)
 * Healow (Ralph Saint-Phard)
 * Humad (Monse Serenil)
 * Humana (Amy Peterson, Chris Jones, Patrick Murta, Michelle Zutterman, Mike Funk)
@@ -60,6 +61,6 @@ Organizational participants (those organizations having attendees on at least 4 
 * WPS Health Solutions (Laurie Burckhardt, Tammy Schreiner)
 * ZeOmega (Bonnie Sirott, Tony Sheng)
 
-Additional regular (&gt;= 4 meetings) participants: Christy Dodson, Peter Muir, Rachel Foerster, Raj, Rim Cothern
+Additional regular participants: Christy Dodson, Peter Muir, Rachel Foerster, Raj, Rim Cothern
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.

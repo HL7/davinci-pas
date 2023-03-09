@@ -61,18 +61,3 @@ This implementation guide relies on the following other specifications:
 * **[US Core]({{site.data.fhir.hl7_fhir_us_core}})** - The published version of US Core based on FHIR R4.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
-
-{% raw %}
-<blockquote class="stu-note">
-<H2>2022 Out of Cycle Balloting</H2>
-<p>
-For the 2022 Out of Cycle Balloting, the following new or revised sections are open for balloting (there is a note at each section):
-</p>
-<ul>
-<li>Section 2.3.7 Submit Additional Information</li>
-<li>Section 5.2.3 Processing Prior Authorization Submissions under the CMS Exception</li>
-<li>Section 5.2.5 Prior Authorization Error Handling</li>
-</ul>
-<p>There were also changes made to the underlying profiles and those are open for ballot comments as well.</p>
-</blockquote>
-{% endraw %}

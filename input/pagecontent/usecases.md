@@ -35,7 +35,7 @@ Currently, the overwhelming majority of real-time responses to the PA request ar
 This implementation guide also supports business requirements around the management of prior authorizations, including checking on the status of 'pended' authorization requests (by the ordering and/or performing providers), cancelling previously submitted prior authorization requests and updating prior authorization requests to reflect changes in clinical need (e.g. changes to the requested quantity or time-period).
 
 ### Work Flow
-Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made a decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.
+Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made a decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative, the [Post-Acute Orders Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
 
 #### Scope of Work Flow
 In Scope
@@ -43,7 +43,7 @@ In Scope
 1. Prior Auth for services/devices performed/supplied by the ordering provider
 2. Prior Auth for services/devices performed/supplied by a different provider where the ordering provider is required or permitted to request authorization for another entity to provide the services
 3. Prior Auth for medications that are covered under a medical benefit
-4. When Prior Auth is required by the rendering provider
+4. When Prior Auth is required for the rendering provider
 
 Out Of Scope
 
@@ -51,13 +51,12 @@ Out Of Scope
 
 #### Prior Authorization Process
 The prior authorization process from the EHR side consists of five steps:
-1. Determine whether prior authorization is required
+
+1. Determine whether prior authorization is required and if so, the documentation required by the payer to support the authorization
 2. Gather information necessary to support the prior authorization request
 3. Submit the request for prior authorization
 4. Monitor the prior authorization request for resolution
 5. If need be, supplement the prior authorization request with additional required information (and resume at step #4)
-
-From the intermediary's perspective
 
 {::options parse_block_html="false" /}
 <figure>
@@ -66,15 +65,22 @@ From the intermediary's perspective
 </figure>
 {::options parse_block_html="true" /}
 
+NOTE:
+
+1. The intermediary SHALL always exchange a FHIR bundle with the EHR (on left in the drawing above)
+2. The intermediary SHALL convert the FHIR bundle to and from an X12 278 (and optionally to an X12 275) if necessary to meet the HIPAA  transaction requirements.
+3. The intermediary is responsible for obtaining a status of the PA request from the Payer (may use the X12 278 Inquiry) when requested by the EHR.
+4. The intermediary MAY convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the HER  and the payer.
+
 
 
 #### Is prior authorization required?
-In some cases, the provider may know beforehand whether PA is required for a given service (either because of intimate familiarity with a given payer's requirements or because of broad consistency across payers).  However, in most cases, the need for prior authorization will be uncertain.  Ideally, initiation of prior authorization will occur as part of a workflow that includes verification of payer coverage and determination that prior authorization is required using the [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) implementation guide.  As shown in the above diagram, this can be accomplished using [CDS Hooks](https://cds-hooks.hl7.org). In the absence of CRD support by EHR or payer, other mechanisms such as consulting the payer's website and/or emailing or faxing the payer must be used.
+In some cases, the provider may know beforehand whether PA is required for a given service (either because of intimate familiarity with a given payer's requirements or because of broad consistency across payers).  However, in most cases, the need for prior authorization will be uncertain.  Ideally, initiation of prior authorization will occur as part of a workflow that includes verification of payer coverage and determination that prior authorization is required using the [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) implementation guide.  As shown in the above diagram, this can be accomplished using [CDS Hooks](https://cds-hooks.hl7.org). The goal of the Burden Reduction IGs is to move from Telephone, FAX, Portal, mail) to electronic transaction defined by these three IGs.  We recognize it will take time for provider and payer to fully implement these IGs and that certain PAs may never be implemented due to complexity.  However, the intent is to move a rapidly as possible to full support of these IGs by Payer, providers and any required intermediaries.
 
 #### Gather PA information
 Again, in some cases, the provider may know exactly what information needs to be provided in a prior authorization request for a particular type of service from a given payer.  When this is not known, the vendor website or phone calls may help determine the required information, though this is sometimes an iterative process - certain information may trigger the need for additional information which may then trigger the need for yet more information.  Historically, this process has been handled by submitting an initial prior authorization request and then responding to payer requests for additional detail through the submission of supplementary attachments.
 
-However, with the [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guide, the EHR can retrieve relevant payer documentation rules in computable form as well as associated FHIR questionnaires to support the assembly of information for a prior authorization. The provider can use the resulting automated process to assemble the required documentation to support the prior authorization request.  As well, DTR enable the EHR system or a launched SMART on FHIR application to retrieve information from the patient's record that is necessary to support the prior authorization request.  DTR also allows prompting for information that can't be (automatically) found in the patient's clinical record and/or to allow the provider to attest that the information is present in the record without actually exchanging it.
+However, with the [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guide, the EHR can retrieve relevant payer documentation rules in computable form as well as associated FHIR questionnaires to support the assembly of information for a prior authorization. The provider can use the resulting automated process to assemble the required documentation to support the prior authorization request.  As well, DTR enables the EHR system or a launched SMART on FHIR application to retrieve information from the patient's record that is necessary to support the prior authorization request.  DTR also allows prompting for information that can't be (automatically) found in the patient's clinical record and/or to allow the provider to attest that the information is present in the record without actually exchanging it.
 
 As a result, with DTR, it is possible to minimize or eliminate the need for multiple back-and forth 'supplemental documentation' exchanges and to maximize the likelihood that the submitted prior authorization supporting information is suitable for automated decision making.
 
@@ -83,35 +89,29 @@ Information gathered to support prior authorization is expected to be stored in 
 Also see the section below on [supporting information](#supporting-information)
 
 #### Submit prior authorization
-Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) SHALL have the ability, but not an obligation, to review patient information and where appropriate amend or withhold submission to comply with current regulations and relevant provider policies.
+Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) SHALL have the ability, but not an obligation, to review patient information and where appropriate amend or withhold submission to comply with current regulations and relevant provider policies.  The provider can choose to turn off the ability to review documentation. The vendor must allow them this option.
 
 The prior authorization request will involve a FHIR operation, passing in a Bundle of FHIR resources that includes the authorizing request as well as any other necessary supporting information.  That operation will typically (for HIPAA reasons) be invoked on an intermediary that will translate the request into the corresponding X12 messages.  However, where there is no regulatory requirement for X12 use (e.g. if this specification is adopted in non-U.S. environments, for non-HIPAA-covered payers, or under a granted exception), the operation could potentially be invoked directly on the payer system.
 
 The payer system is expected to immediately generate an automated response.  Ideally, this will represent a final decision on the prior authorization request.  However, in some cases, it may be necessary to submit textual documentation that will require semi-automated or manual review by the payer.  In these situations, the prior authorization response will have a status of 'pended' and will be pended by the payer.  In either event, if the response is provided via X12, the intermediary will convert the X12 back to FHIR and will return the result as the result of the synchronous operation.
 
 #### Monitor for resolution
-In those situations where the prior authorization request is 'pended', the EHR must monitor for changes to the request until such time as the results are finalized.  This monitoring might be done by the system of the provider that submitted the request for prior authorization, and/or the system of the provider that is expected to actually perform the authorized procedure (e.g. the family physician system or the imaging center system).  This will be done by querying the payer system/intermediary.  This might be done at regular intervals (polling) or it might be done in response to a subscription notification indicating that the prior authorization has been changed.
+In those situations where the prior authorization request is 'pended', the EHR must monitor for changes to the request until such time as the results are finalized.  This monitoring might be done by the system of the provider that submitted the request for prior authorization, and/or the system of the provider that is expected to actually perform the authorized procedure (e.g. the family physician system or the imaging center system).  This will be done by querying the payer system/intermediary.  This might be done in response to a subscription notification indicating that the prior authorization has been changed.  There is also an inquiry operation that allows for inquiries about prior authorization submissions. This inquiry can be used for checking the status of a request and for generic inquiries.
 
-Also, in situations where a request is 'pended', there may occasionally be needs to update the authorization request.  This might involve the provider cancelling it (because the service is no longer needed/relevant) or adjusting the description of the procedure for which authorization is requested (e.g. minor change to a procedure code, changing the timeframe or required number of repetitions based on new clinical information).
+There is also guidance on monitoring in the CDex IG: [Using CDex Attachments with DaVinci PAS](http://build.fhir.org/ig/HL7/davinci-ecdx/burden-reduction.html)
+
+Also, in situations where a request is 'pended', there may occasionally be needs to update the authorization request.  This might involve the provider cancelling it or adjusting the description of the procedure for which authorization is requested (e.g. minor change to a procedure, update to the timeframe or dosage based on new clinical information).
 
 #### Submit additional information
-With the use of DTR, this scenario should be extremely uncommon.  However, in some cases an authorization will have a status of denied or pended due to insufficient information, which will normally be indicated either by error messages indicating which mandatory elements were missing or with a request for specific additional information to be provided.  In this case, a new or revised authorization request can be submitted with additional information supplied to support the decision-making process.  Alternately, the payor may keep the request pended and simply request additional information.  This specification does not cover the process of appeals. Providers should consult the payer in question to determine the appropriate appeals mechanism.
+With the use of DTR, the need to submit additional information should be extremely uncommon.  However, in some cases an authorization will have a status of denied or pended due to insufficient information, which will normally be indicated either by error messages indicating which mandatory elements were missing or with a request for specific additional information to be provided.  In this case, a new or revised authorization request can be submitted with additional information supplied to support the decision-making process.  Alternately, the payor may keep the request pended and simply request additional information.  Payers should only be requesting additional information if clarification or more details are needed than was originally provided.  This specification does not cover the process of appeals. Providers should consult the payer in question to determine the appropriate appeals mechanism.
 
-{% raw %}
-<blockquote class="stu-note">
-<p>
-The following section was added in the May 2022 ballot of PAS and we are seeking balloter feedback on it.
-</p>
-</blockquote>
-{% endraw %}
+If additional information is needed, the provider can respond with the information via a number of preferred methods:
 
-If additional information is needed, the payer can request the information in a number of means:
+1. Via a CDex Submit-Attachment operation based on the X12 278 request for additional information
+2. Via a CDex Submit-Attachment operation where the LOINC code indicated a specific Questionnaire exists on the Payers Operation endpoint using the tracing ID as the business identifier
+3. An X12 275 response (by provider) to a X12 278 response (as represented in the response FHIR bundle)
 
-1.	Respond with an FAX or upload to a portal
-2.	An X12 275 response (by provider) to a X12 278 response (as represented in the response FHIR bundle)
-3.	A CDex "Push" transition based on an X12 278 response 
-4.	Resubmission of the PA request with additional information
-5.	A FHIR based request for additional information using DTR.  The note that would be returned would be "please launch DTR with a context of this authorization request."
+NOTE: A payer can request information in a number of means but SHALL explicitly communicate the method by which the information will be provided to the provider using the CommunicationRequest.method element.
 
 Here is a diagram that shows the workflow associated with a request for additional information:
 

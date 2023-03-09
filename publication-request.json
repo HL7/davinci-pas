@@ -1,0 +1,9 @@
+{
+  "package-id" : "hl7.fhir.uv.davinci-pas",
+  "version" : "1.3.0",
+  "path" : "http://hl7.org/fhir/us/davinci-pas/STU1.3",
+  "status" : "trial-use",
+  "sequence" : "STU1",
+  "milestone" : true,
+  "desc" : "This is the 3rd update of the guide in the STU1 sequence."
+}

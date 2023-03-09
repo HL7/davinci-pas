@@ -36,8 +36,9 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 #### Integration with other Implementation Guides
 * Implementations of the PAS implementation guide SHALL support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They SHOULD support any other profiles relevant to the types of prior authorizations they process
-* Clients and Servers supporting this implementation guide SHALL also comply with the Da Vinci [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
-* Clients and Servers supporting this implementation guide SHOULD comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
+* Clients and Servers supporting this implementation guide SHOULD also comply with the Da Vinci [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides
+* Every system claiming conformance to this IG SHALL comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html). The FHIR implementer's Safety Checklist helps implementers be sure that they have considered all the parts of FHIR that impact their system design regarding privacy, security, provenance, and safety.
+
 
 ### Detailed Requirements
 
@@ -56,7 +57,7 @@ The primary interaction supported by this implementation guide is submitting a p
 
 This Bundle will then be sent as the sole payload of a [Claim/$submit](OperationDefinition-Claim-submit.html) operation.  The system on which the operation is invoked will convert the Bundle into an ASC X12N 278 and 0..* additional unsolicited 275 transactions and execute them all against the target payer system.  It will then take the resulting 278 response and convert it into a response FHIR [Bundle](StructureDefinition-profile-pas-response-bundle.html) containing a [ClaimResponse](StructureDefinition-profile-claimresponse.html) and associated resources.  All of this SHOULD happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e. including network transmission time for request and response. (Less time is better.)
 
-In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorization items are 'pended' will be returned.  The client (or other interested systems - e.g. patient, caregiver or performing provider systems) can then query the endpoint for the final results using either a polling or subscription-based mechanism.  During this period of time, the same $submit operation can be used to request cancellation or modification of the prior authorization.
+In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorization items are 'pended' will be returned.  A subscription-based mechanism can then be used by the client to be informed of updates to the authorization.  As well, the client (or other interested systems - e.g. patient, caregiver or performing provider systems) can use the [Claim-inquiry/$submit operation](OperationDefinition-Claim-inquiry.html) to query for the final results.  During this period of time, the same $submit operation can be used to request cancellation or modification of the prior authorization.
 
 {::options parse_block_html="false" /}
 <figure>
