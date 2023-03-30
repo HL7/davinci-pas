@@ -41,7 +41,7 @@ A high-level summary of how all of these IGs will work together can be seen belo
 {::options parse_block_html="true" /}
 
 ### CMS Exception
-When using PAS under the CMS granted exception (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) SHALL disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles SHALL be transmitted intact between the provider and payer.  The PAS FHIR response bundles SHALL be transmitted intact between the payer and the provider.
+When using PAS under the [CMS granted exception](https://confluence.hl7.org/display/DVP/Da+Vinci+HIPAA+Exception) (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) SHALL disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles SHALL be transmitted intact between the provider and payer.  The PAS FHIR response bundles SHALL be transmitted intact between the payer and the provider.
 
 ### Content and organization
 The implementation guide is organized into the following sections:

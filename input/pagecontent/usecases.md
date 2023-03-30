@@ -34,6 +34,28 @@ Currently, the overwhelming majority of real-time responses to the PA request ar
 
 This implementation guide also supports business requirements around the management of prior authorizations, including checking on the status of 'pended' authorization requests (by the ordering and/or performing providers), cancelling previously submitted prior authorization requests and updating prior authorization requests to reflect changes in clinical need (e.g. changes to the requested quantity or time-period).
 
+### Supported Use Cases
+This version of the Implementation Guide does not support all of the use cases that the current X12 278 Prior Authorization Request supports.  The following list highlights the segments that are not currently mapped/supported by the FHIR profiles in this guide:
+
+1.  Loop 2000E, Segment CRC
+	a. Ambulance Certification
+	b. Chiropractic Cerfication
+	c. Durable Medical Equipment
+	d. Oxygen Therapy Certification
+	e. Functional Limitations
+	f. Activities Permitted
+	g. Mental Status
+2. Loop 2000E, Segment CR1 - Ambulance Transport
+3. Loop 2000E, Segment CR2 - Spinal Manipulation Service
+4. Loop 2000E, Segment CR5 - Home Oxygen Therapy
+5. Loop 2000E, Segment CR6 - Home Health Care
+6. Loop 2010EB - Patient Event Transport
+7. Loop 2000F, Segment SV3 - Dental Service
+
+#### Patient Event vs Service Line Items
+In FHIR, the Claim resource which is being used for Prior Authorization does not have the concept of patient events like the X12 278 request.  All services being requested are found in the Claim items.  This means that when a Prior Authorization is being created in FHIR, all of the services will be found in the Claim items.  The assumption that we have made in the guide is that the resulting transformed X12 278 request will have the services being requested detailed in the Service Event line level.
+
+
 ### Work Flow
 Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made a decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative, the [Post-Acute Orders Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
 
@@ -56,7 +78,7 @@ The prior authorization process from the EHR side consists of five steps:
 2. Gather information necessary to support the prior authorization request
 3. Submit the request for prior authorization
 4. Monitor the prior authorization request for resolution
-5. If need be, supplement the prior authorization request with additional required information (and resume at step #4)
+5. If need be, supplement the prior authorization request with additional required information (and resume at step #4).  See section 5.2.9 for when and how updates are made.
 
 {::options parse_block_html="false" /}
 <figure>
@@ -70,7 +92,7 @@ NOTE:
 1. The intermediary SHALL always exchange a FHIR bundle with the EHR (on left in the drawing above)
 2. The intermediary SHALL convert the FHIR bundle to and from an X12 278 (and optionally to an X12 275) if necessary to meet the HIPAA  transaction requirements.
 3. The intermediary is responsible for obtaining a status of the PA request from the Payer (may use the X12 278 Inquiry) when requested by the EHR.
-4. The intermediary MAY convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the HER  and the payer.
+4. The intermediary MAY convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the EHR  and the payer.
 
 
 
@@ -130,14 +152,3 @@ To evaluate whether a given service will be covered, a payer may need to underst
 2.	Structured clinical data that is available through the EHR's FHIR APIs. This might include laboratory results, scores or assessments, past medications or procedures represented using the appropriate US Core profiles.  Based on discussions with payers that currently provide real-time responses for prior authorization transactions, the combination of attestation and structured clinical data may result in far more real-time answers to PA requests.
 
 3.	Information that is traditionally not structured, or where the review process is more involved and will not be performed in real time. In this use case, additional information may be in the form of progress notes, therapy notes, diagnostic reports, etc.  This information will be exchanged as text or images using the document reference.  Where such information is necessary, the initial request will typically be 'pended', with a final decision returned later once manual review is complete.  All exchanges should meet Federal and state regulations, including any HIPAA restrictions and restrictions on sensitive data.
-
-
-<!--### Use cases
-This IG will use specific PA use cases to illustrate the information and workflow requirements.  The use cares defined below show how prior authorization would be managed for: 
-
-1. home oxygen therapy,
-2. CPAP  device,
-3. diabetic testing supplies
-4. advanced imaging, and  
-5. home health services
--->
