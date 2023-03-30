@@ -182,7 +182,7 @@ NOTE: The inquiry operation must contain a requesting provider organization, a p
 The information in the Bundle is mapped to a 278 Health Care Services Review Information - Inquiry transaction (278i request).  The 278 Health Care Services Review Information - Response (278i response) is then mapped to a [PAS Inquiry Response Bundle](StructureDefinition-profile-pas-inquiry-response-bundle.html) with the results of the inquiry contained in the Bundle.
 
 Notes:
-* the returned ClaimResponse SHALL include the current results for all submitted items, including any items changed or cancelled since the original authoriation request.  (See [Changing authorization requests](#changing-authorization-requests) below.)
+* the returned ClaimResponse SHALL include the current results for all submitted items, including any items changed or cancelled since the original authoriation request.  (See [Updating authorization requests](#updating-authorization-requests) below.)
 * the returned ClaimResponse will be a subset if the request was for a subset of information
 * if the authorizationresponseid submitted is not the 'current' authorization response identifier (because subsequent additions/changes/cancellations have been made to the prior authorization request), the returned record SHALL be the 'current' authorization response - even though it no longer has the same identifier.  I.e. If a search is for a 'replaced' prior authorization, the search result SHALL include the 'current' prior authorization response for the most recent replacing prior authorization request.
 * systems MAY withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim.identifier.  In such situations the response SHOULD include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone) to provide further information if needed.
@@ -229,7 +229,7 @@ When using the subscription retrieval mechanism, the Client will POST a new Subs
 
 Once the subscription has been created, the Server SHALL send a notification over the requested channel indicating that the prior authorization response has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
 
-Upon receiving a notification, the Client SHALL - when convenient - execute the same query as shown above in the [polling](#polling) section.
+Upon receiving a notification, the Client SHALL - when convenient - execute a query.
 
 If the retrieved ClaimResponse has an outcome of 'complete' or 'error', the Client SHALL perform a DELETE on the Subscription.
 
