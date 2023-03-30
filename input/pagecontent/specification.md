@@ -218,7 +218,7 @@ There is ongoing work on the Subscription resource and it is currently undergoin
 </blockquote>
 {% endraw %}
 
-Implementers shall support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/).
+Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/).
 
 When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The Subscription.criteria **SHALL** be of the form: "identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active".  (Order of parameters within the search does not matter.)
 
