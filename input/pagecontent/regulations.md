@@ -8,8 +8,8 @@ This page summarizes the administrative simplification provision that implemente
 ### Administrative Simplification Requirements of HIPAA
 The major requirements of administrative simplification affect:
 * Transactions and code sets - establishes standards for electronic transactions and external medical data code sets
-* Identifiers - establishes a standard for a unique employer identifier and a standard for National Provider Identifiers (NPIs).
-* Security - specifies the administrative, technical, and physical requirements for covered entities to use in safeguarding protected health information.
+* Identifiers - establishes a standard for a unique employer identifier and a standard for National Provider Identifiers (NPIs)
+* Security - specifies the administrative, technical, and physical requirements for covered entities to use in safeguarding protected health information
 * Privacy - establishes a set of national standards for the protection of certain health information; addresses standards for the use and disclosure of individuals' health information (called "protected health information"); outlines standards for individuals' privacy rights, as well as individuals' rights to understand and control how their health information is used
 
 The complete suite of [HIPAA Administrative Simplification Regulations](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/combined-regulation-text/index.html) can be found on the Health and Human Services (HHS) website at hhs.gov.
@@ -51,7 +51,7 @@ Note: defines the use of the ASC X12 5010 278/217 for referral certification and
 
 ---
 
-The following is an excerpt from the CFR restricting trading partner agreements. (relevant sections bolded).
+The following is an excerpt from the CFR restricting trading partner agreements (relevant sections bolded).
 > § 162.915   Trading partner agreements. 
 > **A covered entity must not enter into a trading partner agreement that would do any of the following:** 
 >> (a) **Change the definition, data condition, or use of a data element or segment in a standard or operating rule**, except where necessary to implement State or Federal law, or to protect against fraud and abuse. 
@@ -63,7 +63,7 @@ Note: trading partner agreements cannot modify the standard
 
 ---
 
-The following is an excerpt from the CFR requiring the use of the standard transaction. (relevant sections bolded).
+The following is an excerpt from the CFR requiring the use of the standard transaction (relevant sections bolded).
 > § 162.923   Requirements for covered entities. 
 >> (a) General rule. **Except as otherwise provided in this part**, if a covered entity conducts, with another covered entity that is **required to comply with a transaction standard adopted under this part (or within the same covered entity)**, using electronic media, a transaction for which the Secretary has adopted a standard under this part, the covered entity must conduct the transaction as a standard transaction. 
 
@@ -71,7 +71,7 @@ Note: requires the use of the standard within the same covered entity (e.g. with
 
 ---
 
-The following is an excerpt from the CFR providing an exception for "direct data entry transactions". (relevant sections bolded).
+The following is an excerpt from the CFR providing an exception for "direct data entry transactions" (relevant sections bolded).
 > § 162.923   Requirements for covered entities. 
 >> (b) **Exception for direct data entry transactions.  A health care provider electing to use direct data entry offered by a health plan to conduct a transaction for which a standard has been adopted under this part must use the applicable data content and data condition requirements of the standard when conducting the transaction. The health care provider is not required to use the format requirements of the standard.**
 
@@ -81,7 +81,7 @@ Note: allows the use of an alternative transaction as long as it uses the “app
 
 ---
 
-The following is an excerpt from the CFR providing the use a business associate(relevant sections bolded).
+The following is an excerpt from the CFR providing the use a business associate (relevant sections bolded).
 
 > § 162.923   Requirements for covered entities. 
 >> (c) Use of a business associate. **A covered entity may use a business associate, including a health care clearinghouse, to conduct a transaction covered by this part.** If a covered entity chooses to use a business associate to conduct all or part of a transaction on behalf of the covered entity, the covered entity must require the business associate to do the following: 
@@ -92,7 +92,7 @@ Note: Covered entity may satisfy the transaction requirements through the use of
 
 ---
 
-The following is an excerpt from the CFR defining additional rules for clearinghouses(relevant sections bolded).
+The following is an excerpt from the CFR defining additional rules for clearinghouses (relevant sections bolded).
 > § 162.930   **Additional rules for health care clearinghouses.** 
 > When acting as a business associate for another covered entity, a health care **clearinghouse may perform the following functions**: 
 >> (a) **Receive a standard transaction** on behalf of the covered entity and translate it into a nonstandard transaction (for example, nonstandard format and/or nonstandard data content) for transmission to the covered entity. 
