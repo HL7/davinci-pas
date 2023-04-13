@@ -16,6 +16,7 @@ ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 not 
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 not found by validator
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 not found by validator
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 not found by validator
 
 Code System URI 'http://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
