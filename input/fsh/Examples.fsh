@@ -23,7 +23,7 @@ Instance: ReferralAuthorizationExample
 InstanceOf: PASClaim
 Title: "Referral Authorization Example"
 Description: "An example of a Claim resource requesting prior authorization of a referral."
-* extension[levelOfServiceType].valueCodeableConcept = http://codesystem.x12.org/005010/1338#U "Urgent"
+* extension[levelOfServiceType].valueCodeableConcept = https://codesystem.x12.org/005010/1338#U "Urgent"
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
@@ -48,18 +48,18 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * item.extension[itemTraceNumber].valueIdentifier.value = "1122334"
 * item.extension[authorizationNumber].valueString = "1122445"
 * item.extension[administrationReferenceNumber].valueString = "9988311"
-* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#SC "Specialty Care Review"
-* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#SC "Specialty Care Review"
+* item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.extension[requestedService].valueReference = Reference(ReferralRequestExample)
 * item.extension[epsdtIndicator].valueBoolean = false
-* item.extension[nursingHomeResidentialStatus].valueCodeableConcept = http://codesystem.x12.org/005010/1345#2 "Newly Admitted"
-* item.extension[nursingHomeLevelOfCare].valueCodeableConcept = http://codesystem.x12.org/005010/1337#2 "Intermediate Care Facility (ICF)"
+* item.extension[nursingHomeResidentialStatus].valueCodeableConcept = https://codesystem.x12.org/005010/1345#2 "Newly Admitted"
+* item.extension[nursingHomeLevelOfCare].valueCodeableConcept = https://codesystem.x12.org/005010/1337#2 "Intermediate Care Facility (ICF)"
 * item.extension[revenueUnitRateLimit].valueDecimal = 100.00
 * item.sequence = 1
 * item.careTeamSequence = 1
 * item.diagnosisSequence = 1
-* item.category = http://codesystem.x12.org/005010/1365#3 "Consultation"
-* item.productOrService = http://codesystem.x12.org/005010/1365#3 "Consultation"
+* item.category = https://codesystem.x12.org/005010/1365#3 "Consultation"
+* item.productOrService = https://codesystem.x12.org/005010/1365#3 "Consultation"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * careTeam.sequence = 1
 * careTeam.extension[careTeamClaimScope].valueBoolean = true
@@ -103,13 +103,13 @@ Description: "An example of a ClaimResponse giving approval for a referral."
 * item.extension[preAuthPeriod].valuePeriod.start = 2005-05-02
 * item.extension[preAuthPeriod].valuePeriod.end = 2005-06-02
 * item.extension[authorizedProvider].extension[provider].valueReference = Reference(ReferralPractitionerExample)
-* item.extension[authorizedItemDetail].extension[productOrServiceCode].valueCodeableConcept = http://codesystem.x12.org/005010/1365#3 "Consultation"
+* item.extension[authorizedItemDetail].extension[productOrServiceCode].valueCodeableConcept = https://codesystem.x12.org/005010/1365#3 "Consultation"
 * item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.value = 100
 * item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.currency = #USD
 * item.extension[authorizedItemDetail].extension[quantity].valueQuantity.value = 1
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
-* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = http://codesystem.x12.org/005010/306#A1 "Certified in total"
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
 
 Instance: ErrorResponseBundleExample
 InstanceOf: PASResponseBundle
@@ -186,16 +186,16 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
-* item.category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item.category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item.productOrService = http://www.ama-assn.org/go/cpt#G0154
 * item[1].sequence = 2
-* item[1].category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 
 Instance: HomecareAuthorizationUpdateBundleExample
 InstanceOf: PASRequestBundle
@@ -235,23 +235,23 @@ Description: "An example of a Claim resource updating a prior authorization."
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
-* item.category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item.category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item.productOrService = http://www.ama-assn.org/go/cpt#G0154
 * item[1].sequence = 2
 * item[1].modifierExtension[infoCancelledFlag].valueBoolean = true
-* item[1].category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#3 "Cancel"
+* item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#3 "Cancel"
 * item[2].sequence = 3
 * item[2].extension[infoChanged].valueCode = #added
-* item[2].category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item[2].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[2].productOrService = http://www.ama-assn.org/go/cpt#B4185
-* item[2].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[2].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item[2].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[2].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 
 Instance: HomecareAuthorizationDifferentialBundleExample
 InstanceOf: PASRequestBundle
@@ -294,16 +294,16 @@ Description: "An example of a Claim resource updating a prior authorization."
 * insurance.coverage = Reference(InsuranceExample)
 * item[0].sequence = 2
 * item[0].modifierExtension[infoCancelledFlag].valueBoolean = true
-* item[0].category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item[0].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[0].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[0].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[0].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item[0].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[0].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item[1].sequence = 3
 * item[1].extension[infoChanged].valueCode = #added
-* item[1].category = http://codesystem.x12.org/005010/1365#42 "Home Health Care"
+* item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4185
-* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 
 Instance: MedicalServicesAuthorizationBundleExample
 InstanceOf: PASRequestBundle
@@ -343,12 +343,12 @@ Description: "An example of a Claim resource requesting prior authorization of M
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#IN "Initial Medical Services Reservation"
-* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#IN "Initial Medical Services Reservation"
+* item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.extension[authorizationNumber].valueString = "1122344"
 * item.extension[administrationReferenceNumber].valueString = "33441122"
 * item.sequence = 1
-* item.category = http://codesystem.x12.org/005010/1365#1 "Medical Care"
+* item.category = https://codesystem.x12.org/005010/1365#1 "Medical Care"
 * item.productOrService = http://www.ama-assn.org/go/cpt#99212 "Established Office Visit"
 * item.servicedDate = "2005-05-10"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
@@ -391,18 +391,18 @@ Description: "An example of a Claim resource used to inquire for prior authoriza
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
-* item.extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item.extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
 * item.productOrService = http://www.ama-assn.org/go/cpt#G0154
 * item[1].sequence = 2
 * item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
-* item[1].extension[requestType].valueCodeableConcept = http://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = http://codesystem.x12.org/005010/1322#I "Initial"
+* item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
+* item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item[1].extension[certIssueDate].valueDate = "2019-07-01"
 * item[1].extension[certEffectiveDate].valueDate = "2019-07-01"
 * item[1].extension[certExpirationDate].valueDate = "2019-07-31"
-* item[1].extension[reviewActionCode].valueCodeableConcept = http://codesystem.x12.org/005010/306#A1 "Certified in total"
+* item[1].extension[reviewActionCode].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
 * item[1].extension[productOrServiceCodeEnd].valueCodeableConcept = http://www.ama-assn.org/go/cpt#B4190
 
 Instance: PASClaimInquiryResponseBundleExample
@@ -447,7 +447,7 @@ Description: "An example of a ClaimResponse resource that is a response to a cla
 * item.extension[requestedServiceDate].valuePeriod.end = 2005-06-02
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
-* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = http://codesystem.x12.org/005010/306#A1 "Certified in total"
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
 
 Instance: UMOExample
 InstanceOf: PASRequestor
@@ -524,7 +524,7 @@ Description: "A sample referral request that is the subject of a prior authoriza
 * status = #active
 * intent = #order
 * subject = Reference(SubscriberExample)
-* code = http://codesystem.x12.org/005010/1365#3 "Consultation"
+* code = https://codesystem.x12.org/005010/1365#3 "Consultation"
 * quantityQuantity = 1 '{visit}'
 
 Instance: CommunicationRequestExample
@@ -532,7 +532,7 @@ InstanceOf: PASCommunicationRequest
 Title: "Communication Request Example"
 Description: "A sample communication request asking for more information about a specific diagnosis."
 * status = #active
-* category = http://codesystem.x12.org/005010/755#15 "Justification for Admissions"
+* category = https://codesystem.x12.org/005010/755#15 "Justification for Admissions"
 * payload.extension[serviceLineNumber].valuePositiveInt = 1
 * payload.extension[communicatedDiagnosis].valueCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4
 * payload.extension[contentModifier].valueCodeableConcept = http://loinc.org#18657-7
@@ -567,8 +567,8 @@ InstanceOf: PASTiming
 Usage: #inline
 Title: "Timing Datatype Example"
 Description: "An example of a Timing with patterns."
-* extension[calendarPattern].valueCodeableConcept = http://codesystem.x12.org/005010/678#L "Monday through Thursday"
-* extension[deliveryPattern].valueCodeableConcept = http://codesystem.x12.org/005010/679#D "A.M."
+* extension[calendarPattern].valueCodeableConcept = https://codesystem.x12.org/005010/678#L "Monday through Thursday"
+* extension[deliveryPattern].valueCodeableConcept = https://codesystem.x12.org/005010/679#D "A.M."
 
 Instance: EncounterExample
 InstanceOf: PASEncounter
