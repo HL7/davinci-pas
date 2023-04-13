@@ -145,6 +145,7 @@ Description: "An example of a ClaimResponse with errors."
 * error[0].code = https://codesystem.x12.org/005010/901#04
 * error[1].code = https://codesystem.x12.org/005010/901#T4
 * error[1].extension[errorElement].valueString = "2010A-NM103"
+* error[1].extension[errorPath].valueString = "Bundle.entry[1].Organization.name"
 * error[1].extension[followupAction].valueCodeableConcept = https://codesystem.x12.org/005010/889#C
 
 Instance: HomecareAuthorizationBundleExample
