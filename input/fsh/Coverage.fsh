@@ -3,8 +3,9 @@ Parent: Coverage
 Id: profile-coverage
 Title: "PAS Coverage"
 Description: "PAS constraints on Coverage resource mandating support for insurance elements relevant to the prior authorization request"
+* identifier MS
 * status MS
-* status = #active (exactly)
+* status = #active
 * subscriber MS
 * subscriber only Reference(PASSubscriber)
 * subscriberId MS

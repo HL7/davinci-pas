@@ -5,5 +5,6 @@
   "status" : "trial-use",
   "sequence" : "STU 1.2",
   "milestone" : true,
+  "mode": "milestone",
   "desc" : "This is the published instance of the guide in the STU 1.2 sequence."
 }

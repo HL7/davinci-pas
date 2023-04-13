@@ -1,13 +1,14 @@
-Profile: PASClaimResponse
+Profile: PASClaimResponseBase
 Parent: ClaimResponse
-Id: profile-claimresponse
-Title: "PAS Claim Response"
-Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request"
+Id: profile-claimresponse-base
+Title: "PAS Claim Response Base"
+Description: "PAS constraints on ClaimResponse resource that are common to both the request and the inquiry."
+* ^abstract = true
 * identifier MS
 * identifier only PASIdentifier
 * status MS
-* status = #active (exactly)
-* use = #preauthorization (exactly)
+* status = #active
+* use = #preauthorization
 * patient MS
 * patient only Reference(PASBeneficiary)
 * created MS
@@ -25,33 +26,40 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	ItemPreAuthPeriod named preAuthPeriod 0..1 MS and
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
-	ItemAuthorizedDate named authorizedDate 0..1 MS and
+	ItemRequestedServiceDate named requestedServiceDate 0..1 MS and
 	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
-	ItemAuthorizedProvider named authorizedProvider 0..* MS and
-	CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
+	ItemAuthorizedProvider named authorizedProvider 0..* MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
 * item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
 * item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
-* item.extension[authorizedDate] ^short = "The date/period by which the item that is pre-authorized must be completed."
+* item.extension[requestedServiceDate] ^short = "The original date/period that was requested by the submitter for this item."
 * item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
-* item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * item.adjudication MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
-* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted (exactly)
+* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
+* error MS
+* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS and ErrorPath named errorPath 0..1 MS
+* error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
+* error.extension[errorElement] ^short = "The specific X12 loop, segment, or element that this error information is about."
+* error.extension[errorPath] ^short = "The FHIRPath expression that indicates which FHIR element that this error information is about."
+* error.code MS
+* error.code from X12278RejectReasonCodes (required)
+
+Profile: PASClaimResponse
+Parent: PASClaimResponseBase
+Id: profile-claimresponse
+Title: "PAS Claim Response"
+Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request"
+* item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
+* item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
-* error MS
-* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS
-* error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
-* error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
-* error.code MS
-* error.code from X12278RejectReasonCodes (required)
 
 Extension: ReviewAction
 Id: extension-reviewAction
@@ -78,9 +86,9 @@ Id: extension-itemPreAuthIssueDate
 Description: "The date when this item's preauthorization was issued."
 * value[x] only date
 
-Extension: ItemAuthorizedDate
-Id: extension-itemAuthorizedDate
-Description: "The date/period by which the item that is pre-authorized must be completed."
+Extension: ItemRequestedServiceDate
+Id: extension-itemRequestedServiceDate
+Description: "The original date/period that was requested by the submitter for this item."
 * value[x] only dateTime or Period
 
 Extension: ItemPreAuthPeriod
@@ -91,6 +99,11 @@ Description: "The date/period when this item's preauthorization is valid."
 Extension: ErrorElement
 Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about."
+* value[x] only string
+
+Extension: ErrorPath
+Id: extension-errorPath
+Description: "The FHIRPath expression that indicates which FHIR element that this error information is about."
 * value[x] only string
 
 Extension: ErrorFollowupAction
@@ -122,53 +135,9 @@ Description: "The specific provider who has been authorized to provide this item
 * extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 Profile: PASClaimInquiryResponse
-Parent: ClaimResponse
+Parent: PASClaimResponseBase
 Id: profile-claiminquiryresponse
 Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
-* identifier MS
-* identifier only PASIdentifier
-* status MS
-* status = #active (exactly)
-* use = #preauthorization (exactly)
-* patient MS
-* patient only Reference(PASBeneficiary)
-* created MS
-* insurer MS
-* insurer only Reference(PASInsurer)
-* requestor MS
-* requestor only Reference(PASRequestor)
-* request MS
-* request only Reference(PASClaim)
-* outcome MS
-* preAuthPeriod MS
-* item MS
-* item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
-	ItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
-	ItemPreAuthPeriod named preAuthPeriod 0..1 MS and
-	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
-	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
-	ItemAuthorizedDate named authorizedDate 0..1 MS and
-	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
-	ItemAuthorizedProvider named authorizedProvider 0..* MS and
-	CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
-* item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
-* item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
-* item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
-* item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
-* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
-* item.extension[authorizedDate] ^short = "The date/period by which the item that is pre-authorized must be completed."
-* item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
-* item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+* item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
-* item.adjudication MS
-* item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
-* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
-* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted (exactly)
-* item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
-* error MS
-* error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS
-* error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
-* error.extension[errorElement] ^short = "The specific loop, segment, or element that this error information is about."
-* error.code MS
-* error.code from X12278RejectReasonCodes (required)

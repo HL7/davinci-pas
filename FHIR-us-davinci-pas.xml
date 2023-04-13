@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="1.3.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="1.2.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-pas"/>
-<version code="1.3.0" url="http://hl7.org/fhir/us/davinci-pas/STU1.3"/>
+<version code="1.2.0" url="http://hl7.org/fhir/us/davinci-pas/STU1.2"/>
 <version code="1.2.0-ballot" url="http://hl7.org/fhir/us/davinci-pas/2022May"/>
 <version code="1.1.0" url="http://hl7.org/fhir/us/davinci-pas/STU1.1"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pas/STU1"/>
@@ -35,6 +35,7 @@
 <artifact id="ClaimResponse/ErrorResponseExample" key="ClaimResponse-ErrorResponseExample" name="Error Response Example"/>
 <artifact id="StructureDefinition/extension-errorElement" key="StructureDefinition-extension-errorElement" name="ErrorElement"/>
 <artifact id="StructureDefinition/extension-errorFollowupAction" key="StructureDefinition-extension-errorFollowupAction" name="ErrorFollowupAction"/>
+<artifact id="StructureDefinition/extension-errorPath" key="StructureDefinition-extension-errorPath" name="ErrorPath"/>
 <artifact id="Claim/HomecareAuthorizationUpdateExample" key="Claim-HomecareAuthorizationUpdateExample" name="Homecare Authorizaion Update Example"/>
 <artifact id="Bundle/HomecareAuthorizationBundleExample" key="Bundle-HomecareAuthorizationBundleExample" name="Homecare Authorization Bundle Example"/>
 <artifact id="Bundle/HomecareAuthorizationDifferentialBundleExample" key="Bundle-HomecareAuthorizationDifferentialBundleExample" name="Homecare Authorization Differential Update Bundle Example"/>
@@ -45,11 +46,12 @@
 <artifact id="StructureDefinition/extension-identifierSubDepartment" key="StructureDefinition-extension-identifierSubDepartment" name="IdentifierSubDepartment"/>
 <artifact id="StructureDefinition/modifierextension-infoCancelled" key="StructureDefinition-modifierextension-infoCancelled" name="InfoCancelledFlag"/>
 <artifact id="StructureDefinition/extension-infoChanged" key="StructureDefinition-extension-infoChanged" name="InfoChanged"/>
-<artifact id="StructureDefinition/extension-itemAuthorizedDate" key="StructureDefinition-extension-itemAuthorizedDate" name="ItemAuthorizedDate"/>
+<artifact deprecated="true" id="StructureDefinition/extension-itemAuthorizedDate" key="StructureDefinition-extension-itemAuthorizedDate" name="ItemAuthorizedDate"/>
 <artifact id="StructureDefinition/extension-itemAuthorizedDetail" key="StructureDefinition-extension-itemAuthorizedDetail" name="ItemAuthorizedDetail"/>
 <artifact id="StructureDefinition/extension-itemAuthorizedProvider" key="StructureDefinition-extension-itemAuthorizedProvider" name="ItemAuthorizedProvider"/>
 <artifact id="StructureDefinition/extension-itemPreAuthIssueDate" key="StructureDefinition-extension-itemPreAuthIssueDate" name="ItemPreAuthIssueDate"/>
 <artifact id="StructureDefinition/extension-itemPreAuthPeriod" key="StructureDefinition-extension-itemPreAuthPeriod" name="ItemPreAuthPeriod"/>
+<artifact id="StructureDefinition/extension-itemRequestedServiceDate" key="StructureDefinition-extension-itemRequestedServiceDate" name="ItemRequestedServiceDate"/>
 <artifact id="StructureDefinition/extension-itemTraceNumber" key="StructureDefinition-extension-itemTraceNumber" name="ItemTraceNumber"/>
 <artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
 <artifact id="Bundle/MedicalServicesAuthorizationBundleExample" key="Bundle-MedicalServicesAuthorizationBundleExample" name="Medical Services Authorization Bundle Example"/>
@@ -60,11 +62,13 @@
 <artifact id="StructureDefinition/extension-nursingHomeResidentialStatus" key="StructureDefinition-extension-nursingHomeResidentialStatus" name="NursingHomeResidentialStatus"/>
 <artifact id="StructureDefinition/profile-beneficiary" key="StructureDefinition-profile-beneficiary" name="PAS Beneficiary Patient"/>
 <artifact id="StructureDefinition/profile-claim" key="StructureDefinition-profile-claim" name="PAS Claim"/>
+<artifact id="StructureDefinition/profile-claim-base" key="StructureDefinition-profile-claim-base" name="PAS Claim Base"/>
 <artifact id="StructureDefinition/profile-claim-inquiry" key="StructureDefinition-profile-claim-inquiry" name="PAS Claim Inquiry"/>
 <artifact id="Claim/PASClaimInquiryExample" key="Claim-PASClaimInquiryExample" name="PAS Claim Inquiry Example"/>
 <artifact id="StructureDefinition/profile-claiminquiryresponse" key="StructureDefinition-profile-claiminquiryresponse" name="PAS Claim Inquiry Response"/>
 <artifact id="ClaimResponse/PASClaimInquiryResponseExample" key="ClaimResponse-PASClaimInquiryResponseExample" name="PAS Claim Inquiry ResponseExample"/>
 <artifact id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="PAS Claim Response"/>
+<artifact id="StructureDefinition/profile-claimresponse-base" key="StructureDefinition-profile-claimresponse-base" name="PAS Claim Response Base"/>
 <artifact id="StructureDefinition/profile-claim-update" key="StructureDefinition-profile-claim-update" name="PAS Claim Update"/>
 <artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="PAS CommunicationRequest"/>
 <artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="PAS Coverage"/>
@@ -119,7 +123,7 @@
 <artifact id="ValueSet/X12278RejectReasonCodes" key="ValueSet-X12278RejectReasonCodes" name="X12 278 Reject Reason Value Set"/>
 <artifact id="ValueSet/X12278RequestedServiceModifierType" key="ValueSet-X12278RequestedServiceModifierType" name="X12 278 Requested Service Modifier Type"/>
 <artifact id="ValueSet/X12278RequestedServiceType" key="ValueSet-X12278RequestedServiceType" name="X12 278 Requested Service Type"/>
-<artifact id="ValueSet/X12278ReviewDecisionReasonCode" key="ValueSet-X12278ReviewDecisionReasonCode" name="X12 278 Review Descision Reason Codes"/>
+<artifact id="ValueSet/X12278ReviewDecisionReasonCode" key="ValueSet-X12278ReviewDecisionReasonCode" name="X12 278 Review Decision Reason Codes"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

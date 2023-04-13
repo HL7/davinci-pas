@@ -1,6 +1,6 @@
 Instance: ClaimSubmitOperation
 InstanceOf: OperationDefinition
-Description: "This operation is used to submit a Claim, Pre-Authorization or Pre-Determination (all instances of Claim resources) for adjudication as a Bundle containing the Claim and other referenced resources for processing. The only input parameter is the single Bundle resource with a Claim instance (along with other referenced resources) and the only output is a single Bundle with a ClaimResponse (and other referenced resources) or an OperationOutcome resource."
+Description: "This operation is used to submit a Pre-Authorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimRequest instance (along with other referenced resources) and the only output is a single Bundle with a PASClaimResponse (and other referenced resources) or an OperationOutcome resource.  This is a variant of the FHIR Core Claim $submit operation."
 Usage: #definition
 
 * id = "Claim-submit"
@@ -9,12 +9,15 @@ Usage: #definition
 * title = "Submit a Claim resource for adjudication"
 * status = #draft
 * kind = #operation
+* description = "This operation is used to submit a Pre-Authorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimRequest instance (along with other referenced resources) and the only output is a single Bundle with a PASClaimResponse (and other referenced resources) or an OperationOutcome resource.  This is a variant of the FHIR Core Claim $submit operation."
 * code = #submit
 * base = "http://hl7.org/fhir/OperationDefinition/Claim-submit"
 * resource = #Claim
 * system = false
 * type = true
 * instance = false
+* inputProfile = Canonical(PASRequestBundle)
+* outputProfile = Canonical(PASResponseBundle)
 * parameter[0].name = #resource
 * parameter[0].use = #in
 * parameter[0].min = 1
@@ -30,7 +33,7 @@ Usage: #definition
 
 Instance: ClaimInquiryOperation
 InstanceOf: OperationDefinition
-Description: "This operation is used to make an inquiry for a Claim, Pre-Authorization or Pre-Determination (all instances of Claim resources) as a Bundle containing the Claim and other referenced resources for processing. The only input parameter is the single Bundle resource with a Claim instance (along with other referenced resources) and the only output is a single Bundle with a ClaimResponse (and other referenced resources) or an OperationOutcome resource."
+Description: "This operation is used to make an inquiry for a previously-submitted Pre-Authorization.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
 Usage: #definition
 
 * id = "Claim-inquiry"
@@ -39,12 +42,15 @@ Usage: #definition
 * title = "Submit a Claim resource for inquiry"
 * status = #draft
 * kind = #operation
+* description = "This operation is used to make an inquiry for a previously-submitted Pre-Authorization.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
 * code = #inquire
 * base = "http://hl7.org/fhir/OperationDefinition/Claim-submit"
 * resource = #Claim
 * system = false
 * type = true
 * instance = false
+* inputProfile = Canonical(PASInquiryRequestBundle)
+* outputProfile = Canonical(PASInquiryResponseBundle)
 * parameter[0].name = #resource
 * parameter[0].use = #in
 * parameter[0].min = 1

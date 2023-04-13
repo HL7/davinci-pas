@@ -1,7 +1,7 @@
 // Profiles
 Alias:   $USCoreCondition = http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition
 Alias:   $USCoreDiagnosticReportLab = http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-Alias:   $USCoreDocumentReference = http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentReference
+Alias:   $USCoreDocumentReference = http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
 Alias:   $USCoreEncounter = http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
 Alias:   $USCoreImmunization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
 Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location

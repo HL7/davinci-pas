@@ -4,6 +4,7 @@ Id: profile-communicationrequest
 Title: "PAS CommunicationRequest"
 Description: "PAS constraints on CommunicationRequest resource mandating support for elements relevant to the prior authorization response"
 * identifier MS
+* identifier ^short = "Unique Identifier used in linking the Communication Request to the response (X12's Attachment Control Number)."
 * status = #active (exactly)
 * category MS
 * category from https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 (required)

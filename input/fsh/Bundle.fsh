@@ -4,7 +4,7 @@ Id: profile-pas-request-bundle
 Title: "PAS Request Bundle"
 Description: "PAS constraints on Bundle resource ensuring that a claim/claim update resource is present and that non-supported elements are not."
 * identifier 1..1 MS
-* type = #collection (exactly)
+* type = #collection
 * timestamp 1..1 MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS
@@ -25,7 +25,7 @@ Id: profile-pas-inquiry-request-bundle
 Title: "PAS Inquiry Request Bundle"
 Description: "PAS constraints on Bundle resource ensuring that a claim inquiry resource is present and that non-supported elements are not."
 * identifier 1..1 MS
-* type = #collection (exactly)
+* type = #collection
 * timestamp 1..1 MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS
@@ -77,5 +77,5 @@ Description: "PAS constraints on Bundle resource ensuring that a claim inquiry r
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
-* entry contains ClaimResponse 1..1 MS
+* entry contains ClaimResponse 0..* MS
 * entry[ClaimResponse].resource only PASClaimInquiryResponse

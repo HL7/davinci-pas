@@ -107,7 +107,7 @@ Description: "A flag indicating whether the piece of information was cancelled."
 
 Extension: CertificationIssueDate
 Id: extension-itemCertificationIssueDate
-Description: "The date/period when this item's preauthorization was issued."
+Description: "The specific date or period within which this item's preauthorization was issued."
 * value[x] only date or Period
 * valueDate obeys FullDateRule
 * valuePeriod.start obeys FullDateRule
@@ -115,7 +115,7 @@ Description: "The date/period when this item's preauthorization was issued."
 
 Extension: CertificationExpirationDate
 Id: extension-itemCertificationExpirationDate
-Description: "The date/period by which the item that is pre-authorized must be completed."
+Description: "The specific date or period within which this item's preauthorization expires."
 * value[x] only date or Period
 * valueDate obeys FullDateRule
 * valuePeriod.start obeys FullDateRule
@@ -123,7 +123,7 @@ Description: "The date/period by which the item that is pre-authorized must be c
 
 Extension: CertificationEffectiveDate
 Id: extension-itemCertificationEffectiveDate
-Description: "The date/period when this item's preauthorization is valid."
+Description: "The specific date or period within which this item's preauthorization became effective."
 * value[x] only date or Period
 * valueDate obeys FullDateRule
 * valuePeriod.start obeys FullDateRule
