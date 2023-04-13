@@ -6,3 +6,17 @@ Description: "PAS constraints on Practitioner resource mandating support for ele
 * identifier only PASIdentifier
 * telecom MS
 * address MS
+
+Profile: PASPractitionerRole
+Parent: PractitionerRole
+Id: profile-practitionerrole
+Title: "PAS PractitionerRole"
+Description: "PAS constraints on PractitionerRole resource mandating support for elements relevant to the care team involved in a prior authorization request"
+* practitioner MS
+* practitioner only Reference(PASPractitioner)
+* organization MS
+* organization only Reference(PASOrganization)
+* telecom MS
+* code MS
+* location MS
+* location only Reference(PASLocation)

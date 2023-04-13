@@ -36,3 +36,10 @@ Description: "A base profile for organizations in PAS"
 * identifier[TIN] ^short = "The US Employer Identification Number (EIN) or Tax Identification Number (TIN)."
 * identifier[TIN] = TINIdentifierPattern
 * identifier[TIN].system 1..1
+
+Profile: PASLocation
+Parent: $USCoreLocation
+Id: profile-locaation
+Title: "PAS Location Profile"
+Description: "A profile on US-Core location to allow for specifying where a practitioner is working at."
+* address 1..1 MS

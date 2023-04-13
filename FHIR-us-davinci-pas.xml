@@ -10,7 +10,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="CodeSystem/AHANUBCRevenueCodes" key="CodeSystem-AHANUBCRevenueCodes" name="AHA NUBC Revenue Code System"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCRevenueCodes" key="CodeSystem-AHANUBCRevenueCodes" name="AHA NUBC Revenue Code System"/>
 <artifact id="ValueSet/AHANUBCRevenueCodes" key="ValueSet-AHANUBCRevenueCodes" name="AHA NUBC Revenue Value Set"/>
 <artifact id="StructureDefinition/extension-administrationReferenceNumber" key="StructureDefinition-extension-administrationReferenceNumber" name="AdministrationReferenceNumber"/>
 <artifact id="StructureDefinition/extension-authorizationNumber" key="StructureDefinition-extension-authorizationNumber" name="AuthorizationNumber"/>
@@ -70,6 +70,8 @@
 <artifact id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="PAS Claim Response"/>
 <artifact id="StructureDefinition/profile-claimresponse-base" key="StructureDefinition-profile-claimresponse-base" name="PAS Claim Response Base"/>
 <artifact id="StructureDefinition/profile-claim-update" key="StructureDefinition-profile-claim-update" name="PAS Claim Update"/>
+<artifact id="CodeSystem/PASCommunicationRequestMedium" key="CodeSystem-PASCommunicationRequestMedium" name="PAS Communication Medium Code System"/>
+<artifact id="ValueSet/PASCommunicationRequestMedium" key="ValueSet-PASCommunicationRequestMedium" name="PAS Communication Medium Value Set"/>
 <artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="PAS CommunicationRequest"/>
 <artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="PAS Coverage"/>
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="PAS Device Request"/>
@@ -83,9 +85,11 @@
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>
 <artifact id="Bundle/PASClaimInquiryResponseBundleExample" key="Bundle-PASClaimInquiryResponseBundleExample" name="PAS Inquiry Response Bundle Example"/>
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
+<artifact id="StructureDefinition/profile-locaation" key="StructureDefinition-profile-locaation" name="PAS Location Profile"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="PAS Organization Base Profile"/>
 <artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="PAS Practitioner"/>
+<artifact id="StructureDefinition/profile-practitionerrole" key="StructureDefinition-profile-practitionerrole" name="PAS PractitionerRole"/>
 <artifact id="StructureDefinition/profile-pas-request-bundle" key="StructureDefinition-profile-pas-request-bundle" name="PAS Request Bundle"/>
 <artifact id="StructureDefinition/profile-requestor" key="StructureDefinition-profile-requestor" name="PAS Requestor Organization"/>
 <artifact id="StructureDefinition/profile-pas-response-bundle" key="StructureDefinition-profile-pas-response-bundle" name="PAS Response Bundle"/>
@@ -116,10 +120,10 @@
 <artifact id="ValueSet/X12278DiagnosisCodes" key="ValueSet-X12278DiagnosisCodes" name="X12 278 Diagnosis Code Value Set"/>
 <artifact id="ValueSet/X12278DiagnosisInformationType" key="ValueSet-X12278DiagnosisInformationType" name="X12 278 Diagnosis Information Type"/>
 <artifact id="ValueSet/X12278DiagnosisType" key="ValueSet-X12278DiagnosisType" name="X12 278 Diagnosis Type Value Set"/>
-<artifact id="CodeSystem/X12278FollowUpActionCodes" key="CodeSystem-X12278FollowUpActionCodes" name="X12 278 Follow Up Action Code System"/>
+<artifact deprecated="true" id="CodeSystem/X12278FollowUpActionCodes" key="CodeSystem-X12278FollowUpActionCodes" name="X12 278 Follow Up Action Code System"/>
 <artifact id="ValueSet/X12278FollowUpActionCodes" key="ValueSet-X12278FollowUpActionCodes" name="X12 278 Follow Up Action Value Set"/>
 <artifact id="ValueSet/X12278LocationType" key="ValueSet-X12278LocationType" name="X12 278 Health Care Service Location Type Value Set"/>
-<artifact id="CodeSystem/X12278RejectReasonCodes" key="CodeSystem-X12278RejectReasonCodes" name="X12 278 Reject Reason Code System"/>
+<artifact deprecated="true" id="CodeSystem/X12278RejectReasonCodes" key="CodeSystem-X12278RejectReasonCodes" name="X12 278 Reject Reason Code System"/>
 <artifact id="ValueSet/X12278RejectReasonCodes" key="ValueSet-X12278RejectReasonCodes" name="X12 278 Reject Reason Value Set"/>
 <artifact id="ValueSet/X12278RequestedServiceModifierType" key="ValueSet-X12278RequestedServiceModifierType" name="X12 278 Requested Service Modifier Type"/>
 <artifact id="ValueSet/X12278RequestedServiceType" key="ValueSet-X12278RequestedServiceType" name="X12 278 Requested Service Type"/>

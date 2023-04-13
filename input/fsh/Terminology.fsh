@@ -33,57 +33,45 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 * ^experimental = false
 * codes from system PASSupportingInfoType
 
+CodeSystem: PASCommunicationRequestMedium
+Title: "PAS Communication Medium Code System"
+Description: "Extra types of channels that a communication request can be made"
+* ^experimental = false
+* ^caseSensitive = true
+* #CDEX "CDex Submit-Attachment" "Via a CDex Submitt-Attachment operation"
+
+ValueSet: PASCommunicationRequestMedium
+Title: "PAS Communication Medium Value Set"
+Description: "Types of channels that a communication request can be made"
+* ^experimental = false
+* ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* codes from system https://codesystem.x12.org/005010/756
+* codes from system PASCommunicationRequestMedium
+
 
 /*
-X12 Codesystems and ValueSets
+X12 ValueSets
 */
-CodeSystem: AHANUBCRevenueCodes
-Title: "AHA NUBC Revenue Code System"
-Description: "These codes are used to convey specific accomodation, ancillary service or unique billing calculations or arrangements. They are listed within the UB-04 Data Specifications Manual and maintained by the National Uniform Billing Committee (NUBC)."
-* ^publisher = "American Hospital Association, National Uniform Billing Committee"
-* ^url = "https://www.nubc.org/revenue-code"
-* ^copyright = "The Official UB-04 Data Specifications Manual, copyrighted by the American Hospital Association, is the only official source of UB-04 billing information adopted by the National Uniform Billing Committee. No other publication—governmental or private/commercial—can be considered authoritative.  See their website for licensing terms and conditions."
-* ^content = #not-present
-* ^caseSensitive = true
-* ^experimental = false
-
 ValueSet: AHANUBCRevenueCodes
 Title: "AHA NUBC Revenue Value Set"
 Description: "These codes are used to convey specific accomodation, ancillary service or unique billing calculations or arrangements. They are listed within the UB-04 Data Specifications Manual and maintained by the National Uniform Billing Committee (NUBC)."
 * ^experimental = false
-* codes from system AHANUBCRevenueCodes
-
-CodeSystem: X12278RejectReasonCodes
-Title: "X12 278 Reject Reason Code System"
-Description: "The complete set of codes that are used to indicate the reason why something was rejected."
-* ^publisher = "X12 Inc."
-* ^url = "https://codesystem.x12.org/005010/901"
-* ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^content = #not-present
-* ^caseSensitive = true
-* ^experimental = false
+* ^copyright = "The Official UB-04 Data Specifications Manual, copyrighted by the American Hospital Association, is the only official source of UB-04 billing information adopted by the National Uniform Billing Committee. No other publication—governmental or private/commercial—can be considered authoritative.  See their website for licensing terms and conditions."
+* codes from system https://www.nubc.org/revenue-code
 
 ValueSet: X12278RejectReasonCodes
 Title: "X12 278 Reject Reason Value Set"
 Description: "The complete set of codes that are used to indicate the reason why something was rejected."
 * ^experimental = false
-* codes from system X12278RejectReasonCodes
-
-CodeSystem: X12278FollowUpActionCodes
-Title: "X12 278 Follow Up Action Code System"
-Description: "The complete set of codes that are used to indicate any follow-up actions that are allowed for a reject reason."
-* ^publisher = "X12 Inc."
-* ^url = "https://codesystem.x12.org/005010/889"
 * ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^content = #not-present
-* ^caseSensitive = true
-* ^experimental = false
+* codes from system https://codesystem.x12.org/005010/901
 
 ValueSet: X12278FollowUpActionCodes
 Title: "X12 278 Follow Up Action Value Set"
 Description: "The complete set of codes that are used to indicate any follow-up actions that are allowed for a reject reason."
 * ^experimental = false
-* codes from system X12278FollowUpActionCodes
+* ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* codes from system https://codesystem.x12.org/005010/889
 
 ValueSet: X12278DiagnosisCodes
 Title: "X12 278 Diagnosis Code Value Set"
@@ -124,7 +112,7 @@ Description: "This set of codes identifies what service is being requested.  It 
 X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^experimental = false
 * http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable
-* codes from system http://codesystem.x12.org/005010/1365
+* codes from system https://codesystem.x12.org/005010/1365
 * codes from system http://www.ama-assn.org/go/cpt
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 * codes from system http://terminology.hl7.org/CodeSystem/icd9cm

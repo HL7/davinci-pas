@@ -15,11 +15,11 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * insurer MS
 * insurer only Reference(PASInsurer)
 * provider MS
-* provider only Reference(PASRequestor)
+* provider only Reference(PASRequestor or PASPractitionerRole)
 * careTeam MS
 * careTeam.sequence MS
 * careTeam.provider MS
-* careTeam.provider only Reference(PASPractitioner or PASOrganization)
+* careTeam.provider only Reference(PASPractitioner or PASOrganization or PASPractitionerRole)
 * careTeam.role MS
 * careTeam.qualification MS
 * careTeam ^slicing.discriminator.type = #value
