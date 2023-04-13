@@ -37,6 +37,7 @@ Error from server: Unable to provide support for code system https://codesystem.
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/901
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/889
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/1365
+Error from server: Unable to provide support for code system http://codesystem.x12.org/005010/1365
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/756
 
 The valueSet reference https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
