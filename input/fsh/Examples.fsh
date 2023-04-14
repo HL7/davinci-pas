@@ -18,6 +18,12 @@ Description: "An example of a Claim bundle requesting prior authorization of a r
 * entry[4].resource = SubscriberExample
 * entry[5].fullUrl = "http://example.org/fhir/ServiceRequest/ReferralRequestExample"
 * entry[5].resource = ReferralRequestExample
+* entry[6].fullUrl = "http://example.org/fhir/PractitionerRole/ReferralPractitionerRoleExample"
+* entry[6].resource = ReferralPractitionerRoleExample
+* entry[7].fullUrl = "http://example.org/fhir/Practitioner/ReferralPractitionerExample"
+* entry[7].resource = ReferralPractitionerExample
+* entry[8].fullUrl = "http://example.org/fhir/Location/ReferralLocationExample"
+* entry[8].resource = ReferralLocationExample
 
 Instance: ReferralAuthorizationExample
 InstanceOf: PASClaim
@@ -63,7 +69,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * careTeam.sequence = 1
 * careTeam.extension[careTeamClaimScope].valueBoolean = true
-* careTeam.provider = Reference(ReferralPractitionerExample)
+* careTeam.provider = Reference(ReferralPractitionerRoleExample)
 
 Instance: ReferralAuthorizationResponseBundleExample
 InstanceOf: PASResponseBundle
@@ -474,6 +480,24 @@ Description: "A sample payor organization."
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "789312"
 
+Instance: ReferralPractitionerRoleExample
+InstanceOf: PASPractitionerRole
+Title: "Submit Claim Referral Practitioner Role Example"
+Description: "A sample practitioner role instance."
+* practitioner = Reference(ReferralPractitionerExample)
+* location = Reference(ReferralLocationExample)
+
+Instance: ReferralLocationExample
+InstanceOf: PASLocation
+Title: "Submit Claim Referral Location Example"
+Description: "A sample location."
+* name = "REFERRAL CLINIC"
+* address.line = "111 1ST STREET"
+* address.city = "SAN DIEGO"
+* address.state = "CA"
+* address.country = "US"
+* address.postalCode = "92101"
+
 Instance: ReferralPractitionerExample
 InstanceOf: PASPractitioner
 Title: "Submit Claim Referral Practitioner Example"
@@ -535,7 +559,7 @@ Description: "A sample communication request asking for more information about a
 * category = https://codesystem.x12.org/005010/755#15 "Justification for Admissions"
 * payload.extension[serviceLineNumber].valuePositiveInt = 1
 * payload.extension[communicatedDiagnosis].valueCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4
-* payload.extension[contentModifier].valueCodeableConcept = http://loinc.org#18657-7
+* payload.extension[contentModifier].valueCodeableConcept = http://loinc.org#18804-5
 * payload.contentString = "Please provide further justification as interested."
 
 Instance: DeviceRequestExample

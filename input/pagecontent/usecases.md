@@ -133,7 +133,7 @@ If additional information is needed, the provider can respond with the informati
 2. Via a CDex Submit-Attachment operation where the LOINC code indicates a specific Questionnaire exists on the Payers Operation endpoint using the tracing ID as the business identifier
 3. Via an X12 275 response (by provider) to a X12 278 response (as represented in the response FHIR bundle)
 
-NOTE: A payer can request information in a number of means but **SHALL** explicitly communicate the method by which the information will be provided to the provider using the CommunicationRequest.method element.
+NOTE: A payer can request information in a number of means but **SHALL** explicitly communicate the method by which the information will be provided to the provider using the CommunicationRequest.method element.  The [CommunicationRequest Medium ValueSet](ValueSet-PASCommunicationRequestMedium.html) includes non-X12 codes that allow an intermediary to specify additional methods for sending the additional information, i.e. via a CDex Submit-Attachment operation.  Only intermediaries will send these codes.
 
 Here is a diagram that shows the workflow associated with a request for additional information:
 

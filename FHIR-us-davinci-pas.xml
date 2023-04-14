@@ -113,7 +113,9 @@
 <artifact id="Patient/BeneficiaryExample" key="Patient-BeneficiaryExample" name="Submit Claim Beneficiary Example"/>
 <artifact id="Coverage/InsuranceExample" key="Coverage-InsuranceExample" name="Submit Claim Insurance Example"/>
 <artifact id="Organization/InsurerExample" key="Organization-InsurerExample" name="Submit Claim Insurer Example"/>
+<artifact id="Location/ReferralLocationExample" key="Location-ReferralLocationExample" name="Submit Claim Referral Location Example"/>
 <artifact id="Practitioner/ReferralPractitionerExample" key="Practitioner-ReferralPractitionerExample" name="Submit Claim Referral Practitioner Example"/>
+<artifact id="PractitionerRole/ReferralPractitionerRoleExample" key="PractitionerRole-ReferralPractitionerRoleExample" name="Submit Claim Referral Practitioner Role Example"/>
 <artifact id="ServiceRequest/ReferralRequestExample" key="ServiceRequest-ReferralRequestExample" name="Submit Claim Referral Request Example"/>
 <artifact id="Organization/UMOExample" key="Organization-UMOExample" name="Submit Claim Requestor Example"/>
 <artifact id="Patient/SubscriberExample" key="Patient-SubscriberExample" name="Submit Claim Subscriber Example"/>

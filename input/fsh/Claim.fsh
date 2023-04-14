@@ -183,7 +183,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * provider ^short = "This is the submitter of the inquiry."
 * billablePeriod MS
-* diagnosis 0..1 MS
+* diagnosis ^comment = "When multiple diagnoses are sent, the intermediary will need to convert the single inquiry into multiple X12 278 inquiries - one for each diagnosis code - and then make the union of the returned Prior Authorization responses."
 * item.extension contains 
 	CertificationIssueDate named certIssueDate 0..1 MS and
 	CertificationExpirationDate named certExpirationDate 0..1 MS and
