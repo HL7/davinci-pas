@@ -1,3 +1,5 @@
+[Previous Page - Downloads](downloads.html)
+
 ### Credits
 Primary author:
 
@@ -64,3 +66,5 @@ Organizational participants included:
 Additional regular participants: Christy Dodson, Peter Muir, Rachel Foerster, Raj, Rim Cothern
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
+
+[Next Page - Artifacts Overview](fhirArtifacts.html)

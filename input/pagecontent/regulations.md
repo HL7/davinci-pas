@@ -1,3 +1,5 @@
+[Previous Page - Technical Background](background.html)
+
 The Health Insurance Portability and Accountability Act (HIPAA) of 1996 contains the following three major provisions:
 * Portability
 * Medicaid Integrity Program/Fraud and Abuse
@@ -112,3 +114,5 @@ The following is an excerpt from the CFR defining additional rules for health pl
 >> (c) Code sets. A health plan must meet each of the following requirements:
 >>> (1) Accept and promptly process any standard transaction that contains codes that are valid, as provided in subpart J of this part.
 >>> (2) Keep code sets for the current billing period and appeals periods still open to processing under the terms of the health plan's coverage.
+
+[Next Page - Formal Specification](specification.html)

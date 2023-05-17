@@ -1,3 +1,5 @@
+[Previous Page - Credits](credits.html)
+
 Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
 
 The FHIR artifacts used by PAS are organized according to whether the content developed as part of the US Core implementation guides or is Da Vinci-specific.

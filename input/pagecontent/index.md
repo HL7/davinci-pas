@@ -61,3 +61,5 @@ This implementation guide relies on the following other specifications:
 * **[US Core]({{site.data.fhir.hl7_fhir_us_core}})** - The published version of US Core based on FHIR R4.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+[Next Page - Use Cases](usecases.html)
