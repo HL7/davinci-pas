@@ -29,24 +29,53 @@ parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
 copyrightYear: 2020+
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 3
 releaseLabel: STU 1.2
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:
   index.md:
     title: Prior Authorization Implementation Guide Home Page
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
   usecases.md:
     title: Use Cases and Overview
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
   background.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
     title: Technical Background
   regulations.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
     title: HIPAA Regulations
   specification.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
     title: Formal Specification
   downloads.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
     title: Downloads
   credits.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
     title: Credits
   fhirArtifacts.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
     title: Artifacts Overview
 
 menu:

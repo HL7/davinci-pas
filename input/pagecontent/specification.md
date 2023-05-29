@@ -69,7 +69,8 @@ In the event that the prior authorization cannot be evaluated and a final respon
 {::options parse_block_html="true" /}
 
 #### Prior Authorization Submission
-The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.
+The Claim/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/Claim/$submit endpoint.  When an EHR configures itself to support a payer's PAS service, it will need to identify which Payer(s) the service supports such that it can ensure that the EHR only sends service calls to PAS services that the patient has current coverage for.  The payer endpoint is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
+Provider and EHR Vendor organizations MAY leverage the [payer registry] developed by PDex (which will eventually fold into the national directory under FAST) as a means of determining which endpoints exist for which payers as candidates for configuration.
 
 The Bundle **SHALL** be encoded in JSON.  The first entry in the Bundle **SHALL** be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N 278 message.  Additional Bundle entries **SHALL** be populated with any resources referenced by the Claim resource (and any resources referenced by *those* resources, fully traversing all references and complying with all identified profiles).  Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once.  E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate.  Bundle.entry.fullUrl values **SHALL** be:
 
