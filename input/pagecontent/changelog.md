@@ -1,0 +1,117 @@
+### Version = 1.2.0
+- url: <http://hl7.org/fhir/us/davinci-pas/STU1.2>
+- Based on FHIR version: 4.0.1
+
+The changes in this update to the Da Vinci Prior Authorization guide have been reviewed and commented on by the public through the HL7 balloting process.  The resolution of the community comments has been agreed to and voted on by the members of the HL7 International Financial Management work group.
+
+#### What's new in Version 1.2.0 of Da Vinci Prior Authorization:
+
+Implementers can find detailed comparisons between the FHIR artifacts at [Changes Between Versions](comparison-v1.1.0/index.html) page.  This section provides an overview of the significant changes in Version 1.2.0 of Da Vinci Prior Authorization.
+
+- ALL PAGES
+  - Made Conformance verbs bold everywhere (FHIR-36583)
+  - Fix typos (FHIR-36608, FHIR-36623, FHIR-36175)
+  - Added next-page/previous-page navigation links (FHIR-24358)
+  - Added FMM status to the IG and all artifacts (FHIR-24113)
+  - Added a change log page (FHIR-36581)
+- Home Page
+  - Added link to Da Vinci HIPAA Exception Confluence Page (FHIR-36592)
+- Use Cases
+  - Pull notes out of the PA Process diagram (FHIR-34540, FHIR-36153)
+  - Add sentence to section 2.3.5 (FHIR-36145)
+  - Add link to post-acute orders IG in section 2.3 (FHIR-36252)
+  - Fix section 2.3.7 (FHIR-36320)
+  - Replace figure 2.4 with new diagram (FHIR-36115, FHIR-36322)
+  - Modify bullet #4 in section 2.3.1 (FHIR-36357)
+  - Update most recent survey info (FHIR-36560)
+  - Update bullet #1 in section 2.3.2 (FHIR-36566)
+  - Fix section 2.3.3 (FHIR-36570)
+  - Added section on using the inquiry function to find Prior Authorizations (FHIR-36571)
+  - Update parentheticals in section 2.3.6 (FHIR-36577)
+  - Update section 2.3.7 (FHIR-36578, FHIR-36584, FHIR-36587)
+  - Add a Supported Use Case section around what is currently supported in the IG (FHIR-37769)
+  - Remove references to polling (FHIR-39750)
+- Background
+  - Update section 3.1.1 (FHIR-36593, FHIR-40465)
+  - Add a section on how to resolve the X12 codesystem and value sets (FHIR-34393, FHIR-36422, FHIR-36604)
+  - Add a section on how Must Support is used in the IG (FHIR-36157)
+- Formal Specification
+  - Add a note around the use of tense and the Claim resource (FHIR-36044)
+  - Use the verb 'update' and reference 5.2.9 and section 2.3 (FHIR-36147)
+  - Add a note around the Confluence page and the fact that it is currently empty at time of publication (FHIR-36159, FHIR-36323, FHIR-36590, FHIR-36595)
+  - Define 278i and 278r (FHIR-36238)
+  - Updates to various sections (FHIR-36152, FHIR-36236, FHIR-36321, FHIR-36324, FHIR-36325, FHIR-36594, FHIR-36611, FHIR-36612, FHIR-36613, FHIR-36616, FHIR-36618, FHIR-36619, FHIR-36620, FHIR-40411, FHIR-40412, FHIR-40414)
+  - Remove Polling (FHIR-36350, FHIR-36353, FHIR-36358, FHIR-36565, FHIR-36567, FHIR-36614, FHIR-38199, FHIR-36617)
+  - Indicate which version of subscriptions will be used (FHIR-39418)
+  - Add a section on endpoint resolution (FHIR-39505)
+  - Fix typo in Figure 5.3 (FHIR-36317)
+  - Add content and diagrams around ePA workflow (FHIR-36558)
+- Credits
+  - Updated credits for new version of guide (FHIR-36621)
+- Profiles
+  - Added new examples (FHIR-36610)
+  - Added capability statements (FHIR-38628)
+  - Support CR* condition codes, Home Health Care Prognosis Code and Start Date (FHIR-38137)
+  - Add a PASNutritionOrder to the requestedService options (FHIR-39550)
+  - Use the FHIR R5 Claim.encounter field (FHIR-24169)
+  - Add a link to the base submit operation in the operation details (FHIR-24560)
+  - Add descriptions to care team slices (FHIR-36043)
+  - Fix serviceExtensionRequestType description (FHIR-36089)
+  - Change CommunicationRequest.identifier description (FHIR-36097)
+  - Change itemAuthorizedDate extension description and name (FHIR-36100)
+  - Add fhirPath element to errorElement extension (FHIR-36103)
+  - Fix certExpirationDate and certEffectiveDate descriptions (FHIR-36112)
+  - Create PASDocumentReference profile and reference it in the Claim profile (FHIR-36155)
+  - Create abstract profiles for Bundle/Claim/ClaimResponse (FHIR-36428)
+  - Inquiry operation response should be 0..* (FHIR-40388)
+  - Declare specific profiles in the operation parameters (FHIR-40389, FHIR-40390)
+  - Add info that the inquiry operation is a query-by-example (FHIR-40410)
+  - Make Claim.item.category 1..1 and indicate that it is needed for X12 (FHIR-40758)
+  - AdditionalInformation slice should be 0..* (FHIR-39540)
+  - Message Text slice should be 0..* (FHIR-39541)
+  - Accident Date needs format usage information (FHIR-39544)
+  - Coverage.identifier needs to be Must-Support (FHIR-37936)
+  - Document that the PASClaim.diagnosis is unbounded but X12 only supports 12 repetitions. (FHIR-39499)
+  - Fix the typo on X12 decision reason codes (FHIR-39660)
+  - Add a usage note on item.quantity units (FHIR-39611)
+  - Update subdepartment and jurisdiction extension descriptions (FHIR-40259)
+  - Update inquiry provider description (FHIR-40391)
+  - Add TIN Organization identifier slice (FHIR-36099)
+  - Add new PractitionerRole profile to Claim.careTeam.provider (FHIR-36485)
+  - Create PractitionerRole profile and change provider to reference PractitionerRole (FHIR-36669, FHIR-36737, FHIR-40512)
+  - Change Content modifier value set to use proper LOINC codes (FHIR-39728)
+  - Change value set for CommunicationRequest.medium (FHIR-36586)
+  - Fix display of bundle examples (FHIR-40672)
+  - Add note about sending multiple diagnosis codes in ClaimInquiry (FHIR-39500)
+
+#### What's new in Version 1.1.0 of Da Vinci Prior Authorization
+- Organization profiles were changed: (FHIR-30880)
+  - Address changed from 1..1 to 0..1
+  - Value set changed from https://valueset.x12.org/x217/005010/request/2010B/NM1/1/01/00/98 to https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98
+- The AuthorizedProvider profile has a new providerType CodeableConcept added to it. (FHIR-30881)
+- Added NDC codes and a "not applicable" code to the X12278RequestedServiceType value set. (FHIR-30882)
+- Created a new value set for the service modifier types that only has CPT and HCPCS codes. (FHIR-30883)
+- Changed the modifier value in the AuthorizedDetail extension to be 0..* instead of 0..1. (FHIR-30884)
+- Added an extension for state to the new PASIdentifier datatype. (FHIR-30885).
+- Added a constraint to all dates that are used to ensure that a full date is being sent. (FHIR-30886)
+- The Admission date period was change to two separate periods to handle a range of admission dates and a separate range of discharge dates. (FHIR-30887)
+- Fix the extensions on CommunicationRequest to be on the CommunicationRequest.payload where they were intended. (FHIR-30888)
+- All references on elements that are marked as Must Support now reference either PAS or US-Core profiles. (FHIR-30890)
+- The Additional Information supporting info section has had a note added to indicate that the PASDocumentReference profile is the preferred profile for sending extra documentation. (FHIR-31024)
+- New Identifier profile created (PASIdentifier) with the required extensions and uses of Identifier in Claim and ClaimResponse profiles changed to PASIdentifier. (FHIR-31025, FHIR-31372)
+- Added CommunicatedDiagnosis to ClaimResponse and ClaimInquiryResponse. (FHIR-31086, FHIR-31370)
+- Changed Certification Issue Date, Certification Effective Date, and Certifacation Expiration Date to be a date or a period to handle searching by a range. (FHIR-31373)
+- Added short descriptions to every use of an extension and every Claim.supportingInfo slice. (FHIR-31414)
+- Added a note to any value set that includes CPT and HCPCS codes that X12 will identify those codes as being HCPCS no matter what was originally sent in. (FHIR-31630)
+- Created a PASOrganization profile on Organization and used the PASIdentifier datatype on Practitioner and Organization. (FHIR-32427)
+- Change the cardinality of the ReviewAction reasonCode to be 0..*. (FHIR-32426)
+- Add the ItemTraceNumber extension to ClaimInquiryResponse profile and make it 0..*. (FHIR-32425, FHIR-32891)
+- Fix the Claim inquiry operation endpoint to be $inquiry instead of $submit. (FHIR-31948)
+- Add language to the Home Page about ability to not convert into and out of an X12 278. (FHIR-32867)
+- Add language to the Specification to allow other methods of exchanging the FHIR Bundle besides the X12 275. (FHIR-32866)
+- Change extension names to more closely match their IDs. (FHIR-32877)
+- Add a line number extension to the CommunicationRequest payload. (FHIR-32878)
+- Revise the language about how Prior Authorizations are cancelled. (FHIR-32112)
+- Move the ReviewAction extension from the ClaimResponse.item to the ClaimResponse.item.adjudication. (FHIR-32900)
+- Fix the bindings for the CareTeam roles. (FHIR-32954)
+- Remove mandatory XML support and make only JSON the allowed exchange format. (FHIR-33059)

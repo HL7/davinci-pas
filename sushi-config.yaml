@@ -68,15 +68,14 @@ pages:
         valueCode: informative
     title: Downloads
   credits.md:
-    extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
     title: Credits
   fhirArtifacts.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
     title: Artifacts Overview
+  changelog.md:
+    title: Change Log
 
 menu:
   Table of Contents: toc.html
@@ -92,4 +91,5 @@ menu:
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
     US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
+  Change Log: changelog.html
   History: http://hl7.org/fhir/us/davinci-pas/history.html
