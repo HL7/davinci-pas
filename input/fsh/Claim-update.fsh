@@ -76,7 +76,36 @@ Description: "The limit on the rate per unit of revenue for hospital accomodatio
 Extension: RequestedService
 Id: extension-requestedService
 Description: "The details of the service being requested."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
 * value[x] only Reference(PASMedicationRequest or PASServiceRequest or PASDeviceRequest)
+
+Extension: ConditionCode
+Id: extension-conditionCode
+Description: "Information to supply various patient conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
+* extension contains category 1..1 and code 1..1
+* extension[category].value[x] only CodeableConcept
+* extension[category].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/CRC/1/20/00/1136 (required)
+* extension[category] ^short = "Code Category (CRC01)"
+* extension[code].value[x] only CodeableConcept
+* extension[code].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/CRC/1/20/00/1321 (required)
+* extension[code] ^short = "Condition Indicator (CRC03)"
+
+Extension: HomeHealthCareInformation
+Id: extension-homeHealthCareInformation
+Description: "Information needed for home health care requests."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
+* extension contains prognosis 1..1 and date 1..1
+* extension[prognosis].value[x] only CodeableConcept
+* extension[prognosis].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/CR6/1/20/00/923 (required)
+* extension[prognosis] ^short = "Prognosis Code (CR601)"
+* extension[date].value[x] only date
+* extension[date].valueDate obeys FullDateRule
+* extension[date] ^short = "Home Health Start Date"
+
 
 Profile: PASClaimUpdate
 Parent: PASClaim

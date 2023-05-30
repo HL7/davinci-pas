@@ -25,6 +25,7 @@
 <artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="ClaimSubmitOperation"/>
 <artifact id="StructureDefinition/extension-communicatedDiagnosis" key="StructureDefinition-extension-communicatedDiagnosis" name="CommunicatedDiagnosis"/>
 <artifact id="CommunicationRequest/CommunicationRequestExample" key="CommunicationRequest-CommunicationRequestExample" name="Communication Request Example"/>
+<artifact id="StructureDefinition/extension-conditionCode" key="StructureDefinition-extension-conditionCode" name="ConditionCode"/>
 <artifact id="StructureDefinition/extension-contentModifier" key="StructureDefinition-extension-contentModifier" name="ContentModifier"/>
 <artifact id="StructureDefinition/extension-timingdeliverypattern" key="StructureDefinition-extension-timingdeliverypattern" name="DeliveryPattern"/>
 <artifact id="DeviceRequest/DeviceRequestExample" key="DeviceRequest-DeviceRequestExample" name="Device Request Example"/>
@@ -36,6 +37,7 @@
 <artifact id="StructureDefinition/extension-errorElement" key="StructureDefinition-extension-errorElement" name="ErrorElement"/>
 <artifact id="StructureDefinition/extension-errorFollowupAction" key="StructureDefinition-extension-errorFollowupAction" name="ErrorFollowupAction"/>
 <artifact id="StructureDefinition/extension-errorPath" key="StructureDefinition-extension-errorPath" name="ErrorPath"/>
+<artifact id="StructureDefinition/extension-homeHealthCareInformation" key="StructureDefinition-extension-homeHealthCareInformation" name="HomeHealthCareInformation"/>
 <artifact id="Claim/HomecareAuthorizationUpdateExample" key="Claim-HomecareAuthorizationUpdateExample" name="Homecare Authorizaion Update Example"/>
 <artifact id="Bundle/HomecareAuthorizationBundleExample" key="Bundle-HomecareAuthorizationBundleExample" name="Homecare Authorization Bundle Example"/>
 <artifact id="Bundle/HomecareAuthorizationDifferentialBundleExample" key="Bundle-HomecareAuthorizationDifferentialBundleExample" name="Homecare Authorization Differential Update Bundle Example"/>
