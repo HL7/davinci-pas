@@ -25,6 +25,21 @@ The artifacts are of four types:
 * [Extensions]({{site.data.fhir.path}}extensibility.html) define additional data elements that can be conveyed as part of a resource
 * [Code Systems]({{site.data.fhir.path}}codesystem.html) define PAS-specific terminologies to be used in one or more of those profiles
 * [Value Sets]({{site.data.fhir.path}}valueset.html) define the specific subsets of both PAS-defined and other code systems that can be (or are recommended to be) used within one or more profile elements
-* [Operations]({{site.data.fhir.path}}operationdefinition.html) of which there is only one which defines the PAS-specific constraints on the Claim submit operation.
+* [Operations]({{site.data.fhir.path}}operationdefinition.html) which define the PAS-specific constraints on the Claim submit operation as well as a Claim inquiry operation.
 
-<!-- Todo: examples, capabilitystatement, TestScenario? -->
+
+### Cross-Version Analysis
+{% include cross-version-analysis.xhtml %}
+
+### Intellectual Property Statements
+{% include ip-statements.xhtml %}
+
+### Global Profiles
+
+{% include globals-table.xhtml %}
+
+### IG Dependencies
+
+This IG Contains the following dependencies on other IGs.
+
+{% include dependency-table.xhtml %}
