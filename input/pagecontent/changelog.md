@@ -6,7 +6,7 @@ The changes in this update to the Da Vinci Prior Authorization guide have been r
 
 #### What's new in Version 1.2.0 of Da Vinci Prior Authorization:
 
-Implementers can find detailed comparisons between the FHIR artifacts at [Changes Between Versions](comparison-v1.1.0/index.html) page.  This section provides an overview of the significant changes in Version 1.2.0 of Da Vinci Prior Authorization.
+Implementers can find detailed comparisons between the FHIR artifacts at [Changes Between Versions](comparison-v1.2.0-ballot/index.html) page.  This section provides an overview of the significant changes in Version 1.2.0 of Da Vinci Prior Authorization.
 
 - ALL PAGES
   - Made Conformance verbs bold everywhere (FHIR-36583)
