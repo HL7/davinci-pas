@@ -12,11 +12,7 @@ Parent: PractitionerRole
 Id: profile-practitionerrole
 Title: "PAS PractitionerRole"
 Description: "PAS constraints on PractitionerRole resource mandating support for elements relevant to the care team involved in a prior authorization request"
-* practitioner MS
+* practitioner MS 1..1
 * practitioner only Reference(PASPractitioner)
 * organization MS
 * organization only Reference(PASOrganization)
-* telecom MS
-* code MS
-* location MS
-* location only Reference(PASLocation)

@@ -4,6 +4,7 @@ Id: profile-medicationrequest
 Title: "PAS Medication Request"
 Description: "PAS constraints on MedicationRequest resource mandating support for elements relevant to the prescriptions being requested on a prior authorization request"
 * intent = #order (exactly)
+* subject MS
 * subject only Reference(PASBeneficiary)
 * dosageInstruction.timing MS
 * dosageInstruction.timing only PASTiming
@@ -25,6 +26,22 @@ Description: "PAS constraints on ServiceRequest resource mandating support for e
 * subject only Reference(PASBeneficiary)
 * occurrence[x] MS
 * occurrence[x] only PASTiming
+
+Profile: PASNutritionOrder
+Parent: NutritionOrder
+Id: profile-nutritionorder
+Title: "PAS Nutrition Order"
+Description: "PAS constraint on Nutrition Order resource for elements relevant to the ordering of nutrition on a prior authorization request"
+* intent = #order (exactly)
+* patient MS
+* patient only Reference(PASBeneficiary)
+* oralDiet MS
+* oralDiet.type MS
+* oralDiet.type from X12278NutritionOralDietType (required)
+* enteralFormula MS
+* enteralFormula.baseFormulaType MS
+* enteralFormula.baseFormulaType from X12278NutritionEnteralFormulaType (required)
+
 
 Profile: PASDeviceRequest
 Parent: DeviceRequest

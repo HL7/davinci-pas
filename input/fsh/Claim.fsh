@@ -4,8 +4,12 @@ Id: profile-claim-base
 Title: "PAS Claim Base"
 Description: "PAS constraints on Claim resource that are common to both the request and the inquiry."
 * ^abstract = true
-* extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
+* extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS and
+	ConditionCode named conditionCode 0..* and
+	HomeHealthCareInformation named homeHealthCareInformation 0..1
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
+* extension[conditionCode] ^short = "Used to indicate condition codes for various requests for service."
+* extension[homeHealthCareInformation] ^short = "Used to provide required information about home health care services. (CR6)"
 * identifier 0..1 MS
 * identifier only PASIdentifier
 * identifier ^short = "Business identifier for claim"
@@ -19,7 +23,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * careTeam MS
 * careTeam.sequence MS
 * careTeam.provider MS
-* careTeam.provider only Reference(PASPractitioner or PASOrganization or PASPractitionerRole)
+* careTeam.provider only Reference(PASOrganization or PASPractitionerRole)
 * careTeam.role MS
 * careTeam.qualification MS
 * careTeam ^slicing.discriminator.type = #value
@@ -73,17 +77,13 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	ServiceItemRequestType named requestType 0..1 MS and
 	CertificationType named certificationType 0..1 MS and
-	ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and
-	ConditionCode named conditionCode 0..* and
-	HomeHealthCareInformation named homeHealthCareInformation 0..1
+	ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[authorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
 * item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
 * item.extension[requestType] ^short = "A code that identifies the type of service being requested."
 * item.extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * item.extension[productOrServiceCodeEnd] ^short = "Used to provide the last code in a series of codes for the service being requested."
-* item.extension[conditionCode] ^short = "Used to indicate condition codes for various requests for service."
-* item.extension[homeHealthCareInformation] ^short = "Used to provide required information about home health care services. (CR6)"
 * item.sequence MS
 * item.careTeamSequence MS
 * item.diagnosisSequence MS

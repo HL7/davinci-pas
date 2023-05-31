@@ -78,29 +78,31 @@ Id: extension-requestedService
 Description: "The details of the service being requested."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
-* value[x] only Reference(PASMedicationRequest or PASServiceRequest or PASDeviceRequest)
+* value[x] only Reference(PASMedicationRequest or PASServiceRequest or PASDeviceRequest or PASNutritionOrder)
 
 Extension: ConditionCode
 Id: extension-conditionCode
 Description: "Information to supply various patient conditions."
 * ^context[+].type = #element
-* ^context[=].expression = "Claim.item"
-* extension contains category 1..1 and code 1..1
+* ^context[=].expression = "Claim"
+* extension contains category 1..1 and indicator 1..1 and code 1..*
 * extension[category].value[x] only CodeableConcept
-* extension[category].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/CRC/1/20/00/1136 (required)
-* extension[category] ^short = "Code Category (CRC01)"
+* extension[category].valueCodeableConcept from X12278ConditionCategory (required)
+* extension[category] ^short = "Condition Code Category (CRC01)"
+* extension[indicator] ^short = "Certification Condition Indicator (CRC02)"
+* extension[indicator].value[x] only boolean
 * extension[code].value[x] only CodeableConcept
-* extension[code].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/CRC/1/20/00/1321 (required)
-* extension[code] ^short = "Condition Indicator (CRC03)"
+* extension[code].valueCodeableConcept from X12278ConditionCode (required)
+* extension[code] ^short = "Condition Code (CRC03)"
 
 Extension: HomeHealthCareInformation
 Id: extension-homeHealthCareInformation
 Description: "Information needed for home health care requests."
 * ^context[+].type = #element
-* ^context[=].expression = "Claim.item"
+* ^context[=].expression = "Claim"
 * extension contains prognosis 1..1 and date 1..1
 * extension[prognosis].value[x] only CodeableConcept
-* extension[prognosis].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/CR6/1/20/00/923 (required)
+* extension[prognosis].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923 (required)
 * extension[prognosis] ^short = "Prognosis Code (CR601)"
 * extension[date].value[x] only date
 * extension[date].valueDate obeys FullDateRule

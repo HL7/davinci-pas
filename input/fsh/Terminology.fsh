@@ -140,3 +140,29 @@ Description: "Codes used to identify the reason for the health care service revi
 * ^copyright = "This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^experimental = false
 * codes from system https://codesystem.x12.org/external/886
+
+ValueSet: X12278ConditionCategory
+Title: "X12 278 CRC Condition Category"
+Description: "This set of codes identifies the category of a patient's condition."
+* ^copyright = "X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^experimental = false
+* codes from system https://codesystem.x12.org/005010/1136
+
+ValueSet: X12278ConditionCode
+Title: "X12 278 CRC Condition Code"
+Description: "This set of codes identifies a patient's conditions."
+* ^copyright = "X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^experimental = false
+* codes from system https://codesystem.x12.org/005010/1321
+
+ValueSet: X12278NutritionOralDietType
+Title: "X12 278 Nutrition Oral Diet Type"
+Description: "This set of codes identifies oral diet codes."
+* ^experimental = false
+* codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+
+ValueSet: X12278NutritionEnteralFormulaType
+Title: "X12 278 Nutrition Enteral Formula Type"
+Description: "This set of codes identifies enteral formula codes."
+* ^experimental = false
+* codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets

@@ -89,6 +89,7 @@
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
 <artifact id="StructureDefinition/profile-locaation" key="StructureDefinition-profile-locaation" name="PAS Location Profile"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
+<artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="PAS Nutrition Order"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="PAS Organization Base Profile"/>
 <artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="PAS Practitioner"/>
 <artifact id="StructureDefinition/profile-practitionerrole" key="StructureDefinition-profile-practitionerrole" name="PAS PractitionerRole"/>
@@ -121,12 +122,16 @@
 <artifact id="ServiceRequest/ReferralRequestExample" key="ServiceRequest-ReferralRequestExample" name="Submit Claim Referral Request Example"/>
 <artifact id="Organization/UMOExample" key="Organization-UMOExample" name="Submit Claim Requestor Example"/>
 <artifact id="Patient/SubscriberExample" key="Patient-SubscriberExample" name="Submit Claim Subscriber Example"/>
+<artifact id="ValueSet/X12278ConditionCategory" key="ValueSet-X12278ConditionCategory" name="X12 278 CRC Condition Category"/>
+<artifact id="ValueSet/X12278ConditionCode" key="ValueSet-X12278ConditionCode" name="X12 278 CRC Condition Code"/>
 <artifact id="ValueSet/X12278DiagnosisCodes" key="ValueSet-X12278DiagnosisCodes" name="X12 278 Diagnosis Code Value Set"/>
 <artifact id="ValueSet/X12278DiagnosisInformationType" key="ValueSet-X12278DiagnosisInformationType" name="X12 278 Diagnosis Information Type"/>
 <artifact id="ValueSet/X12278DiagnosisType" key="ValueSet-X12278DiagnosisType" name="X12 278 Diagnosis Type Value Set"/>
 <artifact deprecated="true" id="CodeSystem/X12278FollowUpActionCodes" key="CodeSystem-X12278FollowUpActionCodes" name="X12 278 Follow Up Action Code System"/>
 <artifact id="ValueSet/X12278FollowUpActionCodes" key="ValueSet-X12278FollowUpActionCodes" name="X12 278 Follow Up Action Value Set"/>
 <artifact id="ValueSet/X12278LocationType" key="ValueSet-X12278LocationType" name="X12 278 Health Care Service Location Type Value Set"/>
+<artifact id="ValueSet/X12278NutritionEnteralFormulaType" key="ValueSet-X12278NutritionEnteralFormulaType" name="X12 278 Nutrition Enteral Formula Type"/>
+<artifact id="ValueSet/X12278NutritionOralDietType" key="ValueSet-X12278NutritionOralDietType" name="X12 278 Nutrition Oral Diet Type"/>
 <artifact deprecated="true" id="CodeSystem/X12278RejectReasonCodes" key="CodeSystem-X12278RejectReasonCodes" name="X12 278 Reject Reason Code System"/>
 <artifact id="ValueSet/X12278RejectReasonCodes" key="ValueSet-X12278RejectReasonCodes" name="X12 278 Reject Reason Value Set"/>
 <artifact id="ValueSet/X12278RequestedServiceModifierType" key="ValueSet-X12278RequestedServiceModifierType" name="X12 278 Requested Service Modifier Type"/>
