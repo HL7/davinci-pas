@@ -23,3 +23,7 @@ Description: "A code representing the status of the patient when being admitted"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating patient status as of the 'statement covers through date'.  These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "Examples"
+* ^context[+].type = #element
+* ^context[=].expression = "Encounter"

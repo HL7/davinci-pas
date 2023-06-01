@@ -73,6 +73,12 @@ Description: "The details of the review action that is necessary for the authori
 * extension[reasonCode] ^short = "Explanation of the review denial or partial approval"
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 * extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "Examples.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item.adjudication"
 
 Extension: ReviewActionCode
 Id: extension-reviewActionCode
@@ -80,37 +86,61 @@ Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "Examples.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item.adjudication.extension"
 
 Extension: ItemPreAuthIssueDate
 Id: extension-itemPreAuthIssueDate
 Description: "The date when this item's preauthorization was issued."
 * value[x] only date
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Extension: ItemRequestedServiceDate
 Id: extension-itemRequestedServiceDate
 Description: "The original date/period that was requested by the submitter for this item."
 * value[x] only dateTime or Period
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Extension: ItemPreAuthPeriod
 Id: extension-itemPreAuthPeriod
 Description: "The date/period when this item's preauthorization is valid."
 * value[x] only Period
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Extension: ErrorElement
 Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about."
 * value[x] only string
+* ^context[+].type = #element
+* ^context[=].expression = "Examples.error"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.error"
 
 Extension: ErrorPath
 Id: extension-errorPath
 Description: "The FHIRPath expression that indicates which FHIR element that this error information is about."
 * value[x] only string
+* ^context[+].type = #element
+* ^context[=].expression = "Examples.error"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.error"
 
 Extension: ErrorFollowupAction
 Id: extension-errorFollowupAction
 Description: "A code representing what action must occur to resolve this error."
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278FollowUpActionCodes (required)
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.error"
 
 Extension: ItemAuthorizedDetail
 Id: extension-itemAuthorizedDetail
@@ -124,6 +154,8 @@ Description: "The details of what has been authorized for this item if different
 * extension[quantity].value[x] only SimpleQuantity
 * extension[revenue].value[x] only CodeableConcept
 * extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
@@ -133,6 +165,8 @@ Description: "The specific provider who has been authorized to provide this item
 * extension[providerType].value[x] only CodeableConcept
 * extension[providerType].valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
 * extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Profile: PASClaimInquiryResponse
 Parent: PASClaimResponseBase
