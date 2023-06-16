@@ -242,5 +242,5 @@ Description: "The specific date or period within which this item's preauthorizat
 
 Invariant: FullDateRule
 Description: "Dates need to be a full date - YYYY-MM-DD"
-Expression: "$this.length() = 10"
+Expression: "toString().length() = 10"
 Severity: #error
