@@ -69,12 +69,19 @@ Description: "PAS constraints on the Timing datatype used in the various service
 * repeat.period MS
 * repeat.periodUnit MS
 
+//modified
 Extension: CalendarPattern
 Id: extension-timingcalendarpattern
 Description: "A code representing the specific days when a service is being requested"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 (required)
 * valueCodeableConcept  ^binding.description = "Codes which specifies the routine shipments, deliveries, or calendar pattern. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "Examples"
+* ^context[+].type = #element
+* ^context[=].expression = "Request"
+* ^context[+].type = #element
+* ^context[=].expression = "Dosage.timing"
 
 Extension: DeliveryPattern
 Id: extension-timingdeliverypattern
@@ -83,3 +90,9 @@ Description: "A code representing the specific delivery of a service being reque
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 (required)
 * valueCodeableConcept  ^binding.description = "Codes which specifies the time for routine shipments or deliveries
 . These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "Examples"
+* ^context[+].type = #element
+* ^context[=].expression = "Request"
+* ^context[+].type = #element
+* ^context[=].expression = "Dosage.timing"
