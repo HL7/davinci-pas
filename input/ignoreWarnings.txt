@@ -1,22 +1,22 @@
 == Suppressed Messages ==
 
 # X12 Code Systems and Value Sets that are referenced in the guide but not freely available
-ValueSet https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 not found by validator
-ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 not found
+ValueSet https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 not found
+ValueSet https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 not found
+ValueSet https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 not found
 
 Code System URI 'https://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated
 Code System URI 'https://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
