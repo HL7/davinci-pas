@@ -107,7 +107,7 @@ However, with the [Documentation Templates and Rules (DTR)](http://www.hl7.org/f
 
 As a result, with DTR, it is possible to minimize or eliminate the need for multiple back-and-forth 'supplemental documentation' exchanges and to maximize the likelihood that the submitted prior authorization supporting information is suitable for automated decision making.
 
-Information gathered to support prior authorization is expected to be stored in the EHR in addition to being used as part of the prior authorization request process.  However there is no expectation that an EHR will update existing orders with the results of the PAS response.  If an EHR chooses to do so, to inform users of the authorization of orders, that is out of scope of this IG.
+Information gathered to support prior authorization is expected to be stored in the EHR in addition to being used as part of the prior authorization request process.  As well, EHRs **SHOULD** annotate their orders with the decisions contained in the PAS Response.  Guidance on how to annotate the orders is not included in this IG as it was determined to be EHR-specific.
 
 Also see the section below on [supporting information](#supporting-information).
 
@@ -136,7 +136,7 @@ If additional information is needed, the provider can respond with the informati
 
 NOTE: A payer can request information in a number of means but **SHALL** explicitly communicate the method by which the information will be provided to the provider using the CommunicationRequest.method element.  The [CommunicationRequest Medium ValueSet](ValueSet-PASCommunicationRequestMedium.html) includes non-X12 codes that allow an intermediary to specify additional methods for sending the additional information, i.e. via a CDex Submit-Attachment operation.  Only intermediaries will send these codes.
 
-If you have a QuestionnaireResponse Bundle produced by DTR or provided along with an order as 'pertinent information', then it shall be included in the the 'additionalInformation' slice of the Claim.supportingInfo element.
+If you have a QuestionnaireResponse Bundle produced by DTR, then it can be included in the PAS Request by creating the QuestionnaireResponse Bundle as defined in the DTR specification(), and including it in the the 'additionalInformation' slice of the Claim.supportingInfo element.
 
 Here is a diagram that shows the workflow associated with a request for additional information:
 

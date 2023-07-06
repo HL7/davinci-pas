@@ -66,7 +66,7 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/0
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 on element Claim.item.extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 on element Claim.item.category could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755 on element CommunicationRequest.category could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069 on element Coverage.relationship could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069 on element Coverage.relationship.coding could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/04/00/1345 on element Encounter.extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 on element Encounter.type could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 on element Encounter.hospitalization.admitSource could not be resolved
