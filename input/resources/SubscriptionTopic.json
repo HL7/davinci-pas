@@ -1,7 +1,7 @@
 {
   "resourceType": "SubscriptionTopic",
   "id": "PASSubscriptionTopic",
-  "url": "http://hl7.org/fhir/us/davinci-pas/PASSubscription",
+  "url": "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic",
   "status": "active",
   "name": "PASSubscription",
   "title": "PAS Subscription",
