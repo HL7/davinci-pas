@@ -31,6 +31,11 @@ Description: "A logical model describing the information that should be captured
   * errorCode            from IssueType             (required)
   * errorDetails         0..1 CodeableConcept "More detailed error code"            "The issue.details value from the OperationOutcome for this issue."
   * errorDetails         from OperationOutcomeCodes (example)
+  * AAACodes 0..* BackboneElement "AAA codes returned" "Any AAA codes returned during the exchange."
+    * loopID 1..1 string "Id of element where error occurred" "The loop, segment, or element where error occurred."
+    * code 1..1 string "Specific AAA code returned" "The AAA code returned during the exchange."
+    * followupAction 0..1 CodeableConcept "What action must be taken" "What action must be taken to resolve this error."
+    * followupAction from X12278FollowUpActionCodes (required)
 * itemDetail        0..* BackboneElement "Service level item detail" "Service level detail."
   * itemTraceNumber 0..1 integer      "Item Trace Number"     "This is the payer assigned trace number for this item."
   * item            1..1 CodeableConcept "eg. ICD10, HCPCS, NDC"  "The specific procedure, item, medication, appointment, nutrition that is the subject of the order."
@@ -38,6 +43,11 @@ Description: "A logical model describing the information that should be captured
   * initialSubmissionTime 0..1 dateTime "Date/time of the initial submission of the item" "Date/time of the initial submission of the service item."
   * finalResponseTime 0..1 dateTime "Date/time of final result" "Date/time that the final result was returned for the specific service item."
   * responsesRequired 0..1 integer  "Number of responses"  "Number of responses (initial and any with result pended) for the service item."
+  * AAACodes 0..* BackboneElement "AAA codes returned" "Any AAA codes returned during the exchange."
+    * loopID 1..1 string "Id of element where error occurred" "The loop, segment, or element where error occurred."
+    * code 1..1 string "Specific AAA code returned" "The AAA code returned during the exchange."
+    * followupAction 0..1 CodeableConcept "What action must be taken" "What action must be taken to resolve this error."
+    * followupAction from X12278FollowUpActionCodes (required)
   * result  0..1  code "approved | modified | denied"  "Final result of the specific service item."
   * supportingDocumentation  0..1  url "Documentation submitted as part of PAS Bundle"  "The URL of the questionnaire that was the basis for the questionnaireResponse submitted as part of the PAS bundle for the specific service item."
   * requestedDocumentation 0..* BackboneElement "Documentation requested via 278 response" "Documentation requested via 278 response."
