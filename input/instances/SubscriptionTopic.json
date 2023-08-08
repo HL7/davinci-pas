@@ -1,0 +1,25 @@
+{
+  "resourceType": "SubscriptionTopic",
+  "id": "PASSubscriptionTopic",
+  "url": "http://hl7.org/fhir/us/davinci-pas/PASSubscription",
+  "status": "active",
+  "name": "PASSubscription",
+  "title": "PAS Subscription",
+  "experimental": false,
+  "date": "2023-08-08",
+  "description": "This is the subscription topic used for retrieving results from pended authorization requests.",
+  "eventTrigger": [
+    {
+      "description": "When a new result is made ready by the intermediary system",
+      "event": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSubscriptionEvent",
+            "code": "result-available"
+          }
+        ]
+      },
+      "resource": "http://hl7.org/fhir/StructureDefinition/ClaimResponse"
+    }
+  ]
+}

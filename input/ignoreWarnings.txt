@@ -101,3 +101,6 @@ The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/Poi
 US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
 US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
+
+# Logical model element names
+Rule eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken' Failed

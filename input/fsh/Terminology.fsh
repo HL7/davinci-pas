@@ -21,6 +21,14 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 * #freeFormMessage "Free Form Message" "Send text messages to the UMO."
 * #institutionalEncounter "Institutional Encounter" "Information about a hospital claim being requested."
 
+CodeSystem: PASSubscriptionEvent
+Title: "PAS Subscription Event codes"
+Description: "PAS Subscription Event codes"
+* ^caseSensitive = true
+* ^experimental = false
+* #result-available "Result Available" "A new result for a PAS submission is now available."
+
+
 ValueSet: PASInformationChangeMode
 Title: "PAS Information Change Mode Value Set"
 Description: "The mode by which a piece of information has changed."

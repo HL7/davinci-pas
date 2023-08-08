@@ -63,3 +63,55 @@ Usage: #definition
 * parameter[1].max = "1"
 * parameter[1].documentation = "A Bundle containing a single ClaimInquiryResponse plus referenced resources."
 * parameter[1].type = #Bundle
+
+
+Instance: EHRCapabilities
+InstanceOf: CapabilityStatement
+Title: "EHR PAS Capabilities"
+Description: "Capabilities required for an EHR participating in a PAS Exchange."
+Usage: #definition
+* url = Canonical(EHRCapabilities)
+* name = "PASEHR"
+* status = #active
+* experimental = false
+* date = "2023-08-08"
+* description = "Capabilities required for an EHR participating in a PAS Exchange."
+* kind = #requirements
+* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client"
+* fhirVersion = #4.0.1
+* format[0] = #json
+* format[1] = #xml
+* rest
+  * mode = #client
+  * operation[0]
+    * name = "PAS Claim Request"
+    * definition = Canonical(ClaimSubmitOperation)
+  * operation[1]
+    * name = "PAS Claim Inquiry"
+    * definition = Canonical(ClaimInquiryOperation)
+
+Instance: IntermediaryCapabilities
+InstanceOf: CapabilityStatement
+Title: "Intermediary PAS Capabilities"
+Description: "Capabilities required for an Intermediary participating in a PAS Exchange."
+Usage: #definition
+* url = Canonical(IntermediaryCapabilities)
+* name = "PASIntermediary"
+* status = #active
+* experimental = false
+* date = "2023-08-08"
+* description = "Capabilities required for an Intermediary participating in a PAS Exchange."
+* kind = #requirements
+* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"
+* fhirVersion = #4.0.1
+* format[0] = #json
+* format[1] = #xml
+* rest
+  * mode = #server
+  * operation[0]
+    * name = "PAS Claim Request"
+    * definition = Canonical(ClaimSubmitOperation)
+  * operation[1]
+    * name = "PAS Claim Inquiry"
+    * definition = Canonical(ClaimInquiryOperation)
+	
