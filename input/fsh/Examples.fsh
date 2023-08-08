@@ -177,6 +177,8 @@ Instance: HomecareAuthorizationExample
 InstanceOf: PASClaim
 Title: "Homecare Authorization Example"
 Description: "An example of a Claim resource requesting prior authorization of a home healthcare service."
+* extension[homeHealthCareInformation].extension[prognosis].valueCodeableConcept = https://codesystem.x12.org/005010/923#1
+* extension[homeHealthCareInformation].extension[date].valueDate = "2005-05-02"
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
@@ -573,6 +575,16 @@ Description: "A sample device request for a wheelchair."
 * authoredOn = 2005-06-02
 * requester = Reference(ReferralPractitionerExample)
 
+Instance: NutritionOrderExample
+InstanceOf: PASNutritionOrder
+Title: "Nutrition Order Example"
+Description: "A sample nutrition order."
+* intent = #order
+* patient = Reference(BeneficiaryExample)
+* status = #active
+* oralDiet.type = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4150
+* dateTime = "2005-06-02"
+
 Instance: MedicationRequestExample
 InstanceOf: PASMedicationRequest
 Title: "Medication Request Example"
@@ -594,13 +606,118 @@ Description: "An example of a Timing with patterns."
 * extension[calendarPattern].valueCodeableConcept = https://codesystem.x12.org/005010/678#L "Monday through Thursday"
 * extension[deliveryPattern].valueCodeableConcept = https://codesystem.x12.org/005010/679#D "A.M."
 
-Instance: EncounterExample
+Instance: SurgicalEncounterExample
 InstanceOf: PASEncounter
 Title: "Encounter Example"
-Description: "An example of encounter details for an admission request."
+Description: "An example of encounter details for a surgical admission request."
 * extension[patientStatus].valueCodeableConcept = https://www.nubc.org/CodeSystem/PatDischargeStatus#30 "Still a patient"
 * status = #planned
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * type = https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit#2
-* subject = Reference(BeneficiaryExample)
+* subject = Reference(SubscriberExample)
+* period.start = "2020-07-02"
+* period.end = "2020-07-09"
 * hospitalization.admitSource = https://www.nubc.org/CodeSystem/PointOfOrigin#5
+
+Instance: SurgicalRequestBundleExample
+InstanceOf: PASRequestBundle
+Title: "Surgical Admission Request Bundle Example"
+Description: "An example of a Claim bundle requesting prior authorization of a surgical service."
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "16139462398"
+* type = #collection
+* timestamp = 2020-06-24T07:34:00+05:00
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/SurgicalAuthorizationRequestExample"
+* entry[Claim].resource = SurgicalAuthorizationRequestExample
+* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
+* entry[1].resource = UMOExample
+* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
+* entry[2].resource = InsurerExample
+* entry[3].fullUrl = "http://example.org/fhir/Coverage/InsuranceExample"
+* entry[3].resource = InsuranceExample
+* entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
+* entry[4].resource = SubscriberExample
+* entry[5].fullUrl = "http://example.org/fhir/Encounter/SurgicalEncounterExample"
+* entry[5].resource = SurgicalEncounterExample
+* entry[6].fullUrl = "http://example.org/fhir/PractitionerRole/SurgicalPractitionerRoleExample"
+* entry[6].resource = SurgicalPractitionerRoleExample
+* entry[7].fullUrl = "http://example.org/fhir/Practitioner/SurgicalPractitionerExample"
+* entry[7].resource = SurgicalPractitionerExample
+* entry[8].fullUrl = "http://example.org/fhir/Location/SurgicalLocationExample"
+* entry[8].resource = SurgicalLocationExample
+
+Instance: SurgicalAuthorizationRequestExample
+InstanceOf: PASClaim
+Title: "Surgical Request Authorization Example"
+Description: "An example of a Claim resource requesting prior authorization of a surgical service."
+* extension[levelOfServiceType].valueCodeableConcept = https://codesystem.x12.org/005010/1338#E "Elective"
+* extension[encounter].valueReference = Reference(SurgicalEncounterExample)
+* extension[conditionCode].extension[category].valueCodeableConcept = https://codesystem.x12.org/005010/1136#07
+* extension[conditionCode].extension[indicator].valueBoolean = true
+* extension[conditionCode].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/1321#09
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "16139462398"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "3030240928"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#institutional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2020-06-24T07:34:00+05:00
+* insurer = Reference(InsurerExample)
+* provider = Reference(UMOExample)
+* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
+* diagnosis.sequence = 1
+* diagnosis.diagnosisCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#C18.9
+* diagnosis.extension[recordedDate].valueDate = "2020-06-24"
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(InsuranceExample)
+* supportingInfo[AdmissionDates].sequence = 1
+* supportingInfo[AdmissionDates].timingPeriod.start = "2020-07-02"
+* supportingInfo[AdmissionDates].timingPeriod.end = "2020-07-09"
+* item.extension[itemTraceNumber].valueIdentifier.system = "http://example.org/ITEM_TRACE_NUMBER"
+* item.extension[itemTraceNumber].valueIdentifier.value = "1122334"
+* item.extension[authorizationNumber].valueString = "1122445"
+* item.extension[administrationReferenceNumber].valueString = "9988311"
+* item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#AR "Admission Review"
+* item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
+* item.sequence = 1
+* item.careTeamSequence = 1
+* item.diagnosisSequence = 1
+* item.category = https://codesystem.x12.org/005010/1365#2 "Surgical"
+* item.productOrService = http://www.ama-assn.org/go/cpt#33510 "Under Venous Grafting Only for Coronary Artery Bypass"
+* item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#21
+* careTeam.sequence = 1
+* careTeam.extension[careTeamClaimScope].valueBoolean = true
+* careTeam.provider = Reference(SurgicalPractitionerRoleExample)
+
+Instance: SurgicalPractitionerRoleExample
+InstanceOf: PASPractitionerRole
+Title: "Submit Claim Surgical Practitioner Role Example"
+Description: "A sample practitioner role instance."
+* practitioner = Reference(ReferralPractitionerExample)
+* location = Reference(ReferralLocationExample)
+
+Instance: SurgicalLocationExample
+InstanceOf: PASLocation
+Title: "Submit Claim Surgical Location Example"
+Description: "A sample location."
+* name = "REFERRAL CLINIC"
+* address.line = "111 1ST STREET"
+* address.city = "SAN DIEGO"
+* address.state = "CA"
+* address.country = "US"
+* address.postalCode = "92101"
+
+Instance: SurgicalPractitionerExample
+InstanceOf: PASPractitioner
+Title: "Submit Claim Surgical Practitioner Example"
+Description: "A sample practitioner who is being referred to."
+* identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* identifier.value = "987654321"
+* name.family = "WATSON"
+* name.given = "SUSAN"
+* telecom.system = #phone
+* telecom.value = "4029993456"
+

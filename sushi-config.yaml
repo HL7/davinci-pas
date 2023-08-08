@@ -63,6 +63,16 @@ pages:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
     title: Formal Specification
+  epaWorkflow.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: PAS ePA Coordinator Information
+  metrics.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: PAS Metrics
   downloads.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
@@ -86,6 +96,8 @@ menu:
     Technical Background: background.html
     HIPAA Regulations: regulations.html
     Formal Specification: specification.html
+    ePA Coordinator: epaWorkflow.html
+    Metrics: metrics.html
     Downloads: downloads.html
     Credits: credits.html
   FHIR Artifacts: fhirArtifacts.html

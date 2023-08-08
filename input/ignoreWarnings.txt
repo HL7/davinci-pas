@@ -17,21 +17,26 @@ ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 not
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315 not found
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 not found
 ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923 not found
 
-Code System URI 'https://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/98' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/584' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/306' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/1338' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/1337' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/1345' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/755' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/678' is unknown so the code cannot be validated
-Code System URI 'https://codesystem.x12.org/005010/679' is unknown so the code cannot be validated
+Code System URI 'https://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/98' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/584' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/306' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1338' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1337' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1345' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/755' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/678' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/679' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/923' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1136' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1321' is unknown so the code cannot be validated%
+
 
 Error from server: Unable to provide support for code system https://codesystem.x12.org/external/886
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/901
@@ -40,11 +45,6 @@ Error from server: Unable to provide support for code system https://codesystem.
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/756
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/1136
 Error from server: Unable to provide support for code system https://codesystem.x12.org/005010/1321
-
-Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
-Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
-Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes%
-Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes%
 
 The valueSet reference https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 on element Extension.extension.value[x] could not be resolved
@@ -73,8 +73,9 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 on element Organization.type could not be resolved
 
 # CPT Code System used in example is not available in the terminology server
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated%
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
 
 # The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
@@ -83,16 +84,19 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle%
 
 # Code systems that are not available in the terminology server
-Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
-Code System URI 'https://www.nubc.org/CodeSystem/PatDischargeStatus' is unknown so the code cannot be validated
-Code System URI 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' is unknown so the code cannot be validated
-Code System URI 'https://www.nubc.org/CodeSystem/PointOfOrigin' is unknown so the code cannot be validated
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated%
+Code System URI 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' is unknown so the code cannot be validated%
 
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 Error from server: Unable to provide support for code system https://www.nubc.org/revenue-code
 Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/icd9cm
 Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 
+The definition for the Code System with URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' doesnt provide any codes so the code cannot be validated
+The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/PatDischargeStatus' doesnt provide any codes so the code cannot be validated
+The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' doesnt provide any codes so the code cannot be validated
+The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/PointOfOrigin' doesnt provide any codes so the code cannot be validated
+	
 # Variance Request from CGP for the profiles that are not derived from US Core
 US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
 US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile

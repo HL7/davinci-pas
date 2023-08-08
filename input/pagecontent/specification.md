@@ -299,4 +299,4 @@ It is the intent of this implementation guide to provide specifications for the 
 2. artifacts used from referenced IGs such as DTR and CRD
 3. testing of conformance to the underlying FHIR standards for the associated release (e.g. FHIR R4)
 
-[Next Page - Downloads](downloads.html)
+[Next Page - ePA Coordinator Workflow](epaWorkflow.html)
