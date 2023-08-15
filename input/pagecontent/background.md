@@ -78,4 +78,4 @@ The different components of the X12 ValueSet URLs can be interpreted as follows:
 
 Thus any URL can be parsed to determine where to find the set of codes in the appropriate X12 Technical Report.
 
-[Next Page - HIPPA Regulations](regulations.html)
+[Next Page - HIPAA Regulations](regulations.html)

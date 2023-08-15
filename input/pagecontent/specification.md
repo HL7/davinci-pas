@@ -1,4 +1,4 @@
-[Previous Page - HIPPA Regulations](regulations.html)
+[Previous Page - HIPAA Regulations](regulations.html)
 
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Prior Authorization Support implementation guide.  The bulk of it focuses on the Claim $submit operation, though it also provides guidance on privacy, security and other implementation requirements.
 
