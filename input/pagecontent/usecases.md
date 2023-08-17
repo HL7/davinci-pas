@@ -60,7 +60,7 @@ In FHIR, the Claim resource which is being used for Prior Authorization does not
 
 
 ### Workflow
-Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [Post-Acute Orders Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
+Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
 
 #### Scope of Work Flow
 In Scope
@@ -136,7 +136,7 @@ If additional information is needed, the provider can respond with the informati
 
 NOTE: A payer can request information in a number of means but **SHALL** explicitly communicate the method by which the information will be provided to the provider using the CommunicationRequest.method element.  The [CommunicationRequest Medium ValueSet](ValueSet-PASCommunicationRequestMedium.html) includes non-X12 codes that allow an intermediary to specify additional methods for sending the additional information, i.e. via a CDex Submit-Attachment operation.  Only intermediaries will send these codes.
 
-If you have a QuestionnaireResponse Bundle produced by DTR, then it can be included in the PAS Request by creating the QuestionnaireResponse Bundle as defined in the DTR specification(), and including it in the the 'additionalInformation' slice of the Claim.supportingInfo element.
+If you have a QuestionnaireResponse Bundle produced by DTR, then it can be included in the PAS Request by creating the QuestionnaireResponse Bundle as defined in the DTR specification, and including it in the the 'additionalInformation' slice of the Claim.supportingInfo element.
 
 Here is a diagram that shows the workflow associated with a request for additional information:
 

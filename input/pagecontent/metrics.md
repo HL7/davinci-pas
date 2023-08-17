@@ -2,25 +2,22 @@
 
 ### Overview
 
-One of the main objectives of the PAS implementation guide (and the burden reduction guides as a whole) is to
-improve efficiency of the healthcare system with respect to provider-payer interaction.  However, for this
-objective to be achieved, it's important that the information provided by payers be useful and timely and
-it's equally important that the relevant information from the EHR be available (and findable) for payers in
-computable form.
+This Implementation Guide (IG) is one of 4 HL7 Da Vinci IGs that are designed to address the challenges of automating the exchange of information between a provider and the responsible payer to determine coverage of services, items, and referrals. In particular, these IGs standardize the exchange of information required to automate the Prior Authorization (PA) process. The specific IG are:
 
-EHRs, payers, and governing authorities such as CMS will all have an interest in understanding how well the
-implementation of PAS is working.  They will be interested in such questions as:
+1. [Coverage Requirements Discovery (CRD)](http://hl7.org/fhir/us/davinci-crd)
+2. [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr)
+3. Prior Authorization Support (PAS) (this guide)
+4. [Clinical Documentation Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex)
 
-* How long does the average PAS call take to execute?
-* How many PAS calls result in 'satisfied' authorization?
-* How many PAS calls require access to provider information, and what type is accessed
+Each guide supports a specific set of functions and exchanges required to determine payer coverage for specific services, items, and referrals.
 
-It is likely that formal metrics (likely using the [Measure]({{site.data.fhir.path}}measure.html) resource)
-will be defined to help evaluate and potentially benchmark PAS implementations.  However, in order to evaluate
-such measures, the relevant information will need to be available in both provider and payer systems to support
-the measures.
+To maximize the value of these IGs, it is imperative that each IG is integrated into clinical workflow at the appropriate point and all of the exchanges required by each IG are fully supported by all of the participants (providers, intermediaries, and payers).
 
-### Metric Examples
+Each of these IGs recommends a set of metrics that **SHOULD** or **MAY** be collected by their respective implementations to facilitate the evaluation of adoption, functionality, processes, and improved outcomes. While there is currently no requirement to report on these metrics, it is reasonable to believe that in the future interested entities (providers, payers, regulators, quality organizations, certification agencies, states, etc.) will ask for these metrics to evaluate the ongoing automation of the supported processes / exchanges. While this guide will not require these metrics to be captured in this release, the authors strongly suggest each implementation should do so with the expectation that collection and dissemination of these metrics may become a requirement (SHALL) in future version of these IGs.
+
+The table below defines a set of measures with a short name, purpose, conformance, stakeholder, and collection/calculation instructions that represent what the project group designing this IG felt would be both reasonably collectable and useful in evaluating implementations of this IG.  These measures are based on the [metric data model logical model](StructureDefinition-PASMetricData.html) also published in this IG.
+
+### Suggested Metrics
 The following table defines a set of metrics with a purpose, type, and stakeholder (based on the Metric Data model below). 
 
 <table style="text-align: center; vertical-align: middle;">

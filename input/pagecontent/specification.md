@@ -176,7 +176,7 @@ Here are two workflow diagrams that show the sending of a request, the receiving
 
 
 #### Prior Authorization Inquiries
-The [prior authorization inquiry operation](OperationDefinition-Claim-inquiry.html) allows for inquiries about prior authorization submissions.  This inquiry can be used for polling for 'pended' authorization responses (see below), for other systems checking the status of a request (see below), and for generic inquiries.  Providers are expected to perform the same query-by-example inquiry even under the CMS exception.  This Implementation Guide does not specify a different way of searching for prior authorizations in the exception case.
+The [prior authorization inquiry operation](OperationDefinition-Claim-inquiry.html) allows for inquiries about prior authorization submissions.  This inquiry can be used for checking on updates to 'pended' authorization responses (see below), for other systems checking the status of a request (see below), and for generic inquiries.  Providers are expected to perform the same query-by-example inquiry even under the CMS exception.  This Implementation Guide does not specify a different way of searching for prior authorizations in the exception case.
 
 The parameter to the inquiry operation is a [PAS Inquiry Request Bundle](StructureDefinition-profile-pas-inquiry-request-bundle.html) which has a [Claim Inquiry profile instance](StructureDefinition-profile-claim-inquiry.html) as well as any referenced resources if needed.  The operation is basically a query-by-example where the incoming Claim resource provides elements that will match existing prior authorizations.  Any authorizations that match the incoming resource elements will be returned by the operation.  The rules for how the included data elements are matched are specified in the X12 278 inquiry TR3 specification.
 
@@ -237,7 +237,7 @@ Upon receiving a notification, the Client **SHALL** - when convenient - execute 
 If the retrieved ClaimResponse has an outcome of 'complete' or 'error', the Client **SHALL** perform a DELETE on the Subscription.
 
 #### Checking Status
-Systems other than the requesting system may choose not to subscribe to the prior authorization response but instead to check the status at the request of a user.  This query is performed in the same manner as the polling query.  There are no retry limits for user-initiated status checks.
+Systems other than the requesting system may choose not to subscribe to the prior authorization response but instead to check the status at the request of a user.  There are no retry limits for user-initiated status checks.
 
 #### Updating Authorization Requests
 In some cases, the needs associated with a prior authorization may change after the prior authorization request was submitted.  This might be a change to one of the services needed, the timeframe over which the service is provided, the quantity of the service or product, or even the elimination of the need for a given service.
