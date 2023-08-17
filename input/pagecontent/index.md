@@ -17,6 +17,9 @@ Individuals interested in participating in the Prior Authorization Support or ot
 Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.  Please see this <a href="https://confluence.hl7.org/display/DVP/Da+Vinci+Reference+to+External+Standards+and+Terminologies">Da Vinci External Reference page</a> for details on how to get this mapping.
 </p>
 <p>
+There are many situationally required fields that are specified in the X12 TRN03 guide that do not have guidance in this Implementation Guide.  Implementers need to consult the X12 PAS guides to know the requirements for these fields.
+</p>
+<p>
 Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
 </p>
 </blockquote>
