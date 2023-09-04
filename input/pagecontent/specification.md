@@ -37,7 +37,7 @@ This specification makes significant use of [FHIR profiles]({{site.data.fhir.pat
 The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](fhirArtifacts.html) page.
 
 #### Integration with other Implementation Guides
-* Implementations of the PAS implementation guide **SHALL** support the US Core R4 profiles for Condition, Observation, ServiceRequest and Procedure.  They **SHOULD** support any other profiles relevant to the types of prior authorizations they process.
+* Along with the profiles defined in the PAS implementation guide, implementations **SHALL** also support the US Core R4 profiles for Condition, Observation, and Procedure.  They **SHOULD** support any other profiles relevant to the types of prior authorizations they process.
 * Clients and Servers supporting this implementation guide **SHOULD** also comply with the Da Vinci [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) and [Documentation Templates and Rules (DTR)](http://www.hl7.org/fhir/us/davinci-dtr) implementation guides.
 * Every system claiming conformance to this IG **SHALL** comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/security.html). The FHIR implementer's Safety Checklist helps implementers be sure that they have considered all the parts of FHIR that impact their system design regarding privacy, security, provenance, and safety.
 
@@ -213,28 +213,18 @@ We recognize that knowledge of the Patient member or subscriber identifier may n
 
 ##### Subscription
 
-{% raw %}
-<blockquote class="stu-note">
-<p>
-There is ongoing work on the Subscription resource and it is currently undergoing change.  Implementers who are considering using Subscriptions should consult the latest FHIR build material and ask on Zulip for guidance on how to correctly implement Subscriptions.
-</p>
-</blockquote>
-{% endraw %}
-
 Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/).
 
-When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The Subscription.criteria **SHALL** be of the form: "identifier=[authorizationresponseid]&patient.identifier=[patientid]&status=active".  (Order of parameters within the search does not matter.)
+When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The subscription topic is created at the level of the requesting provider organization and not at the level of each individual prior authorization request.  The Subscription parameters SHALL be identifier = [requesting provider organization id].  PAS Clients and Intermediaries SHALL support subscriptions with content='id-only' but MAY by mutual agreement and with appropriate security arrangements in place for push notifications containing PHI also support content='full-resource'.  Intermediaries SHALL ensure that subscriptions to monitor a particular organization's prior authorizations are only created or modified by that organization.
 
 * Servers supporting subscriptions **SHALL** expose this as part of the Server's CapabilityStatement
 * Servers **SHOULD** support rest-hook and **MAY** support websocket channels
-* For security reasons, the channel.payload **SHALL** be left empty
 * Additional information about creating subscriptions can be found [here]({{site.data.fhir.path}}subscription.html)
 
-Once the subscription has been created, the Server **SHALL** send a notification over the requested channel indicating that the prior authorization response has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
+Once the subscription has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
 
-Upon receiving a notification, the Client **SHALL** - when convenient - execute a query.
+Upon receiving a notification, the Client **SHALL** - when convenient and if necessary - execute a query.
 
-If the retrieved ClaimResponse has an outcome of 'complete' or 'error', the Client **SHALL** perform a DELETE on the Subscription.
 
 #### Checking Status
 Systems other than the requesting system may choose not to subscribe to the prior authorization response but instead to check the status at the request of a user.  There are no retry limits for user-initiated status checks.

@@ -53,6 +53,8 @@ The implementation guide is organized into the following sections:
 * [Technical Background](background.html) describes the different specifications this implementation guide relies on and indicates what developers should read and understand prior to implementing this specification
 * [HIPAA Regulations](regulations.html) explains the relevant portions of the regulatory context in which this implementation guide operates
 * [Formal Specification](specification.html) covers the detailed implementation requirements and conformance expectations
+* [ePA Coordinator](epaWorkflow.html) covers the workflow regarding the exchanges between a Provider ePA Coordinator, multiple Provider HIT systems and the payer
+* [Metrics](metrics.html) describes a set of metrics that can be collected to evaluate the adoption of PAS
 * [Artifacts](fhirArtifacts.html) introduces and provides links to the FHIR [R4](artifacts.html) profiles, operations and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
@@ -62,6 +64,8 @@ The implementation guide is organized into the following sections:
 This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
 * **[US Core]({{site.data.fhir.hl7_fhir_us_core}})** - The published version of US Core based on FHIR R4.
+
+There are other [Burden Reduction guides](background.html#da-vinci-burden-reduction) that work with and complement this guide.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 

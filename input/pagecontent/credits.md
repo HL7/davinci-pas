@@ -4,7 +4,7 @@
 Primary author:
 
 * Jean Duteau (Dogwood Health Consulting)
-* Mary Kay McDaniel ()
+* Mary Kay McDaniel
 
 Guide Author Support: 
 
@@ -26,7 +26,7 @@ Reference implementation:
 
 This implementation guide was created under the supervision and review of the HL7 [Financial Management](http://www.hl7.org/Special/committees/fm) (sponsor) and [Attachments](http://www.hl7.org/Special/Committees/claims) (co-sponsor) work groups.
 
-This implementation guide was initiated created with the support of the twenty-two founding [Da Vinci Project] (http://www.hl7.org/about/davinci/index.cfm?ref=common) member organizations.
+This implementation guide was initiated and created with the support of the twenty-two founding [Da Vinci Project] (http://www.hl7.org/about/davinci/index.cfm?ref=common) member organizations.
 
 Organizational participants included:
 
