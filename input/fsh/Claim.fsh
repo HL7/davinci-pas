@@ -16,7 +16,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * status = #active
 * use = #preauthorization
 * patient only Reference(PASBeneficiary)
-* insurer MS
+* insurer 1..1 MS
 * insurer only Reference(PASInsurer)
 * provider MS
 * provider only Reference(PASRequestor or PASPractitionerRole)

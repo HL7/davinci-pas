@@ -14,8 +14,11 @@ Implementers can find detailed comparisons between the FHIR artifacts at [Change
   - Added next-page/previous-page navigation links (FHIR-24358)
   - Added FMM status to the IG and all artifacts (FHIR-24113)
   - Added a change log page (FHIR-36581)
+  - Added a new page on Metrics (FHIR-41548)
+  - Made Privacy & Security its own page (FHIR-41616)
 - Home Page
   - Added link to Da Vinci HIPAA Exception Confluence Page (FHIR-36592)
+  - Added a note clarifying how situationally required fields are handled in the guide (FHIR-41635)
 - Use Cases
   - Pull notes out of the PA Process diagram (FHIR-34540, FHIR-36153)
   - Add sentence to section 2.3.5 (FHIR-36145)
@@ -31,6 +34,8 @@ Implementers can find detailed comparisons between the FHIR artifacts at [Change
   - Update section 2.3.7 (FHIR-36578, FHIR-36584, FHIR-36587)
   - Add a Supported Use Case section around what is currently supported in the IG (FHIR-37769)
   - Remove references to polling (FHIR-39750)
+  - Added a section on how PAS initiated CDex DTR launch would work (FHIR-40723)
+  - Add more information on how Subscription is used and create a PAS SubscriptionTopic resource (FHIR-41446, FHIR-41698, FHIR-41912)
 - Background
   - Update section 3.1.1 (FHIR-36593, FHIR-40465)
   - Add a section on how to resolve the X12 codesystem and value sets (FHIR-34393, FHIR-36422, FHIR-36604)
@@ -46,6 +51,8 @@ Implementers can find detailed comparisons between the FHIR artifacts at [Change
   - Add a section on endpoint resolution (FHIR-39505)
   - Fix typo in Figure 5.3 (FHIR-36317)
   - Add content and diagrams around ePA workflow (FHIR-36558)
+  - Add a sentence that says orders SHOULD be annotated with PAS response decisions (FHIR-41444)
+  - Add information on how to include DTR QuestionnaireResponse in the Claim.supportingInfo (FHIR-41445)
 - Credits
   - Updated credits for new version of guide (FHIR-36621)
 - Profiles
@@ -83,6 +90,10 @@ Implementers can find detailed comparisons between the FHIR artifacts at [Change
   - Change value set for CommunicationRequest.medium (FHIR-36586)
   - Fix display of bundle examples (FHIR-40672)
   - Add note about sending multiple diagnosis codes in ClaimInquiry (FHIR-39500)
+  - Claim.item.category is mandatory as ServiceTypeCode is required (FHIR-40758)
+  - Add a slice to Coverage.relationship to allow sending the X12 code (FHIR-41312)
+  - Add CRD Coverage information extension to the PAS request profiles (FHIR-41443)
+  - Made Claim.insurer 1..1 (FHIR-42692)
 
 #### What's new in Version 1.1.0 of Da Vinci Prior Authorization
 - Organization profiles were changed: (FHIR-30880)
