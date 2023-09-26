@@ -22,70 +22,97 @@ The following table defines a set of metrics with a purpose, type, and stakehold
 
 <table style="text-align: center; vertical-align: middle;">
   <tr>
-    <th></th>
+    <th>Nbr</th>
     <th style="width: 140px; text-align: center; vertical-align: middle;">Metric</th>
     <th style="width: 125px; text-align: center; vertical-align: middle;">Metric Type</th>
-    <th style="width: 140px; text-align: center; vertical-align: middle;">Stakeholder</th>  
+    <th style="width: 140px; text-align: center; vertical-align: middle;">Stakeholder</th>
+	<th style="text-align:center; vertical-align: middle;">Calculation Example</th>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">1</td>
     <td style="text-align: center; vertical-align: middle;">Volume of PAS submissions (as 278 and line items)</td>
     <td style="text-align: center; vertical-align: middle;">Adoption</td>
-    <td style="text-align: center; vertical-align: middle;">Provider / Payer / Intermediary</td>   
+    <td style="text-align: center; vertical-align: middle;">Provider / Payer / Intermediary</td>
+	<td style="text-align: center; vertical-align: middle;">For 278 volume:
+PASMetricData.response.exists.count()
+For service items:
+PASMetricData.itemDetail.exists.count()</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">2</td>
     <td style="text-align: center; vertical-align: middle;">Volume of PAS Updates, Cancels, Queries</td>
     <td style="text-align: center; vertical-align: middle;">Adoption Process</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Payer / Intermediary</td>   
+	<td style="text-align: center; vertical-align: middle;">For Cancel volume:
+PASMetricData.exists.where(exchange.type = "cancel").count()</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">3</td>
     <td style="text-align: center; vertical-align: middle;">Volume of queries by other than ordering provider</td>
     <td style="text-align: center; vertical-align: middle;">Process</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Payer / Intermediary</td>   
+	<td style="text-align: center; vertical-align: middle;">For Query volume:
+PASMetricData.exists.where(exchange.type = "query").count()</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">4</td>
     <td style="text-align: center; vertical-align: middle;">% of PAS submissions returning an error (by type and payer)</td>
     <td style="text-align: center; vertical-align: middle;">Process</td>
     <td style="text-align: center; vertical-align: middle;">Provider (all errors) / Payer (subset) / Intermediary (subset)</td>   
+	<td style="text-align: center; vertical-align: middle;">PASMetricData.where(httResponse != 200).count()
+For percent:
+divide volume above by PASMetricData.exists.count() and express as a percentage</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">5</td>
     <td style="text-align: center; vertical-align: middle;">% of PAS submissions returning a final result on initial submission (any item and all items)</td>
     <td style="text-align: center; vertical-align: middle;">Process Outcome</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Payer</td>   
+	<td style="text-align: center; vertical-align: middle;">Number of final :
+PASMetricData.where(exchange.type = "initial" and itemDetail.result != "pended").count() 
+Divide volume above by:
+PASMetricData.where(exchange.type = " initial" and itemDetail.exists).count() and express as a percentage</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">6</td>
     <td style="text-align: center; vertical-align: middle;">Volume of line items that have an initial PEND and number of PENDS that were resolved and (more complex) average time to resolve each PEND</td>
     <td style="text-align: center; vertical-align: middle;">Process Outcome</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Payer</td>   
+	<td style="text-align: center; vertical-align: middle;">Number of initial PEND:
+PASMetricData.where(exchange.type = "initial" and itemDetail.result = "pended").count()</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">7</td>
     <td style="text-align: center; vertical-align: middle;">Total time from initial submission until final PA result for all line items</td>
     <td style="text-align: center; vertical-align: middle;">Process</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Payer</td>   
+	<td style="text-align: center; vertical-align: middle;">PASMetricData.where(ItemDetial.result  != "pended") (finalResponseTime - InitialSubmissionTime)</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">8</td>
     <td style="text-align: center; vertical-align: middle;">All of the above by payer / provider (depending on metric) and over time</td>
     <td style="text-align: center; vertical-align: middle;">Segmentation</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Payer</td>   
+	<td style="text-align: center; vertical-align: middle;">Segmentation based on time and
+PASMetricData.source 
+and 
+(PASMetricData.payerID 
+or 
+PASMetricData.groupID)</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">9</td>
     <td style="text-align: center; vertical-align: middle;">Outstanding PAS requests</td>
     <td style="text-align: center; vertical-align: middle;">Operation Dashboard</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Intermediary</td>   
+	<td style="text-align: center; vertical-align: middle;">PASMetricData.exists.where(itemDetail.result = "pended").count()</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">10</td>
     <td style="text-align: center; vertical-align: middle;">Aging of PENDED requests</td>
     <td style="text-align: center; vertical-align: middle;">Operation Dashboard</td>
     <td style="text-align: center; vertical-align: middle;">Provider / Intermediary</td>   
+	<td style="text-align: center; vertical-align: middle;">for each of the above items (current time - initialSubmissionTime)</td>
   </tr>
 </table>
 

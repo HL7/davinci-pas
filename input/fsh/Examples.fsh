@@ -198,10 +198,10 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
 * item.category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item.productOrService = http://www.ama-assn.org/go/cpt#G0154
+* item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#G0154
 * item[1].sequence = 2
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
+* item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 
@@ -247,17 +247,17 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
 * item.category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item.productOrService = http://www.ama-assn.org/go/cpt#G0154
+* item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#G0154
 * item[1].sequence = 2
 * item[1].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
+* item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#3 "Cancel"
 * item[2].sequence = 3
 * item[2].extension[infoChanged].valueCode = #added
 * item[2].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[2].productOrService = http://www.ama-assn.org/go/cpt#B4185
+* item[2].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4185
 * item[2].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[2].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 
@@ -303,13 +303,13 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item[0].sequence = 2
 * item[0].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[0].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[0].productOrService = http://www.ama-assn.org/go/cpt#B4184
+* item[0].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[0].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[0].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item[1].sequence = 3
 * item[1].extension[infoChanged].valueCode = #added
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[1].productOrService = http://www.ama-assn.org/go/cpt#B4185
+* item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4185
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 
@@ -357,7 +357,7 @@ Description: "An example of a Claim resource requesting prior authorization of M
 * item.extension[administrationReferenceNumber].valueString = "33441122"
 * item.sequence = 1
 * item.category = https://codesystem.x12.org/005010/1365#1 "Medical Care"
-* item.productOrService = http://www.ama-assn.org/go/cpt#99212 "Established Office Visit"
+* item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#99212 "Established Office Visit"
 * item.servicedDate = "2005-05-10"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 
@@ -402,16 +402,16 @@ Description: "An example of a Claim resource used to inquire for prior authoriza
 * item.extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item.extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item.sequence = 1
-* item.productOrService = http://www.ama-assn.org/go/cpt#G0154
+* item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#G0154
 * item[1].sequence = 2
-* item[1].productOrService = http://www.ama-assn.org/go/cpt#B4184
+* item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item[1].extension[certIssueDate].valueDate = "2019-07-01"
 * item[1].extension[certEffectiveDate].valueDate = "2019-07-01"
 * item[1].extension[certExpirationDate].valueDate = "2019-07-31"
 * item[1].extension[reviewActionCode].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
-* item[1].extension[productOrServiceCodeEnd].valueCodeableConcept = http://www.ama-assn.org/go/cpt#B4190
+* item[1].extension[productOrServiceCodeEnd].valueCodeableConcept = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4190
 
 Instance: PASClaimInquiryResponseBundleExample
 InstanceOf: PASInquiryResponseBundle
@@ -551,7 +551,7 @@ Description: "A sample referral request that is the subject of a prior authoriza
 * intent = #order
 * subject = Reference(SubscriberExample)
 * code = https://codesystem.x12.org/005010/1365#3 "Consultation"
-* quantityQuantity = 1 '{visit}'
+* quantityQuantity = 1 '1' "visit"
 
 Instance: CommunicationRequestExample
 InstanceOf: PASCommunicationRequest
@@ -570,7 +570,7 @@ Title: "Device Request Example"
 Description: "A sample device request for a wheelchair."
 * intent = #order
 * status = #active
-* codeCodeableConcept = http://www.ama-assn.org/go/cpt#E1223
+* codeCodeableConcept = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#E1223
 * subject = Reference(BeneficiaryExample)
 * authoredOn = 2005-06-02
 * requester = Reference(ReferralPractitionerExample)
@@ -686,7 +686,7 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * item.careTeamSequence = 1
 * item.diagnosisSequence = 1
 * item.category = https://codesystem.x12.org/005010/1365#2 "Surgical"
-* item.productOrService = http://www.ama-assn.org/go/cpt#33510 "Under Venous Grafting Only for Coronary Artery Bypass"
+* item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#33510 "Under Venous Grafting Only for Coronary Artery Bypass"
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#21
 * careTeam.sequence = 1
 * careTeam.extension[careTeamClaimScope].valueBoolean = true

@@ -10,7 +10,7 @@ name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
 publisher: 
-  name: HL7 International - Financial Management Work Group
+  name: HL7 International / Financial Management
   url: http://hl7.org/Special/committees/fm
   email: fmlists@lists.hl7.org
 contact:
@@ -18,6 +18,10 @@ contact:
     telecom:
       - system: email
         value: mailto:jean@duteaudesign.com
+  - name: HL7 International / Financial Management
+    telecom:
+      - system: url
+        value: http://www.hl7.org/Special/committees/fm
 description: Guidelines for conveying coverage requirements to clinicians when planning
   treatment.
 license: CC0-1.0
@@ -26,6 +30,7 @@ dependencies:
   hl7.fhir.us.core: 3.1.1
   hl7.fhir.extensions.r5: 4.0.1
   hl7.fhir.us.davinci-crd: current
+  hl7.fhir.uv.extensions: current
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
@@ -35,6 +40,8 @@ extension:
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 3
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: fm 
 releaseLabel: STU 1.2
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:

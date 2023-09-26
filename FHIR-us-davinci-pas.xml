@@ -20,9 +20,7 @@
 <artifact id="StructureDefinition/extension-itemCertificationExpirationDate" key="StructureDefinition-extension-itemCertificationExpirationDate" name="CertificationExpirationDate"/>
 <artifact id="StructureDefinition/extension-itemCertificationIssueDate" key="StructureDefinition-extension-itemCertificationIssueDate" name="CertificationIssueDate"/>
 <artifact id="StructureDefinition/extension-certificationType" key="StructureDefinition-extension-certificationType" name="CertificationType"/>
-<artifact id="OperationDefinition/Claim-inquiry" key="OperationDefinition-Claim-inquiry" name="ClaimInquiryOperation"/>
 <artifact deprecated="true" key="ClaimResponse" name="ClaimResponse"/>
-<artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="ClaimSubmitOperation"/>
 <artifact id="StructureDefinition/extension-communicatedDiagnosis" key="StructureDefinition-extension-communicatedDiagnosis" name="CommunicatedDiagnosis"/>
 <artifact id="CommunicationRequest/CommunicationRequestExample" key="CommunicationRequest-CommunicationRequestExample" name="Communication Request Example"/>
 <artifact id="StructureDefinition/extension-conditionCode" key="StructureDefinition-extension-conditionCode" name="ConditionCode"/>
@@ -61,7 +59,7 @@
 <artifact id="Bundle/MedicalServicesAuthorizationBundleExample" key="Bundle-MedicalServicesAuthorizationBundleExample" name="Medical Services Authorization Bundle Example"/>
 <artifact id="Claim/MedicalServicesAuthorizationExample" key="Claim-MedicalServicesAuthorizationExample" name="Medical Services Authorization Example"/>
 <artifact id="MedicationRequest/MedicationRequestExample" key="MedicationRequest-MedicationRequestExample" name="Medication Request Example"/>
-<artifact id="ValueSet/metricDataSource" key="ValueSet-metricDataSource" name="Metric Data Source"/>
+<artifact id="ValueSet/MetricDataSource" key="ValueSet-MetricDataSource" name="Metric Data Source"/>
 <artifact id="StructureDefinition/extension-militaryStatus" key="StructureDefinition-extension-militaryStatus" name="MilitaryStatus"/>
 <artifact id="StructureDefinition/extension-nursingHomeLevelOfCare" key="StructureDefinition-extension-nursingHomeLevelOfCare" name="NursingHomeLevelOfCare"/>
 <artifact id="StructureDefinition/extension-nursingHomeResidentialStatus" key="StructureDefinition-extension-nursingHomeResidentialStatus" name="NursingHomeResidentialStatus"/>
@@ -76,22 +74,21 @@
 <artifact id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="PAS Claim Response"/>
 <artifact id="StructureDefinition/profile-claimresponse-base" key="StructureDefinition-profile-claimresponse-base" name="PAS Claim Response Base"/>
 <artifact id="StructureDefinition/profile-claim-update" key="StructureDefinition-profile-claim-update" name="PAS Claim Update"/>
-<artifact id="CodeSystem/PASCommunicationRequestMedium" key="CodeSystem-PASCommunicationRequestMedium" name="PAS Communication Medium Code System"/>
 <artifact id="ValueSet/PASCommunicationRequestMedium" key="ValueSet-PASCommunicationRequestMedium" name="PAS Communication Medium Value Set"/>
 <artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="PAS CommunicationRequest"/>
 <artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="PAS Coverage"/>
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="PAS Device Request"/>
-<artifact id="CodeSystem/PASDiagnosisType" key="CodeSystem-PASDiagnosisType" name="PAS Diagnosis Type"/>
+<artifact deprecated="true" id="CodeSystem/PASDiagnosisType" key="CodeSystem-PASDiagnosisType" name="PAS Diagnosis Type"/>
 <artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="PAS Encounter"/>
 <artifact id="StructureDefinition/profile-identifier" key="StructureDefinition-profile-identifier" name="PAS Identifier"/>
-<artifact id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PAS Information Change Mode Code System"/>
+<artifact deprecated="true" id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PAS Information Change Mode Code System"/>
 <artifact id="ValueSet/PASInformationChangeMode" key="ValueSet-PASInformationChangeMode" name="PAS Information Change Mode Value Set"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-request-bundle" key="StructureDefinition-profile-pas-inquiry-request-bundle" name="PAS Inquiry Request Bundle"/>
 <artifact id="Bundle/PASClaimInquiryBundleExample" key="Bundle-PASClaimInquiryBundleExample" name="PAS Inquiry Request Bundle Example"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>
 <artifact id="Bundle/PASClaimInquiryResponseBundleExample" key="Bundle-PASClaimInquiryResponseBundleExample" name="PAS Inquiry Response Bundle Example"/>
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
-<artifact id="StructureDefinition/profile-locaation" key="StructureDefinition-profile-locaation" name="PAS Location Profile"/>
+<artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="PAS Location Profile"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
 <artifact id="StructureDefinition/PASMetricData" key="StructureDefinition-PASMetricData" name="PAS Metric Data"/>
 <artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="PAS Nutrition Order"/>
@@ -104,10 +101,9 @@
 <artifact id="StructureDefinition/profile-servicerequest" key="StructureDefinition-profile-servicerequest" name="PAS Service Request"/>
 <artifact id="StructureDefinition/profile-subscriber" key="StructureDefinition-profile-subscriber" name="PAS Subscriber Patient"/>
 <artifact id="SubscriptionTopic/PASSubscriptionTopic" key="SubscriptionTopic-PASSubscriptionTopic" name="PAS Subscription"/>
-<artifact id="CodeSystem/PASSubscriptionEvent" key="CodeSystem-PASSubscriptionEvent" name="PAS Subscription Event codes"/>
-<artifact id="CodeSystem/PASSupportingInfoType" key="CodeSystem-PASSupportingInfoType" name="PAS Supporting Info Type Code System"/>
+<artifact deprecated="true" id="CodeSystem/PASSupportingInfoType" key="CodeSystem-PASSupportingInfoType" name="PAS Supporting Info Type Code System"/>
 <artifact id="ValueSet/PASSupportingInfoType" key="ValueSet-PASSupportingInfoType" name="PAS Supporting Info Type Value Set"/>
-<artifact id="CodeSystem/temp" key="CodeSystem-temp" name="PAS Temporary Codes"/>
+<artifact id="CodeSystem/PASTempCodes" key="CodeSystem-PASTempCodes" name="PAS Temporary Codes"/>
 <artifact id="StructureDefinition/profile-datatype-timing" key="StructureDefinition-profile-datatype-timing" name="PAS Timing"/>
 <artifact id="StructureDefinition/extension-patientStatus" key="StructureDefinition-extension-patientStatus" name="PatientStatus"/>
 <artifact id="StructureDefinition/extension-productOrServiceCodeEnd" key="StructureDefinition-extension-productOrServiceCodeEnd" name="ProductOrServiceCodeEnd"/>
@@ -133,6 +129,8 @@
 <artifact id="Location/SurgicalLocationExample" key="Location-SurgicalLocationExample" name="Submit Claim Surgical Location Example"/>
 <artifact id="Practitioner/SurgicalPractitionerExample" key="Practitioner-SurgicalPractitionerExample" name="Submit Claim Surgical Practitioner Example"/>
 <artifact id="PractitionerRole/SurgicalPractitionerRoleExample" key="PractitionerRole-SurgicalPractitionerRoleExample" name="Submit Claim Surgical Practitioner Role Example"/>
+<artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="Submit a Claim resource for adjudication"/>
+<artifact id="OperationDefinition/Claim-inquiry" key="OperationDefinition-Claim-inquiry" name="Submit a Claim resource for inquiry"/>
 <artifact id="Bundle/SurgicalRequestBundleExample" key="Bundle-SurgicalRequestBundleExample" name="Surgical Admission Request Bundle Example"/>
 <artifact id="Claim/SurgicalAuthorizationRequestExample" key="Claim-SurgicalAuthorizationRequestExample" name="Surgical Request Authorization Example"/>
 <artifact id="ValueSet/X12278ConditionCategory" key="ValueSet-X12278ConditionCategory" name="X12 278 CRC Condition Category"/>
@@ -163,6 +161,7 @@
 <page key="metrics" name="PAS Metrics"/>
 <page key="epaWorkflow" name="PAS ePA Coordinator Information"/>
 <page key="index" name="Prior Authorization Implementation Guide Home Page"/>
+<page key="privacy" name="Privacy &amp; Security"/>
 <page key="toc" name="Table of Contents"/>
 <page key="background" name="Technical Background"/>
 <page key="usecases" name="Use Cases and Overview"/>

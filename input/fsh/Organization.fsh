@@ -39,7 +39,7 @@ Description: "A base profile for organizations in PAS"
 
 Profile: PASLocation
 Parent: $USCoreLocation
-Id: profile-locaation
+Id: profile-location
 Title: "PAS Location Profile"
 Description: "A profile on US-Core location to allow for specifying where a practitioner is working at."
 * address 1..1 MS

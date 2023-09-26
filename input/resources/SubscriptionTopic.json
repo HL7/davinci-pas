@@ -14,7 +14,7 @@
       "event": {
         "coding": [
           {
-            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSubscriptionEvent",
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
             "code": "result-available"
           }
         ]

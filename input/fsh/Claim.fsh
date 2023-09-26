@@ -109,7 +109,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * supportingInfo contains PatientEvent 0..1 and AdmissionDates 0..1 and DischargeDates 0..1
 
 * supportingInfo[PatientEvent] ^short = "Information about the dates of the event that are being requested."
-* supportingInfo[PatientEvent].category = PASSupportingInfoType#patientEvent
+* supportingInfo[PatientEvent].category = PASTempCodes#patientEvent
 * supportingInfo[PatientEvent].timing[x] 1..1 MS
 * supportingInfo[PatientEvent].timingDate obeys FullDateRule
 * supportingInfo[PatientEvent].timingPeriod.start obeys FullDateRule
@@ -117,7 +117,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * supportingInfo[PatientEvent].value[x] 0..0
 
 * supportingInfo[AdmissionDates] ^short = "Information about the admission dates of a hospital admission being requested."
-* supportingInfo[AdmissionDates].category = PASSupportingInfoType#admissionDates
+* supportingInfo[AdmissionDates].category = PASTempCodes#admissionDates
 * supportingInfo[AdmissionDates].timing[x] 1..1 MS
 * supportingInfo[AdmissionDates].timingDate obeys FullDateRule
 * supportingInfo[AdmissionDates].timingPeriod.start obeys FullDateRule
@@ -125,7 +125,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * supportingInfo[AdmissionDates].value[x] 0..0
 
 * supportingInfo[DischargeDates] ^short = "Information about the discharge dates of a hospital admission being requested."
-* supportingInfo[DischargeDates].category = PASSupportingInfoType#dischargeDates
+* supportingInfo[DischargeDates].category = PASTempCodes#dischargeDates
 * supportingInfo[DischargeDates].timing[x] 1..1 MS
 * supportingInfo[DischargeDates].timingDate obeys FullDateRule
 * supportingInfo[DischargeDates].timingPeriod.start obeys FullDateRule
@@ -166,14 +166,14 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo contains AdditionalInformation 0..* and MessageText 0..*
 
 * supportingInfo[AdditionalInformation] ^short = "Send additional paperwork or supporting information for the request.  This can be most commonly a DocumentReference profile although any type of information is allowed."
-* supportingInfo[AdditionalInformation].category = PASSupportingInfoType#additionalInformation
+* supportingInfo[AdditionalInformation].category = PASTempCodes#additionalInformation
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
 * supportingInfo[AdditionalInformation].value[x] only Reference($USCoreDocumentReference or Resource)
 * supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the PASDocumentReference profile should be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."
-* supportingInfo[MessageText].category = PASSupportingInfoType#freeFormMessage
+* supportingInfo[MessageText].category = PASTempCodes#freeFormMessage
 * supportingInfo[MessageText].timing[x] 0..0
 * supportingInfo[MessageText].value[x] 1..1 MS
 * supportingInfo[MessageText].value[x] only string

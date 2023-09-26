@@ -1,19 +1,34 @@
 /*
 IG-specific terminology
 */
-CodeSystem: PASInformationChangeMode
-Title: "PAS Information Change Mode Code System"
-Description: "The mode by which a piece of information has changed."
-* ^caseSensitive = true
+ValueSet: MetricDataSource
+Title: "Metric Data Source"
+Description: "A list of codes indicating the perspective from which metric data was captured"
+* ^status = #draft
 * ^experimental = false
+* PASTempCodes#payer-src
+* PASTempCodes#provider-src
+* PASTempCodes#intermediary-src
+
+CodeSystem: PASTempCodes
+Title: "PAS Temporary Codes"
+Description: "Codes temporarily defined as part of the PAS implementation guide.  These will eventually migrate into an officially maintained terminology (likely either SNOMED CT or HL7's UTG code systems)."
+* ^status = #draft
+* ^experimental = false
+* ^caseSensitive = true
+* ^hierarchyMeaning = #is-a
+* ^content = #complete
+
+// Metric data source
+* #provider-src            "Provider-sourced"                  "The metric information was captured from the provider system's perspective"
+* #payer-src               "Payer-sourced"                     "The metric information was captured from the payer system's perspective"
+* #intermediary-src        "Intermediary-sourced"                     "The metric information was captured from the intermediary system's perspective"
+
+// PAS Information Change Mode
 * #changed "Changed" "Previously sent information has been changed."
 * #added "Added" "New information that was not sent previously."
 
-CodeSystem: PASSupportingInfoType
-Title: "PAS Supporting Info Type Code System"
-Description: "Types of supporting information for a Prior Authorization Claim."
-* ^caseSensitive = true
-* ^experimental = false
+// PAS Supporting Information Type
 * #patientEvent "Patient Event" "Information about the dates of the event that are being requested."
 * #admissionDates "Admission Dates" "Information about the admission dates of a hospital admission being requested."
 * #dischargeDates "Discharge Dates" "Information about discharge dates of a hospital admission being requested."
@@ -21,32 +36,35 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 * #freeFormMessage "Free Form Message" "Send text messages to the UMO."
 * #institutionalEncounter "Institutional Encounter" "Information about a hospital claim being requested."
 
-CodeSystem: PASSubscriptionEvent
-Title: "PAS Subscription Event codes"
-Description: "PAS Subscription Event codes"
-* ^caseSensitive = true
-* ^experimental = false
+// PAS Subscription Event
 * #result-available "Result Available" "A new result for a PAS submission is now available."
+
+// PAS Diagnosis Type
+* #admitting "Admitting" "The diagnosis given as the reason why the patient was admitted to the hospital."
+* #principal "Principal" "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+* #patientreasonforvisit "Patient Reason For Visit" "The diagnosis given as why the patient came to the hospital."
+
+// PAS Communication Request Medium
+* #CDEX "CDex Submit-Attachment" "Via a CDex Submitt-Attachment operation"
 
 
 ValueSet: PASInformationChangeMode
 Title: "PAS Information Change Mode Value Set"
 Description: "The mode by which a piece of information has changed."
 * ^experimental = false
-* codes from system PASInformationChangeMode
+* PASTempCodes#changed
+* PASTempCodes#added
 
 ValueSet: PASSupportingInfoType
 Title: "PAS Supporting Info Type Value Set"
 Description: "Types of supporting information for a Prior Authorization Claim."
 * ^experimental = false
-* codes from system PASSupportingInfoType
-
-CodeSystem: PASCommunicationRequestMedium
-Title: "PAS Communication Medium Code System"
-Description: "Extra types of channels that a communication request can be made"
-* ^experimental = false
-* ^caseSensitive = true
-* #CDEX "CDex Submit-Attachment" "Via a CDex Submitt-Attachment operation"
+* PASTempCodes#patientEvent
+* PASTempCodes#admissionDates
+* PASTempCodes#dischargeDates
+* PASTempCodes#additionalInformation
+* PASTempCodes#freeFormMessage
+* PASTempCodes#institutionalEncounter
 
 ValueSet: PASCommunicationRequestMedium
 Title: "PAS Communication Medium Value Set"
@@ -54,8 +72,7 @@ Description: "Types of channels that a communication request can be made"
 * ^experimental = false
 * ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * codes from system https://codesystem.x12.org/005010/756
-* codes from system PASCommunicationRequestMedium
-
+* PASTempCodes#CDEX
 
 /*
 X12 ValueSets
@@ -91,20 +108,13 @@ Description: "The complete set of codes that can be used to convey a patient dia
 * codes from system http://uri.hddaccess.com/cs/apdrg
 * codes from system http://uri.hddaccess.com/cs/aprdrg
 
-CodeSystem: PASDiagnosisType
-Title: "PAS Diagnosis Type"
-Description: "The type of diagnosis being conveyed in a prior authorization.  This code is combined with the Diagnosis Code to produce the proper X12 code."
-* ^caseSensitive = true
-* ^experimental = false
-* #admitting "Admitting" "The diagnosis given as the reason why the patient was admitted to the hospital."
-* #principal "Principal" "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
-* #patientreasonforvisit "Patient Reason For Visit" "The diagnosis given as why the patient came to the hospital."
-
 ValueSet: X12278DiagnosisType
 Title: "X12 278 Diagnosis Type Value Set"
 Description: "This set of codes is used to identify the type of diagnosis that is being conveyed in the prior authorization."
 * ^experimental = false
-* codes from system PASDiagnosisType
+* PASTempCodes#admitting
+* PASTempCodes#principal
+* PASTempCodes#patientreasonforvisit
 
 ValueSet: X12278LocationType
 Title: "X12 278 Health Care Service Location Type Value Set"

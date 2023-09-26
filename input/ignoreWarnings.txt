@@ -72,10 +72,17 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 on element Encounter.hospitalization.admitSource could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98 on element Organization.type could not be resolved
 
+# Value sets that contain X12 codes and are thus not able to be validated
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory%
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCode%
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes%
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes%
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
+
 # CPT Code System used in example is not available in the terminology server
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated%
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
-The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
 
 # The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
@@ -102,5 +109,7 @@ US FHIR Usage rules require that all profiles on Coverage derive from the core U
 US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
 
-# Logical model element names
-Rule eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken' Failed
+# Reference to draft items
+Reference to draft item http://hl7.org/fhir/hl7-work-group%
+Reference to draft item http://hl7.org/fhir/standards-status%
+Reference to draft item http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes%
