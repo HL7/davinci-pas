@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pas
 canonical: http://hl7.org/fhir/us/davinci-pas
-version: 1.2.0
+version: 2.0.0
 name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
@@ -42,7 +42,7 @@ extension:
     valueInteger: 3
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm 
-releaseLabel: STU 1.2
+releaseLabel: STU 2
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:
   index.md:

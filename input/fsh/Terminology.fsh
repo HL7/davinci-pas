@@ -47,6 +47,22 @@ Description: "Codes temporarily defined as part of the PAS implementation guide.
 // PAS Communication Request Medium
 * #CDEX "CDex Submit-Attachment" "Via a CDex Submitt-Attachment operation"
 
+// PAS Task Codes
+* #attachment-request-code "Attach Request Code" "Attachments are identified by LOINC or PWK01 codes"
+* #attachment-request-questionnaire "Attachment Request Questionnaire" "Attachments are identified by a questionnaire using the TRN input parameter"
+
+* #priorAuthorization "Prior Authorization Information Request" "Additional information is needed to determine response for a prior authorization"
+* #payer-url "Payer URL" "The Payer Endpoint URL needed to submit attachments"
+* #attachments-needed "Attachments Needed" "Communicates what attachments are needed"
+* #questionnaires-needed "Questionnaires Needed" "Communicates what questionnaires are needed"
+
+ValueSet: PASTaskCodes
+Title: "PAS Task Codes"
+Description: "The code for the task that is request additional information."
+* ^experimental = false
+* PASTempCodes#attachment-request-code
+* PASTempCodes#attachment-request-questionnaire
+
 
 ValueSet: PASInformationChangeMode
 Title: "PAS Information Change Mode Value Set"
@@ -151,6 +167,14 @@ Description: "LOINC codes that convey the type of information that is being requ
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * ^experimental = false
 * codes from system http://loinc.org where CLASS = "ATTACH.MODIFIER"
+
+ValueSet: AttachmentRequestCodes
+Title: "Attachment Request Codes"
+Description: "Codes that convey the specific additional information to be returned as attachments."
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+* ^experimental = false
+* codes from system http://loinc.org where CLASS = "ATTACH"
+* codes from system https://codesystem.x12.org/005010/755
 
 ValueSet: X12278ReviewDecisionReasonCode
 Title: "X12 278 Review Decision Reason Codes"

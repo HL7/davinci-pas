@@ -45,6 +45,7 @@ Code System URI 'https://codesystem.x12.org/005010/1321' is unknown so the code 
 %Unable to provide support for code system https://codesystem.x12.org/005010/756
 %Unable to provide support for code system https://codesystem.x12.org/005010/1136
 %Unable to provide support for code system https://codesystem.x12.org/005010/1321
+%Unable to provide support for code system https://codesystem.x12.org/005010/755
 
 The valueSet reference https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98 on element Organization.type could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 on element Extension.extension.value[x] could not be resolved

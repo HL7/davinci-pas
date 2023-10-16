@@ -125,27 +125,45 @@ There is also guidance on monitoring in the CDex IG: [Using CDex Attachments wit
 
 Also, in situations where a request is 'pended', there may occasionally be a need to update the authorization request.  This might involve the provider canceling it or adjusting the description of the procedure for which authorization is requested (e.g. minor change to a procedure, update to the timeframe or dosage based on new clinical information).
 
-#### Submit Additional Information
-With the use of DTR, the need to submit additional information should be extremely uncommon.  However, in some cases an authorization will have a status of 'denied' or 'pended' due to insufficient information, which will normally be indicated either by an error message showing which mandatory elements were missing or with a request for specific additional information to be provided.  In this case, a new or revised authorization request can be submitted with additional information supplied to support the decision-making process.  Alternatively, the payer may keep the request as 'pended' and simply request additional information.  Payers should only be requesting additional information if clarification or more details are needed than was originally provided.  This specification does not cover the process of appeals. Providers should consult the payer in question to determine the appropriate appeals mechanism.
+#### Request For Additional Information
+A payer may request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
 
-If additional information is needed, the provider can respond with the information via a number of preferred methods:
+1. One or more codes in the PWK01 element
+2. One or more of the approved LOINC codes Attachments – LOINC in the HI segment
+3. A single 102089-0 LOINC code in the HI segment to request information via a payer’s specific questionnaire.  When this option is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code SHALL be the DTR context ID used to retrieve the appropriate questionnaire 
 
-1. Via a CDex Submit-Attachment operation based on the X12 278 request for additional information
-2. Via a CDex Submit-Attachment operation where the LOINC code indicates a specific Questionnaire exists on the Payers Operation endpoint using the tracing ID as the business identifier
-3. Via an X12 275 response (by provider) to a X12 278 response (as represented in the response FHIR bundle)
-
-NOTE: A payer can request information in a number of means but **SHALL** explicitly communicate the method by which the information will be provided to the provider using the CommunicationRequest.method element.  The [CommunicationRequest Medium ValueSet](ValueSet-PASCommunicationRequestMedium.html) includes non-X12 codes that allow an intermediary to specify additional methods for sending the additional information, i.e. via a CDex Submit-Attachment operation.  Only intermediaries will send these codes.
-
-If you have a QuestionnaireResponse Bundle produced by DTR, then it can be included in the PAS Request by creating the QuestionnaireResponse Bundle as defined in the DTR specification, and including it in the the 'additionalInformation' slice of the Claim.supportingInfo element.
-
-Here is a diagram that shows the workflow associated with a request for additional information:
+All of the additional information request codes SHOULD be used as input to a CDex task.  The CDex task will include all of the information required to enable CDex to assemble the required documentation and send it to the payer’s operation endpoint for attachments.  When the LOINC code 102089-0 is present, the associated TRNs SHALL also be exchange as Task.input.  The following diagram defines the PAS, CDex, DTR workflow. A separate task SHALL be created for each of the above attachment request types (PWK01, LOINC, questionnaire).
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionaldoc-workflow.png" alt="PAS Additional Documentation Request Workflow"/>
-  <figcaption>Figure 2.4 - Additional Documentation Request Workflow</figcaption>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionalinforequest-workflow.jpg" alt="PAS Additional Documentation Request Workflow"/>
+  <figcaption>Figure 2.4 - Request For Additional Information Workflow</figcaption>
 </figure>
 {::options parse_block_html="true" /}
+
+The [PAS task profile](StructureDefinition-profile-task.html) SHALL be used to convey PAS X12 278 Response information to CDex.
+ 
+PAS uses the Task based profile to request additional documentation (“attachments”) for prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request specific attachments and provides the information necessary to respond via the $submit-attachment operation. This response is compatible with existing 278 response transactions to allow reassociation of the requested documents (using LOINC codes and/or PWK01 codes) and/or questionnaireResponse(s).  The following Task profile supports all of the elements necessary to exchange a request for additional documentation between the PAS 278 response and CDex.  For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed CDex section ](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).
+Note: since task.code is cardinality 0..1, a Task will need to be created for each of the values (if required).  One for code(s) and another for questionnaire(s).
+
+A Task.code of either “attachment-request-code” or “attachment-request-questionnaire” is communicating that the Payer is requesting attachments for a prior authorization using a code or data request questionnaire:
+
+* If the code is “attachment-request-code”, the provider system returns attachment(s) identified by the LOINC attachment code(s) or the PWK01 cod(s)in the “attachments-needed” input parameter.
+* If the code is “attachment-request-questionnaire”, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the "questionnaires-needed" input parameter.
+* When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in “payer-url” input parameter.
+
+The Task.requester.identifier and Task.owner.reference represents the Payer ID
+The Task.for references the Patient information.
+The Task.reasonReference references the Prior Authorization request.
+
+The Task.input provides for the following information:
+
+* 'payerUrl' slice represents the Payer endpoint URL that is used to submit attachments using the $submit-attachment operation
+* 'attachmentsNeeded' slice communicates which attachments are needed using LOINC attachment or PWK01 codes
+* 'questionnairesNeeded' slice communicates to DTR which questoinnaire(s) are needed using TRN codes
+
+Both the 'attachmentsNeeded' and 'questionnairesNeeded' slice contains an extension point to the prior authorization line number.
+
 
 ### Supporting Information
 To evaluate whether a given service will be covered, a payer may need to understand additional information about the patient.  There are three main categories of such information:

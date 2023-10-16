@@ -154,6 +154,37 @@ Description: "An example of a ClaimResponse with errors."
 * error[1].extension[errorPath].valueString = "Bundle.entry[1].Organization.name"
 * error[1].extension[followupAction].valueCodeableConcept = https://codesystem.x12.org/005010/889#C
 
+Instance: PractitionerRequestorResponseExample
+InstanceOf: PASClaimResponse
+Title: "Authorization Response with Practitioner Requestor Example"
+Description: "An example of a ClaimResponse where the requestor is a Practitioner."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2005-05-02T11:02:00+05:00
+* insurer = Reference(InsurerExample)
+* requestor = Reference(ReferralPractitionerRoleExample)
+* outcome = #complete
+* item.itemSequence = 1
+* item.extension[requestedServiceDate].valuePeriod.start = 2005-05-02
+* item.extension[requestedServiceDate].valuePeriod.end = 2005-06-02
+* item.extension[preAuthIssueDate].valueDate = 2005-05-02
+* item.extension[preAuthPeriod].valuePeriod.start = 2005-05-02
+* item.extension[preAuthPeriod].valuePeriod.end = 2005-06-02
+* item.extension[authorizedProvider].extension[provider].valueReference = Reference(ReferralPractitionerExample)
+* item.extension[authorizedItemDetail].extension[productOrServiceCode].valueCodeableConcept = https://codesystem.x12.org/005010/1365#3 "Consultation"
+* item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.value = 100
+* item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.currency = #USD
+* item.extension[authorizedItemDetail].extension[quantity].valueQuantity.value = 1
+* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
+
 Instance: HomecareAuthorizationBundleExample
 InstanceOf: PASRequestBundle
 Title: "Homecare Authorization Bundle Example"
@@ -226,7 +257,7 @@ Description: "An example of a Claim bundle updating a previously sent prior auth
 
 Instance: HomecareAuthorizationUpdateExample
 InstanceOf: PASClaimUpdate
-Title: "Homecare Authorizaion Update Example"
+Title: "Homecare Authorization Update Example"
 Description: "An example of a Claim resource updating a prior authorization."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
@@ -721,3 +752,22 @@ Description: "A sample practitioner who is being referred to."
 * telecom.system = #phone
 * telecom.value = "4029993456"
 
+Instance: AdditionalInformationTaskExample
+InstanceOf: PASTask
+Title: "Additional Information Task Example"
+Description: "An example of a PAS Task requesting additional information."
+* identifier.system = "http://example.org/ITEM_TRACE_NUMBER"
+* identifier.value = "1122334"
+* status = http://hl7.org/fhir/task-status#requested
+* intent = #order
+* code = PASTempCodes#attachment-request-code
+* requester.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* requester.identifier.value = "789312"
+* owner.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* owner.identifier.value = "789312"
+* for = Reference(BeneficiaryExample)
+* reasonCode
+* reasonReference = Reference(MedicalServicesAuthorizationExample)
+* input[PayerURL].valueUrl = "http://example.org/payerURL"
+* input[AttachmentsNeeded].valueCodeableConcept = http://loinc.org#26443-2
+* input[AttachmentsNeeded].extension[paLineNumber].valueInteger = 1
