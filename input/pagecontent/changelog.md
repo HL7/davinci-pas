@@ -1,12 +1,12 @@
-### Version = 1.2.0
-- url: <http://hl7.org/fhir/us/davinci-pas/STU1.2>
+### Version = 2.0.0
+- url: <http://hl7.org/fhir/us/davinci-pas/STU2>
 - Based on FHIR version: 4.0.1
 
 The changes in this update to the Da Vinci Prior Authorization guide have been reviewed and commented on by the public through the HL7 balloting process.  The resolution of the community comments has been agreed to and voted on by the members of the HL7 International Financial Management work group.
 
-#### What's new in Version 1.2.0 of Da Vinci Prior Authorization:
+#### What's new in Version 2.0.0 of Da Vinci Prior Authorization:
 
-Implementers can find detailed comparisons between the FHIR artifacts at [Changes Between Versions](comparison-v1.2.0-ballot/index.html) page.  This section provides an overview of the significant changes in Version 1.2.0 of Da Vinci Prior Authorization.
+Implementers can find detailed comparisons between the FHIR artifacts at [Changes Between Versions](comparison-v1.2.0-ballot/index.html) page.  This section provides an overview of the significant changes in Version 2.0.0 of Da Vinci Prior Authorization.
 
 - ALL PAGES
   - Made Conformance verbs bold everywhere (FHIR-36583)
