@@ -1,5 +1,4 @@
 [Previous Page - Use Cases](usecases.html)
-### Request For Additional Information
 A payer may request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
 
 1. One or more codes in the PWK01 element
