@@ -21,5 +21,12 @@
       },
       "resource": "http://hl7.org/fhir/StructureDefinition/ClaimResponse"
     }
+  ],
+  "canFilterBy": [
+    {
+      "description": "The id of the requesting provider organization.",
+      "filterParameter": "orgIdentifier",
+      "comparator": ["eq"] 
+    }
   ]
 }
