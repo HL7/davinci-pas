@@ -102,12 +102,12 @@ The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/Pat
 The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' doesnt provide any codes so the code cannot be validated
 The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/PointOfOrigin' doesnt provide any codes so the code cannot be validated
 	
-# Variance Request from CGP for the profiles that are not derived from US Core
+# Variance Request from CGP for the profiles that are not derived from US Core - https://jira.hl7.org/browse/FHIR-42953
 US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
 US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
 
 # Reference to draft items
-Reference to draft item http://hl7.org/fhir/hl7-work-group%
 Reference to draft item http://hl7.org/fhir/standards-status%
 Reference to draft item http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes%
+The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
