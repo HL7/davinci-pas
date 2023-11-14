@@ -92,9 +92,16 @@ Usage: #definition
       * name = "PAS Claim Inquiry"
       * definition = Canonical(ClaimInquiryOperation)
   * resource[1]
+    * extension[0]
+      * url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+      * valueCanonical = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
     * type = #Subscription
     * interaction[0]
       * code = #create
+    * interaction[1]
+      * code = #update
+    * interaction[2]
+      * code = #delete
 	
 
 Instance: IntermediaryCapabilities
@@ -124,7 +131,15 @@ Usage: #definition
       * name = "PAS Claim Inquiry"
       * definition = Canonical(ClaimInquiryOperation)
   * resource[1]
+    * extension[0]
+      * url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical"
+      * valueCanonical = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
     * type = #Subscription
     * interaction[0]
       * code = #create
+    * interaction[1]
+      * code = #update
+    * interaction[2]
+      * code = #delete
+
 	
