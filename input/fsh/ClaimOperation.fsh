@@ -83,12 +83,19 @@ Usage: #definition
 * format[1] = #xml
 * rest
   * mode = #client
-  * operation[0]
-    * name = "PAS Claim Request"
-    * definition = Canonical(ClaimSubmitOperation)
-  * operation[1]
-    * name = "PAS Claim Inquiry"
-    * definition = Canonical(ClaimInquiryOperation)
+  * resource[0]
+    * type = #Claim
+    * operation[0]
+      * name = "PAS Claim Request"
+      * definition = Canonical(ClaimSubmitOperation)
+    * operation[1]
+      * name = "PAS Claim Inquiry"
+      * definition = Canonical(ClaimInquiryOperation)
+  * resource[1]
+    * type = #Subscription
+    * interaction[0]
+      * code = #create
+	
 
 Instance: IntermediaryCapabilities
 InstanceOf: CapabilityStatement
@@ -108,10 +115,16 @@ Usage: #definition
 * format[1] = #xml
 * rest
   * mode = #server
-  * operation[0]
-    * name = "PAS Claim Request"
-    * definition = Canonical(ClaimSubmitOperation)
-  * operation[1]
-    * name = "PAS Claim Inquiry"
-    * definition = Canonical(ClaimInquiryOperation)
+  * resource[0]
+    * type = #Claim
+    * operation[0]
+      * name = "PAS Claim Request"
+      * definition = Canonical(ClaimSubmitOperation)
+    * operation[1]
+      * name = "PAS Claim Inquiry"
+      * definition = Canonical(ClaimInquiryOperation)
+  * resource[1]
+    * type = #Subscription
+    * interaction[0]
+      * code = #create
 	
