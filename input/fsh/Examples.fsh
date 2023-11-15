@@ -452,7 +452,7 @@ Description: "An example of a ClaimResponse bundle returning a response to a cla
 * identifier.value = "5269367"
 * type = #collection
 * timestamp = 2005-05-02T11:01:00+05:00
-* entry[ClaimResponse].fullUrl = "http://example.org/fhir/Claim/PASClaimInquiryResponseExample"
+* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/PASClaimInquiryResponseExample"
 * entry[ClaimResponse].resource = PASClaimInquiryResponseExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
