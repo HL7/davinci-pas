@@ -31,7 +31,7 @@ dependencies:
   hl7.fhir.extensions.r5: 4.0.1
   hl7.fhir.us.davinci-crd: current
   hl7.fhir.uv.extensions: current
-  hl7.fhir.uv.subscriptions-backport: 1.1.0
+  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
