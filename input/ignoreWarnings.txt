@@ -19,23 +19,23 @@ ValueSet https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314 not
 ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 not found
 ValueSet https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923 not found
 
-Code System URI 'https://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/98' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/584' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/306' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/901' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/889' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1338' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1337' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1345' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/755' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/678' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/679' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/923' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1136' is unknown so the code cannot be validated%
-Code System URI 'https://codesystem.x12.org/005010/1321' is unknown so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1525' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1322' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/98' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/584' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1365' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/306' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/901' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/889' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1338' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1337' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1345' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/755' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/678' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/679' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/923' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1136' could not be found so the code cannot be validated%
+Code System URI 'https://codesystem.x12.org/005010/1321' could not be found so the code cannot be validated%
 
 
 %Unable to provide support for code system https://codesystem.x12.org/external/886
@@ -89,8 +89,8 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle%
 
 # Code systems that are not available in the terminology server
-Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated%
-Code System URI 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' is unknown so the code cannot be validated%
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found so the code cannot be validated%
+Code System URI 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found so the code cannot be validated%
 
 %Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 %Unable to provide support for code system https://www.nubc.org/revenue-code
