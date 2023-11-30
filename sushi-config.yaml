@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pas
 canonical: http://hl7.org/fhir/us/davinci-pas
-version: 2.0.0
+version: 2.0.1
 name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
