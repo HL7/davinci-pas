@@ -4,7 +4,6 @@
   "path" : "http://hl7.org/fhir/us/davinci-pas/STU2",
   "status" : "trial-use",
   "sequence" : "STU 2",
-  "milestone" : true,
-  "mode": "milestone",
+   "mode": "technical-correction",
   "desc" : "This errata fixes a dependency on the CRD guide."
 }
