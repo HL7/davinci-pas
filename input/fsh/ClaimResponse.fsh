@@ -70,7 +70,7 @@ Description: "The details of the review action that is necessary for the authori
 * extension[number] ^short = "Item Level Review Number"
 * extension[reasonCode].value[x] only CodeableConcept
 * extension[reasonCode].valueCodeableConcept from X12278ReviewDecisionReasonCode (required)
-* extension[reasonCode] ^short = "Explanation of the review denial or partial approval"
+* extension[reasonCode] ^short = "Certification Action Code: indicates the reason for the approved, denied, or pended services"
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 * extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
 * ^context[+].type = #element
