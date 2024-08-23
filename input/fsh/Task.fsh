@@ -14,11 +14,11 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * intent = #order
 * code 1..1 MS
 * code from PASTaskCodes (required)
-* requester 1..1 MS
-  * ^short = "Payer ID"
+* requester ..1 MS
+  * ^short = "Provider ID - only send the identifier"
   * identifier 1..1 MS
-* owner 1..1 MS
-  * ^short = "Payer ID"
+* owner 0..1 MS
+  * ^short = "Provider ID - only send the identifier"
   * identifier 1..1 MS
 * for 1..1 MS
 * for only Reference(PASBeneficiary)
