@@ -39,7 +39,7 @@ Usage: #definition
 * id = "Claim-inquiry"
 * url = "http://hl7.org/fhir/us/davinci-pas/OperationDefinition/Claim-inquiry"
 * name = "ClaimInquiry"
-* title = "Submit a Claim resource for inquiry"
+* title = "Search for a Prior Authorization Response by example"
 * status = #draft
 * kind = #operation
 * description = "This operation is used to make a search for a Prior Authorization Response by example.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
