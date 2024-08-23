@@ -49,7 +49,7 @@ Description: "Codes temporarily defined as part of the PAS implementation guide.
 
 // PAS Task Codes
 * #attachment-request-code "Attach Request Code" "Attachments are identified by LOINC or PWK01 codes"
-* #attachment-request-questionnaire "Attachment Request Questionnaire" "Attachments are identified by a questionnaire using the TRN input parameter"
+* #attachment-request-questionnaire "Attachment Request Questionnaire" "Attachments are identified by a questionnaire"
 
 * #priorAuthorization "Prior Authorization Information Request" "Additional information is needed to determine response for a prior authorization"
 * #payer-url "Payer URL" "The Payer Endpoint URL needed to submit attachments"
