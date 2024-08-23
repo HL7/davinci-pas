@@ -223,7 +223,7 @@ When using the subscription retrieval mechanism, the Client will POST a new Subs
 
 Once the subscription has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
 
-Upon receiving a notification, the Client **SHALL** - when convenient and if necessary - execute a query.
+Upon receiving a notification, the Client **SHALL** execute a query.  The timing of the query does not to be immediate but can be when convenient.
 
 
 #### Checking Status
