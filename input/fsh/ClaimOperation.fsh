@@ -6,7 +6,7 @@ Usage: #definition
 * id = "Claim-submit"
 * url = "http://hl7.org/fhir/us/davinci-pas/OperationDefinition/Claim-submit"
 * name = "ClaimSubmit"
-* title = "Submit a Claim resource for adjudication"
+* title = "Submit a Prior Authorization Request for adjudication"
 * status = #draft
 * kind = #operation
 * description = "This operation is used to submit a Pre-Authorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimRequest instance (along with other referenced resources) and the only output is a single Bundle with a PASClaimResponse (and other referenced resources) or an OperationOutcome resource.  This is a variant of the FHIR Core Claim $submit operation."
