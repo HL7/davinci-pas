@@ -142,7 +142,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Claim.encounter named encounter 0..1 MS
 * extension[encounter] ^short = "Information about a hospital claim being requested."
 * extension[encounter].valueReference only Reference(PASEncounter)
-* identifier 1..1 MS
+* identifier 1..2 MS
 * diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1 MS
 * diagnosis.extension[recordedDate] ^short = "The date that a diagnosis was recorded. (HIxx-4)"
 * item.extension contains 
