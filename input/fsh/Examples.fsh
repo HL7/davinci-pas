@@ -414,7 +414,7 @@ Description: "An example of a Claim bundle inquiring about prior authorizations.
 Instance: PASClaimInquiryExample
 InstanceOf: PASClaimInquiry
 Title: "PAS Claim Inquiry Example"
-Description: "An example of a Claim resource used to inquire for prior authorizations that match the example."
+Description: "An example of a Claim resource used to search for prior authorizations that match the example."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"

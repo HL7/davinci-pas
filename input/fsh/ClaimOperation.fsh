@@ -33,7 +33,7 @@ Usage: #definition
 
 Instance: ClaimInquiryOperation
 InstanceOf: OperationDefinition
-Description: "This operation is used to make an inquiry for a previously-submitted Pre-Authorization.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
+Description: "This operation is used to make a search for a Prior Authorization Response by example for a previously-submitted Pre-Authorization.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
 Usage: #definition
 
 * id = "Claim-inquiry"
@@ -42,7 +42,7 @@ Usage: #definition
 * title = "Submit a Claim resource for inquiry"
 * status = #draft
 * kind = #operation
-* description = "This operation is used to make an inquiry for a previously-submitted Pre-Authorization.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
+* description = "This operation is used to make a search for a Prior Authorization Response by example.  This Prior Authorization $inquire operation is a query-by-example that follows the X12 278 Inquiry rules.  The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the only output is a single Bundle with zero-to-many PASClaimInquiryResponses (and other referenced resources) or an OperationOutcome resource."
 * code = #inquire
 * base = "http://hl7.org/fhir/OperationDefinition/Claim-submit"
 * resource = #Claim
