@@ -71,7 +71,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * accident.type from https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 (required)
 * accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * accident.location[x] only Address
-* item 1..* MS
+* item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	AuthorizationNumber named authorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
@@ -145,6 +145,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * identifier 1..2 MS
 * diagnosis.extension contains DiagnosisRecordedDate named recordedDate 0..1 MS
 * diagnosis.extension[recordedDate] ^short = "The date that a diagnosis was recorded. (HIxx-4)"
+* item 1..* MS
 * item.extension contains 
 	EPSDTIndicator named epsdtIndicator 0..1 MS and
 	NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1 MS and
