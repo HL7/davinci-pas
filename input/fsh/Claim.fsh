@@ -10,7 +10,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * extension[conditionCode] ^short = "Used to indicate condition codes for various requests for service."
 * extension[homeHealthCareInformation] ^short = "Used to provide required information about home health care services. (CR6)"
-* identifier 0..1 MS
+* identifier MS
 * identifier only PASIdentifier
 * identifier ^short = "Business identifier for claim"
 * status = #active
@@ -185,6 +185,7 @@ Title: "PAS Claim Inquiry"
 Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
 * extension contains CertificationType named certificationType 0..1 MS
 * extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
+* identifier 1..1 MS
 * provider ^short = "This is the submitter of the inquiry."
 * billablePeriod MS
 * diagnosis ^comment = "When multiple diagnoses are sent, the intermediary will need to convert the single inquiry into multiple X12 278 inquiries - one for each diagnosis code - and then make the union of the returned Prior Authorization responses."
