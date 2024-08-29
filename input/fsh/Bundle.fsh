@@ -38,6 +38,7 @@ Description: "PAS constraints on Bundle resource ensuring that a claim inquiry r
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains Claim 1..1 MS
+* entry[Claim].resource MS
 * entry[Claim].resource only PASClaimInquiry
 
 Profile: PASResponseBundle
@@ -58,6 +59,7 @@ Description: "PAS constraints on Bundle resource ensuring that a claim response 
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains ClaimResponse 1..1 MS
+* entry[ClaimResponse].resource MS
 * entry[ClaimResponse].resource only PASClaimResponse
 
 Profile: PASInquiryResponseBundle
@@ -78,4 +80,5 @@ Description: "PAS constraints on Bundle resource ensuring that a claim inquiry r
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains ClaimResponse 0..* MS
+* entry[ClaimResponse].resource MS
 * entry[ClaimResponse].resource only PASClaimInquiryResponse

@@ -4,6 +4,7 @@ Id: profile-medicationrequest
 Title: "PAS Medication Request"
 Description: "PAS constraints on MedicationRequest resource mandating support for elements relevant to the prescriptions being requested on a prior authorization request"
 * extension contains http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information named coverage 0..1 MS
+* intent MS
 * intent = #order (exactly)
 * subject MS
 * subject only Reference(PASBeneficiary)
@@ -18,6 +19,7 @@ Id: profile-servicerequest
 Title: "PAS Service Request"
 Description: "PAS constraints on ServiceRequest resource mandating support for elements relevant to the generic services being requested on a prior authorization request"
 * extension contains ProductOrServiceCodeEnd named serviceCodeEnd 0..1 MS and http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information named coverage 0..1 MS
+* intent MS
 * intent = #order (exactly)
 * code MS
 * code from X12278RequestedServiceType (required)
@@ -34,6 +36,7 @@ Id: profile-nutritionorder
 Title: "PAS Nutrition Order"
 Description: "PAS constraint on Nutrition Order resource for elements relevant to the ordering of nutrition on a prior authorization request"
 * extension contains http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information named coverage 0..1 MS
+* intent MS
 * intent = #order (exactly)
 * patient MS
 * patient only Reference(PASBeneficiary)
@@ -51,6 +54,7 @@ Id: profile-devicerequest
 Title: "PAS Device Request"
 Description: "PAS constraints on DeviceRequest resource mandating support for elements relevant to the devices being requested on a prior authorization request"
 * extension contains http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information named coverage 0..1 MS
+* intent MS
 * intent = #order (exactly)
 * code[x] MS
 * code[x] only CodeableConcept

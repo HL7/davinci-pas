@@ -168,13 +168,13 @@ Parent: PASClaim
 Id: profile-claim-update
 Title: "PAS Claim Update"
 Description: "PAS constraints on Claim resource when submitting an update to a previous PAS prior authorization request"
-* supportingInfo.extension contains InfoChanged named infoChanged 0..1
+* supportingInfo.extension contains InfoChanged named infoChanged 0..1 MS
 * supportingInfo.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."
-* supportingInfo.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
+* supportingInfo.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1 MS
 * supportingInfo.modifierExtension[infoCancelledFlag] ^short = "Indicates that this piece of information is not to be used."
-* item.extension contains InfoChanged named infoChanged 0..1
+* item.extension contains InfoChanged named infoChanged 0..1 MS
 * item.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."
-* item.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1
+* item.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1 MS
 * item.modifierExtension[infoCancelledFlag] ^short = "Indicates that this piece of information is not to be used."
 
 //modified

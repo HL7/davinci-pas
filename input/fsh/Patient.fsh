@@ -5,6 +5,7 @@ Title: "PAS Beneficiary Patient"
 Description: "A patient who is the beneficiary of an insurance plan."
 * name.suffix MS
 * name.prefix MS
+* birthDate MS
 * birthDate obeys FullDateRule
 * address.district MS
 * address.country MS
@@ -18,6 +19,7 @@ Description: "A patient who is the subscriber of an insurance plan."
 * extension contains MilitaryStatus named militaryStatus 0..1
 * name.suffix MS
 * name.prefix MS
+* birthDate MS
 * birthDate obeys FullDateRule
 * address.district MS
 * address.country MS

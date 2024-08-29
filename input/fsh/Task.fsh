@@ -31,16 +31,20 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input ^slicing.discriminator.path = "type"
 * input ^slicing.rules = #open
 * input ^slicing.description = "Different slices for identifying different types of information for the Task."
-* input contains PayerURL 1..1 and AttachmentsNeeded 0..* and QuestionnairesNeeded 0..*
+* input contains PayerURL 1..1 MS and AttachmentsNeeded 0..* MS and QuestionnairesNeeded 0..* MS
 * input[PayerURL].type = PASTempCodes#payer-url
 * input[PayerURL].value[x] only url
+* input[AttachmentsNeeded].type MS
 * input[AttachmentsNeeded].type = PASTempCodes#attachments-needed
+* input[AttachmentsNeeded].value[x] MS
 * input[AttachmentsNeeded].value[x] only CodeableConcept
 * input[AttachmentsNeeded].valueCodeableConcept from AttachmentRequestCodes
-* input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1
+* input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1 MS
+* input[QuestionnairesNeeded].type MS
 * input[QuestionnairesNeeded].type = PASTempCodes#questionnaires-needed
+* input[QuestionnairesNeeded].value[x] MS
 * input[QuestionnairesNeeded].value[x] only PASIdentifier
-* input[QuestionnairesNeeded].extension contains PALineNumber named paLineNumber 1..1
+* input[QuestionnairesNeeded].extension contains PALineNumber named paLineNumber 1..1 MS
 * restriction.period MS
 * statusReason MS
 

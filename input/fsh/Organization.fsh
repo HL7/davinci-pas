@@ -31,6 +31,7 @@ Id: profile-organization
 Title: "PAS Organization Base Profile"
 Description: "A base profile for organizations in PAS"
 * ^abstract = true
+* identifier MS
 * identifier only PASIdentifier
 * identifier contains TIN 0..1 MS
 * identifier[TIN] ^short = "The US Employer Identification Number (EIN) or Tax Identification Number (TIN)."
