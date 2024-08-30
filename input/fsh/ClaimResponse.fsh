@@ -60,6 +60,9 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
+* processNote MS
+* processNote.number 1..1 MS
+* processNote.text MS
 
 Extension: ReviewAction
 Id: extension-reviewAction
