@@ -79,7 +79,7 @@ Description: "The details of the review action that is necessary for the authori
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication"
 
@@ -92,7 +92,7 @@ Description: "The code describing the result of the review."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication"
 * ^context[+].type = #element
@@ -124,7 +124,7 @@ Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about."
 * value[x] only string
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.error"
+* ^context[=].expression = "ExplanationOfBenefit.error"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.error"
 
@@ -133,7 +133,7 @@ Id: extension-errorPath
 Description: "The FHIRPath expression that indicates which FHIR element that this error information is about."
 * value[x] only string
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.error"
+* ^context[=].expression = "ExplanationOfBenefit.error"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.error"
 

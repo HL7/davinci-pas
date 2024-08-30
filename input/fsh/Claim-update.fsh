@@ -3,7 +3,7 @@ Id: extension-careTeamClaimScope
 Description: "A flag that indicates whether the care team applies to the entire claim or a single item."
 * value[x] only boolean
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.careTeam"
+* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.careTeam"
 
@@ -16,7 +16,7 @@ Description: "A code representing the type of certification being requested (UM0
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 
@@ -46,7 +46,7 @@ Description: "Uniquely identifies this claim item. (2000F-TRN)"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: AuthorizationNumber
 Id: extension-authorizationNumber
@@ -57,7 +57,7 @@ Description: "A string assigned by the UMO to an authorized review outcome assoc
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: AdministrationReferenceNumber
 Id: extension-administrationReferenceNumber
@@ -187,7 +187,7 @@ Description: "A code indicating how the piece of information has changed."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim-update.item"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 
@@ -201,7 +201,7 @@ Description: "A flag indicating whether the piece of information was cancelled."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim-update.item"
 * ^context[+].type = #element
-* ^context[=].expression = "Examples.item"
+* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 
