@@ -104,6 +104,8 @@ Description: "The date when this item's preauthorization was issued."
 * value[x] only date
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: ItemRequestedServiceDate
 Id: extension-itemRequestedServiceDate
@@ -118,6 +120,8 @@ Description: "The date/period when this item's preauthorization is valid."
 * value[x] only Period
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: ErrorElement
 Id: extension-errorElement
@@ -159,6 +163,8 @@ Description: "The details of what has been authorized for this item if different
 * extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
@@ -170,6 +176,8 @@ Description: "The specific provider who has been authorized to provide this item
 * extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Profile: PASClaimInquiryResponse
 Parent: PASClaimResponseBase
