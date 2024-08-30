@@ -161,6 +161,7 @@ Parent: PASClaimBase
 Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
+* . ^short = "Pre-Authorization"
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Claim.encounter named encounter 0..1 MS
 * extension[encounter] ^short = "Information about a hospital claim being requested."
 * extension[encounter].valueReference only Reference(PASEncounter)
@@ -208,6 +209,7 @@ Parent: PASClaimBase
 Id: profile-claim-inquiry
 Title: "PAS Claim Inquiry"
 Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
+* . ^short = "Pre-Authorization"
 * extension contains CertificationType named certificationType 0..1 MS
 * extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * identifier 1..1 MS
