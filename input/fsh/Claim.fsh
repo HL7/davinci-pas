@@ -30,7 +30,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * careTeam.role MS
 * careTeam.qualification MS
 * careTeam ^slicing.discriminator.type = #value
-* careTeam ^slicing.discriminator.path = "extension('http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').value ofType(boolean)"
+* careTeam ^slicing.discriminator.path = "extension('http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope').value.ofType(boolean)"
 * careTeam ^slicing.rules = #open
 * careTeam ^slicing.description = "Slice based on whether the care team member belongs to the overall claim or to an individual claim item."
 * careTeam contains OverallClaimMember 0..* MS and ItemClaimMember 0..* MS
