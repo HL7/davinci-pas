@@ -67,6 +67,8 @@ Description: "A string assigned by the UMO to the original disallowed review out
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: ServiceItemRequestType
 Id: extension-serviceItemRequestType
