@@ -18,7 +18,7 @@ Additional information about Da Vinci, its members, the use cases and the implem
 ### Systems
 The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 
-**Client systems** are typically Electronic Medical Record (EMR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.)
+**Client systems** are typically Electronic Medical Record (EHR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.)
 
 **Server systems** (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for the conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
 
