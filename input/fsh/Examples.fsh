@@ -602,7 +602,7 @@ Description: "A sample communication request asking for more information about a
 * payload.extension[serviceLineNumber].valuePositiveInt = 1
 * payload.extension[communicatedDiagnosis].valueCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4
 * payload.extension[contentModifier].valueCodeableConcept = http://loinc.org#18804-5
-* payload.contentString = "Please provide further justification as interested."
+* payload.contentString = "18657-7"
 
 Instance: DeviceRequestExample
 InstanceOf: PASDeviceRequest

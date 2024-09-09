@@ -18,3 +18,5 @@ Alias:   $USCoreRace = http://hl7.org/fhir/us/core/StructureDefinition/us-core-r
 Alias:   $USCoreEthnicity = http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity
 
 Alias: $HumanLanguageExtension = http://hl7.org/fhir/StructureDefinition/language
+
+Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
