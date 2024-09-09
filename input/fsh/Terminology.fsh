@@ -141,7 +141,7 @@ Description: "This set of codes identifies where services were, or may be, perfo
 
 ValueSet: X12278RequestedServiceType
 Title: "X12 278 Requested Service Type"
-Description: "This set of codes identifies what service is being requested.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, ICD-10 Procedure codes, and NDC Drug codes.  NOTE: HCPCS Level 1 Codes are the CPT codes so either code system could be used to send the codes.  When receiving the codes from an X12 system, the system returned will be HCPCS even if it was initially sent as a CPT code."
+Description: "This set of codes identifies what service is being requested.  For queries, if the query is not searching for a specific service type, the not-applicable data absent reason code can be used.  It is a combination of X12 Service Type codes, CPT (HCPCS I) and HCPCS II procedure code modifiers, ICD-9 Procedure codes, ICD-10 Procedure codes, and NDC Drug codes.  NOTE: HCPCS Level 1 Codes are the CPT codes so either code system could be used to send the codes.  When receiving the codes from an X12 system, the system returned will be HCPCS even if it was initially sent as a CPT code."
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved.
 X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^experimental = false
@@ -167,14 +167,6 @@ Description: "LOINC codes that convey the type of information that is being requ
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * ^experimental = false
 * codes from system http://loinc.org where CLASS = "ATTACH.MODIFIER"
-
-ValueSet: AttachmentRequestCodes
-Title: "Attachment Request Codes"
-Description: "Codes that convey the specific additional information to be returned as attachments."
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
-* ^experimental = false
-* codes from system http://loinc.org where CLASS = "ATTACH"
-* codes from system https://codesystem.x12.org/005010/755
 
 ValueSet: X12278ReviewDecisionReasonCode
 Title: "X12 278 Review Decision Reason Codes"

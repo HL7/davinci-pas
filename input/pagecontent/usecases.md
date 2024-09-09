@@ -65,14 +65,14 @@ Within an EHR Client, the prior authorization request process should be capable 
 #### Scope of Work Flow
 In Scope
 
-1. Prior Auth for services/devices performed/supplied by the ordering provider
-2. Prior Auth for services/devices performed/supplied by a different provider where the ordering provider is required or permitted to request authorization for another entity to provide the services
-3. Prior Auth for medications that are covered under a medical benefit
-4. Prior Auth is required for the rendering provider
+1. Prior authorization for services/devices performed/supplied by the ordering provider
+2. Prior authorization for services/devices performed/supplied by a different provider where the ordering provider is required or permitted to request authorization for another entity to provide the services
+3. Prior authorization for medications that are covered under a medical benefit
+4. Prior authorization is required for the rendering provider
 
 Out Of Scope
 
-1. **SHOULD NOT** be used for any Medication that is covered under a prescription drug program benefit where Prior Auth is provided by another electronic exchange process (e.g. NCPCP SCRIPT)
+1. **SHOULD NOT** be used for any Medication that is covered under a pharmacy drug program benefit where prior authorization is provided by another electronic exchange process (e.g. NCPCP SCRIPT)
 
 #### Prior Authorization Process
 The prior authorization process from the EHR side consists of five steps:
@@ -81,7 +81,7 @@ The prior authorization process from the EHR side consists of five steps:
 2. Gather information necessary to support the prior authorization request
 3. Submit the request for prior authorization
 4. Monitor the prior authorization request for resolution
-5. If need be, supplement the prior authorization request with additional required information (and resume at step #4).  See section 5.2.9 for when and how updates are made.
+5. If need be, supplement the prior authorization request with additional required information (and resume at step #4).  See [Updating Authorization Requests](specification.html#updating-authorization-requests) for when and how updates are made.
 
 {::options parse_block_html="false" /}
 <figure>
@@ -125,7 +125,9 @@ A PAS Subscription has been created to allow systems to monitor for specific req
 
 There is also guidance on monitoring in the CDex IG: [Using CDex Attachments with DaVinci PAS](http://build.fhir.org/ig/HL7/davinci-ecdx/burden-reduction.html)
 
-Also, in situations where a request is 'pended', there may occasionally be a need to update the authorization request.  This might involve the provider canceling it or adjusting the description of the procedure for which authorization is requested (e.g. minor change to a procedure, update to the timeframe or dosage based on new clinical information).
+In those situations where the prior authorization request is ‘pended’, the EHR must monitor for changes to the request until the results are finalized. This monitoring might be done by the system of the provider that submitted the request for prior authorization, and/or the system of the provider that is expected to actually perform the authorized procedure (e.g. the family physician system or the imaging center system).
+
+A PAS Subscription has been created to allow systems to monitor for specific requests.  In response to a subscription notification indicating that the prior authorization has been changed, there is an inquiry operation that allows for returning information about prior authorization submissions.  This operation can also be used for generic inquiries about a prior submission.
 
 ### Supporting Information
 To evaluate whether a given service will be covered, a payer may need to understand additional information about the patient.  There are three main categories of such information:

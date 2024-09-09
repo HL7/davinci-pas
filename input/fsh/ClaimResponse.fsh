@@ -4,8 +4,10 @@ Id: profile-claimresponse-base
 Title: "PAS Claim Response Base"
 Description: "PAS constraints on ClaimResponse resource that are common to both the request and the inquiry."
 * ^abstract = true
+* . ^short = "Response to a preauthorization"
 * identifier MS
 * identifier only PASIdentifier
+* identifier.system ^short = "Should use a scheme of 'urn:trnorg:<TRN03>'"
 * status MS
 * status = #active
 * use = #preauthorization
@@ -55,6 +57,7 @@ Parent: PASClaimResponseBase
 Id: profile-claimresponse
 Title: "PAS Claim Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request"
+* . ^short = "Response to a preauthorization"
 * item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * item.noteNumber MS
@@ -184,5 +187,6 @@ Parent: PASClaimResponseBase
 Id: profile-claiminquiryresponse
 Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
+* . ^short = "Response to a preauthorization query"
 * item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."

@@ -38,7 +38,16 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].type = PASTempCodes#attachments-needed
 * input[AttachmentsNeeded].value[x] MS
 * input[AttachmentsNeeded].value[x] only CodeableConcept
-* input[AttachmentsNeeded].valueCodeableConcept from AttachmentRequestCodes
+* input[AttachmentsNeeded].valueCodeableConcept from http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-loinc-attachment-codes
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "purpose"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCode = #extensible
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "valueSet"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCanonical = "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "documentation"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueMarkdown = "X12 codes that can be used to request additional information to support a prior authorization request."
+
+
 * input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1 MS
 * input[QuestionnairesNeeded].type MS
 * input[QuestionnairesNeeded].type = PASTempCodes#questionnaires-needed

@@ -4,6 +4,7 @@ Id: profile-pas-request-bundle
 Title: "PAS Request Bundle"
 Description: "PAS constraints on Bundle resource ensuring that a claim/claim update resource is present and that non-supported elements are not."
 * identifier 1..1 MS
+* identifier ^short = "Submitted Transaction Identifier - this number will be assigned by the originator or sender to identify the transaction within the sender's business application system"
 * type = #collection
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -17,8 +18,7 @@ Description: "PAS constraints on Bundle resource ensuring that a claim/claim upd
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains Claim 1..1 MS
-* entry[Claim].resource only PASClaimUpdate 
-* entry[Claim].resource ^short = "Pre-Authorization"
+* entry[Claim].resource only PASClaimUpdate or PASClaim
 
 Profile: PASInquiryRequestBundle
 Parent: Bundle

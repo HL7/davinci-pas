@@ -179,6 +179,10 @@ Description: "PAS constraints on Claim resource when submitting an update to a p
 * item.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."
 * item.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1 MS
 * item.modifierExtension[infoCancelledFlag] ^short = "Indicates that this piece of information is not to be used."
+* related 1..1 MS
+* related.relationship 1..1 MS
+* related.relationship = http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship#prior
+* related.claim 1..1 MS
 
 //modified
 Extension: InfoChanged

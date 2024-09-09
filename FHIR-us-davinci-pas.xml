@@ -13,7 +13,7 @@
 <artifact id="ValueSet/AHANUBCRevenueCodes" key="ValueSet-AHANUBCRevenueCodes" name="AHA NUBC Revenue Value Set"/>
 <artifact id="Task/AdditionalInformationTaskExample" key="Task-AdditionalInformationTaskExample" name="Additional Information Task Example"/>
 <artifact id="StructureDefinition/extension-administrationReferenceNumber" key="StructureDefinition-extension-administrationReferenceNumber" name="AdministrationReferenceNumber"/>
-<artifact id="ValueSet/AttachmentRequestCodes" key="ValueSet-AttachmentRequestCodes" name="Attachment Request Codes"/>
+<artifact deprecated="true" id="ValueSet/AttachmentRequestCodes" key="ValueSet-AttachmentRequestCodes" name="Attachment Request Codes"/>
 <artifact id="ClaimResponse/PractitionerRequestorResponseExample" key="ClaimResponse-PractitionerRequestorResponseExample" name="Authorization Response with Practitioner Requestor Example"/>
 <artifact id="StructureDefinition/extension-authorizationNumber" key="StructureDefinition-extension-authorizationNumber" name="AuthorizationNumber"/>
 <artifact id="StructureDefinition/extension-timingcalendarpattern" key="StructureDefinition-extension-timingcalendarpattern" name="CalendarPattern"/>

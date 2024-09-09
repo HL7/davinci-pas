@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pas
 canonical: http://hl7.org/fhir/us/davinci-pas
-version: 2.0.1
+version: 2.1.0
 name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
@@ -27,10 +27,34 @@ description: Guidelines for conveying coverage requirements to clinicians when p
 license: CC0-1.0
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core: 3.1.1
+  hl7.fhir.us.core.v311:
+    version: 3.1.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore3
+    reason: |
+      Needed for systems supporting USCDI v1
+  hl7.fhir.us.core:
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore6
+    reason: |
+      Needed for systems supporting USCDI v3
+  hl7.fhir.us.core.v700:
+    version: 7.0.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore7
+    reason: |
+      Needed for systems supporting USCDI v4
   hl7.fhir.extensions.r5: 4.0.1
-  hl7.fhir.us.davinci-crd: 2.0.0
-  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
+  hl7.fhir.us.davinci-crd:
+    version: 2.0.0
+    id: crd
+  hl7.fhir.uv.subscriptions-backport.r4:
+    version: 1.1.0
+    id: subscriptions
+  hl7.fhir.us.davinci-cdex:
+    version: current
+    id: cdex
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'

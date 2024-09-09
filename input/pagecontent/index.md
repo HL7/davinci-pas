@@ -44,7 +44,12 @@ A high-level summary of how all of these IGs will work together can be seen belo
 {::options parse_block_html="true" /}
 
 ### CMS Exception
-When using PAS under the [CMS granted exception](https://confluence.hl7.org/display/DVP/Da+Vinci+HIPAA+Exception) (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) **SHALL** disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles **SHALL** be transmitted intact between the provider and payer.  The PAS FHIR response bundles **SHALL** be transmitted intact between the payer and the provider.
+When using PAS under the [CMS granted exception](https://confluence.hl7.org/display/DVP/Da+Vinci+HIPAA+Exception) (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) **SHALL** disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles **SHALL** be transmitted intact between the provider and payer.  The PAS FHIR response bundles **SHALL** be transmitted intact between the payer and the provider.  NOTE: This CMS exception has ended as of June 2024.
+
+### CMS Enforcement Discretion
+The Office of Burden Reduction and Health Informatics (OBRHI) National Standards Group (NSG) announced an enforcement discretion that they would not enforce the requirement to use the X12 278 for prior authorization if the covered entities were using the Fast Healthcare Interoperability Resources (FHIR) based Prior Authorization API as described in the CMS Interoperability and Prior Authorization final rule (CMS-0057-F). This allows the payer to return a prior authorization number for use in the X12 837 in coverage extension of the CRD and DTR IGs or as part of the all FHIR exchange of the Prior Authorization Response Bundle in the PAS IG.
+
+When covered entities are operating under the enforcement discretion, the trading partners **SHALL** disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278. The defined PAS FHIR request bundles **SHALL** be transmitted intact between the provider and payer. The PAS FHIR response bundles **SHALL** be transmitted intact between the payer and the provider.
 
 ### Content and organization
 The implementation guide is organized into the following sections:
@@ -61,6 +66,19 @@ The implementation guide is organized into the following sections:
 
 
 ### Dependencies
+
+<div class="modified-content" markdown="1">
+
+At present, PAS is based on [FHIR R4]({{site.data.fhir.path}}).  In addition, PAS is dependent on the [US Core 3.1 (FHIR R4)]({{site.data.fhir.ver.uscore3}}), [US Core 6.1 (FHIR R4)]({{site.data.fhir.ver.uscore6}}) and [US Core 7.0 (FHIR R4)]({{site.data.fhir.ver.uscore7}})  implementation guides.  The first is supported for those systems limited to USCDI 1 capabilities, the second is for upcoming regulatory requirements mandating support for USCDI 3, and the last is to enable support for proposed regulations mandating support for USCDI 4.  Wherever possible, Da Vinci profiles strive to comply with all three releases, simplifying implementation for those who will need to support varying regulatory expectations over time.
+
+In some situations, the payer community requires additional constraints or needs to profile resources that are not yet supported by US Core.  In these cases, this IG does not derive from the US Core profiles, though it does align with them as much as possible.  It is possible that certain PAS profiles and/or descriptive content may migrate to a future release of US Core, and in some cases, to the base FHIR standard.
+</div>
+
+In addition, this guide uses content from the following FHIR-related specifications and implementation guides:
+* [Subscriptions R4 Backport]({{site.data.fhir.ver.subscriptions}})
+* [Da Vinci CRD]({{site.data.fhir.ver.crd}})
+* [Da Vinci CDex]({{site.data.fhir.ver.cdex}})
+
 This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
 * **[US Core]({{site.data.fhir.hl7_fhir_us_core}})** - The published version of US Core based on FHIR R4.

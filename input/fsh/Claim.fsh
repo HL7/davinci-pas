@@ -4,6 +4,7 @@ Id: profile-claim-base
 Title: "PAS Claim Base"
 Description: "PAS constraints on Claim resource that are common to both the request and the inquiry."
 * ^abstract = true
+* . ^short = "Preauthorization"
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS and
 	ConditionCode named conditionCode 0..* MS and
 	HomeHealthCareInformation named homeHealthCareInformation 0..1 MS
@@ -13,6 +14,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * identifier MS
 * identifier only PASIdentifier
 * identifier ^short = "Business identifier for claim"
+* identifier.system ^short = "Should use a scheme of 'urn:trnorg:<TRN03>'"
 * status MS
 * status = #active
 * use MS
@@ -161,7 +163,7 @@ Parent: PASClaimBase
 Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
-* . ^short = "Pre-Authorization"
+* . ^short = "Preauthorization"
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Claim.encounter named encounter 0..1 MS
 * extension[encounter] ^short = "Information about a hospital claim being requested."
 * extension[encounter].valueReference only Reference(PASEncounter)
@@ -176,6 +178,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 	NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 MS and
 	RevenueUnitRateLimit named revenueUnitRateLimit 0..1 MS and
 	RequestedService named requestedService 0..1 MS
+* item.extension[requestType] 1..1
+* item.extension[certificationType] 1..1
 * diagnosis ^short = "Pertinent diagnosis information.  NOTE: Only the first 12 diagnoses can be sent in the X12 request."
 * item.extension[nursingHomeResidentialStatus].valueCodeableConcept MS
 * item.extension[nursingHomeResidentialStatus].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345 (required)
@@ -188,6 +192,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * item.category 1..1 MS
 * item.category ^short = "Since PAS requests only have item-level information, a category is required for conformance with the X12 278 request."
 * item.unitPrice MS
+* item.location[x] 1..1
+* item obeys ImmediateLevelOfCare
 
 * supportingInfo contains AdditionalInformation 0..* MS and MessageText 0..* MS
 
@@ -204,12 +210,17 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * supportingInfo[MessageText].value[x] 1..1 MS
 * supportingInfo[MessageText].value[x] only string
 
+Invariant: ImmediateLevelOfCare
+Description: "If Certification Type is an immediate appeal, then Level of Service Code must be present"
+Expression: "extension.where(url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType' and value.code='1').exists() implies extension.where(url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-levelOfServiceCode').exists()"
+Severity: #error
+
 Profile: PASClaimInquiry
 Parent: PASClaimBase
 Id: profile-claim-inquiry
 Title: "PAS Claim Inquiry"
 Description: "PAS constraints on Claim resource when submitting an inquiry for existing authorizations."
-* . ^short = "Pre-Authorization"
+* . ^short = "Query for Preauthorizations"
 * extension contains CertificationType named certificationType 0..1 MS
 * extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * identifier 1..1 MS

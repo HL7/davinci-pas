@@ -230,11 +230,13 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * item.sequence = 1
 * item.category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#G0154
+* item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * item[1].sequence = 2
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
+* item[1].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 
 Instance: HomecareAuthorizationUpdateBundleExample
 InstanceOf: PASRequestBundle
@@ -260,7 +262,7 @@ InstanceOf: PASClaimUpdate
 Title: "Homecare Authorization Update Example"
 Description: "An example of a Claim resource updating a prior authorization."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
-* identifier.value = "111099"
+* identifier.value = "111099-UPDATE"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
 * identifier.assigner.identifier.value = "9012345678"
 * status = #active
@@ -271,6 +273,7 @@ Description: "An example of a Claim resource updating a prior authorization."
 * insurer = Reference(InsurerExample)
 * provider = Reference(UMOExample)
 * priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
+* related.claim = Reference(HomecareAuthorizationExample)
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
@@ -279,18 +282,21 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item.sequence = 1
 * item.category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#G0154
+* item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * item[1].sequence = 2
 * item[1].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#3 "Cancel"
+* item[1].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * item[2].sequence = 3
 * item[2].extension[infoChanged].valueCode = #added
 * item[2].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[2].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4185
 * item[2].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[2].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
+* item[2].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 
 Instance: HomecareAuthorizationDifferentialBundleExample
 InstanceOf: PASRequestBundle
@@ -317,7 +323,7 @@ Title: "Homecare Authorization Differential Update Example"
 Description: "An example of a Claim resource updating a prior authorization."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ObservationValue#SUBSETTED
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
-* identifier.value = "111099"
+* identifier.value = "111099-UPDATE-DIFF"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
 * identifier.assigner.identifier.value = "9012345678"
 * status = #active
@@ -328,6 +334,7 @@ Description: "An example of a Claim resource updating a prior authorization."
 * insurer = Reference(InsurerExample)
 * provider = Reference(UMOExample)
 * priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
+* related.claim = Reference(HomecareAuthorizationExample)
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
@@ -337,12 +344,14 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item[0].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
 * item[0].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[0].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
+* item[0].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * item[1].sequence = 3
 * item[1].extension[infoChanged].valueCode = #added
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4185
 * item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
 * item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
+* item[1].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 
 Instance: MedicalServicesAuthorizationBundleExample
 InstanceOf: PASRequestBundle
