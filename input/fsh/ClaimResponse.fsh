@@ -186,3 +186,5 @@ Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
 * item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
