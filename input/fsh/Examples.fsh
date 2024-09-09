@@ -545,7 +545,7 @@ InstanceOf: PASPractitioner
 Title: "Submit Claim Referral Practitioner Example"
 Description: "A sample practitioner who is being referred to."
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "987654321"
+* identifier.value = "1354275899"
 * name.family = "WATSON"
 * name.given = "SUSAN"
 * telecom.system = #phone
@@ -755,7 +755,7 @@ InstanceOf: PASPractitioner
 Title: "Submit Claim Surgical Practitioner Example"
 Description: "A sample practitioner who is being referred to."
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "987654321"
+* identifier.value = "1354275899"
 * name.family = "WATSON"
 * name.given = "SUSAN"
 * telecom.system = #phone

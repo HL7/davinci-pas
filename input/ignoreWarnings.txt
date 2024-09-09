@@ -1,5 +1,8 @@
 == Suppressed Messages ==
 
+# Canonicals have multiple matching versions
+There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '2.1.0', found versions: 2.0.1, 2.1.0
+
 # X12 Code Systems and Value Sets that are referenced in the guide but not freely available
 ValueSet 'https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98' not found
 ValueSet 'https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98' not found
@@ -36,6 +39,8 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/923' could not be
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the code cannot be validated
 
+A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the code cannot be validated
+
 %Unable to provide support for code system https://codesystem.x12.org/external/886
 %Unable to provide support for code system https://codesystem.x12.org/005010/901
 %Unable to provide support for code system https://codesystem.x12.org/005010/889
@@ -43,14 +48,13 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not b
 %Unable to provide support for code system https://codesystem.x12.org/005010/756
 %Unable to provide support for code system https://codesystem.x12.org/005010/1136
 %Unable to provide support for code system https://codesystem.x12.org/005010/1321
-%Unable to provide support for code system https://codesystem.x12.org/005010/755
 
 # Value sets that contain X12 codes and are thus not able to be validated
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.0.1' because the code system https://codesystem.x12.org/005010/1365 was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory|2.0.1' because the code system https://codesystem.x12.org/005010/1136 was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCode|2.0.1' because the code system https://codesystem.x12.org/005010/1321 was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes|2.0.1' because the code system https://codesystem.x12.org/005010/901 was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes|2.0.1' because the code system https://codesystem.x12.org/005010/889 was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.1.0' because the code system https://codesystem.x12.org/005010/1365 was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory|2.1.0' because the code system https://codesystem.x12.org/005010/1136 was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCode|2.1.0' because the code system https://codesystem.x12.org/005010/1321 was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes|2.1.0' because the code system https://codesystem.x12.org/005010/901 was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes|2.1.0' because the code system https://codesystem.x12.org/005010/889 was not found
 
 # The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
@@ -59,16 +63,14 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle%
 
 # Code systems that are not available in the terminology server
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated (error because this is a required binding)
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.0.1' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.0.1' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.1.0' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
+A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.1.0' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType|2.0.1' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType|2.0.1' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType|2.1.0' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
+A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType|2.1.0' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
 
-A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated (error because this is a required binding)
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType|2.0.1' because the code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set was not found
-A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType|2.0.1' because the code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType|2.1.0' because the code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set was not found
+A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType|2.1.0' because the code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set was not found
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the code cannot be validated
@@ -86,5 +88,12 @@ US FHIR Usage rules require that all profiles on ServiceRequest derive from the 
 
 # Reference to draft items
 The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
-Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/processpriority|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/adjudication|1.0.0
+Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
+Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.1.0
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# Repeating element with a pattern
+The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)

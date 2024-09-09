@@ -31,6 +31,8 @@ Description: "A code representing the diagnosis that is the subject of the commu
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
 
 Extension: ContentModifier
 Id: extension-contentModifier
