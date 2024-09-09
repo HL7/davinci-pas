@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="2.0.1" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="http://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="2.0.1" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-pas"/>
 <version code="2.0.1" url="http://hl7.org/fhir/us/davinci-pas/STU2"/>
-<version code="2.0.0" url="http://hl7.org/fhir/us/davinci-pas/STU2"/>
 <version code="1.2.0-ballot" deprecated="true" url="http://hl7.org/fhir/us/davinci-pas/2022May"/>
-<version code="1.1.0" url="http://hl7.org/fhir/us/davinci-pas/STU1.1"/>
-<version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pas/STU1"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pas/2019Sep"/>
 <version code="1.2.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pas/STU1.2"/>
 <version code="0.1" deprecated="true"/>
@@ -123,6 +120,7 @@
 <artifact id="StructureDefinition/extension-revenueUnitRateLimit" key="StructureDefinition-extension-revenueUnitRateLimit" name="RevenueUnitRateLimit"/>
 <artifact id="StructureDefinition/extension-reviewAction" key="StructureDefinition-extension-reviewAction" name="ReviewAction"/>
 <artifact id="StructureDefinition/extension-reviewActionCode" key="StructureDefinition-extension-reviewActionCode" name="ReviewActionCode"/>
+<artifact id="OperationDefinition/Claim-inquiry" key="OperationDefinition-Claim-inquiry" name="Search for a Prior Authorization Response by example"/>
 <artifact id="StructureDefinition/extension-serviceItemRequestType" key="StructureDefinition-extension-serviceItemRequestType" name="ServiceItemRequestType"/>
 <artifact id="StructureDefinition/extension-serviceLineNumber" key="StructureDefinition-extension-serviceLineNumber" name="ServiceLineNumber"/>
 <artifact id="Patient/BeneficiaryExample" key="Patient-BeneficiaryExample" name="Submit Claim Beneficiary Example"/>
@@ -137,8 +135,7 @@
 <artifact id="Location/SurgicalLocationExample" key="Location-SurgicalLocationExample" name="Submit Claim Surgical Location Example"/>
 <artifact id="Practitioner/SurgicalPractitionerExample" key="Practitioner-SurgicalPractitionerExample" name="Submit Claim Surgical Practitioner Example"/>
 <artifact id="PractitionerRole/SurgicalPractitionerRoleExample" key="PractitionerRole-SurgicalPractitionerRoleExample" name="Submit Claim Surgical Practitioner Role Example"/>
-<artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="Submit a Claim resource for adjudication"/>
-<artifact id="OperationDefinition/Claim-inquiry" key="OperationDefinition-Claim-inquiry" name="Submit a Claim resource for inquiry"/>
+<artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="Submit a Prior Authorization Request for adjudication"/>
 <artifact id="Bundle/SurgicalRequestBundleExample" key="Bundle-SurgicalRequestBundleExample" name="Surgical Admission Request Bundle Example"/>
 <artifact id="Claim/SurgicalAuthorizationRequestExample" key="Claim-SurgicalAuthorizationRequestExample" name="Surgical Request Authorization Example"/>
 <artifact id="ValueSet/X12278ConditionCategory" key="ValueSet-X12278ConditionCategory" name="X12 278 CRC Condition Category"/>
