@@ -1,0 +1,483 @@
+{
+    "resourceType": "ValueSet",
+    "id": "pas-loinc-attachment-codes",
+    "url": "http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-loinc-attachment-codes",
+    "identifier": [
+        {
+            "system": "http://loinc.org",
+            "value": "valid-hl7-attachment-requests"
+        },
+        {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.3.6.1.4.1.12009.10.2.6"
+        }
+    ],
+    "name": "PASLOINCAttachmentCodesValueSet",
+    "title": "PAS LOINC Attachment Codes Value Set",
+    "status": "active",
+    "experimental": false,
+    "date": "2022-06-29",
+    "description": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attahments](https://loinc.org/attachments/).",
+    "copyright": "This material contains content from LOINC (http://loinc.org). LOINC is copyright \u00a9 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC\u00ae is a registered United States trademark of Regenstrief Institute, Inc.",
+    "compose": {
+        "include": [
+            {
+                "system": "http://loinc.org",
+                "concept": [
+                    {
+                        "code": "11526-1",
+                        "display": "Pathology study"
+                    },
+                    {
+                        "code": "11488-4",
+                        "display": "Consult note"
+                    },
+                    {
+                        "code": "80792-5",
+                        "display": "Pulmonary Diagnostic study note"
+                    },
+                    {
+                        "code": "47420-5",
+                        "display": "Functional status assessment note"
+                    },
+                    {
+                        "code": "34117-2",
+                        "display": "History and physical note"
+                    },
+                    {
+                        "code": "74156-1",
+                        "display": "Oncology Plan of care and summary note"
+                    },
+                    {
+                        "code": "18776-5",
+                        "display": "Plan of care note"
+                    },
+                    {
+                        "code": "80785-9",
+                        "display": "Radiation oncology Plan of care note"
+                    },
+                    {
+                        "code": "11506-3",
+                        "display": "Progress note"
+                    },
+                    {
+                        "code": "11504-8",
+                        "display": "Surgical operation note"
+                    },
+                    {
+                        "code": "18842-5",
+                        "display": "Discharge summary"
+                    },
+                    {
+                        "code": "34133-9",
+                        "display": "Summary of episode note"
+                    },
+                    {
+                        "code": "18761-7",
+                        "display": "Transfer summary note"
+                    },
+                    {
+                        "code": "80565-5",
+                        "display": "Medication administration record"
+                    },
+                    {
+                        "code": "28570-0",
+                        "display": "Procedure note"
+                    },
+                    {
+                        "code": "57133-1",
+                        "display": "Referral note"
+                    },
+                    {
+                        "code": "52027-0",
+                        "display": "Abortion consent Document"
+                    },
+                    {
+                        "code": "52028-8",
+                        "display": "Hysterectomy consent Document"
+                    },
+                    {
+                        "code": "52029-6",
+                        "display": "Sterilization consent Document"
+                    },
+                    {
+                        "code": "53245-7",
+                        "display": "Driver license"
+                    },
+                    {
+                        "code": "57828-6",
+                        "display": "Prescription list"
+                    },
+                    {
+                        "code": "18682-5",
+                        "display": "Ambulance records"
+                    },
+                    {
+                        "code": "52063-5",
+                        "display": "Prescription for durable medical equipment (DME)"
+                    },
+                    {
+                        "code": "52062-7",
+                        "display": "Transcutaneous electrical neural stimulation (TENS) attachment"
+                    },
+                    {
+                        "code": "52073-4",
+                        "display": "Vision services attachment"
+                    },
+                    {
+                        "code": "52070-0",
+                        "display": "Workers compensation attachment"
+                    },
+                    {
+                        "code": "80405-4",
+                        "display": "Provider Certification [Type]"
+                    },
+                    {
+                        "code": "53242-4",
+                        "display": "Charge ticket or encounter form"
+                    },
+                    {
+                        "code": "52042-9",
+                        "display": "Continuous positive airway pressure (CPAP) attachment"
+                    },
+                    {
+                        "code": "52040-3",
+                        "display": "Dental X-rays and other images (not DICOM)"
+                    },
+                    {
+                        "code": "18748-4",
+                        "display": "Diagnostic imaging study"
+                    },
+                    {
+                        "code": "53243-2",
+                        "display": "Advanced beneficiary notice"
+                    },
+                    {
+                        "code": "53247-3",
+                        "display": "Eligibility acknowledgement"
+                    },
+                    {
+                        "code": "52071-8",
+                        "display": "Employee assistance program attachment"
+                    },
+                    {
+                        "code": "67796-3",
+                        "display": "EMS patient care report - version 3 Document NEMSIS"
+                    },
+                    {
+                        "code": "77601-3",
+                        "display": "Enhanced note"
+                    },
+                    {
+                        "code": "52043-7",
+                        "display": "Enteral nutrition attachment"
+                    },
+                    {
+                        "code": "11514-7",
+                        "display": "Chiropractic Episode of care medical records"
+                    },
+                    {
+                        "code": "11521-2",
+                        "display": "Occupational therapy Episode of care medical records"
+                    },
+                    {
+                        "code": "11515-4",
+                        "display": "Physical therapy Episode of care medical records"
+                    },
+                    {
+                        "code": "11516-2",
+                        "display": "Physician Episode of care medical records"
+                    },
+                    {
+                        "code": "11517-0",
+                        "display": "Podiatry Episode of care medical records"
+                    },
+                    {
+                        "code": "11518-8",
+                        "display": "Psychology Episode of care medical records"
+                    },
+                    {
+                        "code": "11519-6",
+                        "display": "Social service Episode of care medical records"
+                    },
+                    {
+                        "code": "11520-4",
+                        "display": "Speech therapy Episode of care medical records"
+                    },
+                    {
+                        "code": "52030-4",
+                        "display": "Explanation of benefits"
+                    },
+                    {
+                        "code": "52031-2",
+                        "display": "Explanation of benefits to subscriber"
+                    },
+                    {
+                        "code": "52044-5",
+                        "display": "External infusion pump attachment"
+                    },
+                    {
+                        "code": "103567-4",
+                        "display": "FHIR previous cancer therapy medical record"
+                    },
+                    {
+                        "code": "52064-3",
+                        "display": "Worker's compensation first report of injury attachment"
+                    },
+                    {
+                        "code": "52045-2",
+                        "display": "Gait trainers attachment"
+                    },
+                    {
+                        "code": "52033-8",
+                        "display": "General correspondence attachment"
+                    },
+                    {
+                        "code": "11485-0",
+                        "display": "Anesthesia records"
+                    },
+                    {
+                        "code": "52035-3",
+                        "display": "Home health claims"
+                    },
+                    {
+                        "code": "52036-1",
+                        "display": "Home health prior authorization"
+                    },
+                    {
+                        "code": "52046-0",
+                        "display": "Hospital beds attachment"
+                    },
+                    {
+                        "code": "52032-0",
+                        "display": "Appeal denial letter"
+                    },
+                    {
+                        "code": "52047-8",
+                        "display": "Immunosuppressive drug attachment"
+                    },
+                    {
+                        "code": "77600-5",
+                        "display": "Interval note"
+                    },
+                    {
+                        "code": "94093-2",
+                        "display": "Itemized bill"
+                    },
+                    {
+                        "code": "15508-5",
+                        "display": "Labor and delivery records"
+                    },
+                    {
+                        "code": "11502-2",
+                        "display": "Laboratory report"
+                    },
+                    {
+                        "code": "52048-6",
+                        "display": "Lymphedema pump attachment"
+                    },
+                    {
+                        "code": "52049-4",
+                        "display": "Manual wheelchair attachment"
+                    },
+                    {
+                        "code": "11503-0",
+                        "display": "Medical records"
+                    },
+                    {
+                        "code": "28011-5",
+                        "display": "Emergency department Medical records"
+                    },
+                    {
+                        "code": "94118-7",
+                        "display": "Medical records in response to authorization denial"
+                    },
+                    {
+                        "code": "52037-9",
+                        "display": "Member ID card copy"
+                    },
+                    {
+                        "code": "52065-0",
+                        "display": "Automobile liability attachment"
+                    },
+                    {
+                        "code": "52050-2",
+                        "display": "Motorized wheelchair attachment"
+                    },
+                    {
+                        "code": "76641-0",
+                        "display": "Neurology study"
+                    },
+                    {
+                        "code": "52072-6",
+                        "display": "Non-emergency transportation attachment"
+                    },
+                    {
+                        "code": "53246-5",
+                        "display": "Non-medical services attachment"
+                    },
+                    {
+                        "code": "52066-8",
+                        "display": "Notice of Discharge Medicare Appeal Rights (NODMAR) form"
+                    },
+                    {
+                        "code": "53244-0",
+                        "display": "Notice of privacy practices receipt"
+                    },
+                    {
+                        "code": "52051-0",
+                        "display": "Orthotic/Prosthetic attachment"
+                    },
+                    {
+                        "code": "52052-8",
+                        "display": "Osteogenesis stimulator attachment"
+                    },
+                    {
+                        "code": "52053-6",
+                        "display": "Oxygen attachment"
+                    },
+                    {
+                        "code": "52054-4",
+                        "display": "Parenteral nutrition attachment"
+                    },
+                    {
+                        "code": "52067-6",
+                        "display": "Past filing limit justification"
+                    },
+                    {
+                        "code": "52034-6",
+                        "display": "Payer letter"
+                    },
+                    {
+                        "code": "28629-4",
+                        "display": "Perimetry study"
+                    },
+                    {
+                        "code": "74030-8",
+                        "display": "Periodontal service attachment"
+                    },
+                    {
+                        "code": "28633-6",
+                        "display": "Polysomnography (sleep) study"
+                    },
+                    {
+                        "code": "52055-1",
+                        "display": "Power operated vehicle attachment"
+                    },
+                    {
+                        "code": "57073-9",
+                        "display": "Prenatal records"
+                    },
+                    {
+                        "code": "52041-1",
+                        "display": "Blood glucose monitor attachment"
+                    },
+                    {
+                        "code": "52068-4",
+                        "display": "Property and casualty state mandated forms"
+                    },
+                    {
+                        "code": "52075-9",
+                        "display": "Purchase invoice"
+                    },
+                    {
+                        "code": "18823-5",
+                        "display": "Alcohol and/or substance abuse service attachment"
+                    },
+                    {
+                        "code": "18824-3",
+                        "display": "Cardiac service attachment"
+                    },
+                    {
+                        "code": "18825-0",
+                        "display": "Medical social services attachment"
+                    },
+                    {
+                        "code": "18826-8",
+                        "display": "Occupational therapy service attachment"
+                    },
+                    {
+                        "code": "19002-5",
+                        "display": "Physical therapy service attachment"
+                    },
+                    {
+                        "code": "18594-2",
+                        "display": "Psychiatric service attachment"
+                    },
+                    {
+                        "code": "52184-9",
+                        "display": "Pulmonary therapy service attachment"
+                    },
+                    {
+                        "code": "19003-3",
+                        "display": "Respiratory therapy service attachment"
+                    },
+                    {
+                        "code": "29206-0",
+                        "display": "Speech therapy service attachment"
+                    },
+                    {
+                        "code": "52056-9",
+                        "display": "Repair of durable medical equipment attachment"
+                    },
+                    {
+                        "code": "52057-7",
+                        "display": "Seat lift mechanism attachment"
+                    },
+                    {
+                        "code": "52058-5",
+                        "display": "Seating system attachment"
+                    },
+                    {
+                        "code": "52039-5",
+                        "display": "Skilled Nursing Facility (SNF) record"
+                    },
+                    {
+                        "code": "101657-5",
+                        "display": "Special investigation unit (SIU) medical record request Document"
+                    },
+                    {
+                        "code": "52059-3",
+                        "display": "Speech generating device attachment"
+                    },
+                    {
+                        "code": "52060-1",
+                        "display": "Standers/standing frame attachment"
+                    },
+                    {
+                        "code": "52038-7",
+                        "display": "Subscriber Information including retroactive and presumptive eligibility"
+                    },
+                    {
+                        "code": "52061-9",
+                        "display": "Support surface attachment"
+                    },
+                    {
+                        "code": "52069-2",
+                        "display": "Tax ID number - IRS form W9"
+                    },
+                    {
+                        "code": "103595-5",
+                        "display": "Certificate of Medical Necessity"
+                    },
+                    {
+                        "code": "103596-3",
+                        "display": "Durable medical equipment proof of delivery receipt"
+                    },
+                    {
+                        "code": "103597-1",
+                        "display": "Pain management form or template"
+                    },
+                    {
+                        "code": "46212-7",
+                        "display": "Pre operative photo"
+                    },
+                    {
+                        "code": "52459-5",
+                        "display": "CMS certification number (CCN) Provider"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -52,9 +52,6 @@ dependencies:
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     id: subscriptions
-  hl7.fhir.us.davinci-cdex:
-    version: current
-    id: cdex
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
