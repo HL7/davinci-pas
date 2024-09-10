@@ -1,0 +1,174 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15" version="24.7.12">
+  <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
+    <mxGraphModel dx="1202" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-1" value="EHR" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="80" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-1" vertex="1">
+          <mxGeometry x="50" y="70" width="20" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-5" value="CDex" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="80" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-6" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-5" vertex="1">
+          <mxGeometry x="50" y="130" width="20" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-6" value="if LOINC code = 102089-0 ,&#xa;Start DTR &#xa;and pass task ID" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;shadow=0;strokeWidth=1;entryX=-0.03;entryY=0.136;entryDx=0;entryDy=0;entryPerimeter=0;" parent="3nuBFxr9cyL0pnOWT2aG-5" target="1TqWd0xTVYRmLs3ybnhY-2" edge="1">
+          <mxGeometry x="0.0017" y="-19" relative="1" as="geometry">
+            <mxPoint x="210" y="164.76" as="targetPoint" />
+            <mxPoint x="70" y="160" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-4" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-5" vertex="1">
+          <mxGeometry x="50" y="330" width="20" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-29" value="&lt;font style=&quot;font-size: 8px&quot;&gt;Assemble&lt;br&gt;documents&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="3nuBFxr9cyL0pnOWT2aG-5" vertex="1">
+          <mxGeometry y="350" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-8" value="POST PAS Request Bundle to $submit" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=-0.078;entryY=0.162;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-2" target="gu-1yNpycRBrLMcdtG6p-2" edge="1">
+          <mxGeometry x="0.0034" relative="1" as="geometry">
+            <mxPoint x="200" y="160" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="220" y="160" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3nuBFxr9cyL0pnOWT2aG-10" value="if additional doc request,&#xa;post task to CDex &#xa;payer, patient, provider, &#xa;TRN(s), LOINC &#xa;and PWK01 Code(s)&#xa;" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;shadow=0;strokeWidth=1;" parent="1" target="3nuBFxr9cyL0pnOWT2aG-6" edge="1">
+          <mxGeometry y="-40" relative="1" as="geometry">
+            <mxPoint x="165" y="257" as="targetPoint" />
+            <mxPoint x="110" y="240" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gu-1yNpycRBrLMcdtG6p-1" value="Intermediary&#xa;$submit" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="520" y="80" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="gu-1yNpycRBrLMcdtG6p-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="gu-1yNpycRBrLMcdtG6p-1" vertex="1">
+          <mxGeometry x="50" y="70" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gu-1yNpycRBrLMcdtG6p-3" value="Payer" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="80" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="gu-1yNpycRBrLMcdtG6p-4" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="gu-1yNpycRBrLMcdtG6p-3" vertex="1">
+          <mxGeometry x="50" y="70" width="20" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-10" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="gu-1yNpycRBrLMcdtG6p-3" vertex="1">
+          <mxGeometry x="50" y="200" width="20" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-1" value="DTR" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="80" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="1TqWd0xTVYRmLs3ybnhY-1" vertex="1">
+          <mxGeometry x="50" y="130" width="20" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-30" value="POST to $submit-attachment " style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=-0.078;entryY=0.162;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1TqWd0xTVYRmLs3ybnhY-1" edge="1">
+          <mxGeometry y="-1" relative="1" as="geometry">
+            <mxPoint x="-90" y="390.28" as="sourcePoint" />
+            <mxPoint x="368.4400000000003" y="389.9999999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="20" y="390.28" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-3" value="submit X12N 278 request" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry y="-1" relative="1" as="geometry">
+            <mxPoint x="590" y="159" as="sourcePoint" />
+            <mxPoint x="730" y="159" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-4" value="X12N 278 response" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="200" as="sourcePoint" />
+            <mxPoint x="590" y="200" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-5" value="PAS Response Bundle" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=1;entryY=0.15;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.141;exitY=0.823;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="gu-1yNpycRBrLMcdtG6p-2" target="3nuBFxr9cyL0pnOWT2aG-2" edge="1">
+          <mxGeometry x="-0.0047" relative="1" as="geometry">
+            <mxPoint x="340" y="220" as="sourcePoint" />
+            <mxPoint x="799.72" y="220.02999999999997" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-8" value="Get documents&lt;br&gt;based on LOINC &lt;br&gt;and&amp;nbsp;PKW01 Code(s)" style="endArrow=classic;startArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="295" as="sourcePoint" />
+            <mxPoint x="250" y="295" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-9" value="Get Task" style="endArrow=classic;startArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1.129;exitY=0.637;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.03;entryY=0.318;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-6" target="1TqWd0xTVYRmLs3ybnhY-2" edge="1">
+          <mxGeometry x="-0.0122" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="270" as="sourcePoint" />
+            <mxPoint x="456.8000000000002" y="270.4100000000001" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-11" value="Get Questionnaire Bundle(s) based on context ID (TRN)" style="endArrow=classic;startArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="292" as="sourcePoint" />
+            <mxPoint x="730" y="292" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-15" value="Get resources based on CQL" style="endArrow=classic;startArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1.049;exitY=0.575;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.094;entryY=0.587;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-2" target="1TqWd0xTVYRmLs3ybnhY-2" edge="1">
+          <mxGeometry x="0.0051" y="9" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="340" as="sourcePoint" />
+            <mxPoint x="300" y="340" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-26" value="create/attach QR(s)&lt;br&gt;to task output&amp;nbsp;&lt;br&gt;status = complete" style="endArrow=none;startArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="420" as="sourcePoint" />
+            <mxPoint x="410" y="420" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-27" value="&lt;font style=&quot;font-size: 8px&quot;&gt;Repeat for adaptive form&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="760" y="280" width="30" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-28" value="&lt;font style=&quot;font-size: 8px&quot;&gt;Prepopulate,&lt;br&gt;query for missing&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="430" y="320" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-31" value="create and return QR&amp;nbsp; if adaptive form&amp;nbsp;" style="endArrow=none;startArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=-0.173;entryY=0.674;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="1TqWd0xTVYRmLs3ybnhY-10" edge="1">
+          <mxGeometry x="0.0166" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="422" as="sourcePoint" />
+            <mxPoint x="690" y="420" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o9KP2H59XD4NyID925Pw-1" value="&lt;font style=&quot;font-size: 8px&quot;&gt;Repeat for each Q&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="800" y="280" width="30" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="o9KP2H59XD4NyID925Pw-3" value="Need to determine if one or two tasks (e.g., LOINC codes vs Questionnaire(s))&lt;br&gt;Need support for multiple questionnaires&lt;br&gt;Payers will want all requested document returned at one time" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="550" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1TqWd0xTVYRmLs3ybnhY-14" value="Return response if adaptive form" style="endArrow=classic;startArrow=none&#xa;;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1.144;exitY=0.816;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1TqWd0xTVYRmLs3ybnhY-2" edge="1">
+          <mxGeometry x="-0.0034" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="390" as="sourcePoint" />
+            <mxPoint x="730" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="390" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
