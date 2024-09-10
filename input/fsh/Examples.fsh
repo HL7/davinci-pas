@@ -520,7 +520,7 @@ Description: "A sample payor organization."
 * type = https://codesystem.x12.org/005010/98#PR
 * name = "MARYLAND CAPITAL INSURANCE COMPANY"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "789312"
+* identifier.value = "1234567893"
 
 Instance: ReferralPractitionerRoleExample
 InstanceOf: PASPractitionerRole
@@ -545,7 +545,7 @@ InstanceOf: PASPractitioner
 Title: "Submit Claim Referral Practitioner Example"
 Description: "A sample practitioner who is being referred to."
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1354275899"
+* identifier.value = "1234567893"
 * name.family = "WATSON"
 * name.given = "SUSAN"
 * telecom.system = #phone
@@ -755,7 +755,7 @@ InstanceOf: PASPractitioner
 Title: "Submit Claim Surgical Practitioner Example"
 Description: "A sample practitioner who is being referred to."
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1354275899"
+* identifier.value = "1234567893"
 * name.family = "WATSON"
 * name.given = "SUSAN"
 * telecom.system = #phone
