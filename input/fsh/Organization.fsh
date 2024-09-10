@@ -26,13 +26,13 @@ Usage: #inline
 * system = "http://terminology.hl7.org/NamingSystem/USEIN"
 
 Profile: PASOrganization
-Parent: $USCoreOrganization|6.1.0
+Parent: $USCoreOrganization
 Id: profile-organization
 Title: "PAS Organization Base Profile"
 Description: "A base profile for organizations in PAS"
 * ^abstract = true
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|7.0.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier MS
 * identifier only PASIdentifier
 * identifier contains TIN 0..1 MS

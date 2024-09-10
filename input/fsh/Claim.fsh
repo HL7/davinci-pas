@@ -163,6 +163,10 @@ Parent: PASClaimBase
 Id: profile-claim
 Title: "PAS Claim"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"
+* insert CommonClaimElements
+* related 0..0
+
+RuleSet: CommonClaimElements
 * . ^short = "Preauthorization"
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Claim.encounter named encounter 0..1 MS
 * extension[encounter] ^short = "Information about a hospital claim being requested."

@@ -4,13 +4,6 @@
 This specification is currently published as a Standard for Trial Use (STU).  Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PAS" as the specification.
 </p>
 <p>
-This implementation guide is dependent on other specifications.  Please submit any comments you have on these base specifications as follows:
-</p>
-<ul>
-  <li>Feedback on the FHIR core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification.</li>
-  <li>Feedback on the US core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
-</ul>
-<p>
 Individuals interested in participating in the Prior Authorization Support or other HL7 Da Vinci projects can find information about Da Vinci <a href="http://www.hl7.org/about/davinci">here</a>.
 </p>
 <p>
@@ -21,6 +14,15 @@ There are many situationally required fields that are specified in the X12 TRN03
 </p>
 <p>
 Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
+</p>
+<p>
+There are a number of examples that still need to be created and included in this guide.  They are not included in the STU preview version of the guide but will be included for publication.  These are:
+<li>
+	<ul>Reject Authorization example</ul>
+	<ul>PEND/DENY response example</ul>
+	<ul>Subscription, SubscriptionNotification, related ClaimInquiry examples</ul>
+	<ul>Error Response</ul>
+</li>
 </p>
 </blockquote>
 {% endraw %}

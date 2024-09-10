@@ -1,10 +1,10 @@
 Profile: PASEncounter
-Parent: $USCoreEncounter|6.1.0
+Parent: $USCoreEncounter
 Id: profile-encounter
 Title: "PAS Encounter"
 Description: "PAS constraints on the Encounter resource mandating support for elements relevant to details of a requested institutional stay on the prior authorization request"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
 
 
 * extension contains PatientStatus named patientStatus 0..1 MS and

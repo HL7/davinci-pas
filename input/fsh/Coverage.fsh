@@ -1,8 +1,9 @@
 Profile: PASCoverage
-Parent: Coverage
+Parent: $USCoreCoverage
 Id: profile-coverage
 Title: "PAS Coverage"
 Description: "PAS constraints on Coverage resource mandating support for insurance elements relevant to the prior authorization request"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0"
 * identifier MS
 * status MS
 * status = #active

@@ -556,7 +556,10 @@ InstanceOf: PASCoverage
 Title: "Submit Claim Insurance Example"
 Description: "Sample insurance for a prior authorization."
 * status = #active
+* subscriberId = "1122334455"
 * beneficiary = Reference(SubscriberExample)
+* relationship.coding[+] = http://terminology.hl7.org/CodeSystem/subscriber-relationship#self
+* relationship.coding[+] = https://codesystem.x12.org/005010/1069#18
 * payor = Reference(InsurerExample)
 
 Instance: SubscriberExample

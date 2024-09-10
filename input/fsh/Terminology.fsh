@@ -166,7 +166,7 @@ Title: "X12 278 Diagnosis Information Type"
 Description: "LOINC codes that convey the type of information that is being requested about the diagnosis."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * ^experimental = false
-* codes from system http://loinc.org where CLASS = "ATTACH.MODIFIER"
+* codes from system http://loinc.org where CLASS = http://loinc.org#LP7763-8
 
 ValueSet: X12278ReviewDecisionReasonCode
 Title: "X12 278 Review Decision Reason Codes"
