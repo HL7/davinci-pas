@@ -1,8 +1,5 @@
 == Suppressed Messages ==
 
-# Canonicals have multiple matching versions
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '2.1.0', found versions: 2.0.1, 2.1.0
-
 # X12 Code Systems and Value Sets that are referenced in the guide but not freely available
 ValueSet 'https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98' not found
 ValueSet 'https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98' not found
@@ -48,6 +45,7 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be
 %Unable to provide support for code system https://codesystem.x12.org/005010/756
 %Unable to provide support for code system https://codesystem.x12.org/005010/1136
 %Unable to provide support for code system https://codesystem.x12.org/005010/1321
+%Unable to provide support for code system https://codesystem.x12.org/005010/755
 
 # Value sets that contain X12 codes and are thus not able to be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType|2.1.0' because the code system https://codesystem.x12.org/005010/1365 was not found

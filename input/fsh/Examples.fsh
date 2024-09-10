@@ -778,5 +778,5 @@ Description: "An example of a PAS Task requesting additional information."
 * reasonCode
 * reasonReference = Reference(MedicalServicesAuthorizationExample)
 * input[PayerURL].valueUrl = "http://example.org/payerURL"
-* input[AttachmentsNeeded].valueCodeableConcept = http://loinc.org#26443-2
+* input[AttachmentsNeeded].valueCodeableConcept = http://loinc.org#28570-0
 * input[AttachmentsNeeded].extension[paLineNumber].valueInteger = 1

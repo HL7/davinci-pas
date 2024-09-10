@@ -92,11 +92,13 @@
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>
 <artifact id="Bundle/PASClaimInquiryResponseBundleExample" key="Bundle-PASClaimInquiryResponseBundleExample" name="PAS Inquiry Response Bundle Example"/>
 <artifact id="StructureDefinition/profile-insurer" key="StructureDefinition-profile-insurer" name="PAS Insurer Organization"/>
+<artifact id="ValueSet/pas-loinc-attachment-codes" key="ValueSet-pas-loinc-attachment-codes" name="PAS LOINC Attachment Codes Value Set"/>
 <artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="PAS Location Profile"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="PAS Medication Request"/>
 <artifact id="StructureDefinition/PASMetricData" key="StructureDefinition-PASMetricData" name="PAS Metric Data"/>
 <artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="PAS Nutrition Order"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="PAS Organization Base Profile"/>
+<artifact id="ValueSet/pas-pwk01-attachment-report-type-code" key="ValueSet-pas-pwk01-attachment-report-type-code" name="PAS PWK01 Attachment Report Type Code Value Set"/>
 <artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="PAS Practitioner"/>
 <artifact id="StructureDefinition/profile-practitionerrole" key="StructureDefinition-profile-practitionerrole" name="PAS PractitionerRole"/>
 <artifact id="StructureDefinition/profile-pas-request-bundle" key="StructureDefinition-profile-pas-request-bundle" name="PAS Request Bundle"/>
