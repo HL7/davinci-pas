@@ -1,9 +1,9 @@
 {
   "package-id" : "hl7.fhir.us.davinci-pas",
   "version" : "2.1.0-preview",
-  "path" : "http://hl7.org/fhir/us/davinci-pas/STU2",
-  "status" : "trial-use",
+  "path" : "http://hl7.org/fhir/us/davinci-pas/2.1.0-preview",
+  "status" : "qa-preview",
   "sequence" : "STU 2",
   "mode": "working",
-  "desc" : "This is a new update for STU2."
+  "desc" : "This is a preview of the new STU update for STU2."
 }
