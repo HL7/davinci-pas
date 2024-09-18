@@ -219,7 +219,7 @@ We recognize that knowledge of the Patient member or subscriber identifier may n
 
 Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/).
 
-There is need for 'topic discovery' as there is only one topic of interest - [PAS Subscription Topic](SubscriptionTopic-PASSubscriptionTopic.html) - for this implementation guide.
+There is no need for 'topic discovery' as there is only one topic of interest - [PAS Subscription Topic](SubscriptionTopic-PASSubscriptionTopic.html) - for this implementation guide.
 
 When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The subscription is created at the level of the requesting provider organization and not at the level of each individual prior authorization request.  The Subscription parameters **SHALL** be identifier = [requesting provider organization id].  PAS Clients and Intermediaries **SHALL** support subscriptions with content='id-only' but MAY by mutual agreement and with appropriate security arrangements in place for push notifications containing PHI also support content='full-resource'.  Intermediaries **SHALL** ensure that subscriptions to monitor a particular organization's prior authorizations are only created or modified by that organization.
 

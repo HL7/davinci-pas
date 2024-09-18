@@ -72,7 +72,7 @@ In Scope
 
 Out Of Scope
 
-1. **SHOULD NOT** be used for any Medication that is covered under a pharmacy drug program benefit where prior authorization is provided by another electronic exchange process (e.g. NCPCP SCRIPT)
+1. **SHOULD NOT** be used for any Medication that is covered under a pharmacy benefit where prior authorization is provided by another electronic exchange process (e.g. NCPDP SCRIPT)
 
 #### Prior Authorization Process
 The prior authorization process from the EHR side consists of five steps:
