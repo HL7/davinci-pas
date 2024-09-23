@@ -114,6 +114,17 @@ It is possible that the incoming prior authorization Bundle can not be processed
 
 The resulting Bundle is returned as the HTTP body of the POST response.
 
+##### Returning Authorized Items that are different from what was Requested
+<div class="modified-content" markdown="1">
+It is often the case that what is authorized is different from what was requested.  Sometimes this is a modification of the requested item such as different quantities, eg. requested five counselling sessions but was authorized for three, or different locations, eg. requested services to be provided by Provider A but authorized to be provided by Provider B.  Other times these are authorized items that are in addition to the requested items.
+
+In surveys with payers, it appears that this is returned in X12 responses in two different ways.  Some payers will return the requested items as 'denied' and return the authorized items as extra items.  Others will return the requested items as modified with the differences in the item itself.  To achieve consistency in the FHIR response, we have decided to require one method for returning the authorized items if they are different from what was requested.
+
+For instances where the authorized item is a modification of the requested item, the requested item is returned in the ClaimResponse.item with an adjudication status of A6 - 'Modified'.  The actual authorized item is returned in the ClaimResponse.addItem.  The itemSequence element is used to link the addItem to the original item.
+
+For instances where there are new authorized items, they are returned in the ClaimResponse.addItem and the itemSequence will not match any of the requested items and thus will indicate that it is a new item.
+</div>
+
 ##### Prior Authorization Request and Response Example
 This is an example of a standard Referral Request / Response sequence between a Primary Care Provider and a Utilization Management Organization. The [request example](Bundle-ReferralAuthorizationBundleExample.html) will show how a PCP can request a referral to a specialist for a patient from a UMO. The [response example](Bundle-ReferralAuthorizationResponseBundleExample.html) will also show the response.
 

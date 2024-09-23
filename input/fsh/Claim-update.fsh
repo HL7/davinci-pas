@@ -46,6 +46,8 @@ Description: "Uniquely identifies this claim item. (2000F-TRN)"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: AuthorizationNumber
@@ -57,6 +59,8 @@ Description: "A string assigned by the UMO to an authorized review outcome assoc
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: AdministrationReferenceNumber
@@ -67,6 +71,8 @@ Description: "A string assigned by the UMO to the original disallowed review out
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 
@@ -97,6 +103,8 @@ Description: "An indicator of whether early and periodic screen for diagnosis an
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 
 Extension: NursingHomeResidentialStatus
 Id: extension-nursingHomeResidentialStatus
@@ -104,6 +112,8 @@ Description: "A code specifying the status of a nursing home resident at the tim
 * value[x] only CodeableConcept
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "Encounter"
 
@@ -115,6 +125,8 @@ Description: "A code specifying the level of care provided by a nursing home fac
 * valueCodeableConcept ^binding.description = "Codes specifying the level of care provided by a nursing home facility. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
 
@@ -134,6 +146,8 @@ Description: "The details of the service being requested."
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 * value[x] only Reference(PASMedicationRequest or PASServiceRequest or PASDeviceRequest or PASNutritionOrder)
 
 Extension: ConditionCode

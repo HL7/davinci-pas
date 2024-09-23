@@ -82,15 +82,9 @@ In some situations, the payer community requires additional constraints or needs
 </div>
 
 In addition, this guide uses content from the following FHIR-related specifications and implementation guides:
-* [Subscriptions R4 Backport]({{site.data.fhir.ver.subscriptions}})
+* [Subscriptions R5 Backport]({{site.data.fhir.ver.subscriptions}})
 * [Da Vinci CRD]({{site.data.fhir.ver.crd}})
 * [Da Vinci CDex]({{site.data.fhir.ver.cdex}})
-
-This implementation guide relies on the following other specifications:
-* **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
-* **[US Core]({{site.data.fhir.hl7_fhir_us_core}})** - The published version of US Core based on FHIR R4.
-
-There are other [Burden Reduction guides](background.html#da-vinci-burden-reduction) that work with and complement this guide.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 

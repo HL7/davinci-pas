@@ -39,7 +39,7 @@ specific to FHIR.  Before reading this implementation guide, it's important to b
 
 This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard.
 
-This implementation guide also builds on the [US Core (STU3 - R4 based)]({{site.data.fhir.hl7_fhir_us_core}}) Implementation Guide and implementers need to familiarize themselves with the profiles in that IG.
+This implementation guide also builds on the [US Core]({{site.data.fhir.hl7_fhir_us_core}}) Implementation Guide and implementers need to familiarize themselves with the profiles in that IG.
 
 ##### Must Support
 The Profile elements consist of both Mandatory and Must Support elements. Mandatory elements are elements with a minimum cardinality of 1 (min=1). The base [FHIR Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) guidance requires specifications to define the support expected for profile elements labeled Must Support.  The HRex IG defines some [conformance expectations](http://hl7.org/fhir/us/davinci-hrex/conformance.html) that all Da Vinci IGs are expected to follow.  Along with those expectations, the following rules on MustSupport are also required:

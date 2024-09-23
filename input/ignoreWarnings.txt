@@ -96,3 +96,10 @@ Most code systems defined in HL7 IGs will need to move to THO later during the p
 
 # Repeating element with a pattern
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+# Experimental value set warnings from the core FHIR specification
+The definition for the element 'ClaimResponse.payeeType' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental
+The definition for the element 'ClaimResponse.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
+The definition for the element 'ClaimResponse.formCode' binds to the value set 'http://hl7.org/fhir/ValueSet/forms' which is experimental, but this structure is not labeled as experimental
+The definition for the element 'Claim.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
+The definition for the element 'Claim.payee.type' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental

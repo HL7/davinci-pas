@@ -37,13 +37,42 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
 * item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
 * item.extension[requestedServiceDate] ^short = "The original date/period that was requested by the submitter for this item."
-* item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
+* item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+* item.itemSequence MS
 * item.adjudication MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
+* addItem MS
+  * extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
+    ItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
+    ItemPreAuthPeriod named preAuthPeriod 0..1 MS and
+    AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
+    AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
+    EPSDTIndicator named epsdtIndicator 0..1 MS and
+    NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1 MS and
+    NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 MS and
+    RevenueUnitRateLimit named revenueUnitRateLimit 0..1 MS and
+    RequestedService named requestedService 0..1 MS
+  * itemSequence 1..1 MS
+  * provider MS
+  * provider only Reference(PASPractitioner or PASOrganization)
+  * productOrService MS
+  * productOrService from X12278RequestedServiceType (required)
+  * modifier MS
+  * modifier from X12278RequestedServiceModifierType (required)
+  * serviced[x] MS
+  * location[x] MS
+  * quantity MS
+  * unitPrice MS
+  * adjudication MS
+  * adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+  * adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
+  * adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+  * adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
+
 * error MS
 * error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS and ErrorPath named errorPath 0..1 MS
 * error.extension[followupAction] ^short = "A code representing what action must occur to resolve this error."
@@ -80,11 +109,11 @@ Description: "The details of the review action that is necessary for the authori
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 * extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
 * ^context[+].type = #element
-* ^context[=].expression = "Claim.item"
-* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem.adjudication"
 
 Extension: ReviewActionCode
 Id: extension-reviewActionCode
@@ -93,13 +122,13 @@ Description: "The code describing the result of the review."
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
-* ^context[=].expression = "Claim.item"
-* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
-* ^context[=].expression = "ClaimResponse.item.adjudication"
+* ^context[=].expression = "ClaimResponse.addItem.adjudication.extension"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication.extension"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
 
 Extension: ItemPreAuthIssueDate
 Id: extension-itemPreAuthIssueDate
@@ -107,6 +136,8 @@ Description: "The date when this item's preauthorization was issued."
 * value[x] only date
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 
@@ -116,6 +147,8 @@ Description: "The original date/period that was requested by the submitter for t
 * value[x] only dateTime or Period
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 
 Extension: ItemPreAuthPeriod
 Id: extension-itemPreAuthPeriod
@@ -123,6 +156,8 @@ Description: "The date/period when this item's preauthorization is valid."
 * value[x] only Period
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 
@@ -165,9 +200,9 @@ Description: "The details of what has been authorized for this item if different
 * extension[revenue].value[x] only CodeableConcept
 * extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
 * ^context[+].type = #element
-* ^context[=].expression = "ClaimResponse.item"
-* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
@@ -178,9 +213,9 @@ Description: "The specific provider who has been authorized to provide this item
 * extension[providerType].valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
 * extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
-* ^context[=].expression = "ClaimResponse.item"
-* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
 
 Profile: PASClaimInquiryResponse
 Parent: PASClaimResponseBase

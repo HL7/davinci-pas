@@ -108,8 +108,6 @@ Description: "An example of a ClaimResponse giving approval for a referral."
 * item.extension[preAuthIssueDate].valueDate = 2005-05-02
 * item.extension[preAuthPeriod].valuePeriod.start = 2005-05-02
 * item.extension[preAuthPeriod].valuePeriod.end = 2005-06-02
-* item.extension[authorizedProvider].extension[provider].valueReference = Reference(ReferralPractitionerExample)
-* item.extension[authorizedItemDetail].extension[productOrServiceCode].valueCodeableConcept = https://codesystem.x12.org/005010/1365#3 "Consultation"
 * item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.value = 100
 * item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.currency = #USD
 * item.extension[authorizedItemDetail].extension[quantity].valueQuantity.value = 1

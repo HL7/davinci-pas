@@ -7,7 +7,7 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 * This [full IG](full-ig.zip)
 * The [resource definitions](definitions.json.zip)  from this IG for use with the FHIR validator (see below)
 * The full FHIR [R4]({{site.data.fhir.path}}fhir-spec.zip) specifications
-* The [US-Core]({{site.data.fhir.ver.hl7_fhir_us_core}}/full-ig.zip) specifications
+* The [US-Core]({{site.data.fhir.ver.hl7_fhir_us_core}}) specifications
 * A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity
 
 <!-- Todo: reference implementations -->
