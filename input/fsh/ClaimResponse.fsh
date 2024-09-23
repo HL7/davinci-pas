@@ -18,7 +18,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * insurer only Reference(PASInsurer)
 * requestor MS
 * requestor only Reference(PASRequestor or PASPractitionerRole)
-* request MS
+* request 1..1 MS
 * request only Reference(PASClaim)
 * outcome MS
 * preAuthPeriod MS

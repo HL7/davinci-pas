@@ -77,43 +77,48 @@ Title: "Referral Authorization Response Bundle Example"
 Description: "An example of a ClaimResponse bundle approving the authorization of a referral."
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
-* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ReferralAuthorizationResponseExample"
-* entry[ClaimResponse].resource = ReferralAuthorizationResponseExample
+* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/PractitionerRequestorResponseExample"
+* entry[ClaimResponse].resource = PractitionerRequestorResponseExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
 * entry[2].resource = InsurerExample
 * entry[3].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[3].resource = SubscriberExample
+* entry[4].fullUrl = "http://example.org/fhir/Practitioner/ReferralPractitionerExample"
+* entry[4].resource = ReferralPractitionerExample
 
-Instance: ReferralAuthorizationResponseExample
-InstanceOf: PASClaimResponse
-Title: "Referral Authorization Response Example"
-Description: "An example of a ClaimResponse giving approval for a referral."
-* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
-* identifier.value = "111099"
-* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
-* identifier.assigner.identifier.value = "9012345678"
-* status = #active
-* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
-* use = #preauthorization
-* patient = Reference(SubscriberExample)
-* created = 2005-05-02T11:02:00+05:00
-* insurer = Reference(InsurerExample)
-* requestor = Reference(UMOExample)
-* outcome = #complete
-* item.itemSequence = 1
-* item.extension[requestedServiceDate].valuePeriod.start = 2005-05-02
-* item.extension[requestedServiceDate].valuePeriod.end = 2005-06-02
-* item.extension[preAuthIssueDate].valueDate = 2005-05-02
-* item.extension[preAuthPeriod].valuePeriod.start = 2005-05-02
-* item.extension[preAuthPeriod].valuePeriod.end = 2005-06-02
-* item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.value = 100
-* item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.currency = #USD
-* item.extension[authorizedItemDetail].extension[quantity].valueQuantity.value = 1
-* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
-* item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
-* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
+Instance: ReferralPendingAuthorizationResponseBundleExample
+InstanceOf: PASResponseBundle
+Title: "Referral Pending Authorization Response Bundle Example"
+Description: "An example of a ClaimResponse bundle with a pending authorization of a referral."
+* type = #collection
+* timestamp = 2005-05-02T11:02:00+05:00
+* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/PractitionerRequestorPendingResponseExample"
+* entry[ClaimResponse].resource = PractitionerRequestorPendingResponseExample
+* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
+* entry[1].resource = UMOExample
+* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
+* entry[2].resource = InsurerExample
+* entry[3].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
+* entry[3].resource = SubscriberExample
+* entry[4].fullUrl = "http://example.org/fhir/Practitioner/ReferralPractitionerExample"
+* entry[4].resource = ReferralPractitionerExample
+
+Instance: RejectionResponseBundleExample
+InstanceOf: PASResponseBundle
+Title: "Rejection Response Bundle Example"
+Description: "An example of a ClaimResponse bundle showing the rejection of a request."
+* type = #collection
+* timestamp = 2005-05-02T11:02:00+05:00
+* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/RejectionResponseExample"
+* entry[ClaimResponse].resource = RejectionResponseExample
+* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
+* entry[1].resource = UMOExample
+* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
+* entry[2].resource = InsurerExample
+* entry[3].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
+* entry[3].resource = SubscriberExample
 
 Instance: ErrorResponseBundleExample
 InstanceOf: PASResponseBundle
@@ -121,14 +126,16 @@ Title: "Error Response Bundle Example"
 Description: "An example of a ClaimResponse bundle with errors."
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
-* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ReferralAuthorizationResponseExample"
-* entry[ClaimResponse].resource = ReferralAuthorizationResponseExample
+* entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ErrorResponseExample"
+* entry[ClaimResponse].resource = ErrorResponseExample
 * entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
 * entry[1].resource = UMOExample
 * entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
 * entry[2].resource = InsurerExample
 * entry[3].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[3].resource = SubscriberExample
+* entry[4].fullUrl = "http://example.org/fhir/Claim/ReferralAuthorizationExample"
+* entry[4].resource = ReferralAuthorizationExample
 
 Instance: ErrorResponseExample
 InstanceOf: PASClaimResponse
@@ -145,12 +152,36 @@ Description: "An example of a ClaimResponse with errors."
 * created = 2005-05-02T11:02:00+05:00
 * insurer = Reference(InsurerExample)
 * requestor = Reference(UMOExample)
+* request = Reference(ReferralAuthorizationExample)
 * outcome = #error
 * error[0].code = https://codesystem.x12.org/005010/901#04
 * error[1].code = https://codesystem.x12.org/005010/901#T4
 * error[1].extension[errorElement].valueString = "2010A-NM103"
 * error[1].extension[errorPath].valueString = "Bundle.entry[1].Organization.name"
 * error[1].extension[followupAction].valueCodeableConcept = https://codesystem.x12.org/005010/889#C
+
+Instance: RejectionResponseExample
+InstanceOf: PASClaimResponse
+Title: "Rejection Response Example"
+Description: "An example of a ClaimResponse that is rejected."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2005-05-02T11:02:00+05:00
+* insurer = Reference(InsurerExample)
+* requestor = Reference(UMOExample)
+* request = Reference(HomecareAuthorizationUpdateExample)
+* outcome = #error
+* error[+].code = https://codesystem.x12.org/005010/901#33
+* error[=].extension[errorElement].valueString = "2000E"
+* error[=].extension[followupAction].valueCodeableConcept = https://codesystem.x12.org/005010/889#N
+* processNote[+].text = "Updates are not allowed. A new auth request must be submitted."
+* processNote[=].number = 1
 
 Instance: PractitionerRequestorResponseExample
 InstanceOf: PASClaimResponse
@@ -167,6 +198,7 @@ Description: "An example of a ClaimResponse where the requestor is a Practitione
 * created = 2005-05-02T11:02:00+05:00
 * insurer = Reference(InsurerExample)
 * requestor = Reference(ReferralPractitionerRoleExample)
+* request = Reference(ReferralAuthorizationExample)
 * outcome = #complete
 * item.itemSequence = 1
 * item.extension[requestedServiceDate].valuePeriod.start = 2005-05-02
@@ -182,6 +214,28 @@ Description: "An example of a ClaimResponse where the requestor is a Practitione
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
 * item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
+
+Instance: PractitionerRequestorPendingResponseExample
+InstanceOf: PASClaimResponse
+Title: "Pending Authorization Response with Practitioner Requestor Example"
+Description: "An example of a ClaimResponse where the requestor is a Practitioner and the response is pended."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2005-05-02T11:02:00+05:00
+* insurer = Reference(InsurerExample)
+* requestor = Reference(ReferralPractitionerRoleExample)
+* request = Reference(ReferralAuthorizationExample)
+* outcome = #complete
+* item.itemSequence = 1
+* item.extension[administrationReferenceNumber].valueString = "PEND0001"
+* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A4 "Pending"
 
 Instance: HomecareAuthorizationBundleExample
 InstanceOf: PASRequestBundle
@@ -254,6 +308,8 @@ Description: "An example of a Claim bundle updating a previously sent prior auth
 * entry[3].resource = InsuranceExample
 * entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
+* entry[5].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationExample"
+* entry[5].resource = HomecareAuthorizationExample
 
 Instance: HomecareAuthorizationUpdateExample
 InstanceOf: PASClaimUpdate
@@ -314,6 +370,8 @@ Description: "An example of a Claim bundle changing elements of a previously sen
 * entry[3].resource = InsuranceExample
 * entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
+* entry[5].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationExample"
+* entry[5].resource = HomecareAuthorizationExample
 
 Instance: HomecareAuthorizationDifferentialExample
 InstanceOf: PASClaimUpdate
@@ -469,6 +527,8 @@ Description: "An example of a ClaimResponse bundle returning a response to a cla
 * entry[3].resource = InsuranceExample
 * entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[4].resource = SubscriberExample
+* entry[5].fullUrl = "http://example.org/fhir/Claim/ReferralAuthorizationExample"
+* entry[5].resource = ReferralAuthorizationExample
 
 Instance: PASClaimInquiryResponseExample
 InstanceOf: PASClaimInquiryResponse
@@ -487,6 +547,7 @@ Description: "An example of a ClaimResponse resource that is a response to a cla
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(InsuranceExample)
+* request = Reference(ReferralAuthorizationExample)
 * outcome = #complete
 * item.itemSequence = 1
 * item.extension[requestedServiceDate].valuePeriod.start = 2005-05-02
@@ -781,3 +842,55 @@ Description: "An example of a PAS Task requesting additional information."
 * input[PayerURL].valueUrl = "http://example.org/payerURL"
 * input[AttachmentsNeeded].valueCodeableConcept = http://loinc.org#28570-0
 * input[AttachmentsNeeded].extension[paLineNumber].valueInteger = 1
+
+Instance: PASSubscription
+InstanceOf: Subscription
+Title: "PAS Subscription example for a specific provider"
+Description: "An example of a PAS Subscription submission for a specific provider."
+* criteria = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
+* criteria.extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria"
+* criteria.extension[=].valueString = "orgIdentifier=http://hl7.org/fhir/sid/us-npi|1234567893"
+* status = #active
+* channel.type = #rest-hook
+* channel.endpoint = "http://example.org/send-me-subscription-notifications"
+* channel.payload = #application/fhir+json
+* channel.payload.extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content"
+* channel.payload.extension[=].valueCode = #id-only
+* reason = "Receive notifications about claim responses for my organization."
+
+Instance: PASSubscriptionNotification
+InstanceOf: Bundle
+Title: "PAS Subscription Notification example"
+Description: "An example of a PAS Subscription Notification"
+* type = #history
+* timestamp = 2020-05-29T11:44:33.188-05:00
+* entry[+].fullUrl = "http://example.org/Parameters/SubscriptionNotificationParameters"
+* entry[=].resource = SubscriptionNotificationParameters
+* entry[=].request.method = #GET
+* entry[=].request.url = "https://example.org/Subscription/PAS/$status"
+* entry[=].response.status = "200"
+
+Instance: SubscriptionNotificationParameters
+InstanceOf: Parameters
+Title: "PAS Subscription Notification Parameters"
+Description: "An example of the parameters going back for a PAS subscription notification"
+* parameter[+]
+  * name = "subscription"
+  * valueReference = Reference(PASSubscription)
+* parameter[+]
+  * name = "topic"
+  * valueCanonical = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic|2.1.0"
+* parameter[+]
+  * name = "type"
+  * valueCode = #event-notification
+* parameter[+]
+  * name = "notification-event"
+  * part[+]
+    * name = "event-number"
+    * valueString = "2"
+  * part[+]
+    * name = "timestamp"
+    * valueInstant = "2020-05-29T11:44:33.188-05:00"
+  * part[+]
+    * name = "focus"
+    * valueReference = Reference(ReferralAuthorizationResponseBundleExample)

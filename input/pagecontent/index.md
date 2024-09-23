@@ -15,15 +15,6 @@ There are many situationally required fields that are specified in the X12 TRN03
 <p>
 Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
 </p>
-<p>
-There are a number of examples that still need to be created and included in this guide.  They are not included in the STU preview version of the guide but will be included for publication.  These are:
-<ul>
-	<li>Reject Authorization example</li>
-	<li>PEND/DENY response example</li>
-	<li>Subscription, SubscriptionNotification, related ClaimInquiry examples</li>
-	<li>Error Response</li>
-</ul>
-</p>
 </blockquote>
 
 <blockquote class="dragon">

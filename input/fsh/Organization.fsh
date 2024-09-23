@@ -21,9 +21,14 @@ Description: "The organization who is making a prior authorization request."
 * contact.telecom MS
 
 Instance: TINIdentifierPattern
-InstanceOf: PASIdentifier
+InstanceOf: Identifier
 Usage: #inline
 * system = "http://terminology.hl7.org/NamingSystem/USEIN"
+
+Instance: PIIdentifierPattern
+InstanceOf: Identifier
+Usage: #inline
+* type = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType#payerid
 
 Profile: PASOrganization
 Parent: $USCoreOrganization
@@ -35,9 +40,11 @@ Description: "A base profile for organizations in PAS"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier MS
 * identifier only PASIdentifier
-* identifier contains TIN 0..1 MS
+* identifier contains TIN 0..1 MS and PI 0..1 MS
 * identifier[TIN] ^short = "The US Employer Identification Number (EIN) or Tax Identification Number (TIN)."
 * identifier[TIN] = TINIdentifierPattern
+* identifier[PI] ^short = "The Payer Identification Number (PI)"
+* identifier[PI] = PIIdentifierPattern
 
 Profile: PASLocation
 Parent: $USCoreLocation

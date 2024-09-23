@@ -17,7 +17,7 @@ Description: "PAS constraints on Bundle resource ensuring that a claim/claim upd
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
-* entry contains Claim 1..1 MS
+* entry contains Claim 1..2 MS
 * entry[Claim].resource only PASClaimUpdate or PASClaim
 
 Profile: PASInquiryRequestBundle

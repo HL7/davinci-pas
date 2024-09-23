@@ -2,7 +2,28 @@
 
 Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
 
-The FHIR artifacts used by PAS are organized according to whether the content developed as part of the US Core implementation guides or is Da Vinci-specific.
+These FHIR artifacts define the clinical data that can be submitted as part of a prior authorization submission and/or included as part of a prior authorization response using the [Claim submit](OperationDefinition-Claim-submit.html) operation.
+
+The artifacts are of four types:
+
+* [Profiles]({{site.data.fhir.path}}profiling.html) constrain FHIR resources to reflect PAS requirements
+* [Extensions]({{site.data.fhir.path}}extensibility.html) define additional data elements that can be conveyed as part of a resource
+* [Code Systems]({{site.data.fhir.path}}codesystem.html) define PAS-specific terminologies to be used in one or more of those profiles
+* [Value Sets]({{site.data.fhir.path}}valueset.html) define the specific subsets of both PAS-defined and other code systems that can be (or are recommended to be) used within one or more profile elements
+* [Operations]({{site.data.fhir.path}}operationdefinition.html) which define the PAS-specific constraints on the Claim submit operation as well as a Claim inquiry operation.
+
+### Guide Examples
+The following examples are present in this guide to show specific use cases:
+
+* [Referral Authorization](Bundle-ReferralAuthorizationBundleExample.html) with [Accepted Response](Bundle-ReferralAuthorizationResponseBundleExample.html)
+* [Homecare Authorization](Bundle-HomecareAuthorizationBundleExample.html) with an Update of the Authorization Request sent as an [Full Update](Bundle-HomecareAuthorizationUpdateBundleExample.html) and as a [Differential Update](Bundle-HomecareAuthorizationDifferentialBundleExample.html)
+* [Medical Services Authorization](Bundle-MedicalServicesAuthorizationBundleExample.html)
+* [Surgical Request Authorization](Bundle-SurgicalRequestBundleExample.html)
+* [Error Response](Bundle-ErrorResponseBundleExample.html)
+* [Reject Authorization](Bundle-RejectionResponseBundleExample.html)
+* [Pending Response](Bundle-ReferralPendingAuthorizationResponseBundleExample.html)
+* [Additional Information Task Example](Task-AdditionalInformationTaskExample.html)
+* [Subscription](Subscription-PASSubscription.html), [Subscription Notification](Bundle-PASSubscriptionNotification.html), and [Claim Inquiry](Bundle-PASClaimInquiryBundleExample.html) and a [Claim Inquiry Response](Bundle-PASClaimInquiryResponseBundleExample.html)
 
 ### Artifact Lists
 <table>
@@ -15,18 +36,6 @@ The FHIR artifacts used by PAS are organized according to whether the content de
 </table>
 
 Additional information about the use of these artifacts can be found in the [main specification](specification.html#profiles).
-
-
-These FHIR artifacts define the clinical data that can be submitted as part of a prior authorization submission and/or included as part of a prior authorization response using the [Claim submit](OperationDefinition-Claim-submit.html) operation.
-
-The artifacts are of four types:
-
-* [Profiles]({{site.data.fhir.path}}profiling.html) constrain FHIR resources to reflect PAS requirements
-* [Extensions]({{site.data.fhir.path}}extensibility.html) define additional data elements that can be conveyed as part of a resource
-* [Code Systems]({{site.data.fhir.path}}codesystem.html) define PAS-specific terminologies to be used in one or more of those profiles
-* [Value Sets]({{site.data.fhir.path}}valueset.html) define the specific subsets of both PAS-defined and other code systems that can be (or are recommended to be) used within one or more profile elements
-* [Operations]({{site.data.fhir.path}}operationdefinition.html) which define the PAS-specific constraints on the Claim submit operation as well as a Claim inquiry operation.
-
 
 ### Cross-Version Analysis
 {% include cross-version-analysis.xhtml %}

@@ -14,7 +14,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * identifier MS
 * identifier only PASIdentifier
 * identifier ^short = "Business identifier for claim"
-* identifier.system ^short = "Should use a scheme of 'urn:trnorg:<TRN03>'"
+* identifier.system ^short = "SHOULD use a scheme of 'urn:trnorg:<TRN03>'"
 * status MS
 * status = #active
 * use MS
@@ -76,7 +76,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * insurance.coverage only Reference(PASCoverage)
 * accident MS
 * accident.date MS
-* accident.date ^comment = "Dates need to be a full date - YYYY-MM-DD"
+* accident.date obeys FullDateRule
 * accident.type MS
 * accident.type from https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362 (required)
 * accident.type ^binding.description = "Codes identifying an accompanying cause of an illness, injury or an accident. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
@@ -109,6 +109,9 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * item.modifier MS
 * item.modifier from X12278RequestedServiceModifierType (required)
 * item.serviced[x] MS
+* item.servicedDate obeys FullDateRule
+* item.servicedPeriod.start obeys FullDateRule
+* item.servicedPeriod.end obeys FullDateRule
 * item.location[x] MS
 * item.location[x] only CodeableConcept
 * item.locationCodeableConcept from X12278LocationType (required)

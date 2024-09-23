@@ -70,7 +70,7 @@ Description: "A string assigned by the UMO to the original disallowed review out
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
-* ^context[=].expression = "ClaimResponse"
+* ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element

@@ -4,6 +4,8 @@ Id: profile-identifier
 Title: "PAS Identifier"
 Description: "Constraints and extensions on Identifier allowing for a common datatype across all resource profiles."
 * extension contains IdentifierSubDepartment named subDepartment 0..1 MS and IdentifierJurisdiction named jurisdiction 0..1 MS
+* system 1..1 MS
+* value 1..1 MS
 
 Extension: IdentifierSubDepartment
 Id: extension-identifierSubDepartment

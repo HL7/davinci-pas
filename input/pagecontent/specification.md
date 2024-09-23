@@ -206,7 +206,7 @@ Notes:
 * systems **MAY** withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim.identifier.  In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed.
 
 #### Pended Authorization Responses
-When the ClaimResponse.reviewaction.code is the X12 code for 'pended', it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made.  To retrieve the response at a later point, implementers **SHALL** support subscriptions.
+When the ClaimResponse.reviewaction.code is the X12 code for 'pended', it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made.  To retrieve the response at a later point, implementers **SHALL** support subscriptions.  [Here](Bundle-ReferralPendingAuthorizationResponseBundleExample.html) is an example of a pended response.
 
 Note: There are use-cases for multiple systems potentially needing to check on the status of a 'pended' prior authorization.  In addition to the provider who submitted the prior authorization request, the status might also be of interest to:
 
@@ -232,15 +232,15 @@ Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscript
 
 There is no need for 'topic discovery' as there is only one topic of interest - [PAS Subscription Topic](SubscriptionTopic-PASSubscriptionTopic.html) - for this implementation guide.
 
-When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The subscription is created at the level of the requesting provider organization and not at the level of each individual prior authorization request.  The Subscription parameters **SHALL** be identifier = [requesting provider organization id].  PAS Clients and Intermediaries **SHALL** support subscriptions with content='id-only' but MAY by mutual agreement and with appropriate security arrangements in place for push notifications containing PHI also support content='full-resource'.  Intermediaries **SHALL** ensure that subscriptions to monitor a particular organization's prior authorizations are only created or modified by that organization.
+When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint.  The subscription is created at the level of the requesting provider organization and not at the level of each individual prior authorization request.  The Subscription parameters **SHALL** be org-identifier = [requesting provider organization id].  PAS Clients and Intermediaries **SHALL** support subscriptions with content='id-only' but MAY by mutual agreement and with appropriate security arrangements in place for push notifications containing PHI also support content='full-resource'.  Intermediaries **SHALL** ensure that subscriptions to monitor a particular organization's prior authorizations are only created or modified by that organization.
 
 * Servers supporting subscriptions **SHALL** expose this as part of the Server's CapabilityStatement
 * Servers **SHOULD** support rest-hook and **MAY** support websocket channels
 * Additional information about creating subscriptions can be found [here]({{site.data.fhir.path}}subscription.html)
 
-Once the subscription has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.  The id that is returned in the subscription notification is the requesting provider's TRN (i.e. the Claim.identifier).
+Once the [subscription](Subscription-PASSubscription.html) has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.  The id that is returned in the subscription notification is the requesting provider's TRN (i.e. the Claim.identifier).
 
-Upon receiving a notification, the Client **SHALL** execute a query using the TRN that is included in the notification as well as other required information needed to identify the claim (such as a requesting provider organization, a payer organization, and a patient for the inquiry).  The timing of the query does not to be immediate but can be when convenient.
+Upon receiving a [notification](Bundle-PASSubscriptionNotification.html) , the Client **SHALL** execute a query using the TRN that is included in the notification as well as other required information needed to identify the claim (such as a requesting provider organization, a payer organization, and a patient for the inquiry).  The timing of the query does not to be immediate but can be when convenient.
 
 
 #### Checking Status
@@ -249,7 +249,7 @@ Systems other than the requesting system may choose not to subscribe to the prio
 #### Updating Authorization Requests
 In some cases, the needs associated with a prior authorization may change after the prior authorization request was submitted.  This might be a change to one of the services needed, the timeframe over which the service is provided, the quantity of the service or product, or even the elimination of the need for a given service.
 
-Since submitting an update for a new authorization is frequently player/plan-specific, this IG recommends that an update is attempted first.  If that is rejected or the provider knows in advance that an update will not succeed, the a new authorization request should be made.
+Since submitting an update for a new authorization is frequently player/plan-specific, this IG recommends that an update is attempted first.  If that is rejected or the provider knows in advance that an update will not succeed, the a new authorization request should be made.  [Here](Bundle-RejectionResponseBundleExample.html) is an example of a rejected response to an update.
 
 There are four types of changes possible:
 * Canceling the entire prior authorization (including all contained items)
