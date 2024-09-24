@@ -16,11 +16,6 @@ There are many situationally required fields that are specified in the X12 TRN03
 Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
 </p>
 </blockquote>
-
-<blockquote class="dragon">
-<p> This is a review version of the specification for the STU2.1 release.  Due to a late-breaking discovery, it is missing a key ability - the ability to send back items in the response that differ in what was authorized from what was requested.  We are adding narrative around this as well as adding to the ClaimResponse profile.  At this time, reviewers should not review the ClaimResponse profile until the final snapshot has been created.
-</p>
-</blockquote>
 {% endraw %}
 
 ### Overview
