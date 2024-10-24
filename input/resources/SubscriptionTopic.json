@@ -28,5 +28,10 @@
       "filterParameter": "orgIdentifier",
       "comparator": ["eq"] 
     }
+  ],
+  "notificationShape": [
+    {
+      "resource": "http://hl7.org/fhir/StructureDefinition/Bundle"
+    }
   ]
 }

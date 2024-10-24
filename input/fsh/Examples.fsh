@@ -893,4 +893,8 @@ Description: "An example of the parameters going back for a PAS subscription not
     * valueInstant = "2020-05-29T11:44:33.188-05:00"
   * part[+]
     * name = "focus"
-    * valueReference = Reference(ReferralAuthorizationResponseBundleExample)
+    * valueReference
+      * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+      * identifier.value = "111099"
+      * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+      * identifier.assigner.identifier.value = "9012345678"
