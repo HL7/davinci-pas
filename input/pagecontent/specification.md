@@ -241,6 +241,7 @@ Once the [subscription](Subscription-PASSubscription.html) has been created, the
 
 Upon receiving a [notification](Bundle-PASSubscriptionNotification.html) , the Client **SHALL** execute a query using the TRN that is included in the notification as well as other required information needed to identify the claim (such as a requesting provider organization, a payer organization, and a patient for the inquiry).  The timing of the query does not to be immediate but can be when convenient.
 
+Non-submitting systems are not able to subscribe for responses and will have to periodically query.
 
 #### Checking Status
 Systems other than the requesting system may choose not to subscribe to the prior authorization response but instead to check the status at the request of a user.  There are no retry limits for user-initiated status checks.
