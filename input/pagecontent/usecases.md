@@ -125,10 +125,6 @@ A PAS Subscription has been created to allow systems to monitor for specific req
 
 There is also guidance on monitoring in the CDex IG: [Using CDex Attachments with DaVinci PAS](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#polling-vs-subscriptions)
 
-In those situations where the prior authorization request is ‘pended’, the EHR must monitor for changes to the request until the results are finalized. This monitoring might be done by the system of the provider that submitted the request for prior authorization, and/or the system of the provider that is expected to actually perform the authorized procedure (e.g. the family physician system or the imaging center system).
-
-A PAS Subscription has been created to allow systems to monitor for specific requests.  In response to a subscription notification indicating that the prior authorization has been changed, there is an inquiry operation that allows for returning information about prior authorization submissions.  This operation can also be used for generic inquiries about a prior submission.
-
 ### Supporting Information
 To evaluate whether a given service will be covered, a payer may need to understand additional information about the patient.  There are three main categories of such information:
 
