@@ -201,7 +201,6 @@ The information in the Bundle is mapped to a 278 Health Care Services Review Inf
 
 Notes:
 * the returned ClaimResponse **SHALL** include the current results for all submitted items, including any items changed or canceled since the original authoriation request.  (See [Updating authorization requests](#updating-authorization-requests) below.)
-* the returned ClaimResponse will be a subset if the request was for a subset of information
 * if the authorizationresponseid submitted is not the 'current' authorization response identifier (because subsequent additions/changes/cancellations have been made to the prior authorization request), the returned record **SHALL** be the 'current' authorization response - even though it no longer has the same identifier.  I.e. If a search is for a 'replaced' prior authorization, the search result **SHALL** include the 'current' prior authorization response for the most recent replacing prior authorization request.
 * systems **MAY** withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim.identifier.  In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed.
 
