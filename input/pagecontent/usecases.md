@@ -92,7 +92,7 @@ The prior authorization process from the EHR side consists of five steps:
 
 NOTE:
 
-1. The intermediary **SHALL** always exchange a FHIR bundle with the EHR (on left in the drawing above)
+1. The intermediary **SHALL** always exchange a FHIR bundle with the EHR (figure 2.3)
 2. The intermediary **SHALL** convert the FHIR bundle to and from an X12 278 (and optionally to an X12 275) if necessary to meet the HIPAA  transaction requirements
 3. The intermediary is responsible for obtaining a status of the PA request from the Payer (may use the X12 278 Inquiry) when requested by the EHR
 4. The intermediary **MAY** convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the EHR  and the payer
