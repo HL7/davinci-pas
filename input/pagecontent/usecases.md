@@ -60,7 +60,7 @@ In FHIR, the Claim resource which is being used for Prior Authorization does not
 
 
 ### Workflow
-Within an EHR Client, the prior authorization request process should be capable of being evoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
+Within an EHR Client, the prior authorization request process should be capable of being invoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
 
 #### Scope of Work Flow
 In Scope
