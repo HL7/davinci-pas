@@ -12,6 +12,8 @@ The artifacts are of four types:
 * [Value Sets]({{site.data.fhir.path}}valueset.html) define the specific subsets of both PAS-defined and other code systems that can be (or are recommended to be) used within one or more profile elements
 * [Operations]({{site.data.fhir.path}}operationdefinition.html) which define the PAS-specific constraints on the Claim submit operation as well as a Claim inquiry operation.
 
+Many of the profiles are based on US Core 7.0.0 while also declaring conformance with US Core 6.1.0 and 3.1.1. In some cases, the 7.0.0 and/or 6.1.0 releases introduce new "mustSupport" elements that are not mustSupport in 3.1.1. The intention of this implementation guide is NOT to move forward the timelines by which EHRs and/or payers must support USCDI 3 and 4 content. Rather, it is to allow seamless transition as systems start to support the newer US Core releases as systems start to bring them on stream. As such, clients and servers have no obligations with respect to elements that are newly mustSupport in 6.1.0 or 7.0.0 beyond "don't error if these elements are present" until such time as those systems claim conformance with the US Core release which introduces those elements as mustSupport. Once a system claims conformance to US Core 6.1.0 or 7.0.0, then the conformance expectations of those release of the US Core guide come into play.
+
 ### Guide Examples
 The following examples are present in this guide to show specific use cases:
 
