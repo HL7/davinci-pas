@@ -193,7 +193,7 @@ Clients **SHALL** perform this operation in an automated/background manner no mo
 
 The parameter to the inquiry operation is a [PAS Inquiry Request Bundle](StructureDefinition-profile-pas-inquiry-request-bundle.html) which has a [Claim Inquiry profile instance](StructureDefinition-profile-claim-inquiry.html) as well as any referenced resources if needed.  The operation is basically a query-by-example where the incoming Claim resource provides elements that will match existing prior authorizations.  Any authorizations that match the incoming resource elements will be returned by the operation.  The rules for how the included data elements are matched are specified in the X12 278 inquiry TR3 specification.
 
-In the base FHIR specification, the item.productOrService is mandatory.  For the use of this IG, this element is bound to an value set that has the X12 product and service codes along with "not-applicable" from the Data Absent Reason code system.  If an inquiry is being done that does not want to specify a specific service, then this code can be used.
+In the base FHIR specification, the item.productOrService is mandatory. To conduct an inquiry that is not for a specific service, the 'not-applicable' code that is in the bound value set is sent. Intermediaries SHALL interpret the 'not-applicable' code as no product or service code.
 
 NOTE: The inquiry operation must contain a requesting provider organization, a payer organization, and a patient for the inquiry.  The operation does not allow inquiries that do not identify a specific patient, such as an inquiry for all prior authorization requests submitted on a specific date.  
 
