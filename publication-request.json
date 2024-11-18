@@ -1,7 +1,7 @@
 {
   "package-id" : "hl7.fhir.us.davinci-pas",
   "version" : "2.1.0",
-  "path" : "http://hl7.org/fhir/us/davinci-pas/2.1.0",
+  "path" : "http://hl7.org/fhir/us/davinci-pas/STU2.1",
   "status" : "trial-use",
   "sequence" : "STU 2",
   "mode": "milestone",
