@@ -194,6 +194,9 @@ Description: """This profile defines constraints and extensions used when update
 * Each `Claim.item` and `Claim.supportingInfo` entry that has been added as a part of this most recent update, SHALL be flagged using the changed extension with a value of `added`.
 """
 * insert CommonClaimElements
+* extension contains CertificationType named certificationType 0..1 MS
+* extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
+
 * supportingInfo.extension contains InfoChanged named infoChanged 0..1 MS
 * supportingInfo.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."
 * supportingInfo.modifierExtension contains InfoCancelledFlag named infoCancelledFlag 0..1 MS

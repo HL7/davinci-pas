@@ -66,12 +66,18 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
   * serviced[x] MS
   * location[x] MS
   * quantity MS
+  * quantity only PASQuantity
   * unitPrice MS
   * adjudication MS
   * adjudication.extension contains ReviewAction named reviewAction 0..1 MS
   * adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
   * adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
   * adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
+* adjudication MS
+* adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+* adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
+* adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
 
 * error MS
 * error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS and ErrorPath named errorPath 0..1 MS
@@ -110,6 +116,8 @@ Description: "The details of the review action that is necessary for the authori
 * extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.adjudication"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication"
 * ^context[+].type = #element
@@ -201,7 +209,7 @@ Description: "The details of what has been authorized for this item if different
 * extension[modifier].value[x] only CodeableConcept
 * extension[modifier].valueCodeableConcept from X12278RequestedServiceModifierType (required)
 * extension[unitPrice].value[x] only Money
-* extension[quantity].value[x] only SimpleQuantity
+* extension[quantity].value[x] only PASQuantity
 * extension[revenue].value[x] only CodeableConcept
 * extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
 * ^context[+].type = #element

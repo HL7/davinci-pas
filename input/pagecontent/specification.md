@@ -188,6 +188,13 @@ Here are two workflow diagrams that show the sending of a request, the receiving
 </figure>
 {::options parse_block_html="true" /}
 
+##### Missing Prior Authorization Response
+Implementers who are used to using messaging may not be familiar with the process for what happens if a $submit response gets lost or the notification of a prior authorization update gets lost.
+
+For subscriptions, see the Subscription Backport Guide on [Handling Errors](https://hl7.org/fhir/uv/subscriptions-backport/errors.html).
+
+For missing responses to $submit, the FHIR guide has a section on what to do when reliable messaging is not involved: [Absence of Reliable Messaging](http://hl7.org/fhir/messaging.html#reliable).
+
 
 #### Prior Authorization Inquiries
 The [prior authorization inquiry operation](OperationDefinition-Claim-inquiry.html) allows for inquiries about prior authorization submissions.  This inquiry is used for other systems checking the status of a request and for generic inquiries.  Providers are expected to perform the same query-by-example inquiry even under the CMS exception.  This Implementation Guide does not specify a different way of searching for prior authorizations in the exception case.

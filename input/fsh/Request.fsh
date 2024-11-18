@@ -26,7 +26,7 @@ Description: "PAS constraints on ServiceRequest resource mandating support for e
 * code MS
 * code from X12278RequestedServiceType (required)
 * quantity[x] MS
-* quantity[x] only Quantity
+* quantity[x] only PASQuantity
 * subject MS
 * subject only Reference(PASBeneficiary)
 * occurrence[x] MS

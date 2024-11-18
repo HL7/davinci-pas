@@ -18,6 +18,7 @@ ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314' n
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525' not found
+ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673' not found
 
 A definition for CodeSystem 'https://codesystem.x12.org/005010/98' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://codesystem.x12.org/005010/584' could not be found, so the code cannot be validated

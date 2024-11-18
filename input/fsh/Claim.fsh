@@ -116,6 +116,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * item.location[x] only CodeableConcept
 * item.locationCodeableConcept from X12278LocationType (required)
 * item.quantity MS
+* item.quantity only PASQuantity
 * item.quantity ^comment = "For any exchange that must be converted to an X12 request, units SHALL be restricted to international units, days, units, minutes, hours, months, or visits."
 * supportingInfo ^slicing.discriminator.type = #value
 * supportingInfo ^slicing.discriminator.path = "category"
