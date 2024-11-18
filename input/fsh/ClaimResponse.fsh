@@ -163,7 +163,7 @@ Description: "The date/period when this item's preauthorization is valid."
 
 Extension: ErrorElement
 Id: extension-errorElement
-Description: "The specific loop, segment, or element that this error information is about."
+Description: "The specific loop, segment, or element that this error information is about.  The string will follow the X12 format for specifying elements and is returned from the Payer.  Example: 2010A-NM103"
 * value[x] only string
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit.error"
@@ -172,7 +172,12 @@ Description: "The specific loop, segment, or element that this error information
 
 Extension: ErrorPath
 Id: extension-errorPath
-Description: "The FHIRPath expression that indicates which FHIR element that this error information is about."
+Description: """The [FHIRPath](https://www.hl7.org/fhirpath/) expression that indicates which FHIR element that this error information is about.  The expression will start with the Bundle and can be followed to determine the specific element.
+
+STU NOTE: We would like feedback during the STU period on whether this extension is sufficient for implementers to determine and display the errored element.
+
+Examples: Bundle.entry[1].resource.name, Bundle.entry[0].resource.identifier[0].value
+"""
 * value[x] only string
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit.error"

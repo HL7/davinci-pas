@@ -183,7 +183,16 @@ Profile: PASClaimUpdate
 Parent: PASClaimBase
 Id: profile-claim-update
 Title: "PAS Claim Update"
-Description: "PAS constraints on Claim resource when submitting an update to a previous PAS prior authorization request"
+Description: """This profile defines constraints and extensions used when update a previously submitted Claim instance.
+
+* The Claim instance of the update Bundle SHALL reference the updated Claim instance within the `Claim.related.claim` element. Note that the presence of this reference and the requirement that referenced instances be included in the submitted Bundle implies that the instance representing the prior version of the Claim SHALL be included in the update Bundle.
+* The Claim instance of the update Bundle SHALL contain within the `Claim.item` element each item requested in the updated claim and any prior versions of the claim, including requested items that have been added, modified, deleted, or left unchanged during this or previous updates.
+* The Claim instance of the update Bundle SHALL contain within the `Claim.supportingInfo` element each piece of supporting documentation submitted with the updated claim and any prior versions of claim, including supporting documentation that has been added, modified, deleted, or left unchanged during this or previous updates.
+* Each `Claim.item` entry that represents an item no longer being requested, whether removed in this update or a previous one, SHALL be flagged using the infoCancelledFlag modifierExtension and SHALL have the code `3` (Cancel) in the Certification Type extension.
+* Each `Claim.supportingInfo` entry that is no longer to be used when evaluating the request, whether removed in this update or a previous one, SHALL be flagged using the infoCancelledFlag modifierExtension.
+* Each `Claim.item` and `Claim.supportingInfo` entry that has been changed as a part of this most recent update, including removal, SHALL be flagged using the changed extension with a value of `changed`.
+* Each `Claim.item` and `Claim.supportingInfo` entry that has been added as a part of this most recent update, SHALL be flagged using the changed extension with a value of `added`.
+"""
 * insert CommonClaimElements
 * supportingInfo.extension contains InfoChanged named infoChanged 0..1 MS
 * supportingInfo.extension[infoChanged] ^short = "A code indicating how the piece of information has changed."

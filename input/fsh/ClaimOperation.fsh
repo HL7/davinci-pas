@@ -64,6 +64,18 @@ Usage: #definition
 * parameter[1].documentation = "A Bundle containing a single ClaimInquiryResponse plus referenced resources."
 * parameter[1].type = #Bundle
 
+Profile: PASSubscription
+Parent: Subscription
+Id: profile-subscription
+Title: "PAS Subscription"
+Description: "The profile for PAS subscription."
+* criteria = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
+* criteria.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria named filterCriteria 1..1 MS
+* status = #active
+* channel.type = #rest-hook
+* channel.payload.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content named payloadContent 1..1 MS
+* channel.payload.extension[payloadContent].valueCode = #full-resource
+
 
 Instance: EHRCapabilities
 InstanceOf: CapabilityStatement

@@ -625,8 +625,8 @@ Instance: SubscriberExample
 InstanceOf: PASSubscriber
 Title: "Submit Claim Subscriber Example"
 Description: "Sample patient who is a subscriber of an insurance plan."
-* identifier.system = "http://example.org/MIN"
-* identifier.value = "12345678901"
+* identifier[memberIdentifier].system = "http://example.org/MIN"
+* identifier[memberIdentifier].value = "12345678901"
 * name.family = "SMITH"
 * name.given = "JOE"
 * gender = #male
@@ -636,8 +636,8 @@ Instance: BeneficiaryExample
 InstanceOf: PASBeneficiary
 Title: "Submit Claim Beneficiary Example"
 Description: "Sample patient who is a beneficiary of an insurance plan."
-* identifier.system = "http://example.org/MIN"
-* identifier.value = "12345678902"
+* identifier[memberIdentifier].system = "http://example.org/MIN"
+* identifier[memberIdentifier].value = "12345678902"
 * name.family = "SMITH"
 * name.given = "JESSE"
 * gender = #female
@@ -843,19 +843,13 @@ Description: "An example of a PAS Task requesting additional information."
 * input[AttachmentsNeeded].valueCodeableConcept = http://loinc.org#28570-0
 * input[AttachmentsNeeded].extension[paLineNumber].valueInteger = 1
 
-Instance: PASSubscription
-InstanceOf: Subscription
+Instance: PASSubscriptionExample
+InstanceOf: PASSubscription
 Title: "PAS Subscription example for a specific provider"
 Description: "An example of a PAS Subscription submission for a specific provider."
-* criteria = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
-* criteria.extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria"
-* criteria.extension[=].valueString = "orgIdentifier=http://hl7.org/fhir/sid/us-npi|1234567893"
-* status = #active
-* channel.type = #rest-hook
+* criteria.extension[filterCriteria].valueString = "orgIdentifier=http://hl7.org/fhir/sid/us-npi|1234567893"
 * channel.endpoint = "http://example.org/send-me-subscription-notifications"
 * channel.payload = #application/fhir+json
-* channel.payload.extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content"
-* channel.payload.extension[=].valueCode = #id-only
 * reason = "Receive notifications about claim responses for my organization."
 
 Instance: PASSubscriptionNotification
@@ -868,6 +862,11 @@ Description: "An example of a PAS Subscription Notification"
 * entry[=].resource = SubscriptionNotificationParameters
 * entry[=].request.method = #GET
 * entry[=].request.url = "https://example.org/Subscription/PAS/$status"
+* entry[=].response.status = "200"
+* entry[+].fullUrl = "http://example.org/Bundle/ReferralAuthorizationResponseBundleExample"
+* entry[=].resource = ReferralAuthorizationResponseBundleExample
+* entry[=].request.method = #GET
+* entry[=].request.url = "https://example.org/Bundle/ReferralAuthorizationResponseBundleExample"
 * entry[=].response.status = "200"
 
 Instance: SubscriptionNotificationParameters
@@ -893,8 +892,4 @@ Description: "An example of the parameters going back for a PAS subscription not
     * valueInstant = "2020-05-29T11:44:33.188-05:00"
   * part[+]
     * name = "focus"
-    * valueReference
-      * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
-      * identifier.value = "111099"
-      * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
-      * identifier.assigner.identifier.value = "9012345678"
+    * valueReference.reference = "http://example.org/Bundle/ReferralAuthorizationResponseBundleExample"
