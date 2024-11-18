@@ -111,3 +111,6 @@ The discriminator type 'pattern' has been deprecated. Use type=fixed with a patt
 
 # We want this link to be version-agnostic
 The link 'http://hl7.org/fhir/us/davinci-pas' for "Prior Authorization Support (PAS)" is a canonical link and is therefore unsafe with regard to versions
+
+# No narrative in resource warnings
+Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)

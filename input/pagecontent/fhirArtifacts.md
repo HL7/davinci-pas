@@ -25,7 +25,7 @@ The following examples are present in this guide to show specific use cases:
 * [Reject Authorization](Bundle-RejectionResponseBundleExample.html)
 * [Pending Response](Bundle-ReferralPendingAuthorizationResponseBundleExample.html)
 * [Additional Information Task Example](Task-AdditionalInformationTaskExample.html)
-* [Subscription](Subscription-PASSubscription.html), [Subscription Notification](Bundle-PASSubscriptionNotification.html), and [Claim Inquiry](Bundle-PASClaimInquiryBundleExample.html) and a [Claim Inquiry Response](Bundle-PASClaimInquiryResponseBundleExample.html)
+* [Subscription](Subscription-PASSubscriptionExample.html), [Subscription Notification](Bundle-PASSubscriptionNotification.html), and [Claim Inquiry](Bundle-PASClaimInquiryBundleExample.html) and a [Claim Inquiry Response](Bundle-PASClaimInquiryResponseBundleExample.html)
 
 ### Artifact Lists
 <table>
