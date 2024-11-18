@@ -41,13 +41,13 @@ This implementation guide also supports business requirements around the managem
 This version of the Implementation Guide does not support all of the use cases that the current X12 278 Prior Authorization Request supports.  The following list highlights the segments that are not currently mapped/supported by the FHIR profiles in this guide:
 
 1.  Loop 2000E, Segment CRC
-	a. Ambulance Certification
-	b. Chiropractic Cerfication
-	c. Durable Medical Equipment
-	d. Oxygen Therapy Certification
-	e. Functional Limitations
-	f. Activities Permitted
-	g. Mental Status
+    a. Ambulance Certification
+    b. Chiropractic Cerfication
+    c. Durable Medical Equipment
+    d. Oxygen Therapy Certification
+    e. Functional Limitations
+    f. Activities Permitted
+    g. Mental Status
 2. Loop 2000E, Segment CR1 - Ambulance Transport
 3. Loop 2000E, Segment CR2 - Spinal Manipulation Service
 4. Loop 2000E, Segment CR5 - Home Oxygen Therapy
@@ -123,7 +123,7 @@ In those situations where the prior authorization request is ‘pended’, the E
 
 A PAS Subscription has been created to allow systems to monitor for specific requests.  In response to a subscription notification indicating that the prior authorization has been changed, there is an inquiry operation that allows for returning information about prior authorization submissions.  This operation can also be used for generic inquiries about a prior submission.
 
-There is also guidance on monitoring in the CDex IG: [Using CDex Attachments with DaVinci PAS](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#polling-vs-subscriptions)
+There is also guidance on monitoring in the CDex IG: [Polling vs Subscriptions](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#polling-vs-subscriptions)
 
 ### Supporting Information
 To evaluate whether a given service will be covered, a payer may need to understand additional information about the patient.  There are three main categories of such information:
