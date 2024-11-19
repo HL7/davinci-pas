@@ -5,7 +5,7 @@ Title: "PAS Task"
 Description: "PAS constraints on Task resource that is used to request additional documentation for prior authorizations."
 
 * obeys AttachmentNeeded
-* obeys QuestionnaireNeeded
+* obeys QuestionnaireContext
 * identifier 1..* MS
   * ^short = "Payers tracking identifier"
 * status 1..1 MS
@@ -31,7 +31,7 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input ^slicing.discriminator.path = "type"
 * input ^slicing.rules = #open
 * input ^slicing.description = "Different slices for identifying different types of information for the Task."
-* input contains PayerURL 1..1 MS and AttachmentsNeeded 0..* MS and QuestionnairesNeeded 0..* MS
+* input contains PayerURL 1..1 MS and AttachmentsNeeded 0..* MS and QuestionnaireContext 0..* MS
 * input[PayerURL].type = PASTempCodes#payer-url
 * input[PayerURL].value[x] only url
 * input[AttachmentsNeeded].type MS
@@ -46,14 +46,13 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "documentation"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueMarkdown = "X12 codes that can be used to request additional information to support a prior authorization request."
-
-
 * input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1 MS
-* input[QuestionnairesNeeded].type MS
-* input[QuestionnairesNeeded].type = PASTempCodes#questionnaires-needed
-* input[QuestionnairesNeeded].value[x] MS
-* input[QuestionnairesNeeded].value[x] only PASIdentifier
-* input[QuestionnairesNeeded].extension contains PALineNumber named paLineNumber 1..1 MS
+
+* input[QuestionnaireContext].type MS
+* input[QuestionnaireContext].type = PASTempCodes#questionnaire-context
+* input[QuestionnaireContext].value[x] MS
+* input[QuestionnaireContext].value[x] only string
+* input[QuestionnaireContext].extension contains PALineNumber named paLineNumber 1..1 MS
 * restriction.period MS
 * statusReason MS
 
@@ -69,7 +68,7 @@ Description: "If task.code is attachment-request-code, then attachments needed s
 Expression: "$this.code.coding.where(code='attachment-request-code').count() > 0 implies $this.input.type.coding.where(code='attachments-needed').count() > 0"
 Severity: #error
 
-Invariant: QuestionnaireNeeded
-Description: "If task.code is attachment-request-questionnaire, then questionnaire needed slice is required."
-Expression: "$this.code.coding.where(code='attachment-request-questionnaire').count() > 0 implies $this.input.type.coding.where(code='questionnaires-needed').count() > 0"
+Invariant: QuestionnaireContext
+Description: "If task.code is attachment-request-questionnaire, then questionnaire context slice is required."
+Expression: "$this.code.coding.where(code='attachment-request-questionnaire').count() > 0 implies $this.input.type.coding.where(code='questionnaire-context').count() > 0"
 Severity: #error

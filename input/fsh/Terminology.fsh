@@ -54,7 +54,7 @@ Description: "Codes temporarily defined as part of the PAS implementation guide.
 * #priorAuthorization "Prior Authorization Information Request" "Additional information is needed to determine response for a prior authorization"
 * #payer-url "Payer URL" "The Payer Endpoint URL needed to submit attachments"
 * #attachments-needed "Attachments Needed" "Communicates what attachments are needed"
-* #questionnaires-needed "Questionnaires Needed" "Communicates what questionnaires are needed"
+* #questionnaire-context "Questionnaire Context" "Communicates the context of questionnaires that are needed"
 
 ValueSet: PASTaskCodes
 Title: "PAS Task Codes"
