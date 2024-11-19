@@ -70,7 +70,6 @@ In some situations, the payer community requires additional constraints or needs
 In addition, this guide uses content from the following FHIR-related specifications and implementation guides:
 * [Subscriptions R5 Backport]({{site.data.fhir.ver.subscriptions}})
 * [Da Vinci CRD]({{site.data.fhir.ver.crd}})
-* [Da Vinci CDex]({{site.data.fhir.ver.cdex}})
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 

@@ -247,9 +247,7 @@ When using the subscription retrieval mechanism, the Client will POST a new Subs
 * Servers **SHOULD** support rest-hook and **MAY** support websocket channels
 * Additional information about creating subscriptions can be found [here]({{site.data.fhir.path}}subscription.html)
 
-Once the [subscription](Subscription-PASSubscriptionExample.html) has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.  The id that is returned in the subscription notification is the requesting provider's TRN (i.e. the Claim.identifier).
-
-Upon receiving a [notification](Bundle-PASSubscriptionNotification.html) , the Client **SHALL** execute a query using the TRN that is included in the notification as well as other required information needed to identify the claim (such as a requesting provider organization, a payer organization, and a patient for the inquiry).  The timing of the query does not to be immediate but can be when convenient.
+Once the [subscription](Subscription-PASSubscriptionExample.html) has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.  This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'.
 
 Non-submitting systems are not able to subscribe for responses and will have to periodically query.
 
