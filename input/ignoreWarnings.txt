@@ -19,6 +19,7 @@ ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365' no
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673' not found
+ValueSet 'https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98' not found
 
 A definition for CodeSystem 'https://codesystem.x12.org/005010/98' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://codesystem.x12.org/005010/584' could not be found, so the code cannot be validated
@@ -38,6 +39,7 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not b
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1069' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the code cannot be validated
+A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated
 
 %Unable to provide support for code system https://codesystem.x12.org/external/886
 %Unable to provide support for code system https://codesystem.x12.org/005010/901
@@ -69,6 +71,8 @@ A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCode
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
+
+None of the codings provided are in the value set 'AHA NUBC Revenue Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.1.0), and a coding from this value set is required) (codes = https://www.nubc.org/CodeSystem/RevenueCodes#0202)
 
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
@@ -106,11 +110,11 @@ The definition for the element 'ClaimResponse.formCode' binds to the value set '
 The definition for the element 'Claim.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
 The definition for the element 'Claim.payee.type' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental
 
-# A change in SUSHI is needed to fix this warning.
-The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
-
 # We want this link to be version-agnostic
 The link 'http://hl7.org/fhir/us/davinci-pas' for "Prior Authorization Support (PAS)" is a canonical link and is therefore unsafe with regard to versions
 
 # No narrative in resource warnings
 Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+
+# New warning that requires an update to SUSHI around slicing
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)

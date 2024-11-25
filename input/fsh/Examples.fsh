@@ -215,6 +215,50 @@ Description: "An example of a ClaimResponse where the requestor is a Practitione
 * item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
 * item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
 
+Instance: PractitionerRequestorAdditionalContentResponseExample
+InstanceOf: PASClaimResponse
+Title: "Authorization Response with Practitioner Requestor Example"
+Description: "An example of a ClaimResponse where the requestor is a Practitioner."
+* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.value = "111099"
+* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
+* identifier.assigner.identifier.value = "9012345678"
+* status = #active
+* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
+* use = #preauthorization
+* patient = Reference(SubscriberExample)
+* created = 2005-05-02T11:02:00+05:00
+* insurer = Reference(InsurerExample)
+* requestor = Reference(ReferralPractitionerRoleExample)
+* request = Reference(ReferralAuthorizationExample)
+* outcome = #complete
+* item.itemSequence = 1
+* item.extension[requestedServiceDate].valuePeriod.start = 2005-05-02
+* item.extension[requestedServiceDate].valuePeriod.end = 2005-06-02
+* item.extension[preAuthIssueDate].valueDate = 2005-05-02
+* item.extension[preAuthPeriod].valuePeriod.start = 2005-05-02
+* item.extension[preAuthPeriod].valuePeriod.end = 2005-06-02
+* item.extension[authorizedProvider].extension[provider].valueReference = Reference(ReferralPractitionerExample)
+* item.extension[authorizedItemDetail].extension[productOrServiceCode].valueCodeableConcept = https://codesystem.x12.org/005010/1365#3 "Consultation"
+* item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.value = 100
+* item.extension[authorizedItemDetail].extension[unitPrice].valueMoney.currency = #USD
+* item.extension[authorizedItemDetail].extension[quantity].valueQuantity.value = 1
+* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* item.adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
+* addItem
+  * itemSequence = 2
+  * extension[revenue].valueCodeableConcept = https://www.nubc.org/CodeSystem/RevenueCodes#0202
+  * provider.extension[providerType].valueCodeableConcept = https://codesystem.x12.org/005010/98#P3
+  * provider = Reference(ReferralPractitionerExample)
+  * productOrService = https://codesystem.x12.org/005010/1365#3
+  * quantity.value = 1
+  * unitPrice.value = 100
+  * unitPrice.currency = #USD
+  * adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+  * adjudication.extension[reviewAction].extension[number].valueString = "AUTH0001"
+  * adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
+
 Instance: PractitionerRequestorPendingResponseExample
 InstanceOf: PASClaimResponse
 Title: "Pending Authorization Response with Practitioner Requestor Example"

@@ -29,8 +29,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	ItemRequestedServiceDate named requestedServiceDate 0..1 MS and
-	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
-	ItemAuthorizedProvider named authorizedProvider 0..* MS
+	ItemAuthorizedProvider named authorizedProvider 0..* MS and
+	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
@@ -54,11 +54,14 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
     EPSDTIndicator named epsdtIndicator 0..1 MS and
     NursingHomeResidentialStatus named nursingHomeResidentialStatus 0..1 MS and
     NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 MS and
+    ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 MS and
+    RevenueCode named revenue 0..1 MS and
     RevenueUnitRateLimit named revenueUnitRateLimit 0..1 MS and
     RequestedService named requestedService 0..1 MS
   * itemSequence 1..1 MS
   * provider MS
   * provider only Reference(PASPractitioner or PASOrganization)
+    * extension contains AuthorizedProviderType named providerType 0..1 MS
   * productOrService MS
   * productOrService from X12278RequestedServiceType (required)
   * modifier MS
@@ -169,6 +172,14 @@ Description: "The date/period when this item's preauthorization is valid."
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 
+Extension: RevenueCode
+Id: extension-revenueCode
+Description: "A revenue code that expresses what was approved which maps to X12 SV201"
+* value[x] only CodeableConcept
+* valueCodeableConcept from AHANUBCRevenueCodes (required)
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+
 Extension: ErrorElement
 Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about.  The string will follow the X12 format for specifying elements and is returned from the Payer.  Example: 2010A-NM103"
@@ -202,29 +213,35 @@ Description: "A code representing what action must occur to resolve this error."
 
 Extension: ItemAuthorizedDetail
 Id: extension-itemAuthorizedDetail
-Description: "The details of what has been authorized for this item if different from what was requested."
-* extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..* and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
+Description: "The details of what has been authorized for this item."
+* extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..* and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and RevenueCode named revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
 * extension[productOrServiceCode].value[x] only CodeableConcept
 * extension[productOrServiceCode].valueCodeableConcept from X12278RequestedServiceType (required)
 * extension[modifier].value[x] only CodeableConcept
 * extension[modifier].valueCodeableConcept from X12278RequestedServiceModifierType (required)
 * extension[unitPrice].value[x] only Money
 * extension[quantity].value[x] only PASQuantity
-* extension[revenue].value[x] only CodeableConcept
-* extension[revenue].valueCodeableConcept from AHANUBCRevenueCodes (required)
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 
+Extension: AuthorizedProviderType
+Id: extension-authorizedProviderType
+Description: "The type of provider who has been authorized to provide this item."
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
+* valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem.provider"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item.extension"
+
 Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
 Description: "The specific provider who has been authorized to provide this item."
-* extension contains provider 0..1 and providerType 0..1
+* extension contains provider 0..1 and AuthorizedProviderType named providerType 0..1
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
-* extension[providerType].value[x] only CodeableConcept
-* extension[providerType].valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
-* extension[providerType].valueCodeableConcept ^binding.description = "Code identifying an organization entity, a physical location, property or an individual. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
