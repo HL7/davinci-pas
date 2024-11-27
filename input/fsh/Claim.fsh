@@ -209,8 +209,8 @@ RuleSet: CommonClaimElements
 * supportingInfo[AdditionalInformation].category = PASTempCodes#additionalInformation
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
-* supportingInfo[AdditionalInformation].value[x] only Reference($USCoreDocumentReference or Resource)
-* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the PASDocumentReference profile should be used."
+* supportingInfo[AdditionalInformation].value[x] only Reference($USCoreDocumentReference or $USCoreQuestionnaireResponse or Resource)
+* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile should be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."
 * supportingInfo[MessageText].category = PASTempCodes#freeFormMessage

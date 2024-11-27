@@ -74,6 +74,7 @@ Description: "PAS constraints on the Timing datatype used in the various service
 * extension contains CalendarPattern named calendarPattern 0..1 MS and
 	DeliveryPattern named deliveryPattern 0..1 MS
 * repeat.bounds[x] MS
+  * ^short = "The number of periods over which the service is delivered."
 * repeat.bounds[x] only Duration
 * repeat.period MS
 * repeat.periodUnit MS

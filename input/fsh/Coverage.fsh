@@ -4,6 +4,7 @@ Id: profile-coverage
 Title: "PAS Coverage"
 Description: "PAS constraints on Coverage resource mandating support for insurance elements relevant to the prior authorization request"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0"
+* obeys self-beneficiary
 * identifier MS
 * status MS
 * status = #active
@@ -22,3 +23,9 @@ Description: "PAS constraints on Coverage resource mandating support for insuran
 * relationship.coding[X12Code]  ^binding.description = "Codes indicating the relationship between two individuals or entities. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * payor MS
 * payor only Reference(PASInsurer)
+
+
+Invariant: self-beneficiary
+Description: "If relationship does not equal 'self', then subscriber SHALL be present."
+Expression: "$this.relationship.coding.where(code='18').count() = 0 implies $this.subscriber.exists()"
+Severity: #error
