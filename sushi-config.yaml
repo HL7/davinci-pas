@@ -59,6 +59,13 @@ dependencies:
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
+  apply-publisher: true
+  apply-contact: true
+  globals-in-artifacts: true
+  version-comparison: 
+   - 2.0.0
+   - 2.1.0-preview
+  shownav: true
 copyrightYear: 2020+
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
