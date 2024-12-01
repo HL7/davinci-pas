@@ -27,30 +27,13 @@ The following examples are present in this guide to show specific use cases:
 * [Additional Information Task Example](Task-AdditionalInformationTaskExample.html)
 * [Subscription](Subscription-PASSubscriptionExample.html), [Subscription Notification](Bundle-PASSubscriptionNotification.html), and [Claim Inquiry](Bundle-PASClaimInquiryBundleExample.html) and a [Claim Inquiry Response](Bundle-PASClaimInquiryResponseBundleExample.html)
 
-### Artifact Lists
-<table>
-  <tr>
-    <td><a href="artifacts.html">FHIR PAS-specific Artifacts</a></td>
-  </tr>
-  <tr>
-    <td><a href="{{site.data.fhir.ver.hl7_fhir_us_core}}">US Core</a></td>
-  </tr>
-</table>
+#### Guide Artifacts
+[Here](artifacts.html) is a listing of the artifacts this guide provides.
 
-Additional information about the use of these artifacts can be found in the [main specification](specification.html#profiles).
 
 ### Cross-Version Analysis
 {% include cross-version-analysis.xhtml %}
 
-### Intellectual Property Statements
-{% include ip-statements.xhtml %}
-
 ### Global Profiles
 
 {% include globals-table.xhtml %}
-
-### IG Dependencies
-
-This IG Contains the following dependencies on other IGs.
-
-{% include dependency-table.xhtml %}

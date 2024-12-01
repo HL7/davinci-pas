@@ -1,10 +1,10 @@
 Profile: PASMedicationRequest
-Parent: $USCoreMedicationRequest|6.1.0
+Parent: $USCoreMedicationRequest
 Id: profile-medicationrequest
 Title: "PAS Medication Request"
 Description: "PAS constraints on MedicationRequest resource mandating support for elements relevant to the prescriptions being requested on a prior authorization request"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|3.1.1"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * extension contains http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information named coverage 0..1 MS
 * intent MS
 * intent = #order (exactly)

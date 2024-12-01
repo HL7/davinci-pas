@@ -15,13 +15,6 @@ Additional information about Da Vinci, its members, the use cases and the implem
 {% include burdenReduction.md %}
 
 
-### Systems
-The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
-
-**Client systems** are typically Electronic Medical Record (EHR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.)
-
-**Server systems** (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for the conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
-
 ### Underlying Technologies
 This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard.  Implementers of this specification therefore need to understand some basic information about these specifications.
 
@@ -34,20 +27,49 @@ specific to FHIR.  Before reading this implementation guide, it's important to b
 * [FHIR Data Types]({{site.data.fhir.path}}datatypes.html)
 * [Using Codes]({{site.data.fhir.path}}terminologies.html)
 * [References between Resources]({{site.data.fhir.path}}references.html)
-* [How to Read Resource & Profile Definitions]({{site.data.fhir.path}}formats.html)
+* [How to Read Resource & Profile Definitions]({{site.data.fhir.path}}formats.html) and additional [IG reading guidance](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html)
 * [Base Resource]({{site.data.fhir.path}}resource.html)
 
 This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard.
 
 This implementation guide also builds on the [US Core]({{site.data.fhir.hl7_fhir_us_core}}) Implementation Guide and implementers need to familiarize themselves with the profiles in that IG.
 
-##### Must Support
-The Profile elements consist of both Mandatory and Must Support elements. Mandatory elements are elements with a minimum cardinality of 1 (min=1). The base [FHIR Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) guidance requires specifications to define the support expected for profile elements labeled Must Support.  The HRex IG defines some [conformance expectations](http://hl7.org/fhir/us/davinci-hrex/conformance.html) that all Da Vinci IGs are expected to follow.  Along with those expectations, the following rules on MustSupport are also required:
+Implementers should also familiarize themselves with the FHIR resources used within the guide:
 
-* PA Intermediary Systems **SHALL** be capable of processing all data elements that are marked as Must Support on the Claim Request and Claim Inquiry.  They **SHALL** not generate an error or cause the application to fail due the presence of any data element marked as Must Support.
-* PA Intermediary Systems **SHALL** be capable of returning resource instances containing any of the data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.
-* PA Client Systems **SHALL** be capable of receiving all data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.  They **SHALL** not generate an error or cause the application to fail when receiving any data element that is marked as Must Support.
-* PA Client Systems **SHOULD NOT** send any data elements that are not marked as Must Support.  If these data elements are included in a Claim Request or Claim Inquiry, the receiving PA Intermediary System **MAY** ignore those elements.
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in a PAS operation</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}capabilitystatement.html">CapabilityStatement</a></td><td>Used to define conformance expectations for this guide</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}claim.html">Claim</a></td><td>The main resource that contains the information about what is being requested to be authorized</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}claimresponse.html">ClaimResponse</a></td><td>The main resource that contains the information about what was authorized, if any</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}codesystem.html">CodeSystem</a></td><td>Used to define custom codes specific to this guide</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a></td><td>Used to convey information that the payer needs to make an authorization decision</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}coverage.html">Coverage</a></td><td>Used to identify the member and the relevant insurance coverage to a payer</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}encounter.html">Encounter</a></td><td>One of the resources that indicates what authorization is needed and also provides context for other resources</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}location.html">Location</a></td><td>Supporting information for encounters and request resources</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}operationdefinition.html">OperationDefinition</a></td><td>Used to define the two main operations used in this IG</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}organization.html">Organization</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}parameters.html">Parameters</a></td><td>Used to provide the information for the operations</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}patient.html">Patient</a></td><td>Demographic information relevant to all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resources and defining extensions</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}subscription.html">Subscription</a></td><td>Used when subscribing for authorization decisions for an organization</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td>Used to define something that is needed to be done by the provider to submit information</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}valueset.html">ValueSet</a></td><td>Used to define collections of codes used by PAS profiles</td></tr>
+  </tbody>
+</table>
+
 
 
 #### ASC X12N

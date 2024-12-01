@@ -44,19 +44,31 @@ The Office of Burden Reduction and Health Informatics (OBRHI) National Standards
 
 When covered entities are operating under the enforcement discretion, the trading partners **SHALL** disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278. The defined PAS FHIR request bundles **SHALL** be transmitted intact between the provider and payer. The PAS FHIR response bundles **SHALL** be transmitted intact between the payer and the provider.
 
-### Content and organization
-The implementation guide is organized into the following sections:
+### Content and Organization
+This implementation guide (and the menu for it) is organized into the following sections:
 
-* [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use and provides a high-level overview of expected process flow
-* [Technical Background](background.html) describes the different specifications this implementation guide relies on and indicates what developers should read and understand prior to implementing this specification
-* [HIPAA Regulations](regulations.html) explains the relevant portions of the regulatory context in which this implementation guide operates
-* [Formal Specification](specification.html) covers the detailed implementation requirements and conformance expectations
-* [ePA Coordinator](epaWorkflow.html) covers the workflow regarding the exchanges between a Provider ePA Coordinator, multiple Provider HIT systems and the payer
-* [Metrics](metrics.html) describes a set of metrics that can be collected to evaluate the adoption of PAS
-* [Artifacts](fhirArtifacts.html) introduces and provides links to the FHIR [R4](artifacts.html) profiles, operations and other FHIR artifacts used in this implementation guide
-* [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
-* [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
-
+* *Background* - Supporting informative pages that do not set conformance expectations
+  * [Reading this IG](background.html) points to key pages in the FHIR spec and other source specifications that must be understood in order to understand this guide
+  * [Use Cases](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
+  * [Project and Participants](credits.html) gives a high-level overview of Da Vinci and identifies the individuals and organizations involved in developing this implementation guide
+  * [ePA Coordinators](epaWorkflow.html) acknowledges that neither the payer nor provider systems involved in PAS are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
+* *Specification* - Pages that set conformance expectations
+  * [Conformance Expectations](conformance.html) defines base language and expectations for declaring conformance with the guide
+  * [Request for Additional Info](additionalInfo.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+  * [HIPAA Regulations](regulations.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+  * [Privacy, Safety, and Security](privacy.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+  * [Metrics](metrics.html) provides a logical model describing how to capture data that may be relevant to measuring or reporting on PAS use
+* *FHIR Artifacts*
+  * [Overview](fhirArtifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
+  * [Artifacts](artifacts.html) points to the complete list of artifacts defined in this guide
+* *Base Specifications* - Quick links to the various specifications this guide derives from
+* *Support* - Links to help with use of this guide
+  * *Discussion Forum* is a place to ask questions about the guide, discuss potential issues, and search through prior discussions
+  * *Project Home* includes information about project calls, agendas, past minutes, and instructions for how to participate
+  * *Implementer Support* provides information about reference implementations, resources for testing, known errata, regulatory considerations, and practical implementation pathways
+  * *Project Dashoard* shows new and historical issues that have been logged against the specification, proposed dispositions, unapplied changes, etc.
+  * *Propose a Change* allows formal submission of requests for change to the specification.  (Consider raising on the discussion forum first.)
+  * [Downloads](downloads.html) allows download of this and other specifications, as well as other useful files
 
 ### Dependencies
 
@@ -71,6 +83,17 @@ In addition, this guide uses content from the following FHIR-related specificati
 * [Subscriptions R5 Backport]({{site.data.fhir.ver.subscriptions}})
 * [Da Vinci CRD]({{site.data.fhir.ver.crd}})
 
+In addition, this guide also relies on a number of parent implementation guides:
+
+{% include dependency-table-short.xhtml %}
+
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+### Intellectual Property Considerations
+This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
+
+{% include ip-statements.xhtml %}
+
+
 
 [Next Page - Use Cases](usecases.html)

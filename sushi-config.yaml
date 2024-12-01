@@ -22,8 +22,7 @@ contact:
     telecom:
       - system: url
         value: http://www.hl7.org/Special/committees/fm
-description: Guidelines for conveying coverage requirements to clinicians when planning
-  treatment.
+description: Guidelines for conveying coverage requirements to clinicians when planning treatment.
 license: CC0-1.0
 fhirVersion: 4.0.1
 dependencies:
@@ -33,13 +32,13 @@ dependencies:
     id: uscore3
     reason: |
       Needed for systems supporting USCDI v1
-  hl7.fhir.us.core:
+  hl7.fhir.us.core.v610:
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
     id: uscore6
     reason: |
       Needed for systems supporting USCDI v3
-  hl7.fhir.us.core.v700:
+  hl7.fhir.us.core:
     version: 7.0.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
     id: uscore7
@@ -50,6 +49,10 @@ dependencies:
   hl7.fhir.us.davinci-crd:
     version: 2.0.0
     id: crd
+  hl7.fhir.us.davinci-hrex:
+    uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
+    version: 1.1.0
+    id: hrex
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     id: subscriptions
@@ -59,6 +62,7 @@ dependencies:
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
+  auto-oid-root: 2.16.840.1.113883.4.642.40.24
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
@@ -67,6 +71,8 @@ parameters:
    - 2.1.0-preview
   shownav: true
 copyrightYear: 2020+
+releaseLabel: STU 2.1
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
@@ -74,8 +80,6 @@ extension:
     valueInteger: 3
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm 
-releaseLabel: STU 2
-jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:
   index.md:
     title: Prior Authorization Implementation Guide Home Page
@@ -136,24 +140,38 @@ pages:
     title: Artifacts Overview
   changelog.md:
     title: Change Log
+  conformance.md:
+    title: Conformance
 
 menu:
-  Table of Contents: toc.html
-  PAS Specification:
-    PAS Home Page: index.html
-    Use Cases and Overview: usecases.html
-    Request for Additional Info: additionalinfo.html
-    Technical Background: background.html
-    HIPAA Regulations: regulations.html
-    Formal Specification: specification.html
-    Privacy and Security: privacy.html
+  IG Home: index.html
+  Background:
+    Reading this IG: background.html
+    Use Cases: usecases.html
+    Project and Participants: credits.html
     ePA Coordinator: epaWorkflow.html
+  Specification:
+    Conformance Expectations: conformance.html
+    Request for Additional Info: additionalinfo.html
+    HIPAA Regulations: regulations.html
+    Privacy, Safety, and Security: privacy.html
     Metrics: metrics.html
-    Downloads: downloads.html
-    Credits: credits.html
-  FHIR Artifacts: fhirArtifacts.html
+  FHIR Artifacts:
+    Overview: fhirArtifacts.html
+    Artifacts: artifacts.html
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
-    US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
+    US Core 3.1.1: new-tab {{site.data.fhir.ver.hl7_fhir_us_core_v311}}
+    US Core 6.1.0: new-tab {{site.data.fhir.ver.hl7_fhir_us_core_v610}}
+    US Core 7.0.0: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
+    HRex 1.1.0: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci-hrex}}
+    CRD: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci-crd}}
+  Support:
+    Discussion Forum: https://chat.fhir.org/#narrow/stream/208874-Da-Vinci-PAS
+    Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=42993876
+    Implementer Support: https://confluence.hl7.org/display/DVP/PAS+Implementer+Support
+    Specification Dashboard: https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11813
+    Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-pas
+    Downloads: downloads.html
   Change Log: changelog.html
   History: http://hl7.org/fhir/us/davinci-pas/history.html

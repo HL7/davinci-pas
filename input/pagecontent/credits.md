@@ -1,5 +1,12 @@
 [Previous Page - Downloads](downloads.html)
 
+### Da Vinci
+{% include davinci.md %}
+
+### The Da Vinci PAS project
+PAS is part of a set of projects in the Burden Reduction space that was first initiated by Da Vinci members in May of 2019.  Project participants have included major EHR vendors, payers, provider organizations, and others involved in the prior authorization space.  The first standard for trial use version of the specification was published in 2020 and the specification has undergone considerable testing at various connectathons, pilots, and production implementations since then.  Further details about the project, including minutes of meetings can be found on the [project Confluence page](https://confluence.hl7.org/pages/viewpage.action?pageId=42993876).
+
+
 ### Credits
 Primary author:
 

@@ -13,16 +13,6 @@ Before reading this formal specification, implementers should first familiarize 
 * The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have the necessary foundation to understand the constraints and usage guidance described here.
 
 
-#### Conventions
-This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
-
-* **SHALL** indicates requirements that must be met to be conformant with the specification.
-
-* **SHOULD** indicates behaviors that ought to be adhered to to avoid suboptimal interoperability but which do not, for this version of the specification, affect the determination of specification conformance.
-
-* **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
-
-
 #### Systems
 
 This implementation guide sets expectations for two types of systems:

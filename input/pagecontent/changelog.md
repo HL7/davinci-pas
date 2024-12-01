@@ -1,6 +1,12 @@
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
 
+### Version = 2.1.0-preview
+This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
+
+### Version = 2.0.1
+This included a technical correction for a link to the proper CRD.
+
 ### Version = 2.0.0
 - Based on FHIR version: 4.0.1
 

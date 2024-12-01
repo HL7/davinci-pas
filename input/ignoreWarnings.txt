@@ -55,6 +55,7 @@ Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/dav
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCode%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes%
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
 
 # The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
@@ -66,8 +67,6 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage%
 
 # Code systems that are not available in the terminology server
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
@@ -90,12 +89,8 @@ A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' coul
 US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile%
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile%
 
-# Reference to draft or deprecated items
+# Reference to draft or deprecated items - also a temporary PAS code system was defined that will be reviewed later.
 The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/processpriority|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/adjudication|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/coverage-class|1.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes%
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
@@ -118,3 +113,17 @@ Constraint failed: dom-6: 'A resource should have narrative for robust managemen
 
 # New warning that requires an update to SUSHI around slicing
 The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+
+# These versions are before we started including Jira references in the change log and there's little value in going back to document them now
+DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.0.0
+DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.0.1
+
+# These versions are before we started detailed tracking of changes and there's little value in going back to document them now
+DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.2.0-ballot
+DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.2.0
+DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.1.0
+DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.0.0
+DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 0.1.0
+
+# The SubscriptionTopic is not found in FHIR R4.  We are using it from the Subscription Backport R4 IG
+DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/subscriptiontopic.html because this IG uses the subscriptiontopic resource.
