@@ -1,4 +1,4 @@
-[Previous Page - Request for Additional Info](additionainfo.html)
+[Previous Page - Request for Additional Info](additionalinfo.html)
 
 The Health Insurance Portability and Accountability Act (HIPAA) of 1996 contains the following three major provisions:
 * Portability
