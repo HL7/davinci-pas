@@ -1,8 +1,98 @@
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
 
+#### JIRA Issues Applied
+* [FHIR-48674](https://jira.hl7.org/browse/FHIR-48674) - Provide guidance on workflow if responses/notifications get lost
+* [FHIR-48621](https://jira.hl7.org/browse/FHIR-48621) - Create a Quantity profile to limit the units
+* [FHIR-48616](https://jira.hl7.org/browse/FHIR-48616) - Allow for Event Level Errors
+* [FHIR-48586](https://jira.hl7.org/browse/FHIR-48586) - Clarify how to cancel an entire Prior Auth Claim instead of individual items
+* [FHIR-48585](https://jira.hl7.org/browse/FHIR-48585) - Clarify inquiries for non-current claims
+* [FHIR-48574](https://jira.hl7.org/browse/FHIR-48574) - Link to Claim Update profile for cardinality requirements
+* [FHIR-48566](https://jira.hl7.org/browse/FHIR-48566) - Make the Updating Authorization Requests section more precise
+* [FHIR-48576](https://jira.hl7.org/browse/FHIR-48576) - Provide profile tense interpretation example
+* [FHIR-48747](https://jira.hl7.org/browse/FHIR-48747) - Issues with member ID and member level inquiry
+* [FHIR-48673](https://jira.hl7.org/browse/FHIR-48673) - Subscription id-only fails to account for the lack of requesting documentation information in PAS Inquiry
+* [FHIR-48536](https://jira.hl7.org/browse/FHIR-48536) - Many related/supporting IG hyperlinks point to outdated IG versions
+* [FHIR-48378](https://jira.hl7.org/browse/FHIR-48378) - Clarify Subscription Filter requirements
+* [FHIR-48373](https://jira.hl7.org/browse/FHIR-48373) - Subscription Notification "returned identifier" not returned in id-only notifications
+* [FHIR-47770](https://jira.hl7.org/browse/FHIR-47770) - ErrorPath structure
+* [FHIR-48587](https://jira.hl7.org/browse/FHIR-48587) - Are there concrete requirements for servers indicating pended and denied claims?
+* [FHIR-48582](https://jira.hl7.org/browse/FHIR-48582) - change definition of SHOULD 
+* [FHIR-48581](https://jira.hl7.org/browse/FHIR-48581) - When are referenced resources needed on an inquiry?
+* [FHIR-48580](https://jira.hl7.org/browse/FHIR-48580) - Clarify Inquiry matching semantics
+* [FHIR-48579](https://jira.hl7.org/browse/FHIR-48579) - Differentiating between automated and manual inquiries
+* [FHIR-48573](https://jira.hl7.org/browse/FHIR-48573) - article fix
+* [FHIR-48364](https://jira.hl7.org/browse/FHIR-48364) - Reference Resource ID or The entire resource referenced resources in PAS Response Bundle
+* [FHIR-47769](https://jira.hl7.org/browse/FHIR-47769) - ClaimResponse.request is optional
+* [FHIR-48575](https://jira.hl7.org/browse/FHIR-48575) - Can't find referenced HRex endpoint discovery content
+* [FHIR-48371](https://jira.hl7.org/browse/FHIR-48371) - Clarify value for "requesting provider organization id" Subscription parameter
+* [FHIR-48377](https://jira.hl7.org/browse/FHIR-48377) - Additional Subscription Filters needed for non-submitters?
+* [FHIR-48535](https://jira.hl7.org/browse/FHIR-48535) - PAS Profiled resources aren't making allowances for differences between US Core versions supported
+* [FHIR-48568](https://jira.hl7.org/browse/FHIR-48568) - evoked -> invoked
+* [FHIR-48569](https://jira.hl7.org/browse/FHIR-48569) - Unclear figure reference
+* [FHIR-48570](https://jira.hl7.org/browse/FHIR-48570) - Duplicate Content in the Monitor for Resolution section
+* [FHIR-48571](https://jira.hl7.org/browse/FHIR-48571) - Linked CDex page doesn't discuss monitoring
+* [FHIR-48572](https://jira.hl7.org/browse/FHIR-48572) - missing [payer registry] link
+* [FHIR-48583](https://jira.hl7.org/browse/FHIR-48583) - Clarify inquiries without a specific service
+* [FHIR-48584](https://jira.hl7.org/browse/FHIR-48584) - Clarify subsetted inquiries
+* [FHIR-48588](https://jira.hl7.org/browse/FHIR-48588) - Concerns about X12 situationally required fields 
+* [FHIR-48589](https://jira.hl7.org/browse/FHIR-48589) - payers need to implement PAs for ALL services
+
 ### Version = 2.1.0-preview
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
+
+#### JIRA Issues Applied
+* [FHIR-48478](https://jira.hl7.org/browse/FHIR-48478) - Update Task Profile
+* [FHIR-46570](https://jira.hl7.org/browse/FHIR-46570) - Change EMR to EHR throughout
+* [FHIR-47130](https://jira.hl7.org/browse/FHIR-47130) - 2000E Loop - UM01/UM02 Request/Certification Type Mandatory
+* [FHIR-46542](https://jira.hl7.org/browse/FHIR-46542) - Claims Inquiry Response FHIR resource doesn't have attribute to capture  place of service (service place) information
+* [FHIR-48323](https://jira.hl7.org/browse/FHIR-48323) - PAS Practitioner - defined slices should require .value to be populated if they are present
+* [FHIR-46543](https://jira.hl7.org/browse/FHIR-46543) - FHIR validator throws an error for communicatedDiagnosis extension which is valid extension slice under ClaimResponse.item
+* [FHIR-46621](https://jira.hl7.org/browse/FHIR-46621) - PAS Request Bundle can't link to PASClaim
+* [FHIR-48322](https://jira.hl7.org/browse/FHIR-48322) - PAS Organization Base - defined slices should require .value to be populated if they are presnt
+* [FHIR-48312](https://jira.hl7.org/browse/FHIR-48312) - Add date invariants to .accident.date and .serviced[x]
+* [FHIR-47128](https://jira.hl7.org/browse/FHIR-47128) - PAS Update: preserve original and updated claim relationship in X12 278
+* [FHIR-46622](https://jira.hl7.org/browse/FHIR-46622) - Clarify attachment types
+* [FHIR-48372](https://jira.hl7.org/browse/FHIR-48372) - Subscription filter definition and description out of sync
+* [FHIR-48370](https://jira.hl7.org/browse/FHIR-48370) - no topic discovery needed
+* [FHIR-45305](https://jira.hl7.org/browse/FHIR-45305) - Provide additional details on the use of Organization-level Subscriptions
+* [FHIR-43046](https://jira.hl7.org/browse/FHIR-43046) - clarify what a "your update was rejected because you need to submit a new auth request instead" response looks like
+* [FHIR-44695](https://jira.hl7.org/browse/FHIR-44695) - add a slice for 278 Payor Identification to PAS Insurer Organization
+* [FHIR-43603](https://jira.hl7.org/browse/FHIR-43603) - ReviewAction Lacks Pend/Deny Examples
+* [FHIR-47696](https://jira.hl7.org/browse/FHIR-47696) - Change 'prescription benefit' to 'pharmacy benefit' and 'prior auth' to 'prior authorization'
+* [FHIR-46516](https://jira.hl7.org/browse/FHIR-46516) - Error Response Bundle Example does not have Error Response
+* [FHIR-44888](https://jira.hl7.org/browse/FHIR-44888) - typo in diagram
+* [FHIR-46505](https://jira.hl7.org/browse/FHIR-46505) - PAS subscriptions not documented well enough for inferno tests
+* [FHIR-44867](https://jira.hl7.org/browse/FHIR-44867) - Clarify CDex interactions in Figure 3.1 - Request For Additional Information Workflow
+* [FHIR-44832](https://jira.hl7.org/browse/FHIR-44832) - Remove "polling" in Figure 2.3
+* [FHIR-46310](https://jira.hl7.org/browse/FHIR-46310) - Clarification and correction on PAS Update IG
+* [FHIR-46650](https://jira.hl7.org/browse/FHIR-46650) - Incorrect Section 5.2.9
+* [FHIR-46612](https://jira.hl7.org/browse/FHIR-46612) - Consistent formatting of Conformance Language needed
+* [FHIR-46442](https://jira.hl7.org/browse/FHIR-46442) - Add endpoint discovery expectations
+* [FHIR-46237](https://jira.hl7.org/browse/FHIR-46237) - PAS ClaimResponse.identifier[n].system has type "uri" but X12 may return arbitrary string or number
+* [FHIR-46236](https://jira.hl7.org/browse/FHIR-46236) - Edit the description of the extension : reasonCode
+* [FHIR-46223](https://jira.hl7.org/browse/FHIR-46223) - Conformance statements should not be on Home page
+* [FHIR-46175](https://jira.hl7.org/browse/FHIR-46175) - PAS Claim Update Missing MS Flags
+* [FHIR-46119](https://jira.hl7.org/browse/FHIR-46119) - Place of Service should be required
+* [FHIR-46116](https://jira.hl7.org/browse/FHIR-46116) - Why is item.productOrService (procedureCode) always required on the inquiry request
+* [FHIR-46070](https://jira.hl7.org/browse/FHIR-46070) - Discrepancy on x12 spec vs Fhir spec, at 2000E ‚Äî PATIENT EVENT LEVEL in x12
+* [FHIR-45742](https://jira.hl7.org/browse/FHIR-45742) - Update Valueset definition for LOINC Attachment Codes
+* [FHIR-45393](https://jira.hl7.org/browse/FHIR-45393) - Inquire vs Inquiry
+* [FHIR-45391](https://jira.hl7.org/browse/FHIR-45391) - Overuse of 'submit' in PAS operation definitions
+* [FHIR-45258](https://jira.hl7.org/browse/FHIR-45258) - Conformance language requirement is dependent on subjective qualifications
+* [FHIR-44882](https://jira.hl7.org/browse/FHIR-44882) - create invariants for Task.owner.identifier and Task.requester.identifier 
+* [FHIR-44881](https://jira.hl7.org/browse/FHIR-44881) - Task.owner Short Description should be the Provider
+* [FHIR-44880](https://jira.hl7.org/browse/FHIR-44880) - Task.requester Short Description should be Provider
+* [FHIR-44877](https://jira.hl7.org/browse/FHIR-44877) - Change the Task.code Value Set concept definition
+* [FHIR-44677](https://jira.hl7.org/browse/FHIR-44677) - .processNote.number and .text need to be MS to better align with regulation
+* [FHIR-44565](https://jira.hl7.org/browse/FHIR-44565) - Conformance language casing needs correcting
+* [FHIR-44159](https://jira.hl7.org/browse/FHIR-44159) - PAS changes following CMS-0057-F
+* [FHIR-44153](https://jira.hl7.org/browse/FHIR-44153) - clarify subscriptions are required in use cases - monitor for resolution
+* [FHIR-44152](https://jira.hl7.org/browse/FHIR-44152) - Extensions used in Claim/ClaimResponse need to enable use in EOB
+* [FHIR-43031](https://jira.hl7.org/browse/FHIR-43031) - Clarifications and guidance on polling rules for Claim Inquiry
+* [FHIR-42705](https://jira.hl7.org/browse/FHIR-42705) - Fix hyphenation for "pre-authorization"
+* [FHIR-42704](https://jira.hl7.org/browse/FHIR-42704) - Remove references to predetermination from claim-related profiles
+* [FHIR-43913](https://jira.hl7.org/browse/FHIR-43913) - profile-claim-inquiry uses invalid discriminator
 
 ### Version = 2.0.1
 This included a technical correction for a link to the proper CRD.
