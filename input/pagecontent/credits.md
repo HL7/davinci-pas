@@ -1,4 +1,4 @@
-[Previous Page - Downloads](downloads.html)
+[Previous Page - Use Cases](usecases.html)
 
 ### Da Vinci
 {% include davinci.md %}
@@ -74,4 +74,4 @@ Additional regular participants: Christy Dodson, Peter Muir, Rachel Foerster, Ra
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
 
-[Next Page - Artifacts Overview](fhirArtifacts.html)
+[Next Page - ePA Coordinator](epaWorkflow.html)

@@ -1,4 +1,4 @@
-[Previous Page - ePA Coordinator Workflow](epaWorkflow.html)
+[Previous Page - Privacy, Safety, and Security](privacy.html)
 
 ### Overview
 
@@ -129,4 +129,4 @@ in a standardized way based on these measures.
 PAS implementers **SHOULD** store information for each PAS call in a manner that would allow them to respond to
 measures based on this logical model.
 
-[Next Page - Downloads](downloads.html)
+[Next Page - FHIR Artifacts Overview](fhirArtifacts.html)

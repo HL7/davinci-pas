@@ -1,4 +1,4 @@
-[Previous Page - Specification](specification.html)
+[Previous Page - HIPAA Regulations](regulations.html)
 
 ### Privacy & Security Considerations
 The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process a prior authorization is context and business-rule-specific. Implementers submitting prior authorization requests using PAS must be aware of (and adhere to) their responsibilities with respect to data sharing imposed by regulations such as HIPAA's "minimum necessary" rule, patient consent rules, etc. This may involve allowing providers to review information prior to data transmission to the payer. Implementations **SHALL** permit provider review of data prior to transmission, but **SHALL NOT** require such review.
@@ -11,4 +11,4 @@ In order to access information about a prior authorization, the provider system 
 
 Once the system authentication has occurred, the payer will perform any authorization required for the provider to see the current state of the prior authorization.
 
-[Next Page - ePA Workflow](epaWorkflow.html)
+[Next Page - Metrics](metrics.html)

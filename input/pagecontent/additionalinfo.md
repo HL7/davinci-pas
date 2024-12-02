@@ -1,4 +1,4 @@
-[Previous Page - Use Cases](usecases.html)
+[Previous Page - Conformance Expectations](conformance.html)
 A payer may request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
 
 1. One or more codes in the PWK01 element
@@ -48,4 +48,4 @@ The Task.input provides for the following information:
 
 Both the 'attachmentsNeeded' and 'questionnairesNeeded' slice contains an extension point to the prior authorization line number.
 
-[Next Page - Technical Background](background.html)
+[Next Page - HIPAA Regulations](regulations.html)

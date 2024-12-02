@@ -1,4 +1,4 @@
-[Previous Page - Credits](credits.html)
+[Previous Page - Metrics](metrics.html)
 
 Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
 

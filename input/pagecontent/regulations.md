@@ -1,4 +1,4 @@
-[Previous Page - Technical Background](background.html)
+[Previous Page - Request for Additional Info](additionainfo.html)
 
 The Health Insurance Portability and Accountability Act (HIPAA) of 1996 contains the following three major provisions:
 * Portability
@@ -115,4 +115,4 @@ The following is an excerpt from the CFR defining additional rules for health pl
 >>> (1) Accept and promptly process any standard transaction that contains codes that are valid, as provided in subpart J of this part.
 >>> (2) Keep code sets for the current billing period and appeals periods still open to processing under the terms of the health plan's coverage.
 
-[Next Page - Formal Specification](specification.html)
+[Next Page - Privacy, Safety, and Security](privacy.html)

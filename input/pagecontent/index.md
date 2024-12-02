@@ -96,4 +96,4 @@ This implementation guide and the underlying FHIR specification are licensed as 
 
 
 
-[Next Page - Use Cases](usecases.html)
+[Next Page - Background](background.html)

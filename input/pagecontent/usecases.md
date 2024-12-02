@@ -1,4 +1,4 @@
-[Previous Page - Home Page](index.html)
+[Previous Page - Reading this IG](background.html)
 ### Current State
 Prior authorization (PA) is a process used in the United States that requires providers to receive advanced approval from payers before care delivery to ensure that patients/members receive treatments, testing, referrals, and devices appropriate for their specific conditions and that are covered by the specific health plan in which the member is enrolled.
 
@@ -134,4 +134,4 @@ To evaluate whether a given service will be covered, a payer may need to underst
 
 3.	Information that is traditionally not structured, or where the review process is more involved and will not be performed in real time. In this use case, additional information may be in the form of progress notes, therapy notes, diagnostic reports, etc.  This information will be exchanged as text or images using the document reference.  Where such information is necessary, the initial request will typically be 'pended', with a final decision returned later once manual review is complete.  All exchanges should meet Federal and state regulations, including any HIPAA restrictions and restrictions on sensitive data.
 
-[Next Page - Request for Additional Information](additionalinfo.html)
+[Next Page - Project and Participants](credits.html)
