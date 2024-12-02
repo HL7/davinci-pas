@@ -217,7 +217,7 @@ Description: "An example of a ClaimResponse where the requestor is a Practitione
 
 Instance: PractitionerRequestorAdditionalContentResponseExample
 InstanceOf: PASClaimResponse
-Title: "Authorization Response with Practitioner Requestor Example"
+Title: "Authorization Response with Practitioner Requestor and Additional Content Example"
 Description: "An example of a ClaimResponse where the requestor is a Practitioner."
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
