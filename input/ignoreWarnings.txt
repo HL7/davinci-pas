@@ -94,6 +94,7 @@ The resource status 'draft' and the standards status 'trial-use' may not be cons
 Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes%
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
+Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 
 # Repeating element with a pattern
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
