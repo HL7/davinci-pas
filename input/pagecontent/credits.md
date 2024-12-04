@@ -1,5 +1,3 @@
-[Previous Page - Use Cases](usecases.html)
-
 ### Da Vinci
 {% include davinci.md %}
 
@@ -73,5 +71,3 @@ Organizational participants included:
 Additional regular participants: Christy Dodson, Peter Muir, Rachel Foerster, Raj, Rim Cothern
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
-
-[Next Page - ePA Coordinator](epaWorkflow.html)

@@ -1,5 +1,3 @@
-[Previous Page - HIPAA Regulations](regulations.html)
-
 ### Privacy & Security Considerations
 The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process a prior authorization is context and business-rule-specific. Implementers submitting prior authorization requests using PAS must be aware of (and adhere to) their responsibilities with respect to data sharing imposed by regulations such as HIPAA's "minimum necessary" rule, patient consent rules, etc. This may involve allowing providers to review information prior to data transmission to the payer. Implementations **SHALL** permit provider review of data prior to transmission, but **SHALL NOT** require such review.
 
@@ -10,5 +8,3 @@ Some of the data shared as part of the prior authorization process may have asso
 In order to access information about a prior authorization, the provider system will need to access the payor system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication is covered is handled within the Da Vinci HRex Implementation guide.  PAS Servers **SHOULD** support server-server OAuth and **MAY** support mutually authenticated TLS.  In a future release of this guide, direction will limit the option to server-server OAuth.  Every system implementing the Prior Authorization guide will need to be aware of and follow the guidance in the FHIR Core Specification on [Clinical Safety](http://hl7.org/fhir/R4/safety.html), the FHIR Core Specification on [Security](http://hl7.org/fhir/R4/security.html) and the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/security.html).
 
 Once the system authentication has occurred, the payer will perform any authorization required for the provider to see the current state of the prior authorization.
-
-[Next Page - Metrics](metrics.html)

@@ -1,5 +1,3 @@
-[Previous Page - IG Home](index.html)
-
 ### Da Vinci
 Da Vinci is an industry sponsored project which is contributing to the development of HL7 standards.  It brings together the U.S. payer, providers, and technology suppliers (including EHR vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its members and the community as a whole.
 
@@ -99,5 +97,3 @@ The different components of the X12 ValueSet URLs can be interpreted as follows:
 9. data element number, eg. 1338
 
 Thus any URL can be parsed to determine where to find the set of codes in the appropriate X12 Technical Report.
-
-[Next Page - Use Cases](usecases.html)

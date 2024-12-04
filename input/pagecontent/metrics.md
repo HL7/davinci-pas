@@ -1,5 +1,3 @@
-[Previous Page - Privacy, Safety, and Security](privacy.html)
-
 ### Overview
 
 This Implementation Guide (IG) is one of 4 HL7 Da Vinci IGs that are designed to address the challenges of automating the exchange of information between a provider and the responsible payer to determine coverage of services, items, and referrals. In particular, these IGs standardize the exchange of information required to automate the Prior Authorization (PA) process. The specific IG are:
@@ -128,5 +126,3 @@ in a standardized way based on these measures.
 
 PAS implementers **SHOULD** store information for each PAS call in a manner that would allow them to respond to
 measures based on this logical model.
-
-[Next Page - FHIR Artifacts Overview](fhirArtifacts.html)

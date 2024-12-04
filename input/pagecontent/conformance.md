@@ -1,5 +1,3 @@
-[Previous Page - ePA Coordinator](epaWorkflow.html)
-
 ### Systems
 The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 
@@ -24,5 +22,3 @@ Along with those expectations, the following rules on MustSupport are also requi
 * PA Intermediary Systems **SHALL** be capable of returning resource instances containing any of the data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.
 * PA Client Systems **SHALL** be capable of receiving all data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.  They **SHALL** not generate an error or cause the application to fail when receiving any data element that is marked as Must Support.
 * PA Client Systems **SHOULD NOT** send any data elements that are not marked as Must Support.  If these data elements are included in a Claim Request or Claim Inquiry, the receiving PA Intermediary System **MAY** ignore those elements.
-
-[Next Page - Request for Additional Info](additionalinfo.html)

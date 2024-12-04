@@ -1,5 +1,3 @@
-[Previous Page - Metrics](metrics.html)
-
 Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
 
 These FHIR artifacts define the clinical data that can be submitted as part of a prior authorization submission and/or included as part of a prior authorization response using the [Claim submit](OperationDefinition-Claim-submit.html) operation.

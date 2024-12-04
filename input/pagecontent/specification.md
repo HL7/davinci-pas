@@ -1,5 +1,3 @@
-[Previous Page - HIPAA Regulations](regulations.html)
-
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Prior Authorization Support implementation guide.  The bulk of it focuses on the Claim $submit operation, though it also provides guidance on privacy, security and other implementation requirements.
 
 
@@ -287,5 +285,3 @@ It is the intent of this implementation guide to provide specifications for the 
 1. resources and profiles defined in this guide
 2. artifacts used from referenced IGs such as DTR and CRD
 3. testing of conformance to the underlying FHIR standards for the associated release (e.g. FHIR R4)
-
-[Next Page - Privacy](privacy.html)
