@@ -70,18 +70,18 @@ This element does not match any known slice defined in the profile http://hl7.or
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
-
-None of the codings provided are in the value set 'AHA NUBC Revenue Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.1.0), and a coding from this value set is required) (codes = https://www.nubc.org/CodeSystem/RevenueCodes#0202)
-
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
+A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.1.0' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' could not be found, so the code cannot be validated
 
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.1.0' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
+
 %Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
-%Unable to provide support for code system https://www.nubc.org/revenue-code
+%Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
 %Unable to provide support for code system http://terminology.hl7.org/CodeSystem/icd9cm
 %Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 
@@ -96,7 +96,7 @@ Most code systems defined in HL7 IGs will need to move to THO later during the p
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 
-# 07 Repeating element with a pattern
+# 07 For the given identifier slices the pattern will apply to all repeats
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 # 08 Experimental value set warnings from the core FHIR specification
@@ -109,10 +109,10 @@ The definition for the element 'Claim.payee.type' binds to the value set 'http:/
 # 09 We want this link to be version-agnostic
 The link 'http://hl7.org/fhir/us/davinci-pas' for "Prior Authorization Support (PAS)" is a canonical link and is therefore unsafe with regard to versions
 
-# 10 No narrative in resource warnings
+# 10 Our subscription notification example intentionally does not have narratives
 Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
-# 11 New warning that requires an update to SUSHI around slicing
+# 11 US Core is using type pattern and we are inheriting this in our snapshots
 The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # 12 These versions are before we started including Jira references in the change log and there's little value in going back to document them now

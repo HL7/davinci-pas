@@ -98,7 +98,7 @@ Title: "AHA NUBC Revenue Value Set"
 Description: "These codes are used to convey specific accomodation, ancillary service or unique billing calculations or arrangements. They are listed within the UB-04 Data Specifications Manual and maintained by the National Uniform Billing Committee (NUBC)."
 * ^experimental = false
 * ^copyright = "The Official UB-04 Data Specifications Manual, copyrighted by the American Hospital Association, is the only official source of UB-04 billing information adopted by the National Uniform Billing Committee. No other publication—governmental or private/commercial—can be considered authoritative.  See their website for licensing terms and conditions."
-* codes from system https://www.nubc.org/revenue-code
+* codes from system https://www.nubc.org/CodeSystem/RevenueCodes
 
 ValueSet: X12278RejectReasonCodes
 Title: "X12 278 Reject Reason Value Set"
