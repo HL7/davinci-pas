@@ -54,7 +54,7 @@ This implementation guide (and the menu for it) is organized into the following 
   * [ePA Coordinators](epaWorkflow.html) acknowledges that neither the payer nor provider systems involved in PAS are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
 * *Specification* - Pages that set conformance expectations
   * [Conformance Expectations](conformance.html) defines base language and expectations for declaring conformance with the guide
-  * [Request for Additional Info](additionalInfo.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+  * [Request for Additional Info](additionalinfo.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
   * [HIPAA Regulations](regulations.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
   * [Privacy, Safety, and Security](privacy.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
   * [Metrics](metrics.html) provides a logical model describing how to capture data that may be relevant to measuring or reporting on PAS use
