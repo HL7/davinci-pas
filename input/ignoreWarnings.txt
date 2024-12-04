@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# X12 Code Systems and Value Sets that are referenced in the guide but not freely available
+# 01 X12 Code Systems and Value Sets that are referenced in the guide but not freely available
 ValueSet 'https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98' not found
 ValueSet 'https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584' not found
@@ -50,23 +50,23 @@ A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could
 %Unable to provide support for code system https://codesystem.x12.org/005010/1321
 %Unable to provide support for code system https://codesystem.x12.org/005010/755
 
-# Value sets that contain X12 codes and are thus not able to be validated
+# 02 Value sets that contain X12 codes and are thus not able to be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCode%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
 
-# The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
+# 03 The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle%
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-request-bundle%
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-inquiry-response-bundle%
 
-# The Coverage relationship slice is for X12 codes that can be verified to belong
+# 04 The Coverage relationship slice is for X12 codes that can be verified to belong
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage%
 
-# Code systems that are not available in the terminology server
+# 05 Code systems that are not available in the terminology server
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
@@ -85,46 +85,46 @@ A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' coul
 %Unable to provide support for code system http://terminology.hl7.org/CodeSystem/icd9cm
 %Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 
-# Variance Request from CGP for the profiles that are not derived from US Core - https://jira.hl7.org/browse/FHIR-42953
+# 06 Variance Request from CGP for the profiles that are not derived from US Core - https://jira.hl7.org/browse/FHIR-42953
 US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile%
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile%
 
-# Reference to draft or deprecated items - also a temporary PAS code system was defined that will be reviewed later.
+# 07 Reference to draft or deprecated items - also a temporary PAS code system was defined that will be reviewed later.
 The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
 Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes%
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 
-# Repeating element with a pattern
+# 07 Repeating element with a pattern
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
-# Experimental value set warnings from the core FHIR specification
+# 08 Experimental value set warnings from the core FHIR specification
 The definition for the element 'ClaimResponse.payeeType' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental
 The definition for the element 'ClaimResponse.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
 The definition for the element 'ClaimResponse.formCode' binds to the value set 'http://hl7.org/fhir/ValueSet/forms' which is experimental, but this structure is not labeled as experimental
 The definition for the element 'Claim.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
 The definition for the element 'Claim.payee.type' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental
 
-# We want this link to be version-agnostic
+# 09 We want this link to be version-agnostic
 The link 'http://hl7.org/fhir/us/davinci-pas' for "Prior Authorization Support (PAS)" is a canonical link and is therefore unsafe with regard to versions
 
-# No narrative in resource warnings
+# 10 No narrative in resource warnings
 Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
-# New warning that requires an update to SUSHI around slicing
+# 11 New warning that requires an update to SUSHI around slicing
 The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
-# These versions are before we started including Jira references in the change log and there's little value in going back to document them now
+# 12 These versions are before we started including Jira references in the change log and there's little value in going back to document them now
 DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.0.0
 DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.0.1
 
-# These versions are before we started detailed tracking of changes and there's little value in going back to document them now
+# 13 These versions are before we started detailed tracking of changes and there's little value in going back to document them now
 DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.2.0-ballot
 DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.2.0
 DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.1.0
 DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 1.0.0
 DA VINCI: The Change Log page (changelog.html) does not include an h3 section for the version 0.1.0
 
-# The SubscriptionTopic is not found in FHIR R4.  We are using it from the Subscription Backport R4 IG
+# 14 The SubscriptionTopic is not found in FHIR R4.  We are using it from the Subscription Backport R4 IG
 DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/subscriptiontopic.html because this IG uses the subscriptiontopic resource.
