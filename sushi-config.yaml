@@ -152,6 +152,7 @@ menu:
     ePA Coordinator: epaWorkflow.html
   Specification:
     Conformance Expectations: conformance.html
+    Technical Specification: specification.html
     Request for Additional Info: additionalinfo.html
     HIPAA Regulations: regulations.html
     Privacy, Safety, and Security: privacy.html
