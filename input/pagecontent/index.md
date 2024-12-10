@@ -85,7 +85,7 @@ In addition, this guide uses content from the following FHIR-related specificati
 
 In addition, this guide also relies on a number of parent implementation guides:
 
-{% include dependency-table-short.xhtml %}
+{% include dependency-table-nontech.xhtml %}
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 
@@ -93,7 +93,3 @@ This implementation guide defines additional constraints and usage expectations 
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
 
 {% include ip-statements.xhtml %}
-
-
-
-[Next Page - Background](background.html)
