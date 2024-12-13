@@ -89,7 +89,6 @@ Usage: #definition
 * date = "2023-08-08"
 * description = "Capabilities required for an EHR participating in a PAS Exchange."
 * kind = #requirements
-* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client"
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[1] = #xml
@@ -128,7 +127,6 @@ Usage: #definition
 * date = "2023-08-08"
 * description = "Capabilities required for an Intermediary participating in a PAS Exchange."
 * kind = #requirements
-* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[1] = #xml
