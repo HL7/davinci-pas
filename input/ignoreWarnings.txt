@@ -95,6 +95,9 @@ Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PAST
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/processpriority|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/adjudication|1.0.0
 
 # 07 For the given identifier slices the pattern will apply to all repeats
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
