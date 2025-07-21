@@ -55,6 +55,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     <tr><td><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}operationdefinition.html">OperationDefinition</a></td><td>Used to define the two main operations used in this IG</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}operationoutcome.html">OperationOutcome</a></td><td>Can be returned from an operation - used in our Examples</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}organization.html">Organization</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}parameters.html">Parameters</a></td><td>Used to provide the information for the operations</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}patient.html">Patient</a></td><td>Demographic information relevant to all requests</td></tr>

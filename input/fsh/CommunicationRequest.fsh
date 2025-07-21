@@ -42,6 +42,8 @@ Description: "A code representing a modifier of the content being requested"
 * valueCodeableConcept from X12278DiagnosisInformationType (required)
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"
+* ^context[+].type = #element
+* ^context[=].expression = "Task.input"
 
 Extension: ServiceLineNumber
 Id: extension-serviceLineNumber
@@ -49,3 +51,5 @@ Description: "A number that links the content being requested with the claim ite
 * value[x] only positiveInt
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"
+* ^context[+].type = #element
+* ^context[=].expression = "Task.input"

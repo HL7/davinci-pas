@@ -58,6 +58,7 @@
 <artifact id="StructureDefinition/modifierextension-infoCancelled" key="StructureDefinition-modifierextension-infoCancelled" name="InfoCancelledFlag"/>
 <artifact id="StructureDefinition/extension-infoChanged" key="StructureDefinition-extension-infoChanged" name="InfoChanged"/>
 <artifact id="CapabilityStatement/IntermediaryCapabilities" key="CapabilityStatement-IntermediaryCapabilities" name="Intermediary PAS Capabilities"/>
+<artifact id="OperationOutcome/InvalidRequestResponse" key="OperationOutcome-InvalidRequestResponse" name="Invalid Request Response"/>
 <artifact deprecated="true" id="StructureDefinition/extension-itemAuthorizedDate" key="StructureDefinition-extension-itemAuthorizedDate" name="ItemAuthorizedDate"/>
 <artifact id="StructureDefinition/extension-itemAuthorizedDetail" key="StructureDefinition-extension-itemAuthorizedDetail" name="ItemAuthorizedDetail"/>
 <artifact id="StructureDefinition/extension-itemAuthorizedProvider" key="StructureDefinition-extension-itemAuthorizedProvider" name="ItemAuthorizedProvider"/>
@@ -74,7 +75,7 @@
 <artifact id="StructureDefinition/extension-nursingHomeLevelOfCare" key="StructureDefinition-extension-nursingHomeLevelOfCare" name="NursingHomeLevelOfCare"/>
 <artifact id="StructureDefinition/extension-nursingHomeResidentialStatus" key="StructureDefinition-extension-nursingHomeResidentialStatus" name="NursingHomeResidentialStatus"/>
 <artifact id="NutritionOrder/NutritionOrderExample" key="NutritionOrder-NutritionOrderExample" name="Nutrition Order Example"/>
-<artifact id="StructureDefinition/extension-paLineNumber" key="StructureDefinition-extension-paLineNumber" name="PALineNumber"/>
+<artifact deprecated="true" id="StructureDefinition/extension-paLineNumber" key="StructureDefinition-extension-paLineNumber" name="PALineNumber"/>
 <artifact id="StructureDefinition/profile-beneficiary" key="StructureDefinition-profile-beneficiary" name="PAS Beneficiary Patient"/>
 <artifact id="StructureDefinition/profile-claim" key="StructureDefinition-profile-claim" name="PAS Claim"/>
 <artifact id="StructureDefinition/profile-claim-base" key="StructureDefinition-profile-claim-base" name="PAS Claim Base"/>

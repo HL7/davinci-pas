@@ -125,6 +125,8 @@ Description: "An example of a ClaimResponse bundle showing the rejection of a re
 * entry[2].resource = InsurerExample
 * entry[3].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
 * entry[3].resource = SubscriberExample
+* entry[4].fullUrl = "http://example.org/fhir/Claim/ReferralAuthorizationExample"
+* entry[4].resource = ReferralAuthorizationExample
 
 Instance: ErrorResponseBundleExample
 InstanceOf: PASResponseBundle
@@ -183,13 +185,11 @@ Description: "An example of a ClaimResponse that is rejected."
 * created = 2005-05-02T11:02:00+05:00
 * insurer = Reference(InsurerExample)
 * requestor = Reference(UMOExample)
-* request = Reference(HomecareAuthorizationUpdateExample)
-* outcome = #error
-* error[+].code = https://codesystem.x12.org/005010/901#33
-* error[=].extension[errorElement].valueString = "2000E"
-* error[=].extension[followupAction].valueCodeableConcept = https://codesystem.x12.org/005010/889#N
-* processNote[+].text = "Updates are not allowed. A new auth request must be submitted."
-* processNote[=].number = 1
+* request = Reference(ReferralAuthorizationExample)
+* outcome = #complete
+* item.itemSequence = 1
+* item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A3 "Not Certified"
 
 Instance: PractitionerRequestorResponseExample
 InstanceOf: PASClaimResponse
@@ -836,7 +836,7 @@ Description: "An example of a PAS Task requesting additional information."
 * reasonReference = Reference(MedicalServicesAuthorizationExample)
 * input[PayerURL].valueUrl = "http://example.org/payerURL"
 * input[AttachmentsNeeded].valueCodeableConcept = http://loinc.org#28570-0
-* input[AttachmentsNeeded].extension[paLineNumber].valueInteger = 1
+* input[AttachmentsNeeded].extension[paLineNumber].valuePositiveInt = 1
 
 Instance: PASSubscriptionExample
 InstanceOf: PASSubscription
@@ -889,3 +889,12 @@ Description: "An example of the parameters going back for a PAS subscription not
   * part[+]
     * name = "focus"
     * valueReference.reference = "http://example.org/Bundle/ReferralAuthorizationResponseBundleExample"
+
+Instance: InvalidRequestResponse
+InstanceOf: OperationOutcome
+Title: "Invalid Request Response"
+Description: "An instance of an operation outcome showing how an invalid request would be handled."
+* issue
+  * severity = #error
+  * code = #invalid
+  * details.text = "The input request is not of the desired format."

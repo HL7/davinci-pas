@@ -48,30 +48,15 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "documentation"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueMarkdown = "X12 codes that can be used to request additional information to support a prior authorization request."
-* input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1 MS and ContentModifier named contentModifier 0..* MS
+* input[AttachmentsNeeded].extension contains ServiceLineNumber named paLineNumber 1..1 MS and ContentModifier named contentModifier 0..* MS
 
 * input[QuestionnaireContext].type MS
 * input[QuestionnaireContext].type = PASTempCodes#questionnaire-context
 * input[QuestionnaireContext].value[x] MS
 * input[QuestionnaireContext].value[x] only string
-* input[QuestionnaireContext].extension contains PALineNumber named paLineNumber 1..1 MS
+* input[QuestionnaireContext].extension contains ServiceLineNumber named paLineNumber 1..1 MS
 * restriction.period MS
 * statusReason MS
-
-Extension: PALineNumber
-Id: extension-paLineNumber
-Description: "A specific line number associated with the attachment request code or TRN."
-* ^context.type = #element
-* ^context.expression = "Task.input"
-* value[x] only integer
-
-Extension: ContentModifier
-Id: extension-contentModifier
-Description: "Codes that modify the attachment code by providing additional information on what is being requested."
-* ^context.type = #element
-* ^context.expression = "Task.input"
-* value[x] only CodeableConcept
-* valueCodeableConcept from X12278DiagnosisInformationType (required)
 
 Invariant: AttachmentNeeded
 Description: "If task.code is attachment-request-code, then attachments needed slice is required."
