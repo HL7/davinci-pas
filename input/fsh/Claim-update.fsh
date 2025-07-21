@@ -181,7 +181,7 @@ Profile: PASClaimUpdate
 Parent: PASClaimBase
 Id: profile-claim-update
 Title: "PAS Claim Update"
-Description: """This profile defines constraints and extensions used when update a previously submitted Claim instance.
+Description: """This profile defines constraints and extensions used when updating a previously submitted Claim instance.
 
 * The Claim instance of the update Bundle SHALL reference the updated Claim instance within the `Claim.related.claim` element. Note that the presence of this reference and the requirement that referenced instances be included in the submitted Bundle implies that the instance representing the prior version of the Claim SHALL be included in the update Bundle.
 * The Claim instance of the update Bundle SHALL contain within the `Claim.item` element each item requested in the updated claim and any prior versions of the claim, including requested items that have been added, modified, deleted, or left unchanged during this or previous updates.

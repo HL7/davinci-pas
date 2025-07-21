@@ -84,6 +84,10 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * adjudication.category ^short = "This code is fixed to 'submitted' to indicate that the adjudication result is on what was submitted."
+* item.noteNumber MS
+* processNote MS
+* processNote.number 1..1 MS
+* processNote.text MS
 
 * error MS
 * error.extension contains ErrorFollowupAction named followupAction 0..1 MS and ErrorElement named errorElement 0..1 MS and ErrorPath named errorPath 0..1 MS
@@ -101,12 +105,8 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * . ^short = "Response to a preauthorization"
 * item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
-* item.noteNumber MS
 * communicationRequest MS
 * communicationRequest only Reference(PASCommunicationRequest)
-* processNote MS
-* processNote.number 1..1 MS
-* processNote.text MS
 
 Extension: ReviewAction
 Id: extension-reviewAction

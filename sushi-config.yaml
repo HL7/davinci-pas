@@ -65,6 +65,7 @@ parameters:
   auto-oid-root: 2.16.840.1.113883.4.642.40.24
   apply-publisher: true
   apply-contact: true
+  produce-jekyll-data: true
   globals-in-artifacts: true
   pin-canonicals: pin-multiples
   version-comparison: 
@@ -86,62 +87,67 @@ pages:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
-  usecases.md:
-    title: Use Cases and Overview
-    extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
-  additionalinfo.md:
-    extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
-    title: Request for Additional Information
   background.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
     title: Technical Background
-  regulations.md:
+  usecases.md:
+    title: Use Cases and Overview
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
-    title: HIPAA Regulations
-  specification.md:
-    extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
-    title: Formal Specification
-  privacy.md:
-    extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
-    title: Privacy & Security
+  credits.md:
+    title: Credits
   epaWorkflow.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
     title: PAS ePA Coordinator Information
+  conformance.md:
+    title: Conformance
+  specification.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: Formal Specification
+  additionalinfo.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: Request for Additional Information
+  regulations.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: HIPAA Regulations
+  privacy.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: Privacy & Security
   metrics.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
     title: PAS Metrics
-  downloads.md:
-    extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
-    title: Downloads
-  credits.md:
-    title: Credits
   fhirArtifacts.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
     title: Artifacts Overview
+  terminology.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: PAS Terminology
+  downloads.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: Downloads
   changelog.md:
     title: Change Log
-  conformance.md:
-    title: Conformance
 
 menu:
   IG Home: index.html
@@ -159,7 +165,8 @@ menu:
     Metrics: metrics.html
   FHIR Artifacts:
     Overview: fhirArtifacts.html
-    Artifacts: artifacts.html
+    Terminology: terminology.html
+    Artifact List: artifacts.html
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
     US Core 3.1.1: new-tab {{site.data.fhir.ver.uscore3}}

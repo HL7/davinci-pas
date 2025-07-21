@@ -13,6 +13,7 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-51189](https://jira.hl7.org/browse/FHIR-51189)
 * [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464)
 * [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397)
+* [FHIR-51534](https://jira.hl7.org/browse/FHIR-51534)
 
 
 ### Version = 2.1.0
