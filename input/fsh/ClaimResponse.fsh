@@ -19,6 +19,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * requestor MS
 * requestor only Reference(PASRequestor or PASPractitionerRole)
 * request 1..1 MS
+* request.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named DataAbsentReason 0..1 MS
 * request only Reference(PASClaim)
 * outcome MS
 * preAuthPeriod MS

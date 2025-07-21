@@ -243,4 +243,3 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * item.extension[certExpirationDate] ^short = "The specific date or period within which this item's preauthorization expires."
 * item.extension[certEffectiveDate] ^short = "The specific date or period within which this item's preauthorization became effective."
 * item.extension[reviewActionCode] ^short = "The code describing the result of the review."
-
