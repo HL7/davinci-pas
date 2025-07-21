@@ -1,13 +1,14 @@
 Profile: PASMedicationRequest
-Parent: $USCoreMedicationRequest
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0
 Id: profile-medicationrequest
 Title: "PAS Medication Request"
 Description: "PAS constraints on MedicationRequest resource mandating support for elements relevant to the prescriptions being requested on a prior authorization request"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|3.1.1"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * extension contains http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information named coverage 0..1 MS
 * intent MS
 * intent = #order (exactly)
+* status MS
+* status = #active (exactly)
 * subject MS
 * subject only Reference(PASBeneficiary)
 * dosageInstruction.timing MS
@@ -87,8 +88,6 @@ Description: "A code representing the specific days when a service is being requ
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 (required)
 * valueCodeableConcept  ^binding.description = "Codes which specifies the routine shipments, deliveries, or calendar pattern. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
-* ^context[=].expression = "Examples"
-* ^context[+].type = #element
 * ^context[=].expression = "Request"
 * ^context[+].type = #element
 * ^context[=].expression = "Dosage.timing"
@@ -100,8 +99,6 @@ Description: "A code representing the specific delivery of a service being reque
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 (required)
 * valueCodeableConcept  ^binding.description = "Codes which specifies the time for routine shipments or deliveries
 . These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^context[+].type = #element
-* ^context[=].expression = "Examples"
 * ^context[+].type = #element
 * ^context[=].expression = "Request"
 * ^context[+].type = #element

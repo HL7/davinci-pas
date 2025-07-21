@@ -66,7 +66,7 @@ This implementation guide (and the menu for it) is organized into the following 
   * *Discussion Forum* is a place to ask questions about the guide, discuss potential issues, and search through prior discussions
   * *Project Home* includes information about project calls, agendas, past minutes, and instructions for how to participate
   * *Implementer Support* provides information about reference implementations, resources for testing, known errata, regulatory considerations, and practical implementation pathways
-  * *Project Dashoard* shows new and historical issues that have been logged against the specification, proposed dispositions, unapplied changes, etc.
+  * *Project Dashboard* shows new and historical issues that have been logged against the specification, proposed dispositions, unapplied changes, etc.
   * *Propose a Change* allows formal submission of requests for change to the specification.  (Consider raising on the discussion forum first.)
   * [Downloads](downloads.html) allows download of this and other specifications, as well as other useful files
 

@@ -16,7 +16,7 @@ Many of the profiles are based on US Core 7.0.0 while also declaring conformance
 The following examples are present in this guide to show specific use cases:
 
 * [Referral Authorization](Bundle-ReferralAuthorizationBundleExample.html) with [Accepted Response](Bundle-ReferralAuthorizationResponseBundleExample.html)
-* [Homecare Authorization](Bundle-HomecareAuthorizationBundleExample.html) with an Update of the Authorization Request sent as an [Full Update](Bundle-HomecareAuthorizationUpdateBundleExample.html) and as a [Differential Update](Bundle-HomecareAuthorizationDifferentialBundleExample.html)
+* [Homecare Authorization](Bundle-HomecareAuthorizationBundleExample.html) with an [Update of the Authorization Request](Bundle-HomecareAuthorizationUpdateBundleExample.html)
 * [Medical Services Authorization](Bundle-MedicalServicesAuthorizationBundleExample.html)
 * [Surgical Request Authorization](Bundle-SurgicalRequestBundleExample.html)
 * [Error Response](Bundle-ErrorResponseBundleExample.html)

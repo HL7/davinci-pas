@@ -40,6 +40,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
 * item.itemSequence MS
+  * ^short = "Sequence numbers SHALL stay the same across all instances of the Prior Authorization, eg the Claim, ClaimResponse, ClaimUpdate, ClaimUpdateResponse"
+  * ^comment = "Each item returned on the PAS ClaimResponse SHALL echo the same item sequence number as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
 * item.adjudication MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
@@ -118,8 +120,6 @@ Description: "The details of the review action that is necessary for the authori
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 * extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
-* ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.adjudication"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication"
@@ -132,8 +132,6 @@ Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem.adjudication.extension"
 * ^context[+].type = #element
@@ -150,7 +148,7 @@ Description: "The date when this item's preauthorization was issued."
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: ItemRequestedServiceDate
 Id: extension-itemRequestedServiceDate
@@ -170,7 +168,7 @@ Description: "The date/period when this item's preauthorization is valid."
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: RevenueCode
 Id: extension-revenueCode
@@ -185,8 +183,6 @@ Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about.  The string will follow the X12 format for specifying elements and is returned from the Payer.  Example: 2010A-NM103"
 * value[x] only string
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit.error"
-* ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.error"
 
 Extension: ErrorPath
@@ -198,8 +194,6 @@ STU NOTE: We would like feedback during the STU period on whether this extension
 Examples: Bundle.entry[1].resource.name, Bundle.entry[0].resource.identifier[0].value
 """
 * value[x] only string
-* ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit.error"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.error"
 
@@ -224,6 +218,8 @@ Description: "The details of what has been authorized for this item."
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
+* ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 
 Extension: AuthorizedProviderType
@@ -244,6 +240,8 @@ Description: "The specific provider who has been authorized to provide this item
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 

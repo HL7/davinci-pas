@@ -145,7 +145,7 @@ Description: "This set of codes identifies what service is being requested.  For
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved.
 X12 codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^experimental = false
-* http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable
+* http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0#not-applicable
 * codes from system https://codesystem.x12.org/005010/1365
 * codes from system http://www.ama-assn.org/go/cpt
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets

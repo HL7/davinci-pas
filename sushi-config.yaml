@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pas
 canonical: http://hl7.org/fhir/us/davinci-pas
-version: 2.1.0
+version: 2.2.0-ballot
 name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
@@ -28,13 +28,13 @@ fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core.v311:
     version: 3.1.1
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    uri: http://hl7.org/fhir/us/core/v311/ImplementationGuide/hl7.fhir.us.core.v311
     id: uscore3
     reason: |
       Needed for systems supporting USCDI v1
   hl7.fhir.us.core.v610:
     version: 6.1.0
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    uri: http://hl7.org/fhir/us/core/v610/ImplementationGuide/hl7.fhir.us.core.v610
     id: uscore6
     reason: |
       Needed for systems supporting USCDI v3
@@ -47,7 +47,7 @@ dependencies:
   hl7.fhir.extensions.r5: 4.0.1
   hl7.fhir.uv.sdc: 3.0.0
   hl7.fhir.us.davinci-crd:
-    version: 2.0.0
+    version: 2.1.0
     id: crd
   hl7.fhir.us.davinci-hrex:
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
@@ -57,7 +57,7 @@ dependencies:
     version: 1.1.0
     id: subscriptions
   hl7.fhir.us.carin-bb:
-    version: 2.0.0
+    version: 2.1.0
     id: carinbb
 parameters:
   show-inherited-invariants: false
@@ -66,9 +66,9 @@ parameters:
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
+  pin-canonicals: pin-multiples
   version-comparison: 
-   - 2.0.0
-   - 2.1.0-preview
+   - 2.1.0
   shownav: true
 copyrightYear: 2020+
 releaseLabel: STU 2.1
@@ -162,11 +162,12 @@ menu:
     Artifacts: artifacts.html
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
-    US Core 3.1.1: new-tab {{site.data.fhir.ver.hl7_fhir_us_core_v311}}
-    US Core 6.1.0: new-tab {{site.data.fhir.ver.hl7_fhir_us_core_v610}}
-    US Core 7.0.0: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
-    HRex 1.1.0: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci-hrex}}
-    CRD: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci-crd}}
+    US Core 3.1.1: new-tab {{site.data.fhir.ver.uscore3}}
+    US Core 6.1.0: new-tab {{site.data.fhir.ver.uscore6}}
+    US Core 7.0.0: new-tab {{site.data.fhir.ver.uscore7}}
+    HRex 1.1.0: new-tab {{site.data.fhir.ver.hrex}}
+    CRD: new-tab {{site.data.fhir.ver.crd}}
+    Subscription Backport: new-tab {{site.data.fhir.ver.subscriptions}}
   Support:
     Discussion Forum: https://chat.fhir.org/#narrow/stream/208874-Da-Vinci-PAS
     Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=42993876

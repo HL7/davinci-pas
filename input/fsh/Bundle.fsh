@@ -26,6 +26,7 @@ Id: profile-pas-inquiry-request-bundle
 Title: "PAS Inquiry Request Bundle"
 Description: "PAS constraints on Bundle resource ensuring that a claim inquiry resource is present and that non-supported elements are not."
 * identifier 1..1 MS
+* identifier ^short = "Submitted Transaction Identifier - this number will be assigned by the originator or sender to identify the **Inquiry** transaction within the sender's business application system.  It does not represent any of the queried request identifiers."
 * type = #collection
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -47,6 +48,8 @@ Parent: Bundle
 Id: profile-pas-response-bundle
 Title: "PAS Response Bundle"
 Description: "PAS constraints on Bundle resource ensuring that a claim response resource is present and that non-supported elements are not."
+* identifier 1..1 MS
+* identifier ^short = "Submitted Transaction Identifier - this number will be assigned by the originator or sender to identify the transaction within the sender's business application system"
 * type = #collection (exactly)
 * timestamp 1..1 MS
 * entry 1..* MS

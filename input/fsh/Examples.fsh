@@ -30,7 +30,7 @@ InstanceOf: PASClaim
 Title: "Referral Authorization Example"
 Description: "An example of a Claim resource requesting prior authorization of a referral."
 * extension[levelOfServiceType].valueCodeableConcept = https://codesystem.x12.org/005010/1338#U "Urgent"
-* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
+* identifier.system = "urn:trnorg:9012345678"
 * identifier.value = "111099"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
 * identifier.assigner.identifier.value = "9012345678"
@@ -76,6 +76,8 @@ InstanceOf: PASResponseBundle
 Title: "Referral Authorization Response Bundle Example"
 Description: "An example of a ClaimResponse bundle approving the authorization of a referral."
 * type = #collection
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "A12345"
 * timestamp = 2005-05-02T11:02:00+05:00
 * entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/PractitionerRequestorResponseExample"
 * entry[ClaimResponse].resource = PractitionerRequestorResponseExample
@@ -92,6 +94,8 @@ Instance: ReferralPendingAuthorizationResponseBundleExample
 InstanceOf: PASResponseBundle
 Title: "Referral Pending Authorization Response Bundle Example"
 Description: "An example of a ClaimResponse bundle with a pending authorization of a referral."
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
 * entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/PractitionerRequestorPendingResponseExample"
@@ -109,6 +113,8 @@ Instance: RejectionResponseBundleExample
 InstanceOf: PASResponseBundle
 Title: "Rejection Response Bundle Example"
 Description: "An example of a ClaimResponse bundle showing the rejection of a request."
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
 * entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/RejectionResponseExample"
@@ -124,6 +130,8 @@ Instance: ErrorResponseBundleExample
 InstanceOf: PASResponseBundle
 Title: "Error Response Bundle Example"
 Description: "An example of a ClaimResponse bundle with errors."
+* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
+* identifier.value = "A12345"
 * type = #collection
 * timestamp = 2005-05-02T11:02:00+05:00
 * entry[ClaimResponse].fullUrl = "http://example.org/fhir/ClaimResponse/ErrorResponseExample"
@@ -396,63 +404,6 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item[2].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
 * item[2].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 
-Instance: HomecareAuthorizationDifferentialBundleExample
-InstanceOf: PASRequestBundle
-Title: "Homecare Authorization Differential Update Bundle Example"
-Description: "An example of a Claim bundle changing elements of a previously sent prior authorization request."
-* identifier.system = "http://example.org/SUBMITTER_TRANSACTION_IDENTIFIER"
-* identifier.value = "A12345"
-* type = #collection
-* timestamp = 2005-05-02T11:01:00+05:00
-* entry[Claim].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationDifferentialExample"
-* entry[Claim].resource = HomecareAuthorizationDifferentialExample
-* entry[1].fullUrl = "http://example.org/fhir/Organization/UMOExample"
-* entry[1].resource = UMOExample
-* entry[2].fullUrl = "http://example.org/fhir/Organization/InsurerExample"
-* entry[2].resource = InsurerExample
-* entry[3].fullUrl = "http://example.org/fhir/Coverage/InsuranceExample"
-* entry[3].resource = InsuranceExample
-* entry[4].fullUrl = "http://example.org/fhir/Patient/SubscriberExample"
-* entry[4].resource = SubscriberExample
-* entry[5].fullUrl = "http://example.org/fhir/Claim/HomecareAuthorizationExample"
-* entry[5].resource = HomecareAuthorizationExample
-
-Instance: HomecareAuthorizationDifferentialExample
-InstanceOf: PASClaimUpdate
-Title: "Homecare Authorization Differential Update Example"
-Description: "An example of a Claim resource updating a prior authorization."
-* meta.security = http://terminology.hl7.org/CodeSystem/v3-ObservationValue#SUBSETTED
-* identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
-* identifier.value = "111099-UPDATE-DIFF"
-* identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
-* identifier.assigner.identifier.value = "9012345678"
-* status = #active
-* type = http://terminology.hl7.org/CodeSystem/claim-type#professional
-* use = #preauthorization
-* patient = Reference(SubscriberExample)
-* created = 2019-07-20T11:01:00+05:00
-* insurer = Reference(InsurerExample)
-* provider = Reference(UMOExample)
-* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal
-* related.claim = Reference(HomecareAuthorizationExample)
-* insurance.sequence = 1
-* insurance.focal = true
-* insurance.coverage = Reference(InsuranceExample)
-* item[0].sequence = 2
-* item[0].modifierExtension[infoCancelledFlag].valueBoolean = true
-* item[0].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[0].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184
-* item[0].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[0].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
-* item[0].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
-* item[1].sequence = 3
-* item[1].extension[infoChanged].valueCode = #added
-* item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
-* item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4185
-* item[1].extension[requestType].valueCodeableConcept = https://codesystem.x12.org/005010/1525#HS "Health Services Review"
-* item[1].extension[certificationType].valueCodeableConcept = https://codesystem.x12.org/005010/1322#I "Initial"
-* item[1].locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
-
 Instance: MedicalServicesAuthorizationBundleExample
 InstanceOf: PASRequestBundle
 Title: "Medical Services Authorization Bundle Example"
@@ -631,6 +582,8 @@ Title: "Submit Claim Referral Practitioner Role Example"
 Description: "A sample practitioner role instance."
 * practitioner = Reference(ReferralPractitionerExample)
 * location = Reference(ReferralLocationExample)
+* telecom.system = #phone
+* telecom.value = "4029993456"
 
 Instance: ReferralLocationExample
 InstanceOf: PASLocation
@@ -651,8 +604,6 @@ Description: "A sample practitioner who is being referred to."
 * identifier.value = "1234567893"
 * name.family = "WATSON"
 * name.given = "SUSAN"
-* telecom.system = #phone
-* telecom.value = "4029993456"
 
 Instance: InsuranceExample
 InstanceOf: PASCoverage
@@ -844,6 +795,8 @@ Title: "Submit Claim Surgical Practitioner Role Example"
 Description: "A sample practitioner role instance."
 * practitioner = Reference(ReferralPractitionerExample)
 * location = Reference(ReferralLocationExample)
+* telecom.system = #phone
+* telecom.value = "4029993456"
 
 Instance: SurgicalLocationExample
 InstanceOf: PASLocation
@@ -864,8 +817,6 @@ Description: "A sample practitioner who is being referred to."
 * identifier.value = "1234567893"
 * name.family = "WATSON"
 * name.given = "SUSAN"
-* telecom.system = #phone
-* telecom.value = "4029993456"
 
 Instance: AdditionalInformationTaskExample
 InstanceOf: PASTask

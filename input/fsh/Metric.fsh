@@ -43,7 +43,7 @@ Description: "A logical model describing the information that should be captured
     * loopID 1..1 code "see X12 loop IDs" "X12 loop ID."
     * aaaCode 1..1 code "approved | modified | deined" "AAA error code returned in the response."
   * locationType 0..1 code "inpatient | outpatient | home" "The site where the service will be performed."
-  * result  0..1  code "approved | modified | denied | pended"  "Final result of the specific service item."
+  * result  0..1  code "approved | modified | denied | pended | cancelled"  "Final result of the specific service item."
   * denialReason 0..1 code "Denial Reason" "A code specifying the reason why the item was denied."
 * supportingDoc  0..1  url "Documentation submitted as part of PAS Bundle"  "The URL of the questionnaire that was the basis for the questionnaireResponse submitted as part of the PAS bundle for the specific service item."
 * requestedDoc 0..* BackboneElement "Documentation requested via 278 response" "Documentation requested via 278 response."

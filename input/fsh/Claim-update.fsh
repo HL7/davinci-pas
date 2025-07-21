@@ -3,8 +3,6 @@ Id: extension-careTeamClaimScope
 Description: "A flag that indicates whether the care team applies to the entire claim or a single item."
 * value[x] only boolean
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
-* ^context[+].type = #element
 * ^context[=].expression = "Claim.careTeam"
 
 Extension: CertificationType
@@ -48,7 +46,7 @@ Description: "Uniquely identifies this claim item. (2000F-TRN)"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: AuthorizationNumber
 Id: extension-authorizationNumber
@@ -61,7 +59,7 @@ Description: "A string assigned by the UMO to an authorized review outcome assoc
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: AdministrationReferenceNumber
 Id: extension-administrationReferenceNumber
@@ -74,7 +72,7 @@ Description: "A string assigned by the UMO to the original disallowed review out
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: ServiceItemRequestType
 Id: extension-serviceItemRequestType
@@ -217,10 +215,6 @@ Description: "A code indicating how the piece of information has changed."
 * value[x] only code
 * valueCode from PASInformationChangeMode (required)
 * ^context[+].type = #element
-* ^context[=].expression = "Claim-update.item"
-* ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
-* ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 
 //modified
@@ -230,10 +224,6 @@ Description: "A flag indicating whether the piece of information was cancelled."
 * . ^isModifier = true
 * . ^isModifierReason = "Indicates that this piece of information is not to be used."
 * value[x] only boolean
-* ^context[+].type = #element
-* ^context[=].expression = "Claim-update.item"
-* ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 

@@ -96,6 +96,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * item.extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * item.extension[productOrServiceCodeEnd] ^short = "Used to provide the last code in a series of codes for the service being requested."
 * item.sequence MS
+  * ^short = "Sequence numbers SHALL stay the same across all instances of the Prior Authorization, eg the Claim, ClaimResponse, ClaimUpdate, ClaimUpdateResponse"
 * item.careTeamSequence MS
 * item.diagnosisSequence MS
 * item.informationSequence MS
@@ -109,6 +110,8 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * item.modifier MS
 * item.modifier from X12278RequestedServiceModifierType (required)
 * item.serviced[x] MS
+* item.servicedDate MS
+* item.servicedPeriod MS
 * item.servicedDate obeys FullDateRule
 * item.servicedPeriod.start obeys FullDateRule
 * item.servicedPeriod.end obeys FullDateRule
@@ -151,13 +154,9 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * supportingInfo[DischargeDates] ^short = "Information about the discharge dates of a hospital admission being requested."
 * supportingInfo[DischargeDates].category = PASTempCodes#dischargeDates
 * supportingInfo[DischargeDates].timing[x] 1..1 MS
+* supportingInfo[DischargeDates].timing[x] only date
 * supportingInfo[DischargeDates].timingDate MS
 * supportingInfo[DischargeDates].timingDate obeys FullDateRule
-* supportingInfo[DischargeDates].timingPeriod MS
-* supportingInfo[DischargeDates].timingPeriod.start MS
-* supportingInfo[DischargeDates].timingPeriod.start obeys FullDateRule
-* supportingInfo[DischargeDates].timingPeriod.end MS
-* supportingInfo[DischargeDates].timingPeriod.end obeys FullDateRule
 * supportingInfo[DischargeDates].value[x] 0..0
 
 
@@ -209,7 +208,7 @@ RuleSet: CommonClaimElements
 * supportingInfo[AdditionalInformation].category = PASTempCodes#additionalInformation
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
-* supportingInfo[AdditionalInformation].value[x] only Reference($USCoreDocumentReference or $USCoreQuestionnaireResponse or Resource)
+* supportingInfo[AdditionalInformation].value[x] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0 or http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0 or Resource)
 * supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile should be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."

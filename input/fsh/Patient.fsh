@@ -1,8 +1,10 @@
 Profile: PASBeneficiary
-Parent: $USCorePatient
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0
 Id: profile-beneficiary
 Title: "PAS Beneficiary Patient"
 Description: "A patient who is the beneficiary of an insurance plan."
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
@@ -18,10 +20,12 @@ Description: "A patient who is the beneficiary of an insurance plan."
 * multipleBirthInteger MS
 
 Profile: PASSubscriber
-Parent: $USCorePatient
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0
 Id: profile-subscriber
 Title: "PAS Subscriber Patient"
 Description: "A patient who is the subscriber of an insurance plan."
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * extension contains MilitaryStatus named militaryStatus 0..1
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
@@ -42,8 +46,6 @@ Description: "A patient's military status."
 * value[x] only CodeableConcept
 * value[x] from https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 (required)
 * value[x] ^binding.description = "Codes showing the general employment status of an employee/claimant. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^context[+].type = #element
-* ^context[=].expression = "Examples"
 * ^context[+].type = #element
 * ^context[=].expression = "Patient"
 

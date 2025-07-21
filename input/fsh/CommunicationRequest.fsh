@@ -28,7 +28,7 @@ Description: "A code representing the diagnosis that is the subject of the commu
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278DiagnosisCodes (required)
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[=].expression = "ExplanationOfBenefit.item"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"
 * ^context[+].type = #element
@@ -40,15 +40,11 @@ Description: "A code representing a modifier of the content being requested"
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278DiagnosisInformationType (required)
 * ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit.payload"
-* ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"
 
 Extension: ServiceLineNumber
 Id: extension-serviceLineNumber
 Description: "A number that links the content being requested with the claim item number."
 * value[x] only positiveInt
-* ^context[+].type = #element
-* ^context[=].expression = "ExplanationOfBenefit.payload"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"

@@ -18,7 +18,7 @@ As well, profiles in this implementation guide make use of the [mustSupport]({{s
 
 Along with those expectations, the following rules on MustSupport are also required:
 
-* PA Intermediary Systems **SHALL** be capable of processing all data elements that are marked as Must Support on the Claim Request and Claim Inquiry.  They **SHALL** not generate an error or cause the application to fail due the presence of any data element marked as Must Support.
+* PA Intermediary Systems **SHALL** be capable of processing all data elements that are marked as Must Support on the Claim Request and Claim Inquiry.  They **SHALL NOT** generate an error or cause the application to fail due the presence of any data element marked as Must Support.
 * PA Intermediary Systems **SHALL** be capable of returning resource instances containing any of the data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.
-* PA Client Systems **SHALL** be capable of receiving all data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.  They **SHALL** not generate an error or cause the application to fail when receiving any data element that is marked as Must Support.
+* PA Client Systems **SHALL** be capable of receiving all data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.  They **SHALL NOT** generate an error or cause the application to fail when receiving any data element that is marked as Must Support.
 * PA Client Systems **SHOULD NOT** send any data elements that are not marked as Must Support.  If these data elements are included in a Claim Request or Claim Inquiry, the receiving PA Intermediary System **MAY** ignore those elements.

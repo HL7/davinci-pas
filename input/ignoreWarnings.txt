@@ -21,25 +21,25 @@ ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525' no
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673' not found
 ValueSet 'https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98' not found
 
-A definition for CodeSystem 'https://codesystem.x12.org/005010/98' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/584' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1525' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1322' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/306' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1337' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1345' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/678' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/679' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/923' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/1069' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated
+A definition for CodeSystem 'https://codesystem.x12.org/005010/98' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/584' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1525' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1322' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/306' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1337' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1345' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/678' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/679' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/923' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/1069' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated%
 
 %Unable to provide support for code system https://codesystem.x12.org/external/886
 %Unable to provide support for code system https://codesystem.x12.org/005010/901
@@ -49,6 +49,42 @@ A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could
 %Unable to provide support for code system https://codesystem.x12.org/005010/1136
 %Unable to provide support for code system https://codesystem.x12.org/005010/1321
 %Unable to provide support for code system https://codesystem.x12.org/005010/755
+
+No definition could be found for URL value 'https://codesystem.x12.org/external/886'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/901'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/889'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/1365'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/756'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/1136'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/1321'
+No definition could be found for URL value 'https://codesystem.x12.org/005010/755'
+
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010EA/NM1/1/01/00/98'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010EA/PRV/1/03/00/127'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010F/PRV/1/03/00/127'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/05/01/1362'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/SV2/1/09/00/1345'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/response/2000D/PWK/1/01/00/755'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/CL1/1/04/00/1345'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/CL1/1/01/00/1315'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/CL1/1/02/00/1314'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010A/NM1/1/01/00/98'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/response/2010B/NM1/1/01/00/98'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069'
 
 # 02 Value sets that contain X12 codes and are thus not able to be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory%
@@ -70,15 +106,11 @@ This element does not match any known slice defined in the profile http://hl7.or
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
-A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.1.0' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
-A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
-A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' could not be found, so the code cannot be validated
 
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278LocationType%
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.1.0' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.2.0-ballot' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
 
 %Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 %Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
@@ -86,7 +118,6 @@ Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/dav
 %Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 
 # 06 Variance Request from CGP for the profiles that are not derived from US Core - https://jira.hl7.org/browse/FHIR-42953
-US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile%
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile%
 
 # 07 Reference to draft or deprecated items - also a temporary PAS code system was defined that will be reviewed later.
@@ -95,20 +126,11 @@ Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PAST
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/processpriority|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/adjudication|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/coverage-class|1.0.0
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 
 # 07 For the given identifier slices the pattern will apply to all repeats
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
-# 08 Experimental value set warnings from the core FHIR specification
-The definition for the element 'ClaimResponse.payeeType' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'ClaimResponse.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'ClaimResponse.formCode' binds to the value set 'http://hl7.org/fhir/ValueSet/forms' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Claim.fundsReserve' binds to the value set 'http://hl7.org/fhir/ValueSet/fundsreserve' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'Claim.payee.type' binds to the value set 'http://hl7.org/fhir/ValueSet/payeetype' which is experimental, but this structure is not labeled as experimental
 
 # 09 We want this link to be version-agnostic
 The link 'http://hl7.org/fhir/us/davinci-pas' for "Prior Authorization Support (PAS)" is a canonical link and is therefore unsafe with regard to versions
@@ -132,3 +154,22 @@ DA VINCI: The Change Log page (changelog.html) does not include an h3 section fo
 
 # 14 The SubscriptionTopic is not found in FHIR R4.  We are using it from the Subscription Backport R4 IG
 DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/subscriptiontopic.html because this IG uses the subscriptiontopic resource.
+
+# 2.2-01 We are following the recommended way of identifying an X12 TRN identifier.
+No definition could be found for URL value 'urn:trnorg:9012345678'
+
+# 2.2-02 We don't want the later version of US Core.
+The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
+
+# 2.2-03 We can confirm that the profile complies with 3.1.1 and/or 6.1.0
+The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1'
+The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0'
+The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
+
+# 2.2-04 With new pinning rules, US Core artifacts are pinned to v7.0.0
+Pinned the version of %
+
+# 2.2-05 The US Core Organization profile marks the identifier as must-support but then has two slices that are not.
+The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+ 

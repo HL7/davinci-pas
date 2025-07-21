@@ -9,7 +9,7 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * identifier 1..* MS
   * ^short = "Payers tracking identifier"
 * status 1..1 MS
-* status from http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status (required)
+* status from http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status|1.1.0 (required)
 * intent 1..1 MS
 * intent = #order
 * code 1..1 MS
@@ -40,6 +40,8 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].value[x] only CodeableConcept
 * input[AttachmentsNeeded].valueCodeableConcept from http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-loinc-attachment-codes
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "key"
+* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueId = "attachmentsNeededLoinc"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "purpose"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCode = #extensible
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "valueSet"

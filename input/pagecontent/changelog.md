@@ -1,3 +1,20 @@
+### Version = 2.2.0-ballot
+This version includes changes due to comments raised by the community since 2.1.0 and fixes a number of issues with the profiles.
+
+#### JIRA Issues Applied
+##### Technical Corrections
+* [FHIR-48904](https://jira.hl7.org/browse/FHIR-48904)
+* [FHIR-49091](https://jira.hl7.org/browse/FHIR-49091)
+* [FHIR-49092](https://jira.hl7.org/browse/FHIR-49092)
+* [FHIR-49149](https://jira.hl7.org/browse/FHIR-49149)
+* [FHIR-49870](https://jira.hl7.org/browse/FHIR-49870)
+* [FHIR-50092](https://jira.hl7.org/browse/FHIR-50092)
+* [FHIR-50119](https://jira.hl7.org/browse/FHIR-50119)
+* [FHIR-51189](https://jira.hl7.org/browse/FHIR-51189)
+* [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464)
+* [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397)
+
+
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
 

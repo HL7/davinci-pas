@@ -1,5 +1,5 @@
 Profile: PASCoverage
-Parent: $USCoreCoverage
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|7.0.0
 Id: profile-coverage
 Title: "PAS Coverage"
 Description: "PAS constraints on Coverage resource mandating support for insurance elements relevant to the prior authorization request"
