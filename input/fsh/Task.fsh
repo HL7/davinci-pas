@@ -38,7 +38,7 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].type = PASTempCodes#attachments-needed
 * input[AttachmentsNeeded].value[x] MS
 * input[AttachmentsNeeded].value[x] only CodeableConcept
-* input[AttachmentsNeeded].valueCodeableConcept from http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-loinc-attachment-codes
+* input[AttachmentsNeeded].valueCodeableConcept from http://loinc.org/vs/valid-hl7-attachment-requests (required)
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "key"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueId = "attachmentsNeededLoinc"
@@ -48,7 +48,7 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "documentation"
 * input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueMarkdown = "X12 codes that can be used to request additional information to support a prior authorization request."
-* input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1 MS
+* input[AttachmentsNeeded].extension contains PALineNumber named paLineNumber 1..1 MS and ContentModifier named contentModifier 0..* MS
 
 * input[QuestionnaireContext].type MS
 * input[QuestionnaireContext].type = PASTempCodes#questionnaire-context
@@ -64,6 +64,14 @@ Description: "A specific line number associated with the attachment request code
 * ^context.type = #element
 * ^context.expression = "Task.input"
 * value[x] only integer
+
+Extension: ContentModifier
+Id: extension-contentModifier
+Description: "Codes that modify the attachment code by providing additional information on what is being requested."
+* ^context.type = #element
+* ^context.expression = "Task.input"
+* value[x] only CodeableConcept
+* valueCodeableConcept from X12278DiagnosisInformationType (required)
 
 Invariant: AttachmentNeeded
 Description: "If task.code is attachment-request-code, then attachments needed slice is required."
