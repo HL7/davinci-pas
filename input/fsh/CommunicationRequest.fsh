@@ -15,6 +15,7 @@ Description: "PAS constraints on CommunicationRequest resource mandating support
 * payload.extension contains ServiceLineNumber named serviceLineNumber 0..1 MS and CommunicatedDiagnosis named communicatedDiagnosis 0..* MS and ContentModifier named contentModifier 0..* MS
 * payload.content[x] MS
 * payload.content[x] only string
+* payload.contentString from http://loinc.org/vs/valid-hl7-attachment-requests (required)
 * requester MS
 * requester only Reference(PASInsurer)
 * recipient MS
