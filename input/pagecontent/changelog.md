@@ -2,6 +2,44 @@
 This version includes changes due to comments raised by the community since 2.1.0 and fixes a number of issues with the profiles.
 
 #### JIRA Issues Applied
+
+##### Narrative Changes
+* Use Cases
+  * Added note about repeating fields
+* Specification
+  * Updated guidance on Subscriptions vs Inquiries
+  * Updated guidance on the resources that need to be included in each type of Bundle
+  * Clarified on how to search for a specific Claim using the REF-BB or REF-NT identifiers
+  * Clarified on what the parameters of the Claim Inquiry represent
+  * Restricted Subscription channel to 'rest-hook'
+* Additional Information
+  * Updated diagrams around attachment workflows
+  * Provided specific guidance on which fields are used in CDex
+
+##### Profile Changes
+* Bundle
+  * Added invariant that Claim or ClaimResponse must be the first entry
+* Claim
+  * Added guidance that sequence numbers will be the same across all instances of the claim and claim response
+  * Restricted SupportingInfo DischareDates slice to only be a date
+  * Added new DocumentInformation extension to SupportingInfo AdditionalInformation slice
+* ClaimResponse
+  * Added DataAbsentReason extension to ClaimReponse.request
+  * Added guidance that sequence numbers will be the same across all instances of the claim and claim response
+  * Made item.noteNumber and processNote Must-Support in ClaimResponse and ClaimInquiryResponse
+* PractitionerRole
+  * Inherits from US Core PractitionerRole profile
+* DocumentReference
+  * New profile created to represent the restriction that the attachment data must be included
+  
+##### Operation Changes
+* Fixed where the parameter profiles were set
+
+##### Example Changes
+* Added new Invalid Request example showing a returned OperationOutcome
+* Changed the DENY response example to not be an error but an adjudication of 'CANCELLED'
+
+
 ##### Technical Corrections
 * [FHIR-48904](https://jira.hl7.org/browse/FHIR-48904)
 * [FHIR-49091](https://jira.hl7.org/browse/FHIR-49091)
