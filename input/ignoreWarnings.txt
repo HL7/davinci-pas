@@ -97,6 +97,7 @@ Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/dav
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes%
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code%
 
 # 03 The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
