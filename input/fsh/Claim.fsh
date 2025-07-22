@@ -231,7 +231,7 @@ Id: extension-documentInformation
 Description: "Information about the document being included such as the type, transmission method, and identifier."
 * extension contains reportTypeCode 1..1 and transmissionMethod 0..1 and controlNumber 0..1 and description 0..1
 * extension[reportTypeCode].value[x] only CodeableConcept
-* extension[reportTypeCode].valueCodeableConcept from "http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code (required)
+* extension[reportTypeCode].valueCodeableConcept from http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code (required)
 * extension[reportTypeCode] ^short = "The type of additional information being provided"
 * extension[transmissionMethod].value[x] only CodeableConcept
 * extension[transmissionMethod].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756 (required)
