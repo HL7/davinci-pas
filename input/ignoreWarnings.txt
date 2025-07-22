@@ -20,6 +20,8 @@ ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923' no
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673' not found
 ValueSet 'https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98' not found
+ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/01/00/755' not found
+ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756' not found
 
 A definition for CodeSystem 'https://codesystem.x12.org/005010/98' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/584' could not be found, so the code cannot be validated%
@@ -32,6 +34,7 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not b
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1337' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1345' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'https://codesystem.x12.org/005010/756' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/678' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/679' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/923' could not be found, so the code cannot be validated%
@@ -85,6 +88,8 @@ A definition could not be found for Canonical URL 'https://valueset.x12.org/x217
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/01/00/755'
+A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756'
 
 # 02 Value sets that contain X12 codes and are thus not able to be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory%
@@ -127,6 +132,7 @@ Most code systems defined in HL7 IGs will need to move to THO later during the p
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 
 # 07 For the given identifier slices the pattern will apply to all repeats
@@ -172,4 +178,11 @@ Pinned the version of %
 # 2.2-05 The US Core Organization profile marks the identifier as must-support but then has two slices that are not.
 The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
- 
+
+# 2.2-06 The US Core DocumentReference profile marks the category as must-support but the uscore slice is not.
+The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+
+# 2.2-07 tx.fhir.org can not handle the definition of this LOINC value set (see Zulip https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Validating.20a.20String.20value.20with.20a.20required.20binding/with/529948074)
+The System URI could not be determined for the code 'http://loinc.org#18776-5' in the ValueSet 'http://loinc.org/vs/valid-hl7-attachment-requests'
+The value provided ('http://loinc.org#18776-5') was not found in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a code is required from this value set
+None of the codings provided are in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a coding from this value set is required) (codes = http://loinc.org#28570-0)

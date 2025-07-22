@@ -69,6 +69,9 @@ Many of the profiles are based on US Core 7.0.0 while also declaring conformance
 * [PAS Quantity](StructureDefinition-profile-quantity.html) - {{site.data.StructureDefinition-profile-quantity.description}}
 * [PAS Timing](StructureDefinition-profile-datatype-timing.html) - {{site.data.StructureDefinition-profile-datatype-timing.description}}
 
+##### Extensions
+{% include ext-list-generator.md use="profile" %}
+
 #### Examples
 The following examples are present in this guide to show specific use cases:
 

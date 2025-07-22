@@ -206,9 +206,10 @@ RuleSet: CommonClaimElements
 
 * supportingInfo[AdditionalInformation] ^short = "Send additional paperwork or supporting information for the request.  This can be most commonly a DocumentReference profile although any type of information is allowed."
 * supportingInfo[AdditionalInformation].category = PASTempCodes#additionalInformation
+* supportingInfo[AdditionalInformation].extension contains DocumentInformation named documentInformation 1..1 MS
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
-* supportingInfo[AdditionalInformation].value[x] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0 or http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0 or Resource)
+* supportingInfo[AdditionalInformation].value[x] only Reference( PASDocumentReference or http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0 or Resource)
 * supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile should be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."
@@ -216,6 +217,32 @@ RuleSet: CommonClaimElements
 * supportingInfo[MessageText].timing[x] 0..0
 * supportingInfo[MessageText].value[x] 1..1 MS
 * supportingInfo[MessageText].value[x] only string
+
+Profile: PASDocumentReference
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0
+Id: profile-documentreference
+Title: "PAS Document Reference"
+Description: "PAS constraints on US Core DocumentReference to require the document content to be included and not referenced externally."
+* content.attachment.data 1..1
+* content.attachment.url 0..0
+
+Extension: DocumentInformation
+Id: extension-documentInformation
+Description: "Information about the document being included such as the type, transmission method, and identifier."
+* extension contains reportTypeCode 1..1 and transmissionMethod 0..1 and controlNumber 0..1 and description 0..1
+* extension[reportTypeCode].value[x] only CodeableConcept
+* extension[reportTypeCode].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/PWK/1/01/00/755 (required)
+* extension[reportTypeCode] ^short = "The type of additional information being provided"
+* extension[transmissionMethod].value[x] only CodeableConcept
+* extension[transmissionMethod].valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756 (required)
+* extension[transmissionMethod] ^short = "How the additional information is being provided"
+* extension[controlNumber].value[x] only string
+* extension[controlNumber] ^short = "A control number that identifies the document"
+* extension[description].value[x] only string
+* extension[description] ^short = "Special information about the additional information provided"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.supportingInfo"
+
 
 Invariant: ImmediateLevelOfCare
 Description: "If Certification Type is an immediate appeal, then Level of Service Code must be present"

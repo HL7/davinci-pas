@@ -38,6 +38,7 @@
 <artifact id="StructureDefinition/extension-timingdeliverypattern" key="StructureDefinition-extension-timingdeliverypattern" name="DeliveryPattern"/>
 <artifact id="DeviceRequest/DeviceRequestExample" key="DeviceRequest-DeviceRequestExample" name="Device Request Example"/>
 <artifact id="StructureDefinition/extension-diagnosisRecordedDate" key="StructureDefinition-extension-diagnosisRecordedDate" name="DiagnosisRecordedDate"/>
+<artifact id="StructureDefinition/extension-documentInformation" key="StructureDefinition-extension-documentInformation" name="DocumentInformation"/>
 <artifact id="CapabilityStatement/EHRCapabilities" key="CapabilityStatement-EHRCapabilities" name="EHR PAS Capabilities"/>
 <artifact id="StructureDefinition/extension-epsdtIndicator" key="StructureDefinition-extension-epsdtIndicator" name="EPSDTIndicator"/>
 <artifact id="Encounter/SurgicalEncounterExample" key="Encounter-EncounterExample" name="Encounter Example"/>
@@ -91,6 +92,8 @@
 <artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="PAS Coverage"/>
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="PAS Device Request"/>
 <artifact deprecated="true" id="CodeSystem/PASDiagnosisType" key="CodeSystem-PASDiagnosisType" name="PAS Diagnosis Type"/>
+<artifact id="StructureDefinition/profile-documentreference" key="StructureDefinition-profile-documentreference" name="PAS Document Reference"/>
+<artifact id="DocumentReference/DocumentReferenceExample" key="DocumentReference-DocumentReferenceExample" name="PAS Document Reference Example"/>
 <artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="PAS Encounter"/>
 <artifact id="StructureDefinition/profile-identifier" key="StructureDefinition-profile-identifier" name="PAS Identifier"/>
 <artifact deprecated="true" id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PAS Information Change Mode Code System"/>

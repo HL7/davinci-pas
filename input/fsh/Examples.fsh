@@ -24,6 +24,8 @@ Description: "An example of a Claim bundle requesting prior authorization of a r
 * entry[7].resource = ReferralPractitionerExample
 * entry[8].fullUrl = "http://example.org/fhir/Location/ReferralLocationExample"
 * entry[8].resource = ReferralLocationExample
+* entry[9].fullUrl = "http://example.org/fhir/DocumentReference/DocumentReferenceExample"
+* entry[9].resource = DocumentReferenceExample
 
 Instance: ReferralAuthorizationExample
 InstanceOf: PASClaim
@@ -70,6 +72,25 @@ Description: "An example of a Claim resource requesting prior authorization of a
 * careTeam.sequence = 1
 * careTeam.extension[careTeamClaimScope].valueBoolean = true
 * careTeam.provider = Reference(ReferralPractitionerRoleExample)
+* supportingInfo[AdditionalInformation]
+  * sequence = 1
+  * extension[documentInformation]
+    * extension[reportTypeCode].valueCodeableConcept = https://codesystem.x12.org/005010/755#PY "Physician's Report"
+    * extension[transmissionMethod].valueCodeableConcept = https://codesystem.x12.org/005010/756#EL "Electronically Only"
+    * extension[controlNumber].valueString = "111222"
+    * extension[description].valueString = "A procedure note included to provide details of what has been tried before the referral."
+  * valueReference = Reference(DocumentReferenceExample)
+
+Instance: DocumentReferenceExample
+InstanceOf: PASDocumentReference
+Title: "PAS Document Reference Example"
+Description: "An example of a DocumentReference conveying a procedure note."
+* status = #current
+* type = http://loinc.org#11505-5
+* category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
+* subject = Reference(SubscriberExample)
+* content.attachment.contentType = urn:ietf:bcp:13#text/plain
+* content.attachment.data = "VGhpcyBpcyBzYW1wbGUgYmFzZTY0IGVuY29kaW5nLg=="
 
 Instance: ReferralAuthorizationResponseBundleExample
 InstanceOf: PASResponseBundle

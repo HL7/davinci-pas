@@ -50,6 +50,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     <tr><td><a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a></td><td>Used to convey information that the payer needs to make an authorization decision</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}coverage.html">Coverage</a></td><td>Used to identify the member and the relevant insurance coverage to a payer</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}documentreference.html">DocumentReference</a></td><td>Constaint on US Core DocumentReference to enforce that data will always be provided</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}encounter.html">Encounter</a></td><td>One of the resources that indicates what authorization is needed and also provides context for other resources</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}location.html">Location</a></td><td>Supporting information for encounters and request resources</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
