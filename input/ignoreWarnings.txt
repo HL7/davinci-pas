@@ -185,5 +185,6 @@ The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-s
 
 # 2.2-07 tx.fhir.org can not handle the definition of this LOINC value set (see Zulip https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Validating.20a.20String.20value.20with.20a.20required.20binding/with/529948074)
 The System URI could not be determined for the code 'http://loinc.org#18776-5' in the ValueSet 'http://loinc.org/vs/valid-hl7-attachment-requests'
-The value provided ('http://loinc.org#18776-5') was not found in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a code is required from this value set
 None of the codings provided are in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a coding from this value set is required) (codes = http://loinc.org#28570-0)
+
+The value provided ('http://loinc.org#18776-5') was not found in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a code is required from this value set%
