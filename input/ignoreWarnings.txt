@@ -20,7 +20,6 @@ ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/CR6/1/01/00/923' no
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673' not found
 ValueSet 'https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98' not found
-ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/01/00/755' not found
 ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756' not found
 
 A definition for CodeSystem 'https://codesystem.x12.org/005010/98' could not be found, so the code cannot be validated%
@@ -88,7 +87,6 @@ A definition could not be found for Canonical URL 'https://valueset.x12.org/x217
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2010F/NM1/1/01/00/98'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000F/HSD/1/01/00/673'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069'
-A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/01/00/755'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756'
 
 # 02 Value sets that contain X12 codes and are thus not able to be validated
@@ -165,7 +163,7 @@ DA VINCI: The How to Read page (background.html) needs to include a reference to
 # 2.2-01 We are following the recommended way of identifying an X12 TRN identifier.
 No definition could be found for URL value 'urn:trnorg:9012345678'
 
-# 2.2-02 We don't want the later version of US Core.
+# 2.2-02 The three versions of US Core that we depend on (3.1.0, 6.1.0, and 7.0.0) are all cited in regulation.  A future version of the PAS guide may use 8.0.0 if it is cited in regulation.
 The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
 # 2.2-03 We can confirm that the profile complies with 3.1.1 and/or 6.1.0

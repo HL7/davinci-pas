@@ -72,7 +72,7 @@ parameters:
    - 2.1.0
   shownav: true
 copyrightYear: 2020+
-releaseLabel: STU 2.2
+releaseLabel: STU 2.2 - Ballot
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
