@@ -58,10 +58,9 @@ This version of the Implementation Guide does not support all of the use cases t
 In FHIR, the Claim resource which is being used for Prior Authorization does not have the concept of patient events like the X12 278 request.  All services being requested are found in the Claim items.  This means that when a Prior Authorization is being created in FHIR, all of the services will be found in the Claim items.  The assumption that we have made in the guide is that the resulting transformed X12 278 request will have the services being requested detailed in the Service Event line level.
 
 
-<div class="modified-content" markdown="1">
 #### Repeating Fields
-In the FHIR profiles in this guide, there are times where the cardinality on data elements is broader than what X12 or other business requirements allow.  In all cases, the intent is that the first N repetitions would be used while the extra repetitions would be ignored.
-</div>
+>In the FHIR profiles in this guide, there are times where the cardinality on data elements is broader than what X12 or other business requirements allow.  In all cases, the intent is that the first N repetitions would be used while the extra repetitions would be ignored.
+{: .modified-content}
 
 ### Workflow
 Within an EHR Client, the prior authorization request process should be capable of being invoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.

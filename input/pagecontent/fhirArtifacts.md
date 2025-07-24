@@ -24,7 +24,18 @@ Many of the profiles are based on US Core 7.0.0 while also declaring conformance
 * [Submit a Prior Authorization Request for Adjudication](OperationDefinition-Claim-submit.html) - {{site.data.OperationDefinition-Claim-inquiry.description}}
 * [Search for a Prior Authorization Response by example](OperationDefinition-Claim-inquiry.html) - {{site.data.OperationDefinition-Claim-submit.description}}
 
+#### Metrics Logical Model
+* [PAS Metric Data Logical Model](StructureDefinition-PASMetricData.html) - {{site.data.StructureDefinition-PASMetricData.description}}
+
+#### PAS Subsription Topic
+* [PAS Subscription Topic](SubscriptionTopic-PASSubscriptionTopic.html) - {{site.data.SubscriptionTopic-PASSubscriptionTopic.description}}
+
 #### Profiles
+##### Bundle Profiles
+* [PAS Request Bundle](StructureDefinition-profile-pas-request-bundle.html) - {{site.data.StructureDefinition-profile-pas-request-bundle.description}}
+* [PAS Response Bundle](StructureDefinition-profile-pas-response-bundle.html) - {{site.data.StructureDefinition-profile-pas-response-bundle.description}}
+* [PAS Inquiry Bundle](StructureDefinition-profile-pas-inquiry-request-bundle.html) - {{site.data.StructureDefinition-profile-pas-inquiry-request-bundle.description}}
+* [PAS Inquiry Response Bundle](StructureDefinition-profile-pas-inquiry-response-bundle.html) - {{site.data.StructureDefinition-profile-pas-inquiry-response-bundle.description}}
 
 ##### Abstract Resource Profiles
 * [PAS Claim Base](StructureDefinition-profile-claim-base.html) - {{site.data.StructureDefinition-profile-claim-base.description}}
