@@ -1,22 +1,20 @@
-{% raw %}
-<blockquote class="stu-note">
-<p>
-This specification is currently published as a Standard for Trial Use (STU).  Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PAS" as the specification.
-</p>
-<p>
-Individuals interested in participating in the Prior Authorization Support or other HL7 Da Vinci projects can find information about Da Vinci <a href="http://www.hl7.org/about/davinci">here</a>.
-</p>
-<p>
-Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.  Please see this <a href="https://confluence.hl7.org/display/DVP/Da+Vinci+Reference+to+External+Standards+and+Terminologies">Da Vinci External Reference page</a> for details on how to get this mapping.
-</p>
-<p>
-There are many situationally required fields that are specified in the X12 TRN03 guide that do not have guidance in this Implementation Guide. All of these fields are marked as Must Support in this guide. However, due to licensing restrictions, implementers need to consult the X12 PAS guides to know the requirements for these fields.
-</p>
-<p>
-Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
-</p>
-</blockquote>
-{% endraw %}
+> Welcome to the ballot for the STU 2.2 release of CRD.
+>
+>This release contains a number of changes requested by the implementer community.  Most of them are non-signficant or backwards compatible changes, but there are a few that could at least be theoretically breaking for some implementations and there are a few that will be breaking for all implementations.  A complete list of the changes for this ballot, as well as links to the tracker items that provide justification for them can be found [here](changelog.html#version--220-ballot).
+>
+>There is also an open issue around the use of supplemental guides that has not been addressed in this ballot.  Please see this [Issues page](issues.html) for more discussion about this issue.
+>
+>**IMPORTANT:** The scope of this ballot is limited to the above changes and to feedback about the issues linked to above.  While feedback can always be submitted against any content in the specification at any time, votes submitted against content that is outside the official scope of the ballot may be deemed 'not related' and therefore not able to support negative votes.
+{: .note-to-balloters}
+
+>This specification is currently published as a Standard for Trial Use (STU).
+>
+>Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.  Please see this [Da Vinci External Reference page](https://confluence.hl7.org/display/DVP/Da+Vinci+Reference+to+External+Standards+and+Terminologies) for details on how to get this mapping.
+>
+>There are many situationally required fields that are specified in the X12 TRN03 guide that do not have guidance in this Implementation Guide. All of these fields are marked as Must Support in this guide. However, due to licensing restrictions, implementers need to consult the X12 PAS guides to know the requirements for these fields.
+>
+>Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
+{: .stu-note}
 
 ### Overview
 Prior authorization is a process commonly used by payer organizations to manage healthcare costs.  However, the process of requesting and receiving prior authorizations can be slow and inefficient.  The Administrative Simplification provisions of HIPAA mandate that the X12 278 Health Care Services Review Request for Review and Response be used for communicating prior authorization requests and responses.  While few electronic health record (EHR) systems have implemented this interface, this functionality is often implemented as a portal solution and/or as a part of Practice Management and Revenue Cycle Management solutions.  As a result, prior authorizations are often solicited by fax or by using payer-specific portals where clinicians re-key relevant information.  Fax submission requires manual transcription on the payer side and may result in significant back-and-forth requesting additional information prior to a decision being made.  Re-keying information is inefficient and can result in data entry errors.
@@ -72,12 +70,10 @@ This implementation guide (and the menu for it) is organized into the following 
 
 ### Dependencies
 
-<div class="modified-content" markdown="1">
-
-At present, PAS is based on [FHIR R4]({{site.data.fhir.path}}).  In addition, PAS is dependent on the [US Core 3.1 (FHIR R4)]({{site.data.fhir.ver.uscore3}}), [US Core 6.1 (FHIR R4)]({{site.data.fhir.ver.uscore6}}) and [US Core 7.0 (FHIR R4)]({{site.data.fhir.ver.uscore7}})  implementation guides.  The first is supported for those systems limited to USCDI 1 capabilities, the second is for upcoming regulatory requirements mandating support for USCDI 3, and the last is to enable support for proposed regulations mandating support for USCDI 4.  Wherever possible, Da Vinci profiles strive to comply with all three releases, simplifying implementation for those who will need to support varying regulatory expectations over time.
-
-In some situations, the payer community requires additional constraints or needs to profile resources that are not yet supported by US Core.  In these cases, this IG does not derive from the US Core profiles, though it does align with them as much as possible.  It is possible that certain PAS profiles and/or descriptive content may migrate to a future release of US Core, and in some cases, to the base FHIR standard.
-</div>
+>At present, PAS is based on [FHIR R4]({{site.data.fhir.path}}).  In addition, PAS is dependent on the [US Core 3.1 (FHIR R4)]({{site.data.fhir.ver.uscore3}}), [US Core 6.1 (FHIR R4)]({{site.data.fhir.ver.uscore6}}) and [US Core 7.0 (FHIR R4)]({{site.data.fhir.ver.uscore7}})  implementation guides.  The first is supported for those systems limited to USCDI 1 capabilities, the second is for upcoming regulatory requirements mandating support for USCDI 3, and the last is to enable support for proposed regulations mandating support for USCDI 4.  Wherever possible, Da Vinci profiles strive to comply with all three releases, simplifying implementation for those who will need to support varying regulatory expectations over time.
+>
+>In some situations, the payer community requires additional constraints or needs to profile resources that are not yet supported by US Core.  In these cases, this IG does not derive from the US Core profiles, though it does align with them as much as possible.  It is possible that certain PAS profiles and/or descriptive content may migrate to a future release of US Core, and in some cases, to the base FHIR standard.
+{: .modified-content}
 
 In addition, this guide uses content from the following FHIR-related specifications and implementation guides:
 * [Subscriptions R5 Backport]({{site.data.fhir.ver.subscriptions}})
