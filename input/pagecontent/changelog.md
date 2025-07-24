@@ -4,15 +4,15 @@ This version includes changes due to comments raised by the community since 2.1.
 #### JIRA Issues Applied
 
 ##### Narrative Changes
-* Use Cases
-  * Added note about repeating fields
-* Specification
-  * Updated guidance on Subscriptions vs Inquiries
-  * Updated guidance on the resources that need to be included in each type of Bundle
-  * Clarified on how to search for a specific Claim using the REF-BB or REF-NT identifiers
-  * Clarified on what the parameters of the Claim Inquiry represent
-  * Restricted Subscription channel to 'rest-hook'
-* Additional Information
+* [Use Cases](usecases.html)
+  * Added note about repeating fields [link](usecases.html#repeating-fields)
+* [Technical Specification](specification.html)
+  * Updated guidance on Subscriptions vs Inquiries [link](specification.html#prior-authorization-inquiries)
+  * Updated guidance on the resources that need to be included in each type of Bundle [link](specification.html#prior-authorization-submission) [link](specification.html#prior-authorization-response) [link](specification.html#prior-authorization-inquiries)
+  * Clarified on how to search for a specific Claim using the REF-BB or REF-NT identifiers [link](specification.html#prior-authorization-inquiries)
+  * Clarified on what the parameters of the Claim Inquiry represent [link](specification.html#prior-authorization-inquiries)
+  * Restricted Subscription channel to 'rest-hook' [link](specification.html#subscription)
+* [Additional Information](additionalInfo.html)
   * Updated diagrams around attachment workflows
   * Provided specific guidance on which fields are used in CDex
 
