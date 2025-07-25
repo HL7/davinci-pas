@@ -12,7 +12,7 @@ This version includes changes due to comments raised by the community since 2.1.
   * Clarified on how to search for a specific Claim using the REF-BB or REF-NT identifiers [link](specification.html#prior-authorization-inquiries)
   * Clarified on what the parameters of the Claim Inquiry represent [link](specification.html#prior-authorization-inquiries)
   * Restricted Subscription channel to 'rest-hook' [link](specification.html#subscription)
-* [Additional Information](additionalInfo.html)
+* [Additional Information](additionalinfo.html)
   * Updated diagrams around attachment workflows
   * Provided specific guidance on which fields are used in CDex
 

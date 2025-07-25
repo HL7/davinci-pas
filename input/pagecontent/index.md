@@ -1,4 +1,4 @@
-> Welcome to the ballot for the STU 2.2 release of CRD.
+> Welcome to the ballot for the STU 2.2 release of PAS.
 >
 >This release contains a number of changes requested by the implementer community.  Most of them are non-signficant or backwards compatible changes, but there are a few that could at least be theoretically breaking for some implementations and there are a few that will be breaking for all implementations.  A complete list of the changes for this ballot, as well as links to the tracker items that provide justification for them can be found [here](changelog.html#version--220-ballot).
 >
