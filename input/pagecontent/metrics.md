@@ -11,7 +11,7 @@ Each guide supports a specific set of functions and exchanges required to determ
 
 To maximize the value of these IGs, it is imperative that each IG is integrated into clinical workflow at the appropriate point and all of the exchanges required by each IG are fully supported by all of the participants (providers, intermediaries, and payers).
 
-Each of these IGs recommends a set of metrics that **SHOULD** or **MAY** be collected by their respective implementations to facilitate the evaluation of adoption, functionality, processes, and improved outcomes. While there is currently no requirement to report on these metrics, it is reasonable to believe that in the future interested entities (providers, payers, regulators, quality organizations, certification agencies, states, etc.) will ask for these metrics to evaluate the ongoing automation of the supported processes / exchanges. While this guide will not require these metrics to be captured in this release, the authors strongly suggest each implementation should do so with the expectation that collection and dissemination of these metrics may become a requirement (SHALL) in future version of these IGs.
+Each of these IGs recommends a set of metrics that **SHOULD** or **MAY** be collected by their respective implementations to facilitate the evaluation of adoption, functionality, processes, and improved outcomes. While there is currently no requirement to report on these metrics, it is reasonable to believe that in the future interested entities (providers, payers, regulators, quality organizations, certification agencies, states, etc.) will ask for these metrics to evaluate the ongoing automation of the supported processes / exchanges. While this guide will not require these metrics to be captured in this release, the authors strongly suggest each implementation **SHOULD** do so with the expectation that collection and dissemination of these metrics might become a requirement (**SHALL**) in future version of these IGs.
 
 The table below defines a set of measures with a short name, purpose, conformance, stakeholder, and collection/calculation instructions that represent what the project group designing this IG felt would be both reasonably collectable and useful in evaluating implementations of this IG.  These measures are based on the [metric data model logical model](StructureDefinition-PASMetricData.html) also published in this IG.
 
@@ -120,8 +120,8 @@ In the interest of enabling such evaluation processes, this guide has defined a
 likely to be relevant for such evaluation.
 
 This model is NOT a FHIR data structure for information exchange.  Instead, it is a logical model that describes
-the types of data that should be available and any constraints on the data (e.g. cardinality, terminology) that
-should be captured by PAS implementers to support the evaluation of metrics.  Measures can then be defined
+the types of data that **SHOULD** be available and any constraints on the data (e.g. cardinality, terminology) that
+**SHOULD** be captured by PAS implementers to support the evaluation of metrics.  Measures can then be defined
 in a standardized way based on these measures.
 
 PAS implementers **SHOULD** store information for each PAS call in a manner that would allow them to respond to

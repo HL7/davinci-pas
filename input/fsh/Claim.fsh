@@ -210,7 +210,7 @@ RuleSet: CommonClaimElements
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
 * supportingInfo[AdditionalInformation].value[x] only Reference( PASDocumentReference or http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0 or Resource)
-* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile should be used."
+* supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile SHOULD be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."
 * supportingInfo[MessageText].category = PASTempCodes#freeFormMessage

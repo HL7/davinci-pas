@@ -1,7 +1,7 @@
 Logical: PASMetricData
 Id: PASMetricData
 Title: "PAS Metric Data"
-Description: "A logical model describing the information that should be captured by PAS implementers about every PAS invocation to support measures evaluating PAS implementation"
+Description: "A logical model describing the information that SHOULD be captured by PAS implementers about every PAS invocation to support measures evaluating PAS implementation"
 * ^status = #draft
 * ^experimental = false
 * ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 1

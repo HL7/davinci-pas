@@ -3,7 +3,7 @@ The Health Insurance Portability and Accountability Act (HIPAA) of 1996 contains
 * Medicaid Integrity Program/Fraud and Abuse
 * Administrative Simplification
 
-This page summarizes the administrative simplification provision that implemented standard transaction and code sets, identifiers, security, and privacy rules across the healthcare industry.  This page is informative and implementers should always consult the full regulations if they have questions/concerns.
+This page summarizes the administrative simplification provision that implemented standard transaction and code sets, identifiers, security, and privacy rules across the healthcare industry.  This page is informative and implementers **SHOULD** always consult the full regulations if they have questions/concerns.
 
 ### Administrative Simplification Requirements of HIPAA
 The major requirements of administrative simplification affect:
