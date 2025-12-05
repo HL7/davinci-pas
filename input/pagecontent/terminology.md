@@ -2,7 +2,7 @@ This page lists all the ValueSets, CodeSystems, and ConceptMaps defined as part 
 
 ### Value Sets Published In This IG
 
-{% include res-list-generator.md type="ValueSet" %}
+{% lang-fragment res-list-generator.md type="ValueSet" %}
 
 ### Code Systems
 
@@ -11,4 +11,4 @@ See the [FHIR terminology section]({{site.data.fhir.path}}terminologies-systems.
 
 #### Code Systems Published In This IG
 
-{% include res-list-generator.md type="CodeSystem" %}
+{% lang-fragment res-list-generator.md type="CodeSystem" %}

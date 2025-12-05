@@ -81,7 +81,7 @@ Many of the profiles are based on US Core 7.0.0 while also declaring conformance
 * [PAS Timing](StructureDefinition-profile-datatype-timing.html) - {{site.data.StructureDefinition-profile-datatype-timing.description}}
 
 ##### Extensions
-{% include ext-list-generator.md use="profile" %}
+{% lang-fragment ext-list-generator.md use="profile" %}
 
 #### Examples
 The following examples are present in this guide to show specific use cases:
@@ -99,8 +99,8 @@ The following examples are present in this guide to show specific use cases:
 
 
 ### Cross-Version Analysis
-{% include cross-version-analysis.xhtml %}
+{% lang-fragment cross-version-analysis.xhtml %}
 
 ### Global Profiles
 
-{% include globals-table.xhtml %}
+{% lang-fragment globals-table.xhtml %}

@@ -81,7 +81,7 @@ In addition, this guide uses content from the following FHIR-related specificati
 
 In addition, this guide also relies on a number of parent implementation guides:
 
-{% include dependency-table-nontech.xhtml %}
+{% lang-fragment dependency-table-nontech.xhtml %}
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 
@@ -90,4 +90,4 @@ This implementation guide and the underlying FHIR specification are licensed as 
 
 There are a number of X12 codes that are used in the examples in this Implementation Guide.  These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions.
 
-{% include ip-statements.xhtml %}
+{% lang-fragment ip-statements.xhtml %}

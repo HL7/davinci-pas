@@ -10,7 +10,7 @@ The process that Da Vinci has adopted includes:
 
 Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
 
-{% include burdenReduction.md %}
+{% lang-fragment burdenReduction.md %}
 
 
 ### Underlying Technologies
