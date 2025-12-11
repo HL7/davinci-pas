@@ -52,7 +52,15 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464)
 * [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397)
 * [FHIR-51534](https://jira.hl7.org/browse/FHIR-51534)
-
+* [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link
+* [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 [link](epaWorkflow.html#FHIR-52779)
+* [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 [link](usecases.html#FHIR-52771)
+* [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated [link](credits.html#FHIR-52744)
+* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 [link](index.html#FHIR-52712)
+* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent [link](specification.html#FHIR-51954)
+* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language
+* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set [link](specification.html#FHIR-51905)
+* [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides [link](conformance.html#FHIR-50469)
 
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.

@@ -24,6 +24,7 @@ Along with those expectations, the following rules on MustSupport are also requi
 * PA Client Systems **SHOULD NOT** send any data elements that are not marked as Must Support.  If these data elements are included in a Claim Request or Claim Inquiry, the receiving PA Intermediary System **MAY** ignore those elements.
 
 ### Interoperability Expectations
+<div class="new-content"><a name="FHIR-50469"> </a>
 For the PAS specification to work successfully at scale, it is essential that PAS clients and servers be able to interoperate with each other without custom expectations or deviations driven by EHR-specific or payer-specific requirements. The following rules are intended to help drive such consistency:
 
 When processing prior auth requests and additional data submissions, PAS services **SHALL NOT** depend on or set expectations for the inclusion of resource instances not compliant with profiles defined in this guide, CRD, DTR, HRex, or US Core. Similarly, they **SHALL NOT** depend on or set expectations for the inclusion of any data elements not marked as mandatory (min cardinality >= 1) or mustSupport in those profiles.
@@ -34,3 +35,4 @@ When processing prior auth requests and additional data submissions, PAS service
 2. Where cardinality and other constraints present in profiles allow data elements to be omitted, PAS compliant systems **SHALL NOT** treat the omission of those elements as a conformance error. PAS responses are free to reject claims due to missing elements, but not treat the omission of non-required elements as an error resulting in a 4xx.
 3. PAS clients and services **SHALL** use standard PAS data elements (i.e. elements found within PAS-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data if such elements are intended to convey such information. (If an organization believes they have a requirement for a data element not marked as mustSupport in the PAS or inherited profiles, they should raise the requirement for discussion on the [PAS stream] on chat.fhir.org.)
 4. PAS implementing organizations **SHALL NOT** publish guidance setting expectations for where certain data elements are conveyed within PAS and inherited data structures, but **MAY** submit change requests to PAS, HRex, or US Core requesting that additional guidance be provided to implementers on data structure usage to increase consistency across implementations.
+</div>
