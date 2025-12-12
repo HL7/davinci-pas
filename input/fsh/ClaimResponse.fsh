@@ -103,7 +103,8 @@ Id: profile-claimresponse
 Title: "PAS Claim Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of a prior authorization request"
 * . ^short = "Response to a preauthorization"
-* outcome from ClaimResponseOutcome (required) ^short = "complete | error | partial"
+* outcome from ClaimResponseOutcome (required) 
+* outcome ^short = "complete | error | partial"
 * item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 * communicationRequest MS
