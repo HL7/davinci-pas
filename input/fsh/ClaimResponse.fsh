@@ -242,7 +242,10 @@ Description: "The type of provider who has been authorized to provide this item.
 Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
 Description: "The specific provider who has been authorized to provide this item."
-* extension contains provider 0..1 and AuthorizedProviderType named providerType 0..1
+* extension contains provider 0..1 and 
+                     AuthorizedProviderType named providerType 0..1 and
+                     role 0..1 and
+                     qualification 0..1
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
