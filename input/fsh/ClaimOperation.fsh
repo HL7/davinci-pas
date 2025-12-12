@@ -73,6 +73,7 @@ Description: "The profile for PAS subscription."
 * criteria.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria named filterCriteria 1..1 MS
 * status = #active
 * channel.type = #rest-hook
+* channel.endpoint 1..1 MS
 * channel.payload.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content named payloadContent 1..1 MS
 * channel.payload.extension[payloadContent].valueCode = #full-resource
 
