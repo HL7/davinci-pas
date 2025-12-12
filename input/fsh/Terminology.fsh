@@ -200,3 +200,11 @@ Title: "X12 278 Nutrition Enteral Formula Type"
 Description: "This set of codes identifies enteral formula codes."
 * ^experimental = false
 * codes from system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+
+ValueSet: ClaimResponseOutcome
+Title: "Claim Response Outcome"
+Description: "This set of codes restricts the outcome of a claim response."
+* ^experimental = false
+* ^compose.include[0].valueSet = "http://hl7.org/fhir/ValueSet/remittance-outcome"
+* ^compose.exclude[0].system = "http://hl7.org/fhir/remittance-outcome"
+* ^compose.exclude[0].concept[+].code = #queued
