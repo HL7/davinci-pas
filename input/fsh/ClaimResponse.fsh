@@ -60,7 +60,10 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
     ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 MS and
     RevenueCode named revenue 0..1 MS and
     RevenueUnitRateLimit named revenueUnitRateLimit 0..1 MS and
-    RequestedService named requestedService 0..1 MS
+    RequestedService named requestedService 0..1 MS and
+    ServiceItemRequestType named requestType 0..1 MS and
+    CertificationType named certificationType 0..1 MS and
+    ClaimResponseItemCategory named category 0..1
   * itemSequence 1..1 MS
   * provider MS
   * provider only Reference(PASPractitioner or PASOrganization)
@@ -256,3 +259,12 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 * . ^short = "Response to a preauthorization query"
 * item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
+
+Extension: ClaimResponseItemCategory
+Id: extension-itemCategory
+Description: "The claim item category being responded to."
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 (required)
+* valueCodeableConcept ^binding.description = "Codes identifying the classification of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
