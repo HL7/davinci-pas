@@ -7,7 +7,9 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * . ^short = "Preauthorization"
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS and
 	ConditionCode named conditionCode 0..* MS and
-	HomeHealthCareInformation named homeHealthCareInformation 0..1 MS
+	HomeHealthCareInformation named homeHealthCareInformation 0..1 MS and	
+	AuthorizationNumber named authorizationNumber 0..1 MS and
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * extension[conditionCode] ^short = "Used to indicate condition codes for various requests for service."
 * extension[homeHealthCareInformation] ^short = "Used to provide required information about home health care services. (CR6)"
