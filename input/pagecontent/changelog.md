@@ -52,20 +52,20 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464)
 * [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397)
 * [FHIR-51534](https://jira.hl7.org/browse/FHIR-51534)
-* [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link
-* [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 [link](epaWorkflow.html#FHIR-52779)
-* [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 [link](usecases.html#FHIR-52771)
-* [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated [link](credits.html#FHIR-52744)
-* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 [link](index.html#FHIR-52712)
-* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent [link](specification.html#FHIR-51954)
-* [FHIR-51910](https://jira.hl7.org/browse/FHIR-51910) - Made Subscription.Endpoint mandatory and must support [link](StructureDefinition-profile-subscription.html)
-* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language
-* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set [link](specification.html#FHIR-51905)
-* [FHIR-51754](https://jira.hl7.org/browse/FHIR-51754) - Included .role and .qualification in the ItemAuthorizedProvider extension [link](StructureDefinition-extension-itemAuthorizedProvider.html)
-* [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension [link](StructureDefinition-profile-claimresponse.html.html)
-* [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension [link](StructureDefinition-profile-claim.html.html)
-* [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only [link](StructureDefinition-profile-claimresponse.html.html)
-* [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides [link](conformance.html#FHIR-50469)
+* [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
+* [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 *(correction)* [link](epaWorkflow.html#FHIR-52779)
+* [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 *(correction)* [link](usecases.html#FHIR-52771)
+* [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated *(correction)* [link](credits.html#FHIR-52744)
+* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 *(correction)* [link](index.html#FHIR-52712)
+* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent *(correction)* [link](specification.html#FHIR-51954)
+* [FHIR-51910](https://jira.hl7.org/browse/FHIR-51910) - Made Subscription.Endpoint mandatory and must support *(correction)* [link](StructureDefinition-profile-subscription.html)
+* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
+* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set *(clarification)* [link](specification.html#FHIR-51905)
+* [FHIR-51754](https://jira.hl7.org/browse/FHIR-51754) - Included .role and .qualification in the ItemAuthorizedProvider extension *(correction)* [link](StructureDefinition-extension-itemAuthorizedProvider.html)
+* [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension *(correction)* [link](StructureDefinition-profile-claimresponse.html.html)
+* [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension *(enhancement)* [link](StructureDefinition-profile-claim.html.html)
+* [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only *(clarification)* [link](StructureDefinition-profile-claimresponse.html.html)
+* [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides *(clarification)* [link](conformance.html#FHIR-50469)
 
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
