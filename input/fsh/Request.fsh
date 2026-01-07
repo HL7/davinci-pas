@@ -71,14 +71,28 @@ Profile: PASTiming
 Parent: Timing
 Id: profile-datatype-timing
 Title: "PAS Timing"
-Description: "PAS constraints on the Timing datatype used in the various service requests."
+Description: """PAS constraints on the Timing datatype used in the various service requests.
+Each PAS Timing SHALL have at least one of:
+1. count (with optional countMax)
+2. frequency and period and periodUnit (with optional frequencyMax and periodMax)
+3. calendarPattern extension
+4. deliveryPattern extension
+
+Please see the documentation on the FHIR Timing datatype for more information of how common timing uses are represented."""
 * extension contains CalendarPattern named calendarPattern 0..1 MS and
 	DeliveryPattern named deliveryPattern 0..1 MS
+* repeat 0..1 MS
 * repeat.bounds[x] MS
   * ^short = "The number of periods over which the service is delivered."
 * repeat.bounds[x] only Duration
-* repeat.period MS
-* repeat.periodUnit MS
+* repeat.boundsDuration 0..1 MS
+* repeat.count 0..1 MS
+* repeat.countMax 0..1 MS
+* repeat.frequency 0..1 MS
+* repeat.frequencyMax 0..1 MS
+* repeat.period 0..1 MS
+* repeat.periodMax 0..1 MS
+* repeat.periodUnit 0..1 MS
 
 //modified
 Extension: CalendarPattern
