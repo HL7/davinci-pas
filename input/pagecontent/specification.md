@@ -50,8 +50,9 @@ This Bundle will then be sent as the sole payload of a [Claim submit](OperationD
 
 In the event that the prior authorization cannot be evaluated and a final response returned within the required timeframe, a response in which one or more of the requested authorization items are 'pended' will be returned.  A subscription-based mechanism SHALL be used by the client to be informed of updates to the authorization.  As well, the client (or other interested systems - e.g. patient, caregiver or performing provider systems) can use the [Claim inquire operation](OperationDefinition-Claim-inquiry.html) to query for the final results.  
 
->**NOTE**: The Claim Inquiry response does not include all of the information that can be returned in a request response, such as any request for additional information, so the inquire operation **SHOULD NOT** be used by the client while waiting for final results.  During this period of time, the same Claim submit operation can be used to request cancellation or modification of the prior authorization.
-{: .modified-content}
+<p class="modified-content">
+**NOTE**: The Claim Inquiry response does not include all of the information that can be returned in a request response, such as any request for additional information, so the inquire operation **SHOULD NOT** be used by the client while waiting for final results.  During this period of time, the same Claim submit operation can be used to request cancellation or modification of the prior authorization.
+</p>
 
 {::options parse_block_html="false" /}
 <figure>
@@ -94,22 +95,24 @@ The response to the prior authorization is processed in the reverse order as the
 
 Whether a response is considered 'pended', 'denied', or 'successful' depends on the review action code returned in the response.  It can be found in ClaimResponse.item.adjudication.extension(reviewaction).code.
 
->Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses.
-{: .modified-content}
+<p class="modified-content">
+Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses.
+</p>
 
 It is possible that the incoming prior authorization Bundle can not be processed due to validation errors or other non-business-errors.  In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no ClaimResponse will be returned.  These errors are NOT the errors that are detected by the system processing the request and that can be conveyed in a ClaimResponse via the error capability.
 
 The resulting Bundle is returned as the HTTP body of the POST response.
 
 ##### Returning Authorized Items that are different from what was Requested
->It is often the case that what is authorized is different from what was requested.  Sometimes this is a modification of the requested item such as different quantities, eg. requested five counselling sessions but was authorized for three, or different locations, eg. requested services to be provided by Provider A but authorized to be provided by Provider B.  Other times these are authorized items that are in addition to the requested items.
->
->In surveys with payers, it appears that this is returned in X12 responses in two different ways.  Some payers will return the requested items as 'denied' and return the authorized items as extra items.  Others will return the requested items as modified with the differences in the item itself.  To achieve consistency in the FHIR response, we have decided to require one method for returning the authorized items if they are different from what was requested.
->
->For instances where the authorized item is a modification of the requested item, the requested item SHALL be returned in the ClaimResponse.item with an adjudication status of A6 - 'Modified'.  The actual authorized item SHALL be returned in the ClaimResponse.addItem.  The itemSequence element is used to link the addItem to the original item.  NOTE: The itemAuthorizedDetail extension is still allowed on the ClaimResponse.item.  The new intent of this extension is to indicate what was authorized which **SHOULD** match what was requested since the ClaimResponse.item does not have this information.  If what has been authorized is different, then the ClaimResponse.addItem SHALL be used.
->
->For instances where there are new authorized items, they are returned in the ClaimResponse.addItem and the itemSequence will not match any of the requested items and thus will indicate that it is a new item.
-{: .modified-content}
+<p class="modified-content">
+It is often the case that what is authorized is different from what was requested.  Sometimes this is a modification of the requested item such as different quantities, eg. requested five counselling sessions but was authorized for three, or different locations, eg. requested services to be provided by Provider A but authorized to be provided by Provider B.  Other times these are authorized items that are in addition to the requested items.
+
+In surveys with payers, it appears that this is returned in X12 responses in two different ways.  Some payers will return the requested items as 'denied' and return the authorized items as extra items.  Others will return the requested items as modified with the differences in the item itself.  To achieve consistency in the FHIR response, we have decided to require one method for returning the authorized items if they are different from what was requested.
+
+For instances where the authorized item is a modification of the requested item, the requested item SHALL be returned in the ClaimResponse.item with an adjudication status of A6 - 'Modified'.  The actual authorized item SHALL be returned in the ClaimResponse.addItem.  The itemSequence element is used to link the addItem to the original item.  NOTE: The itemAuthorizedDetail extension is still allowed on the ClaimResponse.item.  The new intent of this extension is to indicate what was authorized which **SHOULD** match what was requested since the ClaimResponse.item does not have this information.  If what has been authorized is different, then the ClaimResponse.addItem SHALL be used.
+
+For instances where there are new authorized items, they are returned in the ClaimResponse.addItem and the itemSequence will not match any of the requested items and thus will indicate that it is a new item.
+</p>
 
 ##### Prior Authorization Request and Response Example
 This is an example of a standard Referral Request / Response sequence between a Primary Care Provider and a Utilization Management Organization. The [request example](Bundle-ReferralAuthorizationBundleExample.html) will show how a PCP can request a referral to a specialist for a patient from a UMO. The [response example](Bundle-ReferralAuthorizationResponseBundleExample.html) will also show the response.
@@ -182,17 +185,21 @@ Inquiries will happen as a result of manual invocation.  Although there are no c
 
 The parameter to the inquiry operation is a [PAS Inquiry Request Bundle](StructureDefinition-profile-pas-inquiry-request-bundle.html) which has a [Claim Inquiry profile instance](StructureDefinition-profile-claim-inquiry.html) as the first resource as well as any resources referenced by the Claim Inquiry.  The operation is a 'query-by-example' where the resource sent in provides an example of the data that is being searched for. The system uses the example to generate the query and find matching records. The exact rules for which elements are required and how those elements are used in the search are contained in the X12 278 Inquiry and Response guide.
 
->To search for a specific claim, the Claim.identifier can be sent and it **SHOULD** be either the previously returned Administration Reference Number (REF-BB) or the Prior Authorization Number (REF-NT).
-{: .modified-content}
+<p class="modified-content">
+To search for a specific claim, the Claim.identifier can be sent and it **SHOULD** be either the previously returned Administration Reference Number (REF-BB) or the Prior Authorization Number (REF-NT).
+</p>
 
 In the base FHIR specification, the item.productOrService is mandatory. To conduct an inquiry that is not for a specific service, the 'not-applicable' code that is in the bound value set is sent. Intermediaries SHALL interpret the 'not-applicable' code as no product or service code.
 
->NOTE: The inquiry operation must contain the details of the organization making the query (the X12 Requester, Loop 2000B), a payer organization (the X12 UMO, Loop 2000A), and a patient (Loop 2000C) for the inquiry. <span class="modified-content" markdown="1"><a name="FHIR-51954"></a> As per the X12 Inquiry guide, loop 2000C is always valued when inquiring about authorizations for a specific patient.  Loop 2000D is also used when necessary to identify a patient as a dependent.  Thus Loop 2000D may be present in the case where the patient is a dependent. </span> The operation does not allow inquiries that do not identify a specific patient, such as an inquiry for all prior authorization requests submitted on a specific date.  The patient will be identified by their member identifier.  This identifier is a specific slice on the Patient resource that is identified with a type of 'MB'.  The identifier system will indicate the payer that the member identifier is associated with.  Providers will need correspond with payers to know what system to send.
-{: .modified-content}
+<p class="modified-content">
+NOTE: The inquiry operation must contain the details of the organization making the query (the X12 Requester, Loop 2000B), a payer organization (the X12 UMO, Loop 2000A), and a patient (Loop 2000C) for the inquiry. <span class="modified-content" markdown="1"><a name="FHIR-51954"></a> As per the X12 Inquiry guide, loop 2000C is always valued when inquiring about authorizations for a specific patient.  Loop 2000D is also used when necessary to identify a patient as a dependent.  Thus Loop 2000D may be present in the case where the patient is a dependent. </span> The operation does not allow inquiries that do not identify a specific patient, such as an inquiry for all prior authorization requests submitted on a specific date.  The patient will be identified by their member identifier.  This identifier is a specific slice on the Patient resource that is identified with a type of 'MB'.  The identifier system will indicate the payer that the member identifier is associated with.  Providers will need correspond with payers to know what system to send.
+</p>
 
 The information in the Bundle is mapped to a 278 Health Care Services Review Information - Inquiry transaction (278i request).  The 278 Health Care Services Review Information - Response (278i response) is then mapped to a [PAS Inquiry Response Bundle](StructureDefinition-profile-pas-inquiry-response-bundle.html) with the results of the inquiry contained in the Bundle.
->This response will have a [Claim Inquiry Response instance](StructureDefinition-profile-claiminquiryresponse.html) as the first entry.  This Claim Inquiry Response **SHALL** either reference a Claim or have a Data Absent Reason indicating why the Claim can not be referenced (eg. original claim received by fax).  The referenced Claim instance **SHOULD** be returned if there is information in the Response that needs to be present can not be returned in the Claim Response instance.
-{: .modified-content}
+
+<p class="modified-content">
+This response will have a [Claim Inquiry Response instance](StructureDefinition-profile-claiminquiryresponse.html) as the first entry.  This Claim Inquiry Response **SHALL** either reference a Claim or have a Data Absent Reason indicating why the Claim can not be referenced (eg. original claim received by fax).  The referenced Claim instance **SHOULD** be returned if there is information in the Response that needs to be present can not be returned in the Claim Response instance.
+</p>
 
 Notes:
 * the returned ClaimResponse **SHALL** include the current results for all submitted items, including any items changed or canceled since the original authoriation request.  (See [Updating authorization requests](#updating-authorization-requests) below.)
@@ -247,8 +254,9 @@ There are four types of changes possible:
 
 See the [Claim Update profile](StructureDefinition-profile-claim-update.html) for more information on how to create an update.
 
->The Claim Update Bundle **SHALL** contain the Claim Update instance as the first entry.  The Claim that is being updated **SHALL** be included in the Bundle.  If that Claim instance is itself a Claim Update, its referenced Claim **SHALL NOT** be included.  All other referenced resources **SHALL** be included in the Bundle.
-{: .modified-content}
+<p class="modified-content">
+The Claim Update Bundle **SHALL** contain the Claim Update instance as the first entry.  The Claim that is being updated **SHALL** be included in the Bundle.  If that Claim instance is itself a Claim Update, its referenced Claim **SHALL NOT** be included.  All other referenced resources **SHALL** be included in the Bundle.
+</p>
 
 From an X12 perspective, only those items/attachments that are being added/cancelled/revised need to be present.  From an HL7 perspective, resources are generally represented as a cohesive whole, not a set of deltas from a previous resource.
 
