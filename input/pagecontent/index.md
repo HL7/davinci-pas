@@ -11,8 +11,9 @@ This specification is currently published as a Standard for Trial Use (STU).
 
 Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.  Please see this [Da Vinci External Reference page](https://confluence.hl7.org/display/DVP/Da+Vinci+Reference+to+External+Standards+and+Terminologies) for details on how to get this mapping.
 
->The specific X12 transactions that this IG supports are 005010X217 - Health Care Services Review - Request for Review and Response (278) and 005010X215 - Health Care Services Review - Inquiry and Response (278).  There are many situationally required fields that are specified in those guides that do not have guidance in this Implementation Guide. All of these fields are marked as Must Support in this guide. However, due to licensing restrictions, implementers need to consult the above X12 guides to know the requirements for these fields.
-{: .modified-content}
+<p class="modified-content"><a name="FHIR-52712"> </a>
+The specific X12 transactions that this IG supports are 005010X217 - Health Care Services Review - Request for Review and Response (278) and 005010X215 - Health Care Services Review - Inquiry and Response (278).  There are many situationally required fields that are specified in those guides that do not have guidance in this Implementation Guide. All of these fields are marked as Must Support in this guide. However, due to licensing restrictions, implementers need to consult the above X12 guides to know the requirements for these fields.
+</p>
 
 >Several of the profiles will require use of terminologies that are part of X12 which we anticipate being made publicly available.  At such time as this occurs, the implementation guide will be updated to bind to these as external terminologies.
 {: .stu-note}
@@ -71,10 +72,11 @@ This implementation guide (and the menu for it) is organized into the following 
 
 ### Dependencies
 
->At present, PAS is based on [FHIR R4]({{site.data.fhir.path}}).  In addition, PAS is dependent on the [US Core 3.1 (FHIR R4)]({{site.data.fhir.ver.uscore3}}), [US Core 6.1 (FHIR R4)]({{site.data.fhir.ver.uscore6}}) and [US Core 7.0 (FHIR R4)]({{site.data.fhir.ver.uscore7}})  implementation guides.  The first is supported for those systems limited to USCDI 1 capabilities, the second is for upcoming regulatory requirements mandating support for USCDI 3, and the last is to enable support for proposed regulations mandating support for USCDI 4.  Wherever possible, Da Vinci profiles strive to comply with all three releases, simplifying implementation for those who will need to support varying regulatory expectations over time.
->
->In some situations, the payer community requires additional constraints or needs to profile resources that are not yet supported by US Core.  In these cases, this IG does not derive from the US Core profiles, though it does align with them as much as possible.  It is possible that certain PAS profiles and/or descriptive content may migrate to a future release of US Core, and in some cases, to the base FHIR standard.
-{: .modified-content}
+<p class="modified-content">
+At present, PAS is based on [FHIR R4]({{site.data.fhir.path}}).  In addition, PAS is dependent on the [US Core 3.1 (FHIR R4)]({{site.data.fhir.ver.uscore3}}), [US Core 6.1 (FHIR R4)]({{site.data.fhir.ver.uscore6}}) and [US Core 7.0 (FHIR R4)]({{site.data.fhir.ver.uscore7}})  implementation guides.  The first is supported for those systems limited to USCDI 1 capabilities, the second is for upcoming regulatory requirements mandating support for USCDI 3, and the last is to enable support for proposed regulations mandating support for USCDI 4.  Wherever possible, Da Vinci profiles strive to comply with all three releases, simplifying implementation for those who will need to support varying regulatory expectations over time.
+
+In some situations, the payer community requires additional constraints or needs to profile resources that are not yet supported by US Core.  In these cases, this IG does not derive from the US Core profiles, though it does align with them as much as possible.  It is possible that certain PAS profiles and/or descriptive content may migrate to a future release of US Core, and in some cases, to the base FHIR standard.
+</p>
 
 In addition, this guide uses content from the following FHIR-related specifications and implementation guides:
 * [Subscriptions R5 Backport]({{site.data.fhir.ver.subscriptions}})
