@@ -69,6 +69,7 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-53539](https://jira.hl7.org/browse/FHIR-53539) - Added clarification to PASTiming and PASQuantity *(enhancement)* [PASTiming](StructureDefinition-profile-datatype-timing.html) [PASQuantity](StructureDefinition-profile-quantity.html)
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
 * [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile
+* [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list
 
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.

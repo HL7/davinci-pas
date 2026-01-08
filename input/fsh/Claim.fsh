@@ -211,7 +211,22 @@ RuleSet: CommonClaimElements
 * supportingInfo[AdditionalInformation].extension contains DocumentInformation named documentInformation 1..1 MS
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
-* supportingInfo[AdditionalInformation].value[x] only Reference( PASDocumentReference or http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0 or Resource)
+* supportingInfo[AdditionalInformation].value[x] only Reference( PASDocumentReference or
+																$DTRQRBundle or
+																$USCoreQuestionnaireResponse or 
+																$USCoreAllergyIntolerence or 
+																$USCoreConditionEncounterDiagnosis or
+																$USCoreConditionProblemsandHealthConcerns or
+																$USCoreDiagnositicReportforLaboratoryResults or
+																$USCoreImmunization or
+																$USCoreMedicationRequest or
+																$USCoreProcedure or
+																$USCoreServiceRequest or
+																$USCoreObservationClinicalResult or
+																$USCoreSimpleObservation or
+																$USCoreVitalSigns or
+																NutritionOrder or
+																DeviceRequest)
 * supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile SHOULD be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."
