@@ -100,6 +100,9 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * error.code MS
 * error.code from X12278RejectReasonCodes (required)
 
+* extension contains ClaimResponseReviewer named claimResponseReviewer 0..1 MS
+* extension[claimResponseReviewer] ^short = "The responsible practitioner who reviewed to the request"
+
 Profile: PASClaimResponse
 Parent: PASClaimResponseBase
 Id: profile-claimresponse
@@ -271,3 +274,16 @@ Description: "The claim item category being responded to."
 * valueCodeableConcept ^binding.description = "Codes identifying the classification of service. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem"
+
+Extension: ClaimResponseReviewer
+Id: extension-claimResponseReviewer
+Description: "The responsible practitioner who reviewed to the request."
+* extension contains wasHumanReviewedFlag 1..1 and
+            reviewerNPI 0..1 and
+            reviewerSpecialty 0..1   
+* extension[wasHumanReviewedFlag].value[x] only boolean
+* extension[reviewerNPI].value[x] only PASIdentifier
+* extension[reviewerSpecialty].value[x] only CodeableConcept
+* extension[reviewerSpecialty].value[x] from https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.1066 (extensible)
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse"
