@@ -250,6 +250,10 @@ Description: "The specific provider who has been authorized to provide this item
                      role 0..1 and
                      qualification 0..1
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
+* extension[role].value[x] only CodeableConcept
+* extension[role].valueCodeableConcept from http://hl7.org/fhir/R4/valueset-claim-careteamrole (required)
+* extension[qualification].value[x] only CodeableConcept
+* extension[qualification].valueCodeableConcept from http://hl7.org/fhir/R4/valueset-provider-qualification (required)
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
