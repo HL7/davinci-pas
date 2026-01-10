@@ -190,7 +190,9 @@ Description: "A revenue code that expresses what was approved which maps to X12 
 Extension: ErrorElement
 Id: extension-errorElement
 Description: "The specific loop, segment, or element that this error information is about.  The string will follow the X12 format for specifying elements and is returned from the Payer.  Example: 2010A-NM103"
-* value[x] only string
+* extension contains processNote 0..1 and error 0..1
+* extension[processNote].value[x] only positiveInt
+* extension[error].value[x] only string
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.error"
 
