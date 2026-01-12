@@ -23,8 +23,10 @@ Along with those expectations, the following rules on MustSupport are also requi
 * PA Client Systems **SHALL** be capable of receiving all data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.  They **SHALL NOT** generate an error or cause the application to fail when receiving any data element that is marked as Must Support.
 * PA Client Systems **SHOULD NOT** send any data elements that are not marked as Must Support.  If these data elements are included in a Claim Request or Claim Inquiry, the receiving PA Intermediary System **MAY** ignore those elements.
 
+
 ### Interoperability Expectations
-<div class="new-content"><a name="FHIR-50469"> </a>
+<div class="new-content"  markdown="1">
+<a name="FHIR-50469"> </a>
 For the PAS specification to work successfully at scale, it is essential that PAS clients and servers be able to interoperate with each other without custom expectations or deviations driven by EHR-specific or payer-specific requirements. The following rules are intended to help drive such consistency:
 
 When processing prior auth requests and additional data submissions, PAS services **SHALL NOT** depend on or set expectations for the inclusion of resource instances not compliant with profiles defined in this guide, CRD, DTR, HRex, or US Core. Similarly, they **SHALL NOT** depend on or set expectations for the inclusion of any data elements not marked as mandatory (min cardinality >= 1) or mustSupport in those profiles.
