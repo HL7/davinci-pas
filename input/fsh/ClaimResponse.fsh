@@ -105,6 +105,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * extension contains ClaimResponseReviewer named claimResponseReviewer 0..1 MS
 * extension[claimResponseReviewer] ^short = "The responsible practitioner who reviewed to the request"
 
+* extension contains ItemAuthorizedProvider named authorizedProvider 0..* MS
+
 Profile: PASClaimResponse
 Parent: PASClaimResponseBase
 Id: profile-claimresponse
