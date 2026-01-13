@@ -43,15 +43,6 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/1069' could not b
 A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated%
 
-%Unable to provide support for code system https://codesystem.x12.org/external/886
-%Unable to provide support for code system https://codesystem.x12.org/005010/901
-%Unable to provide support for code system https://codesystem.x12.org/005010/889
-%Unable to provide support for code system https://codesystem.x12.org/005010/1365
-%Unable to provide support for code system https://codesystem.x12.org/005010/756
-%Unable to provide support for code system https://codesystem.x12.org/005010/1136
-%Unable to provide support for code system https://codesystem.x12.org/005010/1321
-%Unable to provide support for code system https://codesystem.x12.org/005010/755
-
 No definition could be found for URL value 'https://codesystem.x12.org/external/886'
 No definition could be found for URL value 'https://codesystem.x12.org/005010/901'
 No definition could be found for URL value 'https://codesystem.x12.org/005010/889'
@@ -89,13 +80,25 @@ A definition could not be found for Canonical URL 'https://valueset.x12.org/x217
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756'
 
-# 02 Value sets that contain X12 codes and are thus not able to be validated
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCategory%
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278ConditionCode%
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RejectReasonCodes%
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278FollowUpActionCodes%
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278RequestedServiceType%
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code%
+Unable to check whether the code is in the value set '' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
+Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PatDischargeStatus was not found
+Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit was not found
+Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PointOfOrigin was not found
+Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
+
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/756' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/icd9cm' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the value set cannot be expanded
+
 
 # 03 The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
@@ -109,20 +112,12 @@ This element does not match any known slice defined in the profile http://hl7.or
 # 05 Code systems that are not available in the terminology server
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated; Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' could not be found, so the code cannot be validated
 
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/AHANUBCRevenueCodes|2.2.0-ballot' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
-
-%Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
-%Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
-%Unable to provide support for code system http://terminology.hl7.org/CodeSystem/icd9cm
-%Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
-
 # 06 Variance Request from CGP for the profiles that are not derived from US Core - https://jira.hl7.org/browse/FHIR-42953
-US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile%
+US FHIR Usage rules require that all profiles on ServiceRequest derive from one of the base US profiles%
 
 # 07 Reference to draft or deprecated items - also a temporary PAS code system was defined that will be reviewed later.
 The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
@@ -132,16 +127,14 @@ Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+Reference to draft CodeSystem http://hl7.org/fhir/remittance-outcome|4.0.1
 
 # 07 For the given identifier slices the pattern will apply to all repeats
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
-# 09 We want this link to be version-agnostic
-The link 'http://hl7.org/fhir/us/davinci-pas' for "Prior Authorization Support (PAS)" is a canonical link and is therefore unsafe with regard to versions
-
 # 10 Our subscription notification example intentionally does not have narratives
-Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
 # 11 US Core is using type pattern and we are inheriting this in our snapshots
 The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -164,7 +157,7 @@ DA VINCI: The How to Read page (background.html) needs to include a reference to
 No definition could be found for URL value 'urn:trnorg:9012345678'
 
 # 2.2-02 The three versions of US Core that we depend on (3.1.0, 6.1.0, and 7.0.0) are all cited in regulation.  A future version of the PAS guide may use 8.0.0 if it is cited in regulation.
-The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered
 
 # 2.2-03 We can confirm that the profile complies with 3.1.1 and/or 6.1.0
 The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1'
@@ -181,8 +174,11 @@ The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-suppor
 # 2.2-06 The US Core DocumentReference profile marks the category as must-support but the uscore slice is not.
 The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
-# 2.2-07 tx.fhir.org can not handle the definition of this LOINC value set (see Zulip https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Validating.20a.20String.20value.20with.20a.20required.20binding/with/529948074)
-The System URI could not be determined for the code 'http://loinc.org#18776-5' in the ValueSet 'http://loinc.org/vs/valid-hl7-attachment-requests'
-None of the codings provided are in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a coding from this value set is required) (codes = http://loinc.org#28570-0)
+# 2.2-08 Pin-Canonicals is set but doesn't seem to be working
+There are multiple different potential matches for the url%
 
-The value provided ('http://loinc.org#18776-5') was not found in the value set 'HL7 Attachment Requests' (http://loinc.org/vs/valid-hl7-attachment-requests), and a code is required from this value set%
+# 2.2-09 Using the only published of the r4 Subscriptions backport IG
+The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+
+# 2.2-10 This is a value that the Publisher uses but does not appear to be defined yet
+No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
