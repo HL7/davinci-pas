@@ -205,6 +205,6 @@ ValueSet: ClaimResponseOutcome
 Title: "Claim Response Outcome"
 Description: "This set of codes restricts the outcome of a claim response."
 * ^experimental = false
-* ^compose.include[0].valueSet = "http://hl7.org/fhir/ValueSet/remittance-outcome"
-* ^compose.exclude[0].system = "http://hl7.org/fhir/remittance-outcome"
-* ^compose.exclude[0].concept[+].code = #queued
+* http://hl7.org/fhir/remittance-outcome#complete
+* http://hl7.org/fhir/remittance-outcome#error
+* http://hl7.org/fhir/remittance-outcome#partial

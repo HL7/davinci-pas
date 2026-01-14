@@ -255,9 +255,9 @@ Description: "The specific provider who has been authorized to provide this item
                      qualification 0..1
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
 * extension[role].value[x] only CodeableConcept
-* extension[role].valueCodeableConcept from http://hl7.org/fhir/R4/valueset-claim-careteamrole (required)
+* extension[role].valueCodeableConcept from http://hl7.org/fhir/ValueSet/claim-careteamrole (required)
 * extension[qualification].value[x] only CodeableConcept
-* extension[qualification].valueCodeableConcept from http://hl7.org/fhir/R4/valueset-provider-qualification (required)
+* extension[qualification].valueCodeableConcept from http://hl7.org/fhir/ValueSet/provider-qualification (required)
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
@@ -292,6 +292,6 @@ Description: "The responsible practitioner who reviewed to the request."
 * extension[wasHumanReviewedFlag].value[x] only boolean
 * extension[reviewerNPI].value[x] only PASIdentifier
 * extension[reviewerSpecialty].value[x] only CodeableConcept
-* extension[reviewerSpecialty].value[x] from https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.1066 (extensible)
+* extension[reviewerSpecialty].value[x] from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 (extensible)
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
