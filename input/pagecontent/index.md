@@ -86,6 +86,11 @@ In addition, this guide also relies on a number of parent implementation guides:
 
 {% lang-fragment dependency-table-nontech.xhtml %}
 
+### SNOMED Expansion Parameters
+
+{% lang-fragment expansion-params.xhtml %}
+
+
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 
 ### Intellectual Property Considerations

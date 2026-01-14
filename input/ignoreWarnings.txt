@@ -111,7 +111,6 @@ This element does not match any known slice defined in the profile http://hl7.or
 
 # 05 Code systems that are not available in the terminology server
 A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278NutritionOralDietType%
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' could not be found, so the code cannot be validated
@@ -130,7 +129,7 @@ The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValue
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 Reference to draft CodeSystem http://hl7.org/fhir/remittance-outcome|4.0.1
 
-# 07 For the given identifier slices the pattern will apply to all repeats
+# 08 For the given identifier slices the pattern will apply to all repeats
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 # 10 Our subscription notification example intentionally does not have narratives
@@ -174,11 +173,15 @@ The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-suppor
 # 2.2-06 The US Core DocumentReference profile marks the category as must-support but the uscore slice is not.
 The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
-# 2.2-08 Pin-Canonicals is set but doesn't seem to be working
+# 2.2-08 Pin-Canonicals is set but doesn't seem to be working for all cases
 There are multiple different potential matches for the url%
 
 # 2.2-09 Using the only published of the r4 Subscriptions backport IG
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 
 # 2.2-10 This is a value that the Publisher uses but does not appear to be defined yet
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
+
+# 2.2-11 There is a "rogue" DTR package with a version of 3.0.1 that should not exist
+The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21, but the most recent appropriate version is 3.0.1. This reference is getting old and the more recent version should be considered

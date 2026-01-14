@@ -30,7 +30,10 @@
 <artifact id="StructureDefinition/extension-itemCertificationExpirationDate" key="StructureDefinition-extension-itemCertificationExpirationDate" name="CertificationExpirationDate"/>
 <artifact id="StructureDefinition/extension-itemCertificationIssueDate" key="StructureDefinition-extension-itemCertificationIssueDate" name="CertificationIssueDate"/>
 <artifact id="StructureDefinition/extension-certificationType" key="StructureDefinition-extension-certificationType" name="CertificationType"/>
+<artifact id="ValueSet/ClaimResponseOutcome" key="ValueSet-ClaimResponseOutcome" name="Claim Response Outcome"/>
 <artifact deprecated="true" key="ClaimResponse" name="ClaimResponse"/>
+<artifact id="StructureDefinition/extension-itemCategory" key="StructureDefinition-extension-itemCategory" name="ClaimResponseItemCategory"/>
+<artifact id="StructureDefinition/extension-claimResponseReviewer" key="StructureDefinition-extension-claimResponseReviewer" name="ClaimResponseReviewer"/>
 <artifact id="StructureDefinition/extension-communicatedDiagnosis" key="StructureDefinition-extension-communicatedDiagnosis" name="CommunicatedDiagnosis"/>
 <artifact id="CommunicationRequest/CommunicationRequestExample" key="CommunicationRequest-CommunicationRequestExample" name="Communication Request Example"/>
 <artifact id="StructureDefinition/extension-conditionCode" key="StructureDefinition-extension-conditionCode" name="ConditionCode"/>

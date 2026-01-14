@@ -279,6 +279,7 @@ Description: "An example of a ClaimResponse where the requestor is a Practitione
 * addItem
   * itemSequence = 2
   * extension[revenue].valueCodeableConcept = https://www.nubc.org/CodeSystem/RevenueCodes#0202
+  * extension[category].valueCodeableConcept = https://codesystem.x12.org/005010/1365#3 "Consultation"
   * provider.extension[providerType].valueCodeableConcept = https://codesystem.x12.org/005010/98#P3
   * provider = Reference(ReferralPractitionerExample)
   * productOrService = https://codesystem.x12.org/005010/1365#3
