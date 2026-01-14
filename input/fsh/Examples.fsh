@@ -211,6 +211,7 @@ Description: "An example of a ClaimResponse that is rejected."
 * item.itemSequence = 1
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication.extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A3 "Not Certified"
+* extension[claimResponseReviewer].extension[wasHumanReviewedFlag].valueBoolean = true
 
 Instance: PractitionerRequestorResponseExample
 InstanceOf: PASClaimResponse
