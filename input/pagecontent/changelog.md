@@ -51,7 +51,7 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-51189](https://jira.hl7.org/browse/FHIR-51189) - Fixed typo on home page *(correction)* [link](index.html)
 * [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464) - Adjusted context of use for Claim and ClaimResponse extensions *(correction)*
 * [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397) - Made Response Bundle identifier element mandatory and added mapping *(correction)* [link](StructureDefinition-profile-pas-response-bundle.html)
-* [FHIR-51534](https://jira.hl7.org/browse/FHIR-51534) - Moved processNote and item.noteNumber from InquiryResponse to ClaimResponseBase *(correction)* [link](StructureDefinition-profile-claimresponse.html.html)
+* [FHIR-51534](https://jira.hl7.org/browse/FHIR-51534) - Moved processNote and item.noteNumber from InquiryResponse to ClaimResponseBase *(correction)* [link](StructureDefinition-profile-claimresponse.html)
 * [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
 * [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 *(correction)* [link](epaWorkflow.html#FHIR-52779)
 * [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 *(correction)* [link](usecases.html#FHIR-52771)
@@ -62,14 +62,14 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
 * [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set *(clarification)* [link](specification.html#FHIR-51905)
 * [FHIR-51754](https://jira.hl7.org/browse/FHIR-51754) - Included .role and .qualification in the ItemAuthorizedProvider extension *(correction)* [link](StructureDefinition-extension-itemAuthorizedProvider.html)
-* [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension *(correction)* [link](StructureDefinition-profile-claimresponse.html.html)
-* [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension *(enhancement)* [link](StructureDefinition-profile-claim.html.html)
-* [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only *(clarification)* [link](StructureDefinition-profile-claimresponse.html.html)
+* [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension *(correction)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension *(enhancement)* [link](StructureDefinition-profile-claim.html)
+* [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
 * [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides *(clarification)* [link](conformance.html#FHIR-50469)
 * [FHIR-53539](https://jira.hl7.org/browse/FHIR-53539) - Added clarification to PASTiming and PASQuantity *(enhancement)* [PASTiming](StructureDefinition-profile-datatype-timing.html) [PASQuantity](StructureDefinition-profile-quantity.html)
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
-* [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html.html)
-* [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list *(enhancement)* [link](StructureDefinition-profile-claim.html.html)
+* [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list *(enhancement)* [link](StructureDefinition-profile-claim.html)
 * [FHIR-53997](https://jira.hl7.org/browse/FHIR-53997) - Added new clarification to section 7.2.7.1 *(clarification)* [link](specification.html#FHIR-53997)
 
 ### Version = 2.1.0
