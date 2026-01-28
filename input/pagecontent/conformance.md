@@ -4,6 +4,11 @@ The PAS implementation guide defines the responsibilities of the two types of sy
 [**Client systems**](CapabilityStatement-EHRCapabilities.html) are typically Electronic Medical Record (EHR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.). 
 
 [**Server systems**](CapabilityStatement-IntermediaryCapabilities.html) (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for the conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
+<div class="new-content"  markdown="1">
+
+<a name="FHIR-53049"> </a>
+Payers **SHALL** have a distinct endpoint for each different supported version (which are not inter-version compatible) of the PAS specification. Payers may have multiple back-end functions that handle different types of decision support and/or different types of services. If a payer supports endpoint discovery, they **SHALL** have at most a single endpoint for each combination of version of the specification and coverage (e.g., Medicare, Medicaid, or commercial) they provide coverage under. In FHIR, a coverage instance essentially corresponds with the identification information on an insurance card, irrespective of the types of coverages available under that card. If a payer does not support endpoint discovery, they **SHALL** expose only one PAS endpoint of each supported version capable of handling all coverages.
+</div>
 
 ### MustSupport
 This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:

@@ -71,6 +71,7 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
 * [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list *(enhancement)* [link](StructureDefinition-profile-claim.html)
 * [FHIR-53997](https://jira.hl7.org/browse/FHIR-53997) - Added new clarification to section 7.2.7.1 *(clarification)* [link](specification.html#FHIR-53997)
+* [FHIR-53049](https://jira.hl7.org/browse/FHIR-53049) - Added new clarification to section 6.1 *(clarification)* [link](conformance.html#FHIR-53049)
 
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
