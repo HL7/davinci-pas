@@ -57,6 +57,10 @@ dependencies:
     uri: http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr
     version: 2.1.0
     id: dtr
+  hl7.fhir.us.davinci-cdex:
+    uri: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
+    version: 2.1.0
+    id: cdex
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     id: subscriptions
@@ -180,6 +184,7 @@ menu:
     US Core 7.0.0: new-tab {{site.data.fhir.ver.uscore7}}
     HRex 1.1.0: new-tab {{site.data.fhir.ver.hrex}}
     CRD: new-tab {{site.data.fhir.ver.crd}}
+    CDex: new-tab {{site.data.fhir.ver.cdex}}
     Subscription Backport: new-tab {{site.data.fhir.ver.subscriptions}}
   Support:
     Discussion Forum: https://chat.fhir.org/#narrow/stream/208874-Da-Vinci-PAS
