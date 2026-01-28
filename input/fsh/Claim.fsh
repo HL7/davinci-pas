@@ -19,6 +19,9 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * identifier.system ^short = "SHOULD use a scheme of 'urn:trnorg:<TRN03>'"
 * status MS
 * status = #active
+* status ^short = "This is fixed to active even if the CertificationType is indicating that the Claim is to be cancelled as it reflects that status of this instance and not the overall Claim"
+* type from ClaimTypes
+* type ^short = "This is used as a high-level mapping of the X12 UM03 field"
 * use MS
 * use = #preauthorization
 * patient MS

@@ -208,3 +208,11 @@ Description: "This set of codes restricts the outcome of a claim response."
 * http://hl7.org/fhir/remittance-outcome#complete
 * http://hl7.org/fhir/remittance-outcome#error
 * http://hl7.org/fhir/remittance-outcome#partial
+
+ValueSet: ClaimTypes
+Title: "Claim Types"
+Description: "This set of codes restricts the claim type."
+* ^experimental = false
+* http://terminology.hl7.org/CodeSystem/claim-type#institutional
+* http://terminology.hl7.org/CodeSystem/claim-type#professional
+* http://terminology.hl7.org/CodeSystem/claim-type#oral
