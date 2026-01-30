@@ -687,7 +687,7 @@ Title: "Communication Request Example"
 Description: "A sample communication request asking for more information about a specific diagnosis."
 * status = #active
 * category = https://codesystem.x12.org/005010/755#15 "Justification for Admissions"
-* payload.extension[serviceLineNumber].valuePositiveInt = 1
+* extension[serviceLineNumber].valuePositiveInt = 1
 * payload.extension[communicatedDiagnosis].valueCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4
 * payload.extension[contentModifier].valueCodeableConcept = http://loinc.org#18804-5
 * payload.contentString = "18776-5"

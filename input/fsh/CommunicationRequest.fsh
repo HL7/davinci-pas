@@ -3,6 +3,7 @@ Parent: CommunicationRequest
 Id: profile-communicationrequest
 Title: "PAS CommunicationRequest"
 Description: "PAS constraints on CommunicationRequest resource mandating support for elements relevant to the prior authorization response"
+* extension contains ServiceLineNumber named serviceLineNumber 0..1 MS
 * identifier MS
 * identifier ^short = "Unique Identifier used in linking the Communication Request to the response (X12's Attachment Control Number)."
 * status = #active (exactly)
@@ -12,7 +13,7 @@ Description: "PAS constraints on CommunicationRequest resource mandating support
 * medium MS
 * medium from PASCommunicationRequestMedium (extensible)
 * payload MS
-* payload.extension contains ServiceLineNumber named serviceLineNumber 0..1 MS and CommunicatedDiagnosis named communicatedDiagnosis 0..* MS and ContentModifier named contentModifier 0..* MS
+* payload.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS and ContentModifier named contentModifier 0..* MS
 * payload.content[x] MS
 * payload.content[x] only string
 * payload.contentString from http://loinc.org/vs/valid-hl7-attachment-requests (required)
@@ -53,3 +54,4 @@ Description: "A number that links the content being requested with the claim ite
 * ^context[=].expression = "CommunicationRequest.payload"
 * ^context[+].type = #element
 * ^context[=].expression = "Task.input"
+
