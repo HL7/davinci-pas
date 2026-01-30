@@ -1,3 +1,10 @@
+### Version = 2.2.0-snapshot
+This version includes changes that arose while updating the guide based on tickets raised during the ballot.
+
+#### Narrative Changes
+* Instrumented any conformance statements so that they appear with conformance ids.
+* Added a new [Conformance Details](conformancedetails.html) that provides a table with all of the narrative conformance statements.
+
 ### Version = 2.2.0-ballot
 This version includes changes due to comments raised by the community since 2.1.0 and fixes a number of issues with the profiles.
 

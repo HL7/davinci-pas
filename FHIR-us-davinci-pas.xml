@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/2025Sep" ciUrl="http://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pas/STU2.2.0-snapshot" ciUrl="http://build.fhir.org/ig/HL7/davinci-pas" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-pas" url="http://hl7.org/fhir/us/davinci-pas">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-pas"/>
-<version code="2.2.0-ballot" url="http://hl7.org/fhir/us/davinci-pas/2025Sep"/>
+<version code="2.2.0-snapshot" url="http://hl7.org/fhir/us/davinci-pas/STU2.2.0-snapshot"/>
+<version code="2.2.0-ballot" deprecated="true" url="http://hl7.org/fhir/us/davinci-pas/2025Sep"/>
 <version code="2.1.0" url="http://hl7.org/fhir/us/davinci-pas/STU2.1"/>
 <version code="2.1.0-preview" deprecated="true" url="http://hl7.org/fhir/us/davinci-pas/2.1.0-preview"/>
 <version code="2.0.1" deprecated="true" url="http://hl7.org/fhir/us/davinci-pas/STU2"/>
@@ -91,8 +92,10 @@
 <artifact id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="PAS Claim Response"/>
 <artifact id="StructureDefinition/profile-claimresponse-base" key="StructureDefinition-profile-claimresponse-base" name="PAS Claim Response Base"/>
 <artifact id="StructureDefinition/profile-claim-update" key="StructureDefinition-profile-claim-update" name="PAS Claim Update"/>
+<artifact id="ActorDefinition/client" key="ActorDefinition-client" name="PAS Client"/>
 <artifact id="ValueSet/PASCommunicationRequestMedium" key="ValueSet-PASCommunicationRequestMedium" name="PAS Communication Medium Value Set"/>
 <artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="PAS CommunicationRequest"/>
+<artifact id="ValueSet/cs-categories" key="ValueSet-cs-categories" name="PAS Conformance Statement Categories"/>
 <artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="PAS Coverage"/>
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="PAS Device Request"/>
 <artifact deprecated="true" id="CodeSystem/PASDiagnosisType" key="CodeSystem-PASDiagnosisType" name="PAS Diagnosis Type"/>
@@ -114,6 +117,7 @@
 <artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="PAS Nutrition Order"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="PAS Organization Base Profile"/>
 <artifact id="ValueSet/pas-pwk01-attachment-report-type-code" key="ValueSet-pas-pwk01-attachment-report-type-code" name="PAS PWK01 Attachment Report Type Code Value Set"/>
+<artifact id="ActorDefinition/payer" key="ActorDefinition-payer" name="PAS Payer"/>
 <artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="PAS Practitioner"/>
 <artifact id="StructureDefinition/profile-practitionerrole" key="StructureDefinition-profile-practitionerrole" name="PAS PractitionerRole"/>
 <artifact id="StructureDefinition/profile-quantity" key="StructureDefinition-profile-quantity" name="PAS Quantity"/>
@@ -194,7 +198,7 @@
 <page key="specification" name="Formal Specification"/>
 <page key="regulations" name="HIPAA Regulations"/>
 <page key="metrics" name="PAS Metrics"/>
-<page key="issues" name="PAS Outstanding Issues"/>
+<page deprecated="true" key="issues" name="PAS Outstanding Issues"/>
 <page key="terminology" name="PAS Terminology"/>
 <page key="epaWorkflow" name="PAS ePA Coordinator Information"/>
 <page key="index" name="Prior Authorization Implementation Guide Home Page"/>
