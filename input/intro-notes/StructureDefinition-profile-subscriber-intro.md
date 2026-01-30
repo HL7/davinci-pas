@@ -1,0 +1,1 @@
+X12 allows for an identifier for subscribers that is the "HIPAA Individual Identifier".  This is defined as a standard unique health identifier for each individual of the United States.  At this time, the Identifier system of such an identifier is not known.  Assuming that it would be defined, this identifier would be conveyed as a Patient.identifier.
