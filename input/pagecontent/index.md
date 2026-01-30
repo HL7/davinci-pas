@@ -100,7 +100,7 @@ This implementation guide defines additional constraints and usage expectations 
 ### Intellectual Property Considerations
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
 
-There are a number of X12 codes that are used in the examples in this Implementation Guide.  These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions.
+There are a number of X12 codes that are used in the examples in this Implementation Guide.  These codes are listed within an X12 implementation guide and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions.
 
 * Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved
 
