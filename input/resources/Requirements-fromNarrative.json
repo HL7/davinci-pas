@@ -1,13 +1,128 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 4,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"
+      }]
+    }
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pas/Requirements/fromNarrative",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.24.36.1"
+  }],
+  "version" : "2.2.0-snapshot",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
   "experimental" : false,
+  "date" : "2026-01-30T14:13:33-07:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fmlists@lists.hl7.org"
+    }]
+  },
+  {
+    "name" : "Jean Duteau",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:jean@duteaudesign.com"
+    }]
+  },
+  {
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "actor" : ["http://hl7.org/fhir/us/davinci-pas/ActorDefinition/client",
+  "http://hl7.org/fhir/us/davinci-pas/ActorDefinition/payer"],
+  "_actor" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
+      "valueString" : "client"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
+      "valueString" : "payer"
+    }]
+  }],
   "statement" : [{
+    "key" : "1",
+    "conformance" : ["SHALL"],
+    "requirement" : "spec-77:A subscription-based mechanism SHALL be used by the client to be informed of updates to the authorization."
+  },
+  {
+    "key" : "2",
+    "conformance" : ["SHALL"],
+    "requirement" : "spec-77:A subscription-based mechanism SHALL be used by the client to be informed of updates to the authorization."
+  },
+  {
+    "key" : "3",
+    "conformance" : ["SHALL"],
+    "requirement" : "spec-33:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
+  },
+  {
+    "key" : "4",
+    "conformance" : ["SHALL"],
+    "requirement" : "spec-33:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "ainfo-1",
+    "label" : "Payers MAY request additional information in a number of ways",
+    "conformance" : ["MAY"],
+    "requirement" : "A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:\r\n\r\n1. One or more codes in the PWK01 element\r\n1. One or more of the approved LOINC codes Attachments – LOINC in the HI segment\r\n1. A single 102089-0 LOINC code in the HI segment to request information via a payer’s specific questionnaire."
+  },
+  {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
       "valueCoding" : {
@@ -21,6 +136,23 @@
       "valueString" : "payer"
     }],
     "key" : "ainfo-2",
+    "conformance" : ["SHALL"],
+    "requirement" : "When a single LOINC code is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code **SHALL** be the DTR context ID used to retrieve the appropriate questionnaire."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "ainfo-3",
     "conformance" : ["SHALL"],
     "requirement" : "The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex."
   },
@@ -37,7 +169,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "payer"
     }],
-    "key" : "ainfo-3",
+    "key" : "ainfo-4",
     "conformance" : ["SHOULD"],
     "requirement" : "All of the additional information request codes **SHOULD** be used as input to a CDex task."
   },
@@ -54,7 +186,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "payer"
     }],
-    "key" : "ainfo-4",
+    "key" : "ainfo-5",
     "conformance" : ["SHALL"],
     "requirement" : "When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input."
   },
@@ -217,7 +349,8 @@
       "valueString" : "payer"
     }],
     "key" : "conf-13",
-    "requirement" : "2. Where cardinality and other constraints present in profiles allow data elements to be omitted, PAS compliant systems **SHALL NOT** treat the omission of those elements as a conformance error."
+    "conformance" : ["MAY"],
+    "requirement" : "If the proposed change is adopted and published in the PAS continuous integration build or the CI build of one of its dependencies (e.g. US Core), implementations **MAY**, by mutual agreement, pre-adopt the use of those additional profiles and/or mustSupport data elements and not be considered in violation of #1 above."
   },
   {
     "extension" : [{
@@ -227,8 +360,28 @@
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "payer"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
     }],
     "key" : "conf-14",
+    "requirement" : "2. Where cardinality and other constraints present in profiles allow data elements to be omitted, PAS compliant systems **SHALL NOT** treat the omission of those elements as a conformance error."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "conf-15",
     "conformance" : ["SHALL"],
     "requirement" : "3. PAS clients and services **SHALL** use standard PAS data elements (i.e. elements found within PAS-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data if such elements are intended to convey such information."
   },
@@ -245,7 +398,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "payer"
     }],
-    "key" : "conf-15",
+    "key" : "conf-16",
     "conformance" : ["MAY"],
     "requirement" : "4. PAS implementing organizations **SHALL NOT** publish guidance setting expectations for where certain data elements are conveyed within PAS and inherited data structures, but **MAY** submit change requests to PAS, HRex, or US Core requesting that additional guidance be provided to implementers on data structure usage to increase consistency across implementations."
   },
@@ -291,6 +444,229 @@
     "key" : "metric-2",
     "conformance" : ["SHOULD"],
     "requirement" : "PAS implementers **SHOULD** store information for each PAS call in a manner that would allow them to respond to measures based on this logical model."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "privacy",
+        "display" : "privacy"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "priv-1",
+    "conformance" : ["SHALL"],
+    "requirement" : "Implementations **SHALL** permit provider review of data prior to transmission, but **SHALL NOT** require such review."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "privacy",
+        "display" : "privacy"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "priv-2",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Payers who do not view the FHIR version of the transmitted information **SHOULD** be aware of the possibility of these limitations and ensure they have policies that enforce appropriate sharing constraints on data."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "privacy",
+        "display" : "privacy"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "priv-3",
+    "conformance" : ["SHOULD",
+    "MAY"],
+    "requirement" : "PAS Servers **SHOULD** support server-server OAuth and **MAY** support mutually authenticated TLS."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "prof-1",
+    "label" : "Timings SHALL have at least a count, frequency and period, a calendarPattern, or a deliveryPattern",
+    "conformance" : ["SHALL"],
+    "requirement" : "**Each PAS Timing SHALL have at least one of:**\r\n\r\n1. count (with optional countMax)\r\n1. frequency and period and periodUnit (with optional frequencyMax and periodMax)\r\n1. calendarPattern extension\r\n1. deliveryPattern extension"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "prof-2",
+    "label" : "Quantities SHALL have a value and either a unit or a code",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each PAS Quantity SHALL have:**\r\n\r\n1. a value\r\n1. either a unit or a code and system."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-3",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Claim instance of the update Bundle **SHALL** reference the updated Claim instance within the `Claim.related.claim` element. Note that the presence of this reference and the requirement that referenced instances be included in the submitted Bundle implies that the instance representing the prior version of the Claim **SHALL** be included in the update Bundle."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-4",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Claim instance of the update Bundle **SHALL** contain within the `Claim.item` element each item requested in the updated claim and any prior versions of the claim, including requested items that have been added, modified, deleted, or left unchanged during this or previous updates."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-5",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Claim instance of the update Bundle **SHALL** contain within the `Claim.supportingInfo` element each piece of supporting documentation submitted with the updated claim and any prior versions of claim, including supporting documentation that has been added, modified, deleted, or left unchanged during this or previous updates."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-6",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each `Claim.item` entry that represents an item no longer being requested, whether removed in this update or a previous one, **SHALL** be flagged using the infoCancelledFlag modifierExtension and **SHALL** have the code `3` (Cancel) in the Certification Type extension."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-7",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each `Claim.supportingInfo` entry that is no longer to be used when evaluating the request, whether removed in this update or a previous one, **SHALL** be flagged using the infoCancelledFlag modifierExtension."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-8",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each `Claim.item` and `Claim.supportingInfo` entry that has been changed as a part of this most recent update, including removal, **SHALL** be flagged using the changed extension with a value of `changed`."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-9",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each `Claim.item` and `Claim.supportingInfo` entry that has been added as a part of this most recent update, **SHALL** be flagged using the changed extension with a value of `added`."
   },
   {
     "key" : "prof-tim-2",
@@ -478,7 +854,7 @@
   {
     "key" : "spec-31",
     "conformance" : ["SHALL"],
-    "requirement" : "If the X12 275 is used for this purpose, the 275 BDS01 Filter ID Code element **SHALL** be set to \"B64\"."
+    "requirement" : "If the X12 275 is used for this purpose, the 275 BDS01 Filter ID Code element **SHALL** be set to \"B64\" and the CAT02 Attachment Information Format Code element **SHALL** be sent to \"HL\"."
   },
   {
     "key" : "spec-32",
@@ -628,12 +1004,12 @@
   {
     "key" : "spec-63",
     "conformance" : ["SHALL"],
-    "requirement" : "The Subscription filter criteria **SHALL** be org-identifier = [requesting provider organization id]."
+    "requirement" : "The Subscription filter criteria **SHALL** be org-identifier = [sending system identifier]."
   },
   {
     "key" : "spec-64",
     "conformance" : ["SHALL"],
-    "requirement" : "Intermediaries **SHALL** ensure that subscriptions to monitor a particular organization's prior authorizations are only created or modified by that organization."
+    "requirement" : "Intermediaries **SHALL** ensure that subscriptions to monitor a particular sending system's prior authorizations are only created or modified by that sending system."
   },
   {
     "key" : "spec-65",
@@ -654,11 +1030,6 @@
     "key" : "spec-68",
     "conformance" : ["SHALL"],
     "requirement" : "Due to the inquiry not supporting all of the required information needed in a PAS response, PAS Clients and Intermediaries **SHALL** only support subscriptions with content='full-resource'."
-  },
-  {
-    "key" : "spec-69",
-    "conformance" : ["SHALL"],
-    "requirement" : "Once the subscription has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed."
   },
   {
     "key" : "spec-70",
@@ -775,6 +1146,23 @@
     "key" : "use-4",
     "conformance" : ["SHOULD"],
     "requirement" : "As well, EHRs **SHOULD** annotate their orders with the decisions contained in the PAS Response."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "privacy",
+        "display" : "privacy"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "use-5",
+    "conformance" : ["SHALL"],
+    "requirement" : "Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) **SHALL** have the ability, but not an obligation, to review patient information and where appropriate amend or withhold the submission to comply with current regulations and relevant provider policies. The provider can choose to turn off the ability to review documentation. The vendor must allow them this option."
   },
   {
     "extension" : [{
