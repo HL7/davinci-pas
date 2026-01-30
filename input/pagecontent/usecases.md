@@ -63,7 +63,7 @@ In FHIR, the Claim resource which is being used for Prior Authorization does not
 {: .modified-content}
 
 ### Workflow
-Within an EHR Client, the prior authorization request process **SHOULD** be capable of being invoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
+§use-1:Within an EHR Client, the prior authorization request process **SHOULD** be capable of being invoked anywhere within the clinical and administrative workflow that is appropriate for that system.§ Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
 
 #### Scope of Work Flow
 In Scope
@@ -75,7 +75,7 @@ In Scope
 
 Out Of Scope
 
-1. **SHOULD NOT** be used for any Medication that is covered under a pharmacy benefit where prior authorization is provided by another electronic exchange process (e.g. NCPDP SCRIPT)
+1. §use-2:**SHOULD NOT** be used for any Medication that is covered under a pharmacy benefit where prior authorization is provided by another electronic exchange process (e.g. NCPDP SCRIPT)§
 
 #### Prior Authorization Process
 The prior authorization process from the EHR side consists of five steps:
@@ -94,11 +94,12 @@ The prior authorization process from the EHR side consists of five steps:
 {::options parse_block_html="true" /}
 
 NOTE:
-
-1. The intermediary **SHALL** always exchange a FHIR bundle with the EHR (figure 2.3)
-2. The intermediary **SHALL** convert the FHIR bundle to and from an X12 278 (and optionally to an X12 275) if necessary to meet the HIPAA  transaction requirements
+§§
+1. §use-3:The intermediary **SHALL** always exchange a FHIR bundle with the EHR (figure 2.3)§
+2. §use-4:The intermediary **SHALL** convert the FHIR bundle to and from an X12 278 (and optionally to an X12 275) if necessary to meet the HIPAA  transaction requirements§
 3. The intermediary is responsible for obtaining a status of the PA request from the Payer (may use the X12 278 Inquiry) when requested by the EHR
-4. The intermediary **MAY** convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the EHR  and the payer
+4. §use-5:The intermediary **MAY** convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the EHR  and the payer§
+§§
 
 #### Is Prior Authorization Required?
 In some cases, the provider may know beforehand whether PA is required for a given service (either because of intimate familiarity with a given payer's requirements or because of broad consistency across payers).  However, in most cases, the need for prior authorization will be uncertain.  Ideally, initiation of prior authorization will occur as part of a workflow that includes verification of payer coverage and determination that prior authorization is required using the [Coverage Requirements Discovery (CRD)](http://www.hl7.org/fhir/us/davinci-crd) implementation guide.  As shown in the above diagram, this can be accomplished using [CDS Hooks](https://cds-hooks.hl7.org). The goal of the Burden Reduction IGs is to move from Telephone, FAX, Portal, and mail to electronic transaction defined by these three IGs.  We recognize it will take time for provider and payer to fully implement these IGs and that certain PAs may never be implemented due to complexity. However, the intent is to move as rapidly as possible to full support of these IGs by Payer, providers and any required intermediaries.  As well, government-regulated payers will have to implement this IG for all PAs.
@@ -110,12 +111,12 @@ However, with the [Documentation Templates and Rules (DTR)](http://www.hl7.org/f
 
 As a result, with DTR, it is possible to minimize or eliminate the need for multiple back-and-forth 'supplemental documentation' exchanges and to maximize the likelihood that the submitted prior authorization supporting information is suitable for automated decision making.
 
-Information gathered to support prior authorization is expected to be stored in the EHR in addition to being used as part of the prior authorization request process.  As well, EHRs **SHOULD** annotate their orders with the decisions contained in the PAS Response.  Guidance on how to annotate the orders is not included in this IG as it was determined to be EHR-specific.
+Information gathered to support prior authorization is expected to be stored in the EHR in addition to being used as part of the prior authorization request process. §use-6:As well, EHRs **SHOULD** annotate their orders with the decisions contained in the PAS Response.§ Guidance on how to annotate the orders is not included in this IG as it was determined to be EHR-specific.
 
 Also see the section below on [supporting information](#supporting-information).
 
 #### Submit Prior Authorization
-Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) **SHALL** have the ability, but not an obligation, to review patient information and where appropriate amend or withhold the submission to comply with current regulations and relevant provider policies.  The provider can choose to turn off the ability to review documentation. The vendor must allow them this option.
+§use-7:Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) **SHALL** have the ability, but not an obligation, to review patient information and where appropriate amend or withhold the submission to comply with current regulations and relevant provider policies.  The provider can choose to turn off the ability to review documentation. The vendor must allow them this option.
 
 The prior authorization request will involve a FHIR operation, passing in a Bundle of FHIR resources that includes the authorizing request as well as any other necessary supporting information.  That operation will typically (for HIPAA reasons) be invoked on an intermediary that will translate the request into the corresponding X12 messages.  However, where there is no regulatory requirement for X12 use (e.g. if this specification is adopted in non-U.S. environments, for non-HIPAA-covered payers, or under a granted exception), the operation could potentially be invoked directly on the payer system.
 
@@ -135,4 +136,4 @@ To evaluate whether a given service will be covered, a payer may need to underst
 
 2.	Structured clinical data that is available through the EHR's FHIR APIs. This might include laboratory results, scores or assessments, past medications or procedures represented using the appropriate US Core profiles.  Based on discussions with payers that currently provide real-time responses for prior authorization transactions, the combination of attestation and structured clinical data may result in far more real-time answers to PA requests.
 
-3.	Information that is traditionally not structured, or where the review process is more involved and will not be performed in real time. In this use case, additional information may be in the form of progress notes, therapy notes, diagnostic reports, etc.  This information will be exchanged as text or images using the document reference.  Where such information is necessary, the initial request will typically be 'pended', with a final decision returned later once manual review is complete.  All exchanges **SHOULD** meet Federal and state regulations, including any HIPAA restrictions and restrictions on sensitive data.
+3.	Information that is traditionally not structured, or where the review process is more involved and will not be performed in real time. In this use case, additional information may be in the form of progress notes, therapy notes, diagnostic reports, etc.  This information will be exchanged as text or images using the document reference.  Where such information is necessary, the initial request will typically be 'pended', with a final decision returned later once manual review is complete. §use-8:All exchanges **SHOULD** meet Federal and state regulations, including any HIPAA restrictions and restrictions on sensitive data.§
