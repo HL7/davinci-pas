@@ -1,8 +1,11 @@
-§§ainfo-1^payer^exchange:A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
+§§ainfo-1^payer^exchange:
+
+A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
 
 1. One or more codes in the PWK01 element
 2. One or more of the approved LOINC codes Attachments – LOINC in the HI segment
 3. A single 102089-0 LOINC code in the HI segment to request information via a payer’s specific questionnaire. When this option is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code **SHALL** be the DTR context ID used to retrieve the appropriate questionnaire.
+
 §§
 
 There are two ways of sending attachments depending on whether it is unsolicited or solicited.  The following diagram shows the flow:

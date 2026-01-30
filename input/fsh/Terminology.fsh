@@ -63,6 +63,7 @@ Description: "Codes temporarily defined as part of the PAS implementation guide.
   * #exchange   "exchange"            "Requirements relating to when or how data is exchanged with other systems"
   * #processing "processing"          "Requirements related to how data is dealt with internally to a system"
   * #storage    "storage"             "Requirements relating to when or how data is or is not persisted within a system"
+  * #privacy    "privacy"             "Requirements relating to the privacy and security of data within a system"
  
 ValueSet: PASTaskCodes
 Title: "PAS Task Codes"

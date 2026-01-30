@@ -185,3 +185,16 @@ No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureD
 
 # 2.2-11 There is a "rogue" DTR package with a version of 3.0.1 that should not exist
 The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21, but the most recent appropriate version is 3.0.1. This reference is getting old and the more recent version should be considered
+
+# 2.2-12 The actor definition resources are only used for the conformance statements and are not needed for implementing the specification.
+DA VINCI: DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
+
+# 2.2-13 We are using this to indicate an abstract term in our code system
+The property 'abstract' has no definition in CodeSystem.property. Many terminology tools won't know what to do with it
+
+# 2.2-14 Parameters used for new features in the template
+Unknown Parameters: [requirements-category-vs=http://hl7.org/fhir/us/davinci-pas/ValueSet/cs-categories, term-params-in-artifacts=true, toggle-changes=true]
+The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'
+The value provided ('requirements-category-vs') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0), and a code is required from this value set (error message = The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'; The provided code '#requirements-category-vs' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0')
+The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'
+The value provided ('term-params-in-artifacts') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0), and a code is required from this value set (error message = The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'; The provided code '#term-params-in-artifacts' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0')

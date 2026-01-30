@@ -5,6 +5,26 @@ This version includes changes that arose while updating the guide based on ticke
 * Instrumented any conformance statements so that they appear with conformance ids.
 * Added a new [Conformance Details](conformancedetails.html) that provides a table with all of the narrative conformance statements.
 
+#### JIRA Issues Applied
+* [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated *(correction)* [link](credits.html#FHIR-52744)
+* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 *(correction)* [link](index.html#FHIR-52712)
+* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent *(correction)* [link](specification.html#FHIR-51954)
+* [FHIR-51910](https://jira.hl7.org/browse/FHIR-51910) - Made Subscription.Endpoint mandatory and must support *(correction)* [link](StructureDefinition-profile-subscription.html)
+* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
+* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set *(clarification)* [link](specification.html#FHIR-51905)
+* [FHIR-51754](https://jira.hl7.org/browse/FHIR-51754) - Included .role and .qualification in the ItemAuthorizedProvider extension *(correction)* [link](StructureDefinition-extension-itemAuthorizedProvider.html)
+* [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension *(correction)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension *(enhancement)* [link](StructureDefinition-profile-claim.html)
+* [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides *(clarification)* [link](conformance.html#FHIR-50469)
+* [FHIR-53539](https://jira.hl7.org/browse/FHIR-53539) - Added clarification to PASTiming and PASQuantity *(enhancement)* [PASTiming](StructureDefinition-profile-datatype-timing.html) [PASQuantity](StructureDefinition-profile-quantity.html)
+* [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
+* [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list *(enhancement)* [link](StructureDefinition-profile-claim.html)
+* [FHIR-53997](https://jira.hl7.org/browse/FHIR-53997) - Added new clarification to section 7.2.7.1 *(clarification)* [link](specification.html#FHIR-53997)
+* [FHIR-53049](https://jira.hl7.org/browse/FHIR-53049) - Added new clarification to section 6.1 *(clarification)* [link](conformance.html#FHIR-53049)
+* [FHIR-54423](https://jira.hl7.org/browse/FHIR-54423) - Added CDex as a base spec and dependency in sushi-config file *(clarification)* 
+
 ### Version = 2.2.0-ballot
 This version includes changes due to comments raised by the community since 2.1.0 and fixes a number of issues with the profiles.
 
@@ -62,24 +82,6 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
 * [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 *(correction)* [link](epaWorkflow.html#FHIR-52779)
 * [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 *(correction)* [link](usecases.html#FHIR-52771)
-* [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated *(correction)* [link](credits.html#FHIR-52744)
-* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 *(correction)* [link](index.html#FHIR-52712)
-* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent *(correction)* [link](specification.html#FHIR-51954)
-* [FHIR-51910](https://jira.hl7.org/browse/FHIR-51910) - Made Subscription.Endpoint mandatory and must support *(correction)* [link](StructureDefinition-profile-subscription.html)
-* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
-* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set *(clarification)* [link](specification.html#FHIR-51905)
-* [FHIR-51754](https://jira.hl7.org/browse/FHIR-51754) - Included .role and .qualification in the ItemAuthorizedProvider extension *(correction)* [link](StructureDefinition-extension-itemAuthorizedProvider.html)
-* [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension *(correction)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension *(enhancement)* [link](StructureDefinition-profile-claim.html)
-* [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides *(clarification)* [link](conformance.html#FHIR-50469)
-* [FHIR-53539](https://jira.hl7.org/browse/FHIR-53539) - Added clarification to PASTiming and PASQuantity *(enhancement)* [PASTiming](StructureDefinition-profile-datatype-timing.html) [PASQuantity](StructureDefinition-profile-quantity.html)
-* [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
-* [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list *(enhancement)* [link](StructureDefinition-profile-claim.html)
-* [FHIR-53997](https://jira.hl7.org/browse/FHIR-53997) - Added new clarification to section 7.2.7.1 *(clarification)* [link](specification.html#FHIR-53997)
-* [FHIR-53049](https://jira.hl7.org/browse/FHIR-53049) - Added new clarification to section 6.1 *(clarification)* [link](conformance.html#FHIR-53049)
-* [FHIR-54423](https://jira.hl7.org/browse/FHIR-54423) - Added CDex as a base spec and dependency in sushi-config file *(clarification)* 
 
 ### Version = 2.1.0
 This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and v7.0.0.  It also includes changes due to comments raised by the community since the introduction of 2.0.0.
@@ -100,7 +102,6 @@ This version updates the guide to be compliant with US Core v3.1.0, v6.0.1, and 
 * [FHIR-48373](https://jira.hl7.org/browse/FHIR-48373) - Subscription Notification "returned identifier" not returned in id-only notifications
 * [FHIR-47770](https://jira.hl7.org/browse/FHIR-47770) - ErrorPath structure
 * [FHIR-48587](https://jira.hl7.org/browse/FHIR-48587) - Are there concrete requirements for servers indicating pended and denied claims?
-* [FHIR-48582](https://jira.hl7.org/browse/FHIR-48582) - change definition of SHOULD 
 * [FHIR-48581](https://jira.hl7.org/browse/FHIR-48581) - When are referenced resources needed on an inquiry?
 * [FHIR-48580](https://jira.hl7.org/browse/FHIR-48580) - Clarify Inquiry matching semantics
 * [FHIR-48579](https://jira.hl7.org/browse/FHIR-48579) - Differentiating between automated and manual inquiries
