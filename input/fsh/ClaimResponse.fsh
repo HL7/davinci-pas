@@ -34,7 +34,9 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	ItemRequestedServiceDate named requestedServiceDate 0..1 MS and
 	ItemAuthorizedProvider named authorizedProvider 0..* MS and
-	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS
+	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
+  AdmissionDates named admissionDates 0..1 MS and
+  DischargeDate named dischargeDate 0..1 MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
@@ -43,6 +45,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * item.extension[requestedServiceDate] ^short = "The original date/period that was requested by the submitter for this item."
 * item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+* item.extension[admissionDates] ^short = "The authorized admission dates for this item."
+* item.extension[dischargeDate] ^short = "The authorized discharge date for this item."
 * item.itemSequence MS
   * ^short = "Sequence numbers SHALL stay the same across all instances of the Prior Authorization, eg the Claim, ClaimResponse, ClaimUpdate, ClaimUpdateResponse"
   * ^comment = "Each item returned on the PAS ClaimResponse SHALL echo the same item sequence number as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
@@ -66,7 +70,9 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
     RequestedService named requestedService 0..1 MS and
     ServiceItemRequestType named requestType 0..1 MS and
     CertificationType named certificationType 0..1 MS and
-    ClaimResponseItemCategory named category 0..1
+    ClaimResponseItemCategory named category 0..1 and
+    AdmissionDates named admissionDates 0..1 MS and
+    DischargeDate named dischargeDate 0..1 MS
   * itemSequence 1..1 MS
   * provider MS
   * provider only Reference(PASPractitioner or PASOrganization)
@@ -296,3 +302,25 @@ Description: "The responsible practitioner who reviewed to the request."
 * extension[reviewerSpecialty].value[x] from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 (extensible)
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+
+Extension: AdmissionDates
+Id: extension-admissionDates
+Description: "The authorized admission dates for inpatient services."
+* value[x] only date or Period
+* valueDate obeys FullDateRule
+* valuePeriod.start obeys FullDateRule
+* valuePeriod.end obeys FullDateRule
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
+
+Extension: DischargeDate
+Id: extension-dischargeDate
+Description: "The authorized discharge date for inpatient services."
+* value[x] only date
+* valueDate obeys FullDateRule
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.item"
