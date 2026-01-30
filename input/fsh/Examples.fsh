@@ -651,8 +651,8 @@ Instance: SubscriberExample
 InstanceOf: PASSubscriber
 Title: "Submit Claim Subscriber Example"
 Description: "Sample patient who is a subscriber of an insurance plan."
-* identifier[memberIdentifier].system = "http://example.org/MIN"
-* identifier[memberIdentifier].value = "12345678901"
+* identifier.system = "http://example.org/MIN"
+* identifier.value = "12345678901"
 * name.family = "SMITH"
 * name.given = "JOE"
 * gender = #male
@@ -662,8 +662,8 @@ Instance: BeneficiaryExample
 InstanceOf: PASBeneficiary
 Title: "Submit Claim Beneficiary Example"
 Description: "Sample patient who is a beneficiary of an insurance plan."
-* identifier[memberIdentifier].system = "http://example.org/MIN"
-* identifier[memberIdentifier].value = "12345678902"
+* identifier.system = "http://example.org/MIN"
+* identifier.value = "12345678902"
 * name.family = "SMITH"
 * name.given = "JESSE"
 * gender = #female
