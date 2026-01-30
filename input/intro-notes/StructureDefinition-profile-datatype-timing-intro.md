@@ -1,7 +1,7 @@
 ### Mandatory Data Elements
 The following data elements must always be present.
 
-§§prof-1^client,payer^exchange^Timings SHALL have at least a count, frequency and period, a calendarPattern, or a deliveryPattern:
+§§prof-1^client,payer^exchange:Timings SHALL have at least a count, frequency and period, a calendarPattern, or a deliveryPattern^
 
 **Each PAS Timing SHALL have at least one of:**
 1. count (with optional countMax)
