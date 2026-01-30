@@ -24,6 +24,10 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-53997](https://jira.hl7.org/browse/FHIR-53997) - Added new clarification to section 7.2.7.1 *(clarification)* [link](specification.html#FHIR-53997)
 * [FHIR-53049](https://jira.hl7.org/browse/FHIR-53049) - Added new clarification to section 6.1 *(clarification)* [link](conformance.html#FHIR-53049)
 * [FHIR-54423](https://jira.hl7.org/browse/FHIR-54423) - Added CDex as a base spec and dependency in sushi-config file *(clarification)* 
+* [FHIR-53639](https://jira.hl7.org/browse/FHIR-53639) - Added constraint to CommunicationRequest.identifier and CommunicationRequest.medium *(clarification)* [link](StructureDefinition-profile-communicationrequest.html)
+* [FHIR-53589](https://jira.hl7.org/browse/FHIR-53589) - Moved ServiceLineNumber extension to top level of CommunicationRequest *(correction)* [link](StructureDefinition-profile-communicationrequest.html)
+* [FHIR-55394](https://jira.hl7.org/browse/FHIR-55394) - Altered ClaimInquiryOperation to allow multiple ClaimResponse entries *(correction)* [link](OperationDefinition-Claim-inquiry.html)
+
 
 ### Version = 2.2.0-ballot
 This version includes changes due to comments raised by the community since 2.1.0 and fixes a number of issues with the profiles.
