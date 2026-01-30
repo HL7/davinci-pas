@@ -164,8 +164,6 @@ pages:
     title: Downloads
   changelog.md:
     title: Change Log
-  issues.md:
-    title: PAS Outstanding Issues
 
 menu:
   IG Home: index.html

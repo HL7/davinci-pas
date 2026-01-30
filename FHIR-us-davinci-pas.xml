@@ -188,6 +188,7 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="changelog" name="Change Log"/>
 <page key="conformance" name="Conformance"/>
+<page key="conformancedetails" name="Conformance Expectations"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="specification" name="Formal Specification"/>

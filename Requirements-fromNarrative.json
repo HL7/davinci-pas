@@ -8,54 +8,6 @@
   "experimental" : false,
   "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
   "statement" : [{
-    "key" : "ainfo-1",
-    "conformance" : ["MAY"],
-    "requirement" : "A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:"
-  },
-  {
-    "key" : "ainfo-2",
-    "conformance" : ["SHALL"],
-    "requirement" : "When this option is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code **SHALL** be the DTR context ID used to retrieve the appropriate questionnaire"
-  },
-  {
-    "key" : "ainfo-3",
-    "conformance" : ["SHALL"],
-    "requirement" : "The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex."
-  },
-  {
-    "key" : "ainfo-4",
-    "conformance" : ["SHOULD"],
-    "requirement" : "All of the additional information request codes **SHOULD** be used as input to a CDex task."
-  },
-  {
-    "key" : "ainfo-5",
-    "conformance" : ["SHALL"],
-    "requirement" : "When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input."
-  },
-  {
-    "key" : "ainfo-6",
-    "conformance" : ["SHALL"],
-    "requirement" : "A separate task **SHALL** be created for each of the above attachment request types (PWK01, LOINC, questionnaire)."
-  },
-  {
-    "key" : "ainfo-7",
-    "conformance" : ["MAY"],
-    "requirement" : "Although CDex defines a set of operations, it **MAY** be implemented in a separate module."
-  },
-  {
-    "key" : "ainfo-8",
-    "conformance" : ["MAY"],
-    "requirement" : "Although CDex defines a set of operations, it **MAY** be implemented in a separate module."
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
-      "valueBoolean" : true
-    }],
-    "key" : "conf-8",
-    "requirement" : "^clientThey **SHALL NOT** generate an error or cause the application to fail when receiving any data element that is marked as Must Support."
-  },
-  {
     "key" : "prof-tim-2",
     "conformance" : ["SHALL"],
     "requirement" : "If a code is present, it **SHALL** use the X12 quantity units."
@@ -394,35 +346,5 @@
     "key" : "spec-78",
     "conformance" : ["SHALL"],
     "requirement" : "PAS systems **SHALL** ensure that prior authorizations that were initially pended remain available for query for at least 6 months after the anticipated completion of the services whose authorization was requested."
-  },
-  {
-    "key" : "use-3",
-    "conformance" : ["SHALL"],
-    "requirement" : "The intermediary **SHALL** always exchange a FHIR bundle with the EHR (figure 2.3)"
-  },
-  {
-    "key" : "use-4",
-    "conformance" : ["SHALL"],
-    "requirement" : "The intermediary **SHALL** convert the FHIR bundle to and from an X12 278 (and optionally to an X12 275) if necessary to meet the HIPAA transaction requirements"
-  },
-  {
-    "key" : "use-5",
-    "conformance" : ["MAY"],
-    "requirement" : "The intermediary **MAY** convert the X12 278 to and from a FHIR bundle and exchange it with a payer as long as the PA request and response are in an X12 278 format at some time between the exchange with the EHR and the payer"
-  },
-  {
-    "key" : "use-6",
-    "conformance" : ["SHOULD"],
-    "requirement" : "As well, EHRs **SHOULD** annotate their orders with the decisions contained in the PAS Response."
-  },
-  {
-    "key" : "use-7",
-    "conformance" : ["SHALL"],
-    "requirement" : "Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) **SHALL** have the ability, but not an obligation, to review patient information and where appropriate amend or withhold the submission to comply with current regulations and relevant provider policies. The provider can choose to turn off the ability to review documentation. The vendor must allow them this option."
-  },
-  {
-    "key" : "use-8",
-    "conformance" : ["SHOULD"],
-    "requirement" : "All exchanges **SHOULD** meet Federal and state regulations, including any HIPAA restrictions and restrictions on sensitive data."
   }]
 }

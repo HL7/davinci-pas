@@ -1,4 +1,4 @@
-§§ainfo-1?^payer^exchange:A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
+§§ainfo-1^payer^exchange:A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
 
 1. One or more codes in the PWK01 element
 2. One or more of the approved LOINC codes Attachments – LOINC in the HI segment
@@ -28,9 +28,9 @@ Here is a high-level diagram that shows how the $submit-attachment call is used:
 </figure>
 {::options parse_block_html="true" /}
 
-§ainfo-2?^payer^exchange:The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex.§ 
+§ainfo-2^payer^exchange:The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex.§ 
 
-§ainfo-3?^payer^exchange:All of the additional information request codes **SHOULD** be used as input to a CDex task.§ The CDex task will include all of the information required to enable CDex to assemble the required documentation and send it to the payer’s operation endpoint for attachments. §ainfo-4?^payer^exchange:When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input.§ The following diagram defines the PAS, CDex, DTR workflow. §ainfo-6?^payer^exchange:A separate task **SHALL** be created for each of the above attachment request types (PWK01, LOINC, questionnaire).§ 
+§ainfo-3^payer^exchange:All of the additional information request codes **SHOULD** be used as input to a CDex task.§ The CDex task will include all of the information required to enable CDex to assemble the required documentation and send it to the payer’s operation endpoint for attachments. §ainfo-4^payer^exchange:When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input.§ The following diagram defines the PAS, CDex, DTR workflow. §ainfo-6^payer^exchange:A separate task **SHALL** be created for each of the above attachment request types (PWK01, LOINC, questionnaire).§ 
 
 Although CDex defines a set of operations, it can be implemented in a separate module. The Task is used to represent the information that is needed to make the CDex calls.  If the CDex calls are not in a separate module, then the Task may just be conceptual and not actually created.  In PAS, the Task is created by the Provider but that the remaining CDex workflow remains the same. 
 
