@@ -527,6 +527,14 @@ Description: "An example of a Claim resource used to search for prior authorizat
 * item[1].extension[reviewActionCode].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
 * item[1].extension[productOrServiceCodeEnd].valueCodeableConcept = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4190
 
+Instance: PASClaimInquiryOperationResponseExample
+InstanceOf: Parameters
+Title: "PAS Inquiry Operation Response Example"
+Description: "An example of a claims inquiry operation response."
+* parameter[+]
+  * name = "responseBundle"
+  * resource = PASClaimInquiryResponseBundleExample
+
 Instance: PASClaimInquiryResponseBundleExample
 InstanceOf: PASInquiryResponseBundle
 Title: "PAS Inquiry Response Bundle Example"
