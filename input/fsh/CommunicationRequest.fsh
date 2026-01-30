@@ -53,7 +53,7 @@ Id: extension-serviceLineNumber
 Description: "A number that links the content being requested with the claim item number."
 * value[x] only positiveInt
 * ^context[+].type = #element
-* ^context[=].expression = "CommunicationRequest.payload"
+* ^context[=].expression = "CommunicationRequest"
 * ^context[+].type = #element
 * ^context[=].expression = "Task.input"
 
