@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pas
 canonical: http://hl7.org/fhir/us/davinci-pas
-version: 2.2.0-ballot
+version: 2.2.0-snapshot
 name: DaVinciPriorAuthorizationSupport
 title: Da Vinci Prior Authorization Support (PAS) FHIR IG
 status: active
@@ -71,22 +71,25 @@ parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
   auto-oid-root: 2.16.840.1.113883.4.642.40.24
+  requirements-category-vs: "http://hl7.org/fhir/us/davinci-pas/ValueSet/cs-categories"
   apply-publisher: true
   apply-contact: true
   produce-jekyll-data: true
   globals-in-artifacts: true
+  term-params-in-artifacts: true
   pin-canonicals: pin-multiples
   version-comparison: 
    - 2.1.0
   shownav: true
+  toggle-changes: true
 copyrightYear: 2020+
-releaseLabel: STU 2.2 - Ballot
+releaseLabel: STU 2.2 - Public Review
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-    valueInteger: 3
+    valueInteger: 4
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm 
 pages:

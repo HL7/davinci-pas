@@ -56,6 +56,14 @@ Description: "Codes temporarily defined as part of the PAS implementation guide.
 * #attachments-needed "Attachments Needed" "Communicates what attachments are needed"
 * #questionnaire-context "Questionnaire Context" "Communicates the context of questionnaires that are needed"
 
+* #_reqcat      "Requirements Categories"  "Codes that help to categorize requirements statements"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #business   "business"            "Requirements relating to the business operations of the entities responsible for a system"
+  * #exchange   "exchange"            "Requirements relating to when or how data is exchanged with other systems"
+  * #processing "processing"          "Requirements related to how data is dealt with internally to a system"
+  * #storage    "storage"             "Requirements relating to when or how data is or is not persisted within a system"
+ 
 ValueSet: PASTaskCodes
 Title: "PAS Task Codes"
 Description: "The code for the task that is request additional information."
@@ -89,6 +97,14 @@ Description: "Types of channels that a communication request can be made"
 * ^copyright = "These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * codes from system https://codesystem.x12.org/005010/756
 * PASTempCodes#CDEX
+
+ValueSet: PASConformanceStatementCategories
+Id: cs-categories
+Title: "PAS Conformance Statement Categories"
+Description: "Categories for conformance statements found in the PAS IG"
+* ^status = #active
+* ^experimental = false
+* include codes from system PASTempCodes where concept descendent-of #_reqcat
 
 /*
 X12 ValueSets

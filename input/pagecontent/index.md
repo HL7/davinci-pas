@@ -1,4 +1,4 @@
-> Welcome to the post-ballot public review for the STU 2.2 release of the Da Vinci Coverage Requirements Discovery (CRD) implementation guide.
+> Welcome to the post-ballot public review for the STU 2.2 release of the Da Vinci Prior Authorization (PAS) implementation guide.
 >
 >As a result of ballot feedback, a number of [additional changes](changelog.html#version--220-ballot) have been made to the IG, some of them substantive.  Because of these substantive changes, we're providing an opportunity for the community to perform an additional layer of review to the changes.  Feedback on this release should be limited to only those aspects of the specification changed since the ballot, though technical corrections identifying issues with spelling, grammar, formatting, broken links, etc. are welcome for any portion of the specification.  Feedback submitted against other parts of the specification will likely be deferred to a future release, particularly if they would involve substantive change, though all feedback provided will be considered at some point.
 >

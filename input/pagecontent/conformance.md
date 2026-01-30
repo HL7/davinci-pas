@@ -1,7 +1,7 @@
 ### Systems
 The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 
-[**Client systems**](CapabilityStatement-EHRCapabilities.html) are typically Electronic Medical Record (EHR) systems but could theoretically be any system responsible for requesting prior authorizations .  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.). 
+[**Client systems**](CapabilityStatement-EHRCapabilities.html) are typically Electronic Medical Record (EHR) systems but could theoretically be any system responsible for requesting prior authorizations.  (E.g. practice management systems, pharmacy systems (for drugs that are part of a medical benefit), dental systems, etc.). 
 
 [**Payer systems**](CapabilityStatement-IntermediaryCapabilities.html) (or servers) are typically intermediary systems that act on behalf of payer organizations and are responsible for the conversion of prior authorization requests to and from X12 for subsequent relay to payer systems.  In some cases, a server system may directly be a payer system (if X12 translation is not required by regulation).
 <div class="new-content"  markdown="1">
