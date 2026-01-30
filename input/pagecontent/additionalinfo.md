@@ -1,4 +1,4 @@
-§§ainfo-1^payer^exchange:
+§§ainfo-1^payer^exchange^Payers MAY request additional information in a number of ways:
 
 A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:
 
@@ -20,7 +20,7 @@ Here is a high-level diagram that shows how the $submit-attachment call is used:
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="high-level-submit-attachment.png" alt="High Level $submit-attachment Use"/>
-  <figcaption>Figure 3.2 - High Level $submit-attachment Use</figcaption>
+  <figcaption>Figure 3.2 - High Level submit-attachment Use</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
