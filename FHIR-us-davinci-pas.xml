@@ -105,6 +105,7 @@
 <artifact id="StructureDefinition/profile-identifier" key="StructureDefinition-profile-identifier" name="PAS Identifier"/>
 <artifact deprecated="true" id="CodeSystem/PASInformationChangeMode" key="CodeSystem-PASInformationChangeMode" name="PAS Information Change Mode Code System"/>
 <artifact id="ValueSet/PASInformationChangeMode" key="ValueSet-PASInformationChangeMode" name="PAS Information Change Mode Value Set"/>
+<artifact id="Parameters/PASClaimInquiryOperationResponseExample" key="Parameters-PASClaimInquiryOperationResponseExample" name="PAS Inquiry Operation Response Example"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-request-bundle" key="StructureDefinition-profile-pas-inquiry-request-bundle" name="PAS Inquiry Request Bundle"/>
 <artifact id="Bundle/PASClaimInquiryBundleExample" key="Bundle-PASClaimInquiryBundleExample" name="PAS Inquiry Request Bundle Example"/>
 <artifact id="StructureDefinition/profile-pas-inquiry-response-bundle" key="StructureDefinition-profile-pas-inquiry-response-bundle" name="PAS Inquiry Response Bundle"/>

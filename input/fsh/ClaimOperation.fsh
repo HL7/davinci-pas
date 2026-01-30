@@ -1,6 +1,6 @@
 Instance: ClaimSubmitOperation
 InstanceOf: OperationDefinition
-Description: "This operation is used to submit a PreAuthorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the output is a Parameters object with 0..* Claim Inquiry Response Bundles included as the query results.  This is a variant of the FHIR Core Claim $submit operation."
+Description: "This operation is used to submit a PreAuthorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimRequest instance (along with other referenced resources) and the only output is a single Bundle with a PASClaimResponse (and other referenced resources) or an OperationOutcome resource.  This is a variant of the FHIR Core Claim $submit operation."
 Usage: #definition
 
 * id = "Claim-submit"
@@ -9,7 +9,7 @@ Usage: #definition
 * title = "Submit a Prior Authorization Request for adjudication"
 * status = #draft
 * kind = #operation
-* description = "This operation is used to submit a PreAuthorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimInquiry instance (along with other referenced resources) and the output is a Parameters object with 0..* Claim Inquiry Response Bundles included as the query results. This is a variant of the FHIR Core Claim $submit operation."
+* description = "This operation is used to submit a PreAuthorization Claim Request for adjudication as a Bundle containing the PASClaimRequest and other referenced resources for processing. The only input parameter is the single Bundle resource with a PASClaimRequest instance (along with other referenced resources) and the only output is a single Bundle with a PASClaimResponse (and other referenced resources) or an OperationOutcome resource.  This is a variant of the FHIR Core Claim $submit operation."
 * code = #submit
 * base = "http://hl7.org/fhir/OperationDefinition/Claim-submit"
 * resource = #Claim
@@ -25,8 +25,8 @@ Usage: #definition
 * parameter[0].targetProfile = Canonical(PASRequestBundle)
 * parameter[1].name = #return
 * parameter[1].use = #out
-* parameter[1].min = 0
-* parameter[1].max = "*"
+* parameter[1].min = 1
+* parameter[1].max = "1"
 * parameter[1].documentation = "A Bundle containing a single ClaimResponse plus referenced resources."
 * parameter[1].type = #Bundle
 * parameter[1].targetProfile = Canonical(PASResponseBundle)
