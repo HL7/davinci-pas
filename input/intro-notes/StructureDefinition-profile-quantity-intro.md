@@ -1,7 +1,7 @@
 ### Mandatory Data Elements
 The following data elements must always be present.
 
-§§prof-quan1^client,payer^exchange^Quantities SHALL have a value and either a unit or a code:
+§§prof-2^client,payer^exchange^Quantities SHALL have a value and either a unit or a code:
 
 Each PAS Quantity SHALL have:**
 1. a value
