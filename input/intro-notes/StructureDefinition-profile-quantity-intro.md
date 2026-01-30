@@ -1,14 +1,12 @@
 ### Mandatory Data Elements
 The following data elements must always be present.
 
-§§prof-quant-1^client,payer^exchange:
+§§prof-quan1^client,payer^exchange^Quantities SHALL have a value and either a unit or a code:
 
-**Each PAS Timing SHALL have at least one of:**
-1. count (with optional countMax)
-2. frequency and period and periodUnit (with optional frequencyMax and periodMax)
-3. calendarPattern extension
-4. deliveryPattern extension
+Each PAS Quantity SHALL have:**
+1. a value
+2. either a unit or a code and system.
 
 §§
 
-Please see the documentation on the FHIR Timing datatype for more information of how common timing uses are represented.
+§prof-tim-2:If a code is present, it **SHALL** use the X12 quantity units.§

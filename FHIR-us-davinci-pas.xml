@@ -78,6 +78,7 @@
 <artifact id="MedicationRequest/MedicationRequestExample" key="MedicationRequest-MedicationRequestExample" name="Medication Request Example"/>
 <artifact id="ValueSet/MetricDataSource" key="ValueSet-MetricDataSource" name="Metric Data Source"/>
 <artifact id="StructureDefinition/extension-militaryStatus" key="StructureDefinition-extension-militaryStatus" name="MilitaryStatus"/>
+<artifact id="Requirements/fromNarrative" key="Requirements-fromNarrative" name="Narrative Conformance Statements"/>
 <artifact id="StructureDefinition/extension-nursingHomeLevelOfCare" key="StructureDefinition-extension-nursingHomeLevelOfCare" name="NursingHomeLevelOfCare"/>
 <artifact id="StructureDefinition/extension-nursingHomeResidentialStatus" key="StructureDefinition-extension-nursingHomeResidentialStatus" name="NursingHomeResidentialStatus"/>
 <artifact id="NutritionOrder/NutritionOrderExample" key="NutritionOrder-NutritionOrderExample" name="Nutrition Order Example"/>
