@@ -20,6 +20,7 @@
 <artifact id="ValueSet/AHANUBCRevenueCodes" key="ValueSet-AHANUBCRevenueCodes" name="AHA NUBC Revenue Value Set"/>
 <artifact id="Task/AdditionalInformationTaskExample" key="Task-AdditionalInformationTaskExample" name="Additional Information Task Example"/>
 <artifact id="StructureDefinition/extension-administrationReferenceNumber" key="StructureDefinition-extension-administrationReferenceNumber" name="AdministrationReferenceNumber"/>
+<artifact id="StructureDefinition/extension-admissionDates" key="StructureDefinition-extension-admissionDates" name="AdmissionDates"/>
 <artifact deprecated="true" id="ValueSet/AttachmentRequestCodes" key="ValueSet-AttachmentRequestCodes" name="Attachment Request Codes"/>
 <artifact id="ClaimResponse/PractitionerRequestorResponseExample" key="ClaimResponse-PractitionerRequestorResponseExample" name="Authorization Response with Practitioner Requestor Example"/>
 <artifact id="ClaimResponse/PractitionerRequestorAdditionalContentResponseExample" key="ClaimResponse-PractitionerRequestorAdditionalContentResponseExample" name="Authorization Response with Practitioner Requestor and Additional Content Example"/>
@@ -43,6 +44,7 @@
 <artifact id="StructureDefinition/extension-timingdeliverypattern" key="StructureDefinition-extension-timingdeliverypattern" name="DeliveryPattern"/>
 <artifact id="DeviceRequest/DeviceRequestExample" key="DeviceRequest-DeviceRequestExample" name="Device Request Example"/>
 <artifact id="StructureDefinition/extension-diagnosisRecordedDate" key="StructureDefinition-extension-diagnosisRecordedDate" name="DiagnosisRecordedDate"/>
+<artifact id="StructureDefinition/extension-dischargeDate" key="StructureDefinition-extension-dischargeDate" name="DischargeDate"/>
 <artifact id="StructureDefinition/extension-documentInformation" key="StructureDefinition-extension-documentInformation" name="DocumentInformation"/>
 <artifact id="CapabilityStatement/EHRCapabilities" key="CapabilityStatement-EHRCapabilities" name="EHR PAS Capabilities"/>
 <artifact id="StructureDefinition/extension-epsdtIndicator" key="StructureDefinition-extension-epsdtIndicator" name="EPSDTIndicator"/>
@@ -172,6 +174,7 @@
 <artifact id="OperationDefinition/Claim-submit" key="OperationDefinition-Claim-submit" name="Submit a Prior Authorization Request for adjudication"/>
 <artifact id="Bundle/SurgicalRequestBundleExample" key="Bundle-SurgicalRequestBundleExample" name="Surgical Admission Request Bundle Example"/>
 <artifact id="Claim/SurgicalAuthorizationRequestExample" key="Claim-SurgicalAuthorizationRequestExample" name="Surgical Request Authorization Example"/>
+<artifact id="StructureDefinition/extension-TransmissionIdentifiers" key="StructureDefinition-extension-TransmissionIdentifiers" name="TransmissionIdentifiers"/>
 <artifact id="ValueSet/X12278ConditionCategory" key="ValueSet-X12278ConditionCategory" name="X12 278 CRC Condition Category"/>
 <artifact id="ValueSet/X12278ConditionCode" key="ValueSet-X12278ConditionCode" name="X12 278 CRC Condition Code"/>
 <artifact id="ValueSet/X12278DiagnosisCodes" key="ValueSet-X12278DiagnosisCodes" name="X12 278 Diagnosis Code Value Set"/>
