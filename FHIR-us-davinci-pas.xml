@@ -31,6 +31,7 @@
 <artifact id="StructureDefinition/extension-itemCertificationIssueDate" key="StructureDefinition-extension-itemCertificationIssueDate" name="CertificationIssueDate"/>
 <artifact id="StructureDefinition/extension-certificationType" key="StructureDefinition-extension-certificationType" name="CertificationType"/>
 <artifact id="ValueSet/ClaimResponseOutcome" key="ValueSet-ClaimResponseOutcome" name="Claim Response Outcome"/>
+<artifact id="ValueSet/ClaimTypes" key="ValueSet-ClaimTypes" name="Claim Types"/>
 <artifact deprecated="true" key="ClaimResponse" name="ClaimResponse"/>
 <artifact id="StructureDefinition/extension-itemCategory" key="StructureDefinition-extension-itemCategory" name="ClaimResponseItemCategory"/>
 <artifact id="StructureDefinition/extension-claimResponseReviewer" key="StructureDefinition-extension-claimResponseReviewer" name="ClaimResponseReviewer"/>

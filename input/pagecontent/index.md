@@ -37,12 +37,12 @@ A high-level summary of how all of these IGs will work together can be seen belo
 {::options parse_block_html="true" /}
 
 ### CMS Exception
-§index-1:When using PAS under the [CMS granted exception](https://confluence.hl7.org/display/DVP/Da+Vinci+HIPAA+Exception) (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) **SHALL** disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.§ §index-2:The defined PAS FHIR request bundles **SHALL** be transmitted intact between the provider and payer.§ §index-3:The PAS FHIR response bundles **SHALL** be transmitted intact between the payer and the provider.§ NOTE: This CMS exception has ended as of June 2024.
+When using PAS under the [CMS granted exception](https://confluence.hl7.org/display/DVP/Da+Vinci+HIPAA+Exception) (Request Number: HL7 FHIR Exception #2021031001), the implementer(s) can disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles can then be transmitted intact between the provider and payer.  The PAS FHIR response bundles can also be transmitted intact between the payer and the provider. NOTE: This CMS exception has ended as of June 2024.
 
 ### CMS Enforcement Discretion
 The Office of Burden Reduction and Health Informatics (OBRHI) National Standards Group (NSG) announced an enforcement discretion that they would not enforce the requirement to use the X12 278 for prior authorization if the covered entities were using the Fast Healthcare Interoperability Resources (FHIR) based Prior Authorization API as described in the CMS Interoperability and Prior Authorization final rule (CMS-0057-F). This allows the payer to return a prior authorization number for use in the X12 837 in coverage extension of the CRD and DTR IGs or as part of the all FHIR exchange of the Prior Authorization Response Bundle in the PAS IG.
 
-§index-4:When covered entities are operating under the enforcement discretion, the trading partners **SHALL** disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.§ §index-5:The defined PAS FHIR request bundles **SHALL** be transmitted intact between the provider and payer.§ §index-6:The PAS FHIR response bundles **SHALL** be transmitted intact between the payer and the provider.§
+When covered entities are operating under the enforcement discretion, the trading partners can disregard any requirements in this Implementation Guide to translate the PAS FHIR Bundle into or out of the X12 278.  The defined PAS FHIR request bundles can then be transmitted intact between the provider and payer.  The PAS FHIR response bundles can also be be transmitted intact between the payer and the provider.
 
 ### Content and Organization
 This implementation guide (and the menu for it) is organized into the following sections:
@@ -81,6 +81,8 @@ In some situations, the payer community requires additional constraints or needs
 In addition, this guide uses content from the following FHIR-related specifications and implementation guides:
 * [Subscriptions R5 Backport]({{site.data.fhir.ver.subscriptions}})
 * [Da Vinci CRD]({{site.data.fhir.ver.crd}})
+* [Da Vinci DTR]({{site.data.fhir.ver.dtr}})
+* [Da Vinci CDex]({{site.data.fhir.ver.cdex}})
 
 In addition, this guide also relies on a number of parent implementation guides:
 
