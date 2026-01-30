@@ -1,3 +1,21 @@
+Extension: TransmissionIdentifiers
+Id: extension-TransmissionIdentifiers
+Description: "Identifiers used for transmission tracking.  Used in the X12 GS and ISA header segments."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse"
+* extension contains applicationSenderCode 1..1 and applicationReceiverCode 1..1
+    and interchangeSenderID 0..1 and interchangeReceiverID 0..1
+* extension[applicationSenderCode].value[x] only string
+* extension[applicationSenderCode] ^short = "Application Sender's Code (GS02)"
+* extension[applicationReceiverCode].value[x] only string
+* extension[applicationReceiverCode] ^short = "Application Receiver's Code (GS03)"
+* extension[interchangeSenderID].value[x] only string
+* extension[interchangeSenderID] ^short = "Interchange Sender ID (ISA06)"
+* extension[interchangeReceiverID].value[x] only string
+* extension[interchangeReceiverID] ^short = "Interchange Receiver ID (ISA08)"
+
 Extension: CareTeamClaimScope
 Id: extension-careTeamClaimScope
 Description: "A flag that indicates whether the care team applies to the entire claim or a single item."

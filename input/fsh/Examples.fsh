@@ -32,6 +32,11 @@ InstanceOf: PASClaim
 Title: "Referral Authorization Example"
 Description: "An example of a Claim resource requesting prior authorization of a referral."
 * extension[levelOfServiceType].valueCodeableConcept = https://codesystem.x12.org/005010/1338#U "Urgent"
+* extension[transmissionIdentifiers]
+  * extension[applicationSenderCode].valueString = "PROVIDERAPP"
+  * extension[applicationReceiverCode].valueString = "PAYERAPP"
+  * extension[interchangeSenderID].valueString = "PROVIDERID"
+  * extension[interchangeReceiverID].valueString = "PAYERID"
 * identifier.system = "urn:trnorg:9012345678"
 * identifier.value = "111099"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"
@@ -172,6 +177,11 @@ Instance: ErrorResponseExample
 InstanceOf: PASClaimResponse
 Title: "Error Response Example"
 Description: "An example of a ClaimResponse with errors."
+* extension[transmissionIdentifiers]
+  * extension[applicationSenderCode].valueString = "PAYERAPP"
+  * extension[applicationReceiverCode].valueString = "PROVIDERAPP"
+  * extension[interchangeSenderID].valueString = "PAYERID"
+  * extension[interchangeReceiverID].valueString = "PROVIDERID"
 * identifier.system = "http://example.org/PATIENT_EVENT_TRACE_NUMBER"
 * identifier.value = "111099"
 * identifier.assigner.identifier.system = "http://example.org/USER_ASSIGNED"

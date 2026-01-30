@@ -5,6 +5,7 @@ Title: "PAS Claim Response Base"
 Description: "PAS constraints on ClaimResponse resource that are common to both the request and the inquiry."
 * ^abstract = true
 * . ^short = "Response to a preauthorization"
+* extension contains TransmissionIdentifiers named transmissionIdentifiers 0..1 MS
 * identifier MS
 * identifier only PASIdentifier
 * identifier.system ^short = "Should use a scheme of 'urn:trnorg:<TRN03>'"

@@ -5,7 +5,8 @@ Title: "PAS Claim Base"
 Description: "PAS constraints on Claim resource that are common to both the request and the inquiry."
 * ^abstract = true
 * . ^short = "Preauthorization"
-* extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS and
+* extension contains TransmissionIdentifiers named transmissionIdentifiers 0..1 MS and 
+	LevelOfServiceCode named levelOfServiceType 0..1 MS and
 	ConditionCode named conditionCode 0..* MS and
 	HomeHealthCareInformation named homeHealthCareInformation 0..1 MS and	
 	AuthorizationNumber named authorizationNumber 0..1 MS and
