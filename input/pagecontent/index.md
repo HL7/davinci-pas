@@ -1,10 +1,12 @@
-> Welcome to the ballot for the STU 2.2 release of PAS.
+> Welcome to the post-ballot public review for the STU 2.2 release of the Da Vinci Coverage Requirements Discovery (CRD) implementation guide.
 >
->This release contains a number of changes requested by the implementer community.  Most of them are non-signficant or backwards compatible changes, but there are a few that could at least be theoretically breaking for some implementations and there are a few that will be breaking for all implementations.  A complete list of the changes for this ballot, as well as links to the tracker items that provide justification for them can be found [here](changelog.html#version--220-ballot).
+>As a result of ballot feedback, a number of [additional changes](changelog.html#version--220-ballot) have been made to the IG, some of them substantive.  Because of these substantive changes, we're providing an opportunity for the community to perform an additional layer of review to the changes.  Feedback on this release should be limited to only those aspects of the specification changed since the ballot, though technical corrections identifying issues with spelling, grammar, formatting, broken links, etc. are welcome for any portion of the specification.  Feedback submitted against other parts of the specification will likely be deferred to a future release, particularly if they would involve substantive change, though all feedback provided will be considered at some point.
 >
->There is also an open issue around the use of supplemental guides that has not been addressed in this ballot.  Please see this [Issues page](issues.html) for more discussion about this issue.
+>Feedback on changes made since the ballot will generally fall into one of two categories:
+>* The change was not made as agreed or accidentally introduced a new issue.  (Please check for situations where an agreed change was subsequently overridden by a subsequent change.)
+>* The commenter disagrees with some of the changes made.  While the project *can* revisit decisions, doing so requires convincing new arguments not already discussed and considered by the regular project calls.  Therefore, be sure to provide clear justification for any request to revisit and be aware that those attending the calls may quickly find the issue non-persuasive if there have not been new, not previously discussed, considerations identified.
 >
->**IMPORTANT:** The scope of this ballot is limited to the above changes and to feedback about the issues linked to above.  While feedback can always be submitted against any content in the specification at any time, votes submitted against content that is outside the official scope of the ballot may be deemed 'not related' and therefore not able to support negative votes.
+>Feedback should be provided using HL7's [Jira mechanism](https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-pas), though discussion on the [PAS Zulip stream](https://chat.fhir.org/#narrow/stream/1208874-Da-Vinci-PAS) is also welcome.
 {: .note-to-balloters}
 
 This specification is currently published as a Standard for Trial Use (STU).
