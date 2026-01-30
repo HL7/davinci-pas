@@ -2,7 +2,9 @@ Profile: PASCommunicationRequest
 Parent: CommunicationRequest
 Id: profile-communicationrequest
 Title: "PAS CommunicationRequest"
-Description: "PAS constraints on CommunicationRequest resource mandating support for elements relevant to the prior authorization response"
+Description: """PAS constraints on CommunicationRequest resource mandating support for elements relevant to the prior authorization response.
+For DTR submit-attachment use, the identifer will always be present since the medium will not be VOICE and thus the identifiers can be used as the tracking control number. """
+* obeys IdentifierUnlessVO
 * extension contains ServiceLineNumber named serviceLineNumber 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "Unique Identifier used in linking the Communication Request to the response (X12's Attachment Control Number)."
@@ -55,3 +57,7 @@ Description: "A number that links the content being requested with the claim ite
 * ^context[+].type = #element
 * ^context[=].expression = "Task.input"
 
+Invariant: IdentifierUnlessVO
+Description: "CommunicationRequest.identifier is required unless CommunicationRequest.medium is 'VO'."
+Expression: "$this.medium.coding.where(code='VO').count() = 0 implies $this.identifier.count() > 0"
+Severity: #error
