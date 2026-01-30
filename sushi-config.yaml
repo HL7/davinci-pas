@@ -104,7 +104,7 @@ pages:
     title: Use Cases and Overview
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
   credits.md:
     title: Credits
   epaWorkflow.md:
@@ -113,16 +113,24 @@ pages:
         valueCode: informative
     title: PAS ePA Coordinator Information
   conformance.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
     title: Conformance
+  conformancedetails.md:
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+    title: Conformance Expectations
   specification.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
     title: Formal Specification
   additionalinfo.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
     title: Request for Additional Information
   regulations.md:
     extension:
@@ -132,7 +140,7 @@ pages:
   privacy.md:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
     title: Privacy & Security
   metrics.md:
     extension:
@@ -173,6 +181,7 @@ menu:
     HIPAA Regulations: regulations.html
     Privacy, Safety, and Security: privacy.html
     Metrics: metrics.html
+    Conformance Details: conformancedetails.html
   FHIR Artifacts:
     Overview: fhirArtifacts.html
     Terminology: terminology.html
