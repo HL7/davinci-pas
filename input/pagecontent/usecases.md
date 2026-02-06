@@ -8,7 +8,7 @@ If authorization is required and documentation is necessary to substantiate the 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="current.png" alt="Current HIPAA approach diagram"/>
-  <figcaption>Figure 2.1 - Current HIPAA Approach</figcaption>
+  <figcaption>Figure 3.1 - Current HIPAA Approach</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -26,7 +26,7 @@ The objective of this implementation guide is to provide a vehicle for automatio
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-architecture.png" alt="Diagram showing PAS participants and flows"/>
-  <figcaption>Figure 2.2 - PAS Participants and Flows</figcaption>
+  <figcaption>3.2 - PAS Participants and Flows</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -89,7 +89,7 @@ The prior authorization process from the EHR side consists of five steps:
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-flow.png" alt="High-level PAS workflow"/>
-  <figcaption>Figure 2.3 - High-level PAS Workflow</figcaption>
+  <figcaption>Figure 3.3 - High-level PAS Workflow</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
