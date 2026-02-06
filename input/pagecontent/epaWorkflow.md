@@ -5,7 +5,7 @@ The following drawing demonstrates the PAS Workflow exchanges between an integra
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-cdex-workflow.svg" alt="PAS /CDex Workflow"/>
-  <figcaption>Figure 6.1 - PAS/CDex Workflow</figcaption>
+  <figcaption>Figure 5.1 - PAS/CDex Workflow</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -22,7 +22,7 @@ The following drawing provides additional detail regarding the exchanges between
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="epadetail.svg" alt="Provider ePA Coordinator Detail"/>
-  <figcaption>Figure 6.2 - Provider ePA Coordinator Detail</figcaption>
+  <figcaption>Figure 5.2 - Provider ePA Coordinator Detail</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -45,7 +45,7 @@ The table briefly describes each action along with:
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="epainteractions.svg" alt="PAS/CDex Provider HIT / ePA Coordinator Intractions"/>
-  <figcaption>Figure 6.3 - PAS/CDex Provider HIT / ePA Coordinator Intractions</figcaption>
+  <figcaption>Figure 5.3 - PAS/CDex Provider HIT / ePA Coordinator Intractions</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
