@@ -59,8 +59,9 @@ In FHIR, the Claim resource which is being used for Prior Authorization does not
 
 
 #### Repeating Fields
->In the FHIR profiles in this guide, there are times where the cardinality on data elements is broader than what X12 or other business requirements allow.  In all cases, the intent is that the first N repetitions would be used while the extra repetitions would be ignored.
-{: .modified-content}
+<p class="modified-content">
+In the FHIR profiles in this guide, there are times where the cardinality on data elements is broader than what X12 or other business requirements allow.  In all cases, the intent is that the first N repetitions would be used while the extra repetitions would be ignored.
+</p>
 
 ### Workflow
 Within an EHR Client, the prior authorization request process ought to be capable of being invoked anywhere within the clinical and administrative workflow that is appropriate for that system. Generally, this will be part of any workflows where a provider has made the decision to pursue a specific course of treatment for which prior authorization might be required.  For example, ordering a specific treatment, diagnostic testing, non-clinical service, referral and or device.  As an alternative option, the [FHIR Orders Exchange Implementation Guide](http://hl7.org/fhir/us/dme-orders/2020Sep/) can be used to send information regarding the prior authorization to a performing provider.
