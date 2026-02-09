@@ -264,7 +264,7 @@ Description: "The specific provider who has been authorized to provide this item
 * extension[role].value[x] only CodeableConcept
 * extension[role].valueCodeableConcept from http://hl7.org/fhir/ValueSet/claim-careteamrole (required)
 * extension[qualification].value[x] only CodeableConcept
-* extension[qualification].valueCodeableConcept from http://hl7.org/fhir/ValueSet/provider-qualification (required)
+* extension[qualification].valueCodeableConcept from http://hl7.org/fhir/ValueSet/provider-qualification (example)
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
