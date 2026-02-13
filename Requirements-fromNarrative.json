@@ -105,12 +105,12 @@
   {
     "key" : "3",
     "conformance" : ["SHALL"],
-    "requirement" : "spec-33:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
+    "requirement" : "spec-39:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
   },
   {
     "key" : "4",
     "conformance" : ["SHALL"],
-    "requirement" : "spec-33:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
+    "requirement" : "spec-39:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
   },
   {
     "extension" : [{
@@ -533,7 +533,7 @@
     "key" : "prof-1",
     "label" : "Timings SHALL have at least a count, frequency and period, a calendarPattern, or a deliveryPattern",
     "conformance" : ["SHALL"],
-    "requirement" : "**Each PAS Timing SHALL have at least one of:**\r\n\r\n1. count (with optional countMax)\r\n1. frequency and period and periodUnit (with optional frequencyMax and periodMax)\r\n1. calendarPattern extension\r\n1. deliveryPattern extension"
+    "requirement" : "Each PAS Timing **SHALL** have at least one of:\r\n\r\n1. count (with optional countMax)\r\n1. frequency and period and periodUnit (with optional frequencyMax and periodMax)\r\n1. calendarPattern extension\r\n1. deliveryPattern extension"
   },
   {
     "extension" : [{
@@ -775,30 +775,25 @@
   {
     "key" : "spec-15",
     "conformance" : ["SHALL"],
-    "requirement" : "The Bundle **SHALL** be encoded in JSON."
+    "requirement" : "The first entry in the Bundle **SHALL** be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N/005010X217 message."
   },
   {
     "key" : "spec-16",
     "conformance" : ["SHALL"],
-    "requirement" : "The first entry in the Bundle **SHALL** be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N/005010X217 message."
+    "requirement" : "Additional Bundle entries **SHALL** be populated with any resources referenced by the Claim resource (and any resources referenced by **those** resources, fully traversing all references and complying with all identified profiles)."
   },
   {
     "key" : "spec-17",
     "conformance" : ["SHALL"],
-    "requirement" : "Additional Bundle entries **SHALL** be populated with any resources referenced by the Claim resource (and any resources referenced by **those** resources, fully traversing all references and complying with all identified profiles)."
-  },
-  {
-    "key" : "spec-18",
-    "conformance" : ["SHALL"],
     "requirement" : "Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once."
   },
   {
-    "key" : "spec-19",
+    "key" : "spec-18",
     "conformance" : ["SHOULD"],
     "requirement" : "E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance **SHOULD** be created - referenced from multiple places as appropriate."
   },
   {
-    "key" : "spec-20",
+    "key" : "spec-19",
     "conformance" : ["SHALL"],
     "requirement" : "Bundle.entry.fullUrl values **SHALL** be:"
   },
@@ -890,152 +885,152 @@
     "requirement" : "When echoing back resources that are the same as were present in the prior authorization request, the system **SHALL** ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request."
   },
   {
-    "key" : "spec-39",
+    "key" : "spec-40",
     "conformance" : ["SHALL"],
     "requirement" : "In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no ClaimResponse will be returned."
   },
   {
-    "key" : "spec-40",
+    "key" : "spec-41",
     "conformance" : ["SHALL"],
     "requirement" : "For instances where the authorized item is a modification of the requested item, the requested item **SHALL** be returned in the ClaimResponse.item with an adjudication status of A6 - 'Modified'."
   },
   {
-    "key" : "spec-41",
+    "key" : "spec-42",
     "conformance" : ["SHALL"],
     "requirement" : "The actual authorized item **SHALL** be returned in the ClaimResponse.addItem."
   },
   {
-    "key" : "spec-42",
+    "key" : "spec-43",
     "conformance" : ["SHOULD"],
     "requirement" : "The new intent of this extension is to indicate what was authorized which **SHOULD** match what was requested since the ClaimResponse.item does not have this information."
   },
   {
-    "key" : "spec-43",
+    "key" : "spec-44",
     "conformance" : ["SHALL"],
     "requirement" : "If what has been authorized is different, then the ClaimResponse.addItem **SHALL** be used."
   },
   {
-    "key" : "spec-44",
+    "key" : "spec-45",
     "conformance" : ["SHOULD"],
     "requirement" : "Recipients of the transactions **SHOULD** respond as indicated below and senders of the transaction **SHOULD** look for the following responses and then take appropriate actions."
   },
   {
-    "key" : "spec-45",
+    "key" : "spec-46",
     "conformance" : ["SHALL"],
     "requirement" : "All transactions in PAS are synchronous and **SHALL** require one of the following HTTP responses:"
   },
   {
-    "key" : "spec-46",
+    "key" : "spec-47",
     "conformance" : ["SHOULD"],
     "requirement" : "If an OperationOutcome is received, it may have information regarding errors that **SHOULD** be addressed in the future, but did not cause the transaction to fail."
   },
   {
-    "key" : "spec-47",
+    "key" : "spec-48",
     "conformance" : ["SHOULD"],
     "requirement" : "NOTE: These errors **SHOULD** not be returned to the provider but **SHOULD** be reviewed and addressed by technical staff."
   },
   {
-    "key" : "spec-48",
+    "key" : "spec-49",
     "conformance" : ["SHOULD"],
     "requirement" : "Although there are no constraints on the frequency of the query, clients **SHOULD** ensure that no repetitive inquiries do not happen so as not to stress payer systems."
   },
   {
-    "key" : "spec-49",
+    "key" : "spec-50",
     "conformance" : ["SHOULD"],
     "requirement" : "To search for a specific claim, the Claim.identifier can be sent and it **SHOULD** be either the previously returned Administration Reference Number (REF-BB) or the Prior Authorization Number (REF-NT)."
   },
   {
-    "key" : "spec-50",
+    "key" : "spec-51",
     "conformance" : ["SHALL"],
     "requirement" : "Intermediaries **SHALL** interpret the 'not-applicable' code as no product or service code."
   },
   {
-    "key" : "spec-51",
+    "key" : "spec-52",
     "conformance" : ["SHALL"],
     "requirement" : "This Claim Inquiry Response **SHALL** either reference a Claim or have a Data Absent Reason indicating why the Claim can not be referenced (eg. original claim received by fax)."
   },
   {
-    "key" : "spec-52",
+    "key" : "spec-53",
     "conformance" : ["SHOULD"],
     "requirement" : "The referenced Claim instance **SHOULD** be returned if there is information in the Response that needs to be present can not be returned in the Claim Response instance."
   },
   {
-    "key" : "spec-53",
+    "key" : "spec-54",
     "conformance" : ["SHALL"],
     "requirement" : "the returned ClaimResponse **SHALL** include the current results for all submitted items, including any items changed or canceled since the original authoriation request."
   },
   {
-    "key" : "spec-54",
+    "key" : "spec-55",
     "conformance" : ["SHALL"],
     "requirement" : "if a specific reference number (either the REF-NT or REF-BB) is submitted and is not the 'current' number (because subsequent additions/changes/cancellations have been made to the prior authorization request), the returned record **SHALL** be the current authorization response - even though it no longer has the same identifier."
   },
   {
-    "key" : "spec-55",
+    "key" : "spec-56",
     "conformance" : ["SHALL"],
     "requirement" : "I.e. If a search is for a 'replaced' prior authorization, the search result **SHALL** include the 'current' prior authorization response for the most recent replacing prior authorization request."
   },
   {
-    "key" : "spec-56",
+    "key" : "spec-57",
     "conformance" : ["MAY"],
     "requirement" : "systems **MAY** withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim identifier."
   },
   {
-    "key" : "spec-57",
+    "key" : "spec-58",
     "conformance" : ["SHOULD"],
     "requirement" : "In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed."
   },
   {
-    "key" : "spec-58",
+    "key" : "spec-59",
     "conformance" : ["SHALL"],
     "requirement" : "To retrieve the response at a later point, implementers **SHALL** support subscriptions."
   },
   {
-    "key" : "spec-59",
+    "key" : "spec-60",
     "conformance" : ["SHALL"],
     "requirement" : "Servers **SHALL** permit access to the prior authorization response to systems other than the original submitter."
   },
   {
-    "key" : "spec-60",
+    "key" : "spec-61",
     "conformance" : ["SHALL"],
     "requirement" : "They **SHALL** require a match on the patient member or subscriber id (identifier on the Claim.patient) plus the ordering and/or rendering provider identifier, i.e. the provider's NPI."
   },
   {
-    "key" : "spec-61",
+    "key" : "spec-62",
     "conformance" : ["SHALL"],
     "requirement" : "Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/)."
   },
   {
-    "key" : "spec-62",
+    "key" : "spec-63",
     "conformance" : ["SHALL"],
     "requirement" : "This Subscription **SHALL** conform to the [PAS Subscription profile](StructureDefinition-profile-subscription.html)."
   },
   {
-    "key" : "spec-63",
+    "key" : "spec-64",
     "conformance" : ["SHALL"],
     "requirement" : "The Subscription filter criteria **SHALL** be org-identifier = [sending system identifier]."
   },
   {
-    "key" : "spec-64",
+    "key" : "spec-65",
     "conformance" : ["SHALL"],
     "requirement" : "Intermediaries **SHALL** ensure that subscriptions to monitor a particular sending system's prior authorizations are only created or modified by that sending system."
   },
   {
-    "key" : "spec-65",
+    "key" : "spec-66",
     "conformance" : ["SHALL"],
     "requirement" : "Servers supporting subscriptions **SHALL** expose this as part of the Server's CapabilityStatement"
   },
   {
-    "key" : "spec-66",
+    "key" : "spec-67",
     "conformance" : ["SHALL"],
     "requirement" : "Servers **SHALL** support rest-hook"
   },
   {
-    "key" : "spec-67",
+    "key" : "spec-68",
     "conformance" : ["SHALL"],
     "requirement" : "Once the [subscription](Subscription-PASSubscriptionExample.html) has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed."
   },
   {
-    "key" : "spec-68",
+    "key" : "spec-69",
     "conformance" : ["SHALL"],
     "requirement" : "Due to the inquiry not supporting all of the required information needed in a PAS response, PAS Clients and Intermediaries **SHALL** only support subscriptions with content='full-resource'."
   },

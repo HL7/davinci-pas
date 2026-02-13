@@ -102,6 +102,8 @@ This implementation guide and the underlying FHIR specification are licensed as 
 
 There are a number of X12 codes that are used in the examples in this Implementation Guide.  These codes are listed within an X12 implementation guide and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions.
 
-* Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved
+<p class="new-content"  markdown="1">
+<a name="FHIR-52770"> </a>
+* Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved</p>
 
 {% lang-fragment ip-statements.xhtml %}

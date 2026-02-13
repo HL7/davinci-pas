@@ -59,7 +59,7 @@ In FHIR, the Claim resource which is being used for Prior Authorization does not
 
 
 #### Repeating Fields
-<p class="modified-content">
+<p class="modified-content"><a name="FHIR-50928"></a>
 In the FHIR profiles in this guide, there are times where the cardinality on data elements is broader than what X12 or other business requirements allow.  In all cases, the intent is that the first N repetitions would be used while the extra repetitions would be ignored.
 </p>
 
