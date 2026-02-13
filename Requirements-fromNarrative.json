@@ -93,26 +93,6 @@
     }]
   }],
   "statement" : [{
-    "key" : "1",
-    "conformance" : ["SHALL"],
-    "requirement" : "spec-12:A subscription-based mechanism SHALL be used by the client to be informed of updates to the authorization."
-  },
-  {
-    "key" : "2",
-    "conformance" : ["SHALL"],
-    "requirement" : "spec-12:A subscription-based mechanism SHALL be used by the client to be informed of updates to the authorization."
-  },
-  {
-    "key" : "3",
-    "conformance" : ["SHALL"],
-    "requirement" : "spec-39:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
-  },
-  {
-    "key" : "4",
-    "conformance" : ["SHALL"],
-    "requirement" : "spec-39:Each item returned on the PAS ClaimResponse SHALL echo the same item.sequence as that same item had on the Claim. The item.sequence element SHALL serve as the main tracing identifier of items throughout requests and responses."
-  },
-  {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
       "valueCoding" : {
@@ -763,6 +743,11 @@
     "requirement" : "All of this **SHOULD** happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e. including network transmission time for request and response."
   },
   {
+    "key" : "spec-12",
+    "conformance" : ["SHALL"],
+    "requirement" : "A subscription-based mechanism **SHALL** be used by the client to be informed of updates to the authorization."
+  },
+  {
     "key" : "spec-13",
     "conformance" : ["SHOULD-NOT"],
     "requirement" : "**NOTE**: The Claim Inquiry response does not include all of the information that can be returned in a request response, such as any request for additional information, so the inquire operation **SHOULD NOT** be used by the client while waiting for final results."
@@ -883,6 +868,11 @@
     "key" : "spec-38",
     "conformance" : ["SHALL"],
     "requirement" : "When echoing back resources that are the same as were present in the prior authorization request, the system **SHALL** ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request."
+  },
+  {
+    "key" : "spec-39",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each item returned on the PAS ClaimResponse **SHALL** echo the same item.sequence as that same item had on the Claim. The item.sequence element **SHALL** serve as the main tracing identifier of items throughout requests and responses."
   },
   {
     "key" : "spec-40",
