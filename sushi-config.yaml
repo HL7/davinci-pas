@@ -44,8 +44,10 @@ dependencies:
     id: uscore7
     reason: |
       Needed for systems supporting USCDI v4
+  hl7.fhir.uv.sdc:
+    version: 3.0.0
+    reason: Needed for referencing the US-Core QuestionnaireResponse profile
   hl7.fhir.extensions.r5: 4.0.1
-  hl7.fhir.uv.sdc: 3.0.0
   hl7.fhir.us.davinci-crd:
     version: 2.1.0
     id: crd
@@ -64,9 +66,10 @@ dependencies:
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     id: subscriptions
-  hl7.fhir.us.carin-bb:
-    version: 2.1.0
-    id: carinbb
+  hl7.fhir.uv.tools.r4:
+    id: tools
+    uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
+    version: 1.0.0
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'

@@ -290,6 +290,9 @@ Description: "An example of a ClaimResponse where the requestor is a Practitione
   * itemSequence = 2
   * extension[revenue].valueCodeableConcept = https://www.nubc.org/CodeSystem/RevenueCodes#0202
   * extension[category].valueCodeableConcept = https://codesystem.x12.org/005010/1365#3 "Consultation"
+  * extension[admissionDates].valuePeriod.start = 2005-05-02
+  * extension[admissionDates].valuePeriod.end = 2005-05-02
+  * extension[dischargeDate].valueDate = 2005-05-10
   * provider.extension[providerType].valueCodeableConcept = https://codesystem.x12.org/005010/98#P3
   * provider = Reference(ReferralPractitionerExample)
   * productOrService = https://codesystem.x12.org/005010/1365#3
@@ -696,6 +699,8 @@ InstanceOf: PASCommunicationRequest
 Title: "Communication Request Example"
 Description: "A sample communication request asking for more information about a specific diagnosis."
 * status = #active
+* identifier.system = "http://example.org/CRD-ID"
+* identifier.value = "12345678901"
 * category = https://codesystem.x12.org/005010/755#15 "Justification for Admissions"
 * extension[serviceLineNumber].valuePositiveInt = 1
 * payload.extension[communicatedDiagnosis].valueCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4

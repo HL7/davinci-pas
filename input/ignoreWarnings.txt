@@ -41,7 +41,6 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not b
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1069' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the code cannot be validated%
-A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated%
 
 No definition could be found for URL value 'https://codesystem.x12.org/external/886'
 No definition could be found for URL value 'https://codesystem.x12.org/005010/901'
@@ -80,24 +79,23 @@ A definition could not be found for Canonical URL 'https://valueset.x12.org/x217
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756'
 
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/756' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the value set cannot be expanded
+
+# 02 External code systems that are not available from the tx server
 Unable to check whether the code is in the value set '' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PatDischargeStatus was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PointOfOrigin was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
-
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/756' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/icd9cm' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the value set cannot be expanded
+A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated
 
 
 # 03 The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
@@ -188,17 +186,24 @@ The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2
 
 # 2.2-12 The requirements and actor definition resources are only used for the conformance statements and are not needed for implementing the specification.
 DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
-DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/requirements.html because this IG uses the requirements resource.
 
 # 2.2-13 We are using this to indicate an abstract term in our code system
 The property 'abstract' has no definition in CodeSystem.property. Many terminology tools won't know what to do with it
 
 # 2.2-14 Parameters used for new features in the template
 Unknown Parameters: [requirements-category-vs=http://hl7.org/fhir/us/davinci-pas/ValueSet/cs-categories, term-params-in-artifacts=true, toggle-changes=true]
-The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'
-The value provided ('requirements-category-vs') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0), and a code is required from this value set (error message = The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'; The provided code '#requirements-category-vs' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0')
-The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'
-The value provided ('term-params-in-artifacts') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0), and a code is required from this value set (error message = The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0'; The provided code '#term-params-in-artifacts' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.9.0')
 
-# 2.2-15 SHOULD is used in the change log
-The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'Formal Specification Add a note around the use of tense and the Claim resource (FHIR-36044) Use the verb 'update' and reference 5.2.9 and section 2.3 (FHIR-36147) Add a note around the Confluence page and the fact that it is currently empty at time of publication (FHIR-36159, FHIR-36323, FHIR-36590, FHIR-36595) Define 278i and 278r (FHIR-36238) Updates to various sections (FHIR-36152, FHIR-36236, FHIR-36321, FHIR-36324, FHIR-36325, FHIR-36594, FHIR-36611, FHIR-36612, FHIR-36613, FHIR-36616, FHIR-36618, FHIR-36619, FHIR-36620, FHIR-40411, FHIR-40412, FHIR-40414) Remove Polling (FHIR-36350, FHIR-36353, FHIR-36358, FHIR-36565, FHIR-36567, FHIR-36614, FHIR-38199, FHIR-36617) Indicate which version of subscriptions will be used (FHIR-39418) Add a section on endpoint resolution (FHIR-39505) Fix typo in Figure 5.3 (FHIR-36317) Add content and diagrams around ePA workflow (FHIR-36558) Add a sentence that says orders SHOULD be annotated with PAS response decisions (FHIR-41444) Add information on how to include DTR QuestionnaireResponse in the Claim.supportingInfo (FHIR-41445) '
+# 2.2-15 Our examples use ICD-10 codes and this causes tx errors which propogates to the validator unable to determine if an instance is valid against a profile
+None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#G89.4)
+None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#C18.9)
+Unable to find a match for the specified profile among choices: ; [http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot, http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot]
+The entry resource did not match the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot because: Claim.related: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot), A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated and None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#C18.9)
+The entry resource did not match the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot because: A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated and None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#C18.9)
+The entry resource did not match any of the allowed profiles (Type Claim: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot, http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot)
+Unable to find a profile match for Claim/ReferralAuthorizationExample among choices: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot
+Details for Claim/ReferralAuthorizationExample matching against profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot
+Details for Claim/ReferralAuthorizationExample matching against profile http://hl7.org/fhir/StructureDefinition/Claim|4.0.1
+The entry resource did not match the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot because: Claim.related: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot), A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated and None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#G89.4)
+The entry resource did not match the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot because: A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated and None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#G89.4)
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+Claim.related: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot)

@@ -43,8 +43,8 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 *(correction)* [link](epaWorkflow.html#FHIR-52779)
 * [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
-* [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712) - Capitalized conformance language *(correction)* [link](specification.html#49086)
-* [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Capitalized conformance language *(correction)* [link](specification.html#49086)
+* [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712) - Capitalized conformance language *(correction)* [link](specification.html#FHIR-49086)
+* [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Capitalized conformance language *(correction)* [link](specification.html#FHIR-49086)
 
 
 ### Version = 2.2.0-ballot
@@ -65,7 +65,7 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-49248](https://jira.hl7.org/browse/FHIR-49248) - Added a denied ReviewAction to a ClaimResponse example *(clarification)* [link](ClaimResponse-RejectionResponseExample.html)
 * [FHIR-49349](https://jira.hl7.org/browse/FHIR-49349) - Clarified location of LOINC attachment codes *(clarification)* [link](StructureDefinition-profile-communicationrequest.html)
 * [FHIR-49634](https://jira.hl7.org/browse/FHIR-49634) - Added clarification about what is sent in a Claim Update bundle *(clarification)* [link](specification.html#FHIR-49634)
-* [FHIR-49860](https://jira.hl7.org/browse/FHIR-49860) - Clarified reference expectations *(clarification)* [link](specification.html#49860)
+* [FHIR-49860](https://jira.hl7.org/browse/FHIR-49860) - Clarified reference expectations *(clarification)* [link](specification.html#FHIR-49860)
 * [FHIR-49896](https://jira.hl7.org/browse/FHIR-49896) - Changed PASPractitionerRole to inherit from US Core Practitioner Role *(correction)* [link](StructureDefinition-profile-practitionerrole.html)
 * [FHIR-50094](https://jira.hl7.org/browse/FHIR-50094) - Beefed up AdditionalInformation page *(clarification)* [link](additionalinfo.html)
 * [FHIR-50191](https://jira.hl7.org/browse/FHIR-50191) - Added invalid request OperationOutcome example *(clarification)* [link](OperationOutcome-InvalidRequestResponse.html)
@@ -276,7 +276,7 @@ This section provides an overview of the significant changes in Version 2.0.0 of
   - Add a section on endpoint resolution (FHIR-39505)
   - Fix typo in Figure 5.3 (FHIR-36317)
   - Add content and diagrams around ePA workflow (FHIR-36558)
-  - Add a sentence that says orders SHOULD be annotated with PAS response decisions (FHIR-41444)
+  - Add a sentence that says orders should be annotated with PAS response decisions (FHIR-41444)
   - Add information on how to include DTR QuestionnaireResponse in the Claim.supportingInfo (FHIR-41445)
 - Credits
   - Updated credits for new version of guide (FHIR-36621)

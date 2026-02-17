@@ -1,97 +1,12 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
-  "extension" : [{
-    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-    "valueCode" : "fm"
-  },
-  {
-    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 4,
-    "_valueInteger" : {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas|2.2.0-snapshot"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas|2.2.0-snapshot"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"
-      }]
-    }
-  },
-  {
-    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-    "valueCode" : "trial-use",
-    "_valueCode" : {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"
-      }]
-    }
-  }],
   "url" : "http://hl7.org/fhir/us/davinci-pas/Requirements/fromNarrative",
-  "identifier" : [{
-    "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:2.16.840.1.113883.4.642.40.24.36.1"
-  }],
-  "version" : "2.2.0-snapshot",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-01-30T14:13:33-07:00",
-  "publisher" : "HL7 International / Financial Management",
-  "contact" : [{
-    "name" : "HL7 International / Financial Management",
-    "telecom" : [{
-      "system" : "url",
-      "value" : "http://hl7.org/Special/committees/fm"
-    },
-    {
-      "system" : "email",
-      "value" : "fmlists@lists.hl7.org"
-    }]
-  },
-  {
-    "name" : "Jean Duteau",
-    "telecom" : [{
-      "system" : "email",
-      "value" : "mailto:jean@duteaudesign.com"
-    }]
-  },
-  {
-    "name" : "HL7 International / Financial Management",
-    "telecom" : [{
-      "system" : "url",
-      "value" : "http://www.hl7.org/Special/committees/fm"
-    }]
-  }],
   "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
-  "jurisdiction" : [{
-    "coding" : [{
-      "system" : "urn:iso:std:iso:3166",
-      "code" : "US",
-      "display" : "United States of America"
-    }]
-  }],
-  "actor" : ["http://hl7.org/fhir/us/davinci-pas/ActorDefinition/client",
-  "http://hl7.org/fhir/us/davinci-pas/ActorDefinition/payer"],
-  "_actor" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
-      "valueString" : "client"
-    }]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
-      "valueString" : "payer"
-    }]
-  }],
   "statement" : [{
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
@@ -325,10 +240,6 @@
   },
   {
     "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
-      "valueBoolean" : true
-    },
-    {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     },
@@ -342,26 +253,22 @@
   },
   {
     "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    },
+    {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "payer"
-    },
-    {
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
-      "valueBoolean" : true
     }],
     "key" : "conf-14",
     "requirement" : "Where cardinality and other constraints present in profiles allow data elements to be omitted, PAS compliant systems **SHALL NOT** treat the omission of those elements as a conformance error."
   },
   {
     "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
-      "valueBoolean" : true
-    },
-    {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     },
@@ -1012,7 +919,7 @@
   {
     "key" : "spec-67",
     "conformance" : ["SHALL"],
-    "requirement" : "Servers **SHALL** support rest-hook"
+    "requirement" : "Servers **SHALL** only support the [rest-hook channel type](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#rest-hook-1)"
   },
   {
     "key" : "spec-68",
@@ -1071,6 +978,11 @@
     "key" : "spec-78",
     "conformance" : ["SHALL"],
     "requirement" : "PAS systems **SHALL** ensure that prior authorizations that were initially pended remain available for query for at least 6 months after the anticipated completion of the services whose authorization was requested."
+  },
+  {
+    "key" : "spec-79",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Bundle **SHALL** be encoded in JSON."
   },
   {
     "extension" : [{
