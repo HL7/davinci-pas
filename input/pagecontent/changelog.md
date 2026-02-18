@@ -37,6 +37,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
 * [FHIR-55621](https://jira.hl7.org/browse/FHIR-55621) - Add disclaimer on examples re: X12 situational rules *(clarification)*[link](fhirArtifacts.html#FHIR-55621)
 * [FHIR-55643](https://jira.hl7.org/browse/FHIR-55643) - Add conformance statements about zipcodes in address *(clarification)*
+* [FHIR-55686](https://jira.hl7.org/browse/FHIR-55686) - Update the Returning Authorized items that are different section *(clarification)*[link](specification.html#FHIR-55686)
 
 ##### Technical Corrections
 * [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
