@@ -259,7 +259,7 @@ To communicate updates clients will use the $submit operation to provide a [PAS 
 
 * §spec-76:Cancelled entries: item and supportingInfo entries that have been removed from the request **SHALL** include the infoCancelled modifier extension with a valueBoolean of `true` in the Claim.item.modifierExtension or Claim.supportingInfo.modifierExtension element.§ §spec-77:Canceled items **SHALL** additionally contain a certificationType extension with a code of 3 (Cancel) in the Claim.item.extension element.§
 * §spec-78:Entries added, modified, or cancelled compared to the immediately prior version of the Claim referenced in the Claim.related.claim element **SHALL** contain a [infoChanged extension](StructureDefinition-extension-infoChanged.html) with a  in the Claim.item.extension or Claim.supportingInfo.extension element.§ §spec-79:The [infoChanged extension](StructureDefinition-extension-infoChanged.html) for added entries **SHALL** have a valueCode of `changed` and those for modified or deleted entries SHALL have a valueCode of `changed` (newly marking an item as canceled is considered a 'change').§ Entries that were previously added, modified or canceled will not be marked as changes unless they have been further changed in this version of the prior authorization.
-
+</div>
 
 ###### Updated Request Example
 An example of a updated request can be found at [Updated Homecare Request](Bundle-HomecareAuthorizationUpdateBundleExample.html) along with the [original Homecare Request](Bundle-HomecareAuthorizationBundleExample.html).
