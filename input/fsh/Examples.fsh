@@ -921,7 +921,7 @@ Description: "An example of the parameters going back for a PAS subscription not
   * valueReference = Reference(PASSubscription)
 * parameter[+]
   * name = "topic"
-  * valueCanonical = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic|2.1.0"
+  * valueCanonical = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
 * parameter[+]
   * name = "type"
   * valueCode = #event-notification
