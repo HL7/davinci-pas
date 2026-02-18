@@ -1,5 +1,6 @@
 Extension: TransmissionIdentifiers
 Id: extension-TransmissionIdentifiers
+Title: "Transmission Identifiers"
 Description: "Identifiers used for transmission tracking.  Used in the X12 GS and ISA header segments."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"
@@ -18,6 +19,7 @@ Description: "Identifiers used for transmission tracking.  Used in the X12 GS an
 
 Extension: CareTeamClaimScope
 Id: extension-careTeamClaimScope
+Title: "Care Team Claim Scope"
 Description: "A flag that indicates whether the care team applies to the entire claim or a single item."
 * value[x] only boolean
 * ^context[+].type = #element
@@ -25,6 +27,7 @@ Description: "A flag that indicates whether the care team applies to the entire 
 
 Extension: CertificationType
 Id: extension-certificationType
+Title: "Certification Type"
 Description: "A code representing the type of certification being requested (UM02)"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 (required)
@@ -38,6 +41,7 @@ Description: "A code representing the type of certification being requested (UM0
 
 Extension: LevelOfServiceCode
 Id: extension-levelOfServiceCode
+Title: "Level of Service Code"
 Description: "A code specifying the level of service being requested (UM06)"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 (required)
@@ -47,6 +51,7 @@ Description: "A code specifying the level of service being requested (UM06)"
 
 Extension: DiagnosisRecordedDate
 Id: extension-diagnosisRecordedDate
+Title: "Diagnosis Recorded Date"
 Description: "The date that a diagnosis was recorded. (HIxx-4)"
 * value[x] only date
 * valueDate obeys FullDateRule
@@ -55,6 +60,7 @@ Description: "The date that a diagnosis was recorded. (HIxx-4)"
 
 Extension: ItemTraceNumber
 Id: extension-itemTraceNumber
+Title: "Item Trace Number"
 Description: "Uniquely identifies this claim item. (2000F-TRN)"
 * value[x] only PASIdentifier
 * ^context[+].type = #element
@@ -68,6 +74,7 @@ Description: "Uniquely identifies this claim item. (2000F-TRN)"
 
 Extension: AuthorizationNumber
 Id: extension-authorizationNumber
+Title: "Authorization Number"
 Description: "A string assigned by the UMO to an authorized review outcome associated with this service item."
 * value[x] only string
 * ^context[+].type = #element
@@ -81,6 +88,7 @@ Description: "A string assigned by the UMO to an authorized review outcome assoc
 
 Extension: AdministrationReferenceNumber
 Id: extension-administrationReferenceNumber
+Title: "Administration Reference Number"
 Description: "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
 * value[x] only string
 * ^context[+].type = #element
@@ -94,6 +102,7 @@ Description: "A string assigned by the UMO to the original disallowed review out
 
 Extension: ServiceItemRequestType
 Id: extension-serviceItemRequestType
+Title: "Service Item Request Type"
 Description: "A code that identifies the type of service being requested."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 (required)
@@ -103,6 +112,7 @@ Description: "A code that identifies the type of service being requested."
 
 Extension: ProductOrServiceCodeEnd
 Id: extension-productOrServiceCodeEnd
+Title: "Product or Service Code End"
 Description: "Used to provide the last code in a series of codes for the service being requested."
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278RequestedServiceType (required)
@@ -113,6 +123,7 @@ Description: "Used to provide the last code in a series of codes for the service
 
 Extension: EPSDTIndicator
 Id: extension-epsdtIndicator
+Title: "EPSDT Indicator"
 Description: "An indicator of whether early and periodic screen for diagnosis and treatment of children is involved."
 * value[x] only boolean
 * ^context[+].type = #element
@@ -124,6 +135,7 @@ Description: "An indicator of whether early and periodic screen for diagnosis an
 
 Extension: NursingHomeResidentialStatus
 Id: extension-nursingHomeResidentialStatus
+Title: "Nursing Home Residential Status"
 Description: "A code specifying the status of a nursing home resident at the time of service. (SV209)"
 * value[x] only CodeableConcept
 * ^context[+].type = #element
@@ -135,6 +147,7 @@ Description: "A code specifying the status of a nursing home resident at the tim
 
 Extension: NursingHomeLevelOfCare
 Id: extension-nursingHomeLevelOfCare
+Title: "Nursing Home Level of Care"
 Description: "A code specifying the level of care provided by a nursing home facility. (SV120, SV210)"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/SV1/1/20/00/1337 (required)
@@ -148,6 +161,7 @@ Description: "A code specifying the level of care provided by a nursing home fac
 
 Extension: RevenueUnitRateLimit
 Id: extension-revenueUnitRateLimit
+Title: "Revenue Unit Rate Limit"
 Description: "The limit on the rate per unit of revenue for hospital accomodation. (SV206)"
 * value[x] only decimal
 * ^context[+].type = #element
@@ -157,6 +171,7 @@ Description: "The limit on the rate per unit of revenue for hospital accomodatio
 
 Extension: RequestedService
 Id: extension-requestedService
+Title: "Requested Service"
 Description: "The details of the service being requested."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
@@ -168,6 +183,7 @@ Description: "The details of the service being requested."
 
 Extension: ConditionCode
 Id: extension-conditionCode
+Title: "Condition Code"
 Description: "Information to supply various patient conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"
@@ -183,6 +199,7 @@ Description: "Information to supply various patient conditions."
 
 Extension: HomeHealthCareInformation
 Id: extension-homeHealthCareInformation
+Title: "Home Health Care Information"
 Description: "Information needed for home health care requests."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"
@@ -220,6 +237,7 @@ Description: """This profile defines constraints and extensions used when updati
 //modified
 Extension: InfoChanged
 Id: extension-infoChanged
+Title: "Information Change Mode"
 Description: "A code indicating how the piece of information has changed."
 * value[x] only code
 * valueCode from PASInformationChangeMode (required)
@@ -229,6 +247,7 @@ Description: "A code indicating how the piece of information has changed."
 //modified
 Extension: InfoCancelledFlag
 Id: modifierextension-infoCancelled
+Title: "Information Cancelled Flag"
 Description: "A flag indicating whether the piece of information was cancelled."
 * . ^isModifier = true
 * . ^isModifierReason = "Indicates that this piece of information is not to be used."
@@ -238,6 +257,7 @@ Description: "A flag indicating whether the piece of information was cancelled."
 
 Extension: CertificationIssueDate
 Id: extension-itemCertificationIssueDate
+Title: "Certification Issue Date"
 Description: "The specific date or period within which this item's preauthorization was issued."
 * value[x] only date or Period
 * valueDate obeys FullDateRule
@@ -250,6 +270,7 @@ Description: "The specific date or period within which this item's preauthorizat
 
 Extension: CertificationExpirationDate
 Id: extension-itemCertificationExpirationDate
+Title: "Certification Expiration Date"
 Description: "The specific date or period within which this item's preauthorization expires."
 * value[x] only date or Period
 * valueDate obeys FullDateRule
@@ -262,6 +283,7 @@ Description: "The specific date or period within which this item's preauthorizat
 
 Extension: CertificationEffectiveDate
 Id: extension-itemCertificationEffectiveDate
+Title: "Certification Effective Date"
 Description: "The specific date or period within which this item's preauthorization became effective."
 * value[x] only date or Period
 * valueDate obeys FullDateRule

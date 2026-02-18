@@ -30,6 +30,7 @@ Description: "A patient who is the subscriber of an insurance plan."
 
 Extension: MilitaryStatus
 Id: extension-militaryStatus
+Title: "Military Status"
 Description: "A patient's military status."
 * value[x] only CodeableConcept
 * value[x] from https://valueset.x12.org/x217/005010/request/2010C/INS/1/08/00/584 (required)

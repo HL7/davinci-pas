@@ -249,6 +249,7 @@ Description: "PAS constraints on US Core DocumentReference to require the docume
 
 Extension: DocumentInformation
 Id: extension-documentInformation
+Title: "Document Information"
 Description: "Information about the document being included such as the type, transmission method, and identifier."
 * extension contains reportTypeCode 1..1 and transmissionMethod 0..1 and controlNumber 0..1 and description 0..1
 * extension[reportTypeCode].value[x] only CodeableConcept

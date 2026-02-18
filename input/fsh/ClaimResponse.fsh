@@ -127,6 +127,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 
 Extension: ReviewAction
 Id: extension-reviewAction
+Title: "Review Action"
 Description: "The details of the review action that is necessary for the authorization."
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..* and secondSurgicalOpinionFlag 0..1
 * extension[code] ^short = "Healthcare Services Outcome"
@@ -146,6 +147,7 @@ Description: "The details of the review action that is necessary for the authori
 
 Extension: ReviewActionCode
 Id: extension-reviewActionCode
+Title: "Review Action Code"
 Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
@@ -159,6 +161,7 @@ Description: "The code describing the result of the review."
 
 Extension: ItemPreAuthIssueDate
 Id: extension-itemPreAuthIssueDate
+Title: "Item Preauthorization Issue Date"
 Description: "The date when this item's preauthorization was issued."
 * value[x] only date
 * ^context[+].type = #element
@@ -170,6 +173,7 @@ Description: "The date when this item's preauthorization was issued."
 
 Extension: ItemRequestedServiceDate
 Id: extension-itemRequestedServiceDate
+Title: "Item Requested Service Date"
 Description: "The original date/period that was requested by the submitter for this item."
 * value[x] only dateTime or Period
 * ^context[+].type = #element
@@ -179,6 +183,7 @@ Description: "The original date/period that was requested by the submitter for t
 
 Extension: ItemPreAuthPeriod
 Id: extension-itemPreAuthPeriod
+Title: "Item Preauthorization Period"
 Description: "The date/period when this item's preauthorization is valid."
 * value[x] only Period
 * ^context[+].type = #element
@@ -190,6 +195,7 @@ Description: "The date/period when this item's preauthorization is valid."
 
 Extension: RevenueCode
 Id: extension-revenueCode
+Title: "Revenue Code"
 Description: "A revenue code that expresses what was approved which maps to X12 SV201"
 * value[x] only CodeableConcept
 * valueCodeableConcept from AHANUBCRevenueCodes (required)
@@ -198,6 +204,7 @@ Description: "A revenue code that expresses what was approved which maps to X12 
 
 Extension: ErrorElement
 Id: extension-errorElement
+Title: "Error Element"
 Description: "The specific loop, segment, or element that this error information is about.  The string will follow the X12 format for specifying elements and is returned from the Payer.  Example: 2010A-NM103"
 * extension contains processNote 0..1 and error 0..1
 * extension[processNote].value[x] only positiveInt
@@ -207,6 +214,7 @@ Description: "The specific loop, segment, or element that this error information
 
 Extension: ErrorPath
 Id: extension-errorPath
+Title: "Error Path"
 Description: """The [FHIRPath](https://www.hl7.org/fhirpath/) expression that indicates which FHIR element that this error information is about.  The expression will start with the Bundle and can be followed to determine the specific element.
 
 STU NOTE: We would like feedback during the STU period on whether this extension is sufficient for implementers to determine and display the errored element.
@@ -219,6 +227,7 @@ Examples: Bundle.entry[1].resource.name, Bundle.entry[0].resource.identifier[0].
 
 Extension: ErrorFollowupAction
 Id: extension-errorFollowupAction
+Title: "Error Follow-up Action"
 Description: "A code representing what action must occur to resolve this error."
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278FollowUpActionCodes (required)
@@ -227,6 +236,7 @@ Description: "A code representing what action must occur to resolve this error."
 
 Extension: ItemAuthorizedDetail
 Id: extension-itemAuthorizedDetail
+Title: "Item Authorized Detail"
 Description: "The details of what has been authorized for this item."
 * extension contains productOrServiceCode 0..1 and ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 and modifier 0..* and unitPrice 0..1 and quantity 0..1 and EPSDTIndicator named epsdtIndicator 0..1 and NursingHomeLevelOfCare named nursingHomeLevelOfCare 0..1 and RevenueCode named revenue 0..1 and RevenueUnitRateLimit named revenueUnitRateLimit 0..1 and RequestedService named authorizedService 0..1
 * extension[productOrServiceCode].value[x] only CodeableConcept
@@ -244,6 +254,7 @@ Description: "The details of what has been authorized for this item."
 
 Extension: AuthorizedProviderType
 Id: extension-authorizedProviderType
+Title: "Authorized Provider Type"
 Description: "The type of provider who has been authorized to provide this item."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2010EA/NM1/1/01/00/98 (required)
@@ -255,6 +266,7 @@ Description: "The type of provider who has been authorized to provide this item.
 
 Extension: ItemAuthorizedProvider
 Id: extension-itemAuthorizedProvider
+Title: "Item Authorized Provider"
 Description: "The specific provider who has been authorized to provide this item."
 * extension contains provider 0..1 and 
                      AuthorizedProviderType named providerType 0..1 and
@@ -283,6 +295,7 @@ Description: "PAS constraints on Claim resource mandating support for elements r
 
 Extension: ClaimResponseItemCategory
 Id: extension-itemCategory
+Title: "Claim Response Item Category"
 Description: "The claim item category being responded to."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/UM/1/03/00/1365 (required)
@@ -292,6 +305,7 @@ Description: "The claim item category being responded to."
 
 Extension: ClaimResponseReviewer
 Id: extension-claimResponseReviewer
+Title: "Claim Response Reviewer"
 Description: "The responsible practitioner who reviewed to the request."
 * extension contains wasHumanReviewedFlag 1..1 and
             reviewerNPI 0..1 and
@@ -305,6 +319,7 @@ Description: "The responsible practitioner who reviewed to the request."
 
 Extension: AdmissionDates
 Id: extension-admissionDates
+Title: "Admission Dates"
 Description: "The authorized admission dates for inpatient services."
 * value[x] only date or Period
 * valueDate obeys FullDateRule
@@ -317,6 +332,7 @@ Description: "The authorized admission dates for inpatient services."
 
 Extension: DischargeDate
 Id: extension-dischargeDate
+Title: "Discharge Date"
 Description: "The authorized discharge date for inpatient services."
 * value[x] only date
 * valueDate obeys FullDateRule

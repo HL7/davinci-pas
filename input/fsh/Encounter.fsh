@@ -27,6 +27,7 @@ Description: "PAS constraints on the Encounter resource mandating support for el
 
 Extension: PatientStatus
 Id: extension-patientStatus
+Title: "Patient Status"
 Description: "A code representing the status of the patient when being admitted"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/CL1/1/03/00/1352 (required)

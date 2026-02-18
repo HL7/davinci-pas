@@ -28,6 +28,7 @@ For DTR submit-attachment use, the identifer will always be present since the me
 
 Extension: CommunicatedDiagnosis
 Id: extension-communicatedDiagnosis
+Title: "Communicated Diagnosis"
 Description: "A code representing the diagnosis that is the subject of the communication"
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278DiagnosisCodes (required)
@@ -40,6 +41,7 @@ Description: "A code representing the diagnosis that is the subject of the commu
 
 Extension: ContentModifier
 Id: extension-contentModifier
+Title: "Content Modifier"
 Description: "A code representing a modifier of the content being requested"
 * value[x] only CodeableConcept
 * valueCodeableConcept from X12278DiagnosisInformationType (required)
@@ -50,6 +52,7 @@ Description: "A code representing a modifier of the content being requested"
 
 Extension: ServiceLineNumber
 Id: extension-serviceLineNumber
+Title: "Service Line Number"
 Description: "A number that links the content being requested with the claim item number."
 * value[x] only positiveInt
 * ^context[+].type = #element

@@ -90,6 +90,7 @@ Description: "PAS constraints on the Timing datatype used in the various service
 //modified
 Extension: CalendarPattern
 Id: extension-timingcalendarpattern
+Title: "Calendar Pattern"
 Description: "A code representing the specific days when a service is being requested"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/HSD/1/07/00/678 (required)
@@ -101,6 +102,7 @@ Description: "A code representing the specific days when a service is being requ
 
 Extension: DeliveryPattern
 Id: extension-timingdeliverypattern
+Title: "Delivery Pattern"
 Description: "A code representing the specific delivery of a service being requested"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000F/HSD/1/08/00/679 (required)
