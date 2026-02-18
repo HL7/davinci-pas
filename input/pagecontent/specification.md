@@ -208,35 +208,40 @@ Notes:
 * §spec-57:systems **MAY** withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim identifier.§ §spec-58:In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed.§
 
 #### Pended Authorization Responses
-When the response indicates that an item is pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  In this situation, the client system will need to retrieve the prior authorization response at a later point once a final decision has been made. §spec-59:To retrieve the response at a later point, implementers **SHALL** support subscriptions.§ [Here](Bundle-ReferralPendingAuthorizationResponseBundleExample.html) is an example of a pended response.
+When the response indicates that an item is pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  [Here](Bundle-ReferralPendingAuthorizationResponseBundleExample.html) is an example of a pended response.  Updates to the pended responses will be returned via Subscriptions.
 
-Note: There are use-cases for multiple systems potentially needing to check on the status of a 'pended' prior authorization.  In addition to the provider who submitted the prior authorization request, the status might also be of interest to:
+There are use-cases for multiple systems potentially needing to check on the status of a 'pended' prior authorization.  In addition to the provider who submitted the prior authorization request, the status might also be of interest to:
 
 * the provider(s) who will be involved in delivering the service for which authorization was sought
 * the patient
 * the patient's caregivers
 * other members of the patient's care team
 
-As a result, queries seeking the status of the prior authorization response may come from multiple systems. §spec-60:Servers **SHALL** permit access to the prior authorization response to systems other than the original submitter.§ §spec-61:They **SHALL** require a match on the patient member or subscriber id (identifier on the Claim.patient) plus the ordering and/or rendering provider identifier, i.e. the provider's NPI.§
+As a result, queries seeking the status of the prior authorization response may come from multiple systems. §spec-58:Servers **SHALL** permit access to the prior authorization response to systems other than the original submitter.§ §spec-59:They **SHALL** require a match on the patient member or subscriber id (identifier on the Claim.patient) plus the ordering and/or rendering provider identifier, i.e. the provider's NPI.§
 
 >We recognize that knowledge of the Patient member or subscriber identifier may not be sufficient access-control for subsequent queries.  We are looking for implementer feedback on this, in particular, on how to pass information through the X12 inquiry mechanism to the payer that helps attest to the 'right to know'.
 {: .stu-note}
 
 
 ##### Subscription
+<a name="FHIR-55718"></a>
+§spec-60:Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/).§
 
-§spec-62:Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/).§
+###### Server Requirements
+* §spec-61:Servers supporting subscriptions **SHALL** expose this as part of their CapabilityStatement§. This includes:
+  * Support for the create interaction
+  * Support for the update interaction
+  * Support for the delete interaction
+* §spec-62:<span class="modified-content" markdown="1"><a name="FHIR-49086"></a>Servers **SHALL** only support the [rest-hook channel type](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#rest-hook-1)</span>§
 
-There is no need for 'topic discovery' as there is only one topic of interest - [PAS Subscription Topic](SubscriptionTopic-PASSubscriptionTopic.html) - for this implementation guide.
+Servers do not need to advertise the available topics in their CapabilityStatement as there is only one topic of interest - [PAS Subscription Topic](SubscriptionTopic-PASSubscriptionTopic.html) - for this implementation guide.
 
-When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint. §spec-63:This Subscription **SHALL** conform to the [PAS Subscription profile](StructureDefinition-profile-subscription.html).§ <span class="modified-content" markdown="1"><a name="FHIR-52841"></a>The subscription is created at the level of a sending system and not at the level of each individual prior authorization request. §spec-64:The Subscription filter criteria **SHALL** be org-identifier = [sending system identifier].§ NOTE: The sending system identifier is equivalent to what is currently sent in the ISA06.  Multiple criteria can be sent by listing them with the ',' as a separator, example: org-identifier=N123456,4543315. §spec-65:Intermediaries **SHALL** ensure that subscriptions to monitor a particular sending system's prior authorizations are only created or modified by that sending system.§</span>
+###### Client Requirements
+When using the subscription retrieval mechanism, the Client will POST a new Subscription instance to the Server's [base]/Subscription endpoint. §spec-63:This Subscription **SHALL** conform to the [PAS Subscription profile](StructureDefinition-profile-subscription.html).§ <span class="modified-content" markdown="1"><a name="FHIR-52841"></a>The subscription is created at the level of a sending system and not at the level of each individual prior authorization request. §spec-64:The Subscription filter criteria **SHALL** be org-identifier = [sending system identifier].§ NOTE: The sending system identifier is equivalent to what is currently sent in the ISA06.  These identifiers can be found in the FHIR Claim instance in the [Transmission Identifiers extension](StructureDefinition-extension-TransmissionIdentifiers.html).  Multiple criteria can be sent by listing them with the ',' as a separator, example: org-identifier=N123456,4543315. §spec-65:Intermediaries **SHALL** ensure that subscriptions to monitor a particular sending system's prior authorizations are only created or modified by that sending system.§</span>.
 
-* §spec-66:Servers supporting subscriptions **SHALL** expose this as part of the Server's CapabilityStatement§
-* §spec-67:<span class="modified-content" markdown="1"><a name="FHIR-49086"></a>Servers **SHALL** only support the [rest-hook channel type](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#rest-hook-1)</span>§
-* Additional information about creating subscriptions can be found [here]({{site.data.fhir.path}}subscription.html)
+###### Notification Requirements
 
-§spec-68:Once the [subscription](Subscription-PASSubscriptionExample.html) has been created, the Server **SHALL** send a notification over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.§ <span class="new-content" markdown="1"><a name="FHIR-53997"></a>This notification will include a full PAS Response Bundle.</span> This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'. §spec-69:Due to the inquiry not supporting all of the required information needed in a PAS response, PAS Clients and Intermediaries **SHALL** only support subscriptions with content='full-resource'.§ This will allow Servers to send the entire response as part of the subscription notification. 
-Non-submitting systems are not able to subscribe for responses and will have to periodically query.
+§spec-66:Once the [subscription](Subscription-PASSubscriptionExample.html) has been created, the Server **SHALL** send a [notification](Bundle-PASSubscriptionNotification.html) over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed.§ <span class="new-content" markdown="1"><a name="FHIR-53997"></a>§spec-67:This notification **SHALL** include a full PAS Response Bundle.§</span> This may happen when the response is complete, but may also occur when information on one or more of the items has been adjusted but the overall response remains as 'pended'. §spec-68:Due to the inquiry not supporting all of the required information needed in a PAS response, PAS Clients and Intermediaries **SHALL** only support subscriptions with content='full-resource'.§ This will allow Servers to send the entire response as part of the subscription notification. 
 
 #### Checking Status
 Systems other than the requesting system are unable to subscribe to the prior authorization response so they must use the Inquiry operation to check the status at the request of a user.  There are no retry limits for user-initiated status checks.
