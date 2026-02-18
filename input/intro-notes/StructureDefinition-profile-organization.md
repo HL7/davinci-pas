@@ -1,0 +1,1 @@
+§prof-org-1:X12 standard requires no dash for ZIP+4 codes and that intermediaries SHALL expect the dash to be present and SHALL remove the dash, if present, when converting the zip code to meet the X12 standard.§
