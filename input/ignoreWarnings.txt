@@ -211,3 +211,6 @@ The entry resource did not match the profile http://hl7.org/fhir/us/davinci-pas/
 The entry resource did not match the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim|2.2.0-snapshot because: A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated and None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0-snapshot), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#G89.4)
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
 Claim.related: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim-update|2.2.0-snapshot)
+
+# 2.2-16 The base Subscription resource uses the regex extension
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'

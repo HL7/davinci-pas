@@ -891,6 +891,7 @@ Description: "An example of a PAS Subscription submission for a specific provide
 * criteria.extension[filterCriteria].valueString = "orgIdentifier=http://hl7.org/fhir/sid/us-npi|1234567893"
 * channel.endpoint = "http://example.org/send-me-subscription-notifications"
 * channel.payload = #application/fhir+json
+* channel.payload.extension[content].valueCode = #full-resource
 * reason = "Receive notifications about claim responses for my organization."
 
 Instance: PASSubscriptionNotification
