@@ -104,6 +104,6 @@ There are a number of X12 codes that are used in the examples in this Implementa
 
 <p class="new-content"  markdown="1">
 <a name="FHIR-52770"> </a>
-* Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved</p>
+CPT © Copyright 2026 American Medical Association. All rights reserved. AMA and CPT are registered trademarks of the American Medical Association.</p>
 
 {% lang-fragment ip-statements.xhtml %}
