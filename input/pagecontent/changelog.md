@@ -33,6 +33,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-54423](https://jira.hl7.org/browse/FHIR-54423) - Added CDex as a base spec and dependency in sushi-config file *(clarification)* 
 * [FHIR-55394](https://jira.hl7.org/browse/FHIR-55394) - Added clarification to ClaimOperation about input and output parameters *Correction* [link](OperationDefinition-Claim-inquiry.html)
 * [FHIR-55402](https://jira.hl7.org/browse/FHIR-55402) - Clarified Claim.status and Claim.type *Clarification* [link](StructureDefinition-profile-claim.html)
+* [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
 
 
 ##### Technical Corrections
@@ -43,12 +44,8 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 *(correction)* [link](epaWorkflow.html#FHIR-52779)
 * [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
-<<<<<<< HEAD
 * [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712) - Capitalized conformance language *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Capitalized conformance language *(correction)* [link](specification.html#FHIR-49086)
-=======
-* [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#49086)
->>>>>>> 7c774d4a8cda160f77b5828da9cdc1a05f399cf8
 
 
 ### Version = 2.2.0-ballot
