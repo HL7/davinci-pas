@@ -426,6 +426,7 @@ Description: "An example of a Claim resource updating a prior authorization."
 * item.productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#G0154
 * item.locationCodeableConcept = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set#11
 * item[1].sequence = 2
+* item[1].extension[infoChanged].valueCode = #changed
 * item[1].modifierExtension[infoCancelledFlag].valueBoolean = true
 * item[1].category = https://codesystem.x12.org/005010/1365#42 "Home Health Care"
 * item[1].productOrService = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets#B4184

@@ -46,6 +46,8 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
 * [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
+* [FHIR-55733](https://jira.hl7.org/browse/FHIR-55733) - Updated HomecareAuthorization example to include infoChanged extension *(correction)* [link](Claim-HomecareAuthorizationUpdateExample.html)
+
 
 
 ### Version = 2.2.0-ballot
