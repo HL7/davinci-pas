@@ -84,6 +84,9 @@ Many of the profiles are based on US Core 7.0.0 while also declaring conformance
 {% include ext-list-generator.md use="profile" %}
 
 #### Examples
+><a name="FHIR-55621"></a>We have tried our best to make all examples valid both from a FHIR IG perspective and from an X12 perspective, but that there is no current way for us to validate the X12 situational rules so there may be a situational rule that we violate. If that is the case, we encourage readers to raise a [Jira issue](https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-pas) so that we can fix the examples.
+{: .dragon}
+
 The following examples are present in this guide to show specific use cases:
 
 * [Referral Authorization](Bundle-ReferralAuthorizationBundleExample.html) with [Accepted Response](Bundle-ReferralAuthorizationResponseBundleExample.html)
