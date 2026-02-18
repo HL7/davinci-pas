@@ -6,6 +6,7 @@ Description: "PAS constraints on Coverage resource mandating support for insuran
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0"
 * obeys self-beneficiary
 * identifier MS
+* identifier[memberid] 1..1
 * status MS
 * status = #active
 * subscriber MS

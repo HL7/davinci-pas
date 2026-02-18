@@ -35,7 +35,8 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55402](https://jira.hl7.org/browse/FHIR-55402) - Clarified Claim.status and Claim.type *Clarification* [link](StructureDefinition-profile-claim.html)
 * [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
 * [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
-
+* [FHIR-55621](https://jira.hl7.org/browse/FHIR-55621) - Add disclaimer on examples re: X12 situational rules *(clarification)*[link](fhirArtifacts.html#FHIR-55621)
+* [FHIR-55643](https://jira.hl7.org/browse/FHIR-55643) - Add conformance statements about zipcodes in address *(clarification)*
 
 ##### Technical Corrections
 * [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
@@ -51,7 +52,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55733](https://jira.hl7.org/browse/FHIR-55733) - Updated HomecareAuthorization example to include infoChanged extension *(correction)* [link](Claim-HomecareAuthorizationUpdateExample.html)
 * [FHIR-55734](https://jira.hl7.org/browse/FHIR-55734) - Added pointer to relevent section in specification page to Claim Update profile *(correction)* [link](StructureDefinition-profile-claim-update.html)
 * [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page to Claim Submit and Inquiry pages *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
-
+* [FHIR-55642](https://jira.hl7.org/browse/FHIR-55642) - Coverage.identifier:memberid should have cardinality 1..1 *(correction)* [link](StructureDefinition-profile-coverage.html)
 
 
 ### Version = 2.2.0-ballot
