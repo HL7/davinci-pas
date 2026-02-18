@@ -122,9 +122,6 @@ Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PAST
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 Reference to draft CodeSystem http://hl7.org/fhir/remittance-outcome|4.0.1
 
 # 08 For the given identifier slices the pattern will apply to all repeats
@@ -184,9 +181,6 @@ This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' i
 
 # 2.2-10 This is a value that the Publisher uses but does not appear to be defined yet
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
-
-# 2.2-11 There is a "rogue" DTR package with a version of 3.0.1 that should not exist
-The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21, but the most recent appropriate version is 3.0.1. This reference is getting old and the more recent version should be considered
 
 # 2.2-12 The requirements and actor definition resources are only used for the conformance statements and are not needed for implementing the specification.
 DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
