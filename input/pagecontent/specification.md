@@ -185,8 +185,8 @@ Inquiries will happen as a result of manual invocation. §spec-49:Although there
 
 The parameter to the inquiry operation is a [PAS Inquiry Request Bundle](StructureDefinition-profile-pas-inquiry-request-bundle.html) which has a [Claim Inquiry profile instance](StructureDefinition-profile-claim-inquiry.html) as the first resource as well as any resources referenced by the Claim Inquiry.  The operation is a 'query-by-example' where the resource sent in provides an example of the data that is being searched for. The system uses the example to generate the query and find matching records. The exact rules for which elements are required and how those elements are used in the search are contained in the X12 278 Inquiry and Response guide.
 
-<p class="modified-content">
-§spec-50:To search for a specific claim, the Claim.identifier can be sent and it **SHOULD** be either the previously returned Administration Reference Number (REF-BB) or the Prior Authorization Number (REF-NT).§
+<p class="modified-content"><a name="FHIR-55616"></a>
+The Claim.identifier is for the TRN of the ClaimInquiry and is used to identify the inquiry itself and is not used in searches for previous authorizations. To search for a specific authorization, the REF-NT and REF-BB can be used and specific extensions have been created for sending those identifiers.
 </p>
 
 In the base FHIR specification, the item.productOrService is mandatory. To conduct an inquiry that is not for a specific service, the 'not-applicable' code that is in the bound value set is sent. §spec-51:Intermediaries **SHALL** interpret the 'not-applicable' code as no product or service code.§

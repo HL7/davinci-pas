@@ -34,6 +34,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55394](https://jira.hl7.org/browse/FHIR-55394) - Added clarification to ClaimOperation about input and output parameters *Correction* [link](OperationDefinition-Claim-inquiry.html)
 * [FHIR-55402](https://jira.hl7.org/browse/FHIR-55402) - Clarified Claim.status and Claim.type *Clarification* [link](StructureDefinition-profile-claim.html)
 * [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
+* [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
 
 
 ##### Technical Corrections
