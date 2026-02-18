@@ -1,0 +1,1 @@
+Information on how this profile is used and interpreted is found in the [Specification page](specification.html#subscription).

@@ -47,6 +47,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
 * [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
+* [FHIR-55722](https://jira.hl7.org/browse/FHIR-55722) - Added links to the subscription section of Specification to the Subscription profile and topic pages *(clarification)* [profile](StructureDefinition-profile-subscription.html) [topic](SubscriptionTopic-PASSubscriptionTopic.html)
 * [FHIR-55723](https://jira.hl7.org/browse/FHIR-55723) - Added missing extension titles *(correction)* 
 * [FHIR-55730](https://jira.hl7.org/browse/FHIR-55730) - Updated Updating Authorization Requests section in Specification page *(correction)* [link](specification.html#FHIR-55730)
 * [FHIR-55733](https://jira.hl7.org/browse/FHIR-55733) - Updated HomecareAuthorization example to include infoChanged extension *(correction)* [link](Claim-HomecareAuthorizationUpdateExample.html)
