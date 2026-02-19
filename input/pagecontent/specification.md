@@ -99,7 +99,7 @@ Whether a response is considered 'pended', 'denied', or 'successful' depends on 
 §spec-39:Each item returned on the PAS ClaimResponse **SHALL** echo the same item.sequence as that same item had on the Claim. The item.sequence element **SHALL** serve as the main tracing identifier of items throughout requests and responses.§
 </p>
 <div class="modified-content"><a name="FHIR-55679"></a> 
-It is possible that the incoming prior authorization Bundle can not be processed due to validation errors or other non-business-errors. §spec-40:In the case of an error in an Operation invocation (e.g., 4XX error) instances, the receiving system **SHALL** return in which case, instead of the Parameters or unwrapped return parameter value, a single OperationOutcome is returned that details why the Bundle could not be processed and no ClaimResponse will be returned.§ These errors are NOT the errors that are detected by the system processing the request and that can be conveyed in a ClaimResponse via the error capability.
+It is possible that the incoming prior authorization Bundle can not be processed due to validation errors or other non-business-errors. §spec-40:In the case of an error in an Operation invocation (e.g., 4XX error), the receiving system **SHALL** return a single OperationOutcome that details why the Bundle could not be processed and no ClaimResponse will be returned instead of the Parameters or unwrapped return parameter value.§ These errors are NOT the errors that are detected by the system processing the request and that can be conveyed in a ClaimResponse via the error capability.
 
 The resulting Bundle or OperationOutcome is returned as the HTTP body of the POST response.
 </div>
