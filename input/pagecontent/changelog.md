@@ -52,8 +52,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page to Claim Submit and Inquiry pages *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
 
 
-
-
+##### Technical Corrections
 * [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
 * [FHIR-51976](https://jira.hl7.org/browse/FHIR-51976) - Fixed typo in figure 3.1 *(correction)* [link](additionalinfo.html)
 * [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated *(correction)* [link](credits.html#FHIR-52744)
@@ -63,6 +62,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55723](https://jira.hl7.org/browse/FHIR-55723) - Added missing extension titles *(correction)* 
 * [FHIR-55733](https://jira.hl7.org/browse/FHIR-55733) - Updated HomecareAuthorization example to include infoChanged extension *(correction)* [link](Claim-HomecareAuthorizationUpdateExample.html)
 * [FHIR-55642](https://jira.hl7.org/browse/FHIR-55642) - Coverage.identifier:memberid should have cardinality 1..1 *(correction)* [link](StructureDefinition-profile-coverage.html)
+* [FHIR-55679](https://jira.hl7.org/browse/FHIR-55679) - Added clarification on OperationOutcome instances when errors occur *(correction)* [link](specification.html#FHIR-55679)
 
 
 ### Version = 2.2.0-ballot
