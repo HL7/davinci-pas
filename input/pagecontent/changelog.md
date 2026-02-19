@@ -43,8 +43,8 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
 * [FHIR-55621](https://jira.hl7.org/browse/FHIR-55621) - Add disclaimer on examples re: X12 situational rules *(clarification)*[link](fhirArtifacts.html#FHIR-55621)
 * [FHIR-55643](https://jira.hl7.org/browse/FHIR-55643) - Add conformance statements about zipcodes in address *(clarification)*
-* [FHIR-55677](https://jira.hl7.org/browse/FHIR-55677) - Update the Returning Authorized items that are different section *(clarification)*[link](specification.html#FHIR-55677)
-* [FHIR-55687](https://jira.hl7.org/browse/FHIR-55687) - Update the Returning Authorized items that are a different section *(clarification)* [first](specification.html#FHIR-55687-1) [second](specification.html#FHIR-55687-2)
+* [FHIR-55677](https://jira.hl7.org/browse/FHIR-55677) - Added links to additional information on interpreting responses *(clarification)*[link](specification.html#FHIR-55677)
+* [FHIR-55686](https://jira.hl7.org/browse/FHIR-55686) - Update the Returning Authorized items that are a different section *(clarification)* 
 * [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-55718](https://jira.hl7.org/browse/FHIR-55718) - Update the Subscriptions section to be clearer *(clarification)*[link](specification.html#FHIR-55718)
 * [FHIR-55722](https://jira.hl7.org/browse/FHIR-55722) - Added links to the subscription section of Specification to the Subscription profile and topic pages *(clarification)* [profile](StructureDefinition-profile-subscription.html) [topic](SubscriptionTopic-PASSubscriptionTopic.html)
@@ -65,7 +65,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55642](https://jira.hl7.org/browse/FHIR-55642) - Coverage.identifier:memberid should have cardinality 1..1 *(correction)* [link](StructureDefinition-profile-coverage.html)
 * [FHIR-55679](https://jira.hl7.org/browse/FHIR-55679) - Added clarification on OperationOutcome instances when errors occur *(correction)* [link](specification.html#FHIR-55679)
 * [FHIR-55682](https://jira.hl7.org/browse/FHIR-55682) - Updated PA request and response example information *(correction)* [link](specification.html#FHIR-55682)
-* [FHIR-55686](https://jira.hl7.org/browse/FHIR-55686) - Updated prior authorization inquiries section in specification page to be more precise about the returned bundles *(correction)* [link](specification.html#FHIR-55686)
+* [FHIR-55687](https://jira.hl7.org/browse/FHIR-55687) - Updated prior authorization inquiries section in specification page to be more precise about the returned bundles *(correction)* [first](specification.html#FHIR-55687-1) [second](specification.html#FHIR-55687-2)
 * [FHIR-55711](https://jira.hl7.org/browse/FHIR-55711) - Reworded Pending Authorization response information for clarity *(correction)* [link](specification.html#FHIR-55711)
 * [FHIR-55721](https://jira.hl7.org/browse/FHIR-55721) - Corrected SubscriptionNotificationParameters example to refer to the PASSubscriptionExample and removed version from canonical address *(correction)* [link](Subscription-PASSubscriptionExample.html)
 * [FHIR-55887](https://jira.hl7.org/browse/FHIR-55887) - Corrected mapped actors in additional info page *(correction)* 
