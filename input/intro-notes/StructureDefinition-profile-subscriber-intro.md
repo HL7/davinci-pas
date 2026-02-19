@@ -1,3 +1,3 @@
 NOTE: X12 allows for an identifier for subscribers that is the "HIPAA Individual Identifier".  This is defined as a standard unique health identifier for each individual of the United States.  At this time, the Identifier system of such an identifier is not known.  Assuming that it would be defined, this identifier would be conveyed as a Patient.identifier.
 
-§prof-sub-1:X12 standard requires no dash for ZIP+4 codes and that intermediaries SHALL expect the dash to be present and SHALL remove the dash, if present, when converting the zip code to meet the X12 standard.§
+§prof-sub-1:X12 standard requires no dash for ZIP+4 codes and that intermediaries **SHALL** expect the dash to be present and **SHALL** remove the dash, if present, when converting the zip code to meet the X12 standard.§
