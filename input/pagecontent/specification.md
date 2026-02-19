@@ -103,6 +103,15 @@ It is possible that the incoming prior authorization Bundle can not be processed
 
 The resulting Bundle or OperationOutcome is returned as the HTTP body of the POST response.
 </div>
+<div class="modified-content"><a name="FHIR-55677"></a> 
+These examples and definitions provide information about prior authorization responses:
+* [Approved Example](Bundle-ReferralAuthorizationResponseBundleExample.html)
+* [Denied Example](Bundle-RejectionResponseBundleExample.html)
+* [Pended Example](Bundle-ReferralPendingAuthorizationResponseBundleExample.html)
+* [ClaimResponse.item.adjudication.extension Element](StructureDefinition-profile-claimresponse-definitions.html#ClaimResponse.item.adjudication.extension:reviewAction) or similar
+* [Review Action Extension Definition](StructureDefinition-extension-reviewAction.html)
+* [Review Action Code Element in the extension](StructureDefinition-extension-reviewAction-definitions.html#Extension.extension:code) or similar
+</div>
 
 ##### Returning Authorized Items that are different from what was Requested
 <p class="modified-content">

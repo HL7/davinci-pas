@@ -43,6 +43,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
 * [FHIR-55621](https://jira.hl7.org/browse/FHIR-55621) - Add disclaimer on examples re: X12 situational rules *(clarification)*[link](fhirArtifacts.html#FHIR-55621)
 * [FHIR-55643](https://jira.hl7.org/browse/FHIR-55643) - Add conformance statements about zipcodes in address *(clarification)*
+* [FHIR-55677](https://jira.hl7.org/browse/FHIR-55677) - Update the Returning Authorized items that are different section *(clarification)*[link](specification.html#FHIR-55677)
 * [FHIR-55686](https://jira.hl7.org/browse/FHIR-55686) - Update the Returning Authorized items that are different section *(clarification)*[link](specification.html#FHIR-55686)
 * [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-55718](https://jira.hl7.org/browse/FHIR-55718) - Update the Subscriptions section to be clearer *(clarification)*[link](specification.html#FHIR-55718)
