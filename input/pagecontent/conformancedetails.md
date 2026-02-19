@@ -13,7 +13,7 @@ A few other notes:
 * The actors are broken down into 'client' and 'server'.  There may be multiple systems that actually compose those logical entities which will vary from implementation.  It will be up to implementers to determine how the various conformance statements will apply to the actal systems in their architecture.
 * The categorizations are general.  In practice, all 'exchange', 'ui', and 'storage' requirements are some aspect of 'processing' requirements.  The categories will give hints as to the architectural layer a requirement will apply to, but there is nothing definitive implied by the category(ies) listed.
 
-The controls at the top of the table allow filtering the content to particular requirement subsets that may be of interest.  As well, a computable representation (XML and JSON) of the requirements can be found [here](Requirements-fromNarrative.html).
+The controls at the top of the table allow filtering the content to particular requirement subsets that may be of interest.
 
 §§§
 
