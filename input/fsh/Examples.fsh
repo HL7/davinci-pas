@@ -918,7 +918,7 @@ Title: "PAS Subscription Notification Parameters"
 Description: "An example of the parameters going back for a PAS subscription notification"
 * parameter[+]
   * name = "subscription"
-  * valueReference = Reference(PASSubscription)
+  * valueReference = Reference(PASSubscriptionExample)
 * parameter[+]
   * name = "topic"
   * valueCanonical = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
