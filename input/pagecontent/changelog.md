@@ -64,6 +64,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55642](https://jira.hl7.org/browse/FHIR-55642) - Coverage.identifier:memberid should have cardinality 1..1 *(correction)* [link](StructureDefinition-profile-coverage.html)
 * [FHIR-55679](https://jira.hl7.org/browse/FHIR-55679) - Added clarification on OperationOutcome instances when errors occur *(correction)* [link](specification.html#FHIR-55679)
 * [FHIR-55682](https://jira.hl7.org/browse/FHIR-55682) - Updated PA request and response example information *(correction)* [link](specification.html#FHIR-55682)
+* [FHIR-55711](https://jira.hl7.org/browse/FHIR-55711) - Reworded Pending Authorization response information for clarity *(correction)* [link](specification.html#FHIR-55711)
 
 
 ### Version = 2.2.0-ballot

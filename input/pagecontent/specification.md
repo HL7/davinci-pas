@@ -205,9 +205,10 @@ Notes:
 * §spec-57:systems **MAY** withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim identifier.§ §spec-58:In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed.§
 
 #### Pended Authorization Responses
-When the response indicates that an item is pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request.  [Here](Bundle-ReferralPendingAuthorizationResponseBundleExample.html) is an example of a pended response.  Updates to the pended responses will be returned via Subscriptions.
-
-There are use-cases for multiple systems potentially needing to check on the status of a 'pended' prior authorization.  In addition to the provider who submitted the prior authorization request, the status might also be of interest to:
+<p class="modified-content"><a name="FHIR-55711"></a>
+When the response indicates that an item is pended, it means that the payer requires additional time to make a final determination on all items within the prior authorization request. In this situation, the submitting client system will need to obtain the prior authorization response at a later point once a final decision has been made.  §spec-59:Implementers **SHALL** support subscriptions to provide the final response.§ [Here](Bundle-ReferralPendingAuthorizationResponseBundleExample.html) is an example of a pended response.
+</p>
+Note: There are use-cases for multiple systems potentially needing to check on the status of a 'pended' prior authorization.  In addition to the provider who submitted the prior authorization request, the status might also be of interest to:
 
 * the provider(s) who will be involved in delivering the service for which authorization was sought
 * the patient
