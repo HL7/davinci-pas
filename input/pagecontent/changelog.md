@@ -63,6 +63,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55733](https://jira.hl7.org/browse/FHIR-55733) - Updated HomecareAuthorization example to include infoChanged extension *(correction)* [link](Claim-HomecareAuthorizationUpdateExample.html)
 * [FHIR-55642](https://jira.hl7.org/browse/FHIR-55642) - Coverage.identifier:memberid should have cardinality 1..1 *(correction)* [link](StructureDefinition-profile-coverage.html)
 * [FHIR-55679](https://jira.hl7.org/browse/FHIR-55679) - Added clarification on OperationOutcome instances when errors occur *(correction)* [link](specification.html#FHIR-55679)
+* [FHIR-55682](https://jira.hl7.org/browse/FHIR-55682) - Updated PA request and response example information *(correction)* [link](specification.html#FHIR-55682)
 
 
 ### Version = 2.2.0-ballot

@@ -117,13 +117,9 @@ For instances where there are new authorized items, they are returned in the Cla
 </p>
 
 ##### Prior Authorization Request and Response Example
-This is an example of a standard Referral Request / Response sequence between a Primary Care Provider and a Utilization Management Organization. The [request example](Bundle-ReferralAuthorizationBundleExample.html) will show how a PCP can request a referral to a specialist for a patient from a UMO. The [response example](Bundle-ReferralAuthorizationResponseBundleExample.html) will also show the response.
-
-Joe Smith is a subscriber to Maryland Capital Insurance Company. During a regular physical, Dr. James Gardener, Joe’s primary care physician, diagnoses a potential heart problem. Dr. Gardener determines that it would be best to refer Joe to Dr. Susan Watson, a cardiologist, for a consultation.
-
-Dr. Gardener is required by Maryland Capital Insurance to submit a request for review seeking approval to refer Joe to Dr. Watson.
-
-After review, Maryland Capital approves the referral and responds.
+<p class="modified-content"><a name="FHIR-55682"></a>
+Joe Smith is a subscriber to Maryland Capital Insurance Company. During a regular physical, Dr. James Gardener, Joe’s primary care physician, diagnoses a potential heart problem. Dr. Gardener determines that it would be best to refer Joe to Dr. Susan Watson, a cardiologist, for a consultation. Dr. Gardener is required by Maryland Capital Insurance to submit a request for review seeking approval to refer Joe to Dr. Watson. Dr. Gardener’s EHR submits a prior authorization request similar to this [request example](Bundle-ReferralAuthorizationBundleExample.html). After review, Maryland Capital approves the referral and responds with a message similar to this [response example](Bundle-ReferralAuthorizationResponseBundleExample.html).
+</p>
 
 #### Prior Authorization Transaction Error Handling
 >This section was added in the May 2022 ballot of PAS and we are seeking balloter feedback on it.
