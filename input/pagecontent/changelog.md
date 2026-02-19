@@ -6,56 +6,62 @@ This version includes changes that arose while updating the guide based on ticke
 * Added a new [Conformance Details](conformancedetails.html) that provides a table with all of the narrative conformance statements.
 
 #### JIRA Issues Applied
-* [FHIR-46022](https://jira.hl7.org/browse/FHIR-46022) - Updated 'look and feel' of IG *(correction)* 
+
+##### Breaking Changes
 * [FHIR-48438](https://jira.hl7.org/browse/FHIR-48438) - Added DocumentReference extension *(correction)* [link](StructureDefinition-profile-documentreference.html)
+* [FHIR-55394](https://jira.hl7.org/browse/FHIR-55394) - Added clarification to ClaimOperation about input and output parameters *Correction* [link](OperationDefinition-Claim-inquiry.html)
+
+##### Substantive Changes
 * [FHIR-48843](https://jira.hl7.org/browse/FHIR-48843) - Update Member ID mapping and give guidance on Individual identifiers for patients *(correction)* [link](StructureDefinition-profile-beneficiary.html)
 * [FHIR-50469](https://jira.hl7.org/browse/FHIR-50469) - Added information on supplemental guides *(clarification)* [link](conformance.html#FHIR-50469)
 * [FHIR-51436](https://jira.hl7.org/browse/FHIR-51436) - Restricted .outcome to complete, error, and partial only *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-51545](https://jira.hl7.org/browse/FHIR-51545) - created admission and discharge date extensions and added to ClaimResponse.item and .addItem *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
 * [FHIR-51668](https://jira.hl7.org/browse/FHIR-51668) - Added authorizationNumber and administrationReferenceNumber to Claim extension *(enhancement)* [link](StructureDefinition-profile-claim.html)
 * [FHIR-51750](https://jira.hl7.org/browse/FHIR-51750) - Added requestType, certificationType, and category to ClaimResponse.addItem extension *(correction)* [link](StructureDefinition-profile-claimresponse.html)
 * [FHIR-51754](https://jira.hl7.org/browse/FHIR-51754) - Included .role and .qualification in the ItemAuthorizedProvider extension *(correction)* [link](StructureDefinition-extension-itemAuthorizedProvider.html)
-* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set *(clarification)* [link](specification.html#FHIR-51905)
-* [FHIR-51910](https://jira.hl7.org/browse/FHIR-51910) - Made Subscription.Endpoint mandatory and must support *(correction)* [link](StructureDefinition-profile-subscription.html)
-* [FHIR-51953](https://jira.hl7.org/browse/FHIR-51953) - Added clarification about CAT02 *(enhancement)* [link](specification.html#FHIR-51953)
-* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent *(correction)* [link](specification.html#FHIR-51954)
-* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 *(correction)* [link](index.html#FHIR-52712)
 * [FHIR-52722](https://jira.hl7.org/browse/FHIR-52722) - Updated ErrorElement extension to include a processNote *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-52770](https://jira.hl7.org/browse/FHIR-52770) - Manually added CPT licensing on index page *(correction)* [link](index.html#FHIR-52770)
 * [FHIR-52841](https://jira.hl7.org/browse/FHIR-52841) - Updated information about subscriptions *(correction)* [link](specification.html#FHIR-52841)
-* [FHIR-53049](https://jira.hl7.org/browse/FHIR-53049) - Added new clarification to section 6.1 *(clarification)* [link](conformance.html#FHIR-53049)
 * [FHIR-53396](https://jira.hl7.org/browse/FHIR-53396) - Updated supportingInformation.additionalInformation.value\[x\] Reference list *(enhancement)* [link](StructureDefinition-profile-claim.html)
 * [FHIR-53539](https://jira.hl7.org/browse/FHIR-53539) - Added clarification to PASTiming and PASQuantity *(enhancement)* [PASTiming](StructureDefinition-profile-datatype-timing.html) [PASQuantity](StructureDefinition-profile-quantity.html)
 * [FHIR-53589](https://jira.hl7.org/browse/FHIR-53589) - Moved ServiceLineNumber extension to top level of CommunicationRequest *(correction)* [link](StructureDefinition-profile-communicationrequest.html)
 * [FHIR-53639](https://jira.hl7.org/browse/FHIR-53639) - Added constraint to CommunicationRequest.identifier and CommunicationRequest.medium *(clarification)* [link](StructureDefinition-profile-communicationrequest.html)
+
+##### Non-Substantive Changes
+* [FHIR-51545](https://jira.hl7.org/browse/FHIR-51545) - created admission and discharge date extensions and added to ClaimResponse.item and .addItem *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-51905](https://jira.hl7.org/browse/FHIR-51905) - Corrected reference to X12N set *(clarification)* [link](specification.html#FHIR-51905)
+* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
+* [FHIR-51910](https://jira.hl7.org/browse/FHIR-51910) - Made Subscription.Endpoint mandatory and must support *(correction)* [link](StructureDefinition-profile-subscription.html)
+* [FHIR-51953](https://jira.hl7.org/browse/FHIR-51953) - Added clarification about CAT02 *(enhancement)* [link](specification.html#FHIR-51953)
+* [FHIR-51954](https://jira.hl7.org/browse/FHIR-51954) - Amended reference to include patient as a dependent *(correction)* [link](specification.html#FHIR-51954)
+* [FHIR-52712](https://jira.hl7.org/browse/FHIR-52712) - Corrected reference to X12 TR3 *(correction)* [link](index.html#FHIR-52712)
+* [FHIR-52742](https://jira.hl7.org/browse/FHIR-52742) - Added new ClaimResponseReviewer extension to PASClaimResponseBase profile *(enhancement)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-52770](https://jira.hl7.org/browse/FHIR-52770) - Manually added CPT licensing on index page *(correction)* [link](index.html#FHIR-52770)
+* [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 *(correction)* [link](usecases.html#FHIR-52771)
+* [FHIR-53049](https://jira.hl7.org/browse/FHIR-53049) - Added new clarification to section 6.1 *(clarification)* [link](conformance.html#FHIR-53049)
 * [FHIR-53997](https://jira.hl7.org/browse/FHIR-53997) - Added new clarification to section 7.2.7.1 *(clarification)* [link](specification.html#FHIR-53997)
 * [FHIR-54423](https://jira.hl7.org/browse/FHIR-54423) - Added CDex as a base spec and dependency in sushi-config file *(clarification)* 
-* [FHIR-55394](https://jira.hl7.org/browse/FHIR-55394) - Added clarification to ClaimOperation about input and output parameters *Correction* [link](OperationDefinition-Claim-inquiry.html)
 * [FHIR-55402](https://jira.hl7.org/browse/FHIR-55402) - Clarified Claim.status and Claim.type *Clarification* [link](StructureDefinition-profile-claim.html)
-* [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
 * [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
 * [FHIR-55621](https://jira.hl7.org/browse/FHIR-55621) - Add disclaimer on examples re: X12 situational rules *(clarification)*[link](fhirArtifacts.html#FHIR-55621)
 * [FHIR-55643](https://jira.hl7.org/browse/FHIR-55643) - Add conformance statements about zipcodes in address *(clarification)*
 * [FHIR-55686](https://jira.hl7.org/browse/FHIR-55686) - Update the Returning Authorized items that are different section *(clarification)*[link](specification.html#FHIR-55686)
+* [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-55718](https://jira.hl7.org/browse/FHIR-55718) - Update the Subscriptions section to be clearer *(clarification)*[link](specification.html#FHIR-55718)
+* [FHIR-55722](https://jira.hl7.org/browse/FHIR-55722) - Added links to the subscription section of Specification to the Subscription profile and topic pages *(clarification)* [profile](StructureDefinition-profile-subscription.html) [topic](SubscriptionTopic-PASSubscriptionTopic.html)
+* [FHIR-55730](https://jira.hl7.org/browse/FHIR-55730) - Updated Updating Authorization Requests section in Specification page *(correction)* [link](specification.html#FHIR-55730)
+* [FHIR-55734](https://jira.hl7.org/browse/FHIR-55734) - Added pointer to relevent section in specification page to Claim Update profile *(correction)* [link](StructureDefinition-profile-claim-update.html)
+* [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page to Claim Submit and Inquiry pages *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
 
 
-##### Technical Corrections
-* [FHIR-51906](https://jira.hl7.org/browse/FHIR-51906) - Capitalized conformance language *(correction)*
+
+
+* [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
 * [FHIR-51976](https://jira.hl7.org/browse/FHIR-51976) - Fixed typo in figure 3.1 *(correction)* [link](additionalinfo.html)
 * [FHIR-52744](https://jira.hl7.org/browse/FHIR-52744) - Credits updated *(correction)* [link](credits.html#FHIR-52744)
-* [FHIR-52771](https://jira.hl7.org/browse/FHIR-52771) - PAS year updated to 2024 *(correction)* [link](usecases.html#FHIR-52771)
 * [FHIR-52779](https://jira.hl7.org/browse/FHIR-52779) - Now references HTI-4 *(correction)* [link](epaWorkflow.html#FHIR-52779)
 * [FHIR-52854](https://jira.hl7.org/browse/FHIR-52854) - Corrected JIRA dashboard link *(correction)* 
 * [FHIR-53288](https://jira.hl7.org/browse/FHIR-53288) - Updated CommunicationRequest example to remove system and display from string *(correction)* [link](CommunicationRequest-CommunicationRequestExample.html)
-* [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
-* [FHIR-55722](https://jira.hl7.org/browse/FHIR-55722) - Added links to the subscription section of Specification to the Subscription profile and topic pages *(clarification)* [profile](StructureDefinition-profile-subscription.html) [topic](SubscriptionTopic-PASSubscriptionTopic.html)
 * [FHIR-55723](https://jira.hl7.org/browse/FHIR-55723) - Added missing extension titles *(correction)* 
-* [FHIR-55730](https://jira.hl7.org/browse/FHIR-55730) - Updated Updating Authorization Requests section in Specification page *(correction)* [link](specification.html#FHIR-55730)
 * [FHIR-55733](https://jira.hl7.org/browse/FHIR-55733) - Updated HomecareAuthorization example to include infoChanged extension *(correction)* [link](Claim-HomecareAuthorizationUpdateExample.html)
-* [FHIR-55734](https://jira.hl7.org/browse/FHIR-55734) - Added pointer to relevent section in specification page to Claim Update profile *(correction)* [link](StructureDefinition-profile-claim-update.html)
-* [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page to Claim Submit and Inquiry pages *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
 * [FHIR-55642](https://jira.hl7.org/browse/FHIR-55642) - Coverage.identifier:memberid should have cardinality 1..1 *(correction)* [link](StructureDefinition-profile-coverage.html)
 
 
@@ -63,29 +69,39 @@ This version includes changes that arose while updating the guide based on ticke
 This version includes changes due to comments raised by the community since 2.1.0 and fixes a number of issues with the profiles.
 
 #### JIRA Issues Applied
-* [FHIR-48458](https://jira.hl7.org/browse/FHIR-48458) - US Core QuestionnaireResponse was added to the Claim.supportingInfo\[additionalInformation\].value\[x\] options.  Sentence also added section 7.2.2 *(clarification)* [link](StructureDefinition-profile-claim.html)
+
+##### Breaking Changes
+* [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397) - Made Response Bundle identifier element mandatory and added mapping *(correction)* [link](StructureDefinition-profile-pas-response-bundle.html)
+
+##### Substantive Changes
 * [FHIR-48765](https://jira.hl7.org/browse/FHIR-48765) - Added authorizationNumber and administrationReferenceNumber extensions to Claim Response *(correction)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-48835](https://jira.hl7.org/browse/FHIR-48835) - Updated QuestionnaireContext invariant *(correction)* [link](StructureDefinition-profile-task.html)
 * [FHIR-48842](https://jira.hl7.org/browse/FHIR-48842) - Added self-beneficiary invariant to Coverage *(correction)* [link](StructureDefinition-profile-coverage.html)
-* [FHIR-48890](https://jira.hl7.org/browse/FHIR-48890) - Updated comment on ClaimResponse.item.itemSequence *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
-* [FHIR-48890](https://jira.hl7.org/browse/FHIR-48890) - Updated comment on ClaimResponse.item.itemSequence *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
 * [FHIR-48950](https://jira.hl7.org/browse/FHIR-48950) - Added clarification about sequence numbers as identifiers across request responses *(clarification)* [link](specification.html#FHIR-48950)
-* [FHIR-49019](https://jira.hl7.org/browse/FHIR-49019) - Added clarification about requested information in prior authorizations *(clarification)* [link](specification.html#FHIR-49019)
 * [FHIR-49021](https://jira.hl7.org/browse/FHIR-49021) - Made ClaimResponse.claim mandatory and added a DataAbsentReason *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-49896](https://jira.hl7.org/browse/FHIR-49896) - Changed PASPractitionerRole to inherit from US Core Practitioner Role *(correction)* [link](StructureDefinition-profile-practitionerrole.html)
+* [FHIR-51256](https://jira.hl7.org/browse/FHIR-51256) - Updated active and true statuses for ambiguous PAS use cases *(correction)* 
+
+##### Non-Substantive Changes
+* [FHIR-46022](https://jira.hl7.org/browse/FHIR-46022) - Updated 'look and feel' of IG *(correction)* 
+* [FHIR-48458](https://jira.hl7.org/browse/FHIR-48458) - US Core QuestionnaireResponse was added to the Claim.supportingInfo\[additionalInformation\].value\[x\] options.  Sentence also added section 7.2.2 *(clarification)* [link](StructureDefinition-profile-claim.html)
+* [FHIR-48835](https://jira.hl7.org/browse/FHIR-48835) - Updated QuestionnaireContext invariant *(correction)* [link](StructureDefinition-profile-task.html)
+* [FHIR-48890](https://jira.hl7.org/browse/FHIR-48890) - Updated comment on ClaimResponse.item.itemSequence *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-48890](https://jira.hl7.org/browse/FHIR-48890) - Updated comment on ClaimResponse.item.itemSequence *(clarification)* [link](StructureDefinition-profile-claimresponse.html)
+* [FHIR-49019](https://jira.hl7.org/browse/FHIR-49019) - Added clarification about requested information in prior authorizations *(clarification)* [link](specification.html#FHIR-49019)
 * [FHIR-49086](https://jira.hl7.org/browse/FHIR-49086) - Clarified necessary support for rest-hook *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-49093](https://jira.hl7.org/browse/FHIR-49093) - Added clarification about the inquire operation while waiting for results *(clarification)* [link](specification.html#FHIR-49093)
 * [FHIR-49248](https://jira.hl7.org/browse/FHIR-49248) - Added a denied ReviewAction to a ClaimResponse example *(clarification)* [link](ClaimResponse-RejectionResponseExample.html)
 * [FHIR-49349](https://jira.hl7.org/browse/FHIR-49349) - Clarified location of LOINC attachment codes *(clarification)* [link](StructureDefinition-profile-communicationrequest.html)
 * [FHIR-49634](https://jira.hl7.org/browse/FHIR-49634) - Added clarification about what is sent in a Claim Update bundle *(clarification)* [link](specification.html#FHIR-49634)
 * [FHIR-49860](https://jira.hl7.org/browse/FHIR-49860) - Clarified reference expectations *(clarification)* [link](specification.html#FHIR-49860)
-* [FHIR-49896](https://jira.hl7.org/browse/FHIR-49896) - Changed PASPractitionerRole to inherit from US Core Practitioner Role *(correction)* [link](StructureDefinition-profile-practitionerrole.html)
 * [FHIR-50094](https://jira.hl7.org/browse/FHIR-50094) - Beefed up AdditionalInformation page *(clarification)* [link](additionalinfo.html)
 * [FHIR-50191](https://jira.hl7.org/browse/FHIR-50191) - Added invalid request OperationOutcome example *(clarification)* [link](OperationOutcome-InvalidRequestResponse.html)
 * [FHIR-50784](https://jira.hl7.org/browse/FHIR-50784) - Altered Claim.dischargeDate to no longer allow a period datatype *(correction)* [link](StructureDefinition-profile-claim.html)
 * [FHIR-50928](https://jira.hl7.org/browse/FHIR-50928) - Statement added to usecases.md *(clarification)* [link](usecases.html#FHIR-50928)
 * [FHIR-51007](https://jira.hl7.org/browse/FHIR-51007) - Updated description of Claim.identifier *(clarification)* [link](StructureDefinition-profile-claim.html)
-* [FHIR-51256](https://jira.hl7.org/browse/FHIR-51256) - Updated active and true statuses for ambiguous PAS use cases *(correction)* 
+* [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464) - Adjusted context of use for Claim and ClaimResponse extensions *(correction)*
 * [FHIR-55394](https://jira.hl7.org/browse/FHIR-55394) - Altered ClaimInquiryOperation to allow multiple ClaimResponse entries *(correction)* [link](OperationDefinition-Claim-inquiry.html)
+
 
 ##### Narrative Changes
 * [Use Cases](usecases.html)
@@ -134,8 +150,6 @@ This version includes changes due to comments raised by the community since 2.1.
 * [FHIR-50092](https://jira.hl7.org/browse/FHIR-50092) - Added 'cancelled' to list of permitted .result values in logical model *(correction)* [link](StructureDefinition-PASMetricData.html)
 * [FHIR-50119](https://jira.hl7.org/browse/FHIR-50119) - Removed Homecare Authorization Differential Update Bundle and Homecare Authorization Differential Update examples *(correction)*
 * [FHIR-51189](https://jira.hl7.org/browse/FHIR-51189) - Fixed typo on home page *(correction)* [link](index.html)
-* [FHIR-51464](https://jira.hl7.org/browse/FHIR-51464) - Adjusted context of use for Claim and ClaimResponse extensions *(correction)*
-* [FHIR-51397](https://jira.hl7.org/browse/FHIR-51397) - Made Response Bundle identifier element mandatory and added mapping *(correction)* [link](StructureDefinition-profile-pas-response-bundle.html)
 * [FHIR-51534](https://jira.hl7.org/browse/FHIR-51534) - Moved processNote and item.noteNumber from InquiryResponse to ClaimResponseBase *(correction)* [link](StructureDefinition-profile-claimresponse.html)
 
 ### Version = 2.1.0
