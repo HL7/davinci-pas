@@ -66,6 +66,8 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55682](https://jira.hl7.org/browse/FHIR-55682) - Updated PA request and response example information *(correction)* [link](specification.html#FHIR-55682)
 * [FHIR-55711](https://jira.hl7.org/browse/FHIR-55711) - Reworded Pending Authorization response information for clarity *(correction)* [link](specification.html#FHIR-55711)
 * [FHIR-55721](https://jira.hl7.org/browse/FHIR-55721) - Corrected SubscriptionNotificationParameters example to refer to the PASSubscriptionExample and removed version from canonical address *(correction)* [link](Subscription-PASSubscriptionExample.html)
+* [FHIR-55887](https://jira.hl7.org/browse/FHIR-55887) - Corrected mapped actors in additional info page *(correction)* 
+* [FHIR-55890](https://jira.hl7.org/browse/FHIR-55890) - Corrected mapped actors in conformance and privacy pages and introductions to quality and timing profiles *(correction)* 
 
 
 ### Version = 2.2.0-ballot

@@ -33,9 +33,9 @@ Here is a high-level diagram that shows how the $submit-attachment call is used:
 </figure>
 {::options parse_block_html="true" /}
 
-§ainfo-3^payer^exchange:The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex.§ 
+§ainfo-3^client^exchange:The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex.§ 
 
-§ainfo-4^payer^exchange:All of the additional information request codes **SHOULD** be used as input to a CDex task.§ The CDex task will include all of the information required to enable CDex to assemble the required documentation and send it to the payer’s operation endpoint for attachments. §ainfo-5^payer^exchange:When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input.§ The following diagram defines the PAS, CDex, DTR workflow. §ainfo-6^payer^exchange:A separate task **SHALL** be created for each of the above attachment request types (PWK01, LOINC, questionnaire).§ 
+§ainfo-4^client^exchange:All of the additional information request codes **SHOULD** be used as input to a CDex task.§ The CDex task will include all of the information required to enable CDex to assemble the required documentation and send it to the payer’s operation endpoint for attachments. §ainfo-5^client^exchange:When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input.§ The following diagram defines the PAS, CDex, DTR workflow. §ainfo-6^client^exchange:A separate task **SHALL** be created for each of the above attachment request types (PWK01, LOINC, questionnaire).§ 
 
 Although CDex defines a set of operations, it can be implemented in a separate module. The Task is used to represent the information that is needed to make the CDex calls.  If the CDex calls are not in a separate module, then the Task may just be conceptual and not actually created.  In PAS, the Task is created by the Provider but that the remaining CDex workflow remains the same. 
 

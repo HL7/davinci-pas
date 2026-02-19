@@ -9,4 +9,4 @@ Each PAS Quantity **SHALL** have:
 
 §§
 
-§prof-tim-2:If a code is present, it **SHALL** use the X12 quantity units.§
+§prof-tim-2^client,payer:If a code is present, it **SHALL** use the X12 quantity units.§
