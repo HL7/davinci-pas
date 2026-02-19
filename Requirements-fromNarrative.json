@@ -647,299 +647,299 @@
     "requirement" : "If a payer does not support endpoint discovery, they **SHALL** expose only one PAS endpoint capable of handling all coverages."
   },
   {
-    "key" : "spec-11",
+    "key" : "spec-7",
     "conformance" : ["SHOULD"],
     "requirement" : "All of this **SHOULD** happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e. including network transmission time for request and response."
   },
   {
-    "key" : "spec-12",
+    "key" : "spec-8",
     "conformance" : ["SHALL"],
     "requirement" : "A subscription-based mechanism **SHALL** be used by the client to be informed of updates to the authorization."
   },
   {
-    "key" : "spec-13",
+    "key" : "spec-9",
     "conformance" : ["SHOULD-NOT"],
     "requirement" : "**NOTE**: The Claim Inquiry response does not include all of the information that can be returned in a request response, such as any request for additional information, so the inquire operation **SHOULD NOT** be used by the client while waiting for final results."
   },
   {
-    "key" : "spec-14",
+    "key" : "spec-10",
     "conformance" : ["MAY"],
     "requirement" : "Provider and EHR Vendor organizations **MAY** leverage the [payer registry](https://www.hl7.org/fhir/us/davinci-pdex/payertopayerexchange.html#mtls-endpoint-discovery) developed by PDex (which will eventually fold into the national directory under FAST) as a means of determining which endpoints exist for which payers as candidates for configuration."
   },
   {
-    "key" : "spec-15",
+    "key" : "spec-11",
     "conformance" : ["SHALL"],
     "requirement" : "The Bundle **SHALL** be encoded in JSON."
   },
   {
-    "key" : "spec-16",
+    "key" : "spec-12",
     "conformance" : ["SHALL"],
     "requirement" : "The first entry in the Bundle **SHALL** be a Claim resource complying with the [profile](StructureDefinition-profile-claim.html) defined in this IG to ensure the content is sufficient to appropriately populate an X12N/005010X217 message."
   },
   {
-    "key" : "spec-17",
+    "key" : "spec-13",
     "conformance" : ["SHALL"],
     "requirement" : "Additional Bundle entries **SHALL** be populated with any resources referenced by the Claim resource (and any resources referenced by **those** resources, fully traversing all references and complying with all identified profiles)."
   },
   {
-    "key" : "spec-18",
+    "key" : "spec-14",
     "conformance" : ["SHALL"],
     "requirement" : "Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once."
   },
   {
-    "key" : "spec-19",
+    "key" : "spec-15",
     "conformance" : ["SHOULD"],
     "requirement" : "E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance **SHOULD** be created - referenced from multiple places as appropriate."
   },
   {
-    "key" : "spec-20",
+    "key" : "spec-16",
     "conformance" : ["SHALL"],
     "requirement" : "Bundle.entry.fullUrl values **SHALL** be:"
   },
   {
-    "key" : "spec-21",
+    "key" : "spec-17",
     "conformance" : ["SHALL"],
     "requirement" : "All GUIDs used **SHALL** be unique, including across independent prior authorization submissions - with the exception that the same resource instance being referenced in distinct prior authorization request Bundles can have the same GUID."
   },
   {
-    "key" : "spec-22",
+    "key" : "spec-18",
     "conformance" : ["SHALL"],
     "requirement" : "Relevant resources referenced by those \"supporting information\" resources **SHALL** also be included (e.g. prescriber Practitioner and Medication for a MedicationRequest)."
   },
   {
-    "key" : "spec-23",
+    "key" : "spec-19",
     "conformance" : ["SHALL"],
     "requirement" : "Any such resource that has a US Core profile **SHALL** comply with the relevant US Core profiles."
   },
   {
-    "key" : "spec-24",
+    "key" : "spec-20",
     "conformance" : ["SHALL"],
     "requirement" : "All \"supporting information\" resources included in the Bundle **SHALL** be pointed to by the Claim resource using the Claim.supportingInfo.valueReference element."
   },
   {
-    "key" : "spec-25",
+    "key" : "spec-21",
     "conformance" : ["SHOULD"],
     "requirement" : "To attach non-FHIR instance data such as PDFs, CDAs, JPGs, a DocumentReference instance **SHOULD** be used."
   },
   {
-    "key" : "spec-26",
+    "key" : "spec-22",
     "conformance" : ["SHALL"],
     "requirement" : "The Claim.supportingInfo.sequence for each entry **SHALL** be unique within the Claim."
   },
   {
-    "key" : "spec-27",
+    "key" : "spec-23",
     "conformance" : ["SHALL"],
     "requirement" : "All resources **SHALL** comply with their respective profiles."
   },
   {
-    "key" : "spec-28",
+    "key" : "spec-24",
     "conformance" : ["SHOULD",
     "MAY"],
     "requirement" : "FHIR elements not marked as 'must support' **MAY** be included in resources within the Bundle, but client systems **SHOULD** have no expectation of such elements being processed by the payer unless prior arrangements have been made."
   },
   {
-    "key" : "spec-29",
+    "key" : "spec-25",
     "conformance" : ["SHALL",
     "MAY"],
     "requirement" : "Systems that do not process such elements **SHALL** ignore unsupported elements unless they are 'modifier' elements, in which case the system **MAY** treat the presence of the element as an error."
   },
   {
-    "key" : "spec-30",
+    "key" : "spec-26",
     "conformance" : ["SHALL"],
     "requirement" : "In addition, the system **SHALL** make the entire PAS FHIR Bundle available to the intended payer."
   },
   {
-    "key" : "spec-31",
+    "key" : "spec-27",
     "conformance" : ["MAY"],
     "requirement" : "The method **MAY** be based on the X12 275 or another method that trading partners have agreed to use."
   },
   {
-    "key" : "spec-32",
+    "key" : "spec-28",
     "conformance" : ["SHALL"],
     "requirement" : "If the X12 275 is used for this purpose, the 275 BDS01 Filter ID Code element **SHALL** be set to \"B64\" and the CAT02 Attachment Information Format Code element **SHALL** be sent to \"HL\"."
   },
   {
-    "key" : "spec-33",
+    "key" : "spec-29",
     "conformance" : ["SHOULD"],
     "requirement" : "Translation/mapping systems **SHOULD** be aware that if the size of the attachments as part of a claims submission would exceed the size limitations of a particular recipient, the intermediary **SHOULD** split the attachments into separate 275s to remain within the overall limit."
   },
   {
-    "key" : "spec-35",
+    "key" : "spec-30",
     "conformance" : ["SHALL"],
     "requirement" : "The Bundle **SHALL** start with a [ClaimResponse](StructureDefinition-profile-claimresponse-base.html) entry that contains information mapped from the 278 response."
   },
   {
-    "key" : "spec-36",
+    "key" : "spec-31",
     "conformance" : ["SHALL"],
     "requirement" : "When converting additional Bundle entries, the conversion process **SHALL** ensure that only one resource is created for a given combination of content."
   },
   {
-    "key" : "spec-37",
+    "key" : "spec-32",
     "conformance" : ["SHOULD"],
     "requirement" : "E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance **SHOULD** be created - referenced from multiple places as appropriate."
   },
   {
-    "key" : "spec-38",
+    "key" : "spec-33",
     "conformance" : ["SHALL"],
     "requirement" : "When echoing back resources that are the same as were present in the prior authorization request, the system **SHALL** ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request."
   },
   {
-    "key" : "spec-39",
+    "key" : "spec-34",
     "conformance" : ["SHALL"],
     "requirement" : "Each item returned on the PAS ClaimResponse **SHALL** echo the same item.sequence as that same item had on the Claim. The item.sequence element **SHALL** serve as the main tracing identifier of items throughout requests and responses."
   },
   {
-    "key" : "spec-40",
+    "key" : "spec-35",
     "conformance" : ["SHALL"],
     "requirement" : "In the case of an error in an Operation invocation (e.g., 4XX error), the receiving system **SHALL** return a single OperationOutcome that details why the Bundle could not be processed and no ClaimResponse will be returned instead of the Parameters or unwrapped return parameter value."
   },
   {
-    "key" : "spec-41",
+    "key" : "spec-36",
     "conformance" : ["SHALL"],
     "requirement" : "For instances where the authorized item is a modification of the requested item, the requested item details **SHALL** be returned in the ClaimResponse.item with an adjudication status of A6 - 'Modified'."
   },
   {
-    "key" : "spec-42",
+    "key" : "spec-37",
     "conformance" : ["SHALL"],
     "requirement" : "The details of what was actually item **SHALL** be returned in the ClaimResponse.addItem."
   },
   {
-    "key" : "spec-45",
+    "key" : "spec-38",
     "conformance" : ["SHOULD"],
     "requirement" : "Recipients of the transactions **SHOULD** respond as indicated below and senders of the transaction **SHOULD** look for the following responses and then take appropriate actions."
   },
   {
-    "key" : "spec-46",
+    "key" : "spec-39",
     "conformance" : ["SHALL"],
     "requirement" : "All transactions in PAS are synchronous and **SHALL** require one of the following HTTP responses:"
   },
   {
-    "key" : "spec-47",
+    "key" : "spec-40",
     "conformance" : ["SHOULD"],
     "requirement" : "If an OperationOutcome is received, it may have information regarding errors that **SHOULD** be addressed in the future, but did not cause the transaction to fail."
   },
   {
-    "key" : "spec-48",
+    "key" : "spec-41",
     "conformance" : ["SHOULD"],
     "requirement" : "NOTE: These errors **SHOULD** not be returned to the provider but **SHOULD** be reviewed and addressed by technical staff."
   },
   {
-    "key" : "spec-49",
+    "key" : "spec-42",
     "conformance" : ["SHOULD"],
     "requirement" : "Although there are no constraints on the frequency of the query, clients **SHOULD** ensure that no repetitive inquiries do not happen so as not to stress payer systems."
   },
   {
-    "key" : "spec-51",
+    "key" : "spec-43",
     "conformance" : ["SHALL"],
     "requirement" : "Intermediaries **SHALL** interpret the 'not-applicable' code as no product or service code."
   },
   {
-    "key" : "spec-52",
+    "key" : "spec-44",
     "conformance" : ["SHALL"],
     "requirement" : "This Claim Inquiry Response **SHALL** either reference a Claim or have a Data Absent Reason indicating why the Claim can not be referenced (eg. original claim received by fax)."
   },
   {
-    "key" : "spec-53",
+    "key" : "spec-45",
     "conformance" : ["SHOULD"],
     "requirement" : "The referenced Claim instance **SHOULD** be returned if there is information in the Response that needs to be present can not be returned in the Claim Response instance."
   },
   {
-    "key" : "spec-54",
+    "key" : "spec-46",
     "conformance" : ["SHALL"],
     "requirement" : "the returned ClaimResponse **SHALL** include the current results for all submitted items, including any items changed or canceled since the original authoriation request."
   },
   {
-    "key" : "spec-55",
+    "key" : "spec-47",
     "conformance" : ["SHALL"],
     "requirement" : "if a specific reference number (either the REF-NT or REF-BB) is submitted and is not the 'current' number (because subsequent additions/changes/cancellations have been made to the prior authorization request), the returned record **SHALL** be the current authorization response - even though it no longer has the same identifier."
   },
   {
-    "key" : "spec-56",
+    "key" : "spec-48",
     "conformance" : ["SHALL"],
     "requirement" : "I.e. If a search is for a 'replaced' prior authorization, the search result **SHALL** include the 'current' prior authorization response for the most recent replacing prior authorization request."
   },
   {
-    "key" : "spec-57",
+    "key" : "spec-49",
     "conformance" : ["MAY"],
     "requirement" : "systems **MAY** withhold information about prior authorizations that are 'open' but are deemed to be not relevant to the provider (eg. prior authorization requests for sensitive care where the requesting provider is neither the ordering nor rendering provider) who is checking for the prior authorization status if not searching by a specific Claim identifier."
   },
   {
-    "key" : "spec-58",
+    "key" : "spec-50",
     "conformance" : ["SHOULD"],
     "requirement" : "In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed."
   },
   {
-    "key" : "spec-59",
+    "key" : "spec-51",
     "conformance" : ["SHALL"],
     "requirement" : "Implementers **SHALL** support subscriptions to provide the final response."
   },
   {
-    "key" : "spec-60",
+    "key" : "spec-52",
     "conformance" : ["SHALL"],
     "requirement" : "Servers **SHALL** permit access to the prior authorization response to systems other than the original submitter."
   },
   {
-    "key" : "spec-61",
+    "key" : "spec-53",
     "conformance" : ["SHALL"],
     "requirement" : "They **SHALL** require a match on the patient member or subscriber id (identifier on the Claim.patient) plus the ordering and/or rendering provider identifier, i.e. the provider's NPI."
   },
   {
-    "key" : "spec-62",
+    "key" : "spec-54",
     "conformance" : ["SHALL"],
     "requirement" : "Implementers **SHALL** support the R4 Subscriptions referenced in the [Subscriptions for R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/)."
   },
   {
-    "key" : "spec-63",
+    "key" : "spec-55",
     "conformance" : ["SHALL"],
     "requirement" : "Servers supporting subscriptions **SHALL** expose this as part of their CapabilityStatement"
   },
   {
-    "key" : "spec-64",
+    "key" : "spec-56",
     "conformance" : ["SHALL"],
     "requirement" : "Servers **SHALL** only support the [rest-hook channel type](https://hl7.org/fhir/uv/subscriptions-backport/channels.html#rest-hook-1)"
   },
   {
-    "key" : "spec-65",
+    "key" : "spec-57",
     "conformance" : ["SHALL"],
     "requirement" : "This Subscription **SHALL** conform to the [PAS Subscription profile](StructureDefinition-profile-subscription.html)."
   },
   {
-    "key" : "spec-66",
+    "key" : "spec-58",
     "conformance" : ["SHALL"],
     "requirement" : "The Subscription filter criteria **SHALL** be org-identifier = [sending system identifier]."
   },
   {
-    "key" : "spec-67",
+    "key" : "spec-59",
     "conformance" : ["SHALL"],
     "requirement" : "Intermediaries **SHALL** ensure that subscriptions to monitor a particular sending system's prior authorizations are only created or modified by that sending system."
   },
   {
-    "key" : "spec-68",
+    "key" : "spec-60",
     "conformance" : ["SHALL"],
     "requirement" : "Once the [subscription](Subscription-PASSubscriptionExample.html) has been created, the Server **SHALL** send a [notification](Bundle-PASSubscriptionNotification.html) over the requested channel indicating that a prior authorization response submitted by the requesting provider organization has changed."
   },
   {
-    "key" : "spec-69",
+    "key" : "spec-61",
     "conformance" : ["SHALL"],
     "requirement" : "This notification **SHALL** include a full PAS Response Bundle."
   },
   {
-    "key" : "spec-70",
+    "key" : "spec-62",
     "conformance" : ["SHALL"],
     "requirement" : "Due to the inquiry not supporting all of the required information needed in a PAS response, PAS Clients and Intermediaries **SHALL** only support subscriptions with content='full-resource'."
   },
   {
-    "key" : "spec-71",
+    "key" : "spec-63",
     "conformance" : ["SHOULD"],
     "requirement" : "When details of a submitted request change and a provider needs to request prior authorization of a different set of items, clients **SHOULD** submit an update to the previously submitted Claim."
   },
   {
-    "key" : "spec-72",
+    "key" : "spec-64",
     "conformance" : ["MAY"],
     "requirement" : "Servers **MAY** reject updates and require that a new request is made by providing the appropriate X12 error code."
   },
   {
-    "key" : "spec-73",
+    "key" : "spec-65",
     "conformance" : ["SHALL"],
     "requirement" : "The Claim that is being updated **SHALL** be referenced in the Claim.related.claim element and included in the Bundle."
   },
@@ -948,41 +948,41 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
       "valueBoolean" : true
     }],
-    "key" : "spec-74",
+    "key" : "spec-66",
     "requirement" : "If that Claim instance is itself a Claim Update, its referenced Claim **SHALL NOT** be included."
   },
   {
-    "key" : "spec-75",
+    "key" : "spec-67",
     "conformance" : ["SHALL"],
     "requirement" : "All other referenced resources **SHALL** be included in the Bundle."
   },
   {
-    "key" : "spec-76",
+    "key" : "spec-68",
     "conformance" : ["SHALL"],
     "requirement" : "When changing the details of the request, the Claim instance **SHALL** contain all item and supportingInfo entries from the original Claim and any previous update Claims with `sequence` values preserved, but with the current request details."
   },
   {
-    "key" : "spec-77",
+    "key" : "spec-69",
     "conformance" : ["SHALL"],
     "requirement" : "Cancelled entries: item and supportingInfo entries that have been removed from the request **SHALL** include the infoCancelled modifier extension with a valueBoolean of `true` in the Claim.item.modifierExtension or Claim.supportingInfo.modifierExtension element."
   },
   {
-    "key" : "spec-78",
+    "key" : "spec-70",
     "conformance" : ["SHALL"],
     "requirement" : "Canceled items **SHALL** additionally contain a certificationType extension with a code of 3 (Cancel) in the Claim.item.extension element."
   },
   {
-    "key" : "spec-79",
+    "key" : "spec-71",
     "conformance" : ["SHALL"],
     "requirement" : "Entries added, modified, or cancelled compared to the immediately prior version of the Claim referenced in the Claim.related.claim element **SHALL** contain a [infoChanged extension](StructureDefinition-extension-infoChanged.html) within the Claim.item or the Claim.supportingInfo element."
   },
   {
-    "key" : "spec-80",
+    "key" : "spec-72",
     "conformance" : ["SHALL"],
     "requirement" : "The [infoChanged extension](StructureDefinition-extension-infoChanged.html) for added entries **SHALL** have a valueCode of `changed` and those for modified or deleted entries SHALL have a valueCode of `changed` (newly marking an item as canceled is considered a 'change')."
   },
   {
-    "key" : "spec-81",
+    "key" : "spec-73",
     "conformance" : ["SHALL"],
     "requirement" : "PAS systems **SHALL** ensure that prior authorizations that were initially pended remain available for query for at least 6 months after the anticipated completion of the services whose authorization was requested."
   },
