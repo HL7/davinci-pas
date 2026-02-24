@@ -43,13 +43,19 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55616](https://jira.hl7.org/browse/FHIR-55616) - Update statment on Claim.identifier for inquiries *(clarification)*[link](specification.html#FHIR-55616)
 * [FHIR-55621](https://jira.hl7.org/browse/FHIR-55621) - Add disclaimer on examples re: X12 situational rules *(clarification)*[link](fhirArtifacts.html#FHIR-55621)
 * [FHIR-55643](https://jira.hl7.org/browse/FHIR-55643) - Add conformance statements about zipcodes in address *(clarification)*
+* [FHIR-55667](https://jira.hl7.org/browse/FHIR-55667) - Clarify that all applicable US Core profiles are required to be supported*(clarification)*
+* [FHIR-55670](https://jira.hl7.org/browse/FHIR-55670) - Clarify unique resource requirements in Bundles *(clarification)*
+* [FHIR-55672](https://jira.hl7.org/browse/FHIR-55672) - Clarify Claim reference requirements in ClaimResponse *(clarification)*
+* [FHIR-55674](https://jira.hl7.org/browse/FHIR-55674) - Clarify which referenced resources are in the Response Bundle *(clarification)*
 * [FHIR-55677](https://jira.hl7.org/browse/FHIR-55677) - Added links to additional information on interpreting responses *(clarification)*[link](specification.html#FHIR-55677)
+* [FHIR-55679](https://jira.hl7.org/browse/FHIR-55679) - Clarified number of OperationOutcome instances returned in response *(clarification)*[link](specification.html#FHIR-55679)
 * [FHIR-55686](https://jira.hl7.org/browse/FHIR-55686) - Update the Returning Authorized items that are a different section *(clarification)* 
 * [FHIR-55712](https://jira.hl7.org/browse/FHIR-55712), [FHIR-55737](https://jira.hl7.org/browse/FHIR-55737) - Updated information about server support of rest-hook channels *(correction)* [link](specification.html#FHIR-49086)
 * [FHIR-55718](https://jira.hl7.org/browse/FHIR-55718) - Update the Subscriptions section to be clearer *(clarification)*[link](specification.html#FHIR-55718)
 * [FHIR-55722](https://jira.hl7.org/browse/FHIR-55722) - Added links to the subscription section of Specification to the Subscription profile and topic pages *(clarification)* [profile](StructureDefinition-profile-subscription.html) [topic](SubscriptionTopic-PASSubscriptionTopic.html)
 * [FHIR-55730](https://jira.hl7.org/browse/FHIR-55730) - Updated Updating Authorization Requests section in Specification page *(correction)* [link](specification.html#FHIR-55730)
 * [FHIR-55734](https://jira.hl7.org/browse/FHIR-55734) - Added pointer to relevent section in specification page to Claim Update profile *(correction)* [link](StructureDefinition-profile-claim-update.html)
+* [FHIR-55735](https://jira.hl7.org/browse/FHIR-55735) - Fixed conformance statement rendering issues *(clarification)*
 * [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page to Claim Submit and Inquiry pages *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
 * [FHIR-55909](https://jira.hl7.org/browse/FHIR-55909) - Added conformance statement about when payers can request additional information *(clarification)*[link](https://additionalInfo.html#FHIR-55909)
 
