@@ -89,13 +89,17 @@ Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesyst
 Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the value set cannot be expanded
 
 # 02 External code systems that are not available from the tx server
-Unable to check whether the code is in the value set '' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PatDischargeStatus was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PointOfOrigin was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'http://hl7.org/fhir/sid/icd-10-cm' could not be found, so the code cannot be validated
+Unknown Code 'B4184' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Unknown Code '99212' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Unknown Code 'B4190' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Unknown Code '33510' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+%Could not find the code system http://hl7.org/fhir/sid/icd-10-cm|2024%
 
 
 # 03 The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
@@ -108,7 +112,6 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-coverage%
 
 # 05 Code systems that are not available in the terminology server
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' could not be found, so the code cannot be validated
@@ -180,16 +183,13 @@ The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.s
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 
 # 2.2-10 This is a value that the Publisher uses but does not appear to be defined yet
-No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
+The extension http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters is not allowed to be used at this point (this element is [BackboneElement, ImplementationGuide.definition]; allowed for this version = e:ValueSet.compose)
 
 # 2.2-12 The requirements and actor definition resources are only used for the conformance statements and are not needed for implementing the specification.
 DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
 
 # 2.2-13 We are using this to indicate an abstract term in our code system
 The property 'abstract' has no definition in CodeSystem.property. Many terminology tools won't know what to do with it
-
-# 2.2-14 Parameters used for new features in the template
-Unknown Parameters: [requirements-category-vs=http://hl7.org/fhir/us/davinci-pas/ValueSet/cs-categories, term-params-in-artifacts=true, toggle-changes=true]
 
 # 2.2-15 Our examples use ICD-10 codes and this causes tx errors which propogates to the validator unable to determine if an instance is valid against a profile
 None of the codings provided are in the value set 'X12 278 Diagnosis Code Value Set' (http://hl7.org/fhir/us/davinci-pas/ValueSet/X12278DiagnosisCodes|2.2.0), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10-cm#G89.4)
@@ -208,3 +208,6 @@ Claim.related: minimum required = 1, but only found 0 (from http://hl7.org/fhir/
 
 # 2.2-16 The base Subscription resource uses the regex extension
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+
+# 2.2-17 PAS MedicationRequest is based on US Core 7.0.0 MedicationRequest. The US Core 6.1.0 and 7.0.0 MedicationRequest profiles are consistent but the validator raises an issue 
+This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0' 

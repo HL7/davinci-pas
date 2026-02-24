@@ -8,22 +8,9 @@
   "experimental" : false,
   "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
   "statement" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
-      "valueCoding" : {
-        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-        "code" : "exchange",
-        "display" : "exchange"
-      }
-    },
-    {
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
-      "valueString" : "payer"
-    }],
-    "key" : "ainfo-1",
-    "label" : "Payers MAY request additional information in a number of ways",
-    "conformance" : ["MAY"],
-    "requirement" : "A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response that includes any of the following:\r\n\r\n1. One or more codes in the PWK01 element\r\n1. One or more of the approved LOINC codes Attachments – LOINC in the HI segment\r\n1. A single 102089-0 LOINC code in the HI segment to request information via a payer’s specific questionnaire."
+    "key" : "1",
+    "conformance" : ["SHOULD"],
+    "requirement" : "ainfo-1^payer_exchange:Payers SHOULD attempt to use the initial DTR invocation to gather all relevant information relevant to the prior authorization request and only use the \"additional information\" approach when human review or other circumstances not known at the time of the initial DTR call require additional information to be collected."
   },
   {
     "extension" : [{
@@ -39,6 +26,23 @@
       "valueString" : "payer"
     }],
     "key" : "ainfo-2",
+    "conformance" : ["MAY"],
+    "requirement" : "A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "payer"
+    }],
+    "key" : "ainfo-3",
     "conformance" : ["SHALL"],
     "requirement" : "When a single LOINC code is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code **SHALL** be the DTR context ID used to retrieve the appropriate questionnaire."
   },
@@ -55,7 +59,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     }],
-    "key" : "ainfo-3",
+    "key" : "ainfo-4",
     "conformance" : ["SHALL"],
     "requirement" : "The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex."
   },
@@ -72,7 +76,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     }],
-    "key" : "ainfo-4",
+    "key" : "ainfo-5",
     "conformance" : ["SHOULD"],
     "requirement" : "All of the additional information request codes **SHOULD** be used as input to a CDex task."
   },
@@ -89,7 +93,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     }],
-    "key" : "ainfo-5",
+    "key" : "ainfo-6",
     "conformance" : ["SHALL"],
     "requirement" : "When the LOINC code 102089-0 is present, the associated TRNs **SHALL** also be exchange as Task.input."
   },
@@ -106,7 +110,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "client"
     }],
-    "key" : "ainfo-6",
+    "key" : "ainfo-7",
     "conformance" : ["SHALL"],
     "requirement" : "A separate task **SHALL** be created for each of the above attachment request types (PWK01, LOINC, questionnaire)."
   },
@@ -402,9 +406,8 @@
       "valueString" : "client"
     }],
     "key" : "prof-1",
-    "label" : "Timings SHALL have at least a count, frequency and period, a calendarPattern, or a deliveryPattern",
     "conformance" : ["SHALL"],
-    "requirement" : "Each PAS Timing **SHALL** have at least one of:\r\n\r\n1. count (with optional countMax)\r\n1. frequency and period and periodUnit (with optional frequencyMax and periodMax)\r\n1. calendarPattern extension\r\n1. deliveryPattern extension"
+    "requirement" : "Timings **SHALL** have at least a count, frequency and period, a calendarPattern, or a deliveryPattern."
   },
   {
     "extension" : [{
@@ -424,26 +427,21 @@
       "valueString" : "payer"
     }],
     "key" : "prof-2",
-    "label" : "Quantities SHALL have a value and either a unit or a code",
     "conformance" : ["SHALL"],
-    "requirement" : "Each PAS Quantity **SHALL** have:\r\n\r\n1. a value\r\n1. either a unit or a code and system."
+    "requirement" : "Quantities **SHALL** have a value and either a unit or a code"
   },
   {
     "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
-      "valueCoding" : {
-        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-        "code" : "exchange",
-        "display" : "exchange"
-      }
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
-      "valueString" : "client"
+      "valueString" : "payer"
     }],
     "key" : "prof-3",
     "conformance" : ["SHALL"],
-    "requirement" : "The Claim instance of the [update Bundle](specification.html#updating-authorization-requests) **SHALL** reference the updated Claim instance within the `Claim.related.claim` element. Note that the presence of this reference and the requirement that referenced instances be included in the submitted Bundle implies that the instance representing the prior version of the Claim **SHALL** be included in the update Bundle."
+    "requirement" : "If a quantity code is present, it **SHALL** use the X12 quantity units."
   },
   {
     "extension" : [{
@@ -460,7 +458,7 @@
     }],
     "key" : "prof-4",
     "conformance" : ["SHALL"],
-    "requirement" : "The Claim instance of the update Bundle **SHALL** contain within the `Claim.item` element each item requested in the updated claim and any prior versions of the claim, including requested items that have been added, modified, deleted, or left unchanged during this or previous updates."
+    "requirement" : "The Claim instance of the [update Bundle](specification.html#updating-authorization-requests) **SHALL** reference the updated Claim instance within the `Claim.related.claim` element. Note that the presence of this reference and the requirement that referenced instances be included in the submitted Bundle implies that the instance representing the prior version of the Claim **SHALL** be included in the update Bundle."
   },
   {
     "extension" : [{
@@ -477,7 +475,7 @@
     }],
     "key" : "prof-5",
     "conformance" : ["SHALL"],
-    "requirement" : "The Claim instance of the update Bundle **SHALL** contain within the `Claim.supportingInfo` element each piece of supporting documentation submitted with the updated claim and any prior versions of claim, including supporting documentation that has been added, modified, deleted, or left unchanged during this or previous updates."
+    "requirement" : "The Claim instance of the update Bundle **SHALL** contain within the `Claim.item` element each item requested in the updated claim and any prior versions of the claim, including requested items that have been added, modified, deleted, or left unchanged during this or previous updates."
   },
   {
     "extension" : [{
@@ -494,7 +492,7 @@
     }],
     "key" : "prof-6",
     "conformance" : ["SHALL"],
-    "requirement" : "Each `Claim.item` entry that represents an item no longer being requested, whether removed in this update or a previous one, **SHALL** be flagged using the infoCancelledFlag modifierExtension and **SHALL** have the code `3` (Cancel) in the Certification Type extension."
+    "requirement" : "The Claim instance of the update Bundle **SHALL** contain within the `Claim.supportingInfo` element each piece of supporting documentation submitted with the updated claim and any prior versions of claim, including supporting documentation that has been added, modified, deleted, or left unchanged during this or previous updates."
   },
   {
     "extension" : [{
@@ -511,7 +509,7 @@
     }],
     "key" : "prof-7",
     "conformance" : ["SHALL"],
-    "requirement" : "Each `Claim.supportingInfo` entry that is no longer to be used when evaluating the request, whether removed in this update or a previous one, **SHALL** be flagged using the infoCancelledFlag modifierExtension."
+    "requirement" : "Each `Claim.item` entry that represents an item no longer being requested, whether removed in this update or a previous one, **SHALL** be flagged using the infoCancelledFlag modifierExtension and **SHALL** have the code `3` (Cancel) in the Certification Type extension."
   },
   {
     "extension" : [{
@@ -528,7 +526,7 @@
     }],
     "key" : "prof-8",
     "conformance" : ["SHALL"],
-    "requirement" : "Each `Claim.item` and `Claim.supportingInfo` entry that has been changed as a part of this most recent update, including removal, **SHALL** be flagged using the changed extension with a value of `changed`."
+    "requirement" : "Each `Claim.supportingInfo` entry that is no longer to be used when evaluating the request, whether removed in this update or a previous one, **SHALL** be flagged using the infoCancelledFlag modifierExtension."
   },
   {
     "extension" : [{
@@ -544,6 +542,23 @@
       "valueString" : "client"
     }],
     "key" : "prof-9",
+    "conformance" : ["SHALL"],
+    "requirement" : "Each `Claim.item` and `Claim.supportingInfo` entry that has been changed as a part of this most recent update, including removal, **SHALL** be flagged using the changed extension with a value of `changed`."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "client"
+    }],
+    "key" : "prof-10",
     "conformance" : ["SHALL"],
     "requirement" : "Each `Claim.item` and `Claim.supportingInfo` entry that has been added as a part of this most recent update, **SHALL** be flagged using the changed extension with a value of `added`."
   },
@@ -566,23 +581,10 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "payer"
     }],
-    "key" : "prof-tim-2",
-    "conformance" : ["SHALL"],
-    "requirement" : "If a code is present, it **SHALL** use the X12 quantity units."
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
-      "valueString" : "client"
-    },
-    {
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
-      "valueString" : "payer"
-    }],
     "key" : "spec-1",
     "conformance" : ["SHALL"],
     "conditionality" : true,
-    "requirement" : "Along with the profiles defined in the PAS implementation guide, implementations **SHALL** also support the US Core R4 profiles for Condition, Observation, and Procedure."
+    "requirement" : "Along with the profiles defined in the PAS implementation guide, implementations **SHALL** also support the relevant US Core profiles for supplementary information."
   },
   {
     "extension" : [{
@@ -684,12 +686,12 @@
   {
     "key" : "spec-14",
     "conformance" : ["SHALL"],
-    "requirement" : "Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once."
+    "requirement" : "Each unique resource instance **SHALL** only appear at most once in the Bundle."
   },
   {
     "key" : "spec-15",
     "conformance" : ["SHOULD"],
-    "requirement" : "E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance **SHOULD** be created - referenced from multiple places as appropriate."
+    "requirement" : "Only one unique resource instance **SHOULD** be created to represent the same information. In other words, avoid creating multiple Practitioner instances for the same person."
   },
   {
     "key" : "spec-16",
@@ -771,12 +773,12 @@
   {
     "key" : "spec-31",
     "conformance" : ["SHALL"],
-    "requirement" : "When converting additional Bundle entries, the conversion process **SHALL** ensure that only one resource is created for a given combination of content."
+    "requirement" : "Each unique resource instance **SHALL** only appear at most once in the Bundle."
   },
   {
     "key" : "spec-32",
     "conformance" : ["SHOULD"],
-    "requirement" : "E.g. if the same Practitioner information is referenced in multiple places, only one Practitioner instance **SHOULD** be created - referenced from multiple places as appropriate."
+    "requirement" : "Only one unique resource instance **SHOULD** be created to represent the same information. In other words, avoid creating multiple Practitioner instances for the same person."
   },
   {
     "key" : "spec-33",
@@ -791,7 +793,7 @@
   {
     "key" : "spec-35",
     "conformance" : ["SHALL"],
-    "requirement" : "In the case of an error in an Operation invocation (e.g., 4XX error), the receiving system **SHALL** return a single OperationOutcome that details why the Bundle could not be processed and no ClaimResponse will be returned instead of the Parameters or unwrapped return parameter value."
+    "requirement" : "In the case of an error in an Operation invocation (e.g., 4XX error), the receiving system **SHALL** return a single OperationOutcome that details why the Bundle could not be processed."
   },
   {
     "key" : "spec-36",

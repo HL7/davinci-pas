@@ -195,7 +195,7 @@ menu:
     US Core 3.1.1: new-tab {{site.data.fhir.ver.uscore3}}
     US Core 6.1.0: new-tab {{site.data.fhir.ver.uscore6}}
     US Core 7.0.0: new-tab {{site.data.fhir.ver.uscore7}}
-    HRex 1.1.0: new-tab {{site.data.fhir.ver.hrex}}
+    HRex 1.2.0: new-tab {{site.data.fhir.ver.hrex}}
     CRD: new-tab {{site.data.fhir.ver.crd}}
     CDex: new-tab {{site.data.fhir.ver.cdex}}
     Subscription Backport: new-tab {{site.data.fhir.ver.subscriptions}}
