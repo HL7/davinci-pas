@@ -79,14 +79,13 @@ A definition could not be found for Canonical URL 'https://valueset.x12.org/x217
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000D/INS/1/02/00/1069'
 A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/PWK/1/02/00/756'
 
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/756' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/756' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/1136' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/1321' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/889' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/901' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/755' could not be found, so the value set cannot be expanded
 
 # 02 External code systems that are not available from the tx server
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/PatDischargeStatus was not found
@@ -99,8 +98,12 @@ Unknown Code 'B4184' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCS
 Unknown Code '99212' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 Unknown Code 'B4190' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 Unknown Code '33510' in the CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' version '2025-01' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-%Could not find the code system http://hl7.org/fhir/sid/icd-10-cm|2024%
 
+# 02a - the error actually arises because http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets throws an error in tx.fhir.org
+Error from https://tx.fhir.org/r4: Error: Cannot read properties of undefined (reading 'parameter') 
+
+# 02b - the error arises because http://www.ama-assn.org/go/cpt has a grammar and tx.fhir.org throws this
+Error from https://tx.fhir.org/r4: Error: 0ms tx-op 1ms start working 1ms compose #1
 
 # 03 The Bundle slices are open-ended with only one requirement - that there be a Claim or ClaimResponse entry, depending on the profile.  All the other entries can be whatever.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-request-bundle%
@@ -159,10 +162,11 @@ The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-
 # 2.2-03 We can confirm that the profile complies with 3.1.1 and/or 6.1.0
 The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1'
 The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0'
-The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
+This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0' 
 
-# 2.2-04 With new pinning rules, US Core artifacts are pinned to v7.0.0
+# 2.2-04 With new pinning rules, a number of artifacts are new pinned to specific versions
 Pinned the version of %
+There are multiple different potential matches for the url%
 
 # 2.2-05 The US Core Organization profile marks the identifier as must-support but then has two slices that are not.
 The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
@@ -175,14 +179,11 @@ The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-s
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note: 'Use additionalBinding extension or element instead'
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.3.0-ballot-tc1 is deprecated with the note: 'Use additionalBinding extension or element instead'
 
-# 2.2-08 Pin-Canonicals is set but doesn't seem to be working for all cases
-There are multiple different potential matches for the url%
-
 # 2.2-09 Using the only published of the r4 Subscriptions backport IG
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 
-# 2.2-10 This is a value that the Publisher uses but does not appear to be defined yet
+# 2.2-10 This is a value that the Publisher uses but it appears to be defined incorrectly
 The extension http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters is not allowed to be used at this point (this element is [BackboneElement, ImplementationGuide.definition]; allowed for this version = e:ValueSet.compose)
 
 # 2.2-12 The requirements and actor definition resources are only used for the conformance statements and are not needed for implementing the specification.
@@ -208,6 +209,3 @@ Claim.related: minimum required = 1, but only found 0 (from http://hl7.org/fhir/
 
 # 2.2-16 The base Subscription resource uses the regex extension
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
-
-# 2.2-17 PAS MedicationRequest is based on US Core 7.0.0 MedicationRequest. The US Core 6.1.0 and 7.0.0 MedicationRequest profiles are consistent but the validator raises an issue 
-This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0' 
