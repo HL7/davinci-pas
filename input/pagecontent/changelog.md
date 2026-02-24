@@ -51,7 +51,7 @@ This version includes changes that arose while updating the guide based on ticke
 * [FHIR-55730](https://jira.hl7.org/browse/FHIR-55730) - Updated Updating Authorization Requests section in Specification page *(correction)* [link](specification.html#FHIR-55730)
 * [FHIR-55734](https://jira.hl7.org/browse/FHIR-55734) - Added pointer to relevent section in specification page to Claim Update profile *(correction)* [link](StructureDefinition-profile-claim-update.html)
 * [FHIR-55736](https://jira.hl7.org/browse/FHIR-55736) - Added pointers to relevant sections in specification page to Claim Submit and Inquiry pages *(correction)* [Submit](OperationDefinition-Claim-submit.html) [Inquiry](OperationDefinition-Claim-inquiry.html)
-
+* [FHIR-55909](https://jira.hl7.org/browse/FHIR-55909) - Added conformance statement about when payers can request additional information *(clarification)*[link](https://additionalInfo.html#FHIR-55909)
 
 ##### Technical Corrections
 * [FHIR-55719](https://jira.hl7.org/browse/FHIR-55719),[FHIR-55720](https://jira.hl7.org/browse/FHIR-55720) - Have PAS Subscription depend on backport Topic Subscription profile *(enhancement)*[link](StructureDefinition-profile-subscription.html)
