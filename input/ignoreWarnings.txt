@@ -174,8 +174,8 @@ The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-suppor
 The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
 # 2.2-07 US Core uses minValueSet and maxValueSet on its profiles
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note: 'Use additionalBinding extension or element instead'
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.3.0-ballot-tc1 is deprecated with the note: 'Use additionalBinding extension or element instead'
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
 
 # 2.2-09 Using the only published of the r4 Subscriptions backport IG
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
@@ -188,4 +188,4 @@ DA VINCI: The How to Read page (background.html) needs to include a reference to
 The property 'abstract' has no definition in CodeSystem.property. Many terminology tools won't know what to do with it
 
 # 2.2-16 The base Subscription resource uses the regex extension
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'

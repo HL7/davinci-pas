@@ -55,10 +55,6 @@ dependencies:
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
     version: current
     id: hrex
-  hl7.fhir.us.davinci-dtr:
-    uri: http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr
-    version: current
-    id: dtr
   hl7.fhir.us.davinci-cdex:
     uri: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
     version: 2.1.0

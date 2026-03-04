@@ -216,7 +216,6 @@ RuleSet: CommonClaimElements
 * supportingInfo[AdditionalInformation].timing[x] 0..0
 * supportingInfo[AdditionalInformation].value[x] 1..1 MS
 * supportingInfo[AdditionalInformation].value[x] only Reference( PASDocumentReference or
-																$DTRQRBundle or
 																$USCoreQuestionnaireResponse or 
 																$USCoreAllergyIntolerence or 
 																$USCoreConditionEncounterDiagnosis or
@@ -230,7 +229,8 @@ RuleSet: CommonClaimElements
 																$USCoreSimpleObservation or
 																$USCoreVitalSigns or
 																NutritionOrder or
-																DeviceRequest)
+																DeviceRequest or
+                                                                Bundle)
 * supportingInfo[AdditionalInformation].value[x] ^comment = "Although we allow of any type of information to be sent, when sending reference to documents, the US-Core DocumentReference profile SHOULD be used."
 
 * supportingInfo[MessageText] ^short = "Send text messages to the UMO."

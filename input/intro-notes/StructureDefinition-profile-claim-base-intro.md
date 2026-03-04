@@ -1,0 +1,3 @@
+This is the abstract base profile for both the Claim request and the Claim inquiry.
+
+**NOTE TO IMPLEMENTERS:** There is an implicit reference on the [Documententation Templates and Rules](https://hl7.org/fhir/us/davinci-dtr/) IG in the supportingInfo slice of additionalInformation.  Due to DTR depending on PAS, we are unable to also depend on DTR.  The Bundle option is actually intended to be the [DTR Questionnaire Response Bundle](https://hl7.org/fhir/us/davinci-dtr/StructureDefinition-DTR-QRBundle.html) profile.
