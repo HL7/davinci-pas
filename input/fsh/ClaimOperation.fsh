@@ -70,7 +70,6 @@ Id: profile-subscription
 Title: "PAS Subscription"
 Description: "The profile for PAS subscription."
 * criteria = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
-* status = #active
 * channel.type = #rest-hook
 * channel.endpoint 1..1 MS
 * channel.payload.extension[content].valueCode = #full-resource
