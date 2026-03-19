@@ -34,7 +34,6 @@ Description: "Codes temporarily defined as part of the PAS implementation guide.
 * #dischargeDates "Discharge Dates" "Information about discharge dates of a hospital admission being requested."
 * #additionalInformation "Additional Information" "Send additional paperwork or supporting information for the request."
 * #freeFormMessage "Free Form Message" "Send text messages to the UMO."
-* #institutionalEncounter "Institutional Encounter" "Information about a hospital claim being requested."
 
 // PAS Subscription Event
 * #result-available "Result Available" "A new result for a PAS submission is now available."
