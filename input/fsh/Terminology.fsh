@@ -88,7 +88,6 @@ Description: "Types of supporting information for a Prior Authorization Claim."
 * PASTempCodes#dischargeDates
 * PASTempCodes#additionalInformation
 * PASTempCodes#freeFormMessage
-* PASTempCodes#institutionalEncounter
 
 ValueSet: PASCommunicationRequestMedium
 Title: "PAS Communication Medium Value Set"
