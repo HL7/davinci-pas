@@ -1,15 +1,14 @@
-> Welcome to the post-ballot public review for the STU 2.2 release of the Da Vinci Prior Authorization (PAS) implementation guide.
->
->As a result of ballot feedback, a number of [additional changes](changelog.html#version--220-ballot) have been made to the IG, some of them substantive.  Because of these substantive changes, we're providing an opportunity for the community to perform an additional layer of review to the changes.  Feedback on this release should be limited to only those aspects of the specification changed since the ballot, though technical corrections identifying issues with spelling, grammar, formatting, broken links, etc. are welcome for any portion of the specification.  Feedback submitted against other parts of the specification will likely be deferred to a future release, particularly if they would involve substantive change, though all feedback provided will be considered at some point.
->
->Feedback on changes made since the ballot will generally fall into one of two categories:
->* The change was not made as agreed or accidentally introduced a new issue.  (Please check for situations where an agreed change was subsequently overridden by a subsequent change.)
->* The commenter disagrees with some of the changes made.  While the project *can* revisit decisions, doing so requires convincing new arguments not already discussed and considered by the regular project calls.  Therefore, be sure to provide clear justification for any request to revisit and be aware that those attending the calls may quickly find the issue non-persuasive if there have not been new, not previously discussed, considerations identified.
->
->Feedback should be provided using HL7's [Jira mechanism](https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-pas), though discussion on the [PAS Zulip stream](https://chat.fhir.org/#narrow/stream/1208874-Da-Vinci-PAS) is also welcome.
-{: .note-to-balloters}
+<blockquote class="stu-note" markdown="1">
+This STU update of the specification reflects changes based on implementer feedback about the Prior Authorization Support (hereafter, PAS) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.
 
-This specification is currently published as a Standard for Trial Use (STU).
+This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
+
+Feedback is welcome.  Requests for change may be submitted through the [FHIR change tracker](http://hl7.org/fhir-issues) indicating "US Da Vinci PAS" as the specification.  Questions should be raised on the [PAS Zulip stream](https://chat.fhir.org/#narrow/stream/1208874-Da-Vinci-PAS).
+
+Individuals interested in participating in the Da Vinci Burden Reduction project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
+
+A summary of the major changes from the previous release can be found [here](changelog.html).
+</blockquote>
 
 Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.  Please see this [Da Vinci External Reference page](https://confluence.hl7.org/display/DVP/Da+Vinci+Reference+to+External+Standards+and+Terminologies) for details on how to get this mapping.
 

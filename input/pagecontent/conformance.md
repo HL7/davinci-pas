@@ -1,3 +1,5 @@
+This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.  Base expectations for the interpretation of these terms are set in the [FHIR core specification]({{site.data.fhir.path}}conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html).  A summary of all such conformance statements found in this implementation guide can be found [here](conformancedetails.html).
+
 ### Systems
 The PAS implementation guide defines the responsibilities of the two types of systems involved in a PAS solution:
 

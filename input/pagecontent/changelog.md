@@ -1,3 +1,5 @@
+{% include changeLogIntro.md %}
+
 ### Version = 2.2.0-snapshot
 This version includes changes that arose while updating the guide based on tickets raised during the ballot.
 

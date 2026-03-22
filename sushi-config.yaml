@@ -47,7 +47,11 @@ dependencies:
   hl7.fhir.uv.sdc:
     version: 3.0.0
     reason: Needed for referencing the US-Core QuestionnaireResponse profile
-  hl7.fhir.extensions.r5: 4.0.1
+  hl7.fhir.uv.xver-r5.r4:
+    id: xver
+    version: 0.1.0
+    reason: |
+      Needed to pre-adopt R5 Encounter elements in R4
   hl7.fhir.us.davinci-crd:
     version: current
     id: crd
