@@ -45,7 +45,7 @@ dependencies:
     reason: |
       Needed for systems supporting USCDI v4
   hl7.fhir.uv.sdc:
-    version: 3.0.0
+    version: current
     reason: Needed for referencing the US-Core QuestionnaireResponse profile
   hl7.fhir.uv.xver-r5.r4:
     id: xver
