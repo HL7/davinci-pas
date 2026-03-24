@@ -13,7 +13,7 @@ There are two ways of sending attachments depending on whether it is unsolicited
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="PAS_CDex_Attachments_Workflow_Summary.png" alt="PAS Required Solicited and Unsolicited Workflows"/>
-  <figcaption>Figure 3.1 - PAS Required Solicited and Unsolicited Workflows</figcaption>
+  <figcaption>Figure 9.1 - PAS Required Solicited and Unsolicited Workflows</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -21,14 +21,14 @@ Here is a high-level diagram that shows how the $submit-attachment call is used:
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="high-level-submit-attachment.png" alt="High Level $submit-attachment Use"/>
-  <figcaption>Figure 3.2 - High Level submit-attachment Use</figcaption>
+  <figcaption>Figure 9.2 - High Level submit-attachment Use</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionalinforequest-workflow.png" alt="PAS Additional Documentation Request Workflow"/>
-  <figcaption>Figure 3.3 - Request For Additional Information Workflow</figcaption>
+  <figcaption>Figure 9.3 - Request For Additional Information Workflow</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
