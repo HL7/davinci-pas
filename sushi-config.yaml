@@ -45,7 +45,8 @@ dependencies:
     reason: |
       Needed for systems supporting USCDI v4
   hl7.fhir.uv.sdc:
-    version: current
+    id: sdc
+    version: 4.0.0
     reason: Needed for referencing the US-Core QuestionnaireResponse profile
   hl7.fhir.uv.xver-r5.r4:
     id: xver
@@ -53,23 +54,33 @@ dependencies:
     reason: |
       Needed to pre-adopt R5 Encounter elements in R4
   hl7.fhir.us.davinci-crd:
-    version: current
+    version: 2.2.0
     id: crd
+    reason: |
+      Defines the CRD coverage-information extension used by this IG
   hl7.fhir.us.davinci-hrex:
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
-    version: current
+    version: 1.2.0
     id: hrex
+    reason: |
+      Defines common profiles, features, and security expectations common across all Da Vinci IGs
   hl7.fhir.us.davinci-cdex:
     uri: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
     version: 2.1.0
     id: cdex
+    reason: |
+      Defines profiles used in attachment submission
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     id: subscriptions
+    reason: |
+      Needed to reference the Subscription resource for notifications about claim updates
   hl7.fhir.uv.tools.r4:
     id: tools
     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
     version: 1.1.2
+    reason: |
+      Common tooling features needed by all IGs
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
