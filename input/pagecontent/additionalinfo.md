@@ -1,4 +1,7 @@
-<a name="FHIR-55909"></a>§ainfo-1^payer^exchange:Payers SHOULD attempt to use the initial DTR invocation to gather all relevant information relevant to the prior authorization request and only use the "additional information" approach when human review or other circumstances not known at the time of the initial DTR call require additional information to be collected.§
+This section discusses considerations around payers asking for additional information once a prior authorization request has been received.
+
+<a name="FHIR-55909"> </a>
+§ainfo-1^payer^exchange:Payers **SHOULD** attempt to use the initial DTR invocation to gather all relevant information relevant to the prior authorization request and only use the "additional information" approach when human review or other circumstances not known at the time of the initial DTR call require additional information to be collected.§
 
 §ainfo-2^payer^exchange:A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response§.  That response can include any of the following:
 
@@ -10,27 +13,39 @@
 §ainfo-3^payer^exchange:When a single LOINC code is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code **SHALL** be the DTR context ID used to retrieve the appropriate questionnaire.§
 
 There are two ways of sending attachments depending on whether it is unsolicited or solicited.  The following diagram shows the flow:
+
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="PAS_CDex_Attachments_Workflow_Summary.png" alt="PAS Required Solicited and Unsolicited Workflows"/>
   <figcaption>Figure 3.1 - PAS Required Solicited and Unsolicited Workflows</figcaption>
+  <p></p>
 </figure>
+
 {::options parse_block_html="true" /}
 
+
+
 Here is a high-level diagram that shows how the $submit-attachment call is used:
+
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="high-level-submit-attachment.png" alt="High Level $submit-attachment Use"/>
   <figcaption>Figure 3.2 - High Level submit-attachment Use</figcaption>
+  <p></p>
 </figure>
+
 {::options parse_block_html="true" /}
+
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionalinforequest-workflow.png" alt="PAS Additional Documentation Request Workflow"/>
   <figcaption>Figure 3.3 - Request For Additional Information Workflow</figcaption>
+  <p></p>
 </figure>
+
 {::options parse_block_html="true" /}
+
 
 §ainfo-4^client^exchange:The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex.§ 
 

@@ -181,8 +181,9 @@ INFORMATION: StructureDefinition/profile-documentreference: StructureDefinition.
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 
-# 2.2-12 The requirements and actor definition resources are only used for the conformance statements and are not needed for implementing the specification.
-DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
+# 2.2-12 These are R5 resources, so we have to (and do) point to the R5 version
+WARNING: DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
+WARNING: DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/requirements.html because this IG uses the requirements resource.
 
 # 2.2-13 We are using this to indicate an abstract term in our code system
 The property 'abstract' has no definition in CodeSystem.property. Many terminology tools won't know what to do with it
@@ -197,3 +198,7 @@ INFORMATION: en/conformance.html: The html source contains the word 'MAY' but it
 
 # 2.2-18 This is a known issue with the inter-version extension release we're using, but it won't impact validation
 WARNING: Bundle/SurgicalRequestBundleExample: Bundle.entry[0].resource/*Claim/SurgicalAuthorizationRequestExample*/.extension[1].value.ofType(Reference): Found multiple matching profiles for Encounter/SurgicalEncounterExample among choices: http://hl7.org/fhir/5.0/StructureDefinition/profile-Encounter|0.1.0, http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+
+# 2.2-19. These releases didn't have any associated tracker items
+WARNING: DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.2.1
+WARNING: DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.2.0

@@ -1,5 +1,11 @@
 {% include changeLogIntro.md %}
 
+### Version = 2.2.1
+Minor technical correction that only changed formatting
+
+### Version = 2.2.0
+No additional changes changes other than technical corrections
+
 ### Version = 2.2.0-snapshot
 This version includes changes that arose while updating the guide based on tickets raised during the ballot.
 

@@ -1,9 +1,10 @@
 {
   "package-id" : "hl7.fhir.us.davinci-pas",
-  "version" : "2.2.0",
-  "path" : "http://hl7.org/fhir/us/davinci-pas/STU2.2",
+  "version" : "2.2.1",
+  "path" : "http://hl7.org/fhir/us/davinci-pas/2.2.1",
   "status" : "trial-use",
+  "mode" : "technical-correction",
   "sequence" : "STU 2",
-  "mode": "milestone",
-  "desc" : "This is the published version of STU 2.2"
+  "desc" : "STU 2.2.1 technical correction",
+  "descmd" : "STU 2.2.1 technical corrections.  See [list of changes](http://hl7.org/fhir/us/davinci-pas/2.2.1/changelog.html#release-221)"
 }
