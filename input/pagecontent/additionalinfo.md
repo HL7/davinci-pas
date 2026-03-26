@@ -10,27 +10,39 @@
 §ainfo-3^payer^exchange:When a single LOINC code is used, the TRN at the X12 278 header or line level associated with the 102089-0 LOINC code **SHALL** be the DTR context ID used to retrieve the appropriate questionnaire.§
 
 There are two ways of sending attachments depending on whether it is unsolicited or solicited.  The following diagram shows the flow:
+
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="PAS_CDex_Attachments_Workflow_Summary.png" alt="PAS Required Solicited and Unsolicited Workflows"/>
   <figcaption>Figure 3.1 - PAS Required Solicited and Unsolicited Workflows</figcaption>
+  <p></p>
 </figure>
+
 {::options parse_block_html="true" /}
 
+
+
 Here is a high-level diagram that shows how the $submit-attachment call is used:
+
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="high-level-submit-attachment.png" alt="High Level $submit-attachment Use"/>
   <figcaption>Figure 3.2 - High Level submit-attachment Use</figcaption>
+  <p></p>
 </figure>
+
 {::options parse_block_html="true" /}
+
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-additionalinforequest-workflow.png" alt="PAS Additional Documentation Request Workflow"/>
   <figcaption>Figure 3.3 - Request For Additional Information Workflow</figcaption>
+  <p></p>
 </figure>
+
 {::options parse_block_html="true" /}
+
 
 §ainfo-4^client^exchange:The [PAS task profile](StructureDefinition-profile-task.html) **SHALL** be used to convey PAS X12 278 Response information to CDex.§ 
 

@@ -197,3 +197,7 @@ INFORMATION: en/conformance.html: The html source contains the word 'MAY' but it
 
 # 2.2-18 This is a known issue with the inter-version extension release we're using, but it won't impact validation
 WARNING: Bundle/SurgicalRequestBundleExample: Bundle.entry[0].resource/*Claim/SurgicalAuthorizationRequestExample*/.extension[1].value.ofType(Reference): Found multiple matching profiles for Encounter/SurgicalEncounterExample among choices: http://hl7.org/fhir/5.0/StructureDefinition/profile-Encounter|0.1.0, http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+
+# 2.2-19. These releases didn't have any associated tracker items
+WARNING: DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.2.1
+WARNING: DA VINCI: The Change Log page (changelog.html) does not include any Jira tracker items links for the section with title Version = 2.2.0
