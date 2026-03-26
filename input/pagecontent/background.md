@@ -18,7 +18,7 @@ This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standar
 
 #### FHIR
 This implementation guide uses terminology, notations and design principles that are
-specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR, as well as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
+specific to FHIR.  Before reading this implementation guide, it is important to be familiar with some of the basic principles of FHIR, as well as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
 
 * [FHIR Overview]({{site.data.fhir.path}}overview.html)
 * [Developer's Introduction]({{site.data.fhir.path}}overview-dev.html) (or [Clinical Introduction]({{site.data.fhir.path}}overview-clinical.html))
@@ -42,6 +42,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     </tr>
   </thead>
   <tbody>
+    <tr><td><a href="http://hl7.org/fhir/r5/actordefinion.html">ActorDefinition</a></td><td>Used to help identify the entities that are subject to conformance expectations (pre-adopted from R5)</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in a PAS operation</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}capabilitystatement.html">CapabilityStatement</a></td><td>Used to define conformance expectations for this guide</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}claim.html">Claim</a></td><td>The main resource that contains the information about what is being requested to be authorized</td></tr>
@@ -62,6 +63,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     <tr><td><a href="{{site.data.fhir.path}}patient.html">Patient</a></td><td>Demographic information relevant to all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="http://hl7.org/fhir/r5/requirements.html">Requirements</a></td><td>Provides a computable listing of the text-based conformance expectations of the guide (pre-adopted from R5)</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that indicates what authorization is needed</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resources and defining extensions</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}subscription.html">Subscription</a></td><td>Used when subscribing for authorization decisions for an organization</td></tr>

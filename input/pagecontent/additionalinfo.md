@@ -1,4 +1,7 @@
-<a name="FHIR-55909"></a>§ainfo-1^payer^exchange:Payers SHOULD attempt to use the initial DTR invocation to gather all relevant information relevant to the prior authorization request and only use the "additional information" approach when human review or other circumstances not known at the time of the initial DTR call require additional information to be collected.§
+This section discusses considerations around payers asking for additional information once a prior authorization request has been received.
+
+<a name="FHIR-55909"> </a>
+§ainfo-1^payer^exchange:Payers **SHOULD** attempt to use the initial DTR invocation to gather all relevant information relevant to the prior authorization request and only use the "additional information" approach when human review or other circumstances not known at the time of the initial DTR call require additional information to be collected.§
 
 §ainfo-2^payer^exchange:A payer **MAY** request additional information from the provider to support a prior authorization request by responding to the X12 278 Request with an X12 278 Response§.  That response can include any of the following:
 
