@@ -54,7 +54,7 @@ dependencies:
     reason: |
       Needed to pre-adopt R5 Encounter elements in R4
   hl7.fhir.us.davinci-crd:
-    version: current
+    version: 2.2.1
     id: crd
     reason: |
       Defines the CRD coverage-information extension used by this IG
