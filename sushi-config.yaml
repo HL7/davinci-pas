@@ -191,12 +191,12 @@ menu:
     ePA Coordinator: epaWorkflow.html
   Specification:
     Conformance Expectations: conformance.html
+    Conformance Details: conformancedetails.html
     Technical Specification: specification.html
     Request for Additional Info: additionalinfo.html
     HIPAA Regulations: regulations.html
     Privacy, Safety, and Security: privacy.html
     Metrics: metrics.html
-    Conformance Details: conformancedetails.html
   FHIR Artifacts:
     Overview: fhirArtifacts.html
     Terminology: terminology.html
