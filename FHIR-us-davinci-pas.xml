@@ -198,7 +198,7 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="changelog" name="Change Log"/>
 <page key="conformancedetails" name="Conformance Details"/>
-<page key="conformancedetails" name="Conformance Expectations"/>
+<page key="conformance" name="Conformance Expectations"/>
 <page key="downloads" name="Downloads"/>
 <page key="regulations" name="HIPAA Regulations"/>
 <page key="metrics" name="PAS Metrics"/>
