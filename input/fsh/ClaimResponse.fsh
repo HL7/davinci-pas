@@ -270,7 +270,7 @@ Id: extension-itemAuthorizedProvider
 Title: "Item Authorized Provider"
 Description: "The specific provider who has been authorized to provide this item."
 * extension contains provider 0..1 and 
-                     AuthorizedProviderType named providerType 0..1 and
+                     AuthorizedProviderType named providerType 1..1 and
                      role 0..1 and
                      qualification 0..1
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
