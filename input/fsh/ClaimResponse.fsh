@@ -34,7 +34,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 	AuthorizationNumber named previousAuthorizationNumber 0..1 MS and
 	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	ItemRequestedServiceDate named requestedServiceDate 0..1 MS and
-	ItemAuthorizedProvider named authorizedProvider 0..* MS and
+	ItemAuthorizedProvider named authorizedProvider 1..* MS and
 	ItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
   AdmissionDates named admissionDates 0..1 MS and
   DischargeDate named dischargeDate 0..1 MS
