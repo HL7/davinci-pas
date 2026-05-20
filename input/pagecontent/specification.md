@@ -125,6 +125,11 @@ In surveys with payers, it appears that this is returned in X12 responses in two
 For instances where there are new authorized items, they are returned in the ClaimResponse.addItem and the itemSequence will not match any of the requested items and thus will indicate that it is a new item.
 </p>
 
+##### Reason for Denial
+<p class="modified-content"><a name="FHIR-56288"></a>
+When a prior authorization request is denied, the reason for denial should be included. If it was previously included in the MSG segment of the X12 message, it should be included in the processNote.
+</p>
+
 ##### Prior Authorization Request and Response Example
 <p class="modified-content"><a name="FHIR-55682"></a>
 Joe Smith is a subscriber to Maryland Capital Insurance Company. During a regular physical, Dr. James Gardener, Joe’s primary care physician, diagnoses a potential heart problem. Dr. Gardener determines that it would be best to refer Joe to Dr. Susan Watson, a cardiologist, for a consultation. Dr. Gardener is required by Maryland Capital Insurance to submit a request for review seeking approval to refer Joe to Dr. Watson. Dr. Gardener’s EHR submits a prior authorization request similar to this [request example](Bundle-ReferralAuthorizationBundleExample.html). After review, Maryland Capital approves the referral and responds with a message similar to this [response example](Bundle-ReferralAuthorizationResponseBundleExample.html).
@@ -271,7 +276,7 @@ To communicate updates clients will use the $submit operation to provide a [PAS 
 
 
 * §spec-69^client,payer:Cancelled entries: item and supportingInfo entries that have been removed from the request **SHALL** include the infoCancelled modifier extension with a valueBoolean of `true` in the Claim.item.modifierExtension or Claim.supportingInfo.modifierExtension element.§ §spec-70^client,payer:Canceled items **SHALL** additionally contain a certificationType extension with a code of 3 (Cancel) in the Claim.item.extension element.§
-* §spec-71^client,payer:Entries added, modified, or cancelled compared to the immediately prior version of the Claim referenced in the Claim.related.claim element **SHALL** contain a [infoChanged extension](StructureDefinition-extension-infoChanged.html) within the Claim.item or the Claim.supportingInfo element.§ §spec-72^payer:The [infoChanged extension](StructureDefinition-extension-infoChanged.html) for added entries **SHALL** have a valueCode of `changed` and those for modified or deleted entries SHALL have a valueCode of `changed` (newly marking an item as canceled is considered a 'change').§ Entries that were previously added, modified or canceled will not be marked as changes unless they have been further changed in this version of the prior authorization.
+* §spec-71^client,payer:Entries added, modified, or cancelled compared to the immediately prior version of the Claim referenced in the Claim.related.claim element **SHALL** contain a [infoChanged extension](StructureDefinition-extension-infoChanged.html) within the Claim.item or the Claim.supportingInfo element.§ §spec-72^payer:The [infoChanged extension](StructureDefinition-extension-infoChanged.html) for added entries **SHALL** have a valueCode of `added` and those for modified or deleted entries SHALL have a valueCode of `changed` (newly marking an item as canceled is considered a 'change').§ Entries that were previously added, modified or canceled will not be marked as changes unless they have been further changed in this version of the prior authorization.
 </div>
 
 ###### Updated Request Example
