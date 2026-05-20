@@ -592,6 +592,8 @@ Description: "An example of a ClaimResponse resource that is a response to a cla
 * request = Reference(ReferralAuthorizationExample)
 * outcome = #complete
 * item.itemSequence = 1
+* item.extension[authorizedProvider].extension[provider].valueReference = Reference(ReferralPractitionerExample)
+* item.extension[authorizedProvider].extension[providerType].valueCodeableConcept = https://codesystem.x12.org/005010/98#P3
 * item.extension[requestedServiceDate].valuePeriod.start = 2005-05-02
 * item.extension[requestedServiceDate].valuePeriod.end = 2005-06-02
 * item.adjudication.category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
