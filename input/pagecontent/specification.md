@@ -151,7 +151,7 @@ Business errors that are a part of the processing of the 278 payload, eg. in the
 *	4XX – transaction failed – bad request - failures are not recoverable by resubmission of the transaction.  There will be an OperationOutcome returned that can be reviewed to determine the actual failure 
 *	5XX – transaction failed – service unavailable or timeout - failures that may be temporary and resubmission may result in successful processing.  NOTE that no OperationOutcome will be returned in this instance
 
-§spec-40^client:If an OperationOutcome is received, it may have information regarding errors that **SHOULD** be addressed in the future, but did not cause the transaction to fail.§ §spec-41^payer:NOTE: These errors **SHOULD** not be returned to the provider but **SHOULD** be reviewed and addressed by technical staff.§
+§spec-40^client:If an OperationOutcome is received, it may have information regarding errors that **SHOULD** be addressed in the future, but did not cause the transaction to fail.§ §spec-41^payer:NOTE: These errors **SHOULD NOT** be returned to the provider but **SHOULD** be reviewed and addressed by technical staff.§
 
 ###### OperationOutcome Data Elements
 
