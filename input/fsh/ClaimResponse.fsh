@@ -158,6 +158,8 @@ Description: "The code describing the result of the review."
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication.extension"
 * ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.adjudication.extension"
+* ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 
 Extension: ItemPreAuthIssueDate
@@ -282,6 +284,8 @@ Description: "The specific provider who has been authorized to provide this item
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 
