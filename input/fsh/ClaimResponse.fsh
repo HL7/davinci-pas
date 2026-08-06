@@ -26,6 +26,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * outcome MS
 * outcome from ClaimResponseOutcome (required) 
 * outcome ^short = "complete | error | partial"
+* preAuthRef MS
 * preAuthPeriod MS
 * item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
@@ -114,6 +115,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * extension[claimResponseReviewer] ^short = "The responsible practitioner who reviewed to the request"
 
 * extension contains ItemAuthorizedProvider named authorizedProvider 0..* MS
+* extension contains AuthorizationNumber named authorizationNumber 0..1 MS
 
 Profile: PASClaimResponse
 Parent: PASClaimResponseBase
