@@ -27,7 +27,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * outcome from ClaimResponseOutcome (required) 
 * outcome ^short = "complete | error | partial"
 * preAuthRef MS
-* preAuthPeriod MS
+* preAuthPeriod MS ^short = "The patient-level administrationReferenceNumber (REF-NT) is mapped to this element"
 * item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	ItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
