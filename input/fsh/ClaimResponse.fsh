@@ -324,6 +324,8 @@ Description: "The responsible practitioner who reviewed to the request."
 * extension[reviewerSpecialty].value[x] from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 (extensible)
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: AdmissionDates
 Id: extension-admissionDates
@@ -337,6 +339,8 @@ Description: "The authorized admission dates for inpatient services."
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: DischargeDate
 Id: extension-dischargeDate
@@ -348,3 +352,5 @@ Description: "The authorized discharge date for inpatient services."
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
