@@ -26,6 +26,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * outcome MS
 * outcome from ClaimResponseOutcome (required) 
 * outcome ^short = "complete | error | partial"
+* outcome.extension contains OutcomeCode named outcomeCode 0..* MS
 * preAuthRef MS
 * preAuthPeriod MS 
 * preAuthPeriod ^short = "The patient-level administrationReferenceNumber (REF-NT) is mapped to this element"
@@ -354,3 +355,11 @@ Description: "The authorized discharge date for inpatient services."
 * ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit.item"
+
+Extension: OutcomeCode
+Id: extension-outcomeCode
+Title: "Outcome BHT06 Code"
+Description: "The BHT06 code pertaining to the ClaimResponse outcome."
+* value[x] only code
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.outcome"
