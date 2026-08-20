@@ -249,6 +249,7 @@ Description: """This profile defines constraints and extensions used when updati
 * related.relationship 1..1 MS
 * related.relationship = http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship#prior
 * related.claim 1..1 MS
+* related.claim only Reference(PASClaim or PASClaimUpdate)
 
 //modified
 Extension: InfoChanged
