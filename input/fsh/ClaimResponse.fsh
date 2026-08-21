@@ -6,7 +6,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * ^abstract = true
 * . ^short = "Response to a preauthorization"
 * extension contains TransmissionIdentifiers named transmissionIdentifiers 0..1 MS and
-	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and 
+  CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * identifier MS
 * identifier only PASIdentifier
 * identifier.system ^short = "Should use a scheme of 'urn:trnorg:<TRN03>'"
@@ -300,8 +301,8 @@ Id: profile-claiminquiryresponse
 Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
 * . ^short = "Response to a preauthorization query"
-* item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
-* item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
+* extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
+* extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 
 Extension: ClaimResponseItemCategory
 Id: extension-itemCategory
