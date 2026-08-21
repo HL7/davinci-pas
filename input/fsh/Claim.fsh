@@ -75,7 +75,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * diagnosis.diagnosisCodeableConcept from X12278DiagnosisCodes (required)
 * diagnosis.type 0..1 MS
 * diagnosis.type from X12278DiagnosisType (required)
-* insurance MS
+* insurance 1..1 MS
 * insurance.sequence MS
 * insurance.focal = true
 * insurance.coverage MS
