@@ -35,6 +35,8 @@ Description: "A code representing the diagnosis that is the subject of the commu
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 * ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+* ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit.item"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest.payload"

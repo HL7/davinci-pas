@@ -76,7 +76,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
     CertificationType named certificationType 0..1 MS and
     ClaimResponseItemCategory named category 0..1 and
     AdmissionDates named admissionDates 0..1 MS and
-    DischargeDate named dischargeDate 0..1 MS
+    DischargeDate named dischargeDate 0..1 MS and
+    CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
   * itemSequence 1..1 MS
   * provider MS
   * provider only Reference(PASPractitioner or PASOrganization)
