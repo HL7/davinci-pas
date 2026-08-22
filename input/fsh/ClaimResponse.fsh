@@ -301,7 +301,6 @@ Id: profile-claiminquiryresponse
 Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
 * . ^short = "Response to a preauthorization query"
-* extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
 * extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 
 Extension: ClaimResponseItemCategory
