@@ -231,3 +231,10 @@ Description: "This set of codes restricts the claim type."
 * http://terminology.hl7.org/CodeSystem/claim-type#institutional
 * http://terminology.hl7.org/CodeSystem/claim-type#professional
 * http://terminology.hl7.org/CodeSystem/claim-type#oral
+
+ValueSet: AttachmentCodes
+Title: "Attachment Codes"
+Description: "This set of codes includes LOINC and PWK01 codes for needed attachments."
+* ^experimental = false
+* codes from system http://loinc.org/vs/valid-hl7-attachment-requests
+* codes from system http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code
