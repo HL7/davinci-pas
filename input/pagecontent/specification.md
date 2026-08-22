@@ -41,7 +41,7 @@ The primary interaction supported by this implementation guide is submitting a p
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-content.png" alt="PAS Bundle Content"/>
-  <figcaption>Figure 5.1 - PAS Bundle Content</figcaption>
+  <figcaption>Figure 7.1 - PAS Bundle Content</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -56,8 +56,8 @@ In the event that the prior authorization cannot be evaluated and a final respon
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas_sequence_diagram.png" alt="PAS Submission Sequence Diagram"/>
-  <figcaption>Figure 5.2 - PAS Submission Sequence</figcaption>
+  <div>{%include pas_sequence_diagram.svg%}</div>
+  <figcaption>Figure 7.2 - PAS Submission Sequence</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -171,14 +171,14 @@ Here are two workflow diagrams that show the sending of a request, the receiving
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-error-twointermediaries.jpg" alt="PAS Two Intermediaries Workflow"/>
-  <figcaption>Figure 5.3 - PAS Workflow with Two Intermediaries</figcaption>
+  <figcaption>Figure 7.3 - PAS Workflow with Two Intermediaries</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="800px" src="pas-error-after-pend.jpg" alt="PAS Pended Transactions Workflow"/>
-  <figcaption>Figure 5.4 - PAS Workflow for pended transactions</figcaption>
+  <figcaption>Figure 7.4 - PAS Workflow for pended transactions</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
