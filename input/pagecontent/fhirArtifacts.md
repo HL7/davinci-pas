@@ -100,6 +100,8 @@ The following examples are present in this guide to show specific use cases:
 * [Additional Information Task Example](Task-AdditionalInformationTaskExample.html)
 * [Subscription](Subscription-PASSubscriptionExample.html), [Subscription Notification](Bundle-PASSubscriptionNotification.html), and [Claim Inquiry](Bundle-PASClaimInquiryBundleExample.html) and a [Claim Inquiry Response](Bundle-PASClaimInquiryResponseBundleExample.html)
 
+<span class="modified-content" markdown="1"><a name="FHIR-57855"></a>The url example.org is intentionally used; when validating, add the flag -allow-example-urls true.</span>
+
 
 ### Cross-Version Analysis
 {% lang-fragment cross-version-analysis.xhtml %}
