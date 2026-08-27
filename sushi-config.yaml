@@ -54,7 +54,7 @@ dependencies:
     reason: |
       Needed to pre-adopt R5 Encounter elements in R4
   hl7.fhir.us.davinci-crd:
-    version: current
+    version: 2.2.1
     id: crd
     reason: |
       Defines the CRD coverage-information extension used by this IG
@@ -191,12 +191,12 @@ menu:
     ePA Coordinator: epaWorkflow.html
   Specification:
     Conformance Expectations: conformance.html
+    Conformance Details: conformancedetails.html
     Technical Specification: specification.html
     Request for Additional Info: additionalinfo.html
     HIPAA Regulations: regulations.html
     Privacy, Safety, and Security: privacy.html
     Metrics: metrics.html
-    Conformance Details: conformancedetails.html
   FHIR Artifacts:
     Overview: fhirArtifacts.html
     Terminology: terminology.html

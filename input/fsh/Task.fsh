@@ -38,16 +38,7 @@ Description: "PAS constraints on Task resource that is used to request additiona
 * input[AttachmentsNeeded].type = PASTempCodes#attachments-needed
 * input[AttachmentsNeeded].value[x] MS
 * input[AttachmentsNeeded].value[x] only CodeableConcept
-* input[AttachmentsNeeded].valueCodeableConcept from http://loinc.org/vs/valid-hl7-attachment-requests (required)
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "key"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueId = "attachmentsNeededLoinc"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "purpose"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCode = #extensible
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "valueSet"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ValueSet/pas-pwk01-attachment-report-type-code"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[+].url = "documentation"
-* input[AttachmentsNeeded].valueCodeableConcept ^binding.extension.extension[=].valueMarkdown = "X12 codes that can be used to request additional information to support a prior authorization request."
+* input[AttachmentsNeeded].valueCodeableConcept from AttachmentCodes (extensible)
 * input[AttachmentsNeeded].extension contains ServiceLineNumber named paLineNumber 1..1 MS and ContentModifier named contentModifier 0..* MS
 
 * input[QuestionnaireContext].type MS

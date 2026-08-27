@@ -75,7 +75,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * diagnosis.diagnosisCodeableConcept from X12278DiagnosisCodes (required)
 * diagnosis.type 0..1 MS
 * diagnosis.type from X12278DiagnosisType (required)
-* insurance MS
+* insurance 1..1 MS
 * insurance.sequence MS
 * insurance.focal = true
 * insurance.coverage MS
@@ -282,6 +282,7 @@ Description: "PAS constraints on Claim resource when submitting an inquiry for e
 * identifier 1..1 MS
 * provider ^short = "This is the submitter of the inquiry."
 * billablePeriod MS
+* diagnosis 0..1 MS
 * diagnosis ^comment = "When multiple diagnoses are sent, the intermediary will need to convert the single inquiry into multiple X12 278 inquiries - one for each diagnosis code - and then make the union of the returned Prior Authorization responses."
 * item.extension contains 
 	CertificationIssueDate named certIssueDate 0..1 MS and

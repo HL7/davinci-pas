@@ -38,6 +38,8 @@ Description: "A code representing the type of certification being requested (UM0
 * ^context[=].expression = "ExplanationOfBenefit"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 
 Extension: LevelOfServiceCode
 Id: extension-levelOfServiceCode
@@ -78,6 +80,8 @@ Title: "Authorization Number"
 Description: "A string assigned by the UMO to an authorized review outcome associated with this service item."
 * value[x] only string
 * ^context[+].type = #element
+* ^context[=].expression = "Claim"
+* ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
@@ -91,6 +95,8 @@ Id: extension-administrationReferenceNumber
 Title: "Administration Reference Number"
 Description: "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
 * value[x] only string
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
@@ -109,6 +115,8 @@ Description: "A code that identifies the type of service being requested."
 * valueCodeableConcept ^binding.description = "Codes indicating a type of request. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
 
 Extension: ProductOrServiceCodeEnd
 Id: extension-productOrServiceCodeEnd
@@ -120,6 +128,10 @@ Description: "Used to provide the last code in a series of codes for the service
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ServiceRequest"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail"
 
 Extension: EPSDTIndicator
 Id: extension-epsdtIndicator
@@ -168,6 +180,10 @@ Description: "The limit on the rate per unit of revenue for hospital accomodatio
 * ^context[=].expression = "Claim.item"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.addItem"
+* ^context[+].type = #extension
+* ^context[=].expression = "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail"
 
 Extension: RequestedService
 Id: extension-requestedService
@@ -233,6 +249,7 @@ Description: """This profile defines constraints and extensions used when updati
 * related.relationship 1..1 MS
 * related.relationship = http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship#prior
 * related.claim 1..1 MS
+* related.claim only Reference(PASClaim or PASClaimUpdate)
 
 //modified
 Extension: InfoChanged
@@ -243,6 +260,8 @@ Description: "A code indicating how the piece of information has changed."
 * valueCode from PASInformationChangeMode (required)
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.supportingInfo"
 
 //modified
 Extension: InfoCancelledFlag
@@ -254,6 +273,8 @@ Description: "A flag indicating whether the piece of information was cancelled."
 * value[x] only boolean
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.supportingInfo"
 
 Extension: CertificationIssueDate
 Id: extension-itemCertificationIssueDate

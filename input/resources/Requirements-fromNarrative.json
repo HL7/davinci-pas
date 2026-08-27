@@ -285,7 +285,7 @@
     }],
     "key" : "conf-13",
     "conformance" : ["MAY"],
-    "requirement" : "If the proposed change is adopted and published in the PAS continuous integration build or the CI build of one of its dependencies (e.g. US Core), implementations **MAY**, by mutual agreement, pre-adopt the use of those additional profiles and/or mustSupport data elements and not be considered in violation of #1 above."
+    "requirement" : "If the proposed change is adopted and published in the PAS continuous integration build or the CI build of one of its dependencies (e.g., US Core), implementations **MAY**, by mutual agreement, pre-adopt the use of those additional profiles and/or mustSupport data elements and not be considered in violation of #1 above."
   },
   {
     "extension" : [{
@@ -314,7 +314,7 @@
     }],
     "key" : "conf-15",
     "conformance" : ["SHALL"],
-    "requirement" : "PAS clients and services **SHALL** use standard PAS data elements (i.e. elements found within PAS-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data if such elements are intended to convey such information."
+    "requirement" : "PAS clients and services **SHALL** use standard PAS data elements (i.e., elements found within PAS-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data if such elements are intended to convey such information."
   },
   {
     "extension" : [{
@@ -731,7 +731,7 @@
     }],
     "key" : "spec-7",
     "conformance" : ["SHOULD"],
-    "requirement" : "All of this **SHOULD** happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e. including network transmission time for request and response."
+    "requirement" : "All of this **SHOULD** happen synchronously with a maximum of 15 seconds between the user initiating the prior authorization request and seeing the resulting response - i.e., including network transmission time for request and response."
   },
   {
     "extension" : [{
@@ -834,7 +834,7 @@
     }],
     "key" : "spec-18",
     "conformance" : ["SHALL"],
-    "requirement" : "Relevant resources referenced by those \"supporting information\" resources **SHALL** also be included (e.g. prescriber Practitioner and Medication for a MedicationRequest)."
+    "requirement" : "Relevant resources referenced by those \"supporting information\" resources **SHALL** also be included (e.g., prescriber Practitioner and Medication for a MedicationRequest)."
   },
   {
     "extension" : [{
@@ -1122,7 +1122,7 @@
     }],
     "key" : "spec-48",
     "conformance" : ["SHALL"],
-    "requirement" : "I.e. If a search is for a 'replaced' prior authorization, the search result **SHALL** include the 'current' prior authorization response for the most recent replacing prior authorization request."
+    "requirement" : "i.e., If a search is for a 'replaced' prior authorization, the search result **SHALL** include the 'current' prior authorization response for the most recent replacing prior authorization request."
   },
   {
     "extension" : [{
@@ -1140,7 +1140,7 @@
     }],
     "key" : "spec-50",
     "conformance" : ["SHOULD"],
-    "requirement" : "In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g. telephone number) to provide further information if needed."
+    "requirement" : "In such situations the response **SHOULD** include an OperationOutcome warning that some prior authorizations have been suppressed and provide an alternative mechanism (e.g., telephone number) to provide further information if needed."
   },
   {
     "extension" : [{
@@ -1163,7 +1163,7 @@
     }],
     "key" : "spec-53",
     "conformance" : ["SHALL"],
-    "requirement" : "They **SHALL** require a match on the patient member or subscriber id (identifier on the Claim.patient) plus the ordering and/or rendering provider identifier, i.e. the provider's NPI."
+    "requirement" : "They **SHALL** require a match on the patient member or subscriber id (identifier on the Claim.patient) plus the ordering and/or rendering provider identifier, i.e., the provider's NPI."
   },
   {
     "extension" : [{

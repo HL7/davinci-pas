@@ -5,7 +5,9 @@ Title: "PAS Claim Response Base"
 Description: "PAS constraints on ClaimResponse resource that are common to both the request and the inquiry."
 * ^abstract = true
 * . ^short = "Response to a preauthorization"
-* extension contains TransmissionIdentifiers named transmissionIdentifiers 0..1 MS
+* extension contains TransmissionIdentifiers named transmissionIdentifiers 0..1 MS and
+	AdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and 
+  CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
 * identifier MS
 * identifier only PASIdentifier
 * identifier.system ^short = "Should use a scheme of 'urn:trnorg:<TRN03>'"
@@ -25,7 +27,10 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * outcome MS
 * outcome from ClaimResponseOutcome (required) 
 * outcome ^short = "complete | error | partial"
-* preAuthPeriod MS
+* outcome.extension contains OutcomeCode named outcomeCode 0..* MS
+* preAuthRef MS
+* preAuthPeriod MS 
+* preAuthPeriod ^short = "The patient-level administrationReferenceNumber (REF-NT) is mapped to this element"
 * item MS
 * item.extension contains ItemTraceNumber named itemTraceNumber 0..* MS and
 	ItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
@@ -72,7 +77,8 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
     CertificationType named certificationType 0..1 MS and
     ClaimResponseItemCategory named category 0..1 and
     AdmissionDates named admissionDates 0..1 MS and
-    DischargeDate named dischargeDate 0..1 MS
+    DischargeDate named dischargeDate 0..1 MS and
+    CommunicatedDiagnosis named communicatedDiagnosis 0..* MS
   * itemSequence 1..1 MS
   * provider MS
   * provider only Reference(PASPractitioner or PASOrganization)
@@ -113,6 +119,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * extension[claimResponseReviewer] ^short = "The responsible practitioner who reviewed to the request"
 
 * extension contains ItemAuthorizedProvider named authorizedProvider 0..* MS
+* extension contains AuthorizationNumber named authorizationNumber 0..1 MS
 
 Profile: PASClaimResponse
 Parent: PASClaimResponseBase
@@ -150,12 +157,14 @@ Id: extension-reviewActionCode
 Title: "Review Action Code"
 Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
+* valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000E/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.addItem.adjudication.extension"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item.adjudication.extension"
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.adjudication.extension"
 * ^context[+].type = #element
 * ^context[=].expression = "Claim.item"
 
@@ -269,7 +278,7 @@ Id: extension-itemAuthorizedProvider
 Title: "Item Authorized Provider"
 Description: "The specific provider who has been authorized to provide this item."
 * extension contains provider 0..1 and 
-                     AuthorizedProviderType named providerType 0..1 and
+                     AuthorizedProviderType named providerType 1..1 and
                      role 0..1 and
                      qualification 0..1
 * extension[provider].value[x] only Reference(PASPractitioner or PASOrganization)
@@ -282,6 +291,8 @@ Description: "The specific provider who has been authorized to provide this item
 * ^context[+].type = #element
 * ^context[=].expression = "ExplanationOfBenefit.item"
 * ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
 
 Profile: PASClaimInquiryResponse
@@ -290,8 +301,7 @@ Id: profile-claiminquiryresponse
 Title: "PAS Claim Inquiry Response"
 Description: "PAS constraints on Claim resource mandating support for elements relevant to the response of an inquiry for details of previous authorizations."
 * . ^short = "Response to a preauthorization query"
-* item.extension contains CommunicatedDiagnosis named communicatedDiagnosis 0..1 MS
-* item.extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
+* extension[communicatedDiagnosis] ^short = "A code representing the diagnosis that is relevant to the preauthorization."
 
 Extension: ClaimResponseItemCategory
 Id: extension-itemCategory
@@ -316,6 +326,8 @@ Description: "The responsible practitioner who reviewed to the request."
 * extension[reviewerSpecialty].value[x] from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 (extensible)
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 
 Extension: AdmissionDates
 Id: extension-admissionDates
@@ -329,6 +341,8 @@ Description: "The authorized admission dates for inpatient services."
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
 
 Extension: DischargeDate
 Id: extension-dischargeDate
@@ -340,3 +354,13 @@ Description: "The authorized discharge date for inpatient services."
 * ^context[=].expression = "ClaimResponse.addItem"
 * ^context[+].type = #element
 * ^context[=].expression = "ClaimResponse.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
+
+Extension: OutcomeCode
+Id: extension-outcomeCode
+Title: "Outcome BHT06 Code"
+Description: "The BHT06 code pertaining to the ClaimResponse outcome."
+* value[x] only code
+* ^context[+].type = #element
+* ^context[=].expression = "ClaimResponse.outcome"

@@ -23,7 +23,7 @@ Description: "A logical model describing the information that ought to be captur
   * method    1..1 code  "x12 | restful | ihe | direct | other"          "Exchange standard used for this specific exchange.  Note: RESTful is the default for any Provider to Intermediary exchange, X12 is the defalt for any exchange between the intermediary and the payer for the X12 278, the exchange of the PAS bundle between the intermediary and the payer MAY be any of the methods included in the value set."
   * requestTime       1..1 instant         "Time exchange initiated"                 "For providers, the request was made.  For payers, the time the request was received.  For intermediaries time the request was received from the provider or time the request was sent to the payer."
   * responseTime      0..1 instant         "Time of exchange response"               "For providers, the response was received.  For payers, the time the response  was sent.  For intermediaries time the response  was sent to the provider or time the response was received from the payer."
-  * httpResponse      1..1 code     "e.g. 200"                            "What HTTP response code was returned for the exchange invocation."
+  * httpResponse      1..1 code     "e.g., 200"                            "What HTTP response code was returned for the exchange invocation."
 * issue 0..* BackboneElement "OperationOutcome info" "In the event of an HTTP error, if an OperationOutcome was returned, what were the issues."
   * code            1..1 code            "Error code"                          "The issue.code value from the OperationOutcome for this issue."
   * code            from IssueType             (required)
@@ -52,4 +52,4 @@ Description: "A logical model describing the information that ought to be captur
   * timeSubmitted 0..1 dateTime "Date/Time of final result" "Date/Time of final result for this item (MAY be part of the initial submission or part an update."
   * submissionMethod 0..1 code "CDex | portal | fax | x12 | other" "The technical method used to submit the requested additional documentation."
 * exceptionSubmission 0..1 boolean "True if exchange is based on the exception grant" "Indicator that exchange was performed under an exception grant from the National Standard Group."
-* businessLine  0..1 CodeableConcept "E.g. MedicareAdvantage"              "A code that indicates which type of insurance the patient is covered by."
+* businessLine  0..1 CodeableConcept "e.g., MedicareAdvantage"              "A code that indicates which type of insurance the patient is covered by."

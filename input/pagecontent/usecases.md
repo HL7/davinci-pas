@@ -34,7 +34,7 @@ Current industry payer leaders in automating prior authorization indicate that i
 
 Currently, the overwhelming majority of real-time responses to PA requests are 'pended'. This is, in a large part, due to the need for additional documentation.  By using a combination of the [Documentation Templates and Rules (DTR) Implementation Guide](http://hl7.org/fhir/us/davinci-dtr/) and this IG to provide the documentation with the PA request, we expect payers to enable real-time responses to significantly more PA requests.
 
-This implementation guide also supports business requirements around the management of prior authorizations, including checking on the status of 'pended' authorization requests (by the ordering and/or performing providers), canceling previously submitted prior authorization requests and updating prior authorization requests to reflect changes in clinical need (e.g. changes to the requested quantity or time-period).
+This implementation guide also supports business requirements around the management of prior authorizations, including checking on the status of 'pended' authorization requests (by the ordering and/or performing providers), canceling previously submitted prior authorization requests and updating prior authorization requests to reflect changes in clinical need (e.g., changes to the requested quantity or time-period).
 
 ### Supported Use Cases
 This version of the Implementation Guide does not support all of the use cases that the current X12 278 Prior Authorization Request supports.  The following list highlights the segments that are not currently mapped/supported by the FHIR profiles in this guide:
@@ -76,7 +76,7 @@ In Scope
 
 Out Of Scope
 
-1. Not to be used for any Medication that is covered under a pharmacy benefit where prior authorization is provided by another electronic exchange process (e.g. NCPDP SCRIPT)
+1. Not to be used for any Medication that is covered under a pharmacy benefit where prior authorization is provided by another electronic exchange process (e.g., NCPDP SCRIPT)
 
 #### Prior Authorization Process
 The prior authorization process from the EHR side consists of five steps:
@@ -118,12 +118,12 @@ Also see the section below on [supporting information](#supporting-information).
 #### Submit Prior Authorization
 §use-5^client^privacy:Prior to sending clinical data as part of the PAS exchange, the provider (or their designated agent) **SHALL** have the ability, but not an obligation, to review patient information and where appropriate amend or withhold the submission to comply with current regulations and relevant provider policies.  The provider can choose to turn off the ability to review documentation. The vendor must allow them this option.§
 
-The prior authorization request will involve a FHIR operation, passing in a Bundle of FHIR resources that includes the authorizing request as well as any other necessary supporting information.  That operation will typically (for HIPAA reasons) be invoked on an intermediary that will translate the request into the corresponding X12 messages.  However, where there is no regulatory requirement for X12 use (e.g. if this specification is adopted in non-U.S. environments, for non-HIPAA-covered payers, or under a granted exception), the operation could potentially be invoked directly on the payer system.
+The prior authorization request will involve a FHIR operation, passing in a Bundle of FHIR resources that includes the authorizing request as well as any other necessary supporting information.  That operation will typically (for HIPAA reasons) be invoked on an intermediary that will translate the request into the corresponding X12 messages.  However, where there is no regulatory requirement for X12 use (e.g., if this specification is adopted in non-U.S. environments, for non-HIPAA-covered payers, or under a granted exception), the operation could potentially be invoked directly on the payer system.
 
 The payer system is expected to immediately generate an automated response.  Ideally, this will represent a final decision on the prior authorization request.  However, in some cases, it may be necessary to submit textual documentation that will require semi-automated or manual review by the payer.  In these situations, the prior authorization response will have a status of 'pended' and will be pended by the payer.  In either event, if the response is provided via X12, the intermediary will convert the X12 back to FHIR and will return the result as the result of the synchronous operation.
 
 #### Monitor for Resolution
-In those situations where the prior authorization request is ‘pended’, the EHR must monitor for changes to the request until the results are finalized. This monitoring might be done by the system of the provider that submitted the request for prior authorization, and/or the system of the provider that is expected to actually perform the authorized procedure (e.g. the family physician system or the imaging center system).
+In those situations where the prior authorization request is ‘pended’, the EHR must monitor for changes to the request until the results are finalized. This monitoring might be done by the system of the provider that submitted the request for prior authorization, and/or the system of the provider that is expected to actually perform the authorized procedure (e.g., the family physician system or the imaging center system).
 
 A PAS Subscription has been created to allow systems to monitor for specific requests.  In response to a subscription notification indicating that the prior authorization has been changed, there is an inquiry operation that allows for returning information about prior authorization submissions.  This operation can also be used for generic inquiries about a prior submission.
 

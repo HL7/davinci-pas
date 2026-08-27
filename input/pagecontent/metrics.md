@@ -119,6 +119,6 @@ In the interest of enabling such evaluation processes, this guide has defined a
 [logical PAS Metric model](StructureDefinition-PASMetricData.html) that describes the data elements most
 likely to be relevant for such evaluation.
 
-This model is NOT a FHIR data structure for information exchange.  Instead, it is a logical model that describes the types of data that ought to be available and any constraints on the data (e.g. cardinality, terminology) that ought to be captured by PAS implementers to support the evaluation of metrics.  Measures can then be defined in a standardized way based on these measures.
+This model is NOT a FHIR data structure for information exchange.  Instead, it is a logical model that describes the types of data that ought to be available and any constraints on the data (e.g., cardinality, terminology) that ought to be captured by PAS implementers to support the evaluation of metrics.  Measures can then be defined in a standardized way based on these measures.
 
 §metric-2^client,payer^storage:PAS implementers **SHOULD** store information for each PAS call in a manner that would allow them to respond to measures based on this logical model.§

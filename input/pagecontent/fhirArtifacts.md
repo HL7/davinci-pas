@@ -21,8 +21,8 @@ Many of the profiles are based on US Core 7.0.0 while also declaring conformance
 * [Intermediary PAS Capabilities](CapabilityStatement-IntermediaryCapabilities.html) - Required for Intermediaries (and/or Payors) participating in a PAS Exchange
 
 #### Operation Definitions
-* [Submit a Prior Authorization Request for Adjudication](OperationDefinition-Claim-submit.html) - {{site.data.OperationDefinition-Claim-inquiry.description}}
-* [Search for a Prior Authorization Response by example](OperationDefinition-Claim-inquiry.html) - {{site.data.OperationDefinition-Claim-submit.description}}
+* [Submit a Prior Authorization Request for Adjudication](OperationDefinition-Claim-submit.html) - {{site.data.OperationDefinition-Claim-submit.description}}
+* [Search for a Prior Authorization Response by example](OperationDefinition-Claim-inquiry.html) - {{site.data.OperationDefinition-Claim-inquiry.description}}
 
 #### Metrics Logical Model
 * [PAS Metric Data Logical Model](StructureDefinition-PASMetricData.html) - {{site.data.StructureDefinition-PASMetricData.description}}
@@ -99,6 +99,8 @@ The following examples are present in this guide to show specific use cases:
 * [Pending (PEND) Response](Bundle-ReferralPendingAuthorizationResponseBundleExample.html)
 * [Additional Information Task Example](Task-AdditionalInformationTaskExample.html)
 * [Subscription](Subscription-PASSubscriptionExample.html), [Subscription Notification](Bundle-PASSubscriptionNotification.html), and [Claim Inquiry](Bundle-PASClaimInquiryBundleExample.html) and a [Claim Inquiry Response](Bundle-PASClaimInquiryResponseBundleExample.html)
+
+<span class="modified-content" markdown="1"><a name="FHIR-57855"></a>The url example.org is intentionally used; when validating, add the flag -allow-example-urls true.</span>
 
 
 ### Cross-Version Analysis

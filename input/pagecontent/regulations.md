@@ -67,7 +67,7 @@ The following is an excerpt from the CFR requiring the use of the standard trans
 > § 162.923   Requirements for covered entities. 
 >> (a) General rule. **Except as otherwise provided in this part**, if a covered entity conducts, with another covered entity that is **required to comply with a transaction standard adopted under this part (or within the same covered entity)**, using electronic media, a transaction for which the Secretary has adopted a standard under this part, the covered entity must conduct the transaction as a standard transaction. 
 
-Note: requires the use of the standard within the same covered entity (e.g. within a clearinghouse)
+Note: requires the use of the standard within the same covered entity (e.g., within a clearinghouse)
 
 ---
 

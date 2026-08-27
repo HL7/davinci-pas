@@ -18,7 +18,7 @@ Description: "An additional element that provides a further subdivision within t
 Extension: IdentifierJurisdiction
 Id: extension-identifierJurisdiction
 Title: "Identifier Jurisdiction"
-Description: "An additional element that provides the assigning jurisdiction of the identifier (i.e. provider state license number or state driver's license) so that it does not need to be mapped from the identifier system."
+Description: "An additional element that provides the assigning jurisdiction of the identifier (i.e., provider state license number or state driver's license) so that it does not need to be mapped from the identifier system."
 * value[x] only CodeableConcept
 * valueCodeableConcept from http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|7.0.0 (required)
 * ^context[+].type = #element

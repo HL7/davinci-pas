@@ -84,3 +84,8 @@ Both the 'attachmentsNeeded' and 'questionnairesNeeded' slice contains an extens
 |input "AttachmentsNeeded" slice value|CommunicationRequest.payload.contentString|
 |input "AttachmentsNeeded" slice "contentModifier" extension|CommunicationRequest.payload "contentModifier" extension|
 |input "QuestionnaireContext" slice value| Claim.item "itemTraceNumber" extension|
+
+<p class="new-content"  markdown="1">
+<a name="FHIR-56417"> </a>
+In order to submit large files, the CDex [$submit-attachment](https://confluence.hl7.org/spaces/DVP/pages/307301334/submit-attachment+and+Large+Payloads) operation is the desired way to send files that will not fit inside a normal PAS submission.
+</p>
