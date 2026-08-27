@@ -13,10 +13,10 @@ The PAS implementation guide defines the responsibilities of the two types of sy
 </div>
 
 ### MustSupport
-Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.  
+Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
 
-<div class="new-content"  markdown="1">
-The Must Support rules for the PAS specification are somewhat different than the rules for US Core and HRex because the implementation needs are different.  In US Core, there is generally an expectation for clients to modify code and persistence layers to add support for 'mustSupport' elements in profiles.  That expectation does not hold for PAS.  Along with the following section on Interoperability Expectations, these rules recognize how existing Client, Intermediary, and Payer systems work with the existing X12 Prior Authorization specifications today.
+<div class="modified-content"  markdown="1">
+The Must Support rules for the PAS specification are somewhat different than the rules for [US Core]({{site.data.fhir.ver.uscore7}}/must-support.html) and [HRex]({{site.data.fhir.ver.hrex}}/conformance.html#mustsupport) because the implementation needs are different.  In US Core, there is generally an expectation for clients to modify code and persistence layers to add support for 'mustSupport' elements in profiles.  That expectation does not hold for PAS.  Along with the following section on Interoperability Expectations, these rules recognize how existing Client, Intermediary, and Payer systems work with the existing X12 Prior Authorization specifications today.
 
 *NOTE*: The following conformance rules around Must Support override any conformance statements around Must Support specified in any of the dependent guides, including US Core, HRex, CRD, and DTR.
 
@@ -32,11 +32,11 @@ For PA Intermediary Systems, the following rules hold:
  
 For PA client Systems, the following rules hold:
 
-* §conf-9^client:PA client Systems *SHALL* be able to send any element that is marked as Must Support *if data exists and is relevant to any authorization requests that they are capable of making*.§
+* §conf-9^client:PA Client Systems **SHALL** be able to send any element that is marked as Must Support *if data exists and is relevant to any authorization requests that they are capable of making*.§
 * §conf-10^client:PA Client Systems **SHALL** be capable of receiving all data elements that are marked as Must Support on the Claim Response and the Claim Inquiry Response.§ 
 * §conf-11^client:PA Client Systems **SHALL NOT** generate an error or cause the application to fail when receiving any data element that is marked as Must Support.§ 
 * §conf-12^client:PA Client Systems **SHOULD NOT** send any data elements that are not marked as Must Support.§
-* §conf-13^client:PA Client Systems *SHALL* make any elements that are marked as Must Support and received in a response available to the appropriate users or leverage the data within their authorization workflow as necessary.
+* §conf-13^client:PA Client Systems **SHALL** make any elements that are marked as Must Support and received in a response available to the appropriate users or leverage the data within their authorization workflow as necessary.§
 </div>
 
 <div class="new-content"  markdown="1">
