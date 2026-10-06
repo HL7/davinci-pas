@@ -72,6 +72,10 @@ Description: "The profile for PAS subscription."
 * criteria = "http://hl7.org/fhir/us/davinci-pas/SubscriptionTopic/PASSubscriptionTopic"
 * channel.type = #rest-hook
 * channel.endpoint 1..1 MS
+* channel.endpoint ^extension[http://hl7.org/fhir/StructureDefinition/obligation][+].extension[code].valueCode = #SHALL:able-to-populate
+* channel.endpoint ^extension[http://hl7.org/fhir/StructureDefinition/obligation][=].extension[actor].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ActorDefinition/payer"
+* channel.endpoint ^extension[http://hl7.org/fhir/StructureDefinition/obligation][+].extension[code].valueCode = #SHALL:process
+* channel.endpoint ^extension[http://hl7.org/fhir/StructureDefinition/obligation][=].extension[actor].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ActorDefinition/client"
 * channel.payload.extension[content].valueCode = #full-resource
 
 Instance: EHRCapabilities
