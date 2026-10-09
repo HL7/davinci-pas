@@ -136,7 +136,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 * careTeam[OverallClaimMember].qualification ^extension[http://hl7.org/fhir/StructureDefinition/obligation][+].extension[code].valueCode = #SHALL:process
 * careTeam[OverallClaimMember].qualification ^extension[http://hl7.org/fhir/StructureDefinition/obligation][=].extension[actor].valueCanonical = "http://hl7.org/fhir/us/davinci-pas/ActorDefinition/payer"
 * careTeam[OverallClaimMember].qualification from https://valueset.x12.org/x217/005010/request/2010EA/PRV/1/03/00/127 (required)
-* careTeam[OverallClaimMember].role  ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* careTeam[OverallClaimMember].qualification ^binding.description = "Codes identifying a provider specialty. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 
 * careTeam[ItemClaimMember] ^short = "Care Team Providers that are applicable to a specific item (as referenced by that item).  NOTE: Only the first 10 can be sent in the X12 Request."
 * careTeam[ItemClaimMember] ^comment = "NOTE: Only the first 10 can be sent in the X12 Request."
