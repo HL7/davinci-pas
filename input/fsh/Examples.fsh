@@ -894,7 +894,7 @@ InstanceOf: PASSubscription
 Title: "PAS Subscription example for a specific provider"
 Description: "An example of a PAS Subscription submission for a specific provider."
 * status = #requested
-* criteria.extension[filterCriteria].valueString = "orgIdentifier=1234567893"
+* criteria.extension[filterCriteria].valueString = "org-Identifier=1234567893"
 * channel.endpoint = "http://example.org/send-me-subscription-notifications"
 * channel.payload = #application/fhir+json
 * channel.payload.extension[content].valueCode = #full-resource
