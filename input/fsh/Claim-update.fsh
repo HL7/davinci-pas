@@ -93,7 +93,7 @@ Description: "A string assigned by the UMO to an authorized review outcome assoc
 Extension: AdministrationReferenceNumber
 Id: extension-administrationReferenceNumber
 Title: "Administration Reference Number"
-Description: "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+Description: "A string assigned by the UMO or the intermediary to the service review or a line item within the service review that can be used for a follow up request or for an inquiry."
 * value[x] only string
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"

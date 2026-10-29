@@ -97,7 +97,7 @@ Description: "PAS constraints on Claim resource that are common to both the requ
 	ProductOrServiceCodeEnd named productOrServiceCodeEnd 0..1 MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[authorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
-* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO or the intermediary to the service review or a line item within the service review that can be used for a follow up request or for an inquiry."
 * item.extension[requestType] ^short = "A code that identifies the type of service being requested."
 * item.extension[certificationType] ^short = "A code representing the type of certification being requested (UM02)"
 * item.extension[productOrServiceCodeEnd] ^short = "Used to provide the last code in a series of codes for the service being requested."

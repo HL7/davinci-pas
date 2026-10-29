@@ -46,7 +46,7 @@ Description: "PAS constraints on ClaimResponse resource that are common to both 
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
 * item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
-* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO or the intermediary to the service review or a line item within the service review that can be used for a follow up request or for an inquiry."
 * item.extension[requestedServiceDate] ^short = "The original date/period that was requested by the submitter for this item."
 * item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
